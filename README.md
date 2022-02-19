@@ -5,7 +5,7 @@ As part of the FNIRSI-1013D reverse engineering / hacking an attempt is made to 
 
 Despite the lack of information a lot is achieved. The mmicko/prjtang project was a big help but not enough to get to a full reversal.
 
-At first the converting of the bitstream to readable meaning of the bits failed on unused bits being at the beginning instead of the end. Took a quite a bit of analyzing and trying with some test designs to figure this out.
+At first the converting of the bitstream to a readable meaning of the bits failed on unused bits being at the beginning instead of the end. Took a quite a bit of analyzing and trying with some test designs to figure this out.
 
 The project stranded for now on the routing of the nets beacuse the naming is unclear. To some extend it is possible to track some connections but the interconnect between the tiles is a mystery.
 
