@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>database/clkdiv_bk1.h</itemPath>
+      <itemPath>database/clkdiv_bk2.h</itemPath>
+      <itemPath>database/clkdiv_bk3.h</itemPath>
+      <itemPath>database/clkdiv_bk4.h</itemPath>
+      <itemPath>database/clkdiv_bk5.h</itemPath>
+      <itemPath>database/clkdiv_bk6.h</itemPath>
+      <itemPath>database/clkdiv_bk7.h</itemPath>
+      <itemPath>database/clkdiv_bk8.h</itemPath>
+      <itemPath>database/configbitdata.h</itemPath>
+      <itemPath>database/emb32k_b0.h</itemPath>
+      <itemPath>database/emb32k_b1.h</itemPath>
+      <itemPath>database/emb_slice.h</itemPath>
+      <itemPath>../Anlogic_bitstream_analyzer/frames/frame_bit_mapping.h</itemPath>
+      <itemPath>database/gclk_csb.h</itemPath>
+      <itemPath>database/gclk_ctmux_l.h</itemPath>
+      <itemPath>database/gclk_ctmux_u.h</itemPath>
+      <itemPath>database/gclk_premux_b.h</itemPath>
+      <itemPath>database/gclk_premux_l.h</itemPath>
+      <itemPath>database/gclk_premux_r.h</itemPath>
+      <itemPath>database/gclk_premux_t.h</itemPath>
+      <itemPath>database/gclk_spine.h</itemPath>
+      <itemPath>database/ioclk_bk1.h</itemPath>
+      <itemPath>database/ioclk_bk2.h</itemPath>
+      <itemPath>database/ioclk_bk3.h</itemPath>
+      <itemPath>database/ioclk_bk4.h</itemPath>
+      <itemPath>database/ioclk_bk5.h</itemPath>
+      <itemPath>database/ioclk_bk6.h</itemPath>
+      <itemPath>database/ioclk_bk7.h</itemPath>
+      <itemPath>database/ioclk_bk8.h</itemPath>
+      <itemPath>database/iol_pair_l.h</itemPath>
+      <itemPath>database/iol_pair_r.h</itemPath>
+      <itemPath>database/iol_quad_b.h</itemPath>
+      <itemPath>database/iol_quad_l.h</itemPath>
+      <itemPath>database/iol_quad_r.h</itemPath>
+      <itemPath>database/iol_quad_t.h</itemPath>
+      <itemPath>database/ios_bankref_bl.h</itemPath>
+      <itemPath>database/ios_bankref_br.h</itemPath>
+      <itemPath>database/ios_bankref_l.h</itemPath>
+      <itemPath>database/ios_bankref_r.h</itemPath>
+      <itemPath>database/ios_bankref_tl.h</itemPath>
+      <itemPath>database/ios_bankref_tr.h</itemPath>
+      <itemPath>../Anlogic_bitstream_analyzer/database/lqfp144_io_pads.h</itemPath>
+      <itemPath>database/mult.h</itemPath>
+      <itemPath>database/osc.h</itemPath>
+      <itemPath>database/pib.h</itemPath>
+      <itemPath>database/plb.h</itemPath>
+      <itemPath>database/pll0.h</itemPath>
+      <itemPath>database/pll2.h</itemPath>
+      <itemPath>database/tilegrid.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>Anlogic_bits_in_tile_lister.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/anlogic_tilegrid_analyzer</output>
+        </linkerTool>
+      </compileType>
+      <item path="../Anlogic_bitstream_analyzer/database/lqfp144_io_pads.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../Anlogic_bitstream_analyzer/frames/frame_bit_mapping.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Anlogic_bits_in_tile_lister.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk6.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk7.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk8.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/configbitdata.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/emb32k_b0.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/emb32k_b1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/emb_slice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_csb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_ctmux_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_ctmux_u.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_premux_b.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_premux_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_premux_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_premux_t.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_spine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk6.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk7.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk8.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_pair_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_pair_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_quad_b.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_quad_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_quad_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_quad_t.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_bl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_br.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_tl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_tr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/mult.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/osc.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/pib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/plb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/pll0.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/pll2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/tilegrid.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="../Anlogic_bitstream_analyzer/database/lqfp144_io_pads.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../Anlogic_bitstream_analyzer/frames/frame_bit_mapping.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Anlogic_bits_in_tile_lister.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk6.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk7.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/clkdiv_bk8.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/configbitdata.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/emb32k_b0.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/emb32k_b1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/emb_slice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_csb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_ctmux_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_ctmux_u.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_premux_b.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_premux_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_premux_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_premux_t.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/gclk_spine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk6.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk7.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ioclk_bk8.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_pair_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_pair_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_quad_b.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_quad_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_quad_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/iol_quad_t.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_bl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_br.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_l.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_tl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/ios_bankref_tr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/mult.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/osc.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/pib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/plb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/pll0.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/pll2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="database/tilegrid.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

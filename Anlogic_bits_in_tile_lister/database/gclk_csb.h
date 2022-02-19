@@ -1,0 +1,4122 @@
+//----------------------------------------------------------------------------------------------------------------------------------
+
+#include "configbitdata.h"
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+#define gclk_csb_COUNT 58
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *AL_MC1_CLK0_S_0_EXPR_0[16] = 
+{
+  "A",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+};
+
+char *AL_MC1_CLK0_S_0_RPN_0[14] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AL_MC1_CLK0_S_0_DATA_0[7] = 
+{
+  {
+  "A",
+    "WIRE(CSB0IN0)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,GND)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,GND)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,VPMX2T)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,HPMX0R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,HPMX6R)",
+  },
+  {
+  "G",
+    "ARCVAL(CSB0IN0,VPMX4B)",
+  },
+};
+
+char *AL_MC1_CLK0_S_1_EXPR_1[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_1_RPN_1[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_1_DATA_1[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,HPMX0L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,HPMX5L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,VPMX3T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,HPMX1R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,HPMX7R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,VPMX5B)",
+  },
+};
+
+char *AL_MC1_CLK0_S_2_EXPR_2[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_2_RPN_2[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_2_DATA_2[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,HPMX1L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,HPMX6L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,VPMX4T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,HPMX2R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,VPMX0B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,VPMX6B)",
+  },
+};
+
+char *AL_MC1_CLK0_S_3_EXPR_3[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_3_RPN_3[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_3_DATA_3[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,HPMX2L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,HPMX7L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,VPMX5T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,HPMX3R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,VPMX1B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,VPMX7B)",
+  },
+};
+
+char *AL_MC1_CLK0_S_4_EXPR_4[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_4_RPN_4[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_4_DATA_4[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,HPMX3L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,VPMX0T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,VPMX6T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,HPMX4R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,VPMX2B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,PIBCLK0)",
+  },
+};
+
+char *AL_MC1_CLK0_S_5_EXPR_5[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_5_RPN_5[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_5_DATA_5[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,HPMX4L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,VPMX1T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,VPMX7T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,HPMX5R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,VPMX3B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,PIBCLK1)",
+  },
+};
+
+char *AL_MC1_CLK1_S_0_EXPR_6[16] = 
+{
+  "A",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+};
+
+char *AL_MC1_CLK1_S_0_RPN_6[14] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AL_MC1_CLK1_S_0_DATA_6[7] = 
+{
+  {
+  "A",
+    "WIRE(CSB0IN1)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,GND)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,GND)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,VPMX2T)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,HPMX0R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,HPMX6R)",
+  },
+  {
+  "G",
+    "ARCVAL(CSB0IN1,VPMX4B)",
+  },
+};
+
+char *AL_MC1_CLK1_S_1_EXPR_7[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_1_RPN_7[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_1_DATA_7[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,HPMX0L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,HPMX5L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,VPMX3T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,HPMX1R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,HPMX7R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,VPMX5B)",
+  },
+};
+
+char *AL_MC1_CLK1_S_2_EXPR_8[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_2_RPN_8[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_2_DATA_8[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,HPMX1L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,HPMX6L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,VPMX4T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,HPMX2R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,VPMX0B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,VPMX6B)",
+  },
+};
+
+char *AL_MC1_CLK1_S_3_EXPR_9[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_3_RPN_9[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_3_DATA_9[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,HPMX2L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,HPMX7L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,VPMX5T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,HPMX3R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,VPMX1B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,VPMX7B)",
+  },
+};
+
+char *AL_MC1_CLK1_S_4_EXPR_10[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_4_RPN_10[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_4_DATA_10[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,HPMX3L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,VPMX0T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,VPMX6T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,HPMX4R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,VPMX2B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,PIBCLK0)",
+  },
+};
+
+char *AL_MC1_CLK1_S_5_EXPR_11[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_5_RPN_11[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_5_DATA_11[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,HPMX4L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,VPMX1T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,VPMX7T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,HPMX5R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,VPMX3B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,PIBCLK1)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_0_EXPR_12[16] = 
+{
+  "A",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+};
+
+char *AL_MC1_CLK0_Z_0_RPN_12[14] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AL_MC1_CLK0_Z_0_DATA_12[7] = 
+{
+  {
+  "A",
+    "WIRE(CSB0IN0)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,HPMX4L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,HPMX3L)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,HPMX2L)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,HPMX1L)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,HPMX0L)",
+  },
+  {
+  "G",
+    "ARCVAL(CSB0IN0,GND)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_1_EXPR_13[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_1_RPN_13[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_1_DATA_13[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,VPMX1T)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,VPMX0T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,HPMX7L)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,HPMX6L)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,HPMX5L)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,GND)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_2_EXPR_14[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_2_RPN_14[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_2_DATA_14[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,VPMX7T)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,VPMX6T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,VPMX5T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,VPMX4T)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,VPMX3T)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,VPMX2T)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_3_EXPR_15[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_3_RPN_15[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_3_DATA_15[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,HPMX5R)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,HPMX4R)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,HPMX3R)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,HPMX2R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,HPMX1R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,HPMX0R)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_4_EXPR_16[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_4_RPN_16[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_4_DATA_16[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,VPMX3B)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,VPMX2B)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,VPMX1B)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,VPMX0B)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,HPMX7R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,HPMX6R)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_5_EXPR_17[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_5_RPN_17[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_5_DATA_17[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN0,PIBCLK1)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN0,PIBCLK0)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN0,VPMX7B)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN0,VPMX6B)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN0,VPMX5B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN0,VPMX4B)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_0_EXPR_18[16] = 
+{
+  "A",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+};
+
+char *AL_MC1_CLK1_Z_0_RPN_18[14] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AL_MC1_CLK1_Z_0_DATA_18[7] = 
+{
+  {
+  "A",
+    "WIRE(CSB0IN1)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,HPMX4L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,HPMX3L)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,HPMX2L)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,HPMX1L)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,HPMX0L)",
+  },
+  {
+  "G",
+    "ARCVAL(CSB0IN1,GND)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_1_EXPR_19[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_1_RPN_19[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_1_DATA_19[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,VPMX1T)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,VPMX0T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,HPMX7L)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,HPMX6L)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,HPMX5L)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,GND)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_2_EXPR_20[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_2_RPN_20[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_2_DATA_20[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,VPMX7T)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,VPMX6T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,VPMX5T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,VPMX4T)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,VPMX3T)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,VPMX2T)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_3_EXPR_21[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_3_RPN_21[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_3_DATA_21[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,HPMX5R)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,HPMX4R)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,HPMX3R)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,HPMX2R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,HPMX1R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,HPMX0R)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_4_EXPR_22[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_4_RPN_22[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_4_DATA_22[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,VPMX3B)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,VPMX2B)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,VPMX1B)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,VPMX0B)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,HPMX7R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,HPMX6R)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_5_EXPR_23[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_5_RPN_23[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_5_DATA_23[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB0IN1,PIBCLK1)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB0IN1,PIBCLK0)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB0IN1,VPMX7B)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB0IN1,VPMX6B)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB0IN1,VPMX5B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB0IN1,VPMX4B)",
+  },
+};
+
+char *AL_MC1_HOLD_0_EXPR_24[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_HOLD_0_RPN_24[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_HOLD_0_DATA_24[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_0.HOLD,YES)",
+  },
+};
+
+char *AL_MC1_FEDGE_N_0_EXPR_25[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_FEDGE_N_0_RPN_25[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_FEDGE_N_0_DATA_25[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_0.INITOUT,POS)",
+  },
+};
+
+char *AL_MC1_PSLCT_0_EXPR_26[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_PSLCT_0_RPN_26[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_PSLCT_0_DATA_26[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_0.PRESELECT,CLK0)",
+  },
+};
+
+char *AL_MC1_PSLCT_1_EXPR_27[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_PSLCT_1_RPN_27[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_PSLCT_1_DATA_27[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_0.PRESELECT,CLK1)",
+  },
+};
+
+char *AL_MC1_DCS_TEST_MD_0_EXPR_28[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_DCS_TEST_MD_0_RPN_28[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_DCS_TEST_MD_0_DATA_28[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_0.TESTMODE,ENABLE)",
+  },
+};
+
+char *AL_MC1_CLK0_S_6_EXPR_29[16] = 
+{
+  "A",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+};
+
+char *AL_MC1_CLK0_S_6_RPN_29[14] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AL_MC1_CLK0_S_6_DATA_29[7] = 
+{
+  {
+  "A",
+    "WIRE(CSB1IN0)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,GND)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,GND)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,VPMX2T)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,HPMX0R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,HPMX6R)",
+  },
+  {
+  "G",
+    "ARCVAL(CSB1IN0,VPMX4B)",
+  },
+};
+
+char *AL_MC1_CLK0_S_7_EXPR_30[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_7_RPN_30[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_7_DATA_30[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,HPMX0L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,HPMX5L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,VPMX3T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,HPMX1R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,HPMX7R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,VPMX5B)",
+  },
+};
+
+char *AL_MC1_CLK0_S_8_EXPR_31[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_8_RPN_31[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_8_DATA_31[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,HPMX1L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,HPMX6L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,VPMX4T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,HPMX2R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,VPMX0B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,VPMX6B)",
+  },
+};
+
+char *AL_MC1_CLK0_S_9_EXPR_32[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_9_RPN_32[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_9_DATA_32[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,HPMX2L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,HPMX7L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,VPMX5T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,HPMX3R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,VPMX1B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,VPMX7B)",
+  },
+};
+
+char *AL_MC1_CLK0_S_10_EXPR_33[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_10_RPN_33[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_10_DATA_33[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,HPMX3L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,VPMX0T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,VPMX6T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,HPMX4R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,VPMX2B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,PIBCLK2)",
+  },
+};
+
+char *AL_MC1_CLK0_S_11_EXPR_34[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_S_11_RPN_34[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_S_11_DATA_34[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,HPMX4L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,VPMX1T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,VPMX7T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,HPMX5R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,VPMX3B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,PIBCLK3)",
+  },
+};
+
+char *AL_MC1_CLK1_S_6_EXPR_35[16] = 
+{
+  "A",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+};
+
+char *AL_MC1_CLK1_S_6_RPN_35[14] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AL_MC1_CLK1_S_6_DATA_35[7] = 
+{
+  {
+  "A",
+    "WIRE(CSB1IN1)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,GND)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,GND)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,VPMX2T)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,HPMX0R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,HPMX6R)",
+  },
+  {
+  "G",
+    "ARCVAL(CSB1IN1,VPMX4B)",
+  },
+};
+
+char *AL_MC1_CLK1_S_7_EXPR_36[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_7_RPN_36[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_7_DATA_36[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,HPMX0L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,HPMX5L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,VPMX3T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,HPMX1R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,HPMX7R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,VPMX5B)",
+  },
+};
+
+char *AL_MC1_CLK1_S_8_EXPR_37[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_8_RPN_37[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_8_DATA_37[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,HPMX1L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,HPMX6L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,VPMX4T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,HPMX2R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,VPMX0B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,VPMX6B)",
+  },
+};
+
+char *AL_MC1_CLK1_S_9_EXPR_38[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_9_RPN_38[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_9_DATA_38[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,HPMX2L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,HPMX7L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,VPMX5T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,HPMX3R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,VPMX1B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,VPMX7B)",
+  },
+};
+
+char *AL_MC1_CLK1_S_10_EXPR_39[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_10_RPN_39[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_10_DATA_39[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,HPMX3L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,VPMX0T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,VPMX6T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,HPMX4R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,VPMX2B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,PIBCLK2)",
+  },
+};
+
+char *AL_MC1_CLK1_S_11_EXPR_40[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_S_11_RPN_40[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_S_11_DATA_40[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,HPMX4L)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,VPMX1T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,VPMX7T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,HPMX5R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,VPMX3B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,PIBCLK3)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_6_EXPR_41[16] = 
+{
+  "A",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+};
+
+char *AL_MC1_CLK0_Z_6_RPN_41[14] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AL_MC1_CLK0_Z_6_DATA_41[7] = 
+{
+  {
+  "A",
+    "WIRE(CSB1IN0)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,HPMX4L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,HPMX3L)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,HPMX2L)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,HPMX1L)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,HPMX0L)",
+  },
+  {
+  "G",
+    "ARCVAL(CSB1IN0,GND)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_7_EXPR_42[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_7_RPN_42[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_7_DATA_42[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,VPMX1T)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,VPMX0T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,HPMX7L)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,HPMX6L)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,HPMX5L)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,GND)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_8_EXPR_43[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_8_RPN_43[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_8_DATA_43[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,VPMX7T)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,VPMX6T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,VPMX5T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,VPMX4T)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,VPMX3T)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,VPMX2T)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_9_EXPR_44[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_9_RPN_44[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_9_DATA_44[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,HPMX5R)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,HPMX4R)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,HPMX3R)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,HPMX2R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,HPMX1R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,HPMX0R)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_10_EXPR_45[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_10_RPN_45[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_10_DATA_45[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,VPMX3B)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,VPMX2B)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,VPMX1B)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,VPMX0B)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,HPMX7R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,HPMX6R)",
+  },
+};
+
+char *AL_MC1_CLK0_Z_11_EXPR_46[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK0_Z_11_RPN_46[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK0_Z_11_DATA_46[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN0,PIBCLK3)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN0,PIBCLK2)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN0,VPMX7B)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN0,VPMX6B)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN0,VPMX5B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN0,VPMX4B)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_6_EXPR_47[16] = 
+{
+  "A",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+};
+
+char *AL_MC1_CLK1_Z_6_RPN_47[14] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AL_MC1_CLK1_Z_6_DATA_47[7] = 
+{
+  {
+  "A",
+    "WIRE(CSB1IN1)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,HPMX4L)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,HPMX3L)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,HPMX2L)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,HPMX1L)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,HPMX0L)",
+  },
+  {
+  "G",
+    "ARCVAL(CSB1IN1,GND)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_7_EXPR_48[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_7_RPN_48[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_7_DATA_48[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,VPMX1T)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,VPMX0T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,HPMX7L)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,HPMX6L)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,HPMX5L)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,GND)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_8_EXPR_49[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_8_RPN_49[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_8_DATA_49[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,VPMX7T)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,VPMX6T)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,VPMX5T)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,VPMX4T)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,VPMX3T)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,VPMX2T)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_9_EXPR_50[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_9_RPN_50[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_9_DATA_50[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,HPMX5R)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,HPMX4R)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,HPMX3R)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,HPMX2R)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,HPMX1R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,HPMX0R)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_10_EXPR_51[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_10_RPN_51[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_10_DATA_51[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,VPMX3B)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,VPMX2B)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,VPMX1B)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,VPMX0B)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,HPMX7R)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,HPMX6R)",
+  },
+};
+
+char *AL_MC1_CLK1_Z_11_EXPR_52[11] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+};
+
+char *AL_MC1_CLK1_Z_11_RPN_52[11] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+};
+
+BITDATA AL_MC1_CLK1_Z_11_DATA_52[6] = 
+{
+  {
+  "A",
+    "ARCVAL(CSB1IN1,PIBCLK3)",
+  },
+  {
+  "B",
+    "ARCVAL(CSB1IN1,PIBCLK2)",
+  },
+  {
+  "C",
+    "ARCVAL(CSB1IN1,VPMX7B)",
+  },
+  {
+  "D",
+    "ARCVAL(CSB1IN1,VPMX6B)",
+  },
+  {
+  "E",
+    "ARCVAL(CSB1IN1,VPMX5B)",
+  },
+  {
+  "F",
+    "ARCVAL(CSB1IN1,VPMX4B)",
+  },
+};
+
+char *AL_MC1_HOLD_1_EXPR_53[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_HOLD_1_RPN_53[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_HOLD_1_DATA_53[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_1.HOLD,YES)",
+  },
+};
+
+char *AL_MC1_FEDGE_N_1_EXPR_54[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_FEDGE_N_1_RPN_54[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_FEDGE_N_1_DATA_54[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_1.INITOUT,POS)",
+  },
+};
+
+char *AL_MC1_PSLCT_2_EXPR_55[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_PSLCT_2_RPN_55[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_PSLCT_2_DATA_55[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_1.PRESELECT,CLK0)",
+  },
+};
+
+char *AL_MC1_PSLCT_3_EXPR_56[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_PSLCT_3_RPN_56[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_PSLCT_3_DATA_56[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_1.PRESELECT,CLK1)",
+  },
+};
+
+char *AL_MC1_DCS_TEST_MD_1_EXPR_57[1] = 
+{
+  "A",
+};
+
+char *AL_MC1_DCS_TEST_MD_1_RPN_57[1] = 
+{
+  "A",
+};
+
+BITDATA AL_MC1_DCS_TEST_MD_1_DATA_57[1] = 
+{
+  {
+  "A",
+    "PROPERTY(CSB_1.TESTMODE,ENABLE)",
+  },
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+CONFIGBITDATA gclk_csb_Data[58] =
+{
+  {
+    "MC1_CLK0_S_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    2,
+    0,
+    0,
+    1,
+    1,
+    0,
+    7,
+    16,
+    AL_MC1_CLK0_S_0_EXPR_0,
+    14,
+    AL_MC1_CLK0_S_0_RPN_0,
+    7,
+    AL_MC1_CLK0_S_0_DATA_0,
+  },
+  {
+    "MC1_CLK0_S_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    5,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_1_EXPR_1,
+    11,
+    AL_MC1_CLK0_S_1_RPN_1,
+    6,
+    AL_MC1_CLK0_S_1_DATA_1,
+  },
+  {
+    "MC1_CLK0_S_2",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    2,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_2_EXPR_2,
+    11,
+    AL_MC1_CLK0_S_2_RPN_2,
+    6,
+    AL_MC1_CLK0_S_2_DATA_2,
+  },
+  {
+    "MC1_CLK0_S_3",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    5,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_3_EXPR_3,
+    11,
+    AL_MC1_CLK0_S_3_RPN_3,
+    6,
+    AL_MC1_CLK0_S_3_DATA_3,
+  },
+  {
+    "MC1_CLK0_S_4",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    4,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_4_EXPR_4,
+    11,
+    AL_MC1_CLK0_S_4_RPN_4,
+    6,
+    AL_MC1_CLK0_S_4_DATA_4,
+  },
+  {
+    "MC1_CLK0_S_5",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    7,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_5_EXPR_5,
+    11,
+    AL_MC1_CLK0_S_5_RPN_5,
+    6,
+    AL_MC1_CLK0_S_5_DATA_5,
+  },
+  {
+    "MC1_CLK1_S_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    3,
+    0,
+    0,
+    1,
+    1,
+    0,
+    7,
+    16,
+    AL_MC1_CLK1_S_0_EXPR_6,
+    14,
+    AL_MC1_CLK1_S_0_RPN_6,
+    7,
+    AL_MC1_CLK1_S_0_DATA_6,
+  },
+  {
+    "MC1_CLK1_S_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_1_EXPR_7,
+    11,
+    AL_MC1_CLK1_S_1_RPN_7,
+    6,
+    AL_MC1_CLK1_S_1_DATA_7,
+  },
+  {
+    "MC1_CLK1_S_2",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    3,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_2_EXPR_8,
+    11,
+    AL_MC1_CLK1_S_2_RPN_8,
+    6,
+    AL_MC1_CLK1_S_2_DATA_8,
+  },
+  {
+    "MC1_CLK1_S_3",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_3_EXPR_9,
+    11,
+    AL_MC1_CLK1_S_3_RPN_9,
+    6,
+    AL_MC1_CLK1_S_3_DATA_9,
+  },
+  {
+    "MC1_CLK1_S_4",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_4_EXPR_10,
+    11,
+    AL_MC1_CLK1_S_4_RPN_10,
+    6,
+    AL_MC1_CLK1_S_4_DATA_10,
+  },
+  {
+    "MC1_CLK1_S_5",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    52,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_5_EXPR_11,
+    11,
+    AL_MC1_CLK1_S_5_RPN_11,
+    6,
+    AL_MC1_CLK1_S_5_DATA_11,
+  },
+  {
+    "MC1_CLK0_Z_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    4,
+    0,
+    0,
+    1,
+    1,
+    0,
+    7,
+    16,
+    AL_MC1_CLK0_Z_0_EXPR_12,
+    14,
+    AL_MC1_CLK0_Z_0_RPN_12,
+    7,
+    AL_MC1_CLK0_Z_0_DATA_12,
+  },
+  {
+    "MC1_CLK0_Z_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    7,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_1_EXPR_13,
+    11,
+    AL_MC1_CLK0_Z_1_RPN_13,
+    6,
+    AL_MC1_CLK0_Z_1_DATA_13,
+  },
+  {
+    "MC1_CLK0_Z_2",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    6,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_2_EXPR_14,
+    11,
+    AL_MC1_CLK0_Z_2_RPN_14,
+    6,
+    AL_MC1_CLK0_Z_2_DATA_14,
+  },
+  {
+    "MC1_CLK0_Z_3",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    9,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_3_EXPR_15,
+    11,
+    AL_MC1_CLK0_Z_3_RPN_15,
+    6,
+    AL_MC1_CLK0_Z_3_DATA_15,
+  },
+  {
+    "MC1_CLK0_Z_4",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    6,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_4_EXPR_16,
+    11,
+    AL_MC1_CLK0_Z_4_RPN_16,
+    6,
+    AL_MC1_CLK0_Z_4_DATA_16,
+  },
+  {
+    "MC1_CLK0_Z_5",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    9,
+    0,
+    0,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_5_EXPR_17,
+    11,
+    AL_MC1_CLK0_Z_5_RPN_17,
+    6,
+    AL_MC1_CLK0_Z_5_DATA_17,
+  },
+  {
+    "MC1_CLK1_Z_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    7,
+    16,
+    AL_MC1_CLK1_Z_0_EXPR_18,
+    14,
+    AL_MC1_CLK1_Z_0_RPN_18,
+    7,
+    AL_MC1_CLK1_Z_0_DATA_18,
+  },
+  {
+    "MC1_CLK1_Z_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    52,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_1_EXPR_19,
+    11,
+    AL_MC1_CLK1_Z_1_RPN_19,
+    6,
+    AL_MC1_CLK1_Z_1_DATA_19,
+  },
+  {
+    "MC1_CLK1_Z_2",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    53,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_2_EXPR_20,
+    11,
+    AL_MC1_CLK1_Z_2_RPN_20,
+    6,
+    AL_MC1_CLK1_Z_2_DATA_20,
+  },
+  {
+    "MC1_CLK1_Z_3",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    50,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_3_EXPR_21,
+    11,
+    AL_MC1_CLK1_Z_3_RPN_21,
+    6,
+    AL_MC1_CLK1_Z_3_DATA_21,
+  },
+  {
+    "MC1_CLK1_Z_4",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    53,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_4_EXPR_22,
+    11,
+    AL_MC1_CLK1_Z_4_RPN_22,
+    6,
+    AL_MC1_CLK1_Z_4_DATA_22,
+  },
+  {
+    "MC1_CLK1_Z_5",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    50,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_5_EXPR_23,
+    11,
+    AL_MC1_CLK1_Z_5_RPN_23,
+    6,
+    AL_MC1_CLK1_Z_5_DATA_23,
+  },
+  {
+    "MC1_HOLD_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    48,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_HOLD_0_EXPR_24,
+    1,
+    AL_MC1_HOLD_0_RPN_24,
+    1,
+    AL_MC1_HOLD_0_DATA_24,
+  },
+  {
+    "MC1_FEDGE_N_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    8,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_FEDGE_N_0_EXPR_25,
+    1,
+    AL_MC1_FEDGE_N_0_RPN_25,
+    1,
+    AL_MC1_FEDGE_N_0_DATA_25,
+  },
+  {
+    "MC1_PSLCT_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    11,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_PSLCT_0_EXPR_26,
+    1,
+    AL_MC1_PSLCT_0_RPN_26,
+    1,
+    AL_MC1_PSLCT_0_DATA_26,
+  },
+  {
+    "MC1_PSLCT_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    51,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_PSLCT_1_EXPR_27,
+    1,
+    AL_MC1_PSLCT_1_RPN_27,
+    1,
+    AL_MC1_PSLCT_1_DATA_27,
+  },
+  {
+    "MC1_DCS_TEST_MD_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    11,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_DCS_TEST_MD_0_EXPR_28,
+    1,
+    AL_MC1_DCS_TEST_MD_0_RPN_28,
+    1,
+    AL_MC1_DCS_TEST_MD_0_DATA_28,
+  },
+  {
+    "MC1_CLK0_S_6",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    37,
+    0,
+    1,
+    1,
+    1,
+    0,
+    7,
+    16,
+    AL_MC1_CLK0_S_6_EXPR_29,
+    14,
+    AL_MC1_CLK0_S_6_RPN_29,
+    7,
+    AL_MC1_CLK0_S_6_DATA_29,
+  },
+  {
+    "MC1_CLK0_S_7",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    34,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_7_EXPR_30,
+    11,
+    AL_MC1_CLK0_S_7_RPN_30,
+    6,
+    AL_MC1_CLK0_S_7_DATA_30,
+  },
+  {
+    "MC1_CLK0_S_8",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    37,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_8_EXPR_31,
+    11,
+    AL_MC1_CLK0_S_8_RPN_31,
+    6,
+    AL_MC1_CLK0_S_8_DATA_31,
+  },
+  {
+    "MC1_CLK0_S_9",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    34,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_9_EXPR_32,
+    11,
+    AL_MC1_CLK0_S_9_RPN_32,
+    6,
+    AL_MC1_CLK0_S_9_DATA_32,
+  },
+  {
+    "MC1_CLK0_S_10",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    35,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_10_EXPR_33,
+    11,
+    AL_MC1_CLK0_S_10_RPN_33,
+    6,
+    AL_MC1_CLK0_S_10_DATA_33,
+  },
+  {
+    "MC1_CLK0_S_11",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    32,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_S_11_EXPR_34,
+    11,
+    AL_MC1_CLK0_S_11_RPN_34,
+    6,
+    AL_MC1_CLK0_S_11_DATA_34,
+  },
+  {
+    "MC1_CLK1_S_6",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    38,
+    0,
+    1,
+    1,
+    1,
+    0,
+    7,
+    16,
+    AL_MC1_CLK1_S_6_EXPR_35,
+    14,
+    AL_MC1_CLK1_S_6_RPN_35,
+    7,
+    AL_MC1_CLK1_S_6_DATA_35,
+  },
+  {
+    "MC1_CLK1_S_7",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    41,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_7_EXPR_36,
+    11,
+    AL_MC1_CLK1_S_7_RPN_36,
+    6,
+    AL_MC1_CLK1_S_7_DATA_36,
+  },
+  {
+    "MC1_CLK1_S_8",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    38,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_8_EXPR_37,
+    11,
+    AL_MC1_CLK1_S_8_RPN_37,
+    6,
+    AL_MC1_CLK1_S_8_DATA_37,
+  },
+  {
+    "MC1_CLK1_S_9",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    41,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_9_EXPR_38,
+    11,
+    AL_MC1_CLK1_S_9_RPN_38,
+    6,
+    AL_MC1_CLK1_S_9_DATA_38,
+  },
+  {
+    "MC1_CLK1_S_10",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    40,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_10_EXPR_39,
+    11,
+    AL_MC1_CLK1_S_10_RPN_39,
+    6,
+    AL_MC1_CLK1_S_10_DATA_39,
+  },
+  {
+    "MC1_CLK1_S_11",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    43,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_S_11_EXPR_40,
+    11,
+    AL_MC1_CLK1_S_11_RPN_40,
+    6,
+    AL_MC1_CLK1_S_11_DATA_40,
+  },
+  {
+    "MC1_CLK0_Z_6",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    35,
+    0,
+    1,
+    1,
+    1,
+    0,
+    7,
+    16,
+    AL_MC1_CLK0_Z_6_EXPR_41,
+    14,
+    AL_MC1_CLK0_Z_6_RPN_41,
+    7,
+    AL_MC1_CLK0_Z_6_DATA_41,
+  },
+  {
+    "MC1_CLK0_Z_7",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    32,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_7_EXPR_42,
+    11,
+    AL_MC1_CLK0_Z_7_RPN_42,
+    6,
+    AL_MC1_CLK0_Z_7_DATA_42,
+  },
+  {
+    "MC1_CLK0_Z_8",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    33,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_8_EXPR_43,
+    11,
+    AL_MC1_CLK0_Z_8_RPN_43,
+    6,
+    AL_MC1_CLK0_Z_8_DATA_43,
+  },
+  {
+    "MC1_CLK0_Z_9",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    30,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_9_EXPR_44,
+    11,
+    AL_MC1_CLK0_Z_9_RPN_44,
+    6,
+    AL_MC1_CLK0_Z_9_DATA_44,
+  },
+  {
+    "MC1_CLK0_Z_10",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    33,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_10_EXPR_45,
+    11,
+    AL_MC1_CLK0_Z_10_RPN_45,
+    6,
+    AL_MC1_CLK0_Z_10_DATA_45,
+  },
+  {
+    "MC1_CLK0_Z_11",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    30,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK0_Z_11_EXPR_46,
+    11,
+    AL_MC1_CLK0_Z_11_RPN_46,
+    6,
+    AL_MC1_CLK0_Z_11_DATA_46,
+  },
+  {
+    "MC1_CLK1_Z_6",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    40,
+    0,
+    1,
+    1,
+    1,
+    0,
+    7,
+    16,
+    AL_MC1_CLK1_Z_6_EXPR_47,
+    14,
+    AL_MC1_CLK1_Z_6_RPN_47,
+    7,
+    AL_MC1_CLK1_Z_6_DATA_47,
+  },
+  {
+    "MC1_CLK1_Z_7",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    43,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_7_EXPR_48,
+    11,
+    AL_MC1_CLK1_Z_7_RPN_48,
+    6,
+    AL_MC1_CLK1_Z_7_DATA_48,
+  },
+  {
+    "MC1_CLK1_Z_8",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    42,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_8_EXPR_49,
+    11,
+    AL_MC1_CLK1_Z_8_RPN_49,
+    6,
+    AL_MC1_CLK1_Z_8_DATA_49,
+  },
+  {
+    "MC1_CLK1_Z_9",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    45,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_9_EXPR_50,
+    11,
+    AL_MC1_CLK1_Z_9_RPN_50,
+    6,
+    AL_MC1_CLK1_Z_9_DATA_50,
+  },
+  {
+    "MC1_CLK1_Z_10",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    42,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_10_EXPR_51,
+    11,
+    AL_MC1_CLK1_Z_10_RPN_51,
+    6,
+    AL_MC1_CLK1_Z_10_DATA_51,
+  },
+  {
+    "MC1_CLK1_Z_11",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    45,
+    0,
+    1,
+    1,
+    1,
+    0,
+    6,
+    11,
+    AL_MC1_CLK1_Z_11_EXPR_52,
+    11,
+    AL_MC1_CLK1_Z_11_RPN_52,
+    6,
+    AL_MC1_CLK1_Z_11_DATA_52,
+  },
+  {
+    "MC1_HOLD_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    39,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_HOLD_1_EXPR_53,
+    1,
+    AL_MC1_HOLD_1_RPN_53,
+    1,
+    AL_MC1_HOLD_1_DATA_53,
+  },
+  {
+    "MC1_FEDGE_N_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    39,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_FEDGE_N_1_EXPR_54,
+    1,
+    AL_MC1_FEDGE_N_1_RPN_54,
+    1,
+    AL_MC1_FEDGE_N_1_DATA_54,
+  },
+  {
+    "MC1_PSLCT_2",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    36,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_PSLCT_2_EXPR_55,
+    1,
+    AL_MC1_PSLCT_2_RPN_55,
+    1,
+    AL_MC1_PSLCT_2_DATA_55,
+  },
+  {
+    "MC1_PSLCT_3",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    36,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_PSLCT_3_EXPR_56,
+    1,
+    AL_MC1_PSLCT_3_RPN_56,
+    1,
+    AL_MC1_PSLCT_3_DATA_56,
+  },
+  {
+    "MC1_DCS_TEST_MD_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    31,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    AL_MC1_DCS_TEST_MD_1_EXPR_57,
+    1,
+    AL_MC1_DCS_TEST_MD_1_RPN_57,
+    1,
+    AL_MC1_DCS_TEST_MD_1_DATA_57,
+  },
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+

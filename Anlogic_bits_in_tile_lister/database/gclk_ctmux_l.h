@@ -1,0 +1,12894 @@
+//----------------------------------------------------------------------------------------------------------------------------------
+
+#include "configbitdata.h"
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+#define gclk_ctmux_l_COUNT 113
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *AM_MC1_S_0_EXPR_0[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_S_0_RPN_0[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_S_0_DATA_0[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX0)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK6)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK12)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK18)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK30)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK6)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK12)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK18)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK24)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX0,HTK30)",
+  },
+};
+
+char *AM_MC1_S_1_EXPR_1[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_1_RPN_1[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_1_DATA_1[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,HTK1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK7)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK13)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK19)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK31)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK7)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK13)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK19)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK31)",
+  },
+};
+
+char *AM_MC1_S_2_EXPR_2[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_2_RPN_2[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_2_DATA_2[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,HTK2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK8)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK14)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK26)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK32)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK2)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK8)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK14)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK26)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK32)",
+  },
+};
+
+char *AM_MC1_S_3_EXPR_3[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_3_RPN_3[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_3_DATA_3[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,HTK3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK9)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK21)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK27)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK33)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK3)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK9)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK21)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK27)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK33)",
+  },
+};
+
+char *AM_MC1_S_4_EXPR_4[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_4_RPN_4[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_4_DATA_4[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,HTK4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK16)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK22)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK28)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,PIBCLKB0)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK4)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK16)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK22)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK28)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,PIBCLKB0)",
+  },
+};
+
+char *AM_MC1_S_5_EXPR_5[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_5_RPN_5[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_5_DATA_5[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,HTK5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK11)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK17)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK23)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK29)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,PIBCLKB1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK5)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK11)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK17)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK23)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK29)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,PIBCLKB1)",
+  },
+};
+
+char *AM_MC1_S_6_EXPR_6[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_S_6_RPN_6[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_S_6_DATA_6[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK6)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK12)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK18)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK30)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK6)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK12)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK18)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK24)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX1,HTK30)",
+  },
+};
+
+char *AM_MC1_S_7_EXPR_7[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_7_RPN_7[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_7_DATA_7[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,HTK1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK7)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK13)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK19)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK31)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK7)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK13)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK19)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK31)",
+  },
+};
+
+char *AM_MC1_S_8_EXPR_8[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_8_RPN_8[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_8_DATA_8[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,HTK2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK8)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK14)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK26)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK32)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK2)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK8)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK14)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK26)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK32)",
+  },
+};
+
+char *AM_MC1_S_9_EXPR_9[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_9_RPN_9[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_9_DATA_9[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,HTK3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK9)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK21)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK27)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK33)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK3)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK9)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK21)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK27)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK33)",
+  },
+};
+
+char *AM_MC1_S_10_EXPR_10[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_10_RPN_10[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_10_DATA_10[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,HTK4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK16)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK22)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK28)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,PIBCLKB0)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK4)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK16)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK22)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK28)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,PIBCLKB0)",
+  },
+};
+
+char *AM_MC1_S_11_EXPR_11[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_11_RPN_11[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_11_DATA_11[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,HTK5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK11)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK17)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK23)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK29)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,PIBCLKB1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK5)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK11)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK17)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK23)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK29)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,PIBCLKB1)",
+  },
+};
+
+char *AM_MC1_S_12_EXPR_12[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_S_12_RPN_12[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_S_12_DATA_12[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK6)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK12)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK18)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK30)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK6)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK12)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK18)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK24)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX2,HTK30)",
+  },
+};
+
+char *AM_MC1_S_13_EXPR_13[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_13_RPN_13[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_13_DATA_13[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,HTK1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK7)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK13)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK19)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK31)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK7)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK13)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK19)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK31)",
+  },
+};
+
+char *AM_MC1_S_14_EXPR_14[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_14_RPN_14[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_14_DATA_14[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,HTK2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK8)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK14)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK26)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK32)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK2)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK8)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK14)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK26)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK32)",
+  },
+};
+
+char *AM_MC1_S_15_EXPR_15[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_15_RPN_15[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_15_DATA_15[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,HTK3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK9)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK21)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK27)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK33)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK3)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK9)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK21)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK27)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK33)",
+  },
+};
+
+char *AM_MC1_S_16_EXPR_16[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_16_RPN_16[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_16_DATA_16[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,HTK4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK16)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK22)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK28)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,PIBCLKB0)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK4)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK16)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK22)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK28)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,PIBCLKB0)",
+  },
+};
+
+char *AM_MC1_S_17_EXPR_17[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_17_RPN_17[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_17_DATA_17[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,HTK5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK11)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK17)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK23)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK29)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,PIBCLKB1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK5)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK11)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK17)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK23)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK29)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,PIBCLKB1)",
+  },
+};
+
+char *AM_MC1_S_18_EXPR_18[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_S_18_RPN_18[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_S_18_DATA_18[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK6)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK12)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK18)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK30)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK6)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK12)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK18)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK24)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX3,HTK30)",
+  },
+};
+
+char *AM_MC1_S_19_EXPR_19[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_19_RPN_19[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_19_DATA_19[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,HTK1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK7)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK13)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK19)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK31)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK7)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK13)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK19)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK31)",
+  },
+};
+
+char *AM_MC1_S_20_EXPR_20[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_20_RPN_20[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_20_DATA_20[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,HTK2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK8)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK14)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK26)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK32)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK2)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK8)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK14)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK26)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK32)",
+  },
+};
+
+char *AM_MC1_S_21_EXPR_21[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_21_RPN_21[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_21_DATA_21[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,HTK3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK9)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK21)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK27)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK33)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK3)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK9)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK21)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK27)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK33)",
+  },
+};
+
+char *AM_MC1_S_22_EXPR_22[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_22_RPN_22[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_22_DATA_22[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,HTK4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK16)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK22)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK28)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,PIBCLKB0)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK4)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK16)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK22)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK28)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,PIBCLKB0)",
+  },
+};
+
+char *AM_MC1_S_23_EXPR_23[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_23_RPN_23[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_23_DATA_23[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,HTK5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK11)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK17)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK23)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK29)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,PIBCLKB1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK5)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK11)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK17)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK23)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK29)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,PIBCLKB1)",
+  },
+};
+
+char *AM_MC1_S_24_EXPR_24[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_S_24_RPN_24[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_S_24_DATA_24[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK6)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK12)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK18)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK30)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK6)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK12)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK18)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK24)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX4,HTK30)",
+  },
+};
+
+char *AM_MC1_S_25_EXPR_25[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_25_RPN_25[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_25_DATA_25[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,HTK1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK7)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK13)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK19)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK31)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK7)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK13)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK19)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK31)",
+  },
+};
+
+char *AM_MC1_S_26_EXPR_26[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_26_RPN_26[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_26_DATA_26[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,HTK2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK8)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK14)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK26)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK32)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK2)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK8)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK14)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK26)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK32)",
+  },
+};
+
+char *AM_MC1_S_27_EXPR_27[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_27_RPN_27[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_27_DATA_27[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,HTK3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK9)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK21)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK27)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK33)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK3)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK9)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK21)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK27)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK33)",
+  },
+};
+
+char *AM_MC1_S_28_EXPR_28[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_28_RPN_28[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_28_DATA_28[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,HTK4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK16)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK22)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK28)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,PIBCLKB0)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK4)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK16)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK22)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK28)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,PIBCLKB0)",
+  },
+};
+
+char *AM_MC1_S_29_EXPR_29[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_29_RPN_29[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_29_DATA_29[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,HTK5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK11)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK17)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK23)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK29)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,PIBCLKB1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK5)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK11)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK17)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK23)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK29)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,PIBCLKB1)",
+  },
+};
+
+char *AM_MC1_S_30_EXPR_30[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_S_30_RPN_30[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_S_30_DATA_30[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK6)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK12)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK18)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK30)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK6)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK12)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK18)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK24)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX5,HTK30)",
+  },
+};
+
+char *AM_MC1_S_31_EXPR_31[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_31_RPN_31[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_31_DATA_31[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,HTK1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK7)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK13)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK19)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK31)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK7)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK13)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK19)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK31)",
+  },
+};
+
+char *AM_MC1_S_32_EXPR_32[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_32_RPN_32[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_32_DATA_32[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,HTK2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK8)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK14)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK26)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK32)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK2)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK8)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK14)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK26)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK32)",
+  },
+};
+
+char *AM_MC1_S_33_EXPR_33[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_33_RPN_33[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_33_DATA_33[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,HTK3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK9)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK21)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK27)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK33)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK3)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK9)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK21)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK27)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK33)",
+  },
+};
+
+char *AM_MC1_S_34_EXPR_34[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_34_RPN_34[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_34_DATA_34[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,HTK4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK16)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK22)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK28)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,PIBCLKB0)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK4)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK16)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK22)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK28)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,PIBCLKB0)",
+  },
+};
+
+char *AM_MC1_S_35_EXPR_35[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_35_RPN_35[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_35_DATA_35[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,HTK5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK11)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK17)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK23)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK29)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,PIBCLKB1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK5)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK11)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK17)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK23)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK29)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,PIBCLKB1)",
+  },
+};
+
+char *AM_MC1_S_36_EXPR_36[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_S_36_RPN_36[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_S_36_DATA_36[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX6)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK6)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK12)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK18)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK30)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK6)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK12)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK18)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK24)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX6,HTK30)",
+  },
+};
+
+char *AM_MC1_S_37_EXPR_37[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_37_RPN_37[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_37_DATA_37[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,HTK1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK7)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK13)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK19)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK31)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK7)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK13)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK19)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK31)",
+  },
+};
+
+char *AM_MC1_S_38_EXPR_38[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_38_RPN_38[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_38_DATA_38[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,HTK2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK8)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK14)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK26)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK32)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK2)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK8)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK14)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK26)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK32)",
+  },
+};
+
+char *AM_MC1_S_39_EXPR_39[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_39_RPN_39[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_39_DATA_39[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,HTK3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK9)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK21)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK27)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK33)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK3)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK9)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK21)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK27)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK33)",
+  },
+};
+
+char *AM_MC1_S_40_EXPR_40[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_40_RPN_40[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_40_DATA_40[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,HTK4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK16)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK22)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK28)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,PIBCLKB0)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK4)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK16)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK22)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK28)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,PIBCLKB0)",
+  },
+};
+
+char *AM_MC1_S_41_EXPR_41[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_41_RPN_41[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_41_DATA_41[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,HTK5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK11)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK17)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK23)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK29)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,PIBCLKB1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK5)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK11)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK17)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK23)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK29)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,PIBCLKB1)",
+  },
+};
+
+char *AM_MC1_S_42_EXPR_42[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_S_42_RPN_42[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_S_42_DATA_42[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX7)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK6)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK12)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK18)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK30)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK6)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK12)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK18)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK24)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX7,HTK30)",
+  },
+};
+
+char *AM_MC1_S_43_EXPR_43[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_43_RPN_43[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_43_DATA_43[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,HTK1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK7)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK13)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK19)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK31)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK7)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK13)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK19)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK31)",
+  },
+};
+
+char *AM_MC1_S_44_EXPR_44[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_44_RPN_44[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_44_DATA_44[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,HTK2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK8)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK14)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK26)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK32)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK2)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK8)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK14)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK26)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK32)",
+  },
+};
+
+char *AM_MC1_S_45_EXPR_45[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_45_RPN_45[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_45_DATA_45[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,HTK3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK9)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK21)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK27)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK33)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK3)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK9)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK21)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK27)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK33)",
+  },
+};
+
+char *AM_MC1_S_46_EXPR_46[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_46_RPN_46[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_46_DATA_46[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,HTK4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK16)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK22)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK28)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,PIBCLKB0)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK4)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK16)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK22)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK28)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,PIBCLKB0)",
+  },
+};
+
+char *AM_MC1_S_47_EXPR_47[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_S_47_RPN_47[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_S_47_DATA_47[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,HTK5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK11)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK17)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK23)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK29)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,PIBCLKB1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK5)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK11)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK17)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK23)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK29)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,PIBCLKB1)",
+  },
+};
+
+char *AM_MC1_Z_0_EXPR_48[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_Z_0_RPN_48[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_Z_0_DATA_48[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX0)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK5)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK4)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK3)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK2)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK0)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK5)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK4)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK3)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK2)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK1)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX0,HTK0)",
+  },
+};
+
+char *AM_MC1_Z_1_EXPR_49[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_1_RPN_49[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_1_DATA_49[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,HTK11)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK9)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK8)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK7)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK6)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK11)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK9)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK8)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK7)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK6)",
+  },
+};
+
+char *AM_MC1_Z_2_EXPR_50[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_2_RPN_50[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_2_DATA_50[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,HTK17)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK16)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK14)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK13)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK12)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK17)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK16)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK14)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK13)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK12)",
+  },
+};
+
+char *AM_MC1_Z_3_EXPR_51[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_3_RPN_51[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_3_DATA_51[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,HTK23)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK22)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK21)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK19)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK18)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK23)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK22)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK21)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK19)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK18)",
+  },
+};
+
+char *AM_MC1_Z_4_EXPR_52[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_4_RPN_52[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_4_DATA_52[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,HTK29)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,HTK28)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK27)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK26)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,HTK29)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,HTK28)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK27)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK26)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK24)",
+  },
+};
+
+char *AM_MC1_Z_5_EXPR_53[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_5_RPN_53[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_5_DATA_53[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX0,PIBCLKB1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX0,PIBCLKB0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX0,HTK33)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX0,HTK32)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX0,HTK31)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX0,HTK30)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX0,PIBCLKB1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX0,PIBCLKB0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX0,HTK33)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX0,HTK32)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX0,HTK31)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX0,HTK30)",
+  },
+};
+
+char *AM_MC1_Z_6_EXPR_54[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_Z_6_RPN_54[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_Z_6_DATA_54[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK5)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK4)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK3)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK2)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK0)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK5)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK4)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK3)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK2)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK1)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX1,HTK0)",
+  },
+};
+
+char *AM_MC1_Z_7_EXPR_55[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_7_RPN_55[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_7_DATA_55[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,HTK11)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK9)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK8)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK7)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK6)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK11)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK9)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK8)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK7)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK6)",
+  },
+};
+
+char *AM_MC1_Z_8_EXPR_56[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_8_RPN_56[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_8_DATA_56[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,HTK17)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK16)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK14)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK13)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK12)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK17)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK16)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK14)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK13)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK12)",
+  },
+};
+
+char *AM_MC1_Z_9_EXPR_57[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_9_RPN_57[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_9_DATA_57[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,HTK23)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK22)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK21)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK19)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK18)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK23)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK22)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK21)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK19)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK18)",
+  },
+};
+
+char *AM_MC1_Z_10_EXPR_58[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_10_RPN_58[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_10_DATA_58[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,HTK29)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,HTK28)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK27)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK26)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,HTK29)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,HTK28)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK27)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK26)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK24)",
+  },
+};
+
+char *AM_MC1_Z_11_EXPR_59[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_11_RPN_59[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_11_DATA_59[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX1,PIBCLKB1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX1,PIBCLKB0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX1,HTK33)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX1,HTK32)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX1,HTK31)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX1,HTK30)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX1,PIBCLKB1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX1,PIBCLKB0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX1,HTK33)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX1,HTK32)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX1,HTK31)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX1,HTK30)",
+  },
+};
+
+char *AM_MC1_Z_12_EXPR_60[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_Z_12_RPN_60[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_Z_12_DATA_60[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX2)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK5)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK4)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK3)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK2)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK0)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK5)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK4)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK3)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK2)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK1)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX2,HTK0)",
+  },
+};
+
+char *AM_MC1_Z_13_EXPR_61[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_13_RPN_61[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_13_DATA_61[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,HTK11)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK9)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK8)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK7)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK6)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK11)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK9)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK8)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK7)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK6)",
+  },
+};
+
+char *AM_MC1_Z_14_EXPR_62[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_14_RPN_62[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_14_DATA_62[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,HTK17)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK16)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK14)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK13)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK12)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK17)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK16)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK14)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK13)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK12)",
+  },
+};
+
+char *AM_MC1_Z_15_EXPR_63[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_15_RPN_63[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_15_DATA_63[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,HTK23)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK22)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK21)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK19)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK18)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK23)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK22)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK21)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK19)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK18)",
+  },
+};
+
+char *AM_MC1_Z_16_EXPR_64[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_16_RPN_64[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_16_DATA_64[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,HTK29)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,HTK28)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK27)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK26)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,HTK29)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,HTK28)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK27)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK26)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK24)",
+  },
+};
+
+char *AM_MC1_Z_17_EXPR_65[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_17_RPN_65[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_17_DATA_65[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX2,PIBCLKB1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX2,PIBCLKB0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX2,HTK33)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX2,HTK32)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX2,HTK31)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX2,HTK30)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX2,PIBCLKB1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX2,PIBCLKB0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX2,HTK33)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX2,HTK32)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX2,HTK31)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX2,HTK30)",
+  },
+};
+
+char *AM_MC1_Z_18_EXPR_66[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_Z_18_RPN_66[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_Z_18_DATA_66[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX3)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK5)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK4)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK3)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK2)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK0)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK5)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK4)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK3)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK2)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK1)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX3,HTK0)",
+  },
+};
+
+char *AM_MC1_Z_19_EXPR_67[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_19_RPN_67[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_19_DATA_67[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,HTK11)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK9)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK8)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK7)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK6)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK11)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK9)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK8)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK7)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK6)",
+  },
+};
+
+char *AM_MC1_Z_20_EXPR_68[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_20_RPN_68[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_20_DATA_68[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,HTK17)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK16)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK14)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK13)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK12)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK17)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK16)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK14)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK13)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK12)",
+  },
+};
+
+char *AM_MC1_Z_21_EXPR_69[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_21_RPN_69[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_21_DATA_69[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,HTK23)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK22)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK21)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK19)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK18)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK23)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK22)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK21)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK19)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK18)",
+  },
+};
+
+char *AM_MC1_Z_22_EXPR_70[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_22_RPN_70[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_22_DATA_70[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,HTK29)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,HTK28)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK27)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK26)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,HTK29)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,HTK28)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK27)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK26)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK24)",
+  },
+};
+
+char *AM_MC1_Z_23_EXPR_71[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_23_RPN_71[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_23_DATA_71[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX3,PIBCLKB1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX3,PIBCLKB0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX3,HTK33)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX3,HTK32)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX3,HTK31)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX3,HTK30)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX3,PIBCLKB1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX3,PIBCLKB0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX3,HTK33)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX3,HTK32)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX3,HTK31)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX3,HTK30)",
+  },
+};
+
+char *AM_MC1_Z_24_EXPR_72[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_Z_24_RPN_72[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_Z_24_DATA_72[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX4)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK5)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK4)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK3)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK2)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK0)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK5)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK4)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK3)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK2)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK1)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX4,HTK0)",
+  },
+};
+
+char *AM_MC1_Z_25_EXPR_73[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_25_RPN_73[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_25_DATA_73[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,HTK11)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK9)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK8)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK7)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK6)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK11)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK9)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK8)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK7)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK6)",
+  },
+};
+
+char *AM_MC1_Z_26_EXPR_74[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_26_RPN_74[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_26_DATA_74[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,HTK17)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK16)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK14)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK13)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK12)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK17)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK16)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK14)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK13)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK12)",
+  },
+};
+
+char *AM_MC1_Z_27_EXPR_75[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_27_RPN_75[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_27_DATA_75[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,HTK23)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK22)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK21)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK19)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK18)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK23)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK22)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK21)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK19)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK18)",
+  },
+};
+
+char *AM_MC1_Z_28_EXPR_76[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_28_RPN_76[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_28_DATA_76[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,HTK29)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,HTK28)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK27)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK26)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,HTK29)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,HTK28)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK27)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK26)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK24)",
+  },
+};
+
+char *AM_MC1_Z_29_EXPR_77[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_29_RPN_77[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_29_DATA_77[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX4,PIBCLKB1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX4,PIBCLKB0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX4,HTK33)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX4,HTK32)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX4,HTK31)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX4,HTK30)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX4,PIBCLKB1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX4,PIBCLKB0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX4,HTK33)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX4,HTK32)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX4,HTK31)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX4,HTK30)",
+  },
+};
+
+char *AM_MC1_Z_30_EXPR_78[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_Z_30_RPN_78[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_Z_30_DATA_78[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX5)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK5)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK4)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK3)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK2)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK0)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK5)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK4)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK3)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK2)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK1)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX5,HTK0)",
+  },
+};
+
+char *AM_MC1_Z_31_EXPR_79[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_31_RPN_79[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_31_DATA_79[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,HTK11)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK9)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK8)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK7)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK6)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK11)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK9)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK8)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK7)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK6)",
+  },
+};
+
+char *AM_MC1_Z_32_EXPR_80[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_32_RPN_80[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_32_DATA_80[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,HTK17)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK16)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK14)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK13)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK12)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK17)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK16)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK14)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK13)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK12)",
+  },
+};
+
+char *AM_MC1_Z_33_EXPR_81[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_33_RPN_81[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_33_DATA_81[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,HTK23)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK22)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK21)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK19)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK18)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK23)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK22)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK21)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK19)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK18)",
+  },
+};
+
+char *AM_MC1_Z_34_EXPR_82[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_34_RPN_82[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_34_DATA_82[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,HTK29)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,HTK28)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK27)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK26)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,HTK29)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,HTK28)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK27)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK26)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK24)",
+  },
+};
+
+char *AM_MC1_Z_35_EXPR_83[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_35_RPN_83[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_35_DATA_83[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX5,PIBCLKB1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX5,PIBCLKB0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX5,HTK33)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX5,HTK32)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX5,HTK31)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX5,HTK30)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX5,PIBCLKB1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX5,PIBCLKB0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX5,HTK33)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX5,HTK32)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX5,HTK31)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX5,HTK30)",
+  },
+};
+
+char *AM_MC1_Z_36_EXPR_84[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_Z_36_RPN_84[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_Z_36_DATA_84[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX6)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK5)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK4)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK3)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK2)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK0)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK5)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK4)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK3)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK2)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK1)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX6,HTK0)",
+  },
+};
+
+char *AM_MC1_Z_37_EXPR_85[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_37_RPN_85[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_37_DATA_85[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,HTK11)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK9)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK8)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK7)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK6)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK11)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK9)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK8)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK7)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK6)",
+  },
+};
+
+char *AM_MC1_Z_38_EXPR_86[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_38_RPN_86[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_38_DATA_86[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,HTK17)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK16)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK14)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK13)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK12)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK17)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK16)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK14)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK13)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK12)",
+  },
+};
+
+char *AM_MC1_Z_39_EXPR_87[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_39_RPN_87[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_39_DATA_87[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,HTK23)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK22)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK21)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK19)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK18)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK23)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK22)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK21)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK19)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK18)",
+  },
+};
+
+char *AM_MC1_Z_40_EXPR_88[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_40_RPN_88[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_40_DATA_88[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,HTK29)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,HTK28)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK27)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK26)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,HTK29)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,HTK28)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK27)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK26)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK24)",
+  },
+};
+
+char *AM_MC1_Z_41_EXPR_89[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_41_RPN_89[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_41_DATA_89[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX6,PIBCLKB1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX6,PIBCLKB0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX6,HTK33)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX6,HTK32)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX6,HTK31)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX6,HTK30)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX6,PIBCLKB1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX6,PIBCLKB0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX6,HTK33)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX6,HTK32)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX6,HTK31)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX6,HTK30)",
+  },
+};
+
+char *AM_MC1_Z_42_EXPR_90[30] = 
+{
+  "(",
+  "A",
+  ")",
+  "*",
+  "~",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+};
+
+char *AM_MC1_Z_42_RPN_90[26] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "~",
+  "*",
+};
+
+BITDATA AM_MC1_Z_42_DATA_90[13] = 
+{
+  {
+  "A",
+    "WIRE(VPSPX7)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK5)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK4)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK3)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK2)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK1)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK0)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK5)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK4)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK3)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK2)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK1)",
+  },
+  {
+  "M",
+    "ARCVAL(VPSPX7,HTK0)",
+  },
+};
+
+char *AM_MC1_Z_43_EXPR_91[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_43_RPN_91[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_43_DATA_91[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,HTK11)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK10)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK9)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK8)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK7)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK6)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK11)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK10)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK9)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK8)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK7)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK6)",
+  },
+};
+
+char *AM_MC1_Z_44_EXPR_92[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_44_RPN_92[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_44_DATA_92[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,HTK17)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK16)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK15)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK14)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK13)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK12)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK17)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK16)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK15)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK14)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK13)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK12)",
+  },
+};
+
+char *AM_MC1_Z_45_EXPR_93[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_45_RPN_93[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_45_DATA_93[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,HTK23)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK22)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK21)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK20)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK19)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK18)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK23)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK22)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK21)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK20)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK19)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK18)",
+  },
+};
+
+char *AM_MC1_Z_46_EXPR_94[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_46_RPN_94[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_46_DATA_94[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,HTK29)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,HTK28)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK27)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK26)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK25)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK24)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,HTK29)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,HTK28)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK27)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK26)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK25)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK24)",
+  },
+};
+
+char *AM_MC1_Z_47_EXPR_95[23] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+};
+
+char *AM_MC1_Z_47_RPN_95[23] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+};
+
+BITDATA AM_MC1_Z_47_DATA_95[12] = 
+{
+  {
+  "A",
+    "ARCVAL(VPSPX7,PIBCLKB1)",
+  },
+  {
+  "B",
+    "ARCVAL(VPSPX7,PIBCLKB0)",
+  },
+  {
+  "C",
+    "ARCVAL(VPSPX7,HTK33)",
+  },
+  {
+  "D",
+    "ARCVAL(VPSPX7,HTK32)",
+  },
+  {
+  "E",
+    "ARCVAL(VPSPX7,HTK31)",
+  },
+  {
+  "F",
+    "ARCVAL(VPSPX7,HTK30)",
+  },
+  {
+  "G",
+    "ARCVAL(VPSPX7,PIBCLKB1)",
+  },
+  {
+  "H",
+    "ARCVAL(VPSPX7,PIBCLKB0)",
+  },
+  {
+  "I",
+    "ARCVAL(VPSPX7,HTK33)",
+  },
+  {
+  "J",
+    "ARCVAL(VPSPX7,HTK32)",
+  },
+  {
+  "K",
+    "ARCVAL(VPSPX7,HTK31)",
+  },
+  {
+  "L",
+    "ARCVAL(VPSPX7,HTK30)",
+  },
+};
+
+char *AM_MC1_TEST_MD_EXPR_96[3] = 
+{
+  "A",
+  "*",
+  "B",
+};
+
+char *AM_MC1_TEST_MD_RPN_96[3] = 
+{
+  "A",
+  "B",
+  "*",
+};
+
+BITDATA AM_MC1_TEST_MD_DATA_96[2] = 
+{
+  {
+  "A",
+    "COMP(CENTMUX)",
+  },
+  {
+  "B",
+    "PROPERTY(CENTMUX.TESTMODE,ENABLE)",
+  },
+};
+
+char *AM_MC1_SP_EN_0L_EXPR_97[1] = 
+{
+  "A",
+};
+
+char *AM_MC1_SP_EN_0L_RPN_97[1] = 
+{
+  "A",
+};
+
+BITDATA AM_MC1_SP_EN_0L_DATA_97[1] = 
+{
+  {
+  "A",
+    "WIRE(VSPX0B)",
+  },
+};
+
+char *AM_MC1_SP_EN_1L_EXPR_98[1] = 
+{
+  "A",
+};
+
+char *AM_MC1_SP_EN_1L_RPN_98[1] = 
+{
+  "A",
+};
+
+BITDATA AM_MC1_SP_EN_1L_DATA_98[1] = 
+{
+  {
+  "A",
+    "WIRE(VSPX1B)",
+  },
+};
+
+char *AM_MC1_SP_EN_2L_EXPR_99[1] = 
+{
+  "A",
+};
+
+char *AM_MC1_SP_EN_2L_RPN_99[1] = 
+{
+  "A",
+};
+
+BITDATA AM_MC1_SP_EN_2L_DATA_99[1] = 
+{
+  {
+  "A",
+    "WIRE(VSPX2B)",
+  },
+};
+
+char *AM_MC1_SP_EN_3L_EXPR_100[1] = 
+{
+  "A",
+};
+
+char *AM_MC1_SP_EN_3L_RPN_100[1] = 
+{
+  "A",
+};
+
+BITDATA AM_MC1_SP_EN_3L_DATA_100[1] = 
+{
+  {
+  "A",
+    "WIRE(VSPX3B)",
+  },
+};
+
+char *AM_MC1_SP_EN_4L_EXPR_101[1] = 
+{
+  "A",
+};
+
+char *AM_MC1_SP_EN_4L_RPN_101[1] = 
+{
+  "A",
+};
+
+BITDATA AM_MC1_SP_EN_4L_DATA_101[1] = 
+{
+  {
+  "A",
+    "WIRE(VSPX4B)",
+  },
+};
+
+char *AM_MC1_SP_EN_5L_EXPR_102[1] = 
+{
+  "A",
+};
+
+char *AM_MC1_SP_EN_5L_RPN_102[1] = 
+{
+  "A",
+};
+
+BITDATA AM_MC1_SP_EN_5L_DATA_102[1] = 
+{
+  {
+  "A",
+    "WIRE(VSPX5B)",
+  },
+};
+
+char *AM_MC1_SP_EN_6L_EXPR_103[1] = 
+{
+  "A",
+};
+
+char *AM_MC1_SP_EN_6L_RPN_103[1] = 
+{
+  "A",
+};
+
+BITDATA AM_MC1_SP_EN_6L_DATA_103[1] = 
+{
+  {
+  "A",
+    "WIRE(VSPX6B)",
+  },
+};
+
+char *AM_MC1_SP_EN_7L_EXPR_104[1] = 
+{
+  "A",
+};
+
+char *AM_MC1_SP_EN_7L_RPN_104[1] = 
+{
+  "A",
+};
+
+BITDATA AM_MC1_SP_EN_7L_DATA_104[1] = 
+{
+  {
+  "A",
+    "WIRE(VSPX7B)",
+  },
+};
+
+char *AM_MC1_SP_EN_0U_EXPR_105[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *AM_MC1_SP_EN_0U_RPN_105[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA AM_MC1_SP_EN_0U_DATA_105[3] = 
+{
+  {
+  "A",
+    "WIRE(VSPX0T)",
+  },
+  {
+  "B",
+    "ARCVAL(HPBX0L,VSPX0B)",
+  },
+  {
+  "C",
+    "ARCVAL(HPBX0R,VSPX0B)",
+  },
+};
+
+char *AM_MC1_SP_EN_1U_EXPR_106[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *AM_MC1_SP_EN_1U_RPN_106[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA AM_MC1_SP_EN_1U_DATA_106[3] = 
+{
+  {
+  "A",
+    "WIRE(VSPX1T)",
+  },
+  {
+  "B",
+    "ARCVAL(HPBX1L,VSPX1B)",
+  },
+  {
+  "C",
+    "ARCVAL(HPBX1R,VSPX1B)",
+  },
+};
+
+char *AM_MC1_SP_EN_2U_EXPR_107[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *AM_MC1_SP_EN_2U_RPN_107[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA AM_MC1_SP_EN_2U_DATA_107[3] = 
+{
+  {
+  "A",
+    "WIRE(VSPX2T)",
+  },
+  {
+  "B",
+    "ARCVAL(HPBX2L,VSPX2B)",
+  },
+  {
+  "C",
+    "ARCVAL(HPBX2R,VSPX2B)",
+  },
+};
+
+char *AM_MC1_SP_EN_3U_EXPR_108[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *AM_MC1_SP_EN_3U_RPN_108[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA AM_MC1_SP_EN_3U_DATA_108[3] = 
+{
+  {
+  "A",
+    "WIRE(VSPX3T)",
+  },
+  {
+  "B",
+    "ARCVAL(HPBX3L,VSPX3B)",
+  },
+  {
+  "C",
+    "ARCVAL(HPBX3R,VSPX3B)",
+  },
+};
+
+char *AM_MC1_SP_EN_4U_EXPR_109[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *AM_MC1_SP_EN_4U_RPN_109[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA AM_MC1_SP_EN_4U_DATA_109[3] = 
+{
+  {
+  "A",
+    "WIRE(VSPX4T)",
+  },
+  {
+  "B",
+    "ARCVAL(HPBX4L,VSPX4B)",
+  },
+  {
+  "C",
+    "ARCVAL(HPBX4R,VSPX4B)",
+  },
+};
+
+char *AM_MC1_SP_EN_5U_EXPR_110[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *AM_MC1_SP_EN_5U_RPN_110[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA AM_MC1_SP_EN_5U_DATA_110[3] = 
+{
+  {
+  "A",
+    "WIRE(VSPX5T)",
+  },
+  {
+  "B",
+    "ARCVAL(HPBX5L,VSPX5B)",
+  },
+  {
+  "C",
+    "ARCVAL(HPBX5R,VSPX5B)",
+  },
+};
+
+char *AM_MC1_SP_EN_6U_EXPR_111[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *AM_MC1_SP_EN_6U_RPN_111[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA AM_MC1_SP_EN_6U_DATA_111[3] = 
+{
+  {
+  "A",
+    "WIRE(VSPX6T)",
+  },
+  {
+  "B",
+    "ARCVAL(HPBX6L,VSPX6B)",
+  },
+  {
+  "C",
+    "ARCVAL(HPBX6R,VSPX6B)",
+  },
+};
+
+char *AM_MC1_SP_EN_7U_EXPR_112[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *AM_MC1_SP_EN_7U_RPN_112[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA AM_MC1_SP_EN_7U_DATA_112[3] = 
+{
+  {
+  "A",
+    "WIRE(VSPX7T)",
+  },
+  {
+  "B",
+    "ARCVAL(HPBX7L,VSPX7B)",
+  },
+  {
+  "C",
+    "ARCVAL(HPBX7R,VSPX7B)",
+  },
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+CONFIGBITDATA gclk_ctmux_l_Data[113] =
+{
+  {
+    "MC1_S_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    27,
+    0,
+    0,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_S_0_EXPR_0,
+    26,
+    AM_MC1_S_0_RPN_0,
+    13,
+    AM_MC1_S_0_DATA_0,
+  },
+  {
+    "MC1_S_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    24,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_1_EXPR_1,
+    23,
+    AM_MC1_S_1_RPN_1,
+    12,
+    AM_MC1_S_1_DATA_1,
+  },
+  {
+    "MC1_S_2",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    27,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_2_EXPR_2,
+    23,
+    AM_MC1_S_2_RPN_2,
+    12,
+    AM_MC1_S_2_DATA_2,
+  },
+  {
+    "MC1_S_3",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    49,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_3_EXPR_3,
+    23,
+    AM_MC1_S_3_RPN_3,
+    12,
+    AM_MC1_S_3_DATA_3,
+  },
+  {
+    "MC1_S_4",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    46,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_4_EXPR_4,
+    23,
+    AM_MC1_S_4_RPN_4,
+    12,
+    AM_MC1_S_4_DATA_4,
+  },
+  {
+    "MC1_S_5",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    49,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_5_EXPR_5,
+    23,
+    AM_MC1_S_5_RPN_5,
+    12,
+    AM_MC1_S_5_DATA_5,
+  },
+  {
+    "MC1_S_6",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    25,
+    0,
+    0,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_S_6_EXPR_6,
+    26,
+    AM_MC1_S_6_RPN_6,
+    13,
+    AM_MC1_S_6_DATA_6,
+  },
+  {
+    "MC1_S_7",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    22,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_7_EXPR_7,
+    23,
+    AM_MC1_S_7_RPN_7,
+    12,
+    AM_MC1_S_7_DATA_7,
+  },
+  {
+    "MC1_S_8",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    25,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_8_EXPR_8,
+    23,
+    AM_MC1_S_8_RPN_8,
+    12,
+    AM_MC1_S_8_DATA_8,
+  },
+  {
+    "MC1_S_9",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    22,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_9_EXPR_9,
+    23,
+    AM_MC1_S_9_RPN_9,
+    12,
+    AM_MC1_S_9_DATA_9,
+  },
+  {
+    "MC1_S_10",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    21,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_10_EXPR_10,
+    23,
+    AM_MC1_S_10_RPN_10,
+    12,
+    AM_MC1_S_10_DATA_10,
+  },
+  {
+    "MC1_S_11",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    18,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_11_EXPR_11,
+    23,
+    AM_MC1_S_11_RPN_11,
+    12,
+    AM_MC1_S_11_DATA_11,
+  },
+  {
+    "MC1_S_12",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    36,
+    0,
+    0,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_S_12_EXPR_12,
+    26,
+    AM_MC1_S_12_RPN_12,
+    13,
+    AM_MC1_S_12_DATA_12,
+  },
+  {
+    "MC1_S_13",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    39,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_13_EXPR_13,
+    23,
+    AM_MC1_S_13_RPN_13,
+    12,
+    AM_MC1_S_13_DATA_13,
+  },
+  {
+    "MC1_S_14",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    14,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_14_EXPR_14,
+    23,
+    AM_MC1_S_14_RPN_14,
+    12,
+    AM_MC1_S_14_DATA_14,
+  },
+  {
+    "MC1_S_15",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    17,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_15_EXPR_15,
+    23,
+    AM_MC1_S_15_RPN_15,
+    12,
+    AM_MC1_S_15_DATA_15,
+  },
+  {
+    "MC1_S_16",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    14,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_16_EXPR_16,
+    23,
+    AM_MC1_S_16_RPN_16,
+    12,
+    AM_MC1_S_16_DATA_16,
+  },
+  {
+    "MC1_S_17",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    17,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_17_EXPR_17,
+    23,
+    AM_MC1_S_17_RPN_17,
+    12,
+    AM_MC1_S_17_DATA_17,
+  },
+  {
+    "MC1_S_18",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    35,
+    0,
+    0,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_S_18_EXPR_18,
+    26,
+    AM_MC1_S_18_RPN_18,
+    13,
+    AM_MC1_S_18_DATA_18,
+  },
+  {
+    "MC1_S_19",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    32,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_19_EXPR_19,
+    23,
+    AM_MC1_S_19_RPN_19,
+    12,
+    AM_MC1_S_19_DATA_19,
+  },
+  {
+    "MC1_S_20",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    11,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_20_EXPR_20,
+    23,
+    AM_MC1_S_20_RPN_20,
+    12,
+    AM_MC1_S_20_DATA_20,
+  },
+  {
+    "MC1_S_21",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    8,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_21_EXPR_21,
+    23,
+    AM_MC1_S_21_RPN_21,
+    12,
+    AM_MC1_S_21_DATA_21,
+  },
+  {
+    "MC1_S_22",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    11,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_22_EXPR_22,
+    23,
+    AM_MC1_S_22_RPN_22,
+    12,
+    AM_MC1_S_22_DATA_22,
+  },
+  {
+    "MC1_S_23",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    8,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_23_EXPR_23,
+    23,
+    AM_MC1_S_23_RPN_23,
+    12,
+    AM_MC1_S_23_DATA_23,
+  },
+  {
+    "MC1_S_24",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    16,
+    0,
+    1,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_S_24_EXPR_24,
+    26,
+    AM_MC1_S_24_RPN_24,
+    13,
+    AM_MC1_S_24_DATA_24,
+  },
+  {
+    "MC1_S_25",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    19,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_25_EXPR_25,
+    23,
+    AM_MC1_S_25_RPN_25,
+    12,
+    AM_MC1_S_25_DATA_25,
+  },
+  {
+    "MC1_S_26",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    42,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_26_EXPR_26,
+    23,
+    AM_MC1_S_26_RPN_26,
+    12,
+    AM_MC1_S_26_DATA_26,
+  },
+  {
+    "MC1_S_27",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    45,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_27_EXPR_27,
+    23,
+    AM_MC1_S_27_RPN_27,
+    12,
+    AM_MC1_S_27_DATA_27,
+  },
+  {
+    "MC1_S_28",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    42,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_28_EXPR_28,
+    23,
+    AM_MC1_S_28_RPN_28,
+    12,
+    AM_MC1_S_28_DATA_28,
+  },
+  {
+    "MC1_S_29",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    45,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_29_EXPR_29,
+    23,
+    AM_MC1_S_29_RPN_29,
+    12,
+    AM_MC1_S_29_DATA_29,
+  },
+  {
+    "MC1_S_30",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    15,
+    0,
+    1,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_S_30_EXPR_30,
+    26,
+    AM_MC1_S_30_RPN_30,
+    13,
+    AM_MC1_S_30_DATA_30,
+  },
+  {
+    "MC1_S_31",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    12,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_31_EXPR_31,
+    23,
+    AM_MC1_S_31_RPN_31,
+    12,
+    AM_MC1_S_31_DATA_31,
+  },
+  {
+    "MC1_S_32",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    15,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_32_EXPR_32,
+    23,
+    AM_MC1_S_32_RPN_32,
+    12,
+    AM_MC1_S_32_DATA_32,
+  },
+  {
+    "MC1_S_33",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    12,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_33_EXPR_33,
+    23,
+    AM_MC1_S_33_RPN_33,
+    12,
+    AM_MC1_S_33_DATA_33,
+  },
+  {
+    "MC1_S_34",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    13,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_34_EXPR_34,
+    23,
+    AM_MC1_S_34_RPN_34,
+    12,
+    AM_MC1_S_34_DATA_34,
+  },
+  {
+    "MC1_S_35",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    39,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_35_EXPR_35,
+    23,
+    AM_MC1_S_35_RPN_35,
+    12,
+    AM_MC1_S_35_DATA_35,
+  },
+  {
+    "MC1_S_36",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    31,
+    0,
+    1,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_S_36_EXPR_36,
+    26,
+    AM_MC1_S_36_RPN_36,
+    13,
+    AM_MC1_S_36_DATA_36,
+  },
+  {
+    "MC1_S_37",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    28,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_37_EXPR_37,
+    23,
+    AM_MC1_S_37_RPN_37,
+    12,
+    AM_MC1_S_37_DATA_37,
+  },
+  {
+    "MC1_S_38",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    31,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_38_EXPR_38,
+    23,
+    AM_MC1_S_38_RPN_38,
+    12,
+    AM_MC1_S_38_DATA_38,
+  },
+  {
+    "MC1_S_39",
+    "PIB",
+    26,
+    48,
+    0,
+    2,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_39_EXPR_39,
+    23,
+    AM_MC1_S_39_RPN_39,
+    12,
+    AM_MC1_S_39_DATA_39,
+  },
+  {
+    "MC1_S_40",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    6,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_40_EXPR_40,
+    23,
+    AM_MC1_S_40_RPN_40,
+    12,
+    AM_MC1_S_40_DATA_40,
+  },
+  {
+    "MC1_S_41",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    9,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_41_EXPR_41,
+    23,
+    AM_MC1_S_41_RPN_41,
+    12,
+    AM_MC1_S_41_DATA_41,
+  },
+  {
+    "MC1_S_42",
+    "PIB",
+    26,
+    47,
+    0,
+    2,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_S_42_EXPR_42,
+    26,
+    AM_MC1_S_42_RPN_42,
+    13,
+    AM_MC1_S_42_DATA_42,
+  },
+  {
+    "MC1_S_43",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    5,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_43_EXPR_43,
+    23,
+    AM_MC1_S_43_RPN_43,
+    12,
+    AM_MC1_S_43_DATA_43,
+  },
+  {
+    "MC1_S_44",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    2,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_44_EXPR_44,
+    23,
+    AM_MC1_S_44_RPN_44,
+    12,
+    AM_MC1_S_44_DATA_44,
+  },
+  {
+    "MC1_S_45",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    5,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_45_EXPR_45,
+    23,
+    AM_MC1_S_45_RPN_45,
+    12,
+    AM_MC1_S_45_DATA_45,
+  },
+  {
+    "MC1_S_46",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    29,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_46_EXPR_46,
+    23,
+    AM_MC1_S_46_RPN_46,
+    12,
+    AM_MC1_S_46_DATA_46,
+  },
+  {
+    "MC1_S_47",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    26,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_S_47_EXPR_47,
+    23,
+    AM_MC1_S_47_RPN_47,
+    12,
+    AM_MC1_S_47_DATA_47,
+  },
+  {
+    "MC1_Z_0",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    48,
+    0,
+    0,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_Z_0_EXPR_48,
+    26,
+    AM_MC1_Z_0_RPN_48,
+    13,
+    AM_MC1_Z_0_DATA_48,
+  },
+  {
+    "MC1_Z_1",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    51,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_1_EXPR_49,
+    23,
+    AM_MC1_Z_1_RPN_49,
+    12,
+    AM_MC1_Z_1_DATA_49,
+  },
+  {
+    "MC1_Z_2",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    26,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_2_EXPR_50,
+    23,
+    AM_MC1_Z_2_RPN_50,
+    12,
+    AM_MC1_Z_2_DATA_50,
+  },
+  {
+    "MC1_Z_3",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    29,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_3_EXPR_51,
+    23,
+    AM_MC1_Z_3_RPN_51,
+    12,
+    AM_MC1_Z_3_DATA_51,
+  },
+  {
+    "MC1_Z_4",
+    "PIB",
+    26,
+    52,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_4_EXPR_52,
+    23,
+    AM_MC1_Z_4_RPN_52,
+    12,
+    AM_MC1_Z_4_DATA_52,
+  },
+  {
+    "MC1_Z_5",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    33,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_5_EXPR_53,
+    23,
+    AM_MC1_Z_5_RPN_53,
+    12,
+    AM_MC1_Z_5_DATA_53,
+  },
+  {
+    "MC1_Z_6",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    21,
+    0,
+    0,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_Z_6_EXPR_54,
+    26,
+    AM_MC1_Z_6_RPN_54,
+    13,
+    AM_MC1_Z_6_DATA_54,
+  },
+  {
+    "MC1_Z_7",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    18,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_7_EXPR_55,
+    23,
+    AM_MC1_Z_7_RPN_55,
+    12,
+    AM_MC1_Z_7_DATA_55,
+  },
+  {
+    "MC1_Z_8",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    45,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_8_EXPR_56,
+    23,
+    AM_MC1_Z_8_RPN_56,
+    12,
+    AM_MC1_Z_8_DATA_56,
+  },
+  {
+    "MC1_Z_9",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    42,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_9_EXPR_57,
+    23,
+    AM_MC1_Z_9_RPN_57,
+    12,
+    AM_MC1_Z_9_DATA_57,
+  },
+  {
+    "MC1_Z_10",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    43,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_10_EXPR_58,
+    23,
+    AM_MC1_Z_10_RPN_58,
+    12,
+    AM_MC1_Z_10_DATA_58,
+  },
+  {
+    "MC1_Z_11",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    40,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_11_EXPR_59,
+    23,
+    AM_MC1_Z_11_RPN_59,
+    12,
+    AM_MC1_Z_11_DATA_59,
+  },
+  {
+    "MC1_Z_12",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    38,
+    0,
+    0,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_Z_12_EXPR_60,
+    26,
+    AM_MC1_Z_12_RPN_60,
+    13,
+    AM_MC1_Z_12_DATA_60,
+  },
+  {
+    "MC1_Z_13",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    41,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_13_EXPR_61,
+    23,
+    AM_MC1_Z_13_RPN_61,
+    12,
+    AM_MC1_Z_13_DATA_61,
+  },
+  {
+    "MC1_Z_14",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    38,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_14_EXPR_62,
+    23,
+    AM_MC1_Z_14_RPN_62,
+    12,
+    AM_MC1_Z_14_DATA_62,
+  },
+  {
+    "MC1_Z_15",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    41,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_15_EXPR_63,
+    23,
+    AM_MC1_Z_15_RPN_63,
+    12,
+    AM_MC1_Z_15_DATA_63,
+  },
+  {
+    "MC1_Z_16",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    40,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_16_EXPR_64,
+    23,
+    AM_MC1_Z_16_RPN_64,
+    12,
+    AM_MC1_Z_16_DATA_64,
+  },
+  {
+    "MC1_Z_17",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    43,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_17_EXPR_65,
+    23,
+    AM_MC1_Z_17_RPN_65,
+    12,
+    AM_MC1_Z_17_DATA_65,
+  },
+  {
+    "MC1_Z_18",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    9,
+    0,
+    0,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_Z_18_EXPR_66,
+    26,
+    AM_MC1_Z_18_RPN_66,
+    13,
+    AM_MC1_Z_18_DATA_66,
+  },
+  {
+    "MC1_Z_19",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    6,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_19_EXPR_67,
+    23,
+    AM_MC1_Z_19_RPN_67,
+    12,
+    AM_MC1_Z_19_DATA_67,
+  },
+  {
+    "MC1_Z_20",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    9,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_20_EXPR_68,
+    23,
+    AM_MC1_Z_20_RPN_68,
+    12,
+    AM_MC1_Z_20_DATA_68,
+  },
+  {
+    "MC1_Z_21",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    6,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_21_EXPR_69,
+    23,
+    AM_MC1_Z_21_RPN_69,
+    12,
+    AM_MC1_Z_21_DATA_69,
+  },
+  {
+    "MC1_Z_22",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    7,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_22_EXPR_70,
+    23,
+    AM_MC1_Z_22_RPN_70,
+    12,
+    AM_MC1_Z_22_DATA_70,
+  },
+  {
+    "MC1_Z_23",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    4,
+    0,
+    0,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_23_EXPR_71,
+    23,
+    AM_MC1_Z_23_RPN_71,
+    12,
+    AM_MC1_Z_23_DATA_71,
+  },
+  {
+    "MC1_Z_24",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    44,
+    0,
+    1,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_Z_24_EXPR_72,
+    26,
+    AM_MC1_Z_24_RPN_72,
+    13,
+    AM_MC1_Z_24_DATA_72,
+  },
+  {
+    "MC1_Z_25",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    47,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_25_EXPR_73,
+    23,
+    AM_MC1_Z_25_RPN_73,
+    12,
+    AM_MC1_Z_25_DATA_73,
+  },
+  {
+    "MC1_Z_26",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    44,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_26_EXPR_74,
+    23,
+    AM_MC1_Z_26_RPN_74,
+    12,
+    AM_MC1_Z_26_DATA_74,
+  },
+  {
+    "MC1_Z_27",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    47,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_27_EXPR_75,
+    23,
+    AM_MC1_Z_27_RPN_75,
+    12,
+    AM_MC1_Z_27_DATA_75,
+  },
+  {
+    "MC1_Z_28",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    18,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_28_EXPR_76,
+    23,
+    AM_MC1_Z_28_RPN_76,
+    12,
+    AM_MC1_Z_28_DATA_76,
+  },
+  {
+    "MC1_Z_29",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    21,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_29_EXPR_77,
+    23,
+    AM_MC1_Z_29_RPN_77,
+    12,
+    AM_MC1_Z_29_DATA_77,
+  },
+  {
+    "MC1_Z_30",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    36,
+    0,
+    1,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_Z_30_EXPR_78,
+    26,
+    AM_MC1_Z_30_RPN_78,
+    13,
+    AM_MC1_Z_30_DATA_78,
+  },
+  {
+    "MC1_Z_31",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    39,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_31_EXPR_79,
+    23,
+    AM_MC1_Z_31_RPN_79,
+    12,
+    AM_MC1_Z_31_DATA_79,
+  },
+  {
+    "MC1_Z_32",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    36,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_32_EXPR_80,
+    23,
+    AM_MC1_Z_32_RPN_80,
+    12,
+    AM_MC1_Z_32_DATA_80,
+  },
+  {
+    "MC1_Z_33",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    10,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_33_EXPR_81,
+    23,
+    AM_MC1_Z_33_RPN_81,
+    12,
+    AM_MC1_Z_33_DATA_81,
+  },
+  {
+    "MC1_Z_34",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    13,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_34_EXPR_82,
+    23,
+    AM_MC1_Z_34_RPN_82,
+    12,
+    AM_MC1_Z_34_DATA_82,
+  },
+  {
+    "MC1_Z_35",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    10,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_35_EXPR_83,
+    23,
+    AM_MC1_Z_35_RPN_83,
+    12,
+    AM_MC1_Z_35_DATA_83,
+  },
+  {
+    "MC1_Z_36",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    6,
+    0,
+    1,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_Z_36_EXPR_84,
+    26,
+    AM_MC1_Z_36_RPN_84,
+    13,
+    AM_MC1_Z_36_DATA_84,
+  },
+  {
+    "MC1_Z_37",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    9,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_37_EXPR_85,
+    23,
+    AM_MC1_Z_37_RPN_85,
+    12,
+    AM_MC1_Z_37_DATA_85,
+  },
+  {
+    "MC1_Z_38",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    8,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_38_EXPR_86,
+    23,
+    AM_MC1_Z_38_RPN_86,
+    12,
+    AM_MC1_Z_38_DATA_86,
+  },
+  {
+    "MC1_Z_39",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    11,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_39_EXPR_87,
+    23,
+    AM_MC1_Z_39_RPN_87,
+    12,
+    AM_MC1_Z_39_DATA_87,
+  },
+  {
+    "MC1_Z_40",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    8,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_40_EXPR_88,
+    23,
+    AM_MC1_Z_40_RPN_88,
+    12,
+    AM_MC1_Z_40_DATA_88,
+  },
+  {
+    "MC1_Z_41",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    11,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_41_EXPR_89,
+    23,
+    AM_MC1_Z_41_RPN_89,
+    12,
+    AM_MC1_Z_41_DATA_89,
+  },
+  {
+    "MC1_Z_42",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    29,
+    0,
+    1,
+    1,
+    1,
+    0,
+    13,
+    30,
+    AM_MC1_Z_42_EXPR_90,
+    26,
+    AM_MC1_Z_42_RPN_90,
+    13,
+    AM_MC1_Z_42_DATA_90,
+  },
+  {
+    "MC1_Z_43",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    27,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_43_EXPR_91,
+    23,
+    AM_MC1_Z_43_RPN_91,
+    12,
+    AM_MC1_Z_43_DATA_91,
+  },
+  {
+    "MC1_Z_44",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    27,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_44_EXPR_92,
+    23,
+    AM_MC1_Z_44_RPN_92,
+    12,
+    AM_MC1_Z_44_DATA_92,
+  },
+  {
+    "MC1_Z_45",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    24,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_45_EXPR_93,
+    23,
+    AM_MC1_Z_45_RPN_93,
+    12,
+    AM_MC1_Z_45_DATA_93,
+  },
+  {
+    "MC1_Z_46",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    20,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_46_EXPR_94,
+    23,
+    AM_MC1_Z_46_RPN_94,
+    12,
+    AM_MC1_Z_46_DATA_94,
+  },
+  {
+    "MC1_Z_47",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    23,
+    0,
+    1,
+    1,
+    1,
+    0,
+    12,
+    23,
+    AM_MC1_Z_47_EXPR_95,
+    23,
+    AM_MC1_Z_47_RPN_95,
+    12,
+    AM_MC1_Z_47_DATA_95,
+  },
+  {
+    "MC1_TEST_MD",
+    "PIB",
+    26,
+    52,
+    0,
+    3,
+    0,
+    1,
+    0,
+    2,
+    3,
+    AM_MC1_TEST_MD_EXPR_96,
+    3,
+    AM_MC1_TEST_MD_RPN_96,
+    2,
+    AM_MC1_TEST_MD_DATA_96,
+  },
+  {
+    "MC1_SP_EN_0L",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    52,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    AM_MC1_SP_EN_0L_EXPR_97,
+    1,
+    AM_MC1_SP_EN_0L_RPN_97,
+    1,
+    AM_MC1_SP_EN_0L_DATA_97,
+  },
+  {
+    "MC1_SP_EN_1L",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    19,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    AM_MC1_SP_EN_1L_EXPR_98,
+    1,
+    AM_MC1_SP_EN_1L_RPN_98,
+    1,
+    AM_MC1_SP_EN_1L_DATA_98,
+  },
+  {
+    "MC1_SP_EN_2L",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    19,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    AM_MC1_SP_EN_2L_EXPR_99,
+    1,
+    AM_MC1_SP_EN_2L_RPN_99,
+    1,
+    AM_MC1_SP_EN_2L_DATA_99,
+  },
+  {
+    "MC1_SP_EN_3L",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    4,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    AM_MC1_SP_EN_3L_EXPR_100,
+    1,
+    AM_MC1_SP_EN_3L_RPN_100,
+    1,
+    AM_MC1_SP_EN_3L_DATA_100,
+  },
+  {
+    "MC1_SP_EN_4L",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    18,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    AM_MC1_SP_EN_4L_EXPR_101,
+    1,
+    AM_MC1_SP_EN_4L_RPN_101,
+    1,
+    AM_MC1_SP_EN_4L_DATA_101,
+  },
+  {
+    "MC1_SP_EN_5L",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    37,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    AM_MC1_SP_EN_5L_EXPR_102,
+    1,
+    AM_MC1_SP_EN_5L_RPN_102,
+    1,
+    AM_MC1_SP_EN_5L_DATA_102,
+  },
+  {
+    "MC1_SP_EN_6L",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    37,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    AM_MC1_SP_EN_6L_EXPR_103,
+    1,
+    AM_MC1_SP_EN_6L_RPN_103,
+    1,
+    AM_MC1_SP_EN_6L_DATA_103,
+  },
+  {
+    "MC1_SP_EN_7L",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    23,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    AM_MC1_SP_EN_7L_EXPR_104,
+    1,
+    AM_MC1_SP_EN_7L_RPN_104,
+    1,
+    AM_MC1_SP_EN_7L_DATA_104,
+  },
+  {
+    "MC1_SP_EN_0U",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    52,
+    0,
+    0,
+    1,
+    1,
+    0,
+    3,
+    5,
+    AM_MC1_SP_EN_0U_EXPR_105,
+    5,
+    AM_MC1_SP_EN_0U_RPN_105,
+    3,
+    AM_MC1_SP_EN_0U_DATA_105,
+  },
+  {
+    "MC1_SP_EN_1U",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    16,
+    0,
+    0,
+    1,
+    1,
+    0,
+    3,
+    5,
+    AM_MC1_SP_EN_1U_EXPR_106,
+    5,
+    AM_MC1_SP_EN_1U_RPN_106,
+    3,
+    AM_MC1_SP_EN_1U_DATA_106,
+  },
+  {
+    "MC1_SP_EN_2U",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    16,
+    0,
+    0,
+    1,
+    1,
+    0,
+    3,
+    5,
+    AM_MC1_SP_EN_2U_EXPR_107,
+    5,
+    AM_MC1_SP_EN_2U_RPN_107,
+    3,
+    AM_MC1_SP_EN_2U_DATA_107,
+  },
+  {
+    "MC1_SP_EN_3U",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    7,
+    0,
+    0,
+    1,
+    1,
+    0,
+    3,
+    5,
+    AM_MC1_SP_EN_3U_EXPR_108,
+    5,
+    AM_MC1_SP_EN_3U_RPN_108,
+    3,
+    AM_MC1_SP_EN_3U_DATA_108,
+  },
+  {
+    "MC1_SP_EN_4U",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    21,
+    0,
+    1,
+    1,
+    1,
+    0,
+    3,
+    5,
+    AM_MC1_SP_EN_4U_EXPR_109,
+    5,
+    AM_MC1_SP_EN_4U_RPN_109,
+    3,
+    AM_MC1_SP_EN_4U_DATA_109,
+  },
+  {
+    "MC1_SP_EN_5U",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    0,
+    34,
+    0,
+    1,
+    1,
+    1,
+    0,
+    3,
+    5,
+    AM_MC1_SP_EN_5U_EXPR_110,
+    5,
+    AM_MC1_SP_EN_5U_RPN_110,
+    3,
+    AM_MC1_SP_EN_5U_DATA_110,
+  },
+  {
+    "MC1_SP_EN_6U",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    34,
+    0,
+    1,
+    1,
+    1,
+    0,
+    3,
+    5,
+    AM_MC1_SP_EN_6U_EXPR_111,
+    5,
+    AM_MC1_SP_EN_6U_RPN_111,
+    3,
+    AM_MC1_SP_EN_6U_DATA_111,
+  },
+  {
+    "MC1_SP_EN_7U",
+    "MISCS_MIC_IO_LR_CORNER_UR",
+    1,
+    20,
+    0,
+    1,
+    1,
+    1,
+    0,
+    3,
+    5,
+    AM_MC1_SP_EN_7U_EXPR_112,
+    5,
+    AM_MC1_SP_EN_7U_RPN_112,
+    3,
+    AM_MC1_SP_EN_7U_DATA_112,
+  },
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
