@@ -1,0 +1,386 @@
+[
+    {
+        "name": "MC1_DIV2",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 34,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_DIV_EN",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 39,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_DIV_SRC",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 44,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_GSRN_DIS",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 36,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_SEL_5",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 51,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(CLKI1,PIBCLK1_1)",
+            "B": "ARCVAL(CLKI1,PIBCLK1_0)",
+            "C": "ARCVAL(CLKI1,PLL1CLK1)",
+            "D": "ARCVAL(CLKI1,PLL1CLK0)"
+        }
+    },
+    {
+        "name": "MC1_SEL_4",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 50,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(CLKI1,PIBCLK1_1)",
+            "B": "ARCVAL(CLKI1,PIBCLK1_0)",
+            "C": "ARCVAL(CLKI1,PLL0CLK1)",
+            "D": "ARCVAL(CLKI1,DPCLKIO)"
+        }
+    },
+    {
+        "name": "MC1_SEL_3",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 48,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(CLKI1,PIBCLK1_1)",
+            "B": "ARCVAL(CLKI1,PLL1CLK1)",
+            "C": "ARCVAL(CLKI1,PLL0CLK1)",
+            "D": "ARCVAL(CLKI1,PCLKIO1)"
+        }
+    },
+    {
+        "name": "MC1_SEL_2",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 47,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(CLKI0,PIBCLK0_1)",
+            "B": "ARCVAL(CLKI0,PIBCLK0_0)",
+            "C": "ARCVAL(CLKI0,PLL1CLK0)",
+            "D": "ARCVAL(CLKI0,PLL0CLK1)"
+        }
+    },
+    {
+        "name": "MC1_SEL_1",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 46,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(CLKI0,PIBCLK0_1)",
+            "B": "ARCVAL(CLKI0,PIBCLK0_0)",
+            "C": "ARCVAL(CLKI0,DPCLKIO)",
+            "D": "ARCVAL(CLKI0,PLL0CLK0)"
+        }
+    },
+    {
+        "name": "MC1_SEL_0",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 49,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(CLKI0,PIBCLK0_1)",
+            "B": "ARCVAL(CLKI0,PLL1CLK0)",
+            "C": "ARCVAL(CLKI0,PLL0CLK0)",
+            "D": "ARCVAL(CLKI0,PCLKIO1)"
+        }
+    },
+    {
+        "name": "MC1_SLCL_N_1",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 53,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "ARCVAL(CLKI1,BRIDGE1)"
+        }
+    },
+    {
+        "name": "MC1_SLCL_N_0",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 42,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "ARCVAL(CLKI0,BRIDGE0)"
+        }
+    },
+    {
+        "name": "MC1_STOP_1",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 52,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(IOCLK.STOP1,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_STOP_0",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 45,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(IOCLK.STOP0,ENABLE)"
+        }
+    }
+]

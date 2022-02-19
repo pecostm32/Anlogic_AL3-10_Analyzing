@@ -1,0 +1,23 @@
+[
+    {
+        "name": "MC1_PIB_CTRL_OSC",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 1,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(OSC.STDBY,ENABLE)"
+        }
+    }
+]

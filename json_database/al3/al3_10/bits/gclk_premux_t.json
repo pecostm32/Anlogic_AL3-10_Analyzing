@@ -1,0 +1,1230 @@
+[
+    {
+        "name": "MC1_GCLK_CE_7",
+        "type": "PIB",
+        "y": 26,
+        "x": 5,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "(",
+            "B",
+            "*",
+            "~",
+            "C",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "C",
+            "~",
+            "*",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.CEMUX7,1)",
+            "B": "WIRE(VPMX7T)",
+            "C": "PROPERTY(PREMUX.CEMUX7,CE)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_CE_6",
+        "type": "PIB",
+        "y": 26,
+        "x": 6,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "(",
+            "B",
+            "*",
+            "~",
+            "C",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "C",
+            "~",
+            "*",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.CEMUX6,1)",
+            "B": "WIRE(VPMX6T)",
+            "C": "PROPERTY(PREMUX.CEMUX6,CE)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_CE_5",
+        "type": "PIB",
+        "y": 26,
+        "x": 17,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "(",
+            "B",
+            "*",
+            "~",
+            "C",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "C",
+            "~",
+            "*",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.CEMUX5,1)",
+            "B": "WIRE(VPMX5T)",
+            "C": "PROPERTY(PREMUX.CEMUX5,CE)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_CE_4",
+        "type": "PIB",
+        "y": 26,
+        "x": 18,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "(",
+            "B",
+            "*",
+            "~",
+            "C",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "C",
+            "~",
+            "*",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.CEMUX4,1)",
+            "B": "WIRE(VPMX4T)",
+            "C": "PROPERTY(PREMUX.CEMUX4,CE)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_CE_3",
+        "type": "PIB",
+        "y": 26,
+        "x": 33,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "(",
+            "B",
+            "*",
+            "~",
+            "C",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "C",
+            "~",
+            "*",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.CEMUX3,1)",
+            "B": "WIRE(VPMX3T)",
+            "C": "PROPERTY(PREMUX.CEMUX3,CE)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_CE_2",
+        "type": "PIB",
+        "y": 26,
+        "x": 34,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "(",
+            "B",
+            "*",
+            "~",
+            "C",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "C",
+            "~",
+            "*",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.CEMUX2,1)",
+            "B": "WIRE(VPMX2T)",
+            "C": "PROPERTY(PREMUX.CEMUX2,CE)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_CE_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 39,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "(",
+            "B",
+            "*",
+            "~",
+            "C",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "C",
+            "~",
+            "*",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.CEMUX1,1)",
+            "B": "WIRE(VPMX1T)",
+            "C": "PROPERTY(PREMUX.CEMUX1,CE)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_CE_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 42,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "(",
+            "B",
+            "*",
+            "~",
+            "C",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "C",
+            "~",
+            "*",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.CEMUX0,1)",
+            "B": "WIRE(VPMX0T)",
+            "C": "PROPERTY(PREMUX.CEMUX0,CE)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_23",
+        "type": "PIB",
+        "y": 26,
+        "x": 1,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX7T,PIBCLK3)",
+            "B": "ARCVAL(VPMX7T,PCLKIO0N)",
+            "C": "ARCVAL(VPMX7T,PLL1CLK0)",
+            "D": "ARCVAL(VPMX7T,DPCLKIO0)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_22",
+        "type": "PIB",
+        "y": 26,
+        "x": 2,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX7T,PIBCLK3)",
+            "B": "ARCVAL(VPMX7T,DPCLKIO0)",
+            "C": "ARCVAL(VPMX7T,PLL0CLK0)",
+            "D": "ARCVAL(VPMX7T,PLL0CLK4)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_21",
+        "type": "PIB",
+        "y": 26,
+        "x": 3,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX7T,PCLKIO0N)",
+            "B": "ARCVAL(VPMX7T,PLL0CLK4)",
+            "C": "ARCVAL(VPMX7T,ECLK0DIV0)",
+            "D": "ARCVAL(VPMX7T,DPCLKIO0)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_20",
+        "type": "PIB",
+        "y": 26,
+        "x": 7,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX6T,PIBCLK2)",
+            "B": "ARCVAL(VPMX6T,PCLKIO0P)",
+            "C": "ARCVAL(VPMX6T,PLL1CLK1)",
+            "D": "ARCVAL(VPMX6T,DPCLKIO1)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_19",
+        "type": "PIB",
+        "y": 26,
+        "x": 9,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX6T,PIBCLK2)",
+            "B": "ARCVAL(VPMX6T,DPCLKIO1)",
+            "C": "ARCVAL(VPMX6T,PLL0CLK0)",
+            "D": "ARCVAL(VPMX6T,PLL0CLK1)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_18",
+        "type": "PIB",
+        "y": 26,
+        "x": 10,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX6T,DPCLKIO1)",
+            "B": "ARCVAL(VPMX6T,PLL0CLK1)",
+            "C": "ARCVAL(VPMX6T,ECLK0DIV1)",
+            "D": "ARCVAL(VPMX6T,PCLKIO0P)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_17",
+        "type": "PIB",
+        "y": 26,
+        "x": 13,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX5T,PIBCLK1)",
+            "B": "ARCVAL(VPMX5T,PCLKIO1N)",
+            "C": "ARCVAL(VPMX5T,PLL1CLK1)",
+            "D": "ARCVAL(VPMX5T,DPCLKIO1)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_16",
+        "type": "PIB",
+        "y": 26,
+        "x": 14,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX5T,PIBCLK1)",
+            "B": "ARCVAL(VPMX5T,DPCLKIO1)",
+            "C": "ARCVAL(VPMX5T,PLL0CLK0)",
+            "D": "ARCVAL(VPMX5T,PLL0CLK2)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_15",
+        "type": "PIB",
+        "y": 26,
+        "x": 15,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX5T,DPCLKIO1)",
+            "B": "ARCVAL(VPMX5T,PCLKIO1N)",
+            "C": "ARCVAL(VPMX5T,PLL0CLK2)",
+            "D": "ARCVAL(VPMX5T,ECLK1DIV0)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_14",
+        "type": "PIB",
+        "y": 26,
+        "x": 23,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX4T,PIBCLK0)",
+            "B": "ARCVAL(VPMX4T,PCLKIO1P)",
+            "C": "ARCVAL(VPMX4T,PLL1CLK0)",
+            "D": "ARCVAL(VPMX4T,DPCLKIO0)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_13",
+        "type": "PIB",
+        "y": 26,
+        "x": 22,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX4T,PIBCLK0)",
+            "B": "ARCVAL(VPMX4T,DPCLKIO0)",
+            "C": "ARCVAL(VPMX4T,PLL0CLK0)",
+            "D": "ARCVAL(VPMX4T,PLL0CLK3)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_12",
+        "type": "PIB",
+        "y": 26,
+        "x": 19,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX4T,DPCLKIO0)",
+            "B": "ARCVAL(VPMX4T,PLL0CLK3)",
+            "C": "ARCVAL(VPMX4T,ECLK1DIV1)",
+            "D": "ARCVAL(VPMX4T,PCLKIO1P)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_11",
+        "type": "PIB",
+        "y": 26,
+        "x": 12,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX3T,PIBCLK0)",
+            "B": "ARCVAL(VPMX3T,PCLKIO1P)",
+            "C": "ARCVAL(VPMX3T,PLL1CLK0)",
+            "D": "ARCVAL(VPMX3T,DPCLKIO0)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_10",
+        "type": "PIB",
+        "y": 26,
+        "x": 29,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX3T,PIBCLK0)",
+            "B": "ARCVAL(VPMX3T,DPCLKIO0)",
+            "C": "ARCVAL(VPMX3T,PLL0CLK0)",
+            "D": "ARCVAL(VPMX3T,PLL0CLK3)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_9",
+        "type": "PIB",
+        "y": 26,
+        "x": 27,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX3T,PCLKIO1P)",
+            "B": "ARCVAL(VPMX3T,PLL0CLK3)",
+            "C": "ARCVAL(VPMX3T,ECLK1DIV1)",
+            "D": "ARCVAL(VPMX3T,DPCLKIO0)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_8",
+        "type": "PIB",
+        "y": 26,
+        "x": 30,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX2T,PIBCLK1)",
+            "B": "ARCVAL(VPMX2T,PCLKIO1N)",
+            "C": "ARCVAL(VPMX2T,PLL1CLK1)",
+            "D": "ARCVAL(VPMX2T,DPCLKIO1)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_7",
+        "type": "PIB",
+        "y": 26,
+        "x": 28,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX2T,PIBCLK1)",
+            "B": "ARCVAL(VPMX2T,DPCLKIO1)",
+            "C": "ARCVAL(VPMX2T,PLL0CLK0)",
+            "D": "ARCVAL(VPMX2T,PLL0CLK2)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_6",
+        "type": "PIB",
+        "y": 26,
+        "x": 36,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX2T,PCLKIO1N)",
+            "B": "ARCVAL(VPMX2T,PLL0CLK2)",
+            "C": "ARCVAL(VPMX2T,ECLK1DIV0)",
+            "D": "ARCVAL(VPMX2T,DPCLKIO1)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_5",
+        "type": "PIB",
+        "y": 26,
+        "x": 11,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX1T,PIBCLK2)",
+            "B": "ARCVAL(VPMX1T,PCLKIO0P)",
+            "C": "ARCVAL(VPMX1T,PLL1CLK1)",
+            "D": "ARCVAL(VPMX1T,DPCLKIO1)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_4",
+        "type": "PIB",
+        "y": 26,
+        "x": 16,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX1T,PIBCLK2)",
+            "B": "ARCVAL(VPMX1T,DPCLKIO1)",
+            "C": "ARCVAL(VPMX1T,PLL0CLK1)",
+            "D": "ARCVAL(VPMX1T,PLL0CLK0)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_3",
+        "type": "PIB",
+        "y": 26,
+        "x": 38,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX1T,PCLKIO0P)",
+            "B": "ARCVAL(VPMX1T,PLL0CLK1)",
+            "C": "ARCVAL(VPMX1T,ECLK0DIV1)",
+            "D": "ARCVAL(VPMX1T,DPCLKIO1)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_2",
+        "type": "PIB",
+        "y": 26,
+        "x": 48,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX0T,PIBCLK3)",
+            "B": "ARCVAL(VPMX0T,PCLKIO0N)",
+            "C": "ARCVAL(VPMX0T,PLL1CLK0)",
+            "D": "ARCVAL(VPMX0T,DPCLKIO0)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 47,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX0T,PIBCLK3)",
+            "B": "ARCVAL(VPMX0T,DPCLKIO0)",
+            "C": "ARCVAL(VPMX0T,PLL0CLK0)",
+            "D": "ARCVAL(VPMX0T,PLL0CLK4)"
+        }
+    },
+    {
+        "name": "MC1_GCLK_PRESEL_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 45,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(VPMX0T,PCLKIO0N)",
+            "B": "ARCVAL(VPMX0T,PLL0CLK4)",
+            "C": "ARCVAL(VPMX0T,ECLK0DIV0)",
+            "D": "ARCVAL(VPMX0T,DPCLKIO0)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_3",
+        "type": "PIB",
+        "y": 26,
+        "x": 52,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.PIO2PLL_3,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_2",
+        "type": "PIB",
+        "y": 26,
+        "x": 51,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.PIO2PLL_2,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 43,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.PIO2PLL_1,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 4,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PREMUX.PIO2PLL_0,ENABLE)"
+        }
+    }
+]

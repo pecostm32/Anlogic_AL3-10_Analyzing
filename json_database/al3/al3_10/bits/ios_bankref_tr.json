@@ -1,0 +1,382 @@
+[
+    {
+        "name": "MC12_INR_ON",
+        "type": "MISCS_MIC_IO_T",
+        "y": 2,
+        "x": 12,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.INR,ON)"
+        }
+    },
+    {
+        "name": "MC12_STDBY_INR",
+        "type": "MISCS_MIC_IO_T",
+        "y": 2,
+        "x": 10,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.INR_STDBY,ENABLE)"
+        }
+    },
+    {
+        "name": "MC12_ENVR0_1",
+        "type": "MISCS_MIC_IO_T",
+        "y": 2,
+        "x": 16,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.VREF1_VALUE,HIGH)",
+            "B": "PROPERTY(BANKERF.VREF1_VALUE,MID)"
+        }
+    },
+    {
+        "name": "MC12_ENVR0_0",
+        "type": "MISCS_MIC_IO_T",
+        "y": 2,
+        "x": 14,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.VREF1_VALUE,HIGH)",
+            "B": "PROPERTY(BANKERF.VREF1_VALUE,LOW)"
+        }
+    },
+    {
+        "name": "MC12_ENVR1_1",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 11,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.VREF2_VALUE,HIGH)",
+            "B": "PROPERTY(BANKERF.VREF2_VALUE,MID)"
+        }
+    },
+    {
+        "name": "MC12_ENVR1_0",
+        "type": "MISCS_MIC_IO_T",
+        "y": 2,
+        "x": 18,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.VREF2_VALUE,HIGH)",
+            "B": "PROPERTY(BANKERF.VREF2_VALUE,LOW)"
+        }
+    },
+    {
+        "name": "MC12_VRPD_N_1",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 18,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.VREF2,ENABLE)"
+        }
+    },
+    {
+        "name": "MC12_VRPD_N_0",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 16,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.VREF1,ENABLE)"
+        }
+    },
+    {
+        "name": "MC12_PU_1",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 15,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC12_PU_0",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 13,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC12_PD_1",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 10,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC12_PD_0",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 17,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC12_RDSEL_2",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 14,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.DIFFRESISTOR,90)",
+            "B": "PROPERTY(BANKREF.DIFFRESISTOR,80)",
+            "C": "PROPERTY(BANKREF.DIFFRESISTOR,70)",
+            "D": "PROPERTY(BANKREF.DIFFRESISTOR,60)"
+        }
+    },
+    {
+        "name": "MC12_RDSEL_1",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 12,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.DIFFRESISTOR,100)",
+            "B": "PROPERTY(BANKREF.DIFFRESISTOR,110)",
+            "C": "PROPERTY(BANKREF.DIFFRESISTOR,70)",
+            "D": "PROPERTY(BANKREF.DIFFRESISTOR,60)"
+        }
+    },
+    {
+        "name": "MC12_RDSEL_0",
+        "type": "MISCS_MIC_IO_T",
+        "y": 1,
+        "x": 19,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(BANKREF.DIFFRESISTOR,100)",
+            "B": "PROPERTY(BANKREF.DIFFRESISTOR,120)",
+            "C": "PROPERTY(BANKREF.DIFFRESISTOR,80)",
+            "D": "PROPERTY(BANKREF.DIFFRESISTOR,60)"
+        }
+    }
+]

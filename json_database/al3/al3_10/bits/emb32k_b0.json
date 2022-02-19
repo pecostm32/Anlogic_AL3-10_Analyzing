@@ -1,0 +1,899 @@
+[
+    {
+        "name": "TOP.XI322.MCS0",
+        "type": "PIB",
+        "y": 9,
+        "x": 24,
+        "xoff": -2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.CENAMUX,INV)",
+            "B": "PROPERTY(EMB32K0.CENAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC06",
+        "type": "PIB",
+        "y": 7,
+        "x": 25,
+        "xoff": -2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.CENAMUX,0)",
+            "B": "PROPERTY(EMB32K0.CENAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC01",
+        "type": "PIB",
+        "y": 8,
+        "x": 25,
+        "xoff": -2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.CENAMUX,0)",
+            "B": "PROPERTY(EMB32K0.CENAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MCS0",
+        "type": "PIB",
+        "y": 9,
+        "x": 24,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.CENBMUX,INV)",
+            "B": "PROPERTY(EMB32K0.CENBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC06",
+        "type": "PIB",
+        "y": 7,
+        "x": 25,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.CENBMUX,0)",
+            "B": "PROPERTY(EMB32K0.CENBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC01",
+        "type": "PIB",
+        "y": 8,
+        "x": 25,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.CENBMUX,0)",
+            "B": "PROPERTY(EMB32K0.CENBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI330.MCUNUSED_W11B2",
+        "type": "PIB",
+        "y": 11,
+        "x": 18,
+        "xoff": -2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.WENAMUX,INV)",
+            "B": "PROPERTY(EMB32K0.WENAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC01",
+        "type": "PIB",
+        "y": 14,
+        "x": 25,
+        "xoff": -2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.WENAMUX,0)",
+            "B": "PROPERTY(EMB32K0.WENAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC06",
+        "type": "PIB",
+        "y": 13,
+        "x": 25,
+        "xoff": -2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.WENAMUX,0)",
+            "B": "PROPERTY(EMB32K0.WENAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI330.MCUNUSED_W11B2",
+        "type": "PIB",
+        "y": 11,
+        "x": 18,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.WENBMUX,INV)",
+            "B": "PROPERTY(EMB32K0.WENBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC01",
+        "type": "PIB",
+        "y": 14,
+        "x": 25,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.WENBMUX,0)",
+            "B": "PROPERTY(EMB32K0.WENBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC06",
+        "type": "PIB",
+        "y": 13,
+        "x": 25,
+        "xoff": 2,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.WENBMUX,0)",
+            "B": "PROPERTY(EMB32K0.WENBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI330.MCUNUSED_W11B2",
+        "type": "PIB",
+        "y": 11,
+        "x": 18,
+        "xoff": -1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.RSTAMUX,INV)",
+            "B": "PROPERTY(EMB32K0.RSTAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC01",
+        "type": "PIB",
+        "y": 14,
+        "x": 25,
+        "xoff": -1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.RSTAMUX,0)",
+            "B": "PROPERTY(EMB32K0.RSTAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC06",
+        "type": "PIB",
+        "y": 13,
+        "x": 25,
+        "xoff": -1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.RSTAMUX,0)",
+            "B": "PROPERTY(EMB32K0.RSTAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI330.MCUNUSED_W11B2",
+        "type": "PIB",
+        "y": 11,
+        "x": 18,
+        "xoff": 1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.RSTBMUX,INV)",
+            "B": "PROPERTY(EMB32K0.RSTBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC01",
+        "type": "PIB",
+        "y": 14,
+        "x": 25,
+        "xoff": 1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.RSTBMUX,0)",
+            "B": "PROPERTY(EMB32K0.RSTBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC06",
+        "type": "PIB",
+        "y": 13,
+        "x": 25,
+        "xoff": 1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.RSTBMUX,0)",
+            "B": "PROPERTY(EMB32K0.RSTBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MCS0",
+        "type": "PIB",
+        "y": 9,
+        "x": 24,
+        "xoff": -1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.OCEAMUX,INV)",
+            "B": "PROPERTY(EMB32K0.OCEAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC06",
+        "type": "PIB",
+        "y": 7,
+        "x": 25,
+        "xoff": -1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.OCEAMUX,0)",
+            "B": "PROPERTY(EMB32K0.OCEAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC01",
+        "type": "PIB",
+        "y": 8,
+        "x": 25,
+        "xoff": -1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.OCEAMUX,0)",
+            "B": "PROPERTY(EMB32K0.OCEAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MCS0",
+        "type": "PIB",
+        "y": 9,
+        "x": 24,
+        "xoff": 1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.OCEBMUX,INV)",
+            "B": "PROPERTY(EMB32K0.OCEBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC06",
+        "type": "PIB",
+        "y": 7,
+        "x": 25,
+        "xoff": 1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.OCEBMUX,0)",
+            "B": "PROPERTY(EMB32K0.OCEBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC01",
+        "type": "PIB",
+        "y": 8,
+        "x": 25,
+        "xoff": 1,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.OCEBMUX,0)",
+            "B": "PROPERTY(EMB32K0.OCEBMUX,1)"
+        }
+    },
+    {
+        "name": "MC1_CLK_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 26,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.CLKAMUX,INV)"
+        }
+    },
+    {
+        "name": "MC1_CLK_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 26,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.CLKBMUX,INV)"
+        }
+    },
+    {
+        "name": "F_X18N_B",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 28,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.DATA_WIDTH_B,8)"
+        }
+    },
+    {
+        "name": "F_WT_B",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 24,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.WRITEMODE_B,WRITETHROUGH)"
+        }
+    },
+    {
+        "name": "F_DIRECTN_B",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 26,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.REGMODE_B,OUTREG)"
+        }
+    },
+    {
+        "name": "F_ASYNC",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 20,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.SRMODE,ASYNC)"
+        }
+    },
+    {
+        "name": "F_SYNC",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 22,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.SRMODE,SYNC)"
+        }
+    },
+    {
+        "name": "F_SRVALUE",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 29,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.SYNC_RESET_MODE,SET)"
+        }
+    },
+    {
+        "name": "F_X18N_A",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 18,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.DATA_WIDTH_A,8)"
+        }
+    },
+    {
+        "name": "F_DIRECTN_A",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 25,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.REGMODE_A,OUTREG)"
+        }
+    },
+    {
+        "name": "F_WT_A",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 27,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(EMB32K0.WRITEMODE_A,WRITETHROUGH)"
+        }
+    },
+    {
+        "name": "F_SPC_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 21,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(EMB32K0,MFG_SPC,0)"
+        }
+    },
+    {
+        "name": "F_SPC_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 23,
+        "xoff": -3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(EMB32K0,MFG_SPC,1)"
+        }
+    }
+]

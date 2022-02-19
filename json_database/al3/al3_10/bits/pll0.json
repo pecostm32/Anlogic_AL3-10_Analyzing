@@ -1,0 +1,6567 @@
+[
+    {
+        "name": "MC1_PIO2PLL_3",
+        "type": "PIB",
+        "y": 26,
+        "x": 1,
+        "xoff": 16,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_3)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_2",
+        "type": "PIB",
+        "y": 26,
+        "x": 2,
+        "xoff": 16,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_2)",
+            "B": "ARCVAL(FBCLK,PIO2PLL_2)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 6,
+        "xoff": 16,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_1)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 43,
+        "xoff": 16,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_0)",
+            "B": "ARCVAL(FBCLK,PIO2PLL_0)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_7",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 26,
+        "xoff": 0,
+        "yoff": 18,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_7)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_6",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 24,
+        "xoff": 0,
+        "yoff": 18,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_6)",
+            "B": "ARCVAL(FBCLK,PIO2PLL_6)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_5",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 29,
+        "xoff": 0,
+        "yoff": 18,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_5)"
+        }
+    },
+    {
+        "name": "MC1_PIO2PLL_4",
+        "type": "MISCS_MIC_IO_LR_CORNER_UL",
+        "y": 1,
+        "x": 27,
+        "xoff": 0,
+        "yoff": 18,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_4)",
+            "B": "ARCVAL(FBCLK,PIO2PLL_4)"
+        }
+    },
+    {
+        "name": "MC1_DELC1_5",
+        "type": "PIB",
+        "y": 26,
+        "x": 1,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_CPHASE,5)"
+        }
+    },
+    {
+        "name": "MC1_DELC1_6",
+        "type": "PIB",
+        "y": 26,
+        "x": 2,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_CPHASE,6)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_6",
+        "type": "PIB",
+        "y": 26,
+        "x": 3,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_DIV,6)"
+        }
+    },
+    {
+        "name": "MC1_CLKC1_TRIM_3",
+        "type": "PIB",
+        "y": 26,
+        "x": 4,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_TRIM_POL,RISING)"
+        }
+    },
+    {
+        "name": "MC1_CLKC1_TRIM_2",
+        "type": "PIB",
+        "y": 26,
+        "x": 5,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_CLKC1_TRIM_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 6,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_TRIM_DELAY,2)"
+        }
+    },
+    {
+        "name": "MC1_CLKC1_TRIM_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 7,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_TRIM_DELAY,1)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_OUTMUX",
+        "type": "PIB",
+        "y": 26,
+        "x": 8,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "(",
+            "A",
+            "*",
+            "B",
+            ")",
+            "+",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "*",
+            "C",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.VCO_BYPASS_C0,DISABLE)",
+            "B": "PROPERTY(PLL.ODIV_MUXC0,REFCLK)",
+            "C": "ARCVAL(CLKI_PLL,JCLKC0_PLL)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_OUTMUX",
+        "type": "PIB",
+        "y": 26,
+        "x": 9,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "(",
+            "A",
+            "*",
+            "B",
+            ")",
+            "+",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "*",
+            "C",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.VCO_BYPASS_C1,DISABLE)",
+            "B": "PROPERTY(PLL.ODIV_MUXC1,REFCLK)",
+            "C": "ARCVAL(CLKI_PLL,JCLKC1_PLL)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_7",
+        "type": "PIB",
+        "y": 26,
+        "x": 10,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_8",
+        "type": "PIB",
+        "y": 26,
+        "x": 11,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_9",
+        "type": "PIB",
+        "y": 26,
+        "x": 12,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_10",
+        "type": "PIB",
+        "y": 26,
+        "x": 13,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_11",
+        "type": "PIB",
+        "y": 26,
+        "x": 14,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_FBK_DIV_5",
+        "type": "PIB",
+        "y": 26,
+        "x": 15,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,FBCLK_DIV,5)"
+        }
+    },
+    {
+        "name": "MC1_FBK_DIV_6",
+        "type": "PIB",
+        "y": 26,
+        "x": 16,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,FBCLK_DIV,6)"
+        }
+    },
+    {
+        "name": "MC1_REF_DIV_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 17,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,REFCLK_DIV,0)"
+        }
+    },
+    {
+        "name": "MC1_REF_DIV_2",
+        "type": "PIB",
+        "y": 26,
+        "x": 18,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,REFCLK_DIV,2)"
+        }
+    },
+    {
+        "name": "MC1_REF_DIV_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 19,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,REFCLK_DIV,1)"
+        }
+    },
+    {
+        "name": "MC1_REF_DIV_4",
+        "type": "PIB",
+        "y": 26,
+        "x": 22,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,REFCLK_DIV,4)"
+        }
+    },
+    {
+        "name": "MC1_REF_DIV_3",
+        "type": "PIB",
+        "y": 26,
+        "x": 23,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,REFCLK_DIV,3)"
+        }
+    },
+    {
+        "name": "MC1_REF_DIV_6",
+        "type": "PIB",
+        "y": 26,
+        "x": 27,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,REFCLK_DIV,6)"
+        }
+    },
+    {
+        "name": "MC1_REF_DIV_5",
+        "type": "PIB",
+        "y": 26,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,REFCLK_DIV,5)"
+        }
+    },
+    {
+        "name": "MC1_DIRECTION",
+        "type": "PIB",
+        "y": 26,
+        "x": 29,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_DYN_SEL_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 30,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "*",
+            "(",
+            "~",
+            "B",
+            "+",
+            "C",
+            "*",
+            "D",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "~",
+            "C",
+            "D",
+            "*",
+            "+",
+            "*"
+        ],
+        "data": {
+            "A": "COMP(PLL)",
+            "B": "PROPERTY(PLL.DPHASE_SOURCE,FUSE)",
+            "C": "PROPERTY(PLL.DPHASE_SOURCE,FUSE)",
+            "D": "SELECTOR(PLL,DYN_SEL,1)"
+        }
+    },
+    {
+        "name": "MC1_DYN_SOURCE",
+        "type": "PIB",
+        "y": 26,
+        "x": 33,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.DPHASE_SOURCE,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_DYN_SEL_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 34,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "*",
+            "(",
+            "~",
+            "B",
+            "+",
+            "C",
+            "*",
+            "D",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "~",
+            "C",
+            "D",
+            "*",
+            "+",
+            "*"
+        ],
+        "data": {
+            "A": "COMP(PLL)",
+            "B": "PROPERTY(PLL.DPHASE_SOURCE,FUSE)",
+            "C": "PROPERTY(PLL.DPHASE_SOURCE,FUSE)",
+            "D": "SELECTOR(PLL,DYN_SEL,0)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_PREMUX_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 36,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC1,CLKPLUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC1,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_PREMUX_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 38,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC1,CLKMINUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC1,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_DELC1_4",
+        "type": "PIB",
+        "y": 26,
+        "x": 39,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_CPHASE,4)"
+        }
+    },
+    {
+        "name": "MC1_FBK_DIV_2",
+        "type": "PIB",
+        "y": 26,
+        "x": 42,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,FBCLK_DIV,2)"
+        }
+    },
+    {
+        "name": "MC1_FBK_DIV_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 43,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,FBCLK_DIV,1)"
+        }
+    },
+    {
+        "name": "MC1_FBK_DIV_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 45,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,FBCLK_DIV,0)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_4",
+        "type": "PIB",
+        "y": 26,
+        "x": 47,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_DIV,4)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_5",
+        "type": "PIB",
+        "y": 26,
+        "x": 48,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_DIV,5)"
+        }
+    },
+    {
+        "name": "MC1_FBK_DIV_4",
+        "type": "PIB",
+        "y": 26,
+        "x": 51,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,FBCLK_DIV,4)"
+        }
+    },
+    {
+        "name": "MC1_FBK_DIV_3",
+        "type": "PIB",
+        "y": 26,
+        "x": 52,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,FBCLK_DIV,3)"
+        }
+    },
+    {
+        "name": "MC1_GMCSEL_3",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 75,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 8,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.GMC_TEST,8)",
+            "B": "PROPERTY(PLL.GMC_TEST,9)",
+            "C": "PROPERTY(PLL.GMC_TEST,10)",
+            "D": "PROPERTY(PLL.GMC_TEST,11)",
+            "E": "PROPERTY(PLL.GMC_TEST,12)",
+            "F": "PROPERTY(PLL.GMC_TEST,13)",
+            "G": "PROPERTY(PLL.GMC_TEST,14)",
+            "H": "PROPERTY(PLL.GMC_TEST,15)"
+        }
+    },
+    {
+        "name": "MC1_GMCSEL_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 74,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 8,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.GMC_TEST,4)",
+            "B": "PROPERTY(PLL.GMC_TEST,5)",
+            "C": "PROPERTY(PLL.GMC_TEST,6)",
+            "D": "PROPERTY(PLL.GMC_TEST,7)",
+            "E": "PROPERTY(PLL.GMC_TEST,12)",
+            "F": "PROPERTY(PLL.GMC_TEST,13)",
+            "G": "PROPERTY(PLL.GMC_TEST,14)",
+            "H": "PROPERTY(PLL.GMC_TEST,15)"
+        }
+    },
+    {
+        "name": "MC1_GMCSEL_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 77,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 8,
+        "expr": [
+            "(",
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+",
+            "("
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.GMC_TEST,2)",
+            "B": "PROPERTY(PLL.GMC_TEST,3)",
+            "C": "PROPERTY(PLL.GMC_TEST,6)",
+            "D": "PROPERTY(PLL.GMC_TEST,7)",
+            "E": "PROPERTY(PLL.GMC_TEST,10)",
+            "F": "PROPERTY(PLL.GMC_TEST,11)",
+            "G": "PROPERTY(PLL.GMC_TEST,14)",
+            "H": "PROPERTY(PLL.GMC_TEST,15)"
+        }
+    },
+    {
+        "name": "MC1_GMCSEL_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 76,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 8,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.GMC_TEST,1)",
+            "B": "PROPERTY(PLL.GMC_TEST,3)",
+            "C": "PROPERTY(PLL.GMC_TEST,5)",
+            "D": "PROPERTY(PLL.GMC_TEST,7)",
+            "E": "PROPERTY(PLL.GMC_TEST,9)",
+            "F": "PROPERTY(PLL.GMC_TEST,11)",
+            "G": "PROPERTY(PLL.GMC_TEST,13)",
+            "H": "PROPERTY(PLL.GMC_TEST,15)"
+        }
+    },
+    {
+        "name": "MC1_GPROG_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 79,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.GMC_GAIN,4)",
+            "B": "PROPERTY(PLL.GMC_GAIN,5)",
+            "C": "PROPERTY(PLL.GMC_GAIN,6)",
+            "D": "PROPERTY(PLL.GMC_GAIN,7)"
+        }
+    },
+    {
+        "name": "MC1_GPROG_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 78,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.GMC_GAIN,2)",
+            "B": "PROPERTY(PLL.GMC_GAIN,3)",
+            "C": "PROPERTY(PLL.GMC_GAIN,6)",
+            "D": "PROPERTY(PLL.GMC_GAIN,7)"
+        }
+    },
+    {
+        "name": "MC1_GPROG_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 81,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.GMC_GAIN,1)",
+            "B": "PROPERTY(PLL.GMC_GAIN,3)",
+            "C": "PROPERTY(PLL.GMC_GAIN,5)",
+            "D": "PROPERTY(PLL.GMC_GAIN,7)"
+        }
+    },
+    {
+        "name": "MC1_GMCREF_SEL_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 83,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_GMCREF_SEL,2)",
+            "B": "PROPERTY(PLL.MFG_GMCREF_SEL,3)"
+        }
+    },
+    {
+        "name": "MC1_GMCREF_SEL_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 80,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_GMCREF_SEL,1)",
+            "B": "PROPERTY(PLL.MFG_GMCREF_SEL,3)"
+        }
+    },
+    {
+        "name": "MC1_GMC_PRESET",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 85,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_GMC_PRESET,1)"
+        }
+    },
+    {
+        "name": "MC1_GMC_RESET",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 82,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_GMC_RESET,1)"
+        }
+    },
+    {
+        "name": "MC1_PHIC4_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 87,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_FPHASE,1)",
+            "B": "PROPERTY(PLL.CLKC4_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC4_FPHASE,5)",
+            "D": "PROPERTY(PLL.CLKC4_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC4_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 84,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_FPHASE,2)",
+            "B": "PROPERTY(PLL.CLKC4_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC4_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC4_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC4_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 89,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_FPHASE,4)",
+            "B": "PROPERTY(PLL.CLKC4_FPHASE,5)",
+            "C": "PROPERTY(PLL.CLKC4_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC4_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC3_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 86,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_FPHASE,4)",
+            "B": "PROPERTY(PLL.CLKC3_FPHASE,5)",
+            "C": "PROPERTY(PLL.CLKC3_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC3_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC3_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 91,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_FPHASE,2)",
+            "B": "PROPERTY(PLL.CLKC3_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC3_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC3_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC3_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 88,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_FPHASE,1)",
+            "B": "PROPERTY(PLL.CLKC3_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC3_FPHASE,5)",
+            "D": "PROPERTY(PLL.CLKC3_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC2_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 93,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_FPHASE,1)",
+            "B": "PROPERTY(PLL.CLKC2_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC2_FPHASE,5)",
+            "D": "PROPERTY(PLL.CLKC2_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC2_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 90,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_FPHASE,2)",
+            "B": "PROPERTY(PLL.CLKC2_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC2_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC2_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC2_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 95,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_FPHASE,4)",
+            "B": "PROPERTY(PLL.CLKC2_FPHASE,5)",
+            "C": "PROPERTY(PLL.CLKC2_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC2_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC1_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 92,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_FPHASE,4)",
+            "B": "PROPERTY(PLL.CLKC1_FPHASE,5)",
+            "C": "PROPERTY(PLL.CLKC1_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC1_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC1_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 97,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_FPHASE,2)",
+            "B": "PROPERTY(PLL.CLKC1_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC1_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC1_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC1_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 94,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_FPHASE,1)",
+            "B": "PROPERTY(PLL.CLKC1_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC1_FPHASE,5)",
+            "D": "PROPERTY(PLL.CLKC1_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC0_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 99,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_FPHASE,1)",
+            "B": "PROPERTY(PLL.CLKC0_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC0_FPHASE,5)",
+            "D": "PROPERTY(PLL.CLKC0_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC0_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 96,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_FPHASE,2)",
+            "B": "PROPERTY(PLL.CLKC0_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC0_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC0_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_PHIC0_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 101,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_FPHASE,4)",
+            "B": "PROPERTY(PLL.CLKC0_FPHASE,5)",
+            "C": "PROPERTY(PLL.CLKC0_FPHASE,6)",
+            "D": "PROPERTY(PLL.CLKC0_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_KPROG_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 98,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.KVCO,1)",
+            "B": "PROPERTY(PLL.KVCO,3)",
+            "C": "PROPERTY(PLL.KVCO,5)",
+            "D": "PROPERTY(PLL.KVCO,7)"
+        }
+    },
+    {
+        "name": "MC1_KPROG_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 103,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.KVCO,2)",
+            "B": "PROPERTY(PLL.KVCO,3)",
+            "C": "PROPERTY(PLL.KVCO,6)",
+            "D": "PROPERTY(PLL.KVCO,7)"
+        }
+    },
+    {
+        "name": "MC1_DPROG_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 100,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.LPF_CAPACITOR,2)",
+            "B": "PROPERTY(PLL.LPF_CAPACITOR,3)"
+        }
+    },
+    {
+        "name": "MC1_FORCE_VFILTER",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 105,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_FORCE_VFILTER,1)"
+        }
+    },
+    {
+        "name": "MC1_LF_RESGRND",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 102,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_LF_RESGRND,1)"
+        }
+    },
+    {
+        "name": "MC1_EN_FILTEROPAMP",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 107,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "*",
+            "~",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "~",
+            "*"
+        ],
+        "data": {
+            "A": "COMP(PLL)",
+            "B": "PROPERTY(PLL.MFG_EN_FILTEROPAMP,DISABLE)"
+        }
+    },
+    {
+        "name": "MC1_LF_PRESET",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 104,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_LF_PRESET,1)"
+        }
+    },
+    {
+        "name": "MC1_IPROG_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 109,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,ICP_CURRENT,0)"
+        }
+    },
+    {
+        "name": "MC1_IPROG_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 106,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,ICP_CURRENT,1)"
+        }
+    },
+    {
+        "name": "MC1_IPROG_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 111,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,ICP_CURRENT,2)"
+        }
+    },
+    {
+        "name": "MC1_IPROG_3",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 108,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,ICP_CURRENT,3)"
+        }
+    },
+    {
+        "name": "MC1_IPROG_4",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 113,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,ICP_CURRENT,4)"
+        }
+    },
+    {
+        "name": "MC1_RPROG_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 110,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,LPF_RESISTOR,0)"
+        }
+    },
+    {
+        "name": "MC1_RPROG_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 115,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,LPF_RESISTOR,1)"
+        }
+    },
+    {
+        "name": "MC1_RPROG_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 112,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,LPF_RESISTOR,2)"
+        }
+    },
+    {
+        "name": "MC1_RPROG_3",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 117,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,LPF_RESISTOR,3)"
+        }
+    },
+    {
+        "name": "MC1_RPROG_4",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 114,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,LPF_RESISTOR,4)"
+        }
+    },
+    {
+        "name": "MC1_RPROG_5",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 119,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,LPF_RESISTOR,5)"
+        }
+    },
+    {
+        "name": "MC1_RPROG_6",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 116,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,LPF_RESISTOR,6)"
+        }
+    },
+    {
+        "name": "MC1_FLOAT_ICP",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 121,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_FLOAT_ICP,1)"
+        }
+    },
+    {
+        "name": "MC1_TEST_ICP",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 118,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_ICP_TEST,1)"
+        }
+    },
+    {
+        "name": "MC1_EN_UP",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 123,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_EN_UP,1)"
+        }
+    },
+    {
+        "name": "MC1_CLKC0_TRIM_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 120,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_TRIM_DELAY,1)"
+        }
+    },
+    {
+        "name": "MC1_CLKC0_TRIM_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 125,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_TRIM_DELAY,2)"
+        }
+    },
+    {
+        "name": "MC1_CLKC0_TRIM_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 122,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_CLKC0_TRIM_3",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 127,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_TRIM_POL,RISING)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_6",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 124,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_DIV,6)"
+        }
+    },
+    {
+        "name": "MC1_DELC0_6",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 129,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_CPHASE,6)"
+        }
+    },
+    {
+        "name": "MC1_DELC0_5",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 126,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_CPHASE,5)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_5",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 131,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_DIV,5)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_4",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 133,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_DIV,4)"
+        }
+    },
+    {
+        "name": "MC1_DELC0_4",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 128,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_CPHASE,4)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_PREMUX_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 130,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC0,CLKMINUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC0,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_PREMUX_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 135,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC0,CLKPLUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC0,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_DELC0_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 132,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_CPHASE,1)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 137,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_DIV,1)"
+        }
+    },
+    {
+        "name": "MC1_DELC0_3",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 134,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_CPHASE,3)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_3",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 139,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_DIV,3)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 136,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_DIV,2)"
+        }
+    },
+    {
+        "name": "MC1_DELC0_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 141,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_CPHASE,2)"
+        }
+    },
+    {
+        "name": "MC1_DIVC0_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 138,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_DIV,0)"
+        }
+    },
+    {
+        "name": "MC1_DELC0_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 143,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC0_CPHASE,0)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 140,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_DIV,0)"
+        }
+    },
+    {
+        "name": "MC1_DELC1_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 145,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_CPHASE,0)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 142,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_DIV,1)"
+        }
+    },
+    {
+        "name": "MC1_DELC1_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 147,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_CPHASE,1)"
+        }
+    },
+    {
+        "name": "MC1_DELC1_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 144,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_CPHASE,2)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 149,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_DIV,2)"
+        }
+    },
+    {
+        "name": "MC1_DIVC1_3",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 146,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_DIV,3)"
+        }
+    },
+    {
+        "name": "MC1_DELC1_3",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 151,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC1_CPHASE,3)"
+        }
+    },
+    {
+        "name": "MC1_ENABLE_SYNC",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 148,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.SYNC_ENABLE,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_CLKC2_TRIM_1",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 150,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_TRIM_DELAY,2)"
+        }
+    },
+    {
+        "name": "MC1_CLKC2_TRIM_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 155,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_CLKC2_TRIM_3",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 152,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_TRIM_POL,RISING)"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_6",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 157,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_DIV,6)"
+        }
+    },
+    {
+        "name": "MC1_DELC2_6",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 154,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_CPHASE,6)"
+        }
+    },
+    {
+        "name": "MC1_LF_RESET",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 159,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG_LF_RESET,1)"
+        }
+    },
+    {
+        "name": "MC1_KPROG_2",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 156,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.KVCO,4)",
+            "B": "PROPERTY(PLL.KVCO,5)",
+            "C": "PROPERTY(PLL.KVCO,6)",
+            "D": "PROPERTY(PLL.KVCO,7)"
+        }
+    },
+    {
+        "name": "MC1_DPROG_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 160,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.LPF_CAPACITOR,1)",
+            "B": "PROPERTY(PLL.LPF_CAPACITOR,3)"
+        }
+    },
+    {
+        "name": "MC1_DELC2_5",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 161,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_CPHASE,5)"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_5",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 158,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_DIV,5)"
+        }
+    },
+    {
+        "name": "MC1_CLKC2_TRIM_0",
+        "type": "MISCS_MIC_IO_L",
+        "y": 1,
+        "x": 153,
+        "xoff": 0,
+        "yoff": 2,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_TRIM_DELAY,1)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_14",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 31,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_15",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 30,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_CLKC3_TRIM_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 29,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_TRIM_DELAY,2)"
+        }
+    },
+    {
+        "name": "MC1_INT_LOCK_STICKY",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 28,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "*",
+            "~",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "~",
+            "*"
+        ],
+        "data": {
+            "A": "COMP(PLL)",
+            "B": "PROPERTY(PLL.INT_LOCK_STICKY,DISABLE)"
+        }
+    },
+    {
+        "name": "MC1_CLKC3_TRIM_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 27,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_TRIM_DELAY,1)"
+        }
+    },
+    {
+        "name": "MC1_LOCK_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 26,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.FREQ_LOCK_ACCURACY,2)",
+            "B": "PROPERTY(PLL.FREQ_LOCK_ACCURACY,3)"
+        }
+    },
+    {
+        "name": "MC1_CLKC4_TRIM_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 25,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_TRIM_DELAY,1)"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_PREMUX_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 24,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC2,CLKPLUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC2,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_CLKC4_TRIM_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 23,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_TRIM_DELAY,2)"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_PREMUX_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 22,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC2,CLKMINUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC2,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_CLKC4_TRIM_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 21,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_4",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 20,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_DIV,4)"
+        }
+    },
+    {
+        "name": "MC1_CLKC4_TRIM_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 19,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_TRIM_POL,RISING)"
+        }
+    },
+    {
+        "name": "MC1_DELC2_4",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 18,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_CPHASE,4)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_6",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 17,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_DIV,6)"
+        }
+    },
+    {
+        "name": "MC1_LOCK_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 16,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.FREQ_LOCK_ACCURACY,1)",
+            "B": "PROPERTY(PLL.FREQ_LOCK_ACCURACY,3)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_PREMUX_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 15,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC4,CLKMINUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC4,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_LOCK_SEL_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 14,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PLL_LOCK_MODE,1)",
+            "B": "PROPERTY(PLL.PLL_LOCK_MODE,3)",
+            "C": "PROPERTY(PLL.PLL_LOCK_MODE,5)",
+            "D": "PROPERTY(PLL.PLL_LOCK_MODE,7)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_PREMUX_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 13,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC4,CLKPLUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC4,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_LOCK_SEL_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 12,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PLL_LOCK_MODE,4)",
+            "B": "PROPERTY(PLL.PLL_LOCK_MODE,5)",
+            "C": "PROPERTY(PLL.PLL_LOCK_MODE,6)",
+            "D": "PROPERTY(PLL.PLL_LOCK_MODE,7)"
+        }
+    },
+    {
+        "name": "MC1_FBK_SEL_WAKEUP_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 11,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.INT_FEEDBK_PATH,CLKC0_INT)",
+            "B": "PROPERTY(PLL.INT_FEEDBK_PATH,CLKC1_INT)",
+            "C": "PROPERTY(PLL.INT_FEEDBK_PATH,CLKC4_INT)",
+            "D": "PROPERTY(PLL.INT_FEEDBK_PATH,VCO_PHASE_0)"
+        }
+    },
+    {
+        "name": "MC1_FBK_SEL_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 10,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 8,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(FBCLK,PIO2PLL_2)",
+            "B": "ARCVAL(FBCLK,PIO2PLL_6)",
+            "C": "ARCVAL(FBCLK,ECLK_1)",
+            "D": "ARCVAL(FBCLK,ECLK_3)",
+            "E": "ARCVAL(FBCLK,PIO2PLL_8)",
+            "F": "PROPERTY(PLL.FEEDBK_PATH,CLKC1_INT)",
+            "G": "PROPERTY(PLL.FEEDBK_PATH,CLKC3_INT)",
+            "H": "PROPERTY(PLL.FEEDBK_PATH,VCO_PHASE_0)"
+        }
+    },
+    {
+        "name": "MC1_FBK_SEL_WAKEUP_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 9,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(FBCLK,PIO2PLL_8)",
+            "B": "PROPERTY(PLL.INT_FEEDBK_PATH,CLKC1_INT)",
+            "C": "PROPERTY(PLL.INT_FEEDBK_PATH,CLKC3_INT)",
+            "D": "PROPERTY(PLL.INT_FEEDBK_PATH,VCO_PHASE_0)"
+        }
+    },
+    {
+        "name": "MC1_INTFB",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 8,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.INTFB_WAKE,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 7,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC34RST_ENA,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_FBK_SEL_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 6,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 8,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(FBCLK,PIO2PLL_4)",
+            "B": "ARCVAL(FBCLK,PIO2PLL_6)",
+            "C": "ARCVAL(FBCLK,ECLK_2)",
+            "D": "ARCVAL(FBCLK,ECLK_3)",
+            "E": "PROPERTY(PLL.FEEDBK_PATH,CLKC0_INT)",
+            "F": "PROPERTY(PLL.FEEDBK_PATH,CLKC1_INT)",
+            "G": "PROPERTY(PLL.FEEDBK_PATH,CLKC4_INT)",
+            "H": "PROPERTY(PLL.FEEDBK_PATH,VCO_PHASE_0)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_6",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 4,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_DIV,6)"
+        }
+    },
+    {
+        "name": "MC1_LOCK_SEL_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 3,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PLL_LOCK_MODE,2)",
+            "B": "PROPERTY(PLL.PLL_LOCK_MODE,3)",
+            "C": "PROPERTY(PLL.PLL_LOCK_MODE,6)",
+            "D": "PROPERTY(PLL.PLL_LOCK_MODE,7)"
+        }
+    },
+    {
+        "name": "MC1_CLKC3_TRIM_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 2,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_TRIM_POL,RISING)"
+        }
+    },
+    {
+        "name": "MC1_CLKC3_TRIM_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 0,
+        "x": 0,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_DYN_SEL_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 30,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "*",
+            "(",
+            "~",
+            "B",
+            "+",
+            "C",
+            "*",
+            "D",
+            ")"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "~",
+            "C",
+            "D",
+            "*",
+            "+",
+            "*"
+        ],
+        "data": {
+            "A": "COMP(PLL)",
+            "B": "PROPERTY(PLL.DPHASE_SOURCE,FUSE)",
+            "C": "PROPERTY(PLL.DPHASE_SOURCE,FUSE)",
+            "D": "SELECTOR(PLL,DYN_SEL,2)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_5",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 28,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_DIV,5)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_5",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 27,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MRST_ENA,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_DELC4_6",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 25,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_CPHASE,6)"
+        }
+    },
+    {
+        "name": "MC1_DELC4_5",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 23,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_CPHASE,5)"
+        }
+    },
+    {
+        "name": "MC1_REF_SEL_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 22,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 7,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_1)",
+            "B": "ARCVAL(REFCLK,PIO2PLL_3)",
+            "C": "ARCVAL(REFCLK,PIO2PLL_5)",
+            "D": "ARCVAL(REFCLK,PIO2PLL_7)",
+            "E": "ARCVAL(REFCLK,PIO2PLL_9)",
+            "F": "ARCVAL(REFCLK,REFCLK_11)",
+            "G": "ARCVAL(REFCLK,GND)"
+        }
+    },
+    {
+        "name": "MC1_PLLRST_ENA",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 21,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PLLRST_ENA,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_LOAD_REG",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 20,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_DELC4_4",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 19,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_CPHASE,4)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_4",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 18,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2RST_ENA,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_PLLPDN",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 16,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 6,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+"
+        ],
+        "data": {
+            "A": "COMP(PLL)",
+            "B": "ARCVAL(CLKI_PLL,JCLKC0_PLL)",
+            "C": "ARCVAL(CLKI_PLL,JCLKC1_PLL)",
+            "D": "ARCVAL(CLKI_PLL,JCLKC2_PLL)",
+            "E": "ARCVAL(CLKI_PLL,JCLKC3_PLL)",
+            "F": "ARCVAL(CLKI_PLL,JCLKC4_PLL)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_4",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 15,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_DIV,4)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 14,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.STDBY_VCO_ENA,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_DELC3_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 13,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_CPHASE,3)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_4",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 12,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_DIV,4)"
+        }
+    },
+    {
+        "name": "MC1_TRIMC2_BYPASS_N",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 11,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "(",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "(",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_TRIM_DELAY,1)",
+            "B": "PROPERTY(PLL.CLKC2_TRIM_DELAY,2)",
+            "C": "PROPERTY(PLL.CLKC2_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_DELC3_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 10,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_CPHASE,1)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_5",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 9,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_DIV,5)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_OUTMUX",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 8,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "(",
+            "A",
+            "*",
+            "B",
+            ")",
+            "+",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "*",
+            "C",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.VCO_BYPASS_C3,DISABLE)",
+            "B": "PROPERTY(PLL.ODIV_MUXC3,REFCLK)",
+            "C": "ARCVAL(CLKI_PLL,JCLKC3_PLL)"
+        }
+    },
+    {
+        "name": "MC1_DELC3_5",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 7,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_CPHASE,5)"
+        }
+    },
+    {
+        "name": "MC1_DELC3_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 6,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_CPHASE,2)"
+        }
+    },
+    {
+        "name": "MC1_TRIMC3_BYPASS_N",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 5,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "(",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "(",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_TRIM_DELAY,1)",
+            "B": "PROPERTY(PLL.CLKC3_TRIM_DELAY,2)",
+            "C": "PROPERTY(PLL.CLKC3_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 4,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_DIV,2)"
+        }
+    },
+    {
+        "name": "MC1_TRIMC4_BYPASS_N",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 3,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "(",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "(",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_TRIM_DELAY,1)",
+            "B": "PROPERTY(PLL.CLKC4_TRIM_DELAY,2)",
+            "C": "PROPERTY(PLL.CLKC4_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_TRIMC0_BYPASS_N",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 2,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "(",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "(",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_TRIM_DELAY,1)",
+            "B": "PROPERTY(PLL.CLKC0_TRIM_DELAY,2)",
+            "C": "PROPERTY(PLL.CLKC0_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_DELC3_6",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 1,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_CPHASE,6)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 0,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_DIV,3)"
+        }
+    },
+    {
+        "name": "MC1_DELC3_4",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 31,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_CPHASE,4)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_PREMUX_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 30,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC3,CLKMINUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC3,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_STDBY",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 24,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.STDBY_ENABLE,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_REF_SEL_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 23,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 6,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_8)",
+            "B": "ARCVAL(REFCLK,PIO2PLL_9)",
+            "C": "ARCVAL(REFCLK,REFCLK_11)",
+            "D": "ARCVAL(REFCLK,REFCLK_10)",
+            "E": "ARCVAL(REFCLK,OSC)",
+            "F": "ARCVAL(REFCLK,GND)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 22,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.NORESET,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_REF_SEL_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 21,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 6,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_4)",
+            "B": "ARCVAL(REFCLK,PIO2PLL_5)",
+            "C": "ARCVAL(REFCLK,PIO2PLL_6)",
+            "D": "ARCVAL(REFCLK,PIO2PLL_7)",
+            "E": "ARCVAL(REFCLK,OSC)",
+            "F": "ARCVAL(REFCLK,GND)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_6",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 20,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_REF_SEL_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 19,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 7,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(REFCLK,PIO2PLL_2)",
+            "B": "ARCVAL(REFCLK,PIO2PLL_3)",
+            "C": "ARCVAL(REFCLK,PIO2PLL_6)",
+            "D": "ARCVAL(REFCLK,PIO2PLL_7)",
+            "E": "ARCVAL(REFCLK,REFCLK_10)",
+            "F": "ARCVAL(REFCLK,REFCLK_11)",
+            "G": "ARCVAL(REFCLK,GND)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 18,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.VCO_NORESET,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 16,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_DIV,3)"
+        }
+    },
+    {
+        "name": "MC1_DELC2_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 15,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_CPHASE,2)"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 14,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_DIV,2)"
+        }
+    },
+    {
+        "name": "MC1_DELC2_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 12,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_CPHASE,3)"
+        }
+    },
+    {
+        "name": "MC1_MFGOUT2_SEL_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 11,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG2_TEST,2)",
+            "B": "PROPERTY(PLL.MFG2_TEST,3)",
+            "C": "PROPERTY(PLL.MFG2_TEST,6)",
+            "D": "PROPERTY(PLL.MFG2_TEST,7)"
+        }
+    },
+    {
+        "name": "MC1_ENCLK_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 10,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_ENABLE,ENABLE)",
+            "B": "WIRE(PLL_CLKC1)"
+        }
+    },
+    {
+        "name": "MC1_MFGOUT2_SEL_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 9,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG2_TEST,4)",
+            "B": "PROPERTY(PLL.MFG2_TEST,5)",
+            "C": "PROPERTY(PLL.MFG2_TEST,6)",
+            "D": "PROPERTY(PLL.MFG2_TEST,7)"
+        }
+    },
+    {
+        "name": "MC1_ENCLK_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 8,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_ENABLE,ENABLE)",
+            "B": "WIRE(PLL_CLKC0)"
+        }
+    },
+    {
+        "name": "MC1_DELC2_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 7,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_CPHASE,0)"
+        }
+    },
+    {
+        "name": "MC1_MFGOUT1_SEL_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 6,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG1_TEST,1)",
+            "B": "PROPERTY(PLL.MFG1_TEST,3)",
+            "C": "PROPERTY(PLL.MFG1_TEST,5)",
+            "D": "PROPERTY(PLL.MFG1_TEST,7)"
+        }
+    },
+    {
+        "name": "MC1_DELC3_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 5,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_CPHASE,0)"
+        }
+    },
+    {
+        "name": "MC1_MFGOUT1_SEL_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 4,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG1_TEST,2)",
+            "B": "PROPERTY(PLL.MFG1_TEST,3)",
+            "C": "PROPERTY(PLL.MFG1_TEST,6)",
+            "D": "PROPERTY(PLL.MFG1_TEST,7)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 3,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_DIV,0)"
+        }
+    },
+    {
+        "name": "MC1_MFGOUT1_SEL_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 2,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG1_TEST,4)",
+            "B": "PROPERTY(PLL.MFG1_TEST,5)",
+            "C": "PROPERTY(PLL.MFG1_TEST,6)",
+            "D": "PROPERTY(PLL.MFG1_TEST,7)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 1,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC3_DIV,1)"
+        }
+    },
+    {
+        "name": "MC1_MFGOUT2_SEL_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 0,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.MFG2_TEST,1)",
+            "B": "PROPERTY(PLL.MFG2_TEST,3)",
+            "C": "PROPERTY(PLL.MFG2_TEST,5)",
+            "D": "PROPERTY(PLL.MFG2_TEST,7)"
+        }
+    },
+    {
+        "name": "MC1_DIVC3_PREMUX_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 31,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.PREDIV_MUXC3,CLKPLUS1)",
+            "B": "PROPERTY(PLL.PREDIV_MUXC3,REFCLK)"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_12",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 30,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_RESERVED_13",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 29,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_OUTMUX",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 28,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "(",
+            "A",
+            "*",
+            "B",
+            ")",
+            "+",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "*",
+            "C",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.VCO_BYPASS_C2,DISABLE)",
+            "B": "PROPERTY(PLL.ODIV_MUXC2,REFCLK)",
+            "C": "ARCVAL(CLKI_PLL,JCLKC2_PLL)"
+        }
+    },
+    {
+        "name": "MC1_DELC2_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 26,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_CPHASE,1)"
+        }
+    },
+    {
+        "name": "MC1_DELC4_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 7,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_CPHASE,0)"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 22,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_DIV,1)"
+        }
+    },
+    {
+        "name": "MC1_DIVC2_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 20,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC2_DIV,0)"
+        }
+    },
+    {
+        "name": "MC1_FBK_SEL_WAKEUP_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 18,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 4,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.INT_FEEDBK_PATH,CLKC2_INT)",
+            "B": "PROPERTY(PLL.INT_FEEDBK_PATH,CLKC3_INT)",
+            "C": "PROPERTY(PLL.INT_FEEDBK_PATH,CLKC4_INT)",
+            "D": "PROPERTY(PLL.INT_FEEDBK_PATH,VCO_PHASE_0)"
+        }
+    },
+    {
+        "name": "MC1_ROTATE",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 16,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "FALSE"
+        ],
+        "rpn": [
+            "FALSE"
+        ],
+        "data": {
+            "A": "FALSE"
+        }
+    },
+    {
+        "name": "MC1_FBK_SEL_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 15,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 8,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(FBCLK,FBCLK_8)",
+            "B": "ARCVAL(FBCLK,PIO2PLL_8)",
+            "C": "PROPERTY(PLL.FEEDBK_PATH,CLKC0_INT)",
+            "D": "PROPERTY(PLL.FEEDBK_PATH,CLKC1_INT)",
+            "E": "PROPERTY(PLL.FEEDBK_PATH,CLKC2_INT)",
+            "F": "PROPERTY(PLL.FEEDBK_PATH,CLKC3_INT)",
+            "G": "PROPERTY(PLL.FEEDBK_PATH,CLKC4_INT)",
+            "H": "PROPERTY(PLL.FEEDBK_PATH,VCO_PHASE_0)"
+        }
+    },
+    {
+        "name": "MC1_FBK_SEL_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 13,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 8,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+"
+        ],
+        "data": {
+            "A": "ARCVAL(FBCLK,ECLK_0)",
+            "B": "ARCVAL(FBCLK,ECLK_1)",
+            "C": "ARCVAL(FBCLK,ECLK_2)",
+            "D": "ARCVAL(FBCLK,ECLK_3)",
+            "E": "PROPERTY(PLL.FEEDBK_PATH,CLKC2_INT)",
+            "F": "PROPERTY(PLL.FEEDBK_PATH,CLKC3_INT)",
+            "G": "PROPERTY(PLL.FEEDBK_PATH,CLKC4_INT)",
+            "H": "PROPERTY(PLL.FEEDBK_PATH,VCO_PHASE_0)"
+        }
+    },
+    {
+        "name": "MC1_TRIMC1_BYPASS_N",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 12,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "(",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "(",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_TRIM_DELAY,1)",
+            "B": "PROPERTY(PLL.CLKC1_TRIM_DELAY,2)",
+            "C": "PROPERTY(PLL.CLKC1_TRIM_DELAY,4)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 11,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_DIV,1)"
+        }
+    },
+    {
+        "name": "MC1_DELC4_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 10,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_CPHASE,3)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 9,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_DIV,0)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 8,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_DIV,3)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 6,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_DIV,2)"
+        }
+    },
+    {
+        "name": "MC1_ENCLK_4",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 5,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_ENABLE,ENABLE)",
+            "B": "WIRE(PLL_CLKC4)"
+        }
+    },
+    {
+        "name": "MC1_DELC4_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 4,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_CPHASE,2)"
+        }
+    },
+    {
+        "name": "MC1_ENCLK_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 3,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_ENABLE,ENABLE)",
+            "B": "WIRE(PLL_CLKC3)"
+        }
+    },
+    {
+        "name": "MC1_DIVC4_OUTMUX",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 2,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 3,
+        "expr": [
+            "(",
+            "A",
+            "*",
+            "B",
+            ")",
+            "+",
+            "C"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "*",
+            "C",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.VCO_BYPASS_C4,DISABLE)",
+            "B": "PROPERTY(PLL.ODIV_MUXC4,REFCLK)",
+            "C": "ARCVAL(CLKI_PLL,JCLKC4_PLL)"
+        }
+    },
+    {
+        "name": "MC1_ENCLK_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 1,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_ENABLE,ENABLE)",
+            "B": "WIRE(PLL_CLKC2)"
+        }
+    },
+    {
+        "name": "MC1_DELC4_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 0,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "SELECTOR(PLL,CLKC4_CPHASE,1)"
+        }
+    },
+    {
+        "name": "MC1_P37_PDN",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 14,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 11,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+",
+            "I",
+            "+",
+            "J",
+            "+",
+            "K"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+",
+            "I",
+            "+",
+            "J",
+            "+",
+            "K",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.DPHASE_SOURCE,ENABLE)",
+            "B": "PROPERTY(PLL.CLKC0_FPHASE,3)",
+            "C": "PROPERTY(PLL.CLKC1_FPHASE,3)",
+            "D": "PROPERTY(PLL.CLKC2_FPHASE,3)",
+            "E": "PROPERTY(PLL.CLKC3_FPHASE,3)",
+            "F": "PROPERTY(PLL.CLKC4_FPHASE,3)",
+            "G": "PROPERTY(PLL.CLKC0_FPHASE,7)",
+            "H": "PROPERTY(PLL.CLKC1_FPHASE,7)",
+            "I": "PROPERTY(PLL.CLKC2_FPHASE,7)",
+            "J": "PROPERTY(PLL.CLKC3_FPHASE,7)",
+            "K": "PROPERTY(PLL.CLKC4_FPHASE,7)"
+        }
+    },
+    {
+        "name": "MC1_P26_PDN",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 23,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 11,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+",
+            "I",
+            "+",
+            "J",
+            "+",
+            "K"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+",
+            "I",
+            "+",
+            "J",
+            "+",
+            "K",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.DPHASE_SOURCE,ENABLE)",
+            "B": "PROPERTY(PLL.CLKC0_FPHASE,2)",
+            "C": "PROPERTY(PLL.CLKC1_FPHASE,2)",
+            "D": "PROPERTY(PLL.CLKC2_FPHASE,2)",
+            "E": "PROPERTY(PLL.CLKC3_FPHASE,2)",
+            "F": "PROPERTY(PLL.CLKC4_FPHASE,2)",
+            "G": "PROPERTY(PLL.CLKC0_FPHASE,6)",
+            "H": "PROPERTY(PLL.CLKC1_FPHASE,6)",
+            "I": "PROPERTY(PLL.CLKC2_FPHASE,6)",
+            "J": "PROPERTY(PLL.CLKC3_FPHASE,6)",
+            "K": "PROPERTY(PLL.CLKC4_FPHASE,6)"
+        }
+    },
+    {
+        "name": "MC1_P15_PDN",
+        "type": "MISCS_MIC_IO_B",
+        "y": 1,
+        "x": 17,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 11,
+        "expr": [
+            "A",
+            "+",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+",
+            "I",
+            "+",
+            "J",
+            "+",
+            "K"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+",
+            "C",
+            "+",
+            "D",
+            "+",
+            "E",
+            "+",
+            "F",
+            "+",
+            "G",
+            "+",
+            "H",
+            "+",
+            "I",
+            "+",
+            "J",
+            "+",
+            "K",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.DPHASE_SOURCE,ENABLE)",
+            "B": "PROPERTY(PLL.CLKC0_FPHASE,1)",
+            "C": "PROPERTY(PLL.CLKC1_FPHASE,1)",
+            "D": "PROPERTY(PLL.CLKC2_FPHASE,1)",
+            "E": "PROPERTY(PLL.CLKC3_FPHASE,1)",
+            "F": "PROPERTY(PLL.CLKC4_FPHASE,1)",
+            "G": "PROPERTY(PLL.CLKC0_FPHASE,5)",
+            "H": "PROPERTY(PLL.CLKC1_FPHASE,5)",
+            "I": "PROPERTY(PLL.CLKC2_FPHASE,5)",
+            "J": "PROPERTY(PLL.CLKC3_FPHASE,5)",
+            "K": "PROPERTY(PLL.CLKC4_FPHASE,5)"
+        }
+    },
+    {
+        "name": "MC1_DIV2_BYPASS_N_0",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 13,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC0_DIV2,ON)"
+        }
+    },
+    {
+        "name": "MC1_DIV2_BYPASS_N_1",
+        "type": "MISCS_MIC_IO_B",
+        "y": 2,
+        "x": 17,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC1_DIV2,ON)"
+        }
+    },
+    {
+        "name": "MC1_DIV2_BYPASS_N_2",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 19,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC2_DIV2,ON)"
+        }
+    },
+    {
+        "name": "MC1_DIV2_BYPASS_N_3",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 17,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC3_DIV2,ON)"
+        }
+    },
+    {
+        "name": "MC1_DIV2_BYPASS_N_4",
+        "type": "MISCS_MIC_IO_B",
+        "y": 3,
+        "x": 21,
+        "xoff": 3,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(PLL.CLKC4_DIV2,ON)"
+        }
+    }
+]

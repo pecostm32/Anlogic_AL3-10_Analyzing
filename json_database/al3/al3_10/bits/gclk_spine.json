@@ -1,0 +1,674 @@
+[
+    {
+        "name": "MC1_GCLKEN_0",
+        "type": "PIB",
+        "y": 26,
+        "x": 16,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX0L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 17,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX0R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_2",
+        "type": "PIB",
+        "y": 26,
+        "x": 18,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX1L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_3",
+        "type": "PIB",
+        "y": 26,
+        "x": 19,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX1R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_4",
+        "type": "PIB",
+        "y": 26,
+        "x": 14,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX2L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_5",
+        "type": "PIB",
+        "y": 26,
+        "x": 15,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX2R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_6",
+        "type": "PIB",
+        "y": 26,
+        "x": 12,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX3L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_7",
+        "type": "PIB",
+        "y": 26,
+        "x": 13,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX3R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_8",
+        "type": "PIB",
+        "y": 26,
+        "x": 22,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX4L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_9",
+        "type": "PIB",
+        "y": 26,
+        "x": 27,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX4R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_10",
+        "type": "PIB",
+        "y": 26,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX5L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_11",
+        "type": "PIB",
+        "y": 26,
+        "x": 29,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX5R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_12",
+        "type": "PIB",
+        "y": 26,
+        "x": 10,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX6L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_13",
+        "type": "PIB",
+        "y": 26,
+        "x": 23,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX6R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_14",
+        "type": "PIB",
+        "y": 26,
+        "x": 9,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX7L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_15",
+        "type": "PIB",
+        "y": 26,
+        "x": 11,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX7R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_16",
+        "type": "PIB",
+        "y": 26,
+        "x": 30,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX8L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_17",
+        "type": "PIB",
+        "y": 26,
+        "x": 33,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX8R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_18",
+        "type": "PIB",
+        "y": 26,
+        "x": 34,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX9L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_19",
+        "type": "PIB",
+        "y": 26,
+        "x": 36,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX9R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_20",
+        "type": "PIB",
+        "y": 26,
+        "x": 7,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX10L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_21",
+        "type": "PIB",
+        "y": 26,
+        "x": 8,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX10R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_22",
+        "type": "PIB",
+        "y": 26,
+        "x": 5,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX11L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_23",
+        "type": "PIB",
+        "y": 26,
+        "x": 6,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX11R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_24",
+        "type": "PIB",
+        "y": 26,
+        "x": 38,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX12L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_25",
+        "type": "PIB",
+        "y": 26,
+        "x": 39,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX12R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_26",
+        "type": "PIB",
+        "y": 26,
+        "x": 42,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX13L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_27",
+        "type": "PIB",
+        "y": 26,
+        "x": 43,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX13R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_28",
+        "type": "PIB",
+        "y": 26,
+        "x": 3,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX14L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_29",
+        "type": "PIB",
+        "y": 26,
+        "x": 4,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX14R)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_30",
+        "type": "PIB",
+        "y": 26,
+        "x": 1,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX15L)"
+        }
+    },
+    {
+        "name": "MC1_GCLKEN_31",
+        "type": "PIB",
+        "y": 26,
+        "x": 2,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 1,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "WIRE(HPBX15R)"
+        }
+    }
+]

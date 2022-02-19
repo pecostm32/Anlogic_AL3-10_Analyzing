@@ -1,0 +1,929 @@
+[
+    {
+        "name": "TOP.XI321.MCS0",
+        "type": "PIB",
+        "y": 9,
+        "x": 29,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SIGNEDAMUX,INV)",
+            "B": "PROPERTY(MULT18_0.SIGNEDAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MC01",
+        "type": "PIB",
+        "y": 8,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SIGNEDAMUX,0)",
+            "B": "PROPERTY(MULT18_0.SIGNEDAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MC06",
+        "type": "PIB",
+        "y": 7,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SIGNEDAMUX,0)",
+            "B": "PROPERTY(MULT18_0.SIGNEDAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MCS1",
+        "type": "PIB",
+        "y": 5,
+        "x": 27,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SIGNEDBMUX,INV)",
+            "B": "PROPERTY(MULT18_0.SIGNEDBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MC11",
+        "type": "PIB",
+        "y": 9,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SIGNEDBMUX,0)",
+            "B": "PROPERTY(MULT18_0.SIGNEDBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MC16",
+        "type": "PIB",
+        "y": 5,
+        "x": 29,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SIGNEDBMUX,0)",
+            "B": "PROPERTY(MULT18_0.SIGNEDBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MCS0",
+        "type": "PIB",
+        "y": 9,
+        "x": 24,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SOURCEAMUX,INV)",
+            "B": "PROPERTY(MULT18_0.SOURCEAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC06",
+        "type": "PIB",
+        "y": 7,
+        "x": 25,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SOURCEAMUX,0)",
+            "B": "PROPERTY(MULT18_0.SOURCEAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC01",
+        "type": "PIB",
+        "y": 8,
+        "x": 25,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SOURCEAMUX,0)",
+            "B": "PROPERTY(MULT18_0.SOURCEAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MCS1",
+        "type": "PIB",
+        "y": 5,
+        "x": 26,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SOURCEBMUX,INV)",
+            "B": "PROPERTY(MULT18_0.SOURCEBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC11",
+        "type": "PIB",
+        "y": 9,
+        "x": 25,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SOURCEBMUX,0)",
+            "B": "PROPERTY(MULT18_0.SOURCEBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC16",
+        "type": "PIB",
+        "y": 5,
+        "x": 24,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SOURCEBMUX,0)",
+            "B": "PROPERTY(MULT18_0.SOURCEBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MCS0",
+        "type": "PIB",
+        "y": 9,
+        "x": 29,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CEAMUX,INV)",
+            "B": "PROPERTY(MULT18_0.CEAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MC01",
+        "type": "PIB",
+        "y": 8,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CEAMUX,0)",
+            "B": "PROPERTY(MULT18_0.CEAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MC06",
+        "type": "PIB",
+        "y": 7,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CEAMUX,0)",
+            "B": "PROPERTY(MULT18_0.CEAMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MCS1",
+        "type": "PIB",
+        "y": 5,
+        "x": 27,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CEBMUX,INV)",
+            "B": "PROPERTY(MULT18_0.CEBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MC11",
+        "type": "PIB",
+        "y": 9,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CEBMUX,0)",
+            "B": "PROPERTY(MULT18_0.CEBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MC16",
+        "type": "PIB",
+        "y": 5,
+        "x": 29,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CEBMUX,0)",
+            "B": "PROPERTY(MULT18_0.CEBMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MCS0",
+        "type": "PIB",
+        "y": 9,
+        "x": 24,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CEPDMUX,INV)",
+            "B": "PROPERTY(MULT18_0.CEPDMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC06",
+        "type": "PIB",
+        "y": 7,
+        "x": 25,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CEPDMUX,0)",
+            "B": "PROPERTY(MULT18_0.CEPDMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI322.MC01",
+        "type": "PIB",
+        "y": 8,
+        "x": 25,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CEPDMUX,0)",
+            "B": "PROPERTY(MULT18_0.CEPDMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI330.MCUNUSED_W11B2",
+        "type": "PIB",
+        "y": 11,
+        "x": 18,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.RSTANMUX,INV)",
+            "B": "PROPERTY(MULT18_0.RSTANMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC01",
+        "type": "PIB",
+        "y": 14,
+        "x": 25,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.RSTANMUX,0)",
+            "B": "PROPERTY(MULT18_0.RSTANMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI284.MC06",
+        "type": "PIB",
+        "y": 13,
+        "x": 25,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.RSTANMUX,0)",
+            "B": "PROPERTY(MULT18_0.RSTANMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI321.MCUNUSED",
+        "type": "PIB",
+        "y": 11,
+        "x": 27,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.RSTBNMUX,INV)",
+            "B": "PROPERTY(MULT18_0.RSTBNMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI283.MC11",
+        "type": "PIB",
+        "y": 15,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.RSTBNMUX,0)",
+            "B": "PROPERTY(MULT18_0.RSTBNMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI283.MC16",
+        "type": "PIB",
+        "y": 17,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.RSTBNMUX,0)",
+            "B": "PROPERTY(MULT18_0.RSTBNMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI320.MCUNUSED_W11B2",
+        "type": "PIB",
+        "y": 11,
+        "x": 30,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.RSTPDNMUX,INV)",
+            "B": "PROPERTY(MULT18_0.RSTPDNMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI283.MC01",
+        "type": "PIB",
+        "y": 14,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.RSTPDNMUX,0)",
+            "B": "PROPERTY(MULT18_0.RSTPDNMUX,1)"
+        }
+    },
+    {
+        "name": "TOP.XI283.MC06",
+        "type": "PIB",
+        "y": 13,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 2,
+        "expr": [
+            "A",
+            "+",
+            "B"
+        ],
+        "rpn": [
+            "A",
+            "B",
+            "+"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.RSTPDNMUX,0)",
+            "B": "PROPERTY(MULT18_0.RSTPDNMUX,1)"
+        }
+    },
+    {
+        "name": "MC1_CLK_1",
+        "type": "PIB",
+        "y": 26,
+        "x": 26,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.CLKMUX,INV)"
+        }
+    },
+    {
+        "name": "MC1_AREG_EN",
+        "type": "MISCS_MIC_IO_LR_CORNER_UR",
+        "y": 1,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.INPUTREGA,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_BREG_EN",
+        "type": "MISCS_MIC_IO_LR_CORNER_UR",
+        "y": 1,
+        "x": 24,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.INPUTREGB,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_PDREG_EN",
+        "type": "MISCS_MIC_IO_LR_CORNER_UR",
+        "y": 1,
+        "x": 26,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.OUTPUTREG,ENABLE)"
+        }
+    },
+    {
+        "name": "MC1_GSRN_DISABLE",
+        "type": "MISCS_MIC_IO_LR_CORNER_UR",
+        "y": 1,
+        "x": 26,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.GSR,DISABLE)"
+        }
+    },
+    {
+        "name": "MC1_ASYN",
+        "type": "MISCS_MIC_IO_LR_CORNER_UR",
+        "y": 1,
+        "x": 24,
+        "xoff": 0,
+        "yoff": 0,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.SRMODE,ASYNC)"
+        }
+    },
+    {
+        "name": "MC1_M18X18",
+        "type": "MISCS_MIC_IO_LR_CORNER_UR",
+        "y": 1,
+        "x": 28,
+        "xoff": 0,
+        "yoff": 1,
+        "map_wire_arc": 0,
+        "remap": 1,
+        "pll_info": 0,
+        "cnt": 1,
+        "expr": [
+            "A"
+        ],
+        "rpn": [
+            "A"
+        ],
+        "data": {
+            "A": "PROPERTY(MULT18_0.MODE,MULT18X18C)"
+        }
+    }
+]
