@@ -17,6 +17,8 @@ The project to create a visual bitmap and a listing of the configuration bits is
 
 At first it was needed to convert the Anlogic database file for the AL3-10 to json. For this the prjtang python tools were used. One problem in that is that the X and Y coordinates in the bit description files are swapped. I corrected this in my Anlogic_database_converter project. This creates a C version of the data. This makes processing much faster.
 
+mmicko updated prjtang recently and the database decode tool now uses frame and bit instead of the y and x. My code has not been modified for this!!!!!
+
 Based on this data I created a convertion table to map the configuration bits to their actual meaning. This is done in the Anlogic_bits_in_tile_lister.
 
 Some other support porjects were made to allow analyzing of the database date. These are also included. Also added is my python work project with which I decoded the Tang Dynasty IDE work files. I'm new to python at this point so the code is not great, but it served it's purpose.
