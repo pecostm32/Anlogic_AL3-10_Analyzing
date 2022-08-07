@@ -24,3 +24,7 @@ Based on this data I created a convertion table to map the configuration bits to
 Some other support porjects were made to allow analyzing of the database date. These are also included. Also added is my python work project with which I decoded the Tang Dynasty IDE work files. I'm new to python at this point so the code is not great, but it served it's purpose.
 
 Maybe in time, when more knowledge is gathered, a return is made to the project.
+
+
+07-08-2022
+Started the project up again after gaining some new insight in how the routing works.
