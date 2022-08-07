@@ -79,7 +79,9 @@ typedef unsigned int   uint32;
 
 typedef struct tagBITLISTITEM      BITLISTITEM,      *pBITLISTITEM;
 
-typedef struct tagBITDATAPOINTERS  BITDATAPOINTERS, *pBITDATAPOINTERS;
+typedef struct tagARCVALLISTITEM   ARCVALLISTITEM,   *pARCVALLISTITEM;
+
+typedef struct tagBITDATAPOINTERS  BITDATAPOINTERS,  *pBITDATAPOINTERS;
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -93,6 +95,15 @@ struct tagBITLISTITEM
   int             netnumber;
   char           *name;
   pCONFIGBITDATA  bitdata;
+};
+
+struct tagARCVALLISTITEM
+{
+  pARCVALLISTITEM  prev;
+  pARCVALLISTITEM  next;
+  int              count;
+  int              length;
+  char            *name;
 };
 
 struct tagBITDATAPOINTERS
@@ -230,11 +241,513 @@ pTILEGRIDDATA gettileforxyandtype(int x, int y, char *type)
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
+#if 1
+
+//List of arcval pairs
+
+pARCVALLISTITEM arcvallist = 0;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void insertitembeforearcvallist(pARCVALLISTITEM current, pARCVALLISTITEM new)
+{
+  //Do an insert
+  //Check if current is the first item of the list
+  if(current->prev == 0)
+  {
+    //If so make the new one the first item in the list, so no previous
+    new->prev = 0;
+    new->next = current;
+
+    //Set the back track connection
+    current->prev = new;
+
+    //Set it as the first item of the list
+    arcvallist = new;
+  }
+  else
+  {
+    //Insert it in the list
+    //Link the new item to the current item
+    new->prev = current->prev;
+    current->prev->next = new;
+
+    //Link the item to insert before to the new item
+    new->next = current;
+    current->prev = new;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+pARCVALLISTITEM makearcvallistitem(char *name, int length)
+{
+  pARCVALLISTITEM arcvallistitem;
+  
+  //Get memory for the arcval list item for this bit
+  arcvallistitem = malloc(sizeof(ARCVALLISTITEM));
+
+  arcvallistitem->length = length;
+
+  arcvallistitem->count = 1;
+  arcvallistitem->name = name;
+  
+  return(arcvallistitem);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void addtoarcvallist(char *name, int length)
+{
+  pARCVALLISTITEM searchlist;
+  pARCVALLISTITEM arcvallistitem;
+  
+  int check;
+  int count;
+
+  //Add this arcval entity in the list when it is the first item
+  if(arcvallist == 0)
+  {
+    //Get memory for the arcval list item for this bit
+    arcvallistitem = makearcvallistitem(name, length);
+
+    //First item in the list, so no previous and next
+    arcvallistitem->prev = 0;
+    arcvallistitem->next = 0;
+
+    //Set it as the first item of the list
+    arcvallist = arcvallistitem;
+  }
+  else
+  {
+    //Get the first list item
+    searchlist = arcvallist;
+
+    //Look for where the data needs to be inserted or a count needs to be updated
+    while(searchlist)
+    {
+      //Single entity list so only name smaller or equal
+      
+      //Check if the new name needs to come earlier in the list or already is in the list
+      check = strncmp(name, searchlist->name, length);
+
+      //Insert if it needs to come first
+      if(check < 0)
+      {
+        //Get memory for the arcval list item for this entity
+        arcvallistitem = makearcvallistitem(name, length);
+
+        //Insert the item before the current one
+        insertitembeforearcvallist(searchlist, arcvallistitem);
+        break;
+      }
+
+      //Check if the name is already in the list
+      if(check == 0)
+      {
+        //Bump the counter if so
+        searchlist->count++;
+        break;
+      }
+
+      //Point to the next item if there is one
+      if(searchlist->next)
+      {
+        //Select the next item
+        searchlist = searchlist->next;
+      }
+      else
+      {
+        //Get memory for the arcval list item for this entity
+        arcvallistitem = makearcvallistitem(name, length);
+
+        //Append to the list when this is the last item
+        arcvallistitem->prev = searchlist;
+        arcvallistitem->next = 0;
+        searchlist->next = arcvallistitem;
+
+        //Done so quit
+        break;
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+//New sorter and filter for arcval parts of top items
+void addtotoplist(pCONFIGBITDATA bitdata)
+{
+  
+  char *name;
+  int   length;
+  int   check;
+  int   count;
+
+  char *end;
+  
+  //Only bits with TOP. in the name need to be handled
+  if(strncmp(bitdata->name, "TOP.", 4) == 0)
+  {
+    //Walk through all the data items
+    for(count=0;count<bitdata->datacount;count++)
+    {
+      //The data has the following format
+      //ARCVAL(S6BEG0,E1END0)
+      
+      //There are also PROPERY( items????
+      
+      //Need to make sure the data is an ARCVAL item
+      if(strncmp(bitdata->bitdata[count].data, "ARCVAL(", 7) == 0)
+      {
+        //Point to the first entity in the array
+        name = &bitdata->bitdata[count].data[7];
+
+        //Find the end of the array
+        end = strstr(name, ")");
+
+        //We need the length for adding it to the list
+        length = end - name;
+        addtoarcvallist(name, length);
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+//A bit of a problem is the fact that configuration bits can have double assignments
+//For now the second entry is used and the original entry is deleted.
+//This is valid behavior since the original entry will be either an unused pib or plb bit
+
+//Need to adapt this code to extract the different ARCVAL entities like N6BEG0 or W2MID4, etc and make a sorted list.
+//Also need a list of the unique ARCVAL entity combinations like S6BEG0,E1END0 or N6BEG0,Q0
+//This should provide some more insight in the routing setup of the FPGA
+
+int main(int argc, char** argv)
+{
+  int index;
+  int bit;
+  int count;
+  int lastxi = 0;
+  int type;
+
+  pARCVALLISTITEM searchlist;
+  pARCVALLISTITEM arcvalitem;
+  
+  pBITDATAPOINTERS dptr;
+  
+  //Running all the types through the sorting results in the same number of items, but some items have different ARCVAL's in the different type of blocks.
+  for(type=0;type<sizeof(bitdatapointers)/sizeof(BITDATAPOINTERS);type++)
+  {
+    dptr = &bitdatapointers[type];
+    
+    //Process all the bits in the current object
+    for(bit=0;bit<dptr->count;bit++)
+    {
+      addtotoplist(&dptr->data[bit]);
+    }
+  }
+
+  FILE *fo = fopen("arcval_pairs.csv", "w");
+
+  if(fo)
+  {
+    fprintf(fo, "Name,count\n");
+
+    //Get the first list item
+    searchlist = arcvallist;
+
+    while(searchlist)
+    {
+//      fprintf(fo, "\"");
+      
+      //Output the current bit to the file
+      fwrite(searchlist->name, 1, searchlist->length, fo);
+
+//      fprintf(fo, "\",%d\n", searchlist->count);
+      fprintf(fo, ",%d\n", searchlist->count);
+      
+      //Hold this one for freeing the memory
+      arcvalitem = searchlist;
+
+      //Select the next item
+      searchlist = searchlist->next;
+
+      //Free this item since it is no longer needed
+      free(arcvalitem);
+    }
+
+    fclose(fo);
+  }
+ 
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+#endif
+
+#if 0
+//----------------------------------------------------------------------------------------------------------------------------------
+//List with single arcval entities alphabetically sorted
+
+
+pARCVALLISTITEM arcvallist = 0;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void insertitembeforearcvallist(pARCVALLISTITEM current, pARCVALLISTITEM new)
+{
+  //Do an insert
+  //Check if current is the first item of the list
+  if(current->prev == 0)
+  {
+    //If so make the new one the first item in the list, so no previous
+    new->prev = 0;
+    new->next = current;
+
+    //Set the back track connection
+    current->prev = new;
+
+    //Set it as the first item of the list
+    arcvallist = new;
+  }
+  else
+  {
+    //Insert it in the list
+    //Link the new item to the current item
+    new->prev = current->prev;
+    current->prev->next = new;
+
+    //Link the item to insert before to the new item
+    new->next = current;
+    current->prev = new;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+pARCVALLISTITEM makearcvallistitem(char *name, int length)
+{
+  pARCVALLISTITEM arcvallistitem;
+  
+  //Get memory for the arcval list item for this bit
+  arcvallistitem = malloc(sizeof(ARCVALLISTITEM));
+
+  arcvallistitem->length = length;
+
+  arcvallistitem->count = 1;
+  arcvallistitem->name = name;
+  
+  return(arcvallistitem);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void addtoarcvallist(char *name, int length)
+{
+  pARCVALLISTITEM searchlist;
+  pARCVALLISTITEM arcvallistitem;
+  
+  int check;
+  int count;
+
+  //Add this arcval entity in the list when it is the first item
+  if(arcvallist == 0)
+  {
+    //Get memory for the arcval list item for this bit
+    arcvallistitem = makearcvallistitem(name, length);
+
+    //First item in the list, so no previous and next
+    arcvallistitem->prev = 0;
+    arcvallistitem->next = 0;
+
+    //Set it as the first item of the list
+    arcvallist = arcvallistitem;
+  }
+  else
+  {
+    //Get the first list item
+    searchlist = arcvallist;
+
+    //Look for where the data needs to be inserted or a count needs to be updated
+    while(searchlist)
+    {
+      //Single entity list so only name smaller or equal
+      
+      //Check if the new name needs to come earlier in the list or already is in the list
+      check = strncmp(name, searchlist->name, length);
+
+      //Insert if it needs to come first
+      if(check < 0)
+      {
+        //Get memory for the arcval list item for this entity
+        arcvallistitem = makearcvallistitem(name, length);
+
+        //Insert the item before the current one
+        insertitembeforearcvallist(searchlist, arcvallistitem);
+        break;
+      }
+
+      //Check if the name is already in the list
+      if(check == 0)
+      {
+        //Bump the counter if so
+        searchlist->count++;
+        break;
+      }
+
+      //Point to the next item if there is one
+      if(searchlist->next)
+      {
+        //Select the next item
+        searchlist = searchlist->next;
+      }
+      else
+      {
+        //Get memory for the arcval list item for this entity
+        arcvallistitem = makearcvallistitem(name, length);
+
+        //Append to the list when this is the last item
+        arcvallistitem->prev = searchlist;
+        arcvallistitem->next = 0;
+        searchlist->next = arcvallistitem;
+
+        //Done so quit
+        break;
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+//New sorter and filter for arcval parts of top items
+void addtotoplist(pCONFIGBITDATA bitdata)
+{
+  
+  char *name;
+  int   length;
+  int   check;
+  int   count;
+
+  char *end;
+  
+  //Only bits with TOP. in the name need to be handled
+  if(strncmp(bitdata->name, "TOP.", 4) == 0)
+  {
+    //Walk through all the data items
+    for(count=0;count<bitdata->datacount;count++)
+    {
+      //The data has the following format
+      //ARCVAL(S6BEG0,E1END0)
+      
+      //There are also PROPERY( items????
+      
+      //Need to make sure the data is an ARCVAL item
+      if(strncmp(bitdata->bitdata[count].data, "ARCVAL(", 7) == 0)
+      {
+        //Point to the first entity in the array
+        name = &bitdata->bitdata[count].data[7];
+        
+        //Find the end of it
+        end = strstr(name, ",");
+        
+        //We need the length for adding it to the list
+        length = end - name;
+        addtoarcvallist(name, length);
+        
+        //Point to the next entity in the array
+        name = &end[1];
+
+        //Find the end of it
+        end = strstr(name, ")");
+
+        //We need the length for adding it to the list
+        length = end - name;
+        addtoarcvallist(name, length);
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+//A bit of a problem is the fact that configuration bits can have double assignments
+//For now the second entry is used and the original entry is deleted.
+//This is valid behavior since the original entry will be either an unused pib or plb bit
+
+//Need to adapt this code to extract the different ARCVAL entities like N6BEG0 or W2MID4, etc and make a sorted list.
+//Also need a list of the unique ARCVAL entity combinations like S6BEG0,E1END0 or N6BEG0,Q0
+//This should provide some more insight in the routing setup of the FPGA
+
+int main(int argc, char** argv)
+{
+  int index;
+  int bit;
+  int count;
+  int lastxi = 0;
+  int type;
+
+  pARCVALLISTITEM searchlist;
+  pARCVALLISTITEM arcvalitem;
+  
+  pBITDATAPOINTERS dptr;
+  
+  //Running all the types through the sorting results in the same number of items, but some items have different ARCVAL's in the different type of blocks.
+  for(type=0;type<sizeof(bitdatapointers)/sizeof(BITDATAPOINTERS);type++)
+  {
+    dptr = &bitdatapointers[type];
+    
+    //Process all the bits in the current object
+    for(bit=0;bit<dptr->count;bit++)
+    {
+      addtotoplist(&dptr->data[bit]);
+    }
+  }
+
+  FILE *fo = fopen("arcval_entities.csv", "w");
+
+  if(fo)
+  {
+    fprintf(fo, "Name,count\n");
+
+    //Get the first list item
+    searchlist = arcvallist;
+
+    while(searchlist)
+    {
+      //Output the current bit to the file
+      fwrite(searchlist->name, 1, searchlist->length, fo);
+
+      fprintf(fo, ",%d\n", searchlist->count);
+      
+      //Hold this one for freeing the memory
+      arcvalitem = searchlist;
+
+      //Select the next item
+      searchlist = searchlist->next;
+
+      //Free this item since it is no longer needed
+      free(arcvalitem);
+    }
+
+    fclose(fo);
+  }
+ 
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+#endif
+
+#if 0
+//The below code is for making a list of all the topology bits in the different tiles
+//----------------------------------------------------------------------------------------------------------------------------------
+//Top list handling
+//----------------------------------------------------------------------------------------------------------------------------------
 
 pBITLISTITEM toplist = 0;
 
 //----------------------------------------------------------------------------------------------------------------------------------
-#if 1
 //List of pib routing bits
 void insertitembeforetoplist(pBITLISTITEM current, pBITLISTITEM new)
 {
@@ -288,6 +801,7 @@ pBITLISTITEM makebitlistitem(pCONFIGBITDATA bitdata, int xinumber, int mcnumber,
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+//Original sorter and filter for top list
 void addtotoplist(pCONFIGBITDATA bitdata)
 {
   pBITLISTITEM bitlist;
@@ -423,6 +937,7 @@ void addtotoplist(pCONFIGBITDATA bitdata)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+
 //A bit of a problem is the fact that configuration bits can have double assignments
 //For now the second entry is used and the original entry is deleted.
 //This is valid behavior since the original entry will be either an unused pib or plb bit
@@ -433,18 +948,44 @@ int main(int argc, char** argv)
   int bit;
   int count;
   int lastxi = 0;
+  int type;
 
   pCONFIGBITDATA bitdata;
 
   pBITLISTITEM bitlist;
   pBITLISTITEM bitlistitem;
   
+  pBITDATAPOINTERS dptr;
+  
+#if 0
+  //Running all the types through the sorting results in the same number of items, but some items have different ARCVAL's in the different type of blocks.
+  for(type=0;type<sizeof(bitdatapointers)/sizeof(BITDATAPOINTERS);type++)
+  {
+    dptr = &bitdatapointers[type];
+    
+    //Process all the bits in the current object
+    for(bit=0;bit<dptr->count;bit++)
+    {
+      addtotoplist(&dptr->data[bit]);
+    }
+  }
+#endif
+    
   //Process all the bits in the current object
   for(bit=0;bit<pib_COUNT;bit++)
   {
     addtotoplist(&pib_Data[bit]);
   }
-  
+
+
+#if 0  
+  //Process all the bits in the current object
+  for(bit=0;bit<plb_COUNT;bit++)
+  {
+    addtotoplist(&plb_Data[bit]);
+  }
+#endif  
+
   FILE *fo = fopen("pib_routing_bit_list.csv", "w");
 
   if(fo)
@@ -509,6 +1050,7 @@ int main(int argc, char** argv)
 #endif
 
 //----------------------------------------------------------------------------------------------------------------------------------
+
 
 #if 0
 //Make sorted xi mc net with count list
