@@ -25,6 +25,7 @@ Some other support porjects were made to allow analyzing of the database date. T
 
 Maybe in time, when more knowledge is gathered, a return is made to the project.
 
-
+-------------------------------------------------------------------------------------------------------------------------------
 07-08-2022
+
 Started the project up again after gaining some new insight in how the routing works.
