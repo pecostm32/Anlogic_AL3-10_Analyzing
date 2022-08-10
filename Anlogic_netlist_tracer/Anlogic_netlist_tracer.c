@@ -57,7 +57,6 @@ typedef unsigned int   uint32;
 
 typedef struct tagBITDATAPOINTERS  BITDATAPOINTERS,  *pBITDATAPOINTERS;
 typedef struct tagBITNAMES         BITNAMES,         *pBITNAMES;
-typedef struct tagBITLISTITEM      BITLISTITEM,      *pBITLISTITEM;
 
 typedef struct tagNAMEITEM         NAMEITEM,         *pNAMEITEM;
 typedef struct tagROUTEINFOITEM    ROUTEINFOITEM,    *pROUTEINFOITEM;
@@ -79,25 +78,6 @@ struct tagBITNAMES
   int   divider;
 };
 
-struct tagBITLISTITEM
-{
-  pBITLISTITEM   prev;
-  pBITLISTITEM   next;
-  pTILEGRIDDATA  tiledata;
-  pCONFIGBITDATA bitdata;
-  pTILEPADPINMAP paddata;
-  
-  int            currentbit;        //Flag to signal this is the bit a matching pair is being searched for, so needs to be skipped if set.
-  
-  int            routetype;
-  int            routenumber;
-  int            routestartentity;
-    
-  pROUTEINFOITEM routeitem;
-  
-  pBITLISTITEM   matingrouteitem;
-};
-
 struct tagNAMEITEM
 {
   char *name;
@@ -106,12 +86,21 @@ struct tagNAMEITEM
 
 struct tagROUTEINFOITEM
 {
-  pROUTEINFOITEM prev;
+  pROUTEINFOITEM prev;              //Linked list pointers
   pROUTEINFOITEM next;
   
-  pBITLISTITEM   bitlistitem;
+  pTILEGRIDDATA  tiledata;          //Info about the tile the bit belongs to
+  pCONFIGBITDATA bitdata;           //Info about what the bit means
+  pTILEPADPINMAP paddata;           //Info about the IO pad the bit possibly belongs to
+
+  pROUTEINFOITEM matingrouteitem;   //When a connection pair is found the other bit is linked here
   
-  int            nofentities;
+  int            netnumber;         //Net this bit belongs to
+  
+  int            routetype;         //Route type for this bit that signals for instance a start or end point 
+  int            routestartentity;  //The ARCVAL entity that is used in the match with the mating bit
+  
+  int            nofentities;       //The number of entities to check
   
   NAMEITEM       startpoints[MAXENTITIES];
   NAMEITEM       endpoints[MAXENTITIES];
@@ -122,7 +111,7 @@ struct tagNETLISTITEM
 {
   pNETLISTITEM next;
 
-  pBITLISTITEM bitlistitem;
+  pROUTEINFOITEM routebit;
 };
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -151,9 +140,6 @@ uchar fpga_tiles[COLUMNS][ROWS];
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-pBITLISTITEM iolist = 0;
-pBITLISTITEM routelist = 0;
-
 //Array for gathering the routing bits in a tile
 pROUTEINFOITEM tileroutearray[COLUMNS][ROWS];
 
@@ -163,13 +149,13 @@ ppNETLISTITEM netlistlast  = 0;
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void additemtonetlist(pBITLISTITEM item)
+void additemtonetlist(pROUTEINFOITEM routebit)
 {
   //Get memory for the net list item for this bit
   pNETLISTITEM netitem = malloc(sizeof(pNETLISTITEM));
 
   //Setup the net list item
-  netitem->bitlistitem = item;
+  netitem->routebit = routebit;
   netitem->next = 0;
   
   //Add the route point to the net list
@@ -190,133 +176,9 @@ void additemtonetlist(pBITLISTITEM item)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void insertitembeforeroutelist(pBITLISTITEM current, pBITLISTITEM new)
-{
-  //Do an insert
-  //Check if first item of the list
-  if(current->prev == 0)
-  {
-    //If so make this one the first item in the list, so no previous
-    new->prev = 0;
-    new->next = current;
-
-    //Set the back track connection
-    current->prev = new;
-
-    //Set it as the first item of the list
-    routelist = new;
-  }
-  else
-  {
-    //Insert it in the list
-    //Link the new item to the previous item
-    new->prev = current->prev;
-    current->prev->next = new;
-
-    //Link the item to insert before to the new item
-    new->next = current;
-    current->prev = new;
-  }
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------
-
-pBITLISTITEM addtoroutelist(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata, pTILEPADPINMAP paddata)
-{
-  pBITLISTITEM bitlist;
-  pBITLISTITEM bitlistitem;
-
-  //Get memory for the bit list item for this bit
-  bitlistitem = malloc(sizeof(BITLISTITEM));
-
-  //Set the source information
-  bitlistitem->tiledata = tiledata;
-  bitlistitem->bitdata  = bitdata;
-  bitlistitem->paddata  = paddata;
-  
-  bitlistitem->routetype   = TYPE_NONE;
-  bitlistitem->routenumber = 0;
-  
-  //Add this route bit in the route list
-  if(routelist == 0)
-  {
-    //First item in the list, so no previous and next
-    bitlistitem->prev = 0;
-    bitlistitem->next = 0;
-
-    //Set it as the first item of the list
-    routelist = bitlistitem;
-  }
-  else
-  {
-    //Get the first list item
-    bitlist = routelist;
-
-    //Look for where the data needs to be inserted or replaced
-    while(bitlist)
-    {
-      //Sort on tile x,y and then XI properties
-      if(tiledata->x < bitlist->tiledata->x)
-      {
-        //Insert the item before the current one
-        insertitembeforeroutelist(bitlist, bitlistitem);
-        break;
-      }
-
-      //On equal x check the next property
-      if(tiledata->x == bitlist->tiledata->x)
-      {
-        //Next in the sort is y
-        if(tiledata->y < bitlist->tiledata->y)
-        {
-          //Insert the item before the current one
-          insertitembeforeroutelist(bitlist, bitlistitem);
-          break;
-        }      
-        
-        //On equal y check the next property
-        if(tiledata->y == bitlist->tiledata->y)
-        {
-          //Sort on the bit name next
-          if(strcmp(bitdata->name, bitlist->bitdata->name) < 0)
-          {
-            //Insert the item before the current one
-            insertitembeforeroutelist(bitlist, bitlistitem);
-            break;
-          }
-        }
-      }      
-
-      //Point to the next item if there is one
-      if(bitlist->next)
-      {
-        //Select the next item
-        bitlist = bitlist->next;
-      }
-      else
-      {
-        //Append to the list when this is the last item
-        bitlistitem->prev = bitlist;
-        bitlistitem->next = 0;
-        bitlist->next = bitlistitem;
-
-        //Done so quit
-        break;
-      }
-    }
-  }
-  
-  return(bitlistitem);
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------
-
-void addtotileroutearray(pBITLISTITEM bitlistitem)
+void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata, pTILEPADPINMAP paddata)
 {
   pROUTEINFOITEM routinfoitem;
-
-  pTILEGRIDDATA  tiledata = bitlistitem->tiledata;
-  pCONFIGBITDATA bitdata  = bitlistitem->bitdata;
 
   char *name;
   char *end;
@@ -349,11 +211,22 @@ void addtotileroutearray(pBITLISTITEM bitlistitem)
     tileroutearray[tiledata->x][tiledata->y] = routinfoitem;
   }
 
-  //Set the route data for later use
-  routinfoitem->bitlistitem = bitlistitem;
+  //Set the data for later use
+  routinfoitem->tiledata = tiledata;
+  routinfoitem->bitdata  = bitdata;
+  routinfoitem->paddata  = paddata;
   
-  //Link for access from sorted route list
-  bitlistitem->routeitem = routinfoitem;
+  //No type determined yet
+  routinfoitem->routetype = TYPE_NONE;
+  
+  //No start entity found yet
+  routinfoitem->routestartentity = 0;
+  
+  //No net number assigned yet
+  routinfoitem->netnumber = 0;
+  
+  //No mating bit found yet
+  routinfoitem->matingrouteitem = 0;
   
   //Need to dissect the data into start and end points
   //Set the count for limiting searching through not set data
@@ -399,13 +272,139 @@ void addtotileroutearray(pBITLISTITEM bitlistitem)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-int checkstartingpoint(pBITLISTITEM bitlistitem, int netnumber)
+int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber)
+{
+  int item = routeinfoitem->routestartentity;
+  int pair;
+  
+  char *name;
+  int   length;
+  
+  pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
+  
+  pROUTEINFOITEM tileroutelist;
+  
+  //Get the current start point entity to check
+  name   = routeinfoitem->startpoints[item].name;
+  length = routeinfoitem->startpoints[item].length;
+
+  //Get the route list for the tile the original route belongs to
+  tileroutelist = tileroutearray[tiledata->x][tiledata->y];
+  
+  //Check the other route bits in this tile for a matching start point
+  while(tileroutelist)
+  {
+    //Make sure this is not the original item and that it is not yet assigned
+    if((tileroutelist != routeinfoitem) && (tileroutelist->routetype == TYPE_NONE))
+    {
+      //Check the items for this bit to see if it matches the start point
+      for(item=0;item<tileroutelist->nofentities;item++)
+      {
+        //Check if the lengths match before comparing the strings
+        if(tileroutelist->startpoints[item].length == length)
+        {
+          //See if it matches the current start point with the to test one
+          if(strncmp(tileroutelist->startpoints[item].name, name, length) == 0)
+          {
+            //Set the found one as the one to match with
+            routeinfoitem = tileroutelist;
+
+            //Get the route list for the tile the original route belongs to again
+            tileroutelist = tileroutearray[tiledata->x][tiledata->y];
+
+            //Check the other route bits in this tile
+            while(tileroutelist)
+            {
+              //Make sure this is not the original item
+              if(tileroutelist != routeinfoitem)
+              {
+                //Need a for loop to check the pairs here
+                for(pair=0;pair<tileroutelist->nofentities;pair++)
+                {
+                  //Check if the lengths match before comparing the strings
+                  if(routeinfoitem->pointpairs[item].length == tileroutelist->pointpairs[pair].length)
+                  {
+                    //match the current pair with the to test one
+                    if(strncmp(routeinfoitem->pointpairs[item].name, tileroutelist->pointpairs[pair].name, routeinfoitem->pointpairs[item].length) == 0)
+                    {
+                      //Set the index for the entity that matches for these route items
+                      routeinfoitem->routestartentity = item;
+                      tileroutelist->routestartentity = pair;
+
+                      //Get the current endpoint specifics
+                      name   = routeinfoitem->endpoints[item].name;
+                      length = routeinfoitem->endpoints[item].length;
+
+                      //Determine if this is an end point for this net
+                      //Check if the endpoint is a logic or io block input signal A, B, C, D, E, MI, CE, CLK_S, SR
+                      //Clock nets also need to be set as single route nets
+                      if(((length == 2) && ((name[0] == 'A') || (name[0] == 'B')  || (name[0] == 'C')  || (name[0] == 'D') || (name[0] == 'E'))) ||
+                         ((length == 3) &&  (name[0] == 'M') && (name[1] == 'I')) ||
+                         ((length == 3) &&  (name[0] == 'C') && (name[1] == 'E')) ||
+                         ((length == 3) &&  (name[0] == 'S') && (name[1] == 'R')) ||
+                         ((length == 4) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')) ||
+                         ((length == 6) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')  && (name[3] == '_') && (name[4] == 'S')))
+                      {
+                        //Mark both route items as a net since it is in the same tile as the start point
+                        routeinfoitem->routetype = TYPE_NET;
+                        tileroutelist->routetype = TYPE_NET;
+                      }
+                      else
+                      {
+                        //Mark both route items as a start point
+                        routeinfoitem->routetype = TYPE_STARTPOINT;
+                        tileroutelist->routetype = TYPE_STARTPOINT;
+                      }
+
+                      //Set the net number for both items
+                      routeinfoitem->netnumber = netnumber;
+                      tileroutelist->netnumber = netnumber;
+
+                      //Add both items to the net list
+                      additemtonetlist(routeinfoitem);
+                      additemtonetlist(tileroutelist);
+
+                      //Link the two bits together
+                      routeinfoitem->matingrouteitem = tileroutelist;
+                      tileroutelist->matingrouteitem = routeinfoitem;
+
+                      //Signal that a starting route has been found
+                      return(1);
+                    }
+                  }              
+                }
+              }
+
+              //Get the next item for pair matching
+              tileroutelist = tileroutelist->next;
+            }
+            
+            //No matching pair found than we are done
+            return(0);
+          }
+        }              
+      }
+    }
+
+    //Select the next item to check for the starting point
+    tileroutelist = tileroutelist->next;
+  }
+  
+  //No matching start point found so also done
+  return(0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
 {
   int item;
   int pair;
   
-  pROUTEINFOITEM routeinfoitem = bitlistitem->routeitem;
-  pNAMEITEM      arcvalentity;
+  char *name;
+  int   length;
+  
+  pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
   
   pROUTEINFOITEM tileroutelist;
   
@@ -413,7 +412,11 @@ int checkstartingpoint(pBITLISTITEM bitlistitem, int netnumber)
   for(item=0;item<routeinfoitem->nofentities;item++)
   {
     //Get the current start point entity to check
-    arcvalentity = &routeinfoitem->startpoints[item];
+    name   = routeinfoitem->startpoints[item].name;
+    length = routeinfoitem->startpoints[item].length;
+    
+    //When separate scanning is done for GND and GCLK nets then this can be simplified
+    
     
     //GND and GCLK can also be a start point
     //CE, SR, CLK can be both a start or an end point
@@ -423,25 +426,22 @@ int checkstartingpoint(pBITLISTITEM bitlistitem, int netnumber)
     //Maybe a more dedicated matching can be done with strncmp and per type signal this in the route to know if it is a global clock or any of the other signals
     
     //See if the current start point matches an output entity
-    if(((arcvalentity->length == 2) && ((arcvalentity->name[0] == 'F') || (arcvalentity->name[0] == 'Q'))) ||
-       ((arcvalentity->length == 3) &&  (arcvalentity->name[0] == 'F') && (arcvalentity->name[1] == 'X'))  ||
-       ((arcvalentity->length == 3) &&  (arcvalentity->name[0] == 'C') && (arcvalentity->name[1] == 'E'))  ||
-       ((arcvalentity->length == 3) &&  (arcvalentity->name[0] == 'S') && (arcvalentity->name[1] == 'R'))  ||
-       ((arcvalentity->length == 3) &&  (arcvalentity->name[0] == 'G') && (arcvalentity->name[1] == 'N')   && (arcvalentity->name[2] == 'D')) ||
-       ((arcvalentity->length == 4) &&  (arcvalentity->name[0] == 'C') && (arcvalentity->name[1] == 'L')   && (arcvalentity->name[2] == 'K')) ||
-      (((arcvalentity->length == 5) ||  (arcvalentity->length == 6))   && (arcvalentity->name[0] == 'G')   && (arcvalentity->name[1] == 'C') && (arcvalentity->name[2] == 'L') && (arcvalentity->name[3] == 'K')))
+    if(((length == 2) && ((name[0] == 'F') || (name[0] == 'Q'))) ||
+       ((length == 3) &&  (name[0] == 'F') && (name[1] == 'X'))  ||
+       ((length == 3) &&  (name[0] == 'C') && (name[1] == 'E'))  ||
+       ((length == 3) &&  (name[0] == 'S') && (name[1] == 'R'))  ||
+       ((length == 3) &&  (name[0] == 'G') && (name[1] == 'N')   && (name[2] == 'D')) ||
+       ((length == 4) &&  (name[0] == 'C') && (name[1] == 'L')   && (name[2] == 'K')) ||
+      (((length == 5) ||  (length == 6))   && (name[0] == 'G')   && (name[1] == 'C') && (name[2] == 'L') && (name[3] == 'K')))
     {
-      //Flag this bit as the original one so it can be skipped
-      bitlistitem->currentbit = 1;
-      
       //Get the route list for the tile the original route belongs to
-      tileroutelist = tileroutearray[bitlistitem->tiledata->x][bitlistitem->tiledata->y];
+      tileroutelist = tileroutearray[tiledata->x][tiledata->y];
 
       //Check the other route bits in this tile
       while(tileroutelist)
       {
         //Make sure this is not the original item
-        if(tileroutelist->bitlistitem->currentbit == 0)
+        if(tileroutelist != routeinfoitem)
         {
           //Need a for loop to check the pairs here
           for(pair=0;pair<tileroutelist->nofentities;pair++)
@@ -453,27 +453,45 @@ int checkstartingpoint(pBITLISTITEM bitlistitem, int netnumber)
               if(strncmp(routeinfoitem->pointpairs[item].name, tileroutelist->pointpairs[pair].name, routeinfoitem->pointpairs[item].length) == 0)
               {
                 //Set the index for the entity that matches for these route items
-                bitlistitem->routestartentity = item;
-                tileroutelist->bitlistitem->routestartentity = pair;
+                routeinfoitem->routestartentity = item;
+                tileroutelist->routestartentity = pair;
+                
+                //Get the current endpoint specifics
+                name   = routeinfoitem->endpoints[item].name;
+                length = routeinfoitem->endpoints[item].length;
 
-                //Mark both route items as start point
-                bitlistitem->routetype = TYPE_STARTPOINT;
-                tileroutelist->bitlistitem->routetype = TYPE_STARTPOINT;
-
+                //Determine if this is an end point for this net
+                //Check if the endpoint is a logic or io block input signal A, B, C, D, E, MI, CE, CLK_S, SR
+                //Clock nets also need to be set as single route nets
+                if(((length == 2) && ((name[0] == 'A') || (name[0] == 'B')  || (name[0] == 'C')  || (name[0] == 'D') || (name[0] == 'E'))) ||
+                   ((length == 3) &&  (name[0] == 'M') && (name[1] == 'I')) ||
+                   ((length == 3) &&  (name[0] == 'C') && (name[1] == 'E')) ||
+                   ((length == 3) &&  (name[0] == 'S') && (name[1] == 'R')) ||
+                   ((length == 4) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')) ||
+                   ((length == 6) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')  && (name[3] == '_') && (name[4] == 'S')))
+                {
+                  //Mark both route items as a net since it is in the same tile as the start point
+                  routeinfoitem->routetype = TYPE_NET;
+                  tileroutelist->routetype = TYPE_NET;
+                }
+                else
+                {
+                  //Mark both route items as a start point
+                  routeinfoitem->routetype = TYPE_STARTPOINT;
+                  tileroutelist->routetype = TYPE_STARTPOINT;
+                }
+                
                 //Set the net number for both items
-                bitlistitem->routenumber = netnumber;
-                tileroutelist->bitlistitem->routenumber = netnumber;
+                routeinfoitem->netnumber = netnumber;
+                tileroutelist->netnumber = netnumber;
 
                 //Add both items to the net list
-                additemtonetlist(bitlistitem);
-                additemtonetlist(tileroutelist->bitlistitem);
+                additemtonetlist(routeinfoitem);
+                additemtonetlist(tileroutelist);
                 
                 //Link the two bits together
-                bitlistitem->matingrouteitem = tileroutelist->bitlistitem;
-                tileroutelist->bitlistitem->matingrouteitem = bitlistitem;
-                
-                //Clear the current bit
-                bitlistitem->currentbit = 0;
+                routeinfoitem->matingrouteitem = tileroutelist;
+                tileroutelist->matingrouteitem = routeinfoitem;
                 
                 //Signal that a starting route has been found
                 return(1);
@@ -484,9 +502,6 @@ int checkstartingpoint(pBITLISTITEM bitlistitem, int netnumber)
 
         tileroutelist = tileroutelist->next;
       }
-      
-      //No matching pair found then clear the current bit
-      bitlistitem->currentbit = 0;
     }
   }
   
@@ -495,7 +510,7 @@ int checkstartingpoint(pBITLISTITEM bitlistitem, int netnumber)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-pBITLISTITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int length, int netnumber)
+pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int length, int netnumber)
 {
   int item;
   int pair;
@@ -504,8 +519,6 @@ pBITLISTITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int le
   
   pROUTEINFOITEM tileroutelist = searchlist;
   pROUTEINFOITEM matchlist;
-
-  pBITLISTITEM   bitlistitem;
   
   //Loop through the tileroutelist to find a matching pair
   
@@ -515,7 +528,7 @@ pBITLISTITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int le
   while(tileroutelist)
   {
     //First check if the current route is not assigned yet. Have to figure out if this is correct.
-    if(tileroutelist->bitlistitem->routetype == TYPE_NONE)
+    if(tileroutelist->routetype == TYPE_NONE)
     {
       //Next search through the start points to find the matching entity
       for(item=0;item<tileroutelist->nofentities;item++)
@@ -530,10 +543,6 @@ pBITLISTITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int le
           if(strncmp(entity, arcvalentity->name, length) == 0)
           {
             //At this point a matching pair needs to be found. When that fails the remainder of the items needs to be checked
-            bitlistitem = tileroutelist->bitlistitem;
-
-            //Flag this bit as the original one so it can be skipped
-            bitlistitem->currentbit = 1;
             
             //Setup the list to search a match in
             matchlist = searchlist;
@@ -542,7 +551,7 @@ pBITLISTITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int le
             while(matchlist)
             {
               //Make sure this is not the original item
-              if(matchlist->bitlistitem->currentbit == 0)
+              if(matchlist != tileroutelist)
               {
                 //Need a for loop to check the pairs here
                 for(pair=0;pair<matchlist->nofentities;pair++)
@@ -554,34 +563,31 @@ pBITLISTITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int le
                     if(strncmp(tileroutelist->pointpairs[item].name, matchlist->pointpairs[pair].name, tileroutelist->pointpairs[item].length) == 0)
                     {
                       //Set the index for the entity that matches for these route items
-                      bitlistitem->routestartentity = item;
-                      matchlist->bitlistitem->routestartentity = pair;
+                      tileroutelist->routestartentity = item;
+                      matchlist->routestartentity = pair;
 
                       //Maybe do a check here to see if it is an end point
                       //Also have to figure out how an output is routed onto multiple inputs
                       
                       
                       //Mark both route items as route point
-                      bitlistitem->routetype = TYPE_ROUTEPOINT;
-                      matchlist->bitlistitem->routetype = TYPE_ROUTEPOINT;
+                      tileroutelist->routetype = TYPE_ROUTEPOINT;
+                      matchlist->routetype = TYPE_ROUTEPOINT;
 
                       //Set the net number for both items
-                      bitlistitem->routenumber = netnumber;
-                      matchlist->bitlistitem->routenumber = netnumber;
+                      tileroutelist->netnumber = netnumber;
+                      matchlist->netnumber = netnumber;
 
                       //Add both items to the net list
-                      additemtonetlist(bitlistitem);
-                      additemtonetlist(matchlist->bitlistitem);
+                      additemtonetlist(tileroutelist);
+                      additemtonetlist(matchlist);
 
                       //Link the pair to each other
-                      bitlistitem->matingrouteitem = matchlist->bitlistitem;
-                      matchlist->bitlistitem->matingrouteitem = bitlistitem;
-
-                      //Clear the current bit
-                      bitlistitem->currentbit = 0;
+                      tileroutelist->matingrouteitem = matchlist;
+                      matchlist->matingrouteitem = tileroutelist;
                       
                       //Signal that a connection has been found
-                      return(bitlistitem);
+                      return(tileroutelist);
                     }
                   }              
                 }
@@ -590,9 +596,6 @@ pBITLISTITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int le
               //Next item to match a pair with
               matchlist = matchlist->next;
             }
-            
-            //When there is no matching pair found clear the current bit
-            bitlistitem->currentbit = 0;
           }
         }
       }
@@ -608,31 +611,61 @@ pBITLISTITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int le
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+void identifynetstarts()
+{
+  int x;
+  int y;
+
+  int netnumber = 1;
+  
+  pROUTEINFOITEM bitlist;
+  
+  //Scan the tiles to find the starting points (block outputs)
+  
+  //When a starting point is found (matching bit pair) then use the starting point to see if there are more.
+  //If not then check for other starting points
+  
+  //Walk through the tile array to search for the starting points
+  for(x=0;x<COLUMNS;x++)
+  {
+    for(y=0;y<ROWS;y++)
+    {
+      //Get the first bit for this tile
+      bitlist = tileroutearray[x][y];
+      
+      //Only process when there are bits
+      while(bitlist)
+      {
+        //Check if the current route bit is not typed already
+        if(bitlist->routetype == TYPE_NONE)
+        {
+          //See if it is a starting point or not
+          if(checkstartingpoint(bitlist, netnumber) == 1)
+          {
+            //For a starting point see if there are more matches for this specific one
+            while(findmatchingpoints(bitlist, netnumber) == 1);
+            
+            //Last match found then up to the next net
+            netnumber++;
+          }
+        }
+        
+        //Select the next bit to check
+        bitlist = bitlist->next;
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 void traceroutelist()
 {
-  //Scan the route list to find a starting point of a net
-  
-  //Start with the actual sorted route list to find a starting point
-  //This is not that simple and requires some analysis
-  //There needs to be an output entity in one of the available arcvals to consider something a starting point
-  //So an entity that starts with Q, F or FX followed by a digit can be a starting point
-  
-  //When such a starting point is found trace down the matching bit by finding the matching pair
-  //Might need an iterative search through the lists
-  
-  //When found assign a net number to it.
-  
-  //Then the route needs to be traced based on the direction of the endpoint
-  //This can be an interconnect, a local signal, a direct net (output back on input) or a clock signal
-  
-  //Here the fold back logic is needed when a calculated block is out of range
-  
-  //First action is trace actual interconnects
   
   
   char *name;
   int   length;
-  
+
   int x;
   int y;
   
@@ -647,15 +680,58 @@ void traceroutelist()
   
   int netnumber = 1;
   
-  pBITLISTITEM bitlist = routelist;
-  pBITLISTITEM tracetbitlist;
-  pBITLISTITEM foundbitlist;
+  pROUTEINFOITEM bitlist;
+  pROUTEINFOITEM tracetbitlist;
+  pROUTEINFOITEM foundbitlist;
   
   pROUTEINFOITEM routeinfoitem;
   
   pROUTEINFOITEM tileroutelist;
 
   int routetype;
+
+  //Need to walk through the tile route array and trace all the identified nets down to the endpoints
+  
+  //Walk through the tile array to trace the nets for the identified starting points
+  for(x=0;x<COLUMNS;x++)
+  {
+    for(y=0;y<ROWS;y++)
+    {
+      //Get the first bit for this tile
+      bitlist = tileroutearray[x][y];
+      
+      //Only process when there are bits
+      while(bitlist)
+      {
+        //Check if the current route bit is a starting point
+        if(bitlist->routetype == TYPE_STARTPOINT)
+        {
+          //If it is trace the route down the tile array
+          //Use the assigned netnumber for marking the net
+          
+          
+          //A starting point always has a connection to the interconnect
+          //A connection to a local route is only possible from the interconnect
+          
+          //First need to find a connection which means extract the endpoint information and search for the matching connection in the other tiles
+          
+          //When a match is found in a tile, the remainder of the bits need to be scanned if there is also a matching pair for the given start point
+          
+          //This means a double looping system like in the net start identification process
+          
+          
+        }
+      }
+      
+      
+      
+      
+      
+    }
+  }
+  
+
+//Need to change this to multi step walking through the tile array
   
 
   while(bitlist)
@@ -676,7 +752,7 @@ void traceroutelist()
         while(tracetbitlist)
         {
           //Get the routing info for this bit
-          routeinfoitem = tracetbitlist->routeitem;
+          routeinfoitem = tracetbitlist;
 
           //Trace the net through the connects
           //The current bitlist item holds the information about the endpoint to match to
@@ -926,7 +1002,7 @@ void printroutelist()
   
   int netnumber = 1;
   
-  pBITLISTITEM bitlist = routelist;
+  pROUTEINFOITEM bitlist;
   
   pNETLISTITEM printlist;
   
@@ -950,20 +1026,20 @@ void printroutelist()
     
     while(printlist)
     {
-      bitlist = printlist->bitlistitem;
+      bitlist = printlist->routebit;
 
       //Check if next net is found
-      if(bitlist->routenumber != netnumber)
+      if(bitlist->netnumber != netnumber)
       {
         //Separate the nets with a blank line
         fprintf(fo, "\n");
         
         //Set the new number for change check
-        netnumber = bitlist->routenumber;
+        netnumber = bitlist->netnumber;
       }
       
       //Print the net info
-      fprintf(fo, "%d,%d,\"%s\",,", bitlist->routenumber, bitlist->routetype, bitlist->bitdata->bitdata[bitlist->routestartentity].data);
+      fprintf(fo, "%d,%d,\"%s\",,", bitlist->netnumber, bitlist->routetype, bitlist->bitdata->bitdata[bitlist->routestartentity].data);
       
       //Print the data for this item
       fprintf(fo, "%s,%s,%d,%d,,", bitlist->tiledata->name, bitlist->tiledata->type, bitlist->tiledata->x, bitlist->tiledata->y);
@@ -1021,7 +1097,7 @@ void printroutelist()
     
     
     
-    
+#if 0    
     //List the unassigned bits
     
     bitlist = routelist;
@@ -1033,7 +1109,7 @@ void printroutelist()
       if(bitlist->routetype == TYPE_NONE)
       {
         //Print the net info
-        fprintf(fo, "%d,%d,\"%s\",,", bitlist->routenumber, bitlist->routetype, bitlist->bitdata->bitdata[bitlist->routestartentity].data);
+        fprintf(fo, "%d,%d,\"%s\",,", bitlist->netnumber, bitlist->routetype, bitlist->bitdata->bitdata[bitlist->routestartentity].data);
 
         //Print the data for this item
         fprintf(fo, "%s,%s,%d,%d,,", bitlist->tiledata->name, bitlist->tiledata->type, bitlist->tiledata->x, bitlist->tiledata->y);
@@ -1089,7 +1165,7 @@ void printroutelist()
     }
 
     fprintf(fo, "\n%d\n", lines);
-    
+#endif
     
     fclose(fo);
   }
@@ -1359,7 +1435,7 @@ int main(int argc, char** argv)
   
   uchar bit;
   
-  int count;
+  int item;
   
   pTILEGRIDDATA tilegriddata;
   
@@ -1368,8 +1444,6 @@ int main(int argc, char** argv)
   pFRAMEBITMAPPING framebitdata;
 
   pTILEPADPINMAP tilepadinmap;
-  
-  pBITLISTITEM bitlistitem;
 
   uchar *sptr = bitstreamdata;
   
@@ -1482,31 +1556,44 @@ int main(int argc, char** argv)
 
           if(bitdata)
           {
+            //See if this bit can be mapped onto a IO pad and pin
             tilepadinmap = getpinmapfortile(tilegriddata->x, tilegriddata->y, bitdata);
 
             //Make a route list
             //Only bits with TOP. in the name indicate routing
             if(strncmp(bitdata->name, "TOP.", 4) == 0)
             {
-              //For each topology bit a new entry is created
-              bitlistitem = addtoroutelist(tilegriddata, bitdata, tilepadinmap);
+              //Filter non connection bits
+              //These are bits that don't have ARCVAL entities in the data sets
+              for(item=0;item<bitdata->datacount;item++)
+              {
+                //Check if there is at least one ARCVAL item in the list
+                if(strncmp(bitdata->bitdata[item].data, "ARCVAL", 6) == 0)
+                {
+                  //If so this is a proper connection item and the bit needs to be added to the list
+                  addtotileroutearray(tilegriddata, bitdata, tilepadinmap);
 
-              //Setup a tile route array for tracking them back into a net list
-              //Each topology item is dissected into separate entities for easier route matching
-              addtotileroutearray(bitlistitem);
+                  //No need to check the remaining items so quit
+                  break;
+                }
+              }
             }
           }
         }
       }
     }
 
-    //Trace the routes back to a net list
+    //Might need to identify ground and global clock nets first
+    
+    //Walk through the tile array and mark all the starting points of the routes
+    identifynetstarts();
+
+    //Trace the identified nets down to the endpoints
     traceroutelist();
 
     //Print the list
-    printroutelist();
+//    printroutelist();
   }
-
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
