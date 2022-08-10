@@ -1,0 +1,11024 @@
+//----------------------------------------------------------------------------------------------------------------------------------
+
+#include "configbitdata.h"
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *BC_TOP_XI320_MCUNUSED_W11B2_EXPR_0[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_TOP_XI320_MCUNUSED_W11B2_RPN_0[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_TOP_XI320_MCUNUSED_W11B2_DATA_0[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.INRSTMUX,INV)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.OUTRSTMUX,INV)",
+  },
+};
+
+char *BC_TOP_XI321_MCUNUSED_EXPR_1[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_TOP_XI321_MCUNUSED_RPN_1[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_TOP_XI321_MCUNUSED_DATA_1[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.INRSTMUX,INV)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.OUTRSTMUX,INV)",
+  },
+};
+
+char *BC_TOP_XI321_MCS0_EXPR_2[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_TOP_XI321_MCS0_RPN_2[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_TOP_XI321_MCS0_DATA_2[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.INCEMUX,INV)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.OUTCEMUX,INV)",
+  },
+};
+
+char *BC_TOP_XI321_MCS1_EXPR_3[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_TOP_XI321_MCS1_RPN_3[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_TOP_XI321_MCS1_DATA_3[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.INCEMUX,INV)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.OUTCEMUX,INV)",
+  },
+};
+
+char *BC_TOP_XI374_MC13_EXPR_4[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_TOP_XI374_MC13_RPN_4[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_TOP_XI374_MC13_DATA_4[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.TSMUX,0)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.TSMUX,1)",
+  },
+};
+
+char *BC_TOP_XI374_MC19_EXPR_5[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_TOP_XI374_MC19_RPN_5[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_TOP_XI374_MC19_DATA_5[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.TSMUX,0)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.TSMUX,1)",
+  },
+};
+
+char *BC_TOP_XI386_MC03_EXPR_6[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_TOP_XI386_MC03_RPN_6[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_TOP_XI386_MC03_DATA_6[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.TSMUX,0)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.TSMUX,1)",
+  },
+};
+
+char *BC_TOP_XI386_MC09_EXPR_7[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_TOP_XI386_MC09_RPN_7[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_TOP_XI386_MC09_DATA_7[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.TSMUX,0)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.TSMUX,1)",
+  },
+};
+
+char *BC_MC1_CLK_SRC_7_EXPR_8[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_CLK_SRC_7_RPN_8[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_CLK_SRC_7_DATA_8[2] = 
+{
+  {
+  "A",
+    "ARCVAL(PAD3_CLK,IOCLK1_CLKO)",
+  },
+  {
+  "B",
+    "ARCVAL(PAD3_CLK,IOCLK0_CLKO)",
+  },
+};
+
+char *BC_MC1_CLK_SRC_6_EXPR_9[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *BC_MC1_CLK_SRC_6_RPN_9[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA BC_MC1_CLK_SRC_6_DATA_9[3] = 
+{
+  {
+  "A",
+    "ARCVAL(PAD3_CLK,IOCLK1_CLKO)",
+  },
+  {
+  "B",
+    "ARCVAL(PAD3_CLK,CLK_S0)",
+  },
+  {
+  "C",
+    "ARCVAL(PAD3_CLK,CLK_S1)",
+  },
+};
+
+char *BC_MC1_CLK_SRC_5_EXPR_10[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_CLK_SRC_5_RPN_10[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_CLK_SRC_5_DATA_10[2] = 
+{
+  {
+  "A",
+    "ARCVAL(PAD2_CLK,IOCLK1_CLKO)",
+  },
+  {
+  "B",
+    "ARCVAL(PAD2_CLK,IOCLK0_CLKO)",
+  },
+};
+
+char *BC_MC1_CLK_SRC_4_EXPR_11[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *BC_MC1_CLK_SRC_4_RPN_11[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA BC_MC1_CLK_SRC_4_DATA_11[3] = 
+{
+  {
+  "A",
+    "ARCVAL(PAD2_CLK,IOCLK1_CLKO)",
+  },
+  {
+  "B",
+    "ARCVAL(PAD2_CLK,CLK_S0)",
+  },
+  {
+  "C",
+    "ARCVAL(PAD2_CLK,CLK_S1)",
+  },
+};
+
+char *BC_MC1_DIS_GSR_3_EXPR_12[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_DIS_GSR_3_RPN_12[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_DIS_GSR_3_DATA_12[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.GSR,DISABLE)",
+  },
+};
+
+char *BC_MC1_DIS_GSR_2_EXPR_13[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_DIS_GSR_2_RPN_13[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_DIS_GSR_2_DATA_13[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.GSR,DISABLE)",
+  },
+};
+
+char *BC_MC1_DO_SET_3_EXPR_14[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_DO_SET_3_RPN_14[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_DO_SET_3_DATA_14[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.DO_REGSET,SET)",
+  },
+};
+
+char *BC_MC1_DO_SET_2_EXPR_15[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_DO_SET_2_RPN_15[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_DO_SET_2_DATA_15[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.DO_REGSET,SET)",
+  },
+};
+
+char *BC_MC1_IDDR_3_EXPR_16[7] = 
+{
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+};
+
+char *BC_MC1_IDDR_3_RPN_16[5] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC1_IDDR_3_DATA_16[3] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.IDDRMODE,ON)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,IN)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+};
+
+char *BC_MC1_IDDR_2_EXPR_17[7] = 
+{
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+};
+
+char *BC_MC1_IDDR_2_RPN_17[5] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC1_IDDR_2_DATA_17[3] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IDDRMODE,ON)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,IN)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+};
+
+char *BC_MC1_IN_SET_3_EXPR_18[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_IN_SET_3_RPN_18[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_IN_SET_3_DATA_18[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.IN_REGSET,SET)",
+  },
+};
+
+char *BC_MC1_IN_SET_2_EXPR_19[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_IN_SET_2_RPN_19[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_IN_SET_2_DATA_19[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IN_REGSET,SET)",
+  },
+};
+
+char *BC_MC1_INCE_EN_3_EXPR_20[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INCE_EN_3_RPN_20[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INCE_EN_3_DATA_20[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.INCEMUX,1)",
+  },
+};
+
+char *BC_MC1_INCE_EN_2_EXPR_21[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INCE_EN_2_RPN_21[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INCE_EN_2_DATA_21[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.INCEMUX,1)",
+  },
+};
+
+char *BC_MC1_INCLK_EN_3_EXPR_22[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_INCLK_EN_3_RPN_22[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_INCLK_EN_3_DATA_22[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.INCLKMUX,CLK)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.INCLKMUX,INV)",
+  },
+};
+
+char *BC_MC1_INCLK_EN_2_EXPR_23[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_INCLK_EN_2_RPN_23[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_INCLK_EN_2_DATA_23[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.INCLKMUX,CLK)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.INCLKMUX,INV)",
+  },
+};
+
+char *BC_MC1_INCLK_INV_3_EXPR_24[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INCLK_INV_3_RPN_24[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INCLK_INV_3_DATA_24[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.INCLKMUX,INV)",
+  },
+};
+
+char *BC_MC1_INCLK_INV_2_EXPR_25[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INCLK_INV_2_RPN_25[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INCLK_INV_2_DATA_25[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.INCLKMUX,INV)",
+  },
+};
+
+char *BC_MC1_INDLY_EN_3_EXPR_26[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_EN_3_RPN_26[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_EN_3_DATA_26[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.INDELMUX,FIXDEL)",
+  },
+};
+
+char *BC_MC1_INDLY_EN_2_EXPR_27[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_EN_2_RPN_27[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_EN_2_DATA_27[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.INDELMUX,FIXDEL)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_19_EXPR_28[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_19_RPN_28[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_19_DATA_28[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL3,INDEL,4)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_18_EXPR_29[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_18_RPN_29[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_18_DATA_29[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL3,INDEL,3)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_17_EXPR_30[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_17_RPN_30[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_17_DATA_30[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL3,INDEL,2)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_16_EXPR_31[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_16_RPN_31[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_16_DATA_31[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL3,INDEL,1)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_15_EXPR_32[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_15_RPN_32[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_15_DATA_32[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL3,INDEL,0)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_14_EXPR_33[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_14_RPN_33[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_14_DATA_33[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL2,INDEL,4)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_13_EXPR_34[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_13_RPN_34[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_13_DATA_34[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL2,INDEL,3)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_12_EXPR_35[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_12_RPN_35[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_12_DATA_35[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL2,INDEL,2)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_11_EXPR_36[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_11_RPN_36[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_11_DATA_36[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL2,INDEL,1)",
+  },
+};
+
+char *BC_MC1_INDLY_SEL_10_EXPR_37[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_INDLY_SEL_10_RPN_37[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_INDLY_SEL_10_DATA_37[1] = 
+{
+  {
+  "A",
+    "MEMORY(IOL2,INDEL,0)",
+  },
+};
+
+char *BC_MC1_INRST_EN_3_EXPR_38[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_INRST_EN_3_RPN_38[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_INRST_EN_3_DATA_38[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.INRSTMUX,RST)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.INRSTMUX,INV)",
+  },
+};
+
+char *BC_MC1_INRST_EN_2_EXPR_39[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_INRST_EN_2_RPN_39[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_INRST_EN_2_DATA_39[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.INRSTMUX,RST)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.INRSTMUX,INV)",
+  },
+};
+
+char *BC_MC1_ISE_EN_3_EXPR_40[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_ISE_EN_3_RPN_40[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_ISE_EN_3_DATA_40[1] = 
+{
+  {
+  "A",
+    "WIRE(PAD3_DI)",
+  },
+};
+
+char *BC_MC1_ISE_EN_2_EXPR_41[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_ISE_EN_2_RPN_41[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_ISE_EN_2_DATA_41[1] = 
+{
+  {
+  "A",
+    "WIRE(PAD2_DI)",
+  },
+};
+
+char *BC_MC1_LATCHMD_N_11_EXPR_42[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_LATCHMD_N_11_RPN_42[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_LATCHMD_N_11_DATA_42[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.TO_DFFMODE,FF)",
+  },
+};
+
+char *BC_MC1_LATCHMD_N_10_EXPR_43[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_LATCHMD_N_10_RPN_43[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_LATCHMD_N_10_DATA_43[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.DO_DFFMODE,FF)",
+  },
+};
+
+char *BC_MC1_LATCHMD_N_9_EXPR_44[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_LATCHMD_N_9_RPN_44[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_LATCHMD_N_9_DATA_44[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.IN_DFFMODE,FF)",
+  },
+};
+
+char *BC_MC1_LATCHMD_N_8_EXPR_45[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_LATCHMD_N_8_RPN_45[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_LATCHMD_N_8_DATA_45[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.TO_DFFMODE,FF)",
+  },
+};
+
+char *BC_MC1_LATCHMD_N_7_EXPR_46[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_LATCHMD_N_7_RPN_46[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_LATCHMD_N_7_DATA_46[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.DO_DFFMODE,FF)",
+  },
+};
+
+char *BC_MC1_LATCHMD_N_6_EXPR_47[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_LATCHMD_N_6_RPN_47[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_LATCHMD_N_6_DATA_47[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IN_DFFMODE,FF)",
+  },
+};
+
+char *BC_MC1_ODDR_3_EXPR_48[13] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+};
+
+char *BC_MC1_ODDR_3_RPN_48[9] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "E",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC1_ODDR_3_DATA_48[5] = 
+{
+  {
+  "A",
+    "ARCVAL(PAD3_OTRUE,PLL_CLKC0)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.CLKO,ENABLE)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.ODDRMODE,ON)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+};
+
+char *BC_MC1_ODDR_2_EXPR_49[13] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+};
+
+char *BC_MC1_ODDR_2_RPN_49[9] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "E",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC1_ODDR_2_DATA_49[5] = 
+{
+  {
+  "A",
+    "ARCVAL(PAD2_OTRUE,PLL_CLKC0)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.CLKO,ENABLE)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.ODDRMODE,ON)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+};
+
+char *BC_MC1_ODFF_3_EXPR_50[14] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "(",
+  "~",
+  "C",
+  "*",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+  ")",
+};
+
+char *BC_MC1_ODFF_3_RPN_50[10] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "~",
+  "D",
+  "E",
+  "+",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC1_ODFF_3_DATA_50[5] = 
+{
+  {
+  "A",
+    "ARCVAL(PAD3_OTRUE,PLL_CLKC0)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.CLKO,ENABLE)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.ODDRMODE,ON)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.DO_DFFMODE,FF)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.DO_DFFMODE,LATCH)",
+  },
+};
+
+char *BC_MC1_ODFF_2_EXPR_51[14] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "(",
+  "~",
+  "C",
+  "*",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+  ")",
+};
+
+char *BC_MC1_ODFF_2_RPN_51[10] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "~",
+  "D",
+  "E",
+  "+",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC1_ODFF_2_DATA_51[5] = 
+{
+  {
+  "A",
+    "ARCVAL(PAD2_OTRUE,PLL_CLKC0)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.CLKO,ENABLE)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.ODDRMODE,ON)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.DO_DFFMODE,FF)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.DO_DFFMODE,LATCH)",
+  },
+};
+
+char *BC_MC1_ODIFF_3_EXPR_52[9] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+};
+
+char *BC_MC1_ODIFF_3_RPN_52[9] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+};
+
+BITDATA BC_MC1_ODIFF_3_DATA_52[5] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.IOTYPE,RSDS_E)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,BLVDS_E)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,MLVDS_E)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,LVPECL33_E)",
+  },
+};
+
+char *BC_MC1_OUTCE_EN_3_EXPR_53[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_OUTCE_EN_3_RPN_53[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_OUTCE_EN_3_DATA_53[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.OUTCEMUX,1)",
+  },
+};
+
+char *BC_MC1_OUTCE_EN_2_EXPR_54[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_OUTCE_EN_2_RPN_54[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_OUTCE_EN_2_DATA_54[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.OUTCEMUX,1)",
+  },
+};
+
+char *BC_MC1_OUTCLK_EN_3_EXPR_55[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_OUTCLK_EN_3_RPN_55[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_OUTCLK_EN_3_DATA_55[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.OUTCLKMUX,CLK)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.OUTCLKMUX,INV)",
+  },
+};
+
+char *BC_MC1_OUTCLK_EN_2_EXPR_56[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_OUTCLK_EN_2_RPN_56[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_OUTCLK_EN_2_DATA_56[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.OUTCLKMUX,CLK)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.OUTCLKMUX,INV)",
+  },
+};
+
+char *BC_MC1_OUTCLK_INV_3_EXPR_57[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_OUTCLK_INV_3_RPN_57[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_OUTCLK_INV_3_DATA_57[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.OUTCLKMUX,INV)",
+  },
+};
+
+char *BC_MC1_OUTCLK_INV_2_EXPR_58[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_OUTCLK_INV_2_RPN_58[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_OUTCLK_INV_2_DATA_58[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.OUTCLKMUX,INV)",
+  },
+};
+
+char *BC_MC1_OUTRST_EN_3_EXPR_59[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_OUTRST_EN_3_RPN_59[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_OUTRST_EN_3_DATA_59[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.OUTRSTMUX,RST)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.OUTRSTMUX,INV)",
+  },
+};
+
+char *BC_MC1_OUTRST_EN_2_EXPR_60[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_OUTRST_EN_2_RPN_60[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_OUTRST_EN_2_DATA_60[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.OUTRSTMUX,RST)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.OUTRSTMUX,INV)",
+  },
+};
+
+char *BC_MC1_RST_ASYN_3_EXPR_61[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_RST_ASYN_3_RPN_61[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_RST_ASYN_3_DATA_61[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.SRMODE,ASYNC)",
+  },
+};
+
+char *BC_MC1_RST_ASYN_2_EXPR_62[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_RST_ASYN_2_RPN_62[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_RST_ASYN_2_DATA_62[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.SRMODE,ASYNC)",
+  },
+};
+
+char *BC_MC1_TRI_3_EXPR_63[11] = 
+{
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  ")",
+};
+
+char *BC_MC1_TRI_3_RPN_63[9] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC1_TRI_3_DATA_63[5] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.MODE,IN)",
+  },
+  {
+  "B",
+    "WIRE(PAD3_DI)",
+  },
+  {
+  "C",
+    "WIRE(INCK_3)",
+  },
+  {
+  "D",
+    "WIRE(PAD3_ITRUE)",
+  },
+  {
+  "E",
+    "WIRE(PAD3_ICOMP)",
+  },
+};
+
+char *BC_MC1_TRI_2_EXPR_64[11] = 
+{
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  ")",
+};
+
+char *BC_MC1_TRI_2_RPN_64[9] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC1_TRI_2_DATA_64[5] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.MODE,IN)",
+  },
+  {
+  "B",
+    "WIRE(PAD2_DI)",
+  },
+  {
+  "C",
+    "WIRE(INCK_2)",
+  },
+  {
+  "D",
+    "WIRE(PAD2_ITRUE)",
+  },
+  {
+  "E",
+    "WIRE(PAD2_ICOMP)",
+  },
+};
+
+char *BC_MC1_TS_SET_3_EXPR_65[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_TS_SET_3_RPN_65[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_TS_SET_3_DATA_65[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.TO_REGSET,SET)",
+  },
+};
+
+char *BC_MC1_TS_SET_2_EXPR_66[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_TS_SET_2_RPN_66[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_TS_SET_2_DATA_66[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.TO_REGSET,SET)",
+  },
+};
+
+char *BC_MC1_TSDFF_3_EXPR_67[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_TSDFF_3_RPN_67[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_TSDFF_3_DATA_67[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.TO_DFFMODE,FF)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.TO_DFFMODE,LATCH)",
+  },
+};
+
+char *BC_MC1_TSDFF_2_EXPR_68[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_TSDFF_2_RPN_68[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_TSDFF_2_DATA_68[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.TO_DFFMODE,FF)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.TO_DFFMODE,LATCH)",
+  },
+};
+
+char *BC_MC1_TSINV_3_EXPR_69[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_TSINV_3_RPN_69[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_TSINV_3_DATA_69[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.TSMUX,INV)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.TSMUX,1)",
+  },
+};
+
+char *BC_MC1_TSINV_2_EXPR_70[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC1_TSINV_2_RPN_70[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC1_TSINV_2_DATA_70[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.TSMUX,INV)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.TSMUX,1)",
+  },
+};
+
+char *BC_MC1_DEDCLKO_EN_3_EXPR_71[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_DEDCLKO_EN_3_RPN_71[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_DEDCLKO_EN_3_DATA_71[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.DEDCLK,ENABLE)",
+  },
+};
+
+char *BC_MC1_DEDCLKO_EN_2_EXPR_72[1] = 
+{
+  "A",
+};
+
+char *BC_MC1_DEDCLKO_EN_2_RPN_72[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC1_DEDCLKO_EN_2_DATA_72[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.DEDCLK,ENABLE)",
+  },
+};
+
+char *BC_MC12_CLAMP_3_EXPR_73[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC12_CLAMP_3_RPN_73[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC12_CLAMP_3_DATA_73[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.PCICLAMP,ON)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.IOTYPE,PCI33)",
+  },
+};
+
+char *BC_MC12_CLAMP_2_EXPR_74[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC12_CLAMP_2_RPN_74[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC12_CLAMP_2_DATA_74[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.PCICLAMP,ON)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.IOTYPE,PCI33)",
+  },
+};
+
+char *BC_MC12_ENIND_3_EXPR_75[22] = 
+{
+  "(",
+  "A",
+  "*",
+  "~",
+  "B",
+  "*",
+  "C",
+  ")",
+  "+",
+  "(",
+  "(",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+  "*",
+  "H",
+  ")",
+};
+
+char *BC_MC12_ENIND_3_RPN_75[16] = 
+{
+  "A",
+  "B",
+  "~",
+  "*",
+  "C",
+  "*",
+  "D",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC12_ENIND_3_DATA_75[8] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.DIFFRESISTOR,NONE)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,LVDS25)",
+  },
+  {
+  "D",
+    "WIRE(PAD2_DI)",
+  },
+  {
+  "E",
+    "WIRE(INCK_2)",
+  },
+  {
+  "F",
+    "WIRE(PAD2_ITRUE)",
+  },
+  {
+  "G",
+    "WIRE(PAD2_ICOMP)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,LVDS25)",
+  },
+};
+
+char *BC_MC12_ENIND_2_EXPR_76[22] = 
+{
+  "(",
+  "A",
+  "*",
+  "~",
+  "B",
+  "*",
+  "C",
+  ")",
+  "+",
+  "(",
+  "(",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+  "*",
+  "H",
+  ")",
+};
+
+char *BC_MC12_ENIND_2_RPN_76[16] = 
+{
+  "A",
+  "B",
+  "~",
+  "*",
+  "C",
+  "*",
+  "D",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC12_ENIND_2_DATA_76[8] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.DIFFRESISTOR,NONE)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "D",
+    "WIRE(PAD2_DI)",
+  },
+  {
+  "E",
+    "WIRE(INCK_2)",
+  },
+  {
+  "F",
+    "WIRE(PAD2_ITRUE)",
+  },
+  {
+  "G",
+    "WIRE(PAD2_ICOMP)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+};
+
+char *BC_MC12_ENINR_3_EXPR_77[44] = 
+{
+  "(",
+  "(",
+  "A",
+  "*",
+  "~",
+  "B",
+  ")",
+  "+",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "(",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENINR_3_RPN_77[36] = 
+{
+  "A",
+  "B",
+  "~",
+  "*",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENINR_3_DATA_77[18] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.DIFFRESISTOR,NONE)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.MODE,IN)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.IOTYPE,LVDS25)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_I)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.IOTYPE,VREF2_DRIVER)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.IOTYPE,VREF1_DRIVER)",
+  },
+};
+
+char *BC_MC12_ENINR_2_EXPR_78[44] = 
+{
+  "(",
+  "(",
+  "A",
+  "*",
+  "~",
+  "B",
+  ")",
+  "+",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "(",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENINR_2_RPN_78[36] = 
+{
+  "A",
+  "B",
+  "~",
+  "*",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENINR_2_DATA_78[18] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.DIFFRESISTOR,NONE)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.MODE,IN)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_I)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.IOTYPE,VREF2_DRIVER)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.IOTYPE,VREF1_DRIVER)",
+  },
+};
+
+char *BC_MC12_ENINS_N_3_EXPR_79[39] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "(",
+  "C",
+  "*",
+  "D",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENINS_N_3_RPN_79[35] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "*",
+  "E",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC12_ENINS_N_3_DATA_79[18] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS15)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.DIFFRESISTOR,NONE)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.IOTYPE,LVDS25)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_I)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_II)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_I)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENINS_N_2_EXPR_80[39] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "(",
+  "C",
+  "*",
+  "D",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENINS_N_2_RPN_80[35] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "*",
+  "E",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC12_ENINS_N_2_DATA_80[18] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS15)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.DIFFRESISTOR,NONE)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_I)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_II)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_I)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENLVDS_2_EXPR_81[7] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "C",
+};
+
+char *BC_MC12_ENLVDS_2_RPN_81[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "*",
+};
+
+BITDATA BC_MC12_ENLVDS_2_DATA_81[3] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+};
+
+char *BC_MC12_ENSNK_19_EXPR_82[46] = 
+{
+  "~",
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  ")",
+};
+
+char *BC_MC12_ENSNK_19_RPN_82[42] = 
+{
+  "A",
+  "~",
+  "B",
+  "C",
+  "+",
+  "*",
+  "D",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSNK_19_DATA_82[21] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.DRIVE,24)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_II)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_I)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSNK_18_EXPR_83[43] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "E",
+  "+",
+  "(",
+  "F",
+  "+",
+  "G",
+  ")",
+  "*",
+  "H",
+  "+",
+  "I",
+  "*",
+  "J",
+  "+",
+  "K",
+  "*",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  ")",
+};
+
+char *BC_MC12_ENSNK_18_RPN_83[35] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "*",
+  "F",
+  "G",
+  "+",
+  "H",
+  "*",
+  "+",
+  "I",
+  "J",
+  "*",
+  "+",
+  "K",
+  "L",
+  "*",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSNK_18_DATA_83[18] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS33)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,PCI33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.DRIVE,24)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSNK_17_EXPR_84[74] = 
+{
+  "A",
+  "+",
+  "~",
+  "(",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+  "*",
+  "(",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  ")",
+  "+",
+  "(",
+  "I",
+  "+",
+  "J",
+  ")",
+  "*",
+  "(",
+  "K",
+  "+",
+  "L",
+  ")",
+  "+",
+  "M",
+  "*",
+  "(",
+  "N",
+  "+",
+  "O",
+  ")",
+  "+",
+  "P",
+  "*",
+  "(",
+  "Q",
+  "+",
+  "R",
+  ")",
+  "+",
+  "S",
+  "*",
+  "(",
+  "T",
+  "+",
+  "U",
+  ")",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENSNK_17_RPN_84[54] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "E",
+  "+",
+  "F",
+  "G",
+  "+",
+  "H",
+  "+",
+  "*",
+  "I",
+  "J",
+  "+",
+  "K",
+  "L",
+  "+",
+  "*",
+  "+",
+  "M",
+  "N",
+  "O",
+  "+",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "R",
+  "+",
+  "*",
+  "+",
+  "S",
+  "T",
+  "U",
+  "+",
+  "*",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "*",
+  "~",
+  "+",
+};
+
+BITDATA BC_MC12_ENSNK_17_DATA_84[27] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.IOTYPE,PCI33)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS15)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_II)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "X",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "Y",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "Z",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "[",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSNK_16_EXPR_85[59] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  ")",
+  "+",
+  "(",
+  "G",
+  "+",
+  "H",
+  ")",
+  "*",
+  "(",
+  "I",
+  "+",
+  "J",
+  ")",
+  "+",
+  "K",
+  "*",
+  "L",
+  "+",
+  "M",
+  "*",
+  "N",
+  "+",
+  "O",
+  "*",
+  "(",
+  "P",
+  "+",
+  "Q",
+  ")",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  ")",
+};
+
+char *BC_MC12_ENSNK_16_RPN_85[45] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "*",
+  "G",
+  "H",
+  "+",
+  "I",
+  "J",
+  "+",
+  "*",
+  "+",
+  "K",
+  "L",
+  "*",
+  "+",
+  "M",
+  "N",
+  "*",
+  "+",
+  "O",
+  "P",
+  "Q",
+  "+",
+  "*",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSNK_16_DATA_85[23] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS33)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,PCI33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS15)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_I)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_I)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSNK_15_EXPR_86[61] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+  "+",
+  "(",
+  "H",
+  "+",
+  "I",
+  ")",
+  "*",
+  "(",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  ")",
+  "+",
+  "O",
+  "*",
+  "P",
+  "+",
+  "Q",
+  "*",
+  "R",
+  "+",
+  "S",
+  "*",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  ")",
+};
+
+char *BC_MC12_ENSNK_15_RPN_86[49] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "G",
+  "+",
+  "*",
+  "H",
+  "I",
+  "+",
+  "J",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "*",
+  "+",
+  "O",
+  "P",
+  "*",
+  "+",
+  "Q",
+  "R",
+  "*",
+  "+",
+  "S",
+  "T",
+  "*",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSNK_15_DATA_86[25] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS33)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,PCI33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS15)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_II)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "X",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "Y",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSNK_14_EXPR_87[46] = 
+{
+  "~",
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  ")",
+};
+
+char *BC_MC12_ENSNK_14_RPN_87[42] = 
+{
+  "A",
+  "~",
+  "B",
+  "C",
+  "+",
+  "*",
+  "D",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSNK_14_DATA_87[21] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.DRIVE,24)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_II)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_I)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSNK_13_EXPR_88[43] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "E",
+  "+",
+  "(",
+  "F",
+  "+",
+  "G",
+  ")",
+  "*",
+  "H",
+  "+",
+  "I",
+  "*",
+  "J",
+  "+",
+  "K",
+  "*",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  ")",
+};
+
+char *BC_MC12_ENSNK_13_RPN_88[35] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "*",
+  "F",
+  "G",
+  "+",
+  "H",
+  "*",
+  "+",
+  "I",
+  "J",
+  "*",
+  "+",
+  "K",
+  "L",
+  "*",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSNK_13_DATA_88[18] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS33)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,PCI33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.DRIVE,24)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSNK_12_EXPR_89[74] = 
+{
+  "A",
+  "+",
+  "~",
+  "(",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+  "*",
+  "(",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  ")",
+  "+",
+  "(",
+  "I",
+  "+",
+  "J",
+  ")",
+  "*",
+  "(",
+  "K",
+  "+",
+  "L",
+  ")",
+  "+",
+  "M",
+  "*",
+  "(",
+  "N",
+  "+",
+  "O",
+  ")",
+  "+",
+  "P",
+  "*",
+  "(",
+  "Q",
+  "+",
+  "R",
+  ")",
+  "+",
+  "S",
+  "*",
+  "(",
+  "T",
+  "+",
+  "U",
+  ")",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENSNK_12_RPN_89[54] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "E",
+  "+",
+  "F",
+  "G",
+  "+",
+  "H",
+  "+",
+  "*",
+  "I",
+  "J",
+  "+",
+  "K",
+  "L",
+  "+",
+  "*",
+  "+",
+  "M",
+  "N",
+  "O",
+  "+",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "R",
+  "+",
+  "*",
+  "+",
+  "S",
+  "T",
+  "U",
+  "+",
+  "*",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "*",
+  "~",
+  "+",
+};
+
+BITDATA BC_MC12_ENSNK_12_DATA_89[27] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,PCI33)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS15)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_II)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "X",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "Y",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "Z",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "[",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSNK_11_EXPR_90[59] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  ")",
+  "+",
+  "(",
+  "G",
+  "+",
+  "H",
+  ")",
+  "*",
+  "(",
+  "I",
+  "+",
+  "J",
+  ")",
+  "+",
+  "K",
+  "*",
+  "L",
+  "+",
+  "M",
+  "*",
+  "N",
+  "+",
+  "O",
+  "*",
+  "(",
+  "P",
+  "+",
+  "Q",
+  ")",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  ")",
+};
+
+char *BC_MC12_ENSNK_11_RPN_90[45] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "*",
+  "G",
+  "H",
+  "+",
+  "I",
+  "J",
+  "+",
+  "*",
+  "+",
+  "K",
+  "L",
+  "*",
+  "+",
+  "M",
+  "N",
+  "*",
+  "+",
+  "O",
+  "P",
+  "Q",
+  "+",
+  "*",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSNK_11_DATA_90[23] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS33)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,PCI33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS15)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_I)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_I)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSNK_10_EXPR_91[61] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+  "+",
+  "(",
+  "H",
+  "+",
+  "I",
+  ")",
+  "*",
+  "(",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  ")",
+  "+",
+  "O",
+  "*",
+  "P",
+  "+",
+  "Q",
+  "*",
+  "R",
+  "+",
+  "S",
+  "*",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  ")",
+};
+
+char *BC_MC12_ENSNK_10_RPN_91[49] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "G",
+  "+",
+  "*",
+  "H",
+  "I",
+  "+",
+  "J",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "*",
+  "+",
+  "O",
+  "P",
+  "*",
+  "+",
+  "Q",
+  "R",
+  "*",
+  "+",
+  "S",
+  "T",
+  "*",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSNK_10_DATA_91[25] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS33)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,PCI33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS15)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_II)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "X",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "Y",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_19_EXPR_92[46] = 
+{
+  "~",
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  ")",
+};
+
+char *BC_MC12_ENSRC_19_RPN_92[42] = 
+{
+  "A",
+  "~",
+  "B",
+  "C",
+  "+",
+  "*",
+  "D",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSRC_19_DATA_92[21] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.DRIVE,24)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_II)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_I)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_18_EXPR_93[69] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+  "+",
+  "(",
+  "H",
+  "+",
+  "I",
+  ")",
+  "*",
+  "(",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  ")",
+  "+",
+  "M",
+  "*",
+  "(",
+  "N",
+  "+",
+  "O",
+  ")",
+  "+",
+  "P",
+  "*",
+  "Q",
+  "+",
+  "R",
+  "*",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "\\",
+  ")",
+};
+
+char *BC_MC12_ENSRC_18_RPN_93[55] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "G",
+  "+",
+  "*",
+  "H",
+  "I",
+  "+",
+  "J",
+  "K",
+  "+",
+  "L",
+  "+",
+  "*",
+  "+",
+  "M",
+  "N",
+  "O",
+  "+",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "*",
+  "+",
+  "R",
+  "S",
+  "*",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "\\",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSRC_18_DATA_93[28] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS33)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,PCI33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.DRIVE,24)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS15)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_II)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "X",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "Y",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "Z",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "[",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "\\",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_17_EXPR_94[82] = 
+{
+  "A",
+  "+",
+  "~",
+  "(",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+  "*",
+  "(",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  ")",
+  "+",
+  "(",
+  "I",
+  "+",
+  "J",
+  ")",
+  "*",
+  "(",
+  "K",
+  "+",
+  "L",
+  ")",
+  "+",
+  "M",
+  "*",
+  "(",
+  "N",
+  "+",
+  "O",
+  ")",
+  "+",
+  "P",
+  "*",
+  "(",
+  "Q",
+  "+",
+  "R",
+  ")",
+  "+",
+  "S",
+  "*",
+  "(",
+  "T",
+  "+",
+  "U",
+  ")",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "\\",
+  "+",
+  "]",
+  "+",
+  "^",
+  "+",
+  "_",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENSRC_17_RPN_94[62] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "E",
+  "+",
+  "F",
+  "G",
+  "+",
+  "H",
+  "+",
+  "*",
+  "I",
+  "J",
+  "+",
+  "K",
+  "L",
+  "+",
+  "*",
+  "+",
+  "M",
+  "N",
+  "O",
+  "+",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "R",
+  "+",
+  "*",
+  "+",
+  "S",
+  "T",
+  "U",
+  "+",
+  "*",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "\\",
+  "+",
+  "]",
+  "+",
+  "^",
+  "+",
+  "_",
+  "+",
+  "*",
+  "~",
+  "+",
+};
+
+BITDATA BC_MC12_ENSRC_17_DATA_94[31] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.IOTYPE,PCI33)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DRIVE,24)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS15)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_I)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_I)",
+  },
+  {
+  "X",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "Y",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "Z",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "[",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "\\",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "]",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "^",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "_",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_16_EXPR_95[62] = 
+{
+  "A",
+  "+",
+  "~",
+  "(",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+  "*",
+  "(",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  ")",
+  "+",
+  "(",
+  "I",
+  "+",
+  "J",
+  ")",
+  "*",
+  "(",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+  "+",
+  "N",
+  "*",
+  "O",
+  "+",
+  "P",
+  "*",
+  "(",
+  "Q",
+  "+",
+  "R",
+  ")",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENSRC_16_RPN_95[46] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "E",
+  "+",
+  "F",
+  "G",
+  "+",
+  "H",
+  "+",
+  "*",
+  "I",
+  "J",
+  "+",
+  "K",
+  "L",
+  "+",
+  "M",
+  "+",
+  "*",
+  "+",
+  "N",
+  "O",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "R",
+  "+",
+  "*",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "*",
+  "~",
+  "+",
+};
+
+BITDATA BC_MC12_ENSRC_16_DATA_95[23] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.IOTYPE,PCI33)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.DRIVE,20)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS15)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_15_EXPR_96[43] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  ")",
+  "+",
+  "G",
+  "*",
+  "H",
+  "+",
+  "I",
+  "*",
+  "(",
+  "J",
+  "+",
+  "K",
+  ")",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  ")",
+};
+
+char *BC_MC12_ENSRC_15_RPN_96[33] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "*",
+  "G",
+  "H",
+  "*",
+  "+",
+  "I",
+  "J",
+  "K",
+  "+",
+  "*",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSRC_15_DATA_96[17] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.DRIVE,16)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.DRIVE,12)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.DRIVE,8)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.DRIVE,4)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_14_EXPR_97[46] = 
+{
+  "~",
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  ")",
+};
+
+char *BC_MC12_ENSRC_14_RPN_97[42] = 
+{
+  "A",
+  "~",
+  "B",
+  "C",
+  "+",
+  "*",
+  "D",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSRC_14_DATA_97[21] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.DRIVE,24)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_II)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_I)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_13_EXPR_98[69] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  ")",
+  "+",
+  "(",
+  "H",
+  "+",
+  "I",
+  ")",
+  "*",
+  "(",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  ")",
+  "+",
+  "M",
+  "*",
+  "(",
+  "N",
+  "+",
+  "O",
+  ")",
+  "+",
+  "P",
+  "*",
+  "Q",
+  "+",
+  "R",
+  "*",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "\\",
+  ")",
+};
+
+char *BC_MC12_ENSRC_13_RPN_98[55] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "G",
+  "+",
+  "*",
+  "H",
+  "I",
+  "+",
+  "J",
+  "K",
+  "+",
+  "L",
+  "+",
+  "*",
+  "+",
+  "M",
+  "N",
+  "O",
+  "+",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "*",
+  "+",
+  "R",
+  "S",
+  "*",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "\\",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSRC_13_DATA_98[28] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS33)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,PCI33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.DRIVE,24)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS15)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_II)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "X",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "Y",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "Z",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "[",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "\\",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_12_EXPR_99[82] = 
+{
+  "A",
+  "+",
+  "~",
+  "(",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+  "*",
+  "(",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  ")",
+  "+",
+  "(",
+  "I",
+  "+",
+  "J",
+  ")",
+  "*",
+  "(",
+  "K",
+  "+",
+  "L",
+  ")",
+  "+",
+  "M",
+  "*",
+  "(",
+  "N",
+  "+",
+  "O",
+  ")",
+  "+",
+  "P",
+  "*",
+  "(",
+  "Q",
+  "+",
+  "R",
+  ")",
+  "+",
+  "S",
+  "*",
+  "(",
+  "T",
+  "+",
+  "U",
+  ")",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "\\",
+  "+",
+  "]",
+  "+",
+  "^",
+  "+",
+  "_",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENSRC_12_RPN_99[62] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "E",
+  "+",
+  "F",
+  "G",
+  "+",
+  "H",
+  "+",
+  "*",
+  "I",
+  "J",
+  "+",
+  "K",
+  "L",
+  "+",
+  "*",
+  "+",
+  "M",
+  "N",
+  "O",
+  "+",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "R",
+  "+",
+  "*",
+  "+",
+  "S",
+  "T",
+  "U",
+  "+",
+  "*",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "X",
+  "+",
+  "Y",
+  "+",
+  "Z",
+  "+",
+  "[",
+  "+",
+  "\\",
+  "+",
+  "]",
+  "+",
+  "^",
+  "+",
+  "_",
+  "+",
+  "*",
+  "~",
+  "+",
+};
+
+BITDATA BC_MC12_ENSRC_12_DATA_99[31] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,PCI33)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DRIVE,24)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS15)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_I)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_I)",
+  },
+  {
+  "X",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "Y",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "Z",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "[",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "\\",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "]",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "^",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "_",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_11_EXPR_100[62] = 
+{
+  "A",
+  "+",
+  "~",
+  "(",
+  "(",
+  "B",
+  "+",
+  "C",
+  ")",
+  "*",
+  "(",
+  "(",
+  "D",
+  "+",
+  "E",
+  ")",
+  "*",
+  "(",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  ")",
+  "+",
+  "(",
+  "I",
+  "+",
+  "J",
+  ")",
+  "*",
+  "(",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  ")",
+  "+",
+  "N",
+  "*",
+  "O",
+  "+",
+  "P",
+  "*",
+  "(",
+  "Q",
+  "+",
+  "R",
+  ")",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  ")",
+  ")",
+};
+
+char *BC_MC12_ENSRC_11_RPN_100[46] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "E",
+  "+",
+  "F",
+  "G",
+  "+",
+  "H",
+  "+",
+  "*",
+  "I",
+  "J",
+  "+",
+  "K",
+  "L",
+  "+",
+  "M",
+  "+",
+  "*",
+  "+",
+  "N",
+  "O",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "R",
+  "+",
+  "*",
+  "+",
+  "S",
+  "+",
+  "T",
+  "+",
+  "U",
+  "+",
+  "V",
+  "+",
+  "W",
+  "+",
+  "*",
+  "~",
+  "+",
+};
+
+BITDATA BC_MC12_ENSRC_11_DATA_100[23] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS33)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,PCI33)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.DRIVE,20)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS15)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "T",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "U",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "V",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "W",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENSRC_10_EXPR_101[43] = 
+{
+  "(",
+  "A",
+  "+",
+  "B",
+  ")",
+  "*",
+  "(",
+  "(",
+  "C",
+  "+",
+  "D",
+  ")",
+  "*",
+  "(",
+  "E",
+  "+",
+  "F",
+  ")",
+  "+",
+  "G",
+  "*",
+  "H",
+  "+",
+  "I",
+  "*",
+  "(",
+  "J",
+  "+",
+  "K",
+  ")",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  ")",
+};
+
+char *BC_MC12_ENSRC_10_RPN_101[33] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "D",
+  "+",
+  "E",
+  "F",
+  "+",
+  "*",
+  "G",
+  "H",
+  "*",
+  "+",
+  "I",
+  "J",
+  "K",
+  "+",
+  "*",
+  "+",
+  "L",
+  "+",
+  "M",
+  "+",
+  "N",
+  "+",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENSRC_10_DATA_101[17] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.MODE,OUT)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.MODE,BI)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.DRIVE,16)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.DRIVE,12)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.DRIVE,8)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.DRIVE,4)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+};
+
+char *BC_MC12_ENVR_7_EXPR_102[25] = 
+{
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  ")",
+};
+
+char *BC_MC12_ENVR_7_RPN_102[23] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENVR_7_DATA_102[12] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.VREF,VREF2)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_I)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_I)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_II)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+};
+
+char *BC_MC12_ENVR_6_EXPR_103[25] = 
+{
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  ")",
+};
+
+char *BC_MC12_ENVR_6_RPN_103[23] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENVR_6_DATA_103[12] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.VREF,VREF1)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_I)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_I)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,SSTL33_II)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+};
+
+char *BC_MC12_ENVR_5_EXPR_104[25] = 
+{
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  ")",
+};
+
+char *BC_MC12_ENVR_5_RPN_104[23] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENVR_5_DATA_104[12] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.VREF,VREF2)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_I)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_I)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_II)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+};
+
+char *BC_MC12_ENVR_4_EXPR_105[25] = 
+{
+  "A",
+  "*",
+  "(",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  ")",
+};
+
+char *BC_MC12_ENVR_4_RPN_105[23] = 
+{
+  "A",
+  "B",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "*",
+};
+
+BITDATA BC_MC12_ENVR_4_DATA_105[12] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.VREF,VREF1)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_I)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_I)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,SSTL33_II)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+};
+
+char *BC_MC12_H2L_7_EXPR_106[9] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+};
+
+char *BC_MC12_H2L_7_RPN_106[9] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+};
+
+BITDATA BC_MC12_H2L_7_DATA_106[5] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.HYSTERESIS,L2H)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.HYSTERESIS,HIGH)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.HYSTERESIS,UD1)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.HYSTERESIS,UD2)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.HYSTERESIS,UD3)",
+  },
+};
+
+char *BC_MC12_H2L_6_EXPR_107[9] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+};
+
+char *BC_MC12_H2L_6_RPN_107[9] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+};
+
+BITDATA BC_MC12_H2L_6_DATA_107[5] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.HYSTERESIS,NA)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.HYSTERESIS,H2L)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.HYSTERESIS,OD1)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.HYSTERESIS,OD2)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.HYSTERESIS,OD3)",
+  },
+};
+
+char *BC_MC12_H2L_5_EXPR_108[9] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+};
+
+char *BC_MC12_H2L_5_RPN_108[9] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+};
+
+BITDATA BC_MC12_H2L_5_DATA_108[5] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.HYSTERESIS,L2H)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.HYSTERESIS,HIGH)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.HYSTERESIS,UD1)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.HYSTERESIS,UD2)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.HYSTERESIS,UD3)",
+  },
+};
+
+char *BC_MC12_H2L_4_EXPR_109[9] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+};
+
+char *BC_MC12_H2L_4_RPN_109[9] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+};
+
+BITDATA BC_MC12_H2L_4_DATA_109[5] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.HYSTERESIS,NA)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.HYSTERESIS,H2L)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.HYSTERESIS,OD1)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.HYSTERESIS,OD2)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.HYSTERESIS,OD3)",
+  },
+};
+
+char *BC_MC12_INSBT_7_EXPR_110[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC12_INSBT_7_RPN_110[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC12_INSBT_7_DATA_110[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.HYSTERESIS,OD2)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.HYSTERESIS,OD3)",
+  },
+};
+
+char *BC_MC12_INSBT_6_EXPR_111[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC12_INSBT_6_RPN_111[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC12_INSBT_6_DATA_111[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.HYSTERESIS,OD1)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.HYSTERESIS,OD3)",
+  },
+};
+
+char *BC_MC12_INSBT_5_EXPR_112[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC12_INSBT_5_RPN_112[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC12_INSBT_5_DATA_112[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.HYSTERESIS,OD2)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.HYSTERESIS,OD3)",
+  },
+};
+
+char *BC_MC12_INSBT_4_EXPR_113[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC12_INSBT_4_RPN_113[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC12_INSBT_4_DATA_113[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.HYSTERESIS,OD1)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.HYSTERESIS,OD3)",
+  },
+};
+
+char *BC_MC12_PWRGURD_EN_3_EXPR_114[1] = 
+{
+  "FALSE",
+};
+
+char *BC_MC12_PWRGURD_EN_3_RPN_114[1] = 
+{
+  "FALSE",
+};
+
+BITDATA BC_MC12_PWRGURD_EN_3_DATA_114[1] = 
+{
+  {
+  "A",
+    "FALSE",
+  },
+};
+
+char *BC_MC12_PWRGURD_EN_2_EXPR_115[1] = 
+{
+  "FALSE",
+};
+
+char *BC_MC12_PWRGURD_EN_2_RPN_115[1] = 
+{
+  "FALSE",
+};
+
+BITDATA BC_MC12_PWRGURD_EN_2_DATA_115[1] = 
+{
+  {
+  "A",
+    "FALSE",
+  },
+};
+
+char *BC_MC12_RDIFF_3_EXPR_116[15] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+};
+
+char *BC_MC12_RDIFF_3_RPN_116[15] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+};
+
+BITDATA BC_MC12_RDIFF_3_DATA_116[8] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.DIFFRESISTOR,130)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.DIFFRESISTOR,120)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.DIFFRESISTOR,110)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.DIFFRESISTOR,100)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.DIFFRESISTOR,90)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.DIFFRESISTOR,80)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.DIFFRESISTOR,70)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.DIFFRESISTOR,60)",
+  },
+};
+
+char *BC_MC12_RDIFF_2_EXPR_117[15] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+};
+
+char *BC_MC12_RDIFF_2_RPN_117[15] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+};
+
+BITDATA BC_MC12_RDIFF_2_DATA_117[8] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.DIFFRESISTOR,130)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.DIFFRESISTOR,120)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.DIFFRESISTOR,110)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.DIFFRESISTOR,100)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.DIFFRESISTOR,90)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.DIFFRESISTOR,80)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.DIFFRESISTOR,70)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.DIFFRESISTOR,60)",
+  },
+};
+
+char *BC_MC12_SLEW_7_EXPR_118[41] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "*",
+  "(",
+  "N",
+  "+",
+  "O",
+  ")",
+  "+",
+  "(",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  ")",
+  "*",
+  "S",
+};
+
+char *BC_MC12_SLEW_7_RPN_118[37] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "N",
+  "O",
+  "+",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC12_SLEW_7_DATA_118[19] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_I)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,SSTL25_II)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS15)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.SLEWRATE,MED)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.SLEWRATE,FAST)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS33)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL3.SLEWRATE,FAST)",
+  },
+};
+
+char *BC_MC12_SLEW_6_EXPR_119[39] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "(",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  ")",
+  "*",
+  "L",
+  "+",
+  "M",
+  "*",
+  "N",
+  "+",
+  "(",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  ")",
+  "*",
+  "R",
+};
+
+char *BC_MC12_SLEW_6_RPN_119[35] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "*",
+  "+",
+  "M",
+  "N",
+  "*",
+  "+",
+  "O",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC12_SLEW_6_DATA_119[18] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_I)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.IOTYPE,HSTL15_II)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_I)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL3.IOTYPE,SSTL15_II)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_I)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL3.IOTYPE,HSTL18_II)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_I)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL3.IOTYPE,SSTL18_II)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS12)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS15)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL3.SLEWRATE,FAST)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL3.SLEWRATE,SLOW)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL3.IOTYPE,LVDS25_E)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS25)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL3.IOTYPE,LVCMOS33)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL3.SLEWRATE,MED)",
+  },
+};
+
+char *BC_MC12_SLEW_5_EXPR_120[41] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "*",
+  "(",
+  "N",
+  "+",
+  "O",
+  ")",
+  "+",
+  "(",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  ")",
+  "*",
+  "S",
+};
+
+char *BC_MC12_SLEW_5_RPN_120[37] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "+",
+  "M",
+  "N",
+  "O",
+  "+",
+  "*",
+  "+",
+  "P",
+  "Q",
+  "+",
+  "R",
+  "+",
+  "S",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC12_SLEW_5_DATA_120[19] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_I)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,SSTL25_II)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS15)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.SLEWRATE,MED)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.SLEWRATE,FAST)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS33)",
+  },
+  {
+  "S",
+    "PROPERTY(IOL2.SLEWRATE,FAST)",
+  },
+};
+
+char *BC_MC12_SLEW_4_EXPR_121[39] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "(",
+  "I",
+  "+",
+  "J",
+  "+",
+  "K",
+  ")",
+  "*",
+  "L",
+  "+",
+  "M",
+  "*",
+  "N",
+  "+",
+  "(",
+  "O",
+  "+",
+  "P",
+  "+",
+  "Q",
+  ")",
+  "*",
+  "R",
+};
+
+char *BC_MC12_SLEW_4_RPN_121[35] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+  "D",
+  "+",
+  "E",
+  "+",
+  "F",
+  "+",
+  "G",
+  "+",
+  "H",
+  "+",
+  "I",
+  "J",
+  "+",
+  "K",
+  "+",
+  "L",
+  "*",
+  "+",
+  "M",
+  "N",
+  "*",
+  "+",
+  "O",
+  "P",
+  "+",
+  "Q",
+  "+",
+  "R",
+  "*",
+  "+",
+};
+
+BITDATA BC_MC12_SLEW_4_DATA_121[18] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_I)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.IOTYPE,HSTL15_II)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_I)",
+  },
+  {
+  "D",
+    "PROPERTY(IOL2.IOTYPE,SSTL15_II)",
+  },
+  {
+  "E",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_I)",
+  },
+  {
+  "F",
+    "PROPERTY(IOL2.IOTYPE,HSTL18_II)",
+  },
+  {
+  "G",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_I)",
+  },
+  {
+  "H",
+    "PROPERTY(IOL2.IOTYPE,SSTL18_II)",
+  },
+  {
+  "I",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS12)",
+  },
+  {
+  "J",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS15)",
+  },
+  {
+  "K",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "L",
+    "PROPERTY(IOL2.SLEWRATE,FAST)",
+  },
+  {
+  "M",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS18)",
+  },
+  {
+  "N",
+    "PROPERTY(IOL2.SLEWRATE,SLOW)",
+  },
+  {
+  "O",
+    "PROPERTY(IOL2.IOTYPE,LVDS25_E)",
+  },
+  {
+  "P",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS25)",
+  },
+  {
+  "Q",
+    "PROPERTY(IOL2.IOTYPE,LVCMOS33)",
+  },
+  {
+  "R",
+    "PROPERTY(IOL2.SLEWRATE,MED)",
+  },
+};
+
+char *BC_MC12_USR_PD_3_EXPR_122[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *BC_MC12_USR_PD_3_RPN_122[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA BC_MC12_USR_PD_3_DATA_122[3] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.PULLMODE,PULLDOWN)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL3.PULLMODE,NONE)",
+  },
+};
+
+char *BC_MC12_USR_PD_2_EXPR_123[5] = 
+{
+  "A",
+  "+",
+  "B",
+  "+",
+  "C",
+};
+
+char *BC_MC12_USR_PD_2_RPN_123[5] = 
+{
+  "A",
+  "B",
+  "+",
+  "C",
+  "+",
+};
+
+BITDATA BC_MC12_USR_PD_2_DATA_123[3] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,LVDS25)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.PULLMODE,PULLDOWN)",
+  },
+  {
+  "C",
+    "PROPERTY(IOL2.PULLMODE,NONE)",
+  },
+};
+
+char *BC_MC12_USR_PU_N_3_EXPR_124[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC12_USR_PU_N_3_RPN_124[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC12_USR_PU_N_3_DATA_124[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.PULLMODE,PULLDOWN)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL3.PULLMODE,KEEPER)",
+  },
+};
+
+char *BC_MC12_USR_PU_N_2_EXPR_125[3] = 
+{
+  "A",
+  "+",
+  "B",
+};
+
+char *BC_MC12_USR_PU_N_2_RPN_125[3] = 
+{
+  "A",
+  "B",
+  "+",
+};
+
+BITDATA BC_MC12_USR_PU_N_2_DATA_125[2] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.PULLMODE,PULLDOWN)",
+  },
+  {
+  "B",
+    "PROPERTY(IOL2.PULLMODE,KEEPER)",
+  },
+};
+
+char *BC_MC12_VRDRV_7_EXPR_126[1] = 
+{
+  "A",
+};
+
+char *BC_MC12_VRDRV_7_RPN_126[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC12_VRDRV_7_DATA_126[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.IOTYPE,VREF2_DRIVER)",
+  },
+};
+
+char *BC_MC12_VRDRV_6_EXPR_127[1] = 
+{
+  "A",
+};
+
+char *BC_MC12_VRDRV_6_RPN_127[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC12_VRDRV_6_DATA_127[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL3.IOTYPE,VREF1_DRIVER)",
+  },
+};
+
+char *BC_MC12_VRDRV_5_EXPR_128[1] = 
+{
+  "A",
+};
+
+char *BC_MC12_VRDRV_5_RPN_128[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC12_VRDRV_5_DATA_128[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,VREF2_DRIVER)",
+  },
+};
+
+char *BC_MC12_VRDRV_4_EXPR_129[1] = 
+{
+  "A",
+};
+
+char *BC_MC12_VRDRV_4_RPN_129[1] = 
+{
+  "A",
+};
+
+BITDATA BC_MC12_VRDRV_4_DATA_129[1] = 
+{
+  {
+  "A",
+    "PROPERTY(IOL2.IOTYPE,VREF1_DRIVER)",
+  },
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+CONFIGBITDATA iol_pair_r_Data[130] =
+{
+  {
+    "TOP.XI320.MCUNUSED_W11B2",
+    "PIB",
+    11,
+    30,
+    0,
+    -2,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_TOP_XI320_MCUNUSED_W11B2_EXPR_0,
+    3,
+    BC_TOP_XI320_MCUNUSED_W11B2_RPN_0,
+    2,
+    BC_TOP_XI320_MCUNUSED_W11B2_DATA_0,
+  },
+  {
+    "TOP.XI321.MCUNUSED",
+    "PIB",
+    11,
+    27,
+    0,
+    -2,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_TOP_XI321_MCUNUSED_EXPR_1,
+    3,
+    BC_TOP_XI321_MCUNUSED_RPN_1,
+    2,
+    BC_TOP_XI321_MCUNUSED_DATA_1,
+  },
+  {
+    "TOP.XI321.MCS0",
+    "PIB",
+    9,
+    29,
+    0,
+    -2,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_TOP_XI321_MCS0_EXPR_2,
+    3,
+    BC_TOP_XI321_MCS0_RPN_2,
+    2,
+    BC_TOP_XI321_MCS0_DATA_2,
+  },
+  {
+    "TOP.XI321.MCS1",
+    "PIB",
+    5,
+    27,
+    0,
+    -2,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_TOP_XI321_MCS1_EXPR_3,
+    3,
+    BC_TOP_XI321_MCS1_RPN_3,
+    2,
+    BC_TOP_XI321_MCS1_DATA_3,
+  },
+  {
+    "TOP.XI374.MC13",
+    "PIB",
+    22,
+    53,
+    0,
+    -2,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_TOP_XI374_MC13_EXPR_4,
+    3,
+    BC_TOP_XI374_MC13_RPN_4,
+    2,
+    BC_TOP_XI374_MC13_DATA_4,
+  },
+  {
+    "TOP.XI374.MC19",
+    "PIB",
+    25,
+    53,
+    0,
+    -2,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_TOP_XI374_MC19_EXPR_5,
+    3,
+    BC_TOP_XI374_MC19_RPN_5,
+    2,
+    BC_TOP_XI374_MC19_DATA_5,
+  },
+  {
+    "TOP.XI386.MC03",
+    "PIB",
+    21,
+    5,
+    0,
+    -2,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_TOP_XI386_MC03_EXPR_6,
+    3,
+    BC_TOP_XI386_MC03_RPN_6,
+    2,
+    BC_TOP_XI386_MC03_DATA_6,
+  },
+  {
+    "TOP.XI386.MC09",
+    "PIB",
+    24,
+    3,
+    0,
+    -2,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_TOP_XI386_MC09_EXPR_7,
+    3,
+    BC_TOP_XI386_MC09_RPN_7,
+    2,
+    BC_TOP_XI386_MC09_DATA_7,
+  },
+  {
+    "MC1_CLK_SRC_7",
+    "MISCS_MIC_IO_R",
+    0,
+    112,
+    0,
+    0,
+    1,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_CLK_SRC_7_EXPR_8,
+    3,
+    BC_MC1_CLK_SRC_7_RPN_8,
+    2,
+    BC_MC1_CLK_SRC_7_DATA_8,
+  },
+  {
+    "MC1_CLK_SRC_6",
+    "MISCS_MIC_IO_R",
+    0,
+    110,
+    0,
+    0,
+    1,
+    1,
+    0,
+    3,
+    5,
+    BC_MC1_CLK_SRC_6_EXPR_9,
+    5,
+    BC_MC1_CLK_SRC_6_RPN_9,
+    3,
+    BC_MC1_CLK_SRC_6_DATA_9,
+  },
+  {
+    "MC1_CLK_SRC_5",
+    "MISCS_MIC_IO_R",
+    0,
+    127,
+    0,
+    0,
+    1,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_CLK_SRC_5_EXPR_10,
+    3,
+    BC_MC1_CLK_SRC_5_RPN_10,
+    2,
+    BC_MC1_CLK_SRC_5_DATA_10,
+  },
+  {
+    "MC1_CLK_SRC_4",
+    "MISCS_MIC_IO_R",
+    0,
+    129,
+    0,
+    0,
+    1,
+    1,
+    0,
+    3,
+    5,
+    BC_MC1_CLK_SRC_4_EXPR_11,
+    5,
+    BC_MC1_CLK_SRC_4_RPN_11,
+    3,
+    BC_MC1_CLK_SRC_4_DATA_11,
+  },
+  {
+    "MC1_DIS_GSR_3",
+    "MISCS_MIC_IO_R",
+    0,
+    102,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_DIS_GSR_3_EXPR_12,
+    1,
+    BC_MC1_DIS_GSR_3_RPN_12,
+    1,
+    BC_MC1_DIS_GSR_3_DATA_12,
+  },
+  {
+    "MC1_DIS_GSR_2",
+    "MISCS_MIC_IO_R",
+    0,
+    137,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_DIS_GSR_2_EXPR_13,
+    1,
+    BC_MC1_DIS_GSR_2_RPN_13,
+    1,
+    BC_MC1_DIS_GSR_2_DATA_13,
+  },
+  {
+    "MC1_DO_SET_3",
+    "MISCS_MIC_IO_R",
+    0,
+    93,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_DO_SET_3_EXPR_14,
+    1,
+    BC_MC1_DO_SET_3_RPN_14,
+    1,
+    BC_MC1_DO_SET_3_DATA_14,
+  },
+  {
+    "MC1_DO_SET_2",
+    "MISCS_MIC_IO_R",
+    0,
+    146,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_DO_SET_2_EXPR_15,
+    1,
+    BC_MC1_DO_SET_2_RPN_15,
+    1,
+    BC_MC1_DO_SET_2_DATA_15,
+  },
+  {
+    "MC1_IDDR_3",
+    "MISCS_MIC_IO_R",
+    0,
+    108,
+    0,
+    0,
+    0,
+    1,
+    0,
+    3,
+    7,
+    BC_MC1_IDDR_3_EXPR_16,
+    5,
+    BC_MC1_IDDR_3_RPN_16,
+    3,
+    BC_MC1_IDDR_3_DATA_16,
+  },
+  {
+    "MC1_IDDR_2",
+    "MISCS_MIC_IO_R",
+    0,
+    130,
+    0,
+    0,
+    0,
+    1,
+    0,
+    3,
+    7,
+    BC_MC1_IDDR_2_EXPR_17,
+    5,
+    BC_MC1_IDDR_2_RPN_17,
+    3,
+    BC_MC1_IDDR_2_DATA_17,
+  },
+  {
+    "MC1_IN_SET_3",
+    "MISCS_MIC_IO_R",
+    0,
+    95,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_IN_SET_3_EXPR_18,
+    1,
+    BC_MC1_IN_SET_3_RPN_18,
+    1,
+    BC_MC1_IN_SET_3_DATA_18,
+  },
+  {
+    "MC1_IN_SET_2",
+    "MISCS_MIC_IO_R",
+    0,
+    144,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_IN_SET_2_EXPR_19,
+    1,
+    BC_MC1_IN_SET_2_RPN_19,
+    1,
+    BC_MC1_IN_SET_2_DATA_19,
+  },
+  {
+    "MC1_INCE_EN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    92,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INCE_EN_3_EXPR_20,
+    1,
+    BC_MC1_INCE_EN_3_RPN_20,
+    1,
+    BC_MC1_INCE_EN_3_DATA_20,
+  },
+  {
+    "MC1_INCE_EN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    147,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INCE_EN_2_EXPR_21,
+    1,
+    BC_MC1_INCE_EN_2_RPN_21,
+    1,
+    BC_MC1_INCE_EN_2_DATA_21,
+  },
+  {
+    "MC1_INCLK_EN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    109,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_INCLK_EN_3_EXPR_22,
+    3,
+    BC_MC1_INCLK_EN_3_RPN_22,
+    2,
+    BC_MC1_INCLK_EN_3_DATA_22,
+  },
+  {
+    "MC1_INCLK_EN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    133,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_INCLK_EN_2_EXPR_23,
+    3,
+    BC_MC1_INCLK_EN_2_RPN_23,
+    2,
+    BC_MC1_INCLK_EN_2_DATA_23,
+  },
+  {
+    "MC1_INCLK_INV_3",
+    "MISCS_MIC_IO_R",
+    0,
+    104,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INCLK_INV_3_EXPR_24,
+    1,
+    BC_MC1_INCLK_INV_3_RPN_24,
+    1,
+    BC_MC1_INCLK_INV_3_DATA_24,
+  },
+  {
+    "MC1_INCLK_INV_2",
+    "MISCS_MIC_IO_R",
+    0,
+    148,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INCLK_INV_2_EXPR_25,
+    1,
+    BC_MC1_INCLK_INV_2_RPN_25,
+    1,
+    BC_MC1_INCLK_INV_2_DATA_25,
+  },
+  {
+    "MC1_INDLY_EN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    117,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_EN_3_EXPR_26,
+    1,
+    BC_MC1_INDLY_EN_3_RPN_26,
+    1,
+    BC_MC1_INDLY_EN_3_DATA_26,
+  },
+  {
+    "MC1_INDLY_EN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    123,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_EN_2_EXPR_27,
+    1,
+    BC_MC1_INDLY_EN_2_RPN_27,
+    1,
+    BC_MC1_INDLY_EN_2_DATA_27,
+  },
+  {
+    "MC1_INDLY_SEL_19",
+    "MISCS_MIC_IO_R",
+    0,
+    119,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_19_EXPR_28,
+    1,
+    BC_MC1_INDLY_SEL_19_RPN_28,
+    1,
+    BC_MC1_INDLY_SEL_19_DATA_28,
+  },
+  {
+    "MC1_INDLY_SEL_18",
+    "MISCS_MIC_IO_R",
+    0,
+    115,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_18_EXPR_29,
+    1,
+    BC_MC1_INDLY_SEL_18_RPN_29,
+    1,
+    BC_MC1_INDLY_SEL_18_DATA_29,
+  },
+  {
+    "MC1_INDLY_SEL_17",
+    "MISCS_MIC_IO_R",
+    0,
+    91,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_17_EXPR_30,
+    1,
+    BC_MC1_INDLY_SEL_17_RPN_30,
+    1,
+    BC_MC1_INDLY_SEL_17_DATA_30,
+  },
+  {
+    "MC1_INDLY_SEL_16",
+    "MISCS_MIC_IO_R",
+    0,
+    88,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_16_EXPR_31,
+    1,
+    BC_MC1_INDLY_SEL_16_RPN_31,
+    1,
+    BC_MC1_INDLY_SEL_16_DATA_31,
+  },
+  {
+    "MC1_INDLY_SEL_15",
+    "MISCS_MIC_IO_R",
+    0,
+    84,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_15_EXPR_32,
+    1,
+    BC_MC1_INDLY_SEL_15_RPN_32,
+    1,
+    BC_MC1_INDLY_SEL_15_DATA_32,
+  },
+  {
+    "MC1_INDLY_SEL_14",
+    "MISCS_MIC_IO_R",
+    0,
+    120,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_14_EXPR_33,
+    1,
+    BC_MC1_INDLY_SEL_14_RPN_33,
+    1,
+    BC_MC1_INDLY_SEL_14_DATA_33,
+  },
+  {
+    "MC1_INDLY_SEL_13",
+    "MISCS_MIC_IO_R",
+    0,
+    124,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_13_EXPR_34,
+    1,
+    BC_MC1_INDLY_SEL_13_RPN_34,
+    1,
+    BC_MC1_INDLY_SEL_13_DATA_34,
+  },
+  {
+    "MC1_INDLY_SEL_12",
+    "MISCS_MIC_IO_R",
+    0,
+    151,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_12_EXPR_35,
+    1,
+    BC_MC1_INDLY_SEL_12_RPN_35,
+    1,
+    BC_MC1_INDLY_SEL_12_DATA_35,
+  },
+  {
+    "MC1_INDLY_SEL_11",
+    "MISCS_MIC_IO_R",
+    0,
+    153,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_11_EXPR_36,
+    1,
+    BC_MC1_INDLY_SEL_11_RPN_36,
+    1,
+    BC_MC1_INDLY_SEL_11_DATA_36,
+  },
+  {
+    "MC1_INDLY_SEL_10",
+    "MISCS_MIC_IO_R",
+    0,
+    150,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_INDLY_SEL_10_EXPR_37,
+    1,
+    BC_MC1_INDLY_SEL_10_RPN_37,
+    1,
+    BC_MC1_INDLY_SEL_10_DATA_37,
+  },
+  {
+    "MC1_INRST_EN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    94,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_INRST_EN_3_EXPR_38,
+    3,
+    BC_MC1_INRST_EN_3_RPN_38,
+    2,
+    BC_MC1_INRST_EN_3_DATA_38,
+  },
+  {
+    "MC1_INRST_EN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    145,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_INRST_EN_2_EXPR_39,
+    3,
+    BC_MC1_INRST_EN_2_RPN_39,
+    2,
+    BC_MC1_INRST_EN_2_DATA_39,
+  },
+  {
+    "MC1_ISE_EN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    118,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_ISE_EN_3_EXPR_40,
+    1,
+    BC_MC1_ISE_EN_3_RPN_40,
+    1,
+    BC_MC1_ISE_EN_3_DATA_40,
+  },
+  {
+    "MC1_ISE_EN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    121,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_ISE_EN_2_EXPR_41,
+    1,
+    BC_MC1_ISE_EN_2_RPN_41,
+    1,
+    BC_MC1_ISE_EN_2_DATA_41,
+  },
+  {
+    "MC1_LATCHMD_N_11",
+    "MISCS_MIC_IO_R",
+    0,
+    99,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_LATCHMD_N_11_EXPR_42,
+    1,
+    BC_MC1_LATCHMD_N_11_RPN_42,
+    1,
+    BC_MC1_LATCHMD_N_11_DATA_42,
+  },
+  {
+    "MC1_LATCHMD_N_10",
+    "MISCS_MIC_IO_R",
+    0,
+    98,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_LATCHMD_N_10_EXPR_43,
+    1,
+    BC_MC1_LATCHMD_N_10_RPN_43,
+    1,
+    BC_MC1_LATCHMD_N_10_DATA_43,
+  },
+  {
+    "MC1_LATCHMD_N_9",
+    "MISCS_MIC_IO_R",
+    0,
+    101,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_LATCHMD_N_9_EXPR_44,
+    1,
+    BC_MC1_LATCHMD_N_9_RPN_44,
+    1,
+    BC_MC1_LATCHMD_N_9_DATA_44,
+  },
+  {
+    "MC1_LATCHMD_N_8",
+    "MISCS_MIC_IO_R",
+    0,
+    140,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_LATCHMD_N_8_EXPR_45,
+    1,
+    BC_MC1_LATCHMD_N_8_RPN_45,
+    1,
+    BC_MC1_LATCHMD_N_8_DATA_45,
+  },
+  {
+    "MC1_LATCHMD_N_7",
+    "MISCS_MIC_IO_R",
+    0,
+    143,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_LATCHMD_N_7_EXPR_46,
+    1,
+    BC_MC1_LATCHMD_N_7_RPN_46,
+    1,
+    BC_MC1_LATCHMD_N_7_DATA_46,
+  },
+  {
+    "MC1_LATCHMD_N_6",
+    "MISCS_MIC_IO_R",
+    0,
+    141,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_LATCHMD_N_6_EXPR_47,
+    1,
+    BC_MC1_LATCHMD_N_6_RPN_47,
+    1,
+    BC_MC1_LATCHMD_N_6_DATA_47,
+  },
+  {
+    "MC1_ODDR_3",
+    "MISCS_MIC_IO_R",
+    0,
+    113,
+    0,
+    0,
+    1,
+    1,
+    0,
+    5,
+    13,
+    BC_MC1_ODDR_3_EXPR_48,
+    9,
+    BC_MC1_ODDR_3_RPN_48,
+    5,
+    BC_MC1_ODDR_3_DATA_48,
+  },
+  {
+    "MC1_ODDR_2",
+    "MISCS_MIC_IO_R",
+    0,
+    126,
+    0,
+    0,
+    1,
+    1,
+    0,
+    5,
+    13,
+    BC_MC1_ODDR_2_EXPR_49,
+    9,
+    BC_MC1_ODDR_2_RPN_49,
+    5,
+    BC_MC1_ODDR_2_DATA_49,
+  },
+  {
+    "MC1_ODFF_3",
+    "MISCS_MIC_IO_R",
+    0,
+    111,
+    0,
+    0,
+    1,
+    1,
+    0,
+    5,
+    14,
+    BC_MC1_ODFF_3_EXPR_50,
+    10,
+    BC_MC1_ODFF_3_RPN_50,
+    5,
+    BC_MC1_ODFF_3_DATA_50,
+  },
+  {
+    "MC1_ODFF_2",
+    "MISCS_MIC_IO_R",
+    0,
+    128,
+    0,
+    0,
+    1,
+    1,
+    0,
+    5,
+    14,
+    BC_MC1_ODFF_2_EXPR_51,
+    10,
+    BC_MC1_ODFF_2_RPN_51,
+    5,
+    BC_MC1_ODFF_2_DATA_51,
+  },
+  {
+    "MC1_ODIFF_3",
+    "MISCS_MIC_IO_R",
+    0,
+    106,
+    0,
+    0,
+    0,
+    1,
+    0,
+    5,
+    9,
+    BC_MC1_ODIFF_3_EXPR_52,
+    9,
+    BC_MC1_ODIFF_3_RPN_52,
+    5,
+    BC_MC1_ODIFF_3_DATA_52,
+  },
+  {
+    "MC1_OUTCE_EN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    103,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_OUTCE_EN_3_EXPR_53,
+    1,
+    BC_MC1_OUTCE_EN_3_RPN_53,
+    1,
+    BC_MC1_OUTCE_EN_3_DATA_53,
+  },
+  {
+    "MC1_OUTCE_EN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    136,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_OUTCE_EN_2_EXPR_54,
+    1,
+    BC_MC1_OUTCE_EN_2_RPN_54,
+    1,
+    BC_MC1_OUTCE_EN_2_DATA_54,
+  },
+  {
+    "MC1_OUTCLK_EN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    114,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_OUTCLK_EN_3_EXPR_55,
+    3,
+    BC_MC1_OUTCLK_EN_3_RPN_55,
+    2,
+    BC_MC1_OUTCLK_EN_3_DATA_55,
+  },
+  {
+    "MC1_OUTCLK_EN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    125,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_OUTCLK_EN_2_EXPR_56,
+    3,
+    BC_MC1_OUTCLK_EN_2_RPN_56,
+    2,
+    BC_MC1_OUTCLK_EN_2_DATA_56,
+  },
+  {
+    "MC1_OUTCLK_INV_3",
+    "MISCS_MIC_IO_R",
+    0,
+    116,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_OUTCLK_INV_3_EXPR_57,
+    1,
+    BC_MC1_OUTCLK_INV_3_RPN_57,
+    1,
+    BC_MC1_OUTCLK_INV_3_DATA_57,
+  },
+  {
+    "MC1_OUTCLK_INV_2",
+    "MISCS_MIC_IO_R",
+    0,
+    122,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_OUTCLK_INV_2_EXPR_58,
+    1,
+    BC_MC1_OUTCLK_INV_2_RPN_58,
+    1,
+    BC_MC1_OUTCLK_INV_2_DATA_58,
+  },
+  {
+    "MC1_OUTRST_EN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    97,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_OUTRST_EN_3_EXPR_59,
+    3,
+    BC_MC1_OUTRST_EN_3_RPN_59,
+    2,
+    BC_MC1_OUTRST_EN_3_DATA_59,
+  },
+  {
+    "MC1_OUTRST_EN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    142,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_OUTRST_EN_2_EXPR_60,
+    3,
+    BC_MC1_OUTRST_EN_2_RPN_60,
+    2,
+    BC_MC1_OUTRST_EN_2_DATA_60,
+  },
+  {
+    "MC1_RST_ASYN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    86,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_RST_ASYN_3_EXPR_61,
+    1,
+    BC_MC1_RST_ASYN_3_RPN_61,
+    1,
+    BC_MC1_RST_ASYN_3_DATA_61,
+  },
+  {
+    "MC1_RST_ASYN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    152,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_RST_ASYN_2_EXPR_62,
+    1,
+    BC_MC1_RST_ASYN_2_RPN_62,
+    1,
+    BC_MC1_RST_ASYN_2_DATA_62,
+  },
+  {
+    "MC1_TRI_3",
+    "MISCS_MIC_IO_R",
+    0,
+    107,
+    0,
+    0,
+    1,
+    1,
+    0,
+    5,
+    11,
+    BC_MC1_TRI_3_EXPR_63,
+    9,
+    BC_MC1_TRI_3_RPN_63,
+    5,
+    BC_MC1_TRI_3_DATA_63,
+  },
+  {
+    "MC1_TRI_2",
+    "MISCS_MIC_IO_R",
+    0,
+    135,
+    0,
+    0,
+    1,
+    1,
+    0,
+    5,
+    11,
+    BC_MC1_TRI_2_EXPR_64,
+    9,
+    BC_MC1_TRI_2_RPN_64,
+    5,
+    BC_MC1_TRI_2_DATA_64,
+  },
+  {
+    "MC1_TS_SET_3",
+    "MISCS_MIC_IO_R",
+    0,
+    90,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_TS_SET_3_EXPR_65,
+    1,
+    BC_MC1_TS_SET_3_RPN_65,
+    1,
+    BC_MC1_TS_SET_3_DATA_65,
+  },
+  {
+    "MC1_TS_SET_2",
+    "MISCS_MIC_IO_R",
+    0,
+    149,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_TS_SET_2_EXPR_66,
+    1,
+    BC_MC1_TS_SET_2_RPN_66,
+    1,
+    BC_MC1_TS_SET_2_DATA_66,
+  },
+  {
+    "MC1_TSDFF_3",
+    "MISCS_MIC_IO_R",
+    0,
+    105,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_TSDFF_3_EXPR_67,
+    3,
+    BC_MC1_TSDFF_3_RPN_67,
+    2,
+    BC_MC1_TSDFF_3_DATA_67,
+  },
+  {
+    "MC1_TSDFF_2",
+    "MISCS_MIC_IO_R",
+    0,
+    134,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_TSDFF_2_EXPR_68,
+    3,
+    BC_MC1_TSDFF_2_RPN_68,
+    2,
+    BC_MC1_TSDFF_2_DATA_68,
+  },
+  {
+    "MC1_TSINV_3",
+    "MISCS_MIC_IO_R",
+    0,
+    100,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_TSINV_3_EXPR_69,
+    3,
+    BC_MC1_TSINV_3_RPN_69,
+    2,
+    BC_MC1_TSINV_3_DATA_69,
+  },
+  {
+    "MC1_TSINV_2",
+    "MISCS_MIC_IO_R",
+    0,
+    139,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC1_TSINV_2_EXPR_70,
+    3,
+    BC_MC1_TSINV_2_RPN_70,
+    2,
+    BC_MC1_TSINV_2_DATA_70,
+  },
+  {
+    "MC1_DEDCLKO_EN_3",
+    "MISCS_MIC_IO_R",
+    0,
+    96,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_DEDCLKO_EN_3_EXPR_71,
+    1,
+    BC_MC1_DEDCLKO_EN_3_RPN_71,
+    1,
+    BC_MC1_DEDCLKO_EN_3_DATA_71,
+  },
+  {
+    "MC1_DEDCLKO_EN_2",
+    "MISCS_MIC_IO_R",
+    0,
+    132,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC1_DEDCLKO_EN_2_EXPR_72,
+    1,
+    BC_MC1_DEDCLKO_EN_2_RPN_72,
+    1,
+    BC_MC1_DEDCLKO_EN_2_DATA_72,
+  },
+  {
+    "MC12_CLAMP_3",
+    "MISCS_MIC_IO_R",
+    1,
+    99,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC12_CLAMP_3_EXPR_73,
+    3,
+    BC_MC12_CLAMP_3_RPN_73,
+    2,
+    BC_MC12_CLAMP_3_DATA_73,
+  },
+  {
+    "MC12_CLAMP_2",
+    "MISCS_MIC_IO_R",
+    1,
+    140,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC12_CLAMP_2_EXPR_74,
+    3,
+    BC_MC12_CLAMP_2_RPN_74,
+    2,
+    BC_MC12_CLAMP_2_DATA_74,
+  },
+  {
+    "MC12_ENIND_3",
+    "MISCS_MIC_IO_R",
+    1,
+    97,
+    0,
+    0,
+    1,
+    1,
+    0,
+    8,
+    22,
+    BC_MC12_ENIND_3_EXPR_75,
+    16,
+    BC_MC12_ENIND_3_RPN_75,
+    8,
+    BC_MC12_ENIND_3_DATA_75,
+  },
+  {
+    "MC12_ENIND_2",
+    "MISCS_MIC_IO_R",
+    1,
+    135,
+    0,
+    0,
+    1,
+    1,
+    0,
+    8,
+    22,
+    BC_MC12_ENIND_2_EXPR_76,
+    16,
+    BC_MC12_ENIND_2_RPN_76,
+    8,
+    BC_MC12_ENIND_2_DATA_76,
+  },
+  {
+    "MC12_ENINR_3",
+    "MISCS_MIC_IO_R",
+    1,
+    101,
+    0,
+    0,
+    0,
+    1,
+    0,
+    18,
+    44,
+    BC_MC12_ENINR_3_EXPR_77,
+    36,
+    BC_MC12_ENINR_3_RPN_77,
+    18,
+    BC_MC12_ENINR_3_DATA_77,
+  },
+  {
+    "MC12_ENINR_2",
+    "MISCS_MIC_IO_R",
+    1,
+    138,
+    0,
+    0,
+    0,
+    1,
+    0,
+    18,
+    44,
+    BC_MC12_ENINR_2_EXPR_78,
+    36,
+    BC_MC12_ENINR_2_RPN_78,
+    18,
+    BC_MC12_ENINR_2_DATA_78,
+  },
+  {
+    "MC12_ENINS_N_3",
+    "MISCS_MIC_IO_R",
+    1,
+    103,
+    0,
+    0,
+    0,
+    1,
+    0,
+    18,
+    39,
+    BC_MC12_ENINS_N_3_EXPR_79,
+    35,
+    BC_MC12_ENINS_N_3_RPN_79,
+    18,
+    BC_MC12_ENINS_N_3_DATA_79,
+  },
+  {
+    "MC12_ENINS_N_2",
+    "MISCS_MIC_IO_R",
+    1,
+    136,
+    0,
+    0,
+    0,
+    1,
+    0,
+    18,
+    39,
+    BC_MC12_ENINS_N_2_EXPR_80,
+    35,
+    BC_MC12_ENINS_N_2_RPN_80,
+    18,
+    BC_MC12_ENINS_N_2_DATA_80,
+  },
+  {
+    "MC12_ENLVDS_2",
+    "MISCS_MIC_IO_R",
+    1,
+    148,
+    0,
+    0,
+    0,
+    1,
+    0,
+    3,
+    7,
+    BC_MC12_ENLVDS_2_EXPR_81,
+    5,
+    BC_MC12_ENLVDS_2_RPN_81,
+    3,
+    BC_MC12_ENLVDS_2_DATA_81,
+  },
+  {
+    "MC12_ENSNK_19",
+    "MISCS_MIC_IO_R",
+    1,
+    118,
+    0,
+    0,
+    0,
+    1,
+    0,
+    21,
+    46,
+    BC_MC12_ENSNK_19_EXPR_82,
+    42,
+    BC_MC12_ENSNK_19_RPN_82,
+    21,
+    BC_MC12_ENSNK_19_DATA_82,
+  },
+  {
+    "MC12_ENSNK_18",
+    "MISCS_MIC_IO_R",
+    1,
+    119,
+    0,
+    0,
+    0,
+    1,
+    0,
+    18,
+    43,
+    BC_MC12_ENSNK_18_EXPR_83,
+    35,
+    BC_MC12_ENSNK_18_RPN_83,
+    18,
+    BC_MC12_ENSNK_18_DATA_83,
+  },
+  {
+    "MC12_ENSNK_17",
+    "MISCS_MIC_IO_R",
+    1,
+    90,
+    0,
+    0,
+    0,
+    1,
+    0,
+    27,
+    74,
+    BC_MC12_ENSNK_17_EXPR_84,
+    54,
+    BC_MC12_ENSNK_17_RPN_84,
+    27,
+    BC_MC12_ENSNK_17_DATA_84,
+  },
+  {
+    "MC12_ENSNK_16",
+    "MISCS_MIC_IO_R",
+    1,
+    114,
+    0,
+    0,
+    0,
+    1,
+    0,
+    23,
+    59,
+    BC_MC12_ENSNK_16_EXPR_85,
+    45,
+    BC_MC12_ENSNK_16_RPN_85,
+    23,
+    BC_MC12_ENSNK_16_DATA_85,
+  },
+  {
+    "MC12_ENSNK_15",
+    "MISCS_MIC_IO_R",
+    1,
+    115,
+    0,
+    0,
+    0,
+    1,
+    0,
+    25,
+    61,
+    BC_MC12_ENSNK_15_EXPR_86,
+    49,
+    BC_MC12_ENSNK_15_RPN_86,
+    25,
+    BC_MC12_ENSNK_15_DATA_86,
+  },
+  {
+    "MC12_ENSNK_14",
+    "MISCS_MIC_IO_R",
+    1,
+    120,
+    0,
+    0,
+    0,
+    1,
+    0,
+    21,
+    46,
+    BC_MC12_ENSNK_14_EXPR_87,
+    42,
+    BC_MC12_ENSNK_14_RPN_87,
+    21,
+    BC_MC12_ENSNK_14_DATA_87,
+  },
+  {
+    "MC12_ENSNK_13",
+    "MISCS_MIC_IO_R",
+    1,
+    123,
+    0,
+    0,
+    0,
+    1,
+    0,
+    18,
+    43,
+    BC_MC12_ENSNK_13_EXPR_88,
+    35,
+    BC_MC12_ENSNK_13_RPN_88,
+    18,
+    BC_MC12_ENSNK_13_DATA_88,
+  },
+  {
+    "MC12_ENSNK_12",
+    "MISCS_MIC_IO_R",
+    1,
+    147,
+    0,
+    0,
+    0,
+    1,
+    0,
+    27,
+    74,
+    BC_MC12_ENSNK_12_EXPR_89,
+    54,
+    BC_MC12_ENSNK_12_RPN_89,
+    27,
+    BC_MC12_ENSNK_12_DATA_89,
+  },
+  {
+    "MC12_ENSNK_11",
+    "MISCS_MIC_IO_R",
+    1,
+    124,
+    0,
+    0,
+    0,
+    1,
+    0,
+    23,
+    59,
+    BC_MC12_ENSNK_11_EXPR_90,
+    45,
+    BC_MC12_ENSNK_11_RPN_90,
+    23,
+    BC_MC12_ENSNK_11_DATA_90,
+  },
+  {
+    "MC12_ENSNK_10",
+    "MISCS_MIC_IO_R",
+    1,
+    127,
+    0,
+    0,
+    0,
+    1,
+    0,
+    25,
+    61,
+    BC_MC12_ENSNK_10_EXPR_91,
+    49,
+    BC_MC12_ENSNK_10_RPN_91,
+    25,
+    BC_MC12_ENSNK_10_DATA_91,
+  },
+  {
+    "MC12_ENSRC_19",
+    "MISCS_MIC_IO_R",
+    1,
+    105,
+    0,
+    0,
+    0,
+    1,
+    0,
+    21,
+    46,
+    BC_MC12_ENSRC_19_EXPR_92,
+    42,
+    BC_MC12_ENSRC_19_RPN_92,
+    21,
+    BC_MC12_ENSRC_19_DATA_92,
+  },
+  {
+    "MC12_ENSRC_18",
+    "MISCS_MIC_IO_R",
+    1,
+    106,
+    0,
+    0,
+    0,
+    1,
+    0,
+    28,
+    69,
+    BC_MC12_ENSRC_18_EXPR_93,
+    55,
+    BC_MC12_ENSRC_18_RPN_93,
+    28,
+    BC_MC12_ENSRC_18_DATA_93,
+  },
+  {
+    "MC12_ENSRC_17",
+    "MISCS_MIC_IO_R",
+    1,
+    92,
+    0,
+    0,
+    0,
+    1,
+    0,
+    31,
+    82,
+    BC_MC12_ENSRC_17_EXPR_94,
+    62,
+    BC_MC12_ENSRC_17_RPN_94,
+    31,
+    BC_MC12_ENSRC_17_DATA_94,
+  },
+  {
+    "MC12_ENSRC_16",
+    "MISCS_MIC_IO_R",
+    1,
+    93,
+    0,
+    0,
+    0,
+    1,
+    0,
+    23,
+    62,
+    BC_MC12_ENSRC_16_EXPR_95,
+    46,
+    BC_MC12_ENSRC_16_RPN_95,
+    23,
+    BC_MC12_ENSRC_16_DATA_95,
+  },
+  {
+    "MC12_ENSRC_15",
+    "MISCS_MIC_IO_R",
+    1,
+    100,
+    0,
+    0,
+    0,
+    1,
+    0,
+    17,
+    43,
+    BC_MC12_ENSRC_15_EXPR_96,
+    33,
+    BC_MC12_ENSRC_15_RPN_96,
+    17,
+    BC_MC12_ENSRC_15_DATA_96,
+  },
+  {
+    "MC12_ENSRC_14",
+    "MISCS_MIC_IO_R",
+    1,
+    134,
+    0,
+    0,
+    0,
+    1,
+    0,
+    21,
+    46,
+    BC_MC12_ENSRC_14_EXPR_97,
+    42,
+    BC_MC12_ENSRC_14_RPN_97,
+    21,
+    BC_MC12_ENSRC_14_DATA_97,
+  },
+  {
+    "MC12_ENSRC_13",
+    "MISCS_MIC_IO_R",
+    1,
+    130,
+    0,
+    0,
+    0,
+    1,
+    0,
+    28,
+    69,
+    BC_MC12_ENSRC_13_EXPR_98,
+    55,
+    BC_MC12_ENSRC_13_RPN_98,
+    28,
+    BC_MC12_ENSRC_13_DATA_98,
+  },
+  {
+    "MC12_ENSRC_12",
+    "MISCS_MIC_IO_R",
+    1,
+    144,
+    0,
+    0,
+    0,
+    1,
+    0,
+    31,
+    82,
+    BC_MC12_ENSRC_12_EXPR_99,
+    62,
+    BC_MC12_ENSRC_12_RPN_99,
+    31,
+    BC_MC12_ENSRC_12_DATA_99,
+  },
+  {
+    "MC12_ENSRC_11",
+    "MISCS_MIC_IO_R",
+    1,
+    146,
+    0,
+    0,
+    0,
+    1,
+    0,
+    23,
+    62,
+    BC_MC12_ENSRC_11_EXPR_100,
+    46,
+    BC_MC12_ENSRC_11_RPN_100,
+    23,
+    BC_MC12_ENSRC_11_DATA_100,
+  },
+  {
+    "MC12_ENSRC_10",
+    "MISCS_MIC_IO_R",
+    1,
+    139,
+    0,
+    0,
+    0,
+    1,
+    0,
+    17,
+    43,
+    BC_MC12_ENSRC_10_EXPR_101,
+    33,
+    BC_MC12_ENSRC_10_RPN_101,
+    17,
+    BC_MC12_ENSRC_10_DATA_101,
+  },
+  {
+    "MC12_ENVR_7",
+    "MISCS_MIC_IO_R",
+    1,
+    107,
+    0,
+    0,
+    0,
+    1,
+    0,
+    12,
+    25,
+    BC_MC12_ENVR_7_EXPR_102,
+    23,
+    BC_MC12_ENVR_7_RPN_102,
+    12,
+    BC_MC12_ENVR_7_DATA_102,
+  },
+  {
+    "MC12_ENVR_6",
+    "MISCS_MIC_IO_R",
+    1,
+    104,
+    0,
+    0,
+    0,
+    1,
+    0,
+    12,
+    25,
+    BC_MC12_ENVR_6_EXPR_103,
+    23,
+    BC_MC12_ENVR_6_RPN_103,
+    12,
+    BC_MC12_ENVR_6_DATA_103,
+  },
+  {
+    "MC12_ENVR_5",
+    "MISCS_MIC_IO_R",
+    1,
+    133,
+    0,
+    0,
+    0,
+    1,
+    0,
+    12,
+    25,
+    BC_MC12_ENVR_5_EXPR_104,
+    23,
+    BC_MC12_ENVR_5_RPN_104,
+    12,
+    BC_MC12_ENVR_5_DATA_104,
+  },
+  {
+    "MC12_ENVR_4",
+    "MISCS_MIC_IO_R",
+    1,
+    132,
+    0,
+    0,
+    0,
+    1,
+    0,
+    12,
+    25,
+    BC_MC12_ENVR_4_EXPR_105,
+    23,
+    BC_MC12_ENVR_4_RPN_105,
+    12,
+    BC_MC12_ENVR_4_DATA_105,
+  },
+  {
+    "MC12_H2L_7",
+    "MISCS_MIC_IO_R",
+    1,
+    95,
+    0,
+    0,
+    0,
+    1,
+    0,
+    5,
+    9,
+    BC_MC12_H2L_7_EXPR_106,
+    9,
+    BC_MC12_H2L_7_RPN_106,
+    5,
+    BC_MC12_H2L_7_DATA_106,
+  },
+  {
+    "MC12_H2L_6",
+    "MISCS_MIC_IO_R",
+    1,
+    94,
+    0,
+    0,
+    0,
+    1,
+    0,
+    5,
+    9,
+    BC_MC12_H2L_6_EXPR_107,
+    9,
+    BC_MC12_H2L_6_RPN_107,
+    5,
+    BC_MC12_H2L_6_DATA_107,
+  },
+  {
+    "MC12_H2L_5",
+    "MISCS_MIC_IO_R",
+    1,
+    143,
+    0,
+    0,
+    0,
+    1,
+    0,
+    5,
+    9,
+    BC_MC12_H2L_5_EXPR_108,
+    9,
+    BC_MC12_H2L_5_RPN_108,
+    5,
+    BC_MC12_H2L_5_DATA_108,
+  },
+  {
+    "MC12_H2L_4",
+    "MISCS_MIC_IO_R",
+    1,
+    145,
+    0,
+    0,
+    0,
+    1,
+    0,
+    5,
+    9,
+    BC_MC12_H2L_4_EXPR_109,
+    9,
+    BC_MC12_H2L_4_RPN_109,
+    5,
+    BC_MC12_H2L_4_DATA_109,
+  },
+  {
+    "MC12_INSBT_7",
+    "MISCS_MIC_IO_R",
+    1,
+    88,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC12_INSBT_7_EXPR_110,
+    3,
+    BC_MC12_INSBT_7_RPN_110,
+    2,
+    BC_MC12_INSBT_7_DATA_110,
+  },
+  {
+    "MC12_INSBT_6",
+    "MISCS_MIC_IO_R",
+    1,
+    89,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC12_INSBT_6_EXPR_111,
+    3,
+    BC_MC12_INSBT_6_RPN_111,
+    2,
+    BC_MC12_INSBT_6_DATA_111,
+  },
+  {
+    "MC12_INSBT_5",
+    "MISCS_MIC_IO_R",
+    1,
+    151,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC12_INSBT_5_EXPR_112,
+    3,
+    BC_MC12_INSBT_5_RPN_112,
+    2,
+    BC_MC12_INSBT_5_DATA_112,
+  },
+  {
+    "MC12_INSBT_4",
+    "MISCS_MIC_IO_R",
+    1,
+    150,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC12_INSBT_4_EXPR_113,
+    3,
+    BC_MC12_INSBT_4_RPN_113,
+    2,
+    BC_MC12_INSBT_4_DATA_113,
+  },
+  {
+    "MC12_PWRGURD_EN_3",
+    "MISCS_MIC_IO_R",
+    1,
+    98,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC12_PWRGURD_EN_3_EXPR_114,
+    1,
+    BC_MC12_PWRGURD_EN_3_RPN_114,
+    1,
+    BC_MC12_PWRGURD_EN_3_DATA_114,
+  },
+  {
+    "MC12_PWRGURD_EN_2",
+    "MISCS_MIC_IO_R",
+    1,
+    141,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC12_PWRGURD_EN_2_EXPR_115,
+    1,
+    BC_MC12_PWRGURD_EN_2_RPN_115,
+    1,
+    BC_MC12_PWRGURD_EN_2_DATA_115,
+  },
+  {
+    "MC12_RDIFF_3",
+    "MISCS_MIC_IO_R",
+    1,
+    102,
+    0,
+    0,
+    0,
+    1,
+    0,
+    8,
+    15,
+    BC_MC12_RDIFF_3_EXPR_116,
+    15,
+    BC_MC12_RDIFF_3_RPN_116,
+    8,
+    BC_MC12_RDIFF_3_DATA_116,
+  },
+  {
+    "MC12_RDIFF_2",
+    "MISCS_MIC_IO_R",
+    1,
+    137,
+    0,
+    0,
+    0,
+    1,
+    0,
+    8,
+    15,
+    BC_MC12_RDIFF_2_EXPR_117,
+    15,
+    BC_MC12_RDIFF_2_RPN_117,
+    8,
+    BC_MC12_RDIFF_2_DATA_117,
+  },
+  {
+    "MC12_SLEW_7",
+    "MISCS_MIC_IO_R",
+    1,
+    116,
+    0,
+    0,
+    0,
+    1,
+    0,
+    19,
+    41,
+    BC_MC12_SLEW_7_EXPR_118,
+    37,
+    BC_MC12_SLEW_7_RPN_118,
+    19,
+    BC_MC12_SLEW_7_DATA_118,
+  },
+  {
+    "MC12_SLEW_6",
+    "MISCS_MIC_IO_R",
+    1,
+    117,
+    0,
+    0,
+    0,
+    1,
+    0,
+    18,
+    39,
+    BC_MC12_SLEW_6_EXPR_119,
+    35,
+    BC_MC12_SLEW_6_RPN_119,
+    18,
+    BC_MC12_SLEW_6_DATA_119,
+  },
+  {
+    "MC12_SLEW_5",
+    "MISCS_MIC_IO_R",
+    1,
+    122,
+    0,
+    0,
+    0,
+    1,
+    0,
+    19,
+    41,
+    BC_MC12_SLEW_5_EXPR_120,
+    37,
+    BC_MC12_SLEW_5_RPN_120,
+    19,
+    BC_MC12_SLEW_5_DATA_120,
+  },
+  {
+    "MC12_SLEW_4",
+    "MISCS_MIC_IO_R",
+    1,
+    125,
+    0,
+    0,
+    0,
+    1,
+    0,
+    18,
+    39,
+    BC_MC12_SLEW_4_EXPR_121,
+    35,
+    BC_MC12_SLEW_4_RPN_121,
+    18,
+    BC_MC12_SLEW_4_DATA_121,
+  },
+  {
+    "MC12_USR_PD_3",
+    "MISCS_MIC_IO_R",
+    1,
+    109,
+    0,
+    0,
+    0,
+    1,
+    0,
+    3,
+    5,
+    BC_MC12_USR_PD_3_EXPR_122,
+    5,
+    BC_MC12_USR_PD_3_RPN_122,
+    3,
+    BC_MC12_USR_PD_3_DATA_122,
+  },
+  {
+    "MC12_USR_PD_2",
+    "MISCS_MIC_IO_R",
+    1,
+    131,
+    0,
+    0,
+    0,
+    1,
+    0,
+    3,
+    5,
+    BC_MC12_USR_PD_2_EXPR_123,
+    5,
+    BC_MC12_USR_PD_2_RPN_123,
+    3,
+    BC_MC12_USR_PD_2_DATA_123,
+  },
+  {
+    "MC12_USR_PU_N_3",
+    "MISCS_MIC_IO_R",
+    1,
+    111,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC12_USR_PU_N_3_EXPR_124,
+    3,
+    BC_MC12_USR_PU_N_3_RPN_124,
+    2,
+    BC_MC12_USR_PU_N_3_DATA_124,
+  },
+  {
+    "MC12_USR_PU_N_2",
+    "MISCS_MIC_IO_R",
+    1,
+    128,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    3,
+    BC_MC12_USR_PU_N_2_EXPR_125,
+    3,
+    BC_MC12_USR_PU_N_2_RPN_125,
+    2,
+    BC_MC12_USR_PU_N_2_DATA_125,
+  },
+  {
+    "MC12_VRDRV_7",
+    "MISCS_MIC_IO_R",
+    1,
+    96,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC12_VRDRV_7_EXPR_126,
+    1,
+    BC_MC12_VRDRV_7_RPN_126,
+    1,
+    BC_MC12_VRDRV_7_DATA_126,
+  },
+  {
+    "MC12_VRDRV_6",
+    "MISCS_MIC_IO_R",
+    1,
+    91,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC12_VRDRV_6_EXPR_127,
+    1,
+    BC_MC12_VRDRV_6_RPN_127,
+    1,
+    BC_MC12_VRDRV_6_DATA_127,
+  },
+  {
+    "MC12_VRDRV_5",
+    "MISCS_MIC_IO_R",
+    1,
+    142,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC12_VRDRV_5_EXPR_128,
+    1,
+    BC_MC12_VRDRV_5_RPN_128,
+    1,
+    BC_MC12_VRDRV_5_DATA_128,
+  },
+  {
+    "MC12_VRDRV_4",
+    "MISCS_MIC_IO_R",
+    1,
+    149,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    BC_MC12_VRDRV_4_EXPR_129,
+    1,
+    BC_MC12_VRDRV_4_RPN_129,
+    1,
+    BC_MC12_VRDRV_4_DATA_129,
+  },
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
