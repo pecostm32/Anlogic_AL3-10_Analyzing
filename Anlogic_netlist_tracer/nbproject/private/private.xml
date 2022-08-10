@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>1</activeConfTypeElem>
+        <activeConfIndexElem>0</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="7">
+        <file>
+            <url>Anlogic_bitstream_analyzer.c</url>
+            <bookmark id="7">
+                <name/>
+                <line>417</line>
+                <key/>
+            </bookmark>
+            <bookmark id="4">
+                <name/>
+                <line>505</line>
+                <key/>
+            </bookmark>
+            <bookmark id="6">
+                <name/>
+                <line>1230</line>
+                <key/>
+            </bookmark>
+            <bookmark id="1">
+                <name/>
+                <line>1409</line>
+                <key/>
+            </bookmark>
+            <bookmark id="3">
+                <name/>
+                <line>2496</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/peter/Data/NetbeansProjects/Code_Testing/Anlogic_bitstream_analyzer/Anlogic_bitstream_analyzer.c</file>
+            <file>file:/home/peter/Data/NetbeansProjects/Code_Testing/Anlogic_bitstream_analyzer/Information.txt</file>
+            <file>file:/home/peter/Data/NetbeansProjects/Code_Testing/Anlogic_bitstream_analyzer/database/database.h</file>
+        </group>
+    </open-files>
+</project-private>
