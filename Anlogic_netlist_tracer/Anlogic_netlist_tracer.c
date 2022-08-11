@@ -351,7 +351,7 @@ void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata, pTILEPA
 //----------------------------------------------------------------------------------------------------------------------------------
 //This function checks if there are multiple connections made to a block output or an incoming wire
 
-int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber)
+int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetype)
 {
   int item = routeinfoitem->routestartentity;
   int pair;
@@ -439,9 +439,9 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber)
                          ((length == 4) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')) ||
                          ((length == 6) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')  && (name[3] == '_') && (name[4] == 'S')))
                       {
-                        //Mark both route items as a net since it is in the same tile as the start point
-                        matchitem->routetype = TYPE_NET;
-                        matchlist->routetype = TYPE_NET;
+                        //Mark both route items as a net or endpoint depending on the source
+                        matchitem->routetype = routetype;
+                        matchlist->routetype = routetype;
                         
                         //Flag both route items as connected
                         matchitem->routeconnected = 1;
@@ -798,6 +798,12 @@ pROUTEINFOITEM findconnectionpoint(pROUTEINFOITEM routeinfoitem)
       routeinfoitem->routetype = TYPE_ERROR;
       routeinfoitem->matingrouteitem->routetype = TYPE_ERROR;
     }
+    else
+    {
+      //For a connection point see if there are more matches in the same tile for this specific one
+      //Done here because for the interconnect there can be multiple connections on both the mid and the end point
+      while(findmatchingpoints(foundrouteitem, foundrouteitem->netnumber, TYPE_ENDPOINT) == 1);
+    }
   }
   else if(strncmp(&name[2], "BEG", 3) == 0)
   {
@@ -917,8 +923,9 @@ pROUTEINFOITEM findconnectionpoint(pROUTEINFOITEM routeinfoitem)
       //Check if a match has been found
       if(foundrouteitem)
       {
-        //Signal done for this route point
-        hop = hops;
+        //For a connection point see if there are more matches in the same tile for this specific one
+        //Done here because for the interconnect there can be multiple connections on both the mid and the end point
+        while(findmatchingpoints(foundrouteitem, foundrouteitem->netnumber, TYPE_ENDPOINT) == 1);
       }
     }
     
@@ -977,7 +984,7 @@ void identifynetstarts()
           if(checkstartingpoint(bitlist, netnumber) == 1)
           {
             //For a starting point see if there are more matches for this specific one
-            while(findmatchingpoints(bitlist, netnumber) == 1);
+            while(findmatchingpoints(bitlist, netnumber, TYPE_NET) == 1);
             
             //Last match found then up to the next net
             netnumber++;
@@ -1001,7 +1008,6 @@ void traceroutelist()
   int routefound = 1;
   
   pROUTEINFOITEM bitlist;
-  pROUTEINFOITEM foundrouteitem;
 
   //Need to walk through the tile route array and trace all the identified nets down to the endpoints
   //To catch them all the tree is scanned multiple times until all the bits have been processed
@@ -1038,7 +1044,7 @@ void traceroutelist()
             //Use the assigned net number for marking the net
 
             //Try to find a connection for this route bit
-            if(foundrouteitem = findconnectionpoint(bitlist))
+            if(findconnectionpoint(bitlist))
             {
               //Signal a route has been found so good for another run
               routefound = 1;
@@ -1051,9 +1057,6 @@ void traceroutelist()
               //This means two bits are done so adjust the counters
               tileroutecountarray[x][y] -= 2;
               tileroutecount -= 2;
-              
-              //For a connection point see if there are more matches for this specific one
-              while(findmatchingpoints(foundrouteitem, foundrouteitem->netnumber) == 1);
             }
           }
 
