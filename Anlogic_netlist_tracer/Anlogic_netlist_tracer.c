@@ -185,9 +185,6 @@ void insertitembeforenetlist(pNETLISTITEM current, pNETLISTITEM new)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-//Need to change this to do a sort on the net number
-
-
 void additemtonetlist(pROUTEINFOITEM routebit)
 {
   pNETLISTITEM  addlist;
@@ -370,23 +367,25 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
   name   = routeinfoitem->startpoints[item].name;
   length = routeinfoitem->startpoints[item].length;
 
+#if 0
   if((tiledata->x == 25) && (tiledata->y == 17) && ((strncmp(name, "N2END1", 6) == 0)))
   {
     pair = 0;
   }
-  
-  
+#endif
+
   //Get the route list for the tile the original route belongs to
   tileroutelist = tileroutearray[tiledata->x][tiledata->y];
   
   //Check the other route bits in this tile for a matching start point
   while(tileroutelist)
   {
+#if 0
     if((tileroutelist->tiledata->x == 25) && (tileroutelist->tiledata->y == 17) && ((strcmp(tileroutelist->bitdata->name, "TOP.XI1.MC17") == 0) || (strcmp(tileroutelist->bitdata->name, "TOP.XI1.MC12") == 0)))
     {
       pair = 0;
     }
-    
+#endif
     
     //Make sure this is not the original item and that it is not yet assigned
     if((tileroutelist != routeinfoitem) && (tileroutelist->routetype == TYPE_NONE))
@@ -400,6 +399,29 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
           //See if it matches the current start point with the to test one
           if(strncmp(tileroutelist->startpoints[item].name, name, length) == 0)
           {
+            //For a CLK wire it is a single bit connection when the end point is a CLK_S
+            if((length == 4) && (tileroutelist->endpoints[item].length == 6) && (strncmp(name, "CLK", 3) == 0) && (strncmp(tileroutelist->endpoints[item].name, "CLK_S", 5) == 0))
+            {
+              //Set the index for the entity that matches for this route item
+              tileroutelist->routestartentity = item;
+              
+              //Make this a either a single point or an endpoint
+              tileroutelist->routetype = TYPE_ENDPOINT;
+
+              //Signal the bits as connected
+              tileroutelist->routeconnected = 1;
+
+              //This means one bit is done so adjust the counters
+              tileroutecountarray[tileroutelist->tiledata->x][tileroutelist->tiledata->y]--;
+              tileroutecount--;
+
+              //Add this item to the net list
+              additemtonetlist(tileroutelist);
+
+              //Signal that a connection has been found
+              return(1);
+            }
+            
             //Set the found one as the one to match with
             matchitem = tileroutelist;
 
@@ -430,12 +452,11 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
                       length = matchitem->endpoints[item].length;
 
                       //Determine if this is an end point for this net
-                      //Check if the endpoint is a logic or io block input signal A, B, C, D, E, MI, CE, SR, CLK_S, CLKN_S
+                      //Check if the endpoint is a logic or io block input signal A, B, C, D, E, MI, CE, SR, CLKN_S
                       if(((length == 2) && ((name[0] == 'A') || (name[0] == 'B')  || (name[0] == 'C')  || (name[0] == 'D') || (name[0] == 'E'))) ||
                          ((length == 3) &&  (name[0] == 'M') && (name[1] == 'I')) ||
                          ((length == 3) &&  (name[0] == 'C') && (name[1] == 'E')) ||
                          ((length == 3) &&  (name[0] == 'S') && (name[1] == 'R')) ||
-                         ((length == 6) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')  && (name[3] == '_') && (name[4] == 'S')) ||
                          ((length == 7) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')  && (name[3] == 'N') && (name[4] == '_') && (name[5] == 'S')))                        
                       {
                         //Mark both route items as a net or endpoint depending on the source
@@ -572,13 +593,12 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
                 length = routeinfoitem->endpoints[item].length;
 
                 //Determine if this is an end point for this net
-                //Check if the endpoint is a logic or io block input signal A, B, C, D, E, MI, CE, SR, CLK_S, CLKN_S
+                //Check if the endpoint is a logic or io block input signal A, B, C, D, E, MI, CE, SR, CLKN_S
                 //Clock nets also need to be set as single route nets
                 if(((length == 2) && ((name[0] == 'A') || (name[0] == 'B')  || (name[0] == 'C')  || (name[0] == 'D') || (name[0] == 'E'))) ||
                    ((length == 3) &&  (name[0] == 'M') && (name[1] == 'I')) ||
                    ((length == 3) &&  (name[0] == 'C') && (name[1] == 'E')) ||
                    ((length == 3) &&  (name[0] == 'S') && (name[1] == 'R')) ||
-                   ((length == 6) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')  && (name[3] == '_') && (name[4] == 'S')) ||
                    ((length == 7) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')  && (name[3] == 'N')  && (name[4] == '_') && (name[5] == 'S')))
                 {
                   //Mark both route items as a net since it is in the same tile as the start point
@@ -660,6 +680,29 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
           {
             //At this point a matching pair needs to be found. When that fails the remainder of the items needs to be checked
             
+            //For a CLK wire it is a single bit connection when the end point is a CLK_S
+            if((length == 4) && (tileroutelist->endpoints[item].length == 6) && (strncmp(entity, "CLK", 3) == 0) && (strncmp(tileroutelist->endpoints[item].name, "CLK_S", 5) == 0))
+            {
+              //Set the index for the entity that matches for this route item
+              tileroutelist->routestartentity = item;
+              
+              //Make this a either a single point or an endpoint
+              tileroutelist->routetype = TYPE_ENDPOINT;
+
+              //Signal the bits as connected
+              tileroutelist->routeconnected = 1;
+
+              //This means one bit is done so adjust the counters
+              tileroutecountarray[tileroutelist->tiledata->x][tileroutelist->tiledata->y]--;
+              tileroutecount--;
+
+              //Add this item to the net list
+              additemtonetlist(tileroutelist);
+
+              //Signal that a connection has been found
+              return(tileroutelist);
+            }
+            
             //Setup the list to search a match in
             matchlist = searchlist;
 
@@ -689,12 +732,11 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
                       //Determine if this is an end point for this net
                       //For the first entry it can be a single route net (only two route bits set for it) runs from an output to an input without an inter or local connect
                       //For the next entries it can be the end point
-                      //Check if the endpoint is a logic or io block input signal A, B, C, D, E, MI, CE, SR, CLK_S, CLKN_S
+                      //Check if the endpoint is a logic or io block input signal A, B, C, D, E, MI, CE, SR, CLKN_S
                       if(((arcvalentity->length == 2) && ((arcvalentity->name[0] == 'A') || (arcvalentity->name[0] == 'B')  || (arcvalentity->name[0] == 'C')  || (arcvalentity->name[0] == 'D') || (arcvalentity->name[0] == 'E'))) ||
                          ((arcvalentity->length == 3) &&  (arcvalentity->name[0] == 'M') && (arcvalentity->name[1] == 'I')) ||
                          ((arcvalentity->length == 3) &&  (arcvalentity->name[0] == 'C') && (arcvalentity->name[1] == 'E')) ||
                          ((arcvalentity->length == 3) &&  (arcvalentity->name[0] == 'S') && (arcvalentity->name[1] == 'R')) ||
-                         ((arcvalentity->length == 6) &&  (arcvalentity->name[0] == 'C') && (arcvalentity->name[1] == 'L')  && (arcvalentity->name[2] == 'K')  && (arcvalentity->name[3] == '_') && (arcvalentity->name[4] == 'S')) ||
                          ((arcvalentity->length == 7) &&  (arcvalentity->name[0] == 'C') && (arcvalentity->name[1] == 'L')  && (arcvalentity->name[2] == 'K')  && (arcvalentity->name[3] == 'N') && (arcvalentity->name[4] == '_') && (arcvalentity->name[5] == 'S')))
                       {
                         //Make this a either a single point or an endpoint
@@ -777,6 +819,13 @@ int findconnectionpoint(pROUTEINFOITEM routeinfoitem)
   pROUTEINFOITEM tileroutelist;
   pROUTEINFOITEM foundrouteitem = 0;
 
+#if 1
+  if((tiledata->x == 6) && (tiledata->y == 18) && (strcmp(routeinfoitem->bitdata->name, "TOP.XI280.MC11") == 0))
+  {
+    hop = 0;
+  }
+#endif
+  
   //Get the endpoint entity to search for
   name   = routeinfoitem->endpoints[routeinfoitem->routestartentity].name;
   length = routeinfoitem->endpoints[routeinfoitem->routestartentity].length;
@@ -1028,9 +1077,6 @@ void traceroutelist()
   //Need to walk through the tile route array and trace all the identified nets down to the endpoints
   //To catch them all the tree is scanned multiple times until all the bits have been processed
 
-  //Still need to add a flag to check if there are still bits being found
-
-  
   //Search until the last bit has been done or no more matches have been found, which is an error condition
   while(tileroutecount && routefound)
   {
@@ -1045,24 +1091,25 @@ void traceroutelist()
         //Get the first bit for this tile
         bitlist = tileroutearray[x][y];
 
-        //Only process when there are bits
-        while(bitlist)
+        //Only process when there are bits to handle
+        while((bitlist) && (tileroutecountarray[x][y]))
         {
-          if((x == 7) && (y == 7) && (strcmp(bitlist->bitdata->name, "TOP.XI280.MC10") == 0))
+#if 1
+          if((x == 7) && (y == 15) && (strcmp(bitlist->bitdata->name, "TOP.XI280.MC11") == 0))
           {
             routefound = 0;
           }
+#endif
           
           //Check if the current route bit is a starting or a route point and not connected yet
           if((bitlist->routeconnected == 0) && ((bitlist->routetype == TYPE_STARTPOINT) || (bitlist->routetype == TYPE_ROUTEPOINT)))
           {
-            //If it is trace then route down the tile array
-            //Use the assigned net number for marking the net
-
+            //Could have this function return the number of bits tagged to cope with the single bit clock routes
+            
             //Try to find a connection for this route bit
             if(findconnectionpoint(bitlist))
             {
-              //Signal a route has been found so good for another run
+              //Signal a route has been found, so good for another run
               routefound = 1;
               
               //Mark originating route bits as connected
