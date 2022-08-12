@@ -405,6 +405,9 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
               //Set the index for the entity that matches for this route item
               tileroutelist->routestartentity = item;
               
+              //Set the net number for this route item
+              tileroutelist->netnumber = netnumber;
+              
               //Make this a either a single point or an endpoint
               tileroutelist->routetype = TYPE_ENDPOINT;
 
@@ -549,8 +552,6 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
     }
 #endif
     
-    //GND and GCLK are also start points
-    
     //CE, SR can be both a start or an end point, but seeing them as start point is basically wrong so needs attention
     
     //The question is if CLK0 and CLK1 can be seen as a start point. It might be that they are local clock wires and as such part of bigger nets
@@ -562,9 +563,7 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
     if(((length == 2) && ((name[0] == 'F') || (name[0] == 'Q'))) ||
        ((length == 3) &&  (name[0] == 'F') && (name[1] == 'X'))  ||
        ((length == 3) &&  (name[0] == 'C') && (name[1] == 'E'))  ||
-       ((length == 3) &&  (name[0] == 'S') && (name[1] == 'R'))  ||
-       ((length == 3) &&  (name[0] == 'G') && (name[1] == 'N')   && (name[2] == 'D')) ||
-      (((length == 5) ||  (length == 6))   && (name[0] == 'G')   && (name[1] == 'C') && (name[2] == 'L') && (name[3] == 'K')))
+       ((length == 3) &&  (name[0] == 'S') && (name[1] == 'R')))
     {
       //Get the route list for the tile the original route belongs to
       tileroutelist = tileroutearray[tiledata->x][tiledata->y];
@@ -648,6 +647,189 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
+
+int findgndpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
+{
+  int item;
+  int pair;
+  
+  char *name;
+  int   length;
+  
+  pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
+  
+  pROUTEINFOITEM tileroutelist;
+  
+  //Check all the arcval start point entities to see if it is a GND
+  for(item=0;item<routeinfoitem->nofentities;item++)
+  {
+    //Get the current start point entity to check
+    name   = routeinfoitem->startpoints[item].name;
+    length = routeinfoitem->startpoints[item].length;
+    
+    //See if the current start point matches a  GND entity
+    if((length == 3) &&  (strncmp(name, "GND", 3) == 0))
+    {
+      //Get the route list for the tile the original route belongs to
+      tileroutelist = tileroutearray[tiledata->x][tiledata->y];
+
+      //Check the other route bits in this tile
+      while(tileroutelist)
+      {
+        //Make sure this is not the original item
+        if(tileroutelist != routeinfoitem)
+        {
+          //Need a for loop to check the pairs here
+          for(pair=0;pair<tileroutelist->nofentities;pair++)
+          {
+            //Check if the lengths match before comparing the strings
+            if(routeinfoitem->pointpairs[item].length == tileroutelist->pointpairs[pair].length)
+            {
+              //match the current pair with the to test one
+              if(strncmp(routeinfoitem->pointpairs[item].name, tileroutelist->pointpairs[pair].name, routeinfoitem->pointpairs[item].length) == 0)
+              {
+                //A GND route is always onto an signal input, so no need to check on it
+                //Set the index for the entity that matches for these route items
+                routeinfoitem->routestartentity = item;
+                tileroutelist->routestartentity = pair;
+                
+                //Mark both route items as a net since it is in the same tile as the start point
+                routeinfoitem->routetype = TYPE_NET;
+                tileroutelist->routetype = TYPE_NET;
+
+                //Flag both route items as connected
+                routeinfoitem->routeconnected = 1;
+                tileroutelist->routeconnected = 1;
+
+                //This means two bits are done so adjust the counters
+                tileroutecountarray[tiledata->x][tiledata->y] -= 2;
+                tileroutecount -= 2;
+                
+                //Set the net number for both items
+                routeinfoitem->netnumber = netnumber;
+                tileroutelist->netnumber = netnumber;
+
+                //Add both items to the net list
+                additemtonetlist(routeinfoitem);
+                additemtonetlist(tileroutelist);
+                
+                //Link the two bits together
+                routeinfoitem->matingrouteitem = tileroutelist;
+                tileroutelist->matingrouteitem = routeinfoitem;
+                
+                //Signal that a starting route has been found
+                return(1);
+              }
+            }              
+          }
+        }
+
+        tileroutelist = tileroutelist->next;
+      }
+    }
+  }
+  
+  return(0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+int findgclkpoint(pROUTEINFOITEM routeinfoitem, int netnumber, char *clkname, int clklength)
+{
+  int item;
+  int pair;
+  
+  char *name;
+  int   length;
+  
+  pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
+  
+  pROUTEINFOITEM tileroutelist;
+  
+  //Check all the arcval start point entities to see if it is a GND
+  for(item=0;item<routeinfoitem->nofentities;item++)
+  {
+    //Get the current start point entity to check
+    name   = routeinfoitem->startpoints[item].name;
+    length = routeinfoitem->startpoints[item].length;
+    
+    //See if the current start point matches a GCLK entity
+    if((length == clklength) &&  (strncmp(name, clkname, clklength) == 0))
+    {
+      //Get the route list for the tile the original route belongs to
+      tileroutelist = tileroutearray[tiledata->x][tiledata->y];
+
+      //Check the other route bits in this tile
+      while(tileroutelist)
+      {
+        //Make sure this is not the original item
+        if(tileroutelist != routeinfoitem)
+        {
+          //Need a for loop to check the pairs here
+          for(pair=0;pair<tileroutelist->nofentities;pair++)
+          {
+            //Check if the lengths match before comparing the strings
+            if(routeinfoitem->pointpairs[item].length == tileroutelist->pointpairs[pair].length)
+            {
+              //match the current pair with the to test one
+              if(strncmp(routeinfoitem->pointpairs[item].name, tileroutelist->pointpairs[pair].name, routeinfoitem->pointpairs[item].length) == 0)
+              {
+                //A GCLK route is either onto an signal input or onto a local clock wire
+                if((routeinfoitem->endpoints[item].length == 4) && (strncmp(routeinfoitem->endpoints[item].name, "CLK", 3) == 0))
+                {
+                  //Mark both route items as a route point since to allow connecting it to the destination
+                  routeinfoitem->routetype = TYPE_ROUTEPOINT;
+                  tileroutelist->routetype = TYPE_ROUTEPOINT;
+                }
+                else
+                {
+                  //Mark both route items as a net since it is in the same tile as the start point
+                  routeinfoitem->routetype = TYPE_NET;
+                  tileroutelist->routetype = TYPE_NET;
+
+                  //Flag both route items as connected
+                  routeinfoitem->routeconnected = 1;
+                  tileroutelist->routeconnected = 1;
+
+                  //This means two bits are done so adjust the counters
+                  tileroutecountarray[tiledata->x][tiledata->y] -= 2;
+                  tileroutecount -= 2;
+                }
+                
+                //Set the index for the entity that matches for these route items
+                routeinfoitem->routestartentity = item;
+                tileroutelist->routestartentity = pair;
+                
+                //Set the net number for both items
+                routeinfoitem->netnumber = netnumber;
+                tileroutelist->netnumber = netnumber;
+
+                //Add both items to the net list
+                additemtonetlist(routeinfoitem);
+                additemtonetlist(tileroutelist);
+                
+                //Link the two bits together
+                routeinfoitem->matingrouteitem = tileroutelist;
+                tileroutelist->matingrouteitem = routeinfoitem;
+                
+                //Signal that a starting route has been found
+                return(1);
+              }
+            }              
+          }
+        }
+
+        tileroutelist = tileroutelist->next;
+      }
+    }
+  }
+  
+  return(0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
 //This function is for finding multiple route bit pairs for the given entity
 
 pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int length, int netnumber)
@@ -678,13 +860,14 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
           //When the names match there is a possible connection
           if(strncmp(entity, arcvalentity->name, length) == 0)
           {
-            //At this point a matching pair needs to be found. When that fails the remainder of the items needs to be checked
-            
             //For a CLK wire it is a single bit connection when the end point is a CLK_S
             if((length == 4) && (tileroutelist->endpoints[item].length == 6) && (strncmp(entity, "CLK", 3) == 0) && (strncmp(tileroutelist->endpoints[item].name, "CLK_S", 5) == 0))
             {
               //Set the index for the entity that matches for this route item
               tileroutelist->routestartentity = item;
+              
+              //Set the net number for this route item
+              tileroutelist->netnumber = netnumber;
               
               //Make this a either a single point or an endpoint
               tileroutelist->routetype = TYPE_ENDPOINT;
@@ -712,20 +895,19 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
               //Make sure this is not the original item
               if(matchlist != tileroutelist)
               {
-                //Need a for loop to check the pairs here
+                //Check each arcval pair of this item to see if it matches
                 for(pair=0;pair<matchlist->nofentities;pair++)
                 {
                   //Check if the lengths match before comparing the strings
                   if(tileroutelist->pointpairs[item].length == matchlist->pointpairs[pair].length)
                   {
-                    //match the current pair with the to test one
+                    //Try to match the current pair with the to test one
                     if(strncmp(tileroutelist->pointpairs[item].name, matchlist->pointpairs[pair].name, tileroutelist->pointpairs[item].length) == 0)
                     {
                       //Set the index for the entity that matches for these route items
                       tileroutelist->routestartentity = item;
                       matchlist->routestartentity = pair;
 
-                      //Also have to figure out how an output is routed onto multiple inputs
                       //Get the current endpoint specifics
                       arcvalentity = &tileroutelist->endpoints[item];
 
@@ -844,7 +1026,7 @@ int findconnectionpoint(pROUTEINFOITEM routeinfoitem)
     if(foundrouteitem == 0)
     {
       //For a local connection a match should have been found
-      //So when not there is an error. Mark the bit pair as such
+      //So when not, there is an error. Mark the bit pair as such
       //Might need a check on matingrouteitem being a valid pointer
       routeinfoitem->routetype = TYPE_ERROR;
       routeinfoitem->matingrouteitem->routetype = TYPE_ERROR;
@@ -1017,12 +1199,10 @@ int findconnectionpoint(pROUTEINFOITEM routeinfoitem)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void identifynetstarts()
+void identifynetstarts(int *netnumber)
 {
   int x;
   int y;
-
-  int netnumber = 1;
   
   pROUTEINFOITEM bitlist;
   
@@ -1046,19 +1226,129 @@ void identifynetstarts()
         if(bitlist->routetype == TYPE_NONE)
         {
           //See if it is a starting point or not
-          if(checkstartingpoint(bitlist, netnumber) == 1)
+          if(checkstartingpoint(bitlist, *netnumber) == 1)
           {
             //For a starting point see if there are more matches for this specific one
-            while(findmatchingpoints(bitlist, netnumber, TYPE_NET) == 1);
+            while(findmatchingpoints(bitlist, *netnumber, TYPE_NET) == 1);
             
             //Last match found then up to the next net
-            netnumber++;
+            (*netnumber)++;
           }
         }
         
         //Select the next bit to check
         bitlist = bitlist->next;
       }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void buildgndnet(int *netnumber)
+{
+  int x;
+  int y;
+
+  int found = 0;
+  
+  pROUTEINFOITEM bitlist;
+  
+  //Walk through the tile array to search for the GND starting points
+  for(x=0;x<COLUMNS;x++)
+  {
+    for(y=0;y<ROWS;y++)
+    {
+      //Get the first bit for this tile
+      bitlist = tileroutearray[x][y];
+      
+      //Only process when there are bits
+      while(bitlist)
+      {
+        //Check if the current route bit is not typed already
+        if(bitlist->routetype == TYPE_NONE)
+        {
+          //See if it is a ground point or not
+          if(findgndpoint(bitlist, *netnumber) == 1)
+          {
+            found = 1;
+          }
+        }
+        
+        //Select the next bit to check
+        bitlist = bitlist->next;
+      }
+    }
+  }
+  
+  //Check if a ground net is found
+  if(found)
+  {
+    //Found a ground net then select next net number
+    (*netnumber)++;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void buildgclknets(int *netnumber)
+{
+  int x;
+  int y;
+
+  int found;
+  int clkid;
+
+  char  clkname[12];
+  int   clklength;
+  
+  pROUTEINFOITEM bitlist;
+
+  for(clkid=0;clkid<16;clkid++)
+  {
+    //No item found yet at the start of each new global clock signal
+    found = 0;
+    
+    //There is no GCLK1 net so skip it
+    if(clkid == 1)
+    {
+      clkid++;
+    }
+  
+    clklength = snprintf(clkname, sizeof(clkname), "GCLK%d", clkid);
+    
+    //Walk through the tile array to search for the GND starting points
+    for(x=0;x<COLUMNS;x++)
+    {
+      for(y=0;y<ROWS;y++)
+      {
+        //Get the first bit for this tile
+        bitlist = tileroutearray[x][y];
+
+        //Only process when there are bits
+        while(bitlist)
+        {
+          //Check if the current route bit is not typed already
+          if(bitlist->routetype == TYPE_NONE)
+          {
+            //See if it is a ground point or not
+            if(findgclkpoint(bitlist, *netnumber, clkname, clklength) == 1)
+            {
+              found = 1;
+            }
+          }
+
+          //Select the next bit to check
+          bitlist = bitlist->next;
+        }
+      }
+    }
+
+    //Check if a ground net is found
+    if(found)
+    {
+      //Found a ground net then select next net number
+      (*netnumber)++;
     }
   }
 }
@@ -1079,6 +1369,7 @@ void traceroutelist()
 
   //Search until the last bit has been done or no more matches have been found, which is an error condition
   while(tileroutecount && routefound)
+//  while(routefound)
   {
     //When no more routes are found the loop will break
     routefound = 0;
@@ -1093,9 +1384,10 @@ void traceroutelist()
 
         //Only process when there are bits to handle
         while((bitlist) && (tileroutecountarray[x][y]))
+//        while(bitlist)
         {
-#if 1
-          if((x == 7) && (y == 15) && (strcmp(bitlist->bitdata->name, "TOP.XI280.MC11") == 0))
+#if 0
+          if((x == 7) && (y == 30) && (strcmp(bitlist->bitdata->name, "TOP.XI5.MC03") == 0))
           {
             routefound = 0;
           }
@@ -1682,6 +1974,8 @@ int main(int argc, char** argv)
   
   int item;
   
+  int netnumber = 1;
+  
   pTILEGRIDDATA tilegriddata;
   
   pCONFIGBITDATA bitdata;
@@ -1830,8 +2124,14 @@ int main(int argc, char** argv)
 
     //Might need to identify ground and global clock nets first
     
+    //Create a single ground net
+    buildgndnet(&netnumber);
+
+    //Create single global clock nets
+    buildgclknets(&netnumber);
+    
     //Walk through the tile array and mark all the starting points of the routes
-    identifynetstarts();
+    identifynetstarts(&netnumber);
 
     //Trace the identified nets down to the endpoints
     traceroutelist();
