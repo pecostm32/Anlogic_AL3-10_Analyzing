@@ -129,9 +129,9 @@ uchar bitstreamdata[2097152];
 
 uchar fpga_tiles[COLUMNS][ROWS];
 
-#define FILENAME   "fpgas/Original_1013D_fpga"
+//#define FILENAME   "fpgas/Original_1013D_fpga"
 
-//#define FILENAME         "/home/peter/Data/Anlogic_projects/pin_test/pin_test"
+#define FILENAME         "/home/peter/Data/Anlogic_projects/pin_test/pin_test"
 
 
 //#define FILENAME   "fpgas/pin_test_23-112"
@@ -1519,15 +1519,104 @@ pROUTEINFOITEM findmatchingpair(pROUTEINFOITEM routeinfoitem, int netnumber)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+int getnumberfromitem(pNAMEITEM item)
+{
+  int count = item->length;
+  int number = -1;
+  
+  char *ptr = item->name;
+  
+  //skip characters until a digit is found
+  while(count)
+  {
+    //A route entity only has a single digit from 0 to max 7
+    if((*ptr >= '0') && (*ptr <= '7'))
+    {
+      //COnvert the digit into a number
+      number = *ptr - '0';
+      
+      //Found it so done
+      break;
+    }
+    
+    //Skip to next character until done
+    ptr++;
+    count--;
+  }
+  
+  return(number);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+const pTILEPADPINMAP getpinmapfortile(pROUTEINFOITEM routeitem)
+{
+  int iol = -1;
+  int i;
+  
+  int x = routeitem->tiledata->x;
+  int y = routeitem->tiledata->y;
+  
+  pTILEGRIDDATA  tiledata = routeitem->tiledata;
+  pCONFIGBITDATA bitdata  = routeitem->bitdata;
+
+  //A bit of a problem here is that the bits connection to the IO pads are
+  //in the first tile of three per io section??
+  
+  
+  //An IO pin is only situated in pib tiles
+  if(strncmp(tiledata->type, "pib", 3) == 0)
+  {
+    //Take action based on the signal type
+    if(routeitem->netsignal == SIGNAL_OUTPUT)
+    {
+      //For an output the data to check is in the start points
+      iol = getnumberfromitem(&routeitem->startpoints[routeitem->routestartentity]);
+    }
+    else
+    {
+      //For an input the data to check is in the end points
+      iol = getnumberfromitem(&routeitem->endpoints[routeitem->routestartentity]);
+    }
+  }  
+  
+  //Check if a pad number has been found
+  if(iol != -1)
+  {
+    //pad numbers can only be 0 to max 3
+    if(iol > 3)
+    {
+      //Any number above is a mirror to the complementary items
+      iol -= 4;
+    }
+    
+    //Try to match the found pad number to an actual pin number
+    for(i=0;i<sizeof(tilepadmap)/sizeof(TILEPADPINMAP);i++)
+    {
+      //Match the numbers to the table for the 144 pin variant the FNIRSI uses
+      if((x == tilepadmap[i].x) && (y == tilepadmap[i].y) && (iol == tilepadmap[i].iol))
+      {
+        //When found return the info to the caller
+        return((const pTILEPADPINMAP)&tilepadmap[i]);
+      }
+    }
+  }  
+
+  //Nothing found so signal this
+  return(0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 void filterroutelist()
 {
   pNETLISTITEM  fromlist = routelist;
   
   pROUTEINFOITEM routeitem;
   
-  //Get memory for the net list item for this bit
-//  pNETLISTITEM netitem = malloc(sizeof(pNETLISTITEM));
-
+  //Also needed is mapping of the data onto IO pins and logic slices or other embedded logic. tiledata provides information here.
+  
+  
   char *name;
   int  length;
   
@@ -1559,6 +1648,10 @@ void filterroutelist()
       {
         //Not a ground or a global clock means it is an output signal
         routeitem->netsignal = SIGNAL_OUTPUT;
+        
+        //Try to match the output to a pin output or a slice output or whatever is possible
+        routeitem->paddata = getpinmapfortile(routeitem);
+
       }
       
       //Add it to the net list
@@ -1581,6 +1674,9 @@ void filterroutelist()
           //If so flag it as input signal too so it will be filtered from the list
           routeitem->matingrouteitem->netsignal = SIGNAL_INPUT;
         }
+        
+        //Try to match the input to a pin input or a slice input or whatever is possible 
+        routeitem->paddata = getpinmapfortile(routeitem);
         
         //Add it to the net list
         additemtofinalnetlist(routeitem);
@@ -1668,11 +1764,7 @@ void printnetlist()
   FILE *fo;
 
   
-  //Need to filter the data down to single entities of the start and end points. Care has to be taken of the TYPE_NET entries too
   
-  //GND and GCLK nets use the TYPE_NET marking and need special filtering
-  
-  //Also needed is mapping of the data onto IO pins and logic slices or other embedded logic. tiledata provides information here.
   
   
   snprintf(filename, sizeof(filename), "%s_net_list.csv", FILENAME);
@@ -1702,54 +1794,7 @@ void printnetlist()
         netnumber = bitlist->netnumber;
       }
       
-      //Print the net info
-      fprintf(fo, "%d,%d,\"%s\",,", bitlist->netnumber, bitlist->routetype, bitlist->bitdata->bitdata[bitlist->routestartentity].data);
-      
-      //Print the data for this item
-      fprintf(fo, "%s,%s,%d,%d,,", bitlist->tiledata->name, bitlist->tiledata->type, bitlist->tiledata->x, bitlist->tiledata->y);
-      
-      if(bitlist->paddata)
-      {
-        fprintf(fo, "P%d,,", bitlist->paddata->pin);
-      }
-      else
-      {
-        fprintf(fo, ",,");
-      }
-
-      fprintf(fo, "%s,%s,%d,%d,%d,%d,,\"", bitlist->bitdata->name, bitlist->bitdata->type, bitlist->bitdata->x, bitlist->bitdata->y, bitlist->bitdata->xoff, bitlist->bitdata->yoff);
-
-      //Walk through all the expression items
-      for(count=0;count<bitlist->bitdata->exprcount;count++)
-      {
-        fprintf(fo, "%s", bitlist->bitdata->expr[count]);
-      }
-
-      fprintf(fo, "\",\"");
-
-      //Walk through all the reverse polar notation items
-      for(count=0;count<bitlist->bitdata->rpncount;count++)
-      {
-        fprintf(fo, "%s", bitlist->bitdata->rpn[count]);
-      }
-      
-      fprintf(fo, "\",%d,,", bitlist->bitdata->datacount);
-
-      //Walk through all the data items
-      for(count=0;count<bitlist->bitdata->datacount;count++)
-      {
-        //Output them to the file
-        fprintf(fo, "\"%s\"", bitlist->bitdata->bitdata[count].data);
-
-        //Check if not the last item
-        if(count < (bitlist->bitdata->datacount - 1))
-        {
-          //Add a separator if so
-          fprintf(fo, ",");
-        }
-      }
-      
-      fprintf(fo, "\n");
+      printroutebititem(fo, bitlist);
       
       lines++;
       
@@ -1758,10 +1803,10 @@ void printnetlist()
     }
 
     fprintf(fo, "\n%d\n\n", lines);
-    
+
+    //Check if there are unmatched bits
     if(tileroutecount)
     {
-      
       pROUTEINFOITEM foundrouteitem;
       
       int netnumber = 1;
@@ -2182,7 +2227,7 @@ int main(int argc, char** argv)
     //Filter the route list into a net list
     filterroutelist();
     
-    //Print the list
+    //Print the net list
     printnetlist();
     
     //Memory cleanup
