@@ -35,8 +35,12 @@
 #define TYPE_ENDPOINT             2    //End of a net which has an input as endpoint
 #define TYPE_NET                  3    //A single net that has an output as start point and an input as endpoint
 #define TYPE_ROUTEPOINT           4    //In between point which has an interconnect entity as start and end point
-#define TYPE_MULTIPOINT           5    //No idea yet if it is needed
 
+#define SIGNAL_NONE               0
+#define SIGNAL_GND                1
+#define SIGNAL_GCLK               2
+#define SIGNAL_OUTPUT             3
+#define SIGNAL_INPUT              4
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -96,6 +100,7 @@ struct tagROUTEINFOITEM
   pROUTEINFOITEM matingrouteitem;   //When a connection pair is found the other bit is linked here
   
   int            netnumber;         //Net this bit belongs to
+  int            netsignal;         //Type of signal
   
   int            routetype;         //Route type for this bit that signals for instance a start or end point 
   int            routestartentity;  //The ARCVAL entity that is used in the match with the mating bit
@@ -149,8 +154,39 @@ pROUTEINFOITEM tileroutearray[COLUMNS][ROWS];
 int tileroutecountarray[COLUMNS][ROWS];
 int tileroutecount;
 
-//A sorted net list is made in this list
+//A sorted route list is made in this list
+pNETLISTITEM  routelist = 0;
+
+//A sorted and filtered net list is made in this list
 pNETLISTITEM  netlist = 0;
+ppNETLISTITEM netlistlast  = 0;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void additemtofinalnetlist(pROUTEINFOITEM item)
+{
+  //Get memory for the net list item for this bit
+  pNETLISTITEM netitem = malloc(sizeof(pNETLISTITEM));
+
+  //Setup the net list item
+  netitem->routebit= item;
+  netitem->next = 0;
+  
+  //Add the route point to the net list
+  if(netlist == 0)
+  {
+    //No items added yet so start with this one
+    netlist = netitem;
+  }
+  else
+  {
+    //List exists so add to it
+    *netlistlast = netitem;
+  }
+    
+  //Point to where the next item needs to be added
+  netlistlast = &netitem->next;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -168,7 +204,7 @@ void insertitembeforenetlist(pNETLISTITEM current, pNETLISTITEM new)
     current->prev = new;
 
     //Set it as the first item of the list
-    netlist = new;
+    routelist = new;
   }
   else
   {
@@ -191,25 +227,24 @@ void additemtonetlist(pROUTEINFOITEM routebit)
   
   //Get memory for the net list item for this bit
   pNETLISTITEM netitem = malloc(sizeof(pNETLISTITEM));
-
   
   //Setup the net list item
   netitem->routebit = routebit;
   
   //Add the route point to the net list
-  if(netlist == 0)
+  if(routelist == 0)
   {
     //First item in the list, so no previous and next
     netitem->prev = 0;
     netitem->next = 0;
     
     //No items added yet so start with this one
-    netlist = netitem;
+    routelist = netitem;
   }
   else
   {
     //Need to loop through to make a sorted list
-    addlist = netlist;
+    addlist = routelist;
     
     //Look for where the data needs to be inserted or replaced
     while(addlist)
@@ -244,7 +279,7 @@ void additemtonetlist(pROUTEINFOITEM routebit)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata, pTILEPADPINMAP paddata)
+void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
 {
   pROUTEINFOITEM routinfoitem;
 
@@ -286,7 +321,6 @@ void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata, pTILEPA
   //Set the data for later use
   routinfoitem->tiledata = tiledata;
   routinfoitem->bitdata  = bitdata;
-  routinfoitem->paddata  = paddata;
   
   //No type determined yet
   routinfoitem->routetype = TYPE_NONE;
@@ -304,7 +338,7 @@ void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata, pTILEPA
   routinfoitem->matingrouteitem = 0;
   
   //Need to dissect the data into start and end points
-  //Set the count for limiting searching through not set data
+  //Set the count for limiting searching through only the actual data
   routinfoitem->nofentities = bitdata->datacount;
   
   //Walk through all the data items
@@ -1369,7 +1403,6 @@ void traceroutelist()
 
   //Search until the last bit has been done or no more matches have been found, which is an error condition
   while(tileroutecount && routefound)
-//  while(routefound)
   {
     //When no more routes are found the loop will break
     routefound = 0;
@@ -1384,7 +1417,6 @@ void traceroutelist()
 
         //Only process when there are bits to handle
         while((bitlist) && (tileroutecountarray[x][y]))
-//        while(bitlist)
         {
 #if 0
           if((x == 7) && (y == 30) && (strcmp(bitlist->bitdata->name, "TOP.XI5.MC03") == 0))
@@ -1429,9 +1461,6 @@ pROUTEINFOITEM findmatchingpair(pROUTEINFOITEM routeinfoitem, int netnumber)
 {
   int item;
   int pair;
-  
-  char *name;
-  int   length;
   
   pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
   
@@ -1486,6 +1515,80 @@ pROUTEINFOITEM findmatchingpair(pROUTEINFOITEM routeinfoitem, int netnumber)
   }
   
   return(0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void filterroutelist()
+{
+  pNETLISTITEM  fromlist = routelist;
+  
+  pROUTEINFOITEM routeitem;
+  
+  //Get memory for the net list item for this bit
+//  pNETLISTITEM netitem = malloc(sizeof(pNETLISTITEM));
+
+  char *name;
+  int  length;
+  
+  int netnumber = 0;  
+  
+  while(fromlist)
+  {
+    routeitem = fromlist->routebit;
+    
+    //Detect switch to new net
+    if(netnumber != fromlist->routebit->netnumber)
+    {
+      //Get the start point for typing the signal
+      name   = routeitem->startpoints[routeitem->routestartentity].name;
+      length = routeitem->startpoints[routeitem->routestartentity].length;
+      
+      //Check the first entry of this net on what it is
+      if((length == 3) && (strncmp(name, "GND", 3) == 0))
+      {
+        //For a ground item mark the first one as ground signal
+        routeitem->netsignal = SIGNAL_GND;
+      }
+      else if(((length == 5) || (length == 6)) && (strncmp(name, "GCLK", 4) == 0))
+      {
+        //For a global clock mark it as a global clock signal
+        routeitem->netsignal = SIGNAL_GCLK;
+      }
+      else
+      {
+        //Not a ground or a global clock means it is an output signal
+        routeitem->netsignal = SIGNAL_OUTPUT;
+      }
+      
+      //Add it to the net list
+      additemtofinalnetlist(routeitem);
+      
+      netnumber++;
+    }
+    else
+    {
+      //Check on the route type if it needs to be added
+      //For TYPE_NET and TYPE_ENDPOINT the net type is SIGNAL_INPUT and the matching pair needs to be marked so it is skipped
+      if((routeitem->netsignal == 0) && ((routeitem->routetype == TYPE_NET) || (routeitem->routetype == TYPE_ENDPOINT)))
+      {
+        //Signal it as an input
+        routeitem->netsignal = SIGNAL_INPUT;
+        
+        //Check if there is a matching pair for this route bit
+        if(routeitem->matingrouteitem)
+        {
+          //If so flag it as input signal too so it will be filtered from the list
+          routeitem->matingrouteitem->netsignal = SIGNAL_INPUT;
+        }
+        
+        //Add it to the net list
+        additemtofinalnetlist(routeitem);
+      }
+    }
+    
+    fromlist = fromlist->next;
+  }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -1546,7 +1649,7 @@ void printroutebititem(FILE *fo, pROUTEINFOITEM bitlist)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void printroutelist()
+void printnetlist()
 {
   char filename[255];
 
@@ -1565,7 +1668,12 @@ void printroutelist()
   FILE *fo;
 
   
-  //Memory freeing needs to be added too
+  //Need to filter the data down to single entities of the start and end points. Care has to be taken of the TYPE_NET entries too
+  
+  //GND and GCLK nets use the TYPE_NET marking and need special filtering
+  
+  //Also needed is mapping of the data onto IO pins and logic slices or other embedded logic. tiledata provides information here.
+  
   
   snprintf(filename, sizeof(filename), "%s_net_list.csv", FILENAME);
   
@@ -1849,114 +1957,57 @@ pTILEGRIDDATA gettileforxy(int x, int y, pTILEGRIDDATA starttile)
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
-//Table with bit names that are related to IO pads
 
-const BITNAMES bitnames[] =
+void freeallmemory()
 {
-  { "MC1_DIS_GSR_",     12, 1 },
-  { "MC1_DO_SET_",      11, 1 },
-  { "MC1_IDDR_",         9, 1 },
-  { "MC1_IN_SET_",      11, 1 },
-  { "MC1_INCE_EN_",     12, 1 },
-  { "MC1_INCLK_EN_",    13, 1 },
-  { "MC1_INCLK_INV_",   14, 1 },
-  { "MC1_INDLY_EN_",    13, 1 },
-  { "MC1_INRST_EN_",    13, 1 },
-  { "MC1_ISE_EN_",      11, 1 },
-  { "MC1_ODDR_",         9, 1 },
-  { "MC1_ODFF_",         9, 1 },
-  { "MC1_OUTCE_EN_",    13, 1 },
-  { "MC1_OUTCLK_EN_",   14, 1 },
-  { "MC1_OUTCLK_INV_",  15, 1 },
-  { "MC1_OUTRST_EN_",   14, 1 },
-  { "MC1_RST_ASYN_",    13, 1 },
-  { "MC1_TRI_",          8, 1 },
-  { "MC1_TS_SET_",      11, 1 },
-  { "MC1_TSDFF_",       10, 1 },
-  { "MC1_TSINV_",       10, 1 },
-  { "MC1_DEDCLKO_EN_",  15, 1 },
-  { "MC12_CLAMP_",      11, 1 },
-  { "MC12_ENIND_",      11, 1 },
-  { "MC12_ENINR_",      11, 1 },
-  { "MC12_ENINS_N_",    13, 1 },
-  { "MC12_ENLVDS_",     12, 1 },
-  { "MC12_PWRGURD_EN_", 16, 1 },
-  { "MC12_RDIFF_",      11, 1 },
-  { "MC12_USR_PD_",     12, 1 },
-  { "MC12_USR_PU_N_",   14, 1 },
-  { "MC1_CLK_SRC_",     12, 2 },
-  { "MC12_ENVR_",       10, 2 },
-  { "MC12_H2L_",         9, 2 },
-  { "MC12_INSBT_",      11, 2 },
-  { "MC12_SLEW_",       10, 2 },
-  { "MC12_VRDRV_",      11, 2 },
-  { "MC1_LATCHMD_N_",   14, 3 },
-  { "MC1_INDLY_SEL_",   14, 5 },
-  { "MC12_ENSNK_",      11, 5 },
-  { "MC12_ENSRC_",      11, 5 }
-};
-
-//----------------------------------------------------------------------------------------------------------------------------------
-
-const pTILEPADPINMAP getpinmapfortile(int x, int y, pCONFIGBITDATA bitdata)
-{
-  int iol = -1;
-  int i;
+  int x;
+  int y;
   
-  //Check the items that have a relation with a pad
-  for(i=0;i<sizeof(bitnames) / sizeof(BITNAMES);i++)
+  pROUTEINFOITEM bitlist;
+  pROUTEINFOITEM bitfree;
+
+  pNETLISTITEM   netfree;
+  
+  //Free all the route info data
+  for(x=0;x<COLUMNS;x++)
   {
-    //Compare the name to see if it matches with the current bit name
-    if(strncmp(bitdata->name, bitnames[i].name, bitnames[i].length) == 0)
+    for(y=0;y<ROWS;y++)
     {
-      //When found calculate the pad number
-      //The names are followed by a number that can be a multiple of the pad number and have a relation to the actual pad based on it.
-      iol = atoi(&bitdata->name[bitnames[i].length]) / bitnames[i].divider;
-      break;
+      //Get the list for this tile
+      bitlist = tileroutearray[x][y];
+      
+      //Free all the items in the list
+      while(bitlist)
+      {
+        //Save guard for freeing
+        bitfree = bitlist;
+        
+        //Select the next item in the list before freeing the current one so the trail is not lost
+        bitlist = bitlist->next;
+        
+        //Release this one back into the wild
+        free(bitfree);
+      }
     }
   }
   
-  //When no bit name matches check if it is a routing from or to a pad
-  if((iol == -1) && (strncmp(bitdata->name, "TOP.", 4) == 0))
+  //Free the memory used in the route list
+  while(routelist)
   {
-    //For XI numbers from 300 and above it could be an IO route
-    if(atoi(&bitdata->name[6]) >= 300)
-    {
-      //To check if it is a IO route the first data item can be checked
-      if(bitdata->datacount)
-      {
-        //This property seems to be a correct indicator for a pad number
-        if(strncmp(bitdata->bitdata[0].data, "PROPERTY(IOL", 12) == 0)
-        {
-          iol = atoi(&bitdata->bitdata[0].data[12]);
-        }
-        //This is not certain. First item after the ARCVAL( is a letter followed by a digit
-        else if(strncmp(bitdata->bitdata[0].data, "ARCVAL(", 7) == 0)
-        {
-          //This is not correct and I have no idea how it is actually matched to the IO pad in question
-          iol = atoi(&bitdata->bitdata[0].data[8]);
-          
-          //Only 0 - 3 allowed
-          if(iol > 3)
-          {
-            iol = -1;
-          }
-        }
-      }
-    }
-  }  
-  
-  //Check if a pad number has been found
-  if(iol != -1)
-  {
-    for(i=0;i<sizeof(tilepadmap)/sizeof(TILEPADPINMAP);i++)
-    {
-      if((x == tilepadmap[i].x) && (y == tilepadmap[i].y) && (iol == tilepadmap[i].iol))
-        return((const pTILEPADPINMAP)&tilepadmap[i]);
-    }
-  }  
+    //Same setup as for the bitlist freeing
+    netfree = routelist;
+    routelist = routelist->next;
+    free(netfree);
+  }
 
-  return(0);
+  //Free the memory used in the net list
+  while(netlist)
+  {
+    //Same setup as for the bitlist freeing
+    netfree = netlist;
+    netlist = netlist->next;
+    free(netfree);
+  }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -1982,10 +2033,7 @@ int main(int argc, char** argv)
   
   pFRAMEBITMAPPING framebitdata;
 
-  pTILEPADPINMAP tilepadinmap;
-
   uchar *sptr = bitstreamdata;
-  
   
   //Clear the needed lists
   memset(tileroutearray, 0, sizeof(tileroutearray));
@@ -2095,9 +2143,6 @@ int main(int argc, char** argv)
 
           if(bitdata)
           {
-            //See if this bit can be mapped onto a IO pad and pin
-            tilepadinmap = getpinmapfortile(tilegriddata->x, tilegriddata->y, bitdata);
-
             //Make a route list
             //Only bits with TOP. in the name indicate routing
             if(strncmp(bitdata->name, "TOP.", 4) == 0)
@@ -2110,7 +2155,7 @@ int main(int argc, char** argv)
                 if(strncmp(bitdata->bitdata[item].data, "ARCVAL", 6) == 0)
                 {
                   //If so this is a proper connection item and the bit needs to be added to the list
-                  addtotileroutearray(tilegriddata, bitdata, tilepadinmap);
+                  addtotileroutearray(tilegriddata, bitdata);
 
                   //No need to check the remaining items so quit
                   break;
@@ -2122,8 +2167,6 @@ int main(int argc, char** argv)
       }
     }
 
-    //Might need to identify ground and global clock nets first
-    
     //Create a single ground net
     buildgndnet(&netnumber);
 
@@ -2136,8 +2179,14 @@ int main(int argc, char** argv)
     //Trace the identified nets down to the endpoints
     traceroutelist();
 
+    //Filter the route list into a net list
+    filterroutelist();
+    
     //Print the list
-    printroutelist();
+    printnetlist();
+    
+    //Memory cleanup
+    freeallmemory();
   }
 }
 
