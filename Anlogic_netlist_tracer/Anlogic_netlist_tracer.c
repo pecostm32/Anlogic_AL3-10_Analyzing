@@ -50,6 +50,8 @@
 
 #include "database/lqfp144_io_pads.h"
 
+#include "database/al3_10_tile_signal_map.h"
+
 //----------------------------------------------------------------------------------------------------------------------------------
 
 typedef unsigned char  uchar;
@@ -160,6 +162,40 @@ pNETLISTITEM  routelist = 0;
 //A sorted and filtered net list is made in this list
 pNETLISTITEM  netlist = 0;
 ppNETLISTITEM netlistlast  = 0;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+int strnicmp(char *str1, char *str2, int length)
+{
+  char c1,c2;
+
+  while(*str1 && *str2 && length)
+  {
+    c1 = *str1 & 0x5F;
+    c2 = *str2 & 0x5F;
+
+    if(c1 < c2)
+      return(-1);
+
+    if(c1 > c2)
+      return(1);
+
+    str1++;
+    str2++;
+    length--;
+  }
+  
+  if(length == 0)
+    return(0);
+
+  if(*str1)
+    return(1);
+
+  if(*str2)
+    return(-1);
+
+  return(0);
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -1560,9 +1596,20 @@ const pTILEPADPINMAP getpinmapfortile(pROUTEINFOITEM routeitem)
   pTILEGRIDDATA  tiledata = routeitem->tiledata;
   pCONFIGBITDATA bitdata  = routeitem->bitdata;
 
+  pNAMEITEM signalname;
+  
+  pTILESIGNALMAP tilesignalmapptr;
+  pSIGNALNAMEMAP signalsearchtable;
+    
   //A bit of a problem here is that the bits connection to the IO pads are
   //in the first tile of three per io section??
   
+  
+  //tilesignalmap
+  
+  //The mapping back onto the pin can be done via the signal mapping based on the signal name
+  //Need a pointer to the signal map for this tile and then go through all the entries to match the given signal name
+  //When the match is found the signal prefix identifies the pad for this IO signal
   
   //An IO pin is only situated in pib tiles
   if(strncmp(tiledata->type, "pib", 3) == 0)
@@ -1571,24 +1618,57 @@ const pTILEPADPINMAP getpinmapfortile(pROUTEINFOITEM routeitem)
     if(routeitem->netsignal == SIGNAL_OUTPUT)
     {
       //For an output the data to check is in the start points
-      iol = getnumberfromitem(&routeitem->startpoints[routeitem->routestartentity]);
+      signalname = &routeitem->startpoints[routeitem->routestartentity];
     }
     else
     {
       //For an input the data to check is in the end points
-      iol = getnumberfromitem(&routeitem->endpoints[routeitem->routestartentity]);
+      signalname = &routeitem->endpoints[routeitem->routestartentity];
+    }
+    
+    //Need a function to match the signals
+    
+    //Get a pointer to the list with signal maps for this tile
+    tilesignalmapptr = tilesignalmap[x][y];
+    
+    if(tilesignalmapptr)
+    {
+      //Search the lists until the matching signal is found
+      while(tilesignalmapptr->signaltable)
+      {
+        signalsearchtable = tilesignalmapptr->signaltable;
+
+        while(signalsearchtable->hdl_name)
+        {
+          if(strnicmp(signalname->name, signalsearchtable->signal_name, signalname->length) == 0)
+          {
+            iol = tilesignalmapptr->signalprefix[3] - '0';
+
+            break;
+          }
+
+
+          //Select next signal to check
+          signalsearchtable++;
+        }
+
+        if(iol != -1)
+        {
+          break;
+        }
+
+        //Select the next map to check
+        tilesignalmapptr++;
+      }
     }
   }  
   
   //Check if a pad number has been found
   if(iol != -1)
   {
-    //pad numbers can only be 0 to max 3
-    if(iol > 3)
-    {
-      //Any number above is a mirror to the complementary items
-      iol -= 4;
-    }
+    //Calculate the coordinates of the tile the pad belongs to based on the found offsets
+    x -= signalsearchtable->xoff;
+    y -= signalsearchtable->yoff;
     
     //Try to match the found pad number to an actual pin number
     for(i=0;i<sizeof(tilepadmap)/sizeof(TILEPADPINMAP);i++)
@@ -1652,6 +1732,10 @@ void filterroutelist()
         //Try to match the output to a pin output or a slice output or whatever is possible
         routeitem->paddata = getpinmapfortile(routeitem);
 
+        
+        //tilesignalmap
+        
+        
       }
       
       //Add it to the net list
