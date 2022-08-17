@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>database/al3_10_connection_setup.h</itemPath>
+      <itemPath>database/al3_10_tile_signal_map.h</itemPath>
       <itemPath>database/clkdiv_bk1.h</itemPath>
       <itemPath>database/clkdiv_bk2.h</itemPath>
       <itemPath>database/clkdiv_bk3.h</itemPath>
@@ -94,7 +94,7 @@
       </compileType>
       <item path="Anlogic_netlist_tracer.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="database/al3_10_connection_setup.h" ex="false" tool="3" flavor2="0">
+      <item path="database/al3_10_tile_signal_map.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="database/clkdiv_bk1.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -221,7 +221,7 @@
       </compileType>
       <item path="Anlogic_netlist_tracer.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="database/al3_10_connection_setup.h" ex="false" tool="3" flavor2="0">
+      <item path="database/al3_10_tile_signal_map.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="database/clkdiv_bk1.h" ex="false" tool="3" flavor2="0">
       </item>
