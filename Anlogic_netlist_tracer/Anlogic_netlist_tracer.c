@@ -108,6 +108,9 @@ struct tagROUTEINFOITEM
   int            routestartentity;  //The ARCVAL entity that is used in the match with the mating bit
   int            routeconnected;    //A flag to signal a connection to the next node has been made
   
+  pSIGNALNAMEMAP signalname;        //Pointer to the translated signal name
+  pTILESIGNALMAP signalprefix;      //Pointer to the signal prefix
+  
   int            nofentities;       //The number of entities to check
   
   NAMEITEM       startpoints[MAXENTITIES];
@@ -131,9 +134,9 @@ uchar bitstreamdata[2097152];
 
 uchar fpga_tiles[COLUMNS][ROWS];
 
-//#define FILENAME   "fpgas/Original_1013D_fpga"
+#define FILENAME   "fpgas/Original_1013D_fpga"
 
-#define FILENAME         "/home/peter/Data/Anlogic_projects/pin_test/pin_test"
+//#define FILENAME         "/home/peter/Data/Anlogic_projects/pin_test/pin_test"
 
 
 //#define FILENAME   "fpgas/pin_test_23-112"
@@ -1585,90 +1588,78 @@ int getnumberfromitem(pNAMEITEM item)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-const pTILEPADPINMAP getpinmapfortile(pROUTEINFOITEM routeitem)
+void mapsignalname(pROUTEINFOITEM routeitem)
 {
   int iol = -1;
   int i;
   
-  int x = routeitem->tiledata->x;
-  int y = routeitem->tiledata->y;
+  int found = 0;
   
   pTILEGRIDDATA  tiledata = routeitem->tiledata;
-  pCONFIGBITDATA bitdata  = routeitem->bitdata;
 
+  int x = tiledata->x;
+  int y = tiledata->y;
+  
   pNAMEITEM signalname;
   
   pTILESIGNALMAP tilesignalmapptr;
   pSIGNALNAMEMAP signalsearchtable;
-    
-  //A bit of a problem here is that the bits connection to the IO pads are
-  //in the first tile of three per io section??
-  
-  
-  //tilesignalmap
-  
-  //The mapping back onto the pin can be done via the signal mapping based on the signal name
-  //Need a pointer to the signal map for this tile and then go through all the entries to match the given signal name
-  //When the match is found the signal prefix identifies the pad for this IO signal
-  
-  //An IO pin is only situated in pib tiles
-  if(strncmp(tiledata->type, "pib", 3) == 0)
+
+  //Take action based on the signal type
+  if(routeitem->netsignal == SIGNAL_OUTPUT)
   {
-    //Take action based on the signal type
-    if(routeitem->netsignal == SIGNAL_OUTPUT)
+    //For an output the data to check is in the start points
+    signalname = &routeitem->startpoints[routeitem->routestartentity];
+  }
+  else
+  {
+    //For an input the data to check is in the end points
+    signalname = &routeitem->endpoints[routeitem->routestartentity];
+  }
+
+  //Get a pointer to the list with signal maps for this tile
+  tilesignalmapptr = tilesignalmap[x][y];
+
+  if(tilesignalmapptr)
+  {
+    //Search the lists until the matching signal is found
+    while(tilesignalmapptr->signaltable && (found == 0))
     {
-      //For an output the data to check is in the start points
-      signalname = &routeitem->startpoints[routeitem->routestartentity];
-    }
-    else
-    {
-      //For an input the data to check is in the end points
-      signalname = &routeitem->endpoints[routeitem->routestartentity];
-    }
-    
-    //Need a function to match the signals
-    
-    //Get a pointer to the list with signal maps for this tile
-    tilesignalmapptr = tilesignalmap[x][y];
-    
-    if(tilesignalmapptr)
-    {
-      //Search the lists until the matching signal is found
-      while(tilesignalmapptr->signaltable)
+      //Need the actual signal mapping table for searching
+      signalsearchtable = tilesignalmapptr->signaltable;
+
+      //Check all the signal names to get the hdl name
+      while(signalsearchtable->hdl_name && (found == 0))
       {
-        signalsearchtable = tilesignalmapptr->signaltable;
-
-        while(signalsearchtable->hdl_name)
+        //Need case insensitive searching because the ARCVAL entities are upper case and the mapping names are lower case
+        if(strnicmp(signalname->name, signalsearchtable->signal_name, signalname->length) == 0)
         {
-          if(strnicmp(signalname->name, signalsearchtable->signal_name, signalname->length) == 0)
-          {
-            iol = tilesignalmapptr->signalprefix[3] - '0';
+          //When a match is found set both the name and the prefix pointer for printing
+          routeitem->signalname   = signalsearchtable;
+          routeitem->signalprefix = tilesignalmapptr;
 
-            break;
-          }
-
-
-          //Select next signal to check
-          signalsearchtable++;
+          //Done so break out both the loops
+          found = 1;
         }
 
-        if(iol != -1)
-        {
-          break;
-        }
-
-        //Select the next map to check
-        tilesignalmapptr++;
+        //Select next signal to check
+        signalsearchtable++;
       }
+
+      //Select the next map to check
+      tilesignalmapptr++;
     }
-  }  
-  
-  //Check if a pad number has been found
-  if(iol != -1)
+  }
+
+  //When a name is found see if it could be an IO pin which are only situated in pib tiles and have a prefix name starting with pad
+  if((found == 1) && (strncmp(routeitem->signalprefix->signalprefix, "pad", 3) == 0))
   {
+    //Get the pad number
+    iol = routeitem->signalprefix->signalprefix[3] - '0';
+    
     //Calculate the coordinates of the tile the pad belongs to based on the found offsets
-    x -= signalsearchtable->xoff;
-    y -= signalsearchtable->yoff;
+    x -= routeitem->signalname->xoff;
+    y -= routeitem->signalname->yoff;
     
     //Try to match the found pad number to an actual pin number
     for(i=0;i<sizeof(tilepadmap)/sizeof(TILEPADPINMAP);i++)
@@ -1676,14 +1667,11 @@ const pTILEPADPINMAP getpinmapfortile(pROUTEINFOITEM routeitem)
       //Match the numbers to the table for the 144 pin variant the FNIRSI uses
       if((x == tilepadmap[i].x) && (y == tilepadmap[i].y) && (iol == tilepadmap[i].iol))
       {
-        //When found return the info to the caller
-        return((const pTILEPADPINMAP)&tilepadmap[i]);
+        //When found set it in the route info item for printing
+        routeitem->paddata = (const pTILEPADPINMAP)&tilepadmap[i];
       }
     }
   }  
-
-  //Nothing found so signal this
-  return(0);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -1694,16 +1682,15 @@ void filterroutelist()
   
   pROUTEINFOITEM routeitem;
   
-  //Also needed is mapping of the data onto IO pins and logic slices or other embedded logic. tiledata provides information here.
-  
-  
   char *name;
   int  length;
   
   int netnumber = 0;  
   
+  //Process all the items in the route list
   while(fromlist)
   {
+    //Get the current item to process
     routeitem = fromlist->routebit;
     
     //Detect switch to new net
@@ -1729,13 +1716,8 @@ void filterroutelist()
         //Not a ground or a global clock means it is an output signal
         routeitem->netsignal = SIGNAL_OUTPUT;
         
-        //Try to match the output to a pin output or a slice output or whatever is possible
-        routeitem->paddata = getpinmapfortile(routeitem);
-
-        
-        //tilesignalmap
-        
-        
+        //Translate the signal name to a hdl name and see if it has a connection with a pin
+        mapsignalname(routeitem);
       }
       
       //Add it to the net list
@@ -1752,26 +1734,29 @@ void filterroutelist()
         //Signal it as an input
         routeitem->netsignal = SIGNAL_INPUT;
         
-        //Check if there is a matching pair for this route bit
-        if(routeitem->matingrouteitem)
+        //Check if there is a matching pair for this route bit, which is not already marked
+        if((routeitem->matingrouteitem) && (routeitem->matingrouteitem->netsignal == 0))
         {
           //If so flag it as input signal too so it will be filtered from the list
           routeitem->matingrouteitem->netsignal = SIGNAL_INPUT;
         }
         
-        //Try to match the input to a pin input or a slice input or whatever is possible 
-        routeitem->paddata = getpinmapfortile(routeitem);
+        //Translate the signal name to a hdl name and see if it has a connection with a pin
+        mapsignalname(routeitem);
         
         //Add it to the net list
         additemtofinalnetlist(routeitem);
       }
     }
     
+    //Get the next item to process
     fromlist = fromlist->next;
   }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
+
+#if 0
 
 void printroutebititem(FILE *fo, pROUTEINFOITEM bitlist)
 {
@@ -1846,10 +1831,6 @@ void printnetlist()
   pNETLISTITEM printlist;
   
   FILE *fo;
-
-  
-  
-  
   
   snprintf(filename, sizeof(filename), "%s_net_list.csv", FILENAME);
   
@@ -1944,6 +1925,103 @@ void printnetlist()
     fclose(fo);
   }
 }
+
+#else
+
+void printnetlist()
+{
+  char filename[255];
+
+  char namebuffer[32];
+  
+  int netnumber = 1;
+
+  pROUTEINFOITEM bitlist;
+  
+  pNETLISTITEM printlist;
+  
+  FILE *fo;
+  
+  snprintf(filename, sizeof(filename), "%s_net_list.csv", FILENAME);
+  
+  fo = fopen(filename, "w");  
+  
+  if(fo)
+  {
+    fprintf(fo, "net number,,signal name,pin\n");
+    
+    printlist = netlist;
+    
+    netnumber = 1;
+    
+    while(printlist)
+    {
+      bitlist = printlist->routebit;
+
+      //Check if next net is found
+      if(bitlist->netnumber != netnumber)
+      {
+        //Separate the nets with a blank line
+        fprintf(fo, "\n");
+        
+        //Set the new number for change check
+        netnumber = bitlist->netnumber;
+      }
+        
+      fprintf(fo, "%d,,", bitlist->netnumber);
+      
+      if(bitlist->netsignal == SIGNAL_GND)
+      {
+        fprintf(fo, "gnd");
+      }
+      else if(bitlist->netsignal == SIGNAL_GCLK)
+      {
+        memcpy(namebuffer, bitlist->startpoints[bitlist->routestartentity].name, bitlist->startpoints[bitlist->routestartentity].length);
+        namebuffer[bitlist->startpoints[bitlist->routestartentity].length] = 0;
+        
+        fprintf(fo, "\"%s\"", namebuffer);
+      }
+      else
+      {
+        fprintf(fo, "\"x%d_y%d_", bitlist->tiledata->x, bitlist->tiledata->y);
+        
+        if(bitlist->signalprefix && bitlist->signalname)
+        {
+          fprintf(fo, "%s_%s\"", bitlist->signalprefix->signalprefix, bitlist->signalname->hdl_name);
+        }
+        else
+        {
+          if(bitlist->netsignal == SIGNAL_OUTPUT)
+          {
+            memcpy(namebuffer, bitlist->startpoints[bitlist->routestartentity].name, bitlist->startpoints[bitlist->routestartentity].length);
+            namebuffer[bitlist->startpoints[bitlist->routestartentity].length] = 0;
+          }
+          else
+          {
+            memcpy(namebuffer, bitlist->endpoints[bitlist->routestartentity].name, bitlist->endpoints[bitlist->routestartentity].length);
+            namebuffer[bitlist->endpoints[bitlist->routestartentity].length] = 0;
+          }
+          
+          fprintf(fo, "%s\"", namebuffer);
+        }
+
+        if(bitlist->paddata)
+        {
+          fprintf(fo, ",P%d", bitlist->paddata->pin);
+        }
+      }
+        
+      fprintf(fo, "\n");
+      
+      //Select the next item
+      printlist = printlist->next;
+    }
+    
+    fclose(fo);
+  }
+}
+
+#endif
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
