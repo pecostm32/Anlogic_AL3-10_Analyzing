@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>pin_assignments/1013D_pin_assignment.h</itemPath>
+      <itemPath>pin_assignments/1014D_pin_assignment.h</itemPath>
       <itemPath>database/al3_10_tile_signal_map.h</itemPath>
       <itemPath>database/clkdiv_bk1.h</itemPath>
       <itemPath>database/clkdiv_bk2.h</itemPath>
@@ -50,6 +52,7 @@
       <itemPath>database/mult.h</itemPath>
       <itemPath>database/osc.h</itemPath>
       <itemPath>database/pib.h</itemPath>
+      <itemPath>pin_assignments/pin_test_pin_assignment.h</itemPath>
       <itemPath>database/plb.h</itemPath>
       <itemPath>database/pll0.h</itemPath>
       <itemPath>database/pll2.h</itemPath>
@@ -198,6 +201,21 @@
       </item>
       <item path="frames/frame_bit_mapping.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="pin_assignments/1013D_pin_assignment.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pin_assignments/1014D_pin_assignment.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pin_assignments/pin_test_pin_assignment.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -324,6 +342,21 @@
       <item path="frames/frame_bit_mapping.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="frames/frame_bit_mapping.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pin_assignments/1013D_pin_assignment.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pin_assignments/1014D_pin_assignment.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pin_assignments/pin_test_pin_assignment.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
     </conf>
   </confs>
