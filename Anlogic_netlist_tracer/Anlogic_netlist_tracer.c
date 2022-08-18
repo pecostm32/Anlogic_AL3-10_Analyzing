@@ -134,21 +134,27 @@ uchar bitstreamdata[2097152];
 
 uchar fpga_tiles[COLUMNS][ROWS];
 
+//----------------------------------------------------------------------------------------------------------------------------------
+
+#define DESIGN 3
+
+#if DESIGN == 1
+#include "pin_assignments/1013D_pin_assignment.h"
+
 #define FILENAME   "fpgas/Original_1013D_fpga"
+#elif DESIGN == 2
+#include "pin_assignments/1014D_pin_assignment.h"
 
-//#define FILENAME         "/home/peter/Data/Anlogic_projects/pin_test/pin_test"
+#define FILENAME   "fpgas/Original_1014D_fpga"
+#elif DESIGN == 3
+#include "pin_assignments/pin_test_pin_assignment.h"
 
+#define FILENAME   "/home/peter/Data/Anlogic_projects/pin_test/pin_test"
+#elif DESIGN == 4
+#include "pin_assignments/1013D_pin_assignment.h"
 
-//#define FILENAME   "fpgas/pin_test_23-112"
-
-//#define FILENAME   "pin_test_old_p23-p112"
-
-//#define FILENAME   "pin_test"
-
-//#define FILENAME   "Scope12"
-//#define FILENAME   "/home/peter/Data/Anlogic_projects/Scope15/Scope15"
-
-//#define FILENAME   "fpgas/Original_1014D_fpga"
+#define FILENAME   "/home/peter/Data/Anlogic_projects/Scope15/Scope15"
+#endif
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -2008,6 +2014,21 @@ void printnetlist()
         if(bitlist->paddata)
         {
           fprintf(fo, ",P%d", bitlist->paddata->pin);
+          
+#ifdef PIN_ASSIGNMENTS
+          //try to find a hdl name assigned to the pin
+          pPINASSIGNMENTS pinlist = pin_assignments;
+          
+          while(pinlist->hdl_name)
+          {
+            if(bitlist->paddata->pin == pinlist->pinnumber)
+            {
+              fprintf(fo, ",\"%s\"", pinlist->hdl_name);
+            }
+            
+            pinlist++;
+          }
+#endif
         }
       }
         
