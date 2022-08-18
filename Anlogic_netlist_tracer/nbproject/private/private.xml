@@ -9,7 +9,7 @@
             <url>Anlogic_netlist_tracer.c</url>
             <bookmark id="8">
                 <name/>
-                <line>323</line>
+                <line>360</line>
                 <key/>
             </bookmark>
         </file>
@@ -46,6 +46,7 @@
         <group>
             <file>file:/home/peter/Data/NetbeansProjects/Code_Testing/Anlogic_netlist_tracer/Anlogic_netlist_tracer.c</file>
             <file>file:/home/peter/Data/NetbeansProjects/Code_Testing/Anlogic_netlist_tracer/Information.txt</file>
+            <file>file:/home/peter/Data/NetbeansProjects/Code_Testing/Anlogic_netlist_tracer/database/al3_10_tile_signal_map.h</file>
         </group>
     </open-files>
 </project-private>
