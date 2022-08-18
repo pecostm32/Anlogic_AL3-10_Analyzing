@@ -29,3 +29,15 @@ Maybe in time, when more knowledge is gathered, a return is made to the project.
 07-08-2022
 
 Started the project up again after gaining some new insight in how the routing works.
+
+-------------------------------------------------------------------------------------------------------------------------------
+18-08-2022
+
+Managed to create a meaningful net list of both FPGA's (1013D and 1014D) including naming the signals of the pins.
+But this is a very low level net list that needs a lot of interpretation to get to some verilog write up.
+
+First action will be the making of a .adc file which holds the pin constraints used in the Tang Dynasty IDE,
+and maybe a top level verilog file with the signal names of the pins.
+
+A drawing of gate level schematics might be a useful tool in reverse engineering to usable verilog. So I might look into that.
+
