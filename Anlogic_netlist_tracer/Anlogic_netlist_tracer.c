@@ -42,6 +42,19 @@
 #define SIGNAL_OUTPUT             3
 #define SIGNAL_INPUT              4
 
+#define BLOCK_NONE                0
+#define BLOCK_PAD                 1
+#define BLOCK_MSLICE              2
+#define BLOCK_LSLICE              3
+#define BLOCK_FIFO                4
+#define BLOCK_EMB                 5
+#define BLOCK_EMB_32K             6
+#define BLOCK_DSP                 7
+#define BLOCK_CLKDIV              8
+#define BLOCK_OSC                 9
+#define BLOCK_PLL                10
+#define BLOCK_OTHER              11
+
 //----------------------------------------------------------------------------------------------------------------------------------
 
 #include "database/database.h"
@@ -63,6 +76,10 @@ typedef unsigned int   uint32;
 
 typedef struct tagBITDATAPOINTERS  BITDATAPOINTERS,  *pBITDATAPOINTERS;
 typedef struct tagBITNAMES         BITNAMES,         *pBITNAMES;
+
+typedef struct tagBITLISTITEM      BITLISTITEM,      *pBITLISTITEM;
+
+typedef struct tagBLOCKLISTITEM    BLOCKLISTITEM,    *pBLOCKLISTITEM;
 
 typedef struct tagNAMEITEM         NAMEITEM,         *pNAMEITEM;
 typedef struct tagROUTEINFOITEM    ROUTEINFOITEM,    *pROUTEINFOITEM;
@@ -89,6 +106,28 @@ struct tagNAMEITEM
   char *name;
   int   length;
 };
+
+struct tagBITLISTITEM
+{
+  pBITLISTITEM   prev;
+  pBITLISTITEM   next;
+  pTILEGRIDDATA  tiledata;
+  pCONFIGBITDATA bitdata;
+  pTILEPADPINMAP paddata;
+};
+
+struct tagBLOCKLISTITEM
+{
+  pBLOCKLISTITEM  prev;
+  pBLOCKLISTITEM  next;
+  
+  pTILEGRIDDATA  tiledata;
+  pCONFIGBITDATA bitdata;
+  pTILEPADPINMAP paddata;
+
+  int            blocktype;  
+};
+
 
 struct tagROUTEINFOITEM
 {
@@ -136,7 +175,7 @@ uchar fpga_tiles[COLUMNS][ROWS];
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-#define DESIGN 3
+#define DESIGN 1
 
 #if DESIGN == 1
 #include "pin_assignments/1013D_pin_assignment.h"
@@ -164,6 +203,9 @@ pROUTEINFOITEM tileroutearray[COLUMNS][ROWS];
 //Counters to keep track of the number of route bits
 int tileroutecountarray[COLUMNS][ROWS];
 int tileroutecount;
+
+//Array for gathering settings bits for the tiles
+pBITLISTITEM tilesetuparray[COLUMNS][ROWS];
 
 //A sorted route list is made in this list
 pNETLISTITEM  routelist = 0;
@@ -207,6 +249,130 @@ int strnicmp(char *str1, char *str2, int length)
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
+//Table with bit names that are related to IO pads
+
+const BITNAMES bitnames[] =
+{
+  { "MC1_DIS_GSR_",     12, 1 },
+  { "MC1_DO_SET_",      11, 1 },
+  { "MC1_IDDR_",         9, 1 },
+  { "MC1_IN_SET_",      11, 1 },
+  { "MC1_INCE_EN_",     12, 1 },
+  { "MC1_INCLK_EN_",    13, 1 },
+  { "MC1_INCLK_INV_",   14, 1 },
+  { "MC1_INDLY_EN_",    13, 1 },
+  { "MC1_INRST_EN_",    13, 1 },
+  { "MC1_ISE_EN_",      11, 1 },
+  { "MC1_ODDR_",         9, 1 },
+  { "MC1_ODFF_",         9, 1 },
+  { "MC1_OUTCE_EN_",    13, 1 },
+  { "MC1_OUTCLK_EN_",   14, 1 },
+  { "MC1_OUTCLK_INV_",  15, 1 },
+  { "MC1_OUTRST_EN_",   14, 1 },
+  { "MC1_RST_ASYN_",    13, 1 },
+  { "MC1_TRI_",          8, 1 },
+  { "MC1_TS_SET_",      11, 1 },
+  { "MC1_TSDFF_",       10, 1 },
+  { "MC1_TSINV_",       10, 1 },
+  { "MC1_DEDCLKO_EN_",  15, 1 },
+  { "MC12_CLAMP_",      11, 1 },
+  { "MC12_ENIND_",      11, 1 },
+  { "MC12_ENINR_",      11, 1 },
+  { "MC12_ENINS_N_",    13, 1 },
+  { "MC12_ENLVDS_",     12, 1 },
+  { "MC12_PWRGURD_EN_", 16, 1 },
+  { "MC12_RDIFF_",      11, 1 },
+  { "MC12_USR_PD_",     12, 1 },
+  { "MC12_USR_PU_N_",   14, 1 },
+  { "MC1_CLK_SRC_",     12, 2 },
+  { "MC12_ENVR_",       10, 2 },
+  { "MC12_H2L_",         9, 2 },
+  { "MC12_INSBT_",      11, 2 },
+  { "MC12_SLEW_",       10, 2 },
+  { "MC12_VRDRV_",      11, 2 },
+  { "MC1_LATCHMD_N_",   14, 3 },
+  { "MC1_INDLY_SEL_",   14, 5 },
+  { "MC12_ENSNK_",      11, 5 },
+  { "MC12_ENSRC_",      11, 5 }
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+const pTILEPADPINMAP getpinmapfortile(int x, int y, pCONFIGBITDATA bitdata)
+{
+  int iol = -1;
+  int i;
+  
+  //Check the items that have a relation with a pad
+  for(i=0;i<sizeof(bitnames) / sizeof(BITNAMES);i++)
+  {
+    //Compare the name to see if it matches with the current bit name
+    if(strncmp(bitdata->name, bitnames[i].name, bitnames[i].length) == 0)
+    {
+      //When found calculate the pad number
+      //The names are followed by a number that can be a multiple of the pad number and have a relation to the actual pad based on it.
+      iol = atoi(&bitdata->name[bitnames[i].length]) / bitnames[i].divider;
+      break;
+    }
+  }
+  
+  //Check if a pad number has been found
+  if(iol != -1)
+  {
+    for(i=0;i<sizeof(tilepadmap)/sizeof(TILEPADPINMAP);i++)
+    {
+      if((x == tilepadmap[i].x) && (y == tilepadmap[i].y) && (iol == tilepadmap[i].iol))
+        return((const pTILEPADPINMAP)&tilepadmap[i]);
+    }
+  }  
+
+  return(0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void addtotilesetuplist(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
+{
+  pBITLISTITEM bitlistitem;
+  
+  //Get memory for the bit list item for this bit
+  bitlistitem = malloc(sizeof(BITLISTITEM));
+
+  //Set the source information
+  bitlistitem->tiledata = tiledata;
+  bitlistitem->bitdata  = bitdata;
+  
+  //Only when the bit has an io block type try to find pin information for it
+  if((strncmp(tiledata->type, "iol_", 4) == 0) && (strncmp(bitdata->type, "MISCS_MIC_IO_", 13) == 0))
+  {
+    bitlistitem->paddata  = getpinmapfortile(tiledata->x, tiledata->y, bitdata);
+  }
+  
+  //Check if the route info list for this tile is not already started
+  if(tilesetuparray[tiledata->x][tiledata->y] == 0)
+  {
+    //First item in the list, so no previous and next
+    bitlistitem->prev = 0;
+    bitlistitem->next = 0;
+    
+    //Set it as the first item of the list
+    tilesetuparray[tiledata->x][tiledata->y] = bitlistitem;
+  }
+  else
+  {
+    //Not the first item so add it to the start of the list since it is quicker then looping to the end
+    bitlistitem->prev = 0;
+    bitlistitem->next = tilesetuparray[tiledata->x][tiledata->y];
+
+    //Set the back track connection
+    tilesetuparray[tiledata->x][tiledata->y]->prev = bitlistitem;
+
+    //Set it as the first item of the list
+    tilesetuparray[tiledata->x][tiledata->y] = bitlistitem;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
 
 void additemtofinalnetlist(pROUTEINFOITEM item)
 {
@@ -216,7 +382,7 @@ void additemtofinalnetlist(pROUTEINFOITEM item)
   //Setup the net list item
   netitem->routebit= item;
   netitem->next = 0;
-  
+
   //Add the route point to the net list
   if(netlist == 0)
   {
@@ -1610,6 +1776,8 @@ void mapsignalname(pROUTEINFOITEM routeitem)
   
   pTILESIGNALMAP tilesignalmapptr;
   pSIGNALNAMEMAP signalsearchtable;
+  
+  char **typemap;
 
   //Take action based on the signal type
   if(routeitem->netsignal == SIGNAL_OUTPUT)
@@ -1626,8 +1794,36 @@ void mapsignalname(pROUTEINFOITEM routeitem)
   //Get a pointer to the list with signal maps for this tile
   tilesignalmapptr = tilesignalmap[x][y];
 
+  //A bit of an issue is when a block can have different modes where the signals map differently
+  //One block that has this is emb, which can also be a fifo
+  //Needs a bit of investigation on how to check and use this
+  
+  
+  //The search system here is flawed because it has to be mapped back onto the original tile
+  //It seems to work for the pads but it is not be right for emb
+  
+  //So when a match is found it has to be verified that the tile pointed to when the signal xoff and yoff are taken into account
+  //actually is of the intended type
+  
+  //A bit of an issue here is that a tile can have multiple meanings (types) that need to be checked
+  //The mapping tables need more data for this so might need to revisit the generation of them
+  
+  //Need to add the tile types to the array, which means a separate set of tables with tile types and a pointer in the signal map
+  //and the tile type should also be added to the intermediate tables for pointing to the actual signal mapping tables
+  
+  //Maybe better to make a separate type table!!!
+  
+  //This is the type map to check
+  //tiletypemap
+  
   if(tilesignalmapptr)
   {
+    //Check if this tile has emb logic in it
+    if((strncmp(tilesignalmapptr->signalprefix, "emb", 3) == 0) && (tilesignalmapptr->signalprefix[3] >= '0') && (tilesignalmapptr->signalprefix[3] <= '3'))
+    {
+      //If so there might be a need to skip to a fifo
+    }
+    
     //Search the lists until the matching signal is found
     while(tilesignalmapptr->signaltable && (found == 0))
     {
@@ -1640,12 +1836,30 @@ void mapsignalname(pROUTEINFOITEM routeitem)
         //Need case insensitive searching because the ARCVAL entities are upper case and the mapping names are lower case
         if(strnicmp(signalname->name, signalsearchtable->signal_name, signalname->length) == 0)
         {
-          //When a match is found set both the name and the prefix pointer for printing
-          routeitem->signalname   = signalsearchtable;
-          routeitem->signalprefix = tilesignalmapptr;
+          //Check the tile this match is offset from on the correct type to make sure the match is correct
+          typemap = tiletypemap[x - signalsearchtable->xoff][y - signalsearchtable->yoff];
+          
+          //Only if the originating tile has a typemap check it there is a match
+          if(typemap)
+          {
+            //Check all the entries in this type map
+            while(*typemap && (found == 0))
+            {
+              //The type of th originating tile has to match with the one found in the signal translation map for the current tile
+              if(strcmp(*typemap, tilesignalmapptr->tiletype) == 0)
+              {
+                //When a match is found set both the name and the prefix pointer for printing
+                routeitem->signalname   = signalsearchtable;
+                routeitem->signalprefix = tilesignalmapptr;
 
-          //Done so break out both the loops
-          found = 1;
+                //Done so break out both the loops
+                found = 1;
+              }
+              
+              //Select the next type string to check
+              typemap++;
+            }
+          }
         }
 
         //Select next signal to check
@@ -1692,6 +1906,12 @@ void filterroutelist()
   int  length;
   
   int netnumber = 0;  
+  
+  //Within this function code should be added to identify a block based on a signal name
+  //For the found block the settings data needs to be retrieved
+  //Could be coded in the mapsignalname function. This way it is also possible to select the correct type to match the signal names
+  //It does require a bitlist per tile with the remainder of the bits
+  
   
   //Process all the items in the route list
   while(fromlist)
@@ -2194,6 +2414,9 @@ void freeallmemory()
   pROUTEINFOITEM bitlist;
   pROUTEINFOITEM bitfree;
 
+  pBITLISTITEM   setuplist;
+  pBITLISTITEM   setupfree;
+  
   pNETLISTITEM   netfree;
   
   //Free all the route info data
@@ -2216,10 +2439,27 @@ void freeallmemory()
         //Release this one back into the wild
         free(bitfree);
       }
+      
+      //Clear the setup lists too
+      setuplist = tilesetuparray[x][y];
+
+      //Free all the items in the list
+      while(setuplist)
+      {
+        //Save guard for freeing
+        setupfree = setuplist;
+        
+        //Select the next item in the list before freeing the current one so the trail is not lost
+        setuplist = setuplist->next;
+        
+        //Release this one back into the wild
+        free(setupfree);
+      }
     }
   }
   
   //Free the memory used in the route list
+  //This is the list that holds all the routing items used to form a net
   while(routelist)
   {
     //Same setup as for the bitlist freeing
@@ -2229,6 +2469,7 @@ void freeallmemory()
   }
 
   //Free the memory used in the net list
+  //This is the list that holds the single begin and end items from a net
   while(netlist)
   {
     //Same setup as for the bitlist freeing
@@ -2255,6 +2496,8 @@ int main(int argc, char** argv)
   
   int netnumber = 1;
   
+  int routebit;
+  
   pTILEGRIDDATA tilegriddata;
   
   pCONFIGBITDATA bitdata;
@@ -2265,6 +2508,7 @@ int main(int argc, char** argv)
   
   //Clear the needed lists
   memset(tileroutearray, 0, sizeof(tileroutearray));
+  memset(tilesetuparray, 0, sizeof(tilesetuparray));
   memset(fpga_tiles, 0, sizeof(fpga_tiles));
   
   //Print the input file name. Expect it to be .bit
@@ -2369,8 +2613,15 @@ int main(int argc, char** argv)
           //For io routing bits the listed tile is the originating tile for the pad and not perse the tile the routing bits belong to
           //To accommodate for this the bit data needs to be checked first on having x or y offset info
 
+          //Need to create a setup bits list per tile
+          //Better yet a list per logic block with per type sorted lists.
+          
+          
           if(bitdata)
           {
+            //Since not all TOP. bits are for routing, this flag is for signaling a bit is used for routing and does not need to be added to the block setup list
+            routebit = 0;
+            
             //Make a route list
             //Only bits with TOP. in the name indicate routing
             if(strncmp(bitdata->name, "TOP.", 4) == 0)
@@ -2384,12 +2635,22 @@ int main(int argc, char** argv)
                 {
                   //If so this is a proper connection item and the bit needs to be added to the list
                   addtotileroutearray(tilegriddata, bitdata);
+                  
+                  //Signal this bit is used for routing
+                  routebit = 1;
 
                   //No need to check the remaining items so quit
                   break;
                 }
               }
             }
+            
+            //Only non route bits need to be checked for setup data
+            if(routebit == 0)
+            {
+              //Add it to the tile block array lists
+              addtotilesetuplist(tilegriddata, bitdata);
+            }            
           }
         }
       }
@@ -2407,6 +2668,11 @@ int main(int argc, char** argv)
     //Trace the identified nets down to the endpoints
     traceroutelist();
 
+    //Need to make a list of blocks used in the design holding the setup bits
+    //sorted on block number and bit name/type
+    
+    
+    
     //Filter the route list into a net list
     filterroutelist();
     
@@ -2419,4 +2685,3 @@ int main(int argc, char** argv)
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
-
