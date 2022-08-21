@@ -25,6 +25,7 @@ struct tagTILESIGNALMAP
 {
   pSIGNALNAMEMAP  signaltable;
   char           *signalprefix;
+  char           *tiletype;
 };
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -1535,7 +1536,7 @@ SIGNALNAMEMAP lslice_3[] =
 
 TILESIGNALMAP x0_y0_searchtable[] =
 {
-  { pll_0, "pll0" },
+  { pll_0, "pll0", "pll0" },
   { 0, 0 },
 };
 
@@ -1543,8 +1544,8 @@ TILESIGNALMAP x0_y0_searchtable[] =
 
 TILESIGNALMAP x0_y1_searchtable[] =
 {
-  { iol_pair_l_0, "pad0" },
-  { iol_pair_l_1, "pad1" },
+  { iol_pair_l_0, "pad0", "iol_pair_l" },
+  { iol_pair_l_1, "pad1", "iol_pair_l" },
   { 0, 0 },
 };
 
@@ -1552,8 +1553,8 @@ TILESIGNALMAP x0_y1_searchtable[] =
 
 TILESIGNALMAP x0_y3_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1561,8 +1562,8 @@ TILESIGNALMAP x0_y3_searchtable[] =
 
 TILESIGNALMAP x0_y4_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1570,8 +1571,8 @@ TILESIGNALMAP x0_y4_searchtable[] =
 
 TILESIGNALMAP x0_y6_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1579,8 +1580,8 @@ TILESIGNALMAP x0_y6_searchtable[] =
 
 TILESIGNALMAP x0_y7_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1588,8 +1589,8 @@ TILESIGNALMAP x0_y7_searchtable[] =
 
 TILESIGNALMAP x0_y9_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1597,8 +1598,8 @@ TILESIGNALMAP x0_y9_searchtable[] =
 
 TILESIGNALMAP x0_y10_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1606,8 +1607,8 @@ TILESIGNALMAP x0_y10_searchtable[] =
 
 TILESIGNALMAP x0_y12_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1615,8 +1616,8 @@ TILESIGNALMAP x0_y12_searchtable[] =
 
 TILESIGNALMAP x0_y13_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1624,8 +1625,8 @@ TILESIGNALMAP x0_y13_searchtable[] =
 
 TILESIGNALMAP x0_y15_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1633,8 +1634,8 @@ TILESIGNALMAP x0_y15_searchtable[] =
 
 TILESIGNALMAP x0_y16_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1642,7 +1643,7 @@ TILESIGNALMAP x0_y16_searchtable[] =
 
 TILESIGNALMAP x0_y17_searchtable[] =
 {
-  { ios_bankref_lr_0, "ios_bankref_lr" },
+  { ios_bankref_lr_0, "ios_bankref_lr", "ios_bankref_l" },
   { 0, 0 },
 };
 
@@ -1650,9 +1651,9 @@ TILESIGNALMAP x0_y17_searchtable[] =
 
 TILESIGNALMAP x0_y18_searchtable[] =
 {
-  { ioclk_0, "ioclk0" },
-  { ioclk_1, "ioclk1" },
-  { gclk_premux_0, "gclk_premux" },
+  { ioclk_0, "ioclk0", "ioclk_bk2" },
+  { ioclk_1, "ioclk1", "ioclk_bk2" },
+  { gclk_premux_0, "gclk_premux", "gclk_premux_l" },
   { 0, 0 },
 };
 
@@ -1660,8 +1661,8 @@ TILESIGNALMAP x0_y18_searchtable[] =
 
 TILESIGNALMAP x0_y19_searchtable[] =
 {
-  { ioclk_0, "ioclk0" },
-  { ioclk_1, "ioclk1" },
+  { ioclk_0, "ioclk0", "ioclk_bk1" },
+  { ioclk_1, "ioclk1", "ioclk_bk1" },
   { 0, 0 },
 };
 
@@ -1669,8 +1670,8 @@ TILESIGNALMAP x0_y19_searchtable[] =
 
 TILESIGNALMAP x0_y20_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1678,8 +1679,8 @@ TILESIGNALMAP x0_y20_searchtable[] =
 
 TILESIGNALMAP x0_y21_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1687,8 +1688,8 @@ TILESIGNALMAP x0_y21_searchtable[] =
 
 TILESIGNALMAP x0_y23_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1696,8 +1697,8 @@ TILESIGNALMAP x0_y23_searchtable[] =
 
 TILESIGNALMAP x0_y24_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1705,7 +1706,7 @@ TILESIGNALMAP x0_y24_searchtable[] =
 
 TILESIGNALMAP x0_y25_searchtable[] =
 {
-  { ios_bankref_lr_0, "ios_bankref_lr" },
+  { ios_bankref_lr_0, "ios_bankref_lr", "ios_bankref_l" },
   { 0, 0 },
 };
 
@@ -1713,8 +1714,8 @@ TILESIGNALMAP x0_y25_searchtable[] =
 
 TILESIGNALMAP x0_y27_searchtable[] =
 {
-  { iol_pair_l_0, "pad0" },
-  { iol_pair_l_1, "pad1" },
+  { iol_pair_l_0, "pad0", "iol_pair_l" },
+  { iol_pair_l_1, "pad1", "iol_pair_l" },
   { 0, 0 },
 };
 
@@ -1722,8 +1723,8 @@ TILESIGNALMAP x0_y27_searchtable[] =
 
 TILESIGNALMAP x0_y29_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1731,8 +1732,8 @@ TILESIGNALMAP x0_y29_searchtable[] =
 
 TILESIGNALMAP x0_y30_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1740,8 +1741,8 @@ TILESIGNALMAP x0_y30_searchtable[] =
 
 TILESIGNALMAP x0_y32_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1749,8 +1750,8 @@ TILESIGNALMAP x0_y32_searchtable[] =
 
 TILESIGNALMAP x0_y33_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1758,8 +1759,8 @@ TILESIGNALMAP x0_y33_searchtable[] =
 
 TILESIGNALMAP x0_y35_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_l" },
+  { iol_lr_3, "pad3", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1767,8 +1768,8 @@ TILESIGNALMAP x0_y35_searchtable[] =
 
 TILESIGNALMAP x0_y36_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_l" },
+  { iol_lr_1, "pad1", "iol_quad_l" },
   { 0, 0 },
 };
 
@@ -1776,8 +1777,8 @@ TILESIGNALMAP x0_y36_searchtable[] =
 
 TILESIGNALMAP x0_y37_searchtable[] =
 {
-  { config_0, "config" },
-  { osc_0, "osc" },
+  { config_0, "config", "na" },
+  { osc_0, "osc", "osc" },
   { 0, 0 },
 };
 
@@ -1785,8 +1786,8 @@ TILESIGNALMAP x0_y37_searchtable[] =
 
 TILESIGNALMAP x1_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -1794,10 +1795,10 @@ TILESIGNALMAP x1_y0_searchtable[] =
 
 TILESIGNALMAP x1_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1805,10 +1806,10 @@ TILESIGNALMAP x1_y1_searchtable[] =
 
 TILESIGNALMAP x1_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1816,10 +1817,10 @@ TILESIGNALMAP x1_y2_searchtable[] =
 
 TILESIGNALMAP x1_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1827,10 +1828,10 @@ TILESIGNALMAP x1_y3_searchtable[] =
 
 TILESIGNALMAP x1_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1838,10 +1839,10 @@ TILESIGNALMAP x1_y4_searchtable[] =
 
 TILESIGNALMAP x1_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1849,10 +1850,10 @@ TILESIGNALMAP x1_y5_searchtable[] =
 
 TILESIGNALMAP x1_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1860,10 +1861,10 @@ TILESIGNALMAP x1_y6_searchtable[] =
 
 TILESIGNALMAP x1_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1871,10 +1872,10 @@ TILESIGNALMAP x1_y7_searchtable[] =
 
 TILESIGNALMAP x1_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1882,10 +1883,10 @@ TILESIGNALMAP x1_y8_searchtable[] =
 
 TILESIGNALMAP x1_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1893,10 +1894,10 @@ TILESIGNALMAP x1_y9_searchtable[] =
 
 TILESIGNALMAP x1_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1904,10 +1905,10 @@ TILESIGNALMAP x1_y10_searchtable[] =
 
 TILESIGNALMAP x1_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1915,10 +1916,10 @@ TILESIGNALMAP x1_y11_searchtable[] =
 
 TILESIGNALMAP x1_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1926,10 +1927,10 @@ TILESIGNALMAP x1_y12_searchtable[] =
 
 TILESIGNALMAP x1_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1937,10 +1938,10 @@ TILESIGNALMAP x1_y13_searchtable[] =
 
 TILESIGNALMAP x1_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1948,10 +1949,10 @@ TILESIGNALMAP x1_y14_searchtable[] =
 
 TILESIGNALMAP x1_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1959,10 +1960,10 @@ TILESIGNALMAP x1_y15_searchtable[] =
 
 TILESIGNALMAP x1_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1970,10 +1971,10 @@ TILESIGNALMAP x1_y16_searchtable[] =
 
 TILESIGNALMAP x1_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1981,10 +1982,10 @@ TILESIGNALMAP x1_y17_searchtable[] =
 
 TILESIGNALMAP x1_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -1992,10 +1993,10 @@ TILESIGNALMAP x1_y18_searchtable[] =
 
 TILESIGNALMAP x1_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2003,10 +2004,10 @@ TILESIGNALMAP x1_y19_searchtable[] =
 
 TILESIGNALMAP x1_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2014,10 +2015,10 @@ TILESIGNALMAP x1_y20_searchtable[] =
 
 TILESIGNALMAP x1_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2025,10 +2026,10 @@ TILESIGNALMAP x1_y21_searchtable[] =
 
 TILESIGNALMAP x1_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2036,10 +2037,10 @@ TILESIGNALMAP x1_y22_searchtable[] =
 
 TILESIGNALMAP x1_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2047,10 +2048,10 @@ TILESIGNALMAP x1_y23_searchtable[] =
 
 TILESIGNALMAP x1_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2058,10 +2059,10 @@ TILESIGNALMAP x1_y24_searchtable[] =
 
 TILESIGNALMAP x1_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2069,10 +2070,10 @@ TILESIGNALMAP x1_y25_searchtable[] =
 
 TILESIGNALMAP x1_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2080,10 +2081,10 @@ TILESIGNALMAP x1_y26_searchtable[] =
 
 TILESIGNALMAP x1_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2091,10 +2092,10 @@ TILESIGNALMAP x1_y27_searchtable[] =
 
 TILESIGNALMAP x1_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2102,10 +2103,10 @@ TILESIGNALMAP x1_y28_searchtable[] =
 
 TILESIGNALMAP x1_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2113,10 +2114,10 @@ TILESIGNALMAP x1_y29_searchtable[] =
 
 TILESIGNALMAP x1_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2124,10 +2125,10 @@ TILESIGNALMAP x1_y30_searchtable[] =
 
 TILESIGNALMAP x1_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2135,10 +2136,10 @@ TILESIGNALMAP x1_y31_searchtable[] =
 
 TILESIGNALMAP x1_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2146,10 +2147,10 @@ TILESIGNALMAP x1_y32_searchtable[] =
 
 TILESIGNALMAP x1_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2157,10 +2158,10 @@ TILESIGNALMAP x1_y33_searchtable[] =
 
 TILESIGNALMAP x1_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2168,10 +2169,10 @@ TILESIGNALMAP x1_y34_searchtable[] =
 
 TILESIGNALMAP x1_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2179,10 +2180,10 @@ TILESIGNALMAP x1_y35_searchtable[] =
 
 TILESIGNALMAP x1_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2190,8 +2191,8 @@ TILESIGNALMAP x1_y36_searchtable[] =
 
 TILESIGNALMAP x1_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -2199,8 +2200,8 @@ TILESIGNALMAP x1_y37_searchtable[] =
 
 TILESIGNALMAP x2_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -2208,10 +2209,10 @@ TILESIGNALMAP x2_y0_searchtable[] =
 
 TILESIGNALMAP x2_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2219,10 +2220,10 @@ TILESIGNALMAP x2_y1_searchtable[] =
 
 TILESIGNALMAP x2_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2230,10 +2231,10 @@ TILESIGNALMAP x2_y2_searchtable[] =
 
 TILESIGNALMAP x2_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2241,10 +2242,10 @@ TILESIGNALMAP x2_y3_searchtable[] =
 
 TILESIGNALMAP x2_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2252,10 +2253,10 @@ TILESIGNALMAP x2_y4_searchtable[] =
 
 TILESIGNALMAP x2_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2263,10 +2264,10 @@ TILESIGNALMAP x2_y5_searchtable[] =
 
 TILESIGNALMAP x2_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2274,10 +2275,10 @@ TILESIGNALMAP x2_y6_searchtable[] =
 
 TILESIGNALMAP x2_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2285,10 +2286,10 @@ TILESIGNALMAP x2_y7_searchtable[] =
 
 TILESIGNALMAP x2_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2296,10 +2297,10 @@ TILESIGNALMAP x2_y8_searchtable[] =
 
 TILESIGNALMAP x2_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2307,10 +2308,10 @@ TILESIGNALMAP x2_y9_searchtable[] =
 
 TILESIGNALMAP x2_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2318,10 +2319,10 @@ TILESIGNALMAP x2_y10_searchtable[] =
 
 TILESIGNALMAP x2_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2329,10 +2330,10 @@ TILESIGNALMAP x2_y11_searchtable[] =
 
 TILESIGNALMAP x2_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2340,10 +2341,10 @@ TILESIGNALMAP x2_y12_searchtable[] =
 
 TILESIGNALMAP x2_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2351,10 +2352,10 @@ TILESIGNALMAP x2_y13_searchtable[] =
 
 TILESIGNALMAP x2_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2362,10 +2363,10 @@ TILESIGNALMAP x2_y14_searchtable[] =
 
 TILESIGNALMAP x2_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2373,10 +2374,10 @@ TILESIGNALMAP x2_y15_searchtable[] =
 
 TILESIGNALMAP x2_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2384,10 +2385,10 @@ TILESIGNALMAP x2_y16_searchtable[] =
 
 TILESIGNALMAP x2_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2395,10 +2396,10 @@ TILESIGNALMAP x2_y17_searchtable[] =
 
 TILESIGNALMAP x2_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2406,10 +2407,10 @@ TILESIGNALMAP x2_y18_searchtable[] =
 
 TILESIGNALMAP x2_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2417,10 +2418,10 @@ TILESIGNALMAP x2_y19_searchtable[] =
 
 TILESIGNALMAP x2_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2428,10 +2429,10 @@ TILESIGNALMAP x2_y20_searchtable[] =
 
 TILESIGNALMAP x2_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2439,10 +2440,10 @@ TILESIGNALMAP x2_y21_searchtable[] =
 
 TILESIGNALMAP x2_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2450,10 +2451,10 @@ TILESIGNALMAP x2_y22_searchtable[] =
 
 TILESIGNALMAP x2_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2461,10 +2462,10 @@ TILESIGNALMAP x2_y23_searchtable[] =
 
 TILESIGNALMAP x2_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2472,10 +2473,10 @@ TILESIGNALMAP x2_y24_searchtable[] =
 
 TILESIGNALMAP x2_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2483,10 +2484,10 @@ TILESIGNALMAP x2_y25_searchtable[] =
 
 TILESIGNALMAP x2_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2494,10 +2495,10 @@ TILESIGNALMAP x2_y26_searchtable[] =
 
 TILESIGNALMAP x2_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2505,10 +2506,10 @@ TILESIGNALMAP x2_y27_searchtable[] =
 
 TILESIGNALMAP x2_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2516,10 +2517,10 @@ TILESIGNALMAP x2_y28_searchtable[] =
 
 TILESIGNALMAP x2_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2527,10 +2528,10 @@ TILESIGNALMAP x2_y29_searchtable[] =
 
 TILESIGNALMAP x2_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2538,10 +2539,10 @@ TILESIGNALMAP x2_y30_searchtable[] =
 
 TILESIGNALMAP x2_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2549,10 +2550,10 @@ TILESIGNALMAP x2_y31_searchtable[] =
 
 TILESIGNALMAP x2_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2560,10 +2561,10 @@ TILESIGNALMAP x2_y32_searchtable[] =
 
 TILESIGNALMAP x2_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2571,10 +2572,10 @@ TILESIGNALMAP x2_y33_searchtable[] =
 
 TILESIGNALMAP x2_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2582,10 +2583,10 @@ TILESIGNALMAP x2_y34_searchtable[] =
 
 TILESIGNALMAP x2_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2593,10 +2594,10 @@ TILESIGNALMAP x2_y35_searchtable[] =
 
 TILESIGNALMAP x2_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2604,8 +2605,8 @@ TILESIGNALMAP x2_y36_searchtable[] =
 
 TILESIGNALMAP x2_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -2613,10 +2614,10 @@ TILESIGNALMAP x2_y37_searchtable[] =
 
 TILESIGNALMAP x3_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2624,10 +2625,10 @@ TILESIGNALMAP x3_y1_searchtable[] =
 
 TILESIGNALMAP x3_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2635,10 +2636,10 @@ TILESIGNALMAP x3_y2_searchtable[] =
 
 TILESIGNALMAP x3_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2646,10 +2647,10 @@ TILESIGNALMAP x3_y3_searchtable[] =
 
 TILESIGNALMAP x3_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2657,10 +2658,10 @@ TILESIGNALMAP x3_y4_searchtable[] =
 
 TILESIGNALMAP x3_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2668,10 +2669,10 @@ TILESIGNALMAP x3_y5_searchtable[] =
 
 TILESIGNALMAP x3_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2679,10 +2680,10 @@ TILESIGNALMAP x3_y6_searchtable[] =
 
 TILESIGNALMAP x3_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2690,10 +2691,10 @@ TILESIGNALMAP x3_y7_searchtable[] =
 
 TILESIGNALMAP x3_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2701,10 +2702,10 @@ TILESIGNALMAP x3_y8_searchtable[] =
 
 TILESIGNALMAP x3_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2712,10 +2713,10 @@ TILESIGNALMAP x3_y9_searchtable[] =
 
 TILESIGNALMAP x3_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2723,10 +2724,10 @@ TILESIGNALMAP x3_y10_searchtable[] =
 
 TILESIGNALMAP x3_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2734,10 +2735,10 @@ TILESIGNALMAP x3_y11_searchtable[] =
 
 TILESIGNALMAP x3_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2745,10 +2746,10 @@ TILESIGNALMAP x3_y12_searchtable[] =
 
 TILESIGNALMAP x3_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2756,10 +2757,10 @@ TILESIGNALMAP x3_y13_searchtable[] =
 
 TILESIGNALMAP x3_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2767,10 +2768,10 @@ TILESIGNALMAP x3_y14_searchtable[] =
 
 TILESIGNALMAP x3_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2778,10 +2779,10 @@ TILESIGNALMAP x3_y15_searchtable[] =
 
 TILESIGNALMAP x3_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2789,10 +2790,10 @@ TILESIGNALMAP x3_y16_searchtable[] =
 
 TILESIGNALMAP x3_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2800,10 +2801,10 @@ TILESIGNALMAP x3_y17_searchtable[] =
 
 TILESIGNALMAP x3_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2811,10 +2812,10 @@ TILESIGNALMAP x3_y18_searchtable[] =
 
 TILESIGNALMAP x3_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2822,10 +2823,10 @@ TILESIGNALMAP x3_y19_searchtable[] =
 
 TILESIGNALMAP x3_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2833,10 +2834,10 @@ TILESIGNALMAP x3_y20_searchtable[] =
 
 TILESIGNALMAP x3_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2844,10 +2845,10 @@ TILESIGNALMAP x3_y21_searchtable[] =
 
 TILESIGNALMAP x3_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2855,10 +2856,10 @@ TILESIGNALMAP x3_y22_searchtable[] =
 
 TILESIGNALMAP x3_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2866,10 +2867,10 @@ TILESIGNALMAP x3_y23_searchtable[] =
 
 TILESIGNALMAP x3_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2877,10 +2878,10 @@ TILESIGNALMAP x3_y24_searchtable[] =
 
 TILESIGNALMAP x3_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2888,10 +2889,10 @@ TILESIGNALMAP x3_y25_searchtable[] =
 
 TILESIGNALMAP x3_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2899,10 +2900,10 @@ TILESIGNALMAP x3_y26_searchtable[] =
 
 TILESIGNALMAP x3_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2910,10 +2911,10 @@ TILESIGNALMAP x3_y27_searchtable[] =
 
 TILESIGNALMAP x3_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2921,10 +2922,10 @@ TILESIGNALMAP x3_y28_searchtable[] =
 
 TILESIGNALMAP x3_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2932,10 +2933,10 @@ TILESIGNALMAP x3_y29_searchtable[] =
 
 TILESIGNALMAP x3_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2943,10 +2944,10 @@ TILESIGNALMAP x3_y30_searchtable[] =
 
 TILESIGNALMAP x3_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2954,10 +2955,10 @@ TILESIGNALMAP x3_y31_searchtable[] =
 
 TILESIGNALMAP x3_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2965,10 +2966,10 @@ TILESIGNALMAP x3_y32_searchtable[] =
 
 TILESIGNALMAP x3_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2976,10 +2977,10 @@ TILESIGNALMAP x3_y33_searchtable[] =
 
 TILESIGNALMAP x3_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2987,10 +2988,10 @@ TILESIGNALMAP x3_y34_searchtable[] =
 
 TILESIGNALMAP x3_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -2998,10 +2999,10 @@ TILESIGNALMAP x3_y35_searchtable[] =
 
 TILESIGNALMAP x3_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3009,7 +3010,7 @@ TILESIGNALMAP x3_y36_searchtable[] =
 
 TILESIGNALMAP x3_y37_searchtable[] =
 {
-  { config_0, "config" },
+  { config_0, "config", "na" },
   { 0, 0 },
 };
 
@@ -3017,8 +3018,8 @@ TILESIGNALMAP x3_y37_searchtable[] =
 
 TILESIGNALMAP x4_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -3026,10 +3027,10 @@ TILESIGNALMAP x4_y0_searchtable[] =
 
 TILESIGNALMAP x4_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3037,10 +3038,10 @@ TILESIGNALMAP x4_y1_searchtable[] =
 
 TILESIGNALMAP x4_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3048,10 +3049,10 @@ TILESIGNALMAP x4_y2_searchtable[] =
 
 TILESIGNALMAP x4_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3059,10 +3060,10 @@ TILESIGNALMAP x4_y3_searchtable[] =
 
 TILESIGNALMAP x4_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3070,10 +3071,10 @@ TILESIGNALMAP x4_y4_searchtable[] =
 
 TILESIGNALMAP x4_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3081,10 +3082,10 @@ TILESIGNALMAP x4_y5_searchtable[] =
 
 TILESIGNALMAP x4_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3092,10 +3093,10 @@ TILESIGNALMAP x4_y6_searchtable[] =
 
 TILESIGNALMAP x4_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3103,10 +3104,10 @@ TILESIGNALMAP x4_y7_searchtable[] =
 
 TILESIGNALMAP x4_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3114,10 +3115,10 @@ TILESIGNALMAP x4_y8_searchtable[] =
 
 TILESIGNALMAP x4_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3125,10 +3126,10 @@ TILESIGNALMAP x4_y9_searchtable[] =
 
 TILESIGNALMAP x4_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3136,10 +3137,10 @@ TILESIGNALMAP x4_y10_searchtable[] =
 
 TILESIGNALMAP x4_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3147,10 +3148,10 @@ TILESIGNALMAP x4_y11_searchtable[] =
 
 TILESIGNALMAP x4_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3158,10 +3159,10 @@ TILESIGNALMAP x4_y12_searchtable[] =
 
 TILESIGNALMAP x4_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3169,10 +3170,10 @@ TILESIGNALMAP x4_y13_searchtable[] =
 
 TILESIGNALMAP x4_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3180,10 +3181,10 @@ TILESIGNALMAP x4_y14_searchtable[] =
 
 TILESIGNALMAP x4_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3191,10 +3192,10 @@ TILESIGNALMAP x4_y15_searchtable[] =
 
 TILESIGNALMAP x4_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3202,10 +3203,10 @@ TILESIGNALMAP x4_y16_searchtable[] =
 
 TILESIGNALMAP x4_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3213,10 +3214,10 @@ TILESIGNALMAP x4_y17_searchtable[] =
 
 TILESIGNALMAP x4_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3224,10 +3225,10 @@ TILESIGNALMAP x4_y18_searchtable[] =
 
 TILESIGNALMAP x4_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3235,10 +3236,10 @@ TILESIGNALMAP x4_y19_searchtable[] =
 
 TILESIGNALMAP x4_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3246,10 +3247,10 @@ TILESIGNALMAP x4_y20_searchtable[] =
 
 TILESIGNALMAP x4_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3257,10 +3258,10 @@ TILESIGNALMAP x4_y21_searchtable[] =
 
 TILESIGNALMAP x4_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3268,10 +3269,10 @@ TILESIGNALMAP x4_y22_searchtable[] =
 
 TILESIGNALMAP x4_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3279,10 +3280,10 @@ TILESIGNALMAP x4_y23_searchtable[] =
 
 TILESIGNALMAP x4_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3290,10 +3291,10 @@ TILESIGNALMAP x4_y24_searchtable[] =
 
 TILESIGNALMAP x4_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3301,10 +3302,10 @@ TILESIGNALMAP x4_y25_searchtable[] =
 
 TILESIGNALMAP x4_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3312,10 +3313,10 @@ TILESIGNALMAP x4_y26_searchtable[] =
 
 TILESIGNALMAP x4_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3323,10 +3324,10 @@ TILESIGNALMAP x4_y27_searchtable[] =
 
 TILESIGNALMAP x4_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3334,10 +3335,10 @@ TILESIGNALMAP x4_y28_searchtable[] =
 
 TILESIGNALMAP x4_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3345,10 +3346,10 @@ TILESIGNALMAP x4_y29_searchtable[] =
 
 TILESIGNALMAP x4_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3356,10 +3357,10 @@ TILESIGNALMAP x4_y30_searchtable[] =
 
 TILESIGNALMAP x4_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3367,10 +3368,10 @@ TILESIGNALMAP x4_y31_searchtable[] =
 
 TILESIGNALMAP x4_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3378,10 +3379,10 @@ TILESIGNALMAP x4_y32_searchtable[] =
 
 TILESIGNALMAP x4_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3389,10 +3390,10 @@ TILESIGNALMAP x4_y33_searchtable[] =
 
 TILESIGNALMAP x4_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3400,10 +3401,10 @@ TILESIGNALMAP x4_y34_searchtable[] =
 
 TILESIGNALMAP x4_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3411,10 +3412,10 @@ TILESIGNALMAP x4_y35_searchtable[] =
 
 TILESIGNALMAP x4_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3422,8 +3423,8 @@ TILESIGNALMAP x4_y36_searchtable[] =
 
 TILESIGNALMAP x4_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -3431,8 +3432,8 @@ TILESIGNALMAP x4_y37_searchtable[] =
 
 TILESIGNALMAP x5_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -3440,10 +3441,10 @@ TILESIGNALMAP x5_y0_searchtable[] =
 
 TILESIGNALMAP x5_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3451,10 +3452,10 @@ TILESIGNALMAP x5_y1_searchtable[] =
 
 TILESIGNALMAP x5_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3462,10 +3463,10 @@ TILESIGNALMAP x5_y2_searchtable[] =
 
 TILESIGNALMAP x5_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3473,10 +3474,10 @@ TILESIGNALMAP x5_y3_searchtable[] =
 
 TILESIGNALMAP x5_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3484,10 +3485,10 @@ TILESIGNALMAP x5_y4_searchtable[] =
 
 TILESIGNALMAP x5_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3495,10 +3496,10 @@ TILESIGNALMAP x5_y5_searchtable[] =
 
 TILESIGNALMAP x5_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3506,10 +3507,10 @@ TILESIGNALMAP x5_y6_searchtable[] =
 
 TILESIGNALMAP x5_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3517,10 +3518,10 @@ TILESIGNALMAP x5_y7_searchtable[] =
 
 TILESIGNALMAP x5_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3528,10 +3529,10 @@ TILESIGNALMAP x5_y8_searchtable[] =
 
 TILESIGNALMAP x5_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3539,10 +3540,10 @@ TILESIGNALMAP x5_y9_searchtable[] =
 
 TILESIGNALMAP x5_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3550,10 +3551,10 @@ TILESIGNALMAP x5_y10_searchtable[] =
 
 TILESIGNALMAP x5_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3561,10 +3562,10 @@ TILESIGNALMAP x5_y11_searchtable[] =
 
 TILESIGNALMAP x5_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3572,10 +3573,10 @@ TILESIGNALMAP x5_y12_searchtable[] =
 
 TILESIGNALMAP x5_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3583,10 +3584,10 @@ TILESIGNALMAP x5_y13_searchtable[] =
 
 TILESIGNALMAP x5_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3594,10 +3595,10 @@ TILESIGNALMAP x5_y14_searchtable[] =
 
 TILESIGNALMAP x5_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3605,10 +3606,10 @@ TILESIGNALMAP x5_y15_searchtable[] =
 
 TILESIGNALMAP x5_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3616,10 +3617,10 @@ TILESIGNALMAP x5_y16_searchtable[] =
 
 TILESIGNALMAP x5_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3627,10 +3628,10 @@ TILESIGNALMAP x5_y17_searchtable[] =
 
 TILESIGNALMAP x5_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3638,10 +3639,10 @@ TILESIGNALMAP x5_y18_searchtable[] =
 
 TILESIGNALMAP x5_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3649,10 +3650,10 @@ TILESIGNALMAP x5_y19_searchtable[] =
 
 TILESIGNALMAP x5_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3660,10 +3661,10 @@ TILESIGNALMAP x5_y20_searchtable[] =
 
 TILESIGNALMAP x5_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3671,10 +3672,10 @@ TILESIGNALMAP x5_y21_searchtable[] =
 
 TILESIGNALMAP x5_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3682,10 +3683,10 @@ TILESIGNALMAP x5_y22_searchtable[] =
 
 TILESIGNALMAP x5_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3693,10 +3694,10 @@ TILESIGNALMAP x5_y23_searchtable[] =
 
 TILESIGNALMAP x5_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3704,10 +3705,10 @@ TILESIGNALMAP x5_y24_searchtable[] =
 
 TILESIGNALMAP x5_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3715,10 +3716,10 @@ TILESIGNALMAP x5_y25_searchtable[] =
 
 TILESIGNALMAP x5_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3726,10 +3727,10 @@ TILESIGNALMAP x5_y26_searchtable[] =
 
 TILESIGNALMAP x5_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3737,10 +3738,10 @@ TILESIGNALMAP x5_y27_searchtable[] =
 
 TILESIGNALMAP x5_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3748,10 +3749,10 @@ TILESIGNALMAP x5_y28_searchtable[] =
 
 TILESIGNALMAP x5_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3759,10 +3760,10 @@ TILESIGNALMAP x5_y29_searchtable[] =
 
 TILESIGNALMAP x5_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3770,10 +3771,10 @@ TILESIGNALMAP x5_y30_searchtable[] =
 
 TILESIGNALMAP x5_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3781,10 +3782,10 @@ TILESIGNALMAP x5_y31_searchtable[] =
 
 TILESIGNALMAP x5_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3792,10 +3793,10 @@ TILESIGNALMAP x5_y32_searchtable[] =
 
 TILESIGNALMAP x5_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3803,10 +3804,10 @@ TILESIGNALMAP x5_y33_searchtable[] =
 
 TILESIGNALMAP x5_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3814,10 +3815,10 @@ TILESIGNALMAP x5_y34_searchtable[] =
 
 TILESIGNALMAP x5_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3825,10 +3826,10 @@ TILESIGNALMAP x5_y35_searchtable[] =
 
 TILESIGNALMAP x5_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3836,8 +3837,8 @@ TILESIGNALMAP x5_y36_searchtable[] =
 
 TILESIGNALMAP x5_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -3845,8 +3846,8 @@ TILESIGNALMAP x5_y37_searchtable[] =
 
 TILESIGNALMAP x6_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -3854,10 +3855,10 @@ TILESIGNALMAP x6_y0_searchtable[] =
 
 TILESIGNALMAP x6_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3865,10 +3866,10 @@ TILESIGNALMAP x6_y1_searchtable[] =
 
 TILESIGNALMAP x6_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3876,10 +3877,10 @@ TILESIGNALMAP x6_y2_searchtable[] =
 
 TILESIGNALMAP x6_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3887,10 +3888,10 @@ TILESIGNALMAP x6_y3_searchtable[] =
 
 TILESIGNALMAP x6_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3898,10 +3899,10 @@ TILESIGNALMAP x6_y4_searchtable[] =
 
 TILESIGNALMAP x6_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3909,10 +3910,10 @@ TILESIGNALMAP x6_y5_searchtable[] =
 
 TILESIGNALMAP x6_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3920,10 +3921,10 @@ TILESIGNALMAP x6_y6_searchtable[] =
 
 TILESIGNALMAP x6_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3931,10 +3932,10 @@ TILESIGNALMAP x6_y7_searchtable[] =
 
 TILESIGNALMAP x6_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3942,10 +3943,10 @@ TILESIGNALMAP x6_y8_searchtable[] =
 
 TILESIGNALMAP x6_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3953,10 +3954,10 @@ TILESIGNALMAP x6_y9_searchtable[] =
 
 TILESIGNALMAP x6_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3964,10 +3965,10 @@ TILESIGNALMAP x6_y10_searchtable[] =
 
 TILESIGNALMAP x6_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3975,10 +3976,10 @@ TILESIGNALMAP x6_y11_searchtable[] =
 
 TILESIGNALMAP x6_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3986,10 +3987,10 @@ TILESIGNALMAP x6_y12_searchtable[] =
 
 TILESIGNALMAP x6_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -3997,10 +3998,10 @@ TILESIGNALMAP x6_y13_searchtable[] =
 
 TILESIGNALMAP x6_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4008,10 +4009,10 @@ TILESIGNALMAP x6_y14_searchtable[] =
 
 TILESIGNALMAP x6_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4019,10 +4020,10 @@ TILESIGNALMAP x6_y15_searchtable[] =
 
 TILESIGNALMAP x6_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4030,10 +4031,10 @@ TILESIGNALMAP x6_y16_searchtable[] =
 
 TILESIGNALMAP x6_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4041,10 +4042,10 @@ TILESIGNALMAP x6_y17_searchtable[] =
 
 TILESIGNALMAP x6_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4052,10 +4053,10 @@ TILESIGNALMAP x6_y18_searchtable[] =
 
 TILESIGNALMAP x6_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4063,10 +4064,10 @@ TILESIGNALMAP x6_y19_searchtable[] =
 
 TILESIGNALMAP x6_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4074,10 +4075,10 @@ TILESIGNALMAP x6_y20_searchtable[] =
 
 TILESIGNALMAP x6_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4085,10 +4086,10 @@ TILESIGNALMAP x6_y21_searchtable[] =
 
 TILESIGNALMAP x6_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4096,10 +4097,10 @@ TILESIGNALMAP x6_y22_searchtable[] =
 
 TILESIGNALMAP x6_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4107,10 +4108,10 @@ TILESIGNALMAP x6_y23_searchtable[] =
 
 TILESIGNALMAP x6_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4118,10 +4119,10 @@ TILESIGNALMAP x6_y24_searchtable[] =
 
 TILESIGNALMAP x6_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4129,10 +4130,10 @@ TILESIGNALMAP x6_y25_searchtable[] =
 
 TILESIGNALMAP x6_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4140,10 +4141,10 @@ TILESIGNALMAP x6_y26_searchtable[] =
 
 TILESIGNALMAP x6_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4151,10 +4152,10 @@ TILESIGNALMAP x6_y27_searchtable[] =
 
 TILESIGNALMAP x6_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4162,10 +4163,10 @@ TILESIGNALMAP x6_y28_searchtable[] =
 
 TILESIGNALMAP x6_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4173,10 +4174,10 @@ TILESIGNALMAP x6_y29_searchtable[] =
 
 TILESIGNALMAP x6_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4184,10 +4185,10 @@ TILESIGNALMAP x6_y30_searchtable[] =
 
 TILESIGNALMAP x6_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4195,10 +4196,10 @@ TILESIGNALMAP x6_y31_searchtable[] =
 
 TILESIGNALMAP x6_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4206,10 +4207,10 @@ TILESIGNALMAP x6_y32_searchtable[] =
 
 TILESIGNALMAP x6_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4217,10 +4218,10 @@ TILESIGNALMAP x6_y33_searchtable[] =
 
 TILESIGNALMAP x6_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4228,10 +4229,10 @@ TILESIGNALMAP x6_y34_searchtable[] =
 
 TILESIGNALMAP x6_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4239,10 +4240,10 @@ TILESIGNALMAP x6_y35_searchtable[] =
 
 TILESIGNALMAP x6_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4250,8 +4251,8 @@ TILESIGNALMAP x6_y36_searchtable[] =
 
 TILESIGNALMAP x6_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -4259,8 +4260,8 @@ TILESIGNALMAP x6_y37_searchtable[] =
 
 TILESIGNALMAP x7_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -4268,10 +4269,10 @@ TILESIGNALMAP x7_y0_searchtable[] =
 
 TILESIGNALMAP x7_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4279,10 +4280,10 @@ TILESIGNALMAP x7_y1_searchtable[] =
 
 TILESIGNALMAP x7_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4290,10 +4291,10 @@ TILESIGNALMAP x7_y2_searchtable[] =
 
 TILESIGNALMAP x7_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4301,10 +4302,10 @@ TILESIGNALMAP x7_y3_searchtable[] =
 
 TILESIGNALMAP x7_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4312,10 +4313,10 @@ TILESIGNALMAP x7_y4_searchtable[] =
 
 TILESIGNALMAP x7_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4323,10 +4324,10 @@ TILESIGNALMAP x7_y5_searchtable[] =
 
 TILESIGNALMAP x7_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4334,10 +4335,10 @@ TILESIGNALMAP x7_y6_searchtable[] =
 
 TILESIGNALMAP x7_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4345,10 +4346,10 @@ TILESIGNALMAP x7_y7_searchtable[] =
 
 TILESIGNALMAP x7_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4356,10 +4357,10 @@ TILESIGNALMAP x7_y8_searchtable[] =
 
 TILESIGNALMAP x7_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4367,10 +4368,10 @@ TILESIGNALMAP x7_y9_searchtable[] =
 
 TILESIGNALMAP x7_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4378,10 +4379,10 @@ TILESIGNALMAP x7_y10_searchtable[] =
 
 TILESIGNALMAP x7_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4389,10 +4390,10 @@ TILESIGNALMAP x7_y11_searchtable[] =
 
 TILESIGNALMAP x7_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4400,10 +4401,10 @@ TILESIGNALMAP x7_y12_searchtable[] =
 
 TILESIGNALMAP x7_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4411,10 +4412,10 @@ TILESIGNALMAP x7_y13_searchtable[] =
 
 TILESIGNALMAP x7_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4422,10 +4423,10 @@ TILESIGNALMAP x7_y14_searchtable[] =
 
 TILESIGNALMAP x7_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4433,10 +4434,10 @@ TILESIGNALMAP x7_y15_searchtable[] =
 
 TILESIGNALMAP x7_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4444,10 +4445,10 @@ TILESIGNALMAP x7_y16_searchtable[] =
 
 TILESIGNALMAP x7_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4455,10 +4456,10 @@ TILESIGNALMAP x7_y17_searchtable[] =
 
 TILESIGNALMAP x7_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4466,10 +4467,10 @@ TILESIGNALMAP x7_y18_searchtable[] =
 
 TILESIGNALMAP x7_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4477,10 +4478,10 @@ TILESIGNALMAP x7_y19_searchtable[] =
 
 TILESIGNALMAP x7_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4488,10 +4489,10 @@ TILESIGNALMAP x7_y20_searchtable[] =
 
 TILESIGNALMAP x7_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4499,10 +4500,10 @@ TILESIGNALMAP x7_y21_searchtable[] =
 
 TILESIGNALMAP x7_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4510,10 +4511,10 @@ TILESIGNALMAP x7_y22_searchtable[] =
 
 TILESIGNALMAP x7_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4521,10 +4522,10 @@ TILESIGNALMAP x7_y23_searchtable[] =
 
 TILESIGNALMAP x7_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4532,10 +4533,10 @@ TILESIGNALMAP x7_y24_searchtable[] =
 
 TILESIGNALMAP x7_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4543,10 +4544,10 @@ TILESIGNALMAP x7_y25_searchtable[] =
 
 TILESIGNALMAP x7_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4554,10 +4555,10 @@ TILESIGNALMAP x7_y26_searchtable[] =
 
 TILESIGNALMAP x7_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4565,10 +4566,10 @@ TILESIGNALMAP x7_y27_searchtable[] =
 
 TILESIGNALMAP x7_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4576,10 +4577,10 @@ TILESIGNALMAP x7_y28_searchtable[] =
 
 TILESIGNALMAP x7_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4587,10 +4588,10 @@ TILESIGNALMAP x7_y29_searchtable[] =
 
 TILESIGNALMAP x7_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4598,10 +4599,10 @@ TILESIGNALMAP x7_y30_searchtable[] =
 
 TILESIGNALMAP x7_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4609,10 +4610,10 @@ TILESIGNALMAP x7_y31_searchtable[] =
 
 TILESIGNALMAP x7_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4620,10 +4621,10 @@ TILESIGNALMAP x7_y32_searchtable[] =
 
 TILESIGNALMAP x7_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4631,10 +4632,10 @@ TILESIGNALMAP x7_y33_searchtable[] =
 
 TILESIGNALMAP x7_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4642,10 +4643,10 @@ TILESIGNALMAP x7_y34_searchtable[] =
 
 TILESIGNALMAP x7_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4653,10 +4654,10 @@ TILESIGNALMAP x7_y35_searchtable[] =
 
 TILESIGNALMAP x7_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -4664,8 +4665,8 @@ TILESIGNALMAP x7_y36_searchtable[] =
 
 TILESIGNALMAP x7_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -4673,8 +4674,8 @@ TILESIGNALMAP x7_y37_searchtable[] =
 
 TILESIGNALMAP x8_y0_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4682,8 +4683,8 @@ TILESIGNALMAP x8_y0_searchtable[] =
 
 TILESIGNALMAP x8_y1_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4691,10 +4692,10 @@ TILESIGNALMAP x8_y1_searchtable[] =
 
 TILESIGNALMAP x8_y2_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4702,8 +4703,8 @@ TILESIGNALMAP x8_y2_searchtable[] =
 
 TILESIGNALMAP x8_y3_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4711,10 +4712,10 @@ TILESIGNALMAP x8_y3_searchtable[] =
 
 TILESIGNALMAP x8_y4_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4722,8 +4723,8 @@ TILESIGNALMAP x8_y4_searchtable[] =
 
 TILESIGNALMAP x8_y5_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4731,8 +4732,8 @@ TILESIGNALMAP x8_y5_searchtable[] =
 
 TILESIGNALMAP x8_y6_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4740,8 +4741,8 @@ TILESIGNALMAP x8_y6_searchtable[] =
 
 TILESIGNALMAP x8_y7_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4749,8 +4750,8 @@ TILESIGNALMAP x8_y7_searchtable[] =
 
 TILESIGNALMAP x8_y8_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4758,8 +4759,8 @@ TILESIGNALMAP x8_y8_searchtable[] =
 
 TILESIGNALMAP x8_y9_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4767,8 +4768,8 @@ TILESIGNALMAP x8_y9_searchtable[] =
 
 TILESIGNALMAP x8_y10_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4776,10 +4777,10 @@ TILESIGNALMAP x8_y10_searchtable[] =
 
 TILESIGNALMAP x8_y11_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4787,8 +4788,8 @@ TILESIGNALMAP x8_y11_searchtable[] =
 
 TILESIGNALMAP x8_y12_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4796,10 +4797,10 @@ TILESIGNALMAP x8_y12_searchtable[] =
 
 TILESIGNALMAP x8_y13_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4807,8 +4808,8 @@ TILESIGNALMAP x8_y13_searchtable[] =
 
 TILESIGNALMAP x8_y14_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4816,8 +4817,8 @@ TILESIGNALMAP x8_y14_searchtable[] =
 
 TILESIGNALMAP x8_y15_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4825,8 +4826,8 @@ TILESIGNALMAP x8_y15_searchtable[] =
 
 TILESIGNALMAP x8_y16_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4834,9 +4835,9 @@ TILESIGNALMAP x8_y16_searchtable[] =
 
 TILESIGNALMAP x8_y17_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
-  { dsp_0, "dsp" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
+  { dsp_0, "dsp", "mult" },
   { 0, 0 },
 };
 
@@ -4844,8 +4845,8 @@ TILESIGNALMAP x8_y17_searchtable[] =
 
 TILESIGNALMAP x8_y18_searchtable[] =
 {
-  { gclk_ctmux_0, "gclk_ctmux" },
-  { dsp_0, "dsp" },
+  { gclk_ctmux_0, "gclk_ctmux", "gclk_ctmux_l" },
+  { dsp_0, "dsp", "mult" },
   { 0, 0 },
 };
 
@@ -4853,8 +4854,8 @@ TILESIGNALMAP x8_y18_searchtable[] =
 
 TILESIGNALMAP x8_y19_searchtable[] =
 {
-  { dsp_0, "dsp" },
-  { gclk_ctmux_0, "gclk_ctmux" },
+  { dsp_0, "dsp", "mult" },
+  { gclk_ctmux_0, "gclk_ctmux", "gclk_ctmux_u" },
   { 0, 0 },
 };
 
@@ -4862,8 +4863,8 @@ TILESIGNALMAP x8_y19_searchtable[] =
 
 TILESIGNALMAP x8_y20_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4871,8 +4872,8 @@ TILESIGNALMAP x8_y20_searchtable[] =
 
 TILESIGNALMAP x8_y21_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4880,10 +4881,10 @@ TILESIGNALMAP x8_y21_searchtable[] =
 
 TILESIGNALMAP x8_y22_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4891,8 +4892,8 @@ TILESIGNALMAP x8_y22_searchtable[] =
 
 TILESIGNALMAP x8_y23_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4900,10 +4901,10 @@ TILESIGNALMAP x8_y23_searchtable[] =
 
 TILESIGNALMAP x8_y24_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4911,8 +4912,8 @@ TILESIGNALMAP x8_y24_searchtable[] =
 
 TILESIGNALMAP x8_y25_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4920,8 +4921,8 @@ TILESIGNALMAP x8_y25_searchtable[] =
 
 TILESIGNALMAP x8_y26_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4929,8 +4930,8 @@ TILESIGNALMAP x8_y26_searchtable[] =
 
 TILESIGNALMAP x8_y27_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4938,8 +4939,8 @@ TILESIGNALMAP x8_y27_searchtable[] =
 
 TILESIGNALMAP x8_y28_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4947,8 +4948,8 @@ TILESIGNALMAP x8_y28_searchtable[] =
 
 TILESIGNALMAP x8_y29_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4956,8 +4957,8 @@ TILESIGNALMAP x8_y29_searchtable[] =
 
 TILESIGNALMAP x8_y30_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4965,10 +4966,10 @@ TILESIGNALMAP x8_y30_searchtable[] =
 
 TILESIGNALMAP x8_y31_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4976,8 +4977,8 @@ TILESIGNALMAP x8_y31_searchtable[] =
 
 TILESIGNALMAP x8_y32_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4985,10 +4986,10 @@ TILESIGNALMAP x8_y32_searchtable[] =
 
 TILESIGNALMAP x8_y33_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -4996,8 +4997,8 @@ TILESIGNALMAP x8_y33_searchtable[] =
 
 TILESIGNALMAP x8_y34_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -5005,8 +5006,8 @@ TILESIGNALMAP x8_y34_searchtable[] =
 
 TILESIGNALMAP x8_y35_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -5014,8 +5015,8 @@ TILESIGNALMAP x8_y35_searchtable[] =
 
 TILESIGNALMAP x8_y36_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -5023,8 +5024,8 @@ TILESIGNALMAP x8_y36_searchtable[] =
 
 TILESIGNALMAP x8_y37_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -5032,9 +5033,9 @@ TILESIGNALMAP x8_y37_searchtable[] =
 
 TILESIGNALMAP x9_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
-  { ios_bankref_tb_0, "ios_bankref_tb" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
+  { ios_bankref_tb_0, "ios_bankref_tb", "ios_bankref_bl" },
   { 0, 0 },
 };
 
@@ -5042,10 +5043,10 @@ TILESIGNALMAP x9_y0_searchtable[] =
 
 TILESIGNALMAP x9_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5053,10 +5054,10 @@ TILESIGNALMAP x9_y1_searchtable[] =
 
 TILESIGNALMAP x9_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5064,10 +5065,10 @@ TILESIGNALMAP x9_y2_searchtable[] =
 
 TILESIGNALMAP x9_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5075,10 +5076,10 @@ TILESIGNALMAP x9_y3_searchtable[] =
 
 TILESIGNALMAP x9_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5086,10 +5087,10 @@ TILESIGNALMAP x9_y4_searchtable[] =
 
 TILESIGNALMAP x9_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5097,10 +5098,10 @@ TILESIGNALMAP x9_y5_searchtable[] =
 
 TILESIGNALMAP x9_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5108,10 +5109,10 @@ TILESIGNALMAP x9_y6_searchtable[] =
 
 TILESIGNALMAP x9_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5119,10 +5120,10 @@ TILESIGNALMAP x9_y7_searchtable[] =
 
 TILESIGNALMAP x9_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5130,10 +5131,10 @@ TILESIGNALMAP x9_y8_searchtable[] =
 
 TILESIGNALMAP x9_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5141,10 +5142,10 @@ TILESIGNALMAP x9_y9_searchtable[] =
 
 TILESIGNALMAP x9_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5152,10 +5153,10 @@ TILESIGNALMAP x9_y10_searchtable[] =
 
 TILESIGNALMAP x9_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5163,10 +5164,10 @@ TILESIGNALMAP x9_y11_searchtable[] =
 
 TILESIGNALMAP x9_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5174,10 +5175,10 @@ TILESIGNALMAP x9_y12_searchtable[] =
 
 TILESIGNALMAP x9_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5185,10 +5186,10 @@ TILESIGNALMAP x9_y13_searchtable[] =
 
 TILESIGNALMAP x9_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5196,10 +5197,10 @@ TILESIGNALMAP x9_y14_searchtable[] =
 
 TILESIGNALMAP x9_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5207,10 +5208,10 @@ TILESIGNALMAP x9_y15_searchtable[] =
 
 TILESIGNALMAP x9_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5218,10 +5219,10 @@ TILESIGNALMAP x9_y16_searchtable[] =
 
 TILESIGNALMAP x9_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5229,10 +5230,10 @@ TILESIGNALMAP x9_y17_searchtable[] =
 
 TILESIGNALMAP x9_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5240,10 +5241,10 @@ TILESIGNALMAP x9_y18_searchtable[] =
 
 TILESIGNALMAP x9_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5251,10 +5252,10 @@ TILESIGNALMAP x9_y19_searchtable[] =
 
 TILESIGNALMAP x9_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5262,10 +5263,10 @@ TILESIGNALMAP x9_y20_searchtable[] =
 
 TILESIGNALMAP x9_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5273,10 +5274,10 @@ TILESIGNALMAP x9_y21_searchtable[] =
 
 TILESIGNALMAP x9_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5284,10 +5285,10 @@ TILESIGNALMAP x9_y22_searchtable[] =
 
 TILESIGNALMAP x9_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5295,10 +5296,10 @@ TILESIGNALMAP x9_y23_searchtable[] =
 
 TILESIGNALMAP x9_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5306,10 +5307,10 @@ TILESIGNALMAP x9_y24_searchtable[] =
 
 TILESIGNALMAP x9_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5317,10 +5318,10 @@ TILESIGNALMAP x9_y25_searchtable[] =
 
 TILESIGNALMAP x9_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5328,10 +5329,10 @@ TILESIGNALMAP x9_y26_searchtable[] =
 
 TILESIGNALMAP x9_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5339,10 +5340,10 @@ TILESIGNALMAP x9_y27_searchtable[] =
 
 TILESIGNALMAP x9_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5350,10 +5351,10 @@ TILESIGNALMAP x9_y28_searchtable[] =
 
 TILESIGNALMAP x9_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5361,10 +5362,10 @@ TILESIGNALMAP x9_y29_searchtable[] =
 
 TILESIGNALMAP x9_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5372,10 +5373,10 @@ TILESIGNALMAP x9_y30_searchtable[] =
 
 TILESIGNALMAP x9_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5383,10 +5384,10 @@ TILESIGNALMAP x9_y31_searchtable[] =
 
 TILESIGNALMAP x9_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5394,10 +5395,10 @@ TILESIGNALMAP x9_y32_searchtable[] =
 
 TILESIGNALMAP x9_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5405,10 +5406,10 @@ TILESIGNALMAP x9_y33_searchtable[] =
 
 TILESIGNALMAP x9_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5416,10 +5417,10 @@ TILESIGNALMAP x9_y34_searchtable[] =
 
 TILESIGNALMAP x9_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5427,10 +5428,10 @@ TILESIGNALMAP x9_y35_searchtable[] =
 
 TILESIGNALMAP x9_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5438,9 +5439,9 @@ TILESIGNALMAP x9_y36_searchtable[] =
 
 TILESIGNALMAP x9_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
-  { ios_bankref_tb_0, "ios_bankref_tb" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
+  { ios_bankref_tb_0, "ios_bankref_tb", "ios_bankref_tl" },
   { 0, 0 },
 };
 
@@ -5448,8 +5449,8 @@ TILESIGNALMAP x9_y37_searchtable[] =
 
 TILESIGNALMAP x10_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -5457,10 +5458,10 @@ TILESIGNALMAP x10_y0_searchtable[] =
 
 TILESIGNALMAP x10_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5468,10 +5469,10 @@ TILESIGNALMAP x10_y1_searchtable[] =
 
 TILESIGNALMAP x10_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5479,10 +5480,10 @@ TILESIGNALMAP x10_y2_searchtable[] =
 
 TILESIGNALMAP x10_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5490,10 +5491,10 @@ TILESIGNALMAP x10_y3_searchtable[] =
 
 TILESIGNALMAP x10_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5501,10 +5502,10 @@ TILESIGNALMAP x10_y4_searchtable[] =
 
 TILESIGNALMAP x10_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5512,10 +5513,10 @@ TILESIGNALMAP x10_y5_searchtable[] =
 
 TILESIGNALMAP x10_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5523,10 +5524,10 @@ TILESIGNALMAP x10_y6_searchtable[] =
 
 TILESIGNALMAP x10_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5534,10 +5535,10 @@ TILESIGNALMAP x10_y7_searchtable[] =
 
 TILESIGNALMAP x10_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5545,10 +5546,10 @@ TILESIGNALMAP x10_y8_searchtable[] =
 
 TILESIGNALMAP x10_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5556,10 +5557,10 @@ TILESIGNALMAP x10_y9_searchtable[] =
 
 TILESIGNALMAP x10_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5567,10 +5568,10 @@ TILESIGNALMAP x10_y10_searchtable[] =
 
 TILESIGNALMAP x10_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5578,10 +5579,10 @@ TILESIGNALMAP x10_y11_searchtable[] =
 
 TILESIGNALMAP x10_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5589,10 +5590,10 @@ TILESIGNALMAP x10_y12_searchtable[] =
 
 TILESIGNALMAP x10_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5600,10 +5601,10 @@ TILESIGNALMAP x10_y13_searchtable[] =
 
 TILESIGNALMAP x10_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5611,10 +5612,10 @@ TILESIGNALMAP x10_y14_searchtable[] =
 
 TILESIGNALMAP x10_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5622,10 +5623,10 @@ TILESIGNALMAP x10_y15_searchtable[] =
 
 TILESIGNALMAP x10_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5633,10 +5634,10 @@ TILESIGNALMAP x10_y16_searchtable[] =
 
 TILESIGNALMAP x10_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5644,10 +5645,10 @@ TILESIGNALMAP x10_y17_searchtable[] =
 
 TILESIGNALMAP x10_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5655,10 +5656,10 @@ TILESIGNALMAP x10_y18_searchtable[] =
 
 TILESIGNALMAP x10_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5666,10 +5667,10 @@ TILESIGNALMAP x10_y19_searchtable[] =
 
 TILESIGNALMAP x10_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5677,10 +5678,10 @@ TILESIGNALMAP x10_y20_searchtable[] =
 
 TILESIGNALMAP x10_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5688,10 +5689,10 @@ TILESIGNALMAP x10_y21_searchtable[] =
 
 TILESIGNALMAP x10_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5699,10 +5700,10 @@ TILESIGNALMAP x10_y22_searchtable[] =
 
 TILESIGNALMAP x10_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5710,10 +5711,10 @@ TILESIGNALMAP x10_y23_searchtable[] =
 
 TILESIGNALMAP x10_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5721,10 +5722,10 @@ TILESIGNALMAP x10_y24_searchtable[] =
 
 TILESIGNALMAP x10_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5732,10 +5733,10 @@ TILESIGNALMAP x10_y25_searchtable[] =
 
 TILESIGNALMAP x10_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5743,10 +5744,10 @@ TILESIGNALMAP x10_y26_searchtable[] =
 
 TILESIGNALMAP x10_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5754,10 +5755,10 @@ TILESIGNALMAP x10_y27_searchtable[] =
 
 TILESIGNALMAP x10_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5765,10 +5766,10 @@ TILESIGNALMAP x10_y28_searchtable[] =
 
 TILESIGNALMAP x10_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5776,10 +5777,10 @@ TILESIGNALMAP x10_y29_searchtable[] =
 
 TILESIGNALMAP x10_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5787,10 +5788,10 @@ TILESIGNALMAP x10_y30_searchtable[] =
 
 TILESIGNALMAP x10_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5798,10 +5799,10 @@ TILESIGNALMAP x10_y31_searchtable[] =
 
 TILESIGNALMAP x10_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5809,10 +5810,10 @@ TILESIGNALMAP x10_y32_searchtable[] =
 
 TILESIGNALMAP x10_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5820,10 +5821,10 @@ TILESIGNALMAP x10_y33_searchtable[] =
 
 TILESIGNALMAP x10_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5831,10 +5832,10 @@ TILESIGNALMAP x10_y34_searchtable[] =
 
 TILESIGNALMAP x10_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5842,10 +5843,10 @@ TILESIGNALMAP x10_y35_searchtable[] =
 
 TILESIGNALMAP x10_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5853,8 +5854,8 @@ TILESIGNALMAP x10_y36_searchtable[] =
 
 TILESIGNALMAP x10_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -5862,8 +5863,8 @@ TILESIGNALMAP x10_y37_searchtable[] =
 
 TILESIGNALMAP x11_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -5871,10 +5872,10 @@ TILESIGNALMAP x11_y0_searchtable[] =
 
 TILESIGNALMAP x11_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5882,10 +5883,10 @@ TILESIGNALMAP x11_y1_searchtable[] =
 
 TILESIGNALMAP x11_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5893,10 +5894,10 @@ TILESIGNALMAP x11_y2_searchtable[] =
 
 TILESIGNALMAP x11_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5904,10 +5905,10 @@ TILESIGNALMAP x11_y3_searchtable[] =
 
 TILESIGNALMAP x11_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5915,10 +5916,10 @@ TILESIGNALMAP x11_y4_searchtable[] =
 
 TILESIGNALMAP x11_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5926,10 +5927,10 @@ TILESIGNALMAP x11_y5_searchtable[] =
 
 TILESIGNALMAP x11_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5937,10 +5938,10 @@ TILESIGNALMAP x11_y6_searchtable[] =
 
 TILESIGNALMAP x11_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5948,10 +5949,10 @@ TILESIGNALMAP x11_y7_searchtable[] =
 
 TILESIGNALMAP x11_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5959,10 +5960,10 @@ TILESIGNALMAP x11_y8_searchtable[] =
 
 TILESIGNALMAP x11_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5970,10 +5971,10 @@ TILESIGNALMAP x11_y9_searchtable[] =
 
 TILESIGNALMAP x11_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5981,10 +5982,10 @@ TILESIGNALMAP x11_y10_searchtable[] =
 
 TILESIGNALMAP x11_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -5992,10 +5993,10 @@ TILESIGNALMAP x11_y11_searchtable[] =
 
 TILESIGNALMAP x11_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6003,10 +6004,10 @@ TILESIGNALMAP x11_y12_searchtable[] =
 
 TILESIGNALMAP x11_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6014,10 +6015,10 @@ TILESIGNALMAP x11_y13_searchtable[] =
 
 TILESIGNALMAP x11_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6025,10 +6026,10 @@ TILESIGNALMAP x11_y14_searchtable[] =
 
 TILESIGNALMAP x11_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6036,10 +6037,10 @@ TILESIGNALMAP x11_y15_searchtable[] =
 
 TILESIGNALMAP x11_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6047,10 +6048,10 @@ TILESIGNALMAP x11_y16_searchtable[] =
 
 TILESIGNALMAP x11_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6058,10 +6059,10 @@ TILESIGNALMAP x11_y17_searchtable[] =
 
 TILESIGNALMAP x11_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6069,10 +6070,10 @@ TILESIGNALMAP x11_y18_searchtable[] =
 
 TILESIGNALMAP x11_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6080,10 +6081,10 @@ TILESIGNALMAP x11_y19_searchtable[] =
 
 TILESIGNALMAP x11_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6091,10 +6092,10 @@ TILESIGNALMAP x11_y20_searchtable[] =
 
 TILESIGNALMAP x11_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6102,10 +6103,10 @@ TILESIGNALMAP x11_y21_searchtable[] =
 
 TILESIGNALMAP x11_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6113,10 +6114,10 @@ TILESIGNALMAP x11_y22_searchtable[] =
 
 TILESIGNALMAP x11_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6124,10 +6125,10 @@ TILESIGNALMAP x11_y23_searchtable[] =
 
 TILESIGNALMAP x11_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6135,10 +6136,10 @@ TILESIGNALMAP x11_y24_searchtable[] =
 
 TILESIGNALMAP x11_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6146,10 +6147,10 @@ TILESIGNALMAP x11_y25_searchtable[] =
 
 TILESIGNALMAP x11_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6157,10 +6158,10 @@ TILESIGNALMAP x11_y26_searchtable[] =
 
 TILESIGNALMAP x11_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6168,10 +6169,10 @@ TILESIGNALMAP x11_y27_searchtable[] =
 
 TILESIGNALMAP x11_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6179,10 +6180,10 @@ TILESIGNALMAP x11_y28_searchtable[] =
 
 TILESIGNALMAP x11_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6190,10 +6191,10 @@ TILESIGNALMAP x11_y29_searchtable[] =
 
 TILESIGNALMAP x11_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6201,10 +6202,10 @@ TILESIGNALMAP x11_y30_searchtable[] =
 
 TILESIGNALMAP x11_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6212,10 +6213,10 @@ TILESIGNALMAP x11_y31_searchtable[] =
 
 TILESIGNALMAP x11_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6223,10 +6224,10 @@ TILESIGNALMAP x11_y32_searchtable[] =
 
 TILESIGNALMAP x11_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6234,10 +6235,10 @@ TILESIGNALMAP x11_y33_searchtable[] =
 
 TILESIGNALMAP x11_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6245,10 +6246,10 @@ TILESIGNALMAP x11_y34_searchtable[] =
 
 TILESIGNALMAP x11_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6256,10 +6257,10 @@ TILESIGNALMAP x11_y35_searchtable[] =
 
 TILESIGNALMAP x11_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6267,8 +6268,8 @@ TILESIGNALMAP x11_y36_searchtable[] =
 
 TILESIGNALMAP x11_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -6276,9 +6277,9 @@ TILESIGNALMAP x11_y37_searchtable[] =
 
 TILESIGNALMAP x12_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
-  { emb32k_b0_0, "emb32k_b0" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
+  { emb32k_b0_0, "emb32k_b0", "emb32k_b0" },
   { 0, 0 },
 };
 
@@ -6286,10 +6287,10 @@ TILESIGNALMAP x12_y0_searchtable[] =
 
 TILESIGNALMAP x12_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6297,10 +6298,10 @@ TILESIGNALMAP x12_y1_searchtable[] =
 
 TILESIGNALMAP x12_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6308,10 +6309,10 @@ TILESIGNALMAP x12_y2_searchtable[] =
 
 TILESIGNALMAP x12_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6319,10 +6320,10 @@ TILESIGNALMAP x12_y3_searchtable[] =
 
 TILESIGNALMAP x12_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6330,10 +6331,10 @@ TILESIGNALMAP x12_y4_searchtable[] =
 
 TILESIGNALMAP x12_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6341,10 +6342,10 @@ TILESIGNALMAP x12_y5_searchtable[] =
 
 TILESIGNALMAP x12_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6352,10 +6353,10 @@ TILESIGNALMAP x12_y6_searchtable[] =
 
 TILESIGNALMAP x12_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6363,10 +6364,10 @@ TILESIGNALMAP x12_y7_searchtable[] =
 
 TILESIGNALMAP x12_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6374,10 +6375,10 @@ TILESIGNALMAP x12_y8_searchtable[] =
 
 TILESIGNALMAP x12_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6385,10 +6386,10 @@ TILESIGNALMAP x12_y9_searchtable[] =
 
 TILESIGNALMAP x12_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6396,10 +6397,10 @@ TILESIGNALMAP x12_y10_searchtable[] =
 
 TILESIGNALMAP x12_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6407,10 +6408,10 @@ TILESIGNALMAP x12_y11_searchtable[] =
 
 TILESIGNALMAP x12_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6418,10 +6419,10 @@ TILESIGNALMAP x12_y12_searchtable[] =
 
 TILESIGNALMAP x12_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6429,10 +6430,10 @@ TILESIGNALMAP x12_y13_searchtable[] =
 
 TILESIGNALMAP x12_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6440,10 +6441,10 @@ TILESIGNALMAP x12_y14_searchtable[] =
 
 TILESIGNALMAP x12_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6451,10 +6452,10 @@ TILESIGNALMAP x12_y15_searchtable[] =
 
 TILESIGNALMAP x12_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6462,10 +6463,10 @@ TILESIGNALMAP x12_y16_searchtable[] =
 
 TILESIGNALMAP x12_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6473,10 +6474,10 @@ TILESIGNALMAP x12_y17_searchtable[] =
 
 TILESIGNALMAP x12_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6484,10 +6485,10 @@ TILESIGNALMAP x12_y18_searchtable[] =
 
 TILESIGNALMAP x12_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6495,10 +6496,10 @@ TILESIGNALMAP x12_y19_searchtable[] =
 
 TILESIGNALMAP x12_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6506,10 +6507,10 @@ TILESIGNALMAP x12_y20_searchtable[] =
 
 TILESIGNALMAP x12_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6517,10 +6518,10 @@ TILESIGNALMAP x12_y21_searchtable[] =
 
 TILESIGNALMAP x12_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6528,10 +6529,10 @@ TILESIGNALMAP x12_y22_searchtable[] =
 
 TILESIGNALMAP x12_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6539,10 +6540,10 @@ TILESIGNALMAP x12_y23_searchtable[] =
 
 TILESIGNALMAP x12_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6550,10 +6551,10 @@ TILESIGNALMAP x12_y24_searchtable[] =
 
 TILESIGNALMAP x12_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6561,10 +6562,10 @@ TILESIGNALMAP x12_y25_searchtable[] =
 
 TILESIGNALMAP x12_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6572,10 +6573,10 @@ TILESIGNALMAP x12_y26_searchtable[] =
 
 TILESIGNALMAP x12_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6583,10 +6584,10 @@ TILESIGNALMAP x12_y27_searchtable[] =
 
 TILESIGNALMAP x12_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6594,10 +6595,10 @@ TILESIGNALMAP x12_y28_searchtable[] =
 
 TILESIGNALMAP x12_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6605,10 +6606,10 @@ TILESIGNALMAP x12_y29_searchtable[] =
 
 TILESIGNALMAP x12_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6616,10 +6617,10 @@ TILESIGNALMAP x12_y30_searchtable[] =
 
 TILESIGNALMAP x12_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6627,10 +6628,10 @@ TILESIGNALMAP x12_y31_searchtable[] =
 
 TILESIGNALMAP x12_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6638,10 +6639,10 @@ TILESIGNALMAP x12_y32_searchtable[] =
 
 TILESIGNALMAP x12_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6649,10 +6650,10 @@ TILESIGNALMAP x12_y33_searchtable[] =
 
 TILESIGNALMAP x12_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6660,10 +6661,10 @@ TILESIGNALMAP x12_y34_searchtable[] =
 
 TILESIGNALMAP x12_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6671,10 +6672,10 @@ TILESIGNALMAP x12_y35_searchtable[] =
 
 TILESIGNALMAP x12_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6682,8 +6683,8 @@ TILESIGNALMAP x12_y36_searchtable[] =
 
 TILESIGNALMAP x12_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -6691,9 +6692,9 @@ TILESIGNALMAP x12_y37_searchtable[] =
 
 TILESIGNALMAP x13_y0_searchtable[] =
 {
-  { ioclk_0, "ioclk0" },
-  { ioclk_1, "ioclk1" },
-  { gclk_premux_0, "gclk_premux" },
+  { ioclk_0, "ioclk0", "ioclk_bk3" },
+  { ioclk_1, "ioclk1", "ioclk_bk3" },
+  { gclk_premux_0, "gclk_premux", "gclk_premux_b" },
   { 0, 0 },
 };
 
@@ -6701,10 +6702,10 @@ TILESIGNALMAP x13_y0_searchtable[] =
 
 TILESIGNALMAP x13_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6712,10 +6713,10 @@ TILESIGNALMAP x13_y1_searchtable[] =
 
 TILESIGNALMAP x13_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6723,10 +6724,10 @@ TILESIGNALMAP x13_y2_searchtable[] =
 
 TILESIGNALMAP x13_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6734,10 +6735,10 @@ TILESIGNALMAP x13_y3_searchtable[] =
 
 TILESIGNALMAP x13_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6745,10 +6746,10 @@ TILESIGNALMAP x13_y4_searchtable[] =
 
 TILESIGNALMAP x13_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6756,10 +6757,10 @@ TILESIGNALMAP x13_y5_searchtable[] =
 
 TILESIGNALMAP x13_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6767,10 +6768,10 @@ TILESIGNALMAP x13_y6_searchtable[] =
 
 TILESIGNALMAP x13_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6778,10 +6779,10 @@ TILESIGNALMAP x13_y7_searchtable[] =
 
 TILESIGNALMAP x13_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6789,10 +6790,10 @@ TILESIGNALMAP x13_y8_searchtable[] =
 
 TILESIGNALMAP x13_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6800,10 +6801,10 @@ TILESIGNALMAP x13_y9_searchtable[] =
 
 TILESIGNALMAP x13_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6811,10 +6812,10 @@ TILESIGNALMAP x13_y10_searchtable[] =
 
 TILESIGNALMAP x13_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6822,10 +6823,10 @@ TILESIGNALMAP x13_y11_searchtable[] =
 
 TILESIGNALMAP x13_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6833,10 +6834,10 @@ TILESIGNALMAP x13_y12_searchtable[] =
 
 TILESIGNALMAP x13_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6844,10 +6845,10 @@ TILESIGNALMAP x13_y13_searchtable[] =
 
 TILESIGNALMAP x13_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6855,10 +6856,10 @@ TILESIGNALMAP x13_y14_searchtable[] =
 
 TILESIGNALMAP x13_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6866,10 +6867,10 @@ TILESIGNALMAP x13_y15_searchtable[] =
 
 TILESIGNALMAP x13_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6877,10 +6878,10 @@ TILESIGNALMAP x13_y16_searchtable[] =
 
 TILESIGNALMAP x13_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6888,10 +6889,10 @@ TILESIGNALMAP x13_y17_searchtable[] =
 
 TILESIGNALMAP x13_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6899,10 +6900,10 @@ TILESIGNALMAP x13_y18_searchtable[] =
 
 TILESIGNALMAP x13_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6910,10 +6911,10 @@ TILESIGNALMAP x13_y19_searchtable[] =
 
 TILESIGNALMAP x13_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6921,10 +6922,10 @@ TILESIGNALMAP x13_y20_searchtable[] =
 
 TILESIGNALMAP x13_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6932,10 +6933,10 @@ TILESIGNALMAP x13_y21_searchtable[] =
 
 TILESIGNALMAP x13_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6943,10 +6944,10 @@ TILESIGNALMAP x13_y22_searchtable[] =
 
 TILESIGNALMAP x13_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6954,10 +6955,10 @@ TILESIGNALMAP x13_y23_searchtable[] =
 
 TILESIGNALMAP x13_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6965,10 +6966,10 @@ TILESIGNALMAP x13_y24_searchtable[] =
 
 TILESIGNALMAP x13_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6976,10 +6977,10 @@ TILESIGNALMAP x13_y25_searchtable[] =
 
 TILESIGNALMAP x13_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6987,10 +6988,10 @@ TILESIGNALMAP x13_y26_searchtable[] =
 
 TILESIGNALMAP x13_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -6998,10 +6999,10 @@ TILESIGNALMAP x13_y27_searchtable[] =
 
 TILESIGNALMAP x13_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7009,10 +7010,10 @@ TILESIGNALMAP x13_y28_searchtable[] =
 
 TILESIGNALMAP x13_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7020,10 +7021,10 @@ TILESIGNALMAP x13_y29_searchtable[] =
 
 TILESIGNALMAP x13_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7031,10 +7032,10 @@ TILESIGNALMAP x13_y30_searchtable[] =
 
 TILESIGNALMAP x13_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7042,10 +7043,10 @@ TILESIGNALMAP x13_y31_searchtable[] =
 
 TILESIGNALMAP x13_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7053,10 +7054,10 @@ TILESIGNALMAP x13_y32_searchtable[] =
 
 TILESIGNALMAP x13_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7064,10 +7065,10 @@ TILESIGNALMAP x13_y33_searchtable[] =
 
 TILESIGNALMAP x13_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7075,10 +7076,10 @@ TILESIGNALMAP x13_y34_searchtable[] =
 
 TILESIGNALMAP x13_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7086,10 +7087,10 @@ TILESIGNALMAP x13_y35_searchtable[] =
 
 TILESIGNALMAP x13_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7097,9 +7098,9 @@ TILESIGNALMAP x13_y36_searchtable[] =
 
 TILESIGNALMAP x13_y37_searchtable[] =
 {
-  { ioclk_0, "ioclk0" },
-  { ioclk_1, "ioclk1" },
-  { gclk_premux_0, "gclk_premux" },
+  { ioclk_0, "ioclk0", "ioclk_bk8" },
+  { ioclk_1, "ioclk1", "ioclk_bk8" },
+  { gclk_premux_0, "gclk_premux", "gclk_premux_t" },
   { 0, 0 },
 };
 
@@ -7107,9 +7108,9 @@ TILESIGNALMAP x13_y37_searchtable[] =
 
 TILESIGNALMAP x14_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
-  { emb32k_b0_0, "emb32k_b0" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
+  { emb32k_b0_0, "emb32k_b0", "emb32k_b0" },
   { 0, 0 },
 };
 
@@ -7117,10 +7118,10 @@ TILESIGNALMAP x14_y0_searchtable[] =
 
 TILESIGNALMAP x14_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7128,10 +7129,10 @@ TILESIGNALMAP x14_y1_searchtable[] =
 
 TILESIGNALMAP x14_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7139,10 +7140,10 @@ TILESIGNALMAP x14_y2_searchtable[] =
 
 TILESIGNALMAP x14_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7150,10 +7151,10 @@ TILESIGNALMAP x14_y3_searchtable[] =
 
 TILESIGNALMAP x14_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7161,10 +7162,10 @@ TILESIGNALMAP x14_y4_searchtable[] =
 
 TILESIGNALMAP x14_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7172,10 +7173,10 @@ TILESIGNALMAP x14_y5_searchtable[] =
 
 TILESIGNALMAP x14_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7183,10 +7184,10 @@ TILESIGNALMAP x14_y6_searchtable[] =
 
 TILESIGNALMAP x14_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7194,10 +7195,10 @@ TILESIGNALMAP x14_y7_searchtable[] =
 
 TILESIGNALMAP x14_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7205,10 +7206,10 @@ TILESIGNALMAP x14_y8_searchtable[] =
 
 TILESIGNALMAP x14_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7216,10 +7217,10 @@ TILESIGNALMAP x14_y9_searchtable[] =
 
 TILESIGNALMAP x14_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7227,10 +7228,10 @@ TILESIGNALMAP x14_y10_searchtable[] =
 
 TILESIGNALMAP x14_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7238,10 +7239,10 @@ TILESIGNALMAP x14_y11_searchtable[] =
 
 TILESIGNALMAP x14_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7249,10 +7250,10 @@ TILESIGNALMAP x14_y12_searchtable[] =
 
 TILESIGNALMAP x14_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7260,10 +7261,10 @@ TILESIGNALMAP x14_y13_searchtable[] =
 
 TILESIGNALMAP x14_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7271,10 +7272,10 @@ TILESIGNALMAP x14_y14_searchtable[] =
 
 TILESIGNALMAP x14_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7282,10 +7283,10 @@ TILESIGNALMAP x14_y15_searchtable[] =
 
 TILESIGNALMAP x14_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7293,10 +7294,10 @@ TILESIGNALMAP x14_y16_searchtable[] =
 
 TILESIGNALMAP x14_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7304,10 +7305,10 @@ TILESIGNALMAP x14_y17_searchtable[] =
 
 TILESIGNALMAP x14_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7315,10 +7316,10 @@ TILESIGNALMAP x14_y18_searchtable[] =
 
 TILESIGNALMAP x14_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7326,10 +7327,10 @@ TILESIGNALMAP x14_y19_searchtable[] =
 
 TILESIGNALMAP x14_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7337,10 +7338,10 @@ TILESIGNALMAP x14_y20_searchtable[] =
 
 TILESIGNALMAP x14_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7348,10 +7349,10 @@ TILESIGNALMAP x14_y21_searchtable[] =
 
 TILESIGNALMAP x14_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7359,10 +7360,10 @@ TILESIGNALMAP x14_y22_searchtable[] =
 
 TILESIGNALMAP x14_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7370,10 +7371,10 @@ TILESIGNALMAP x14_y23_searchtable[] =
 
 TILESIGNALMAP x14_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7381,10 +7382,10 @@ TILESIGNALMAP x14_y24_searchtable[] =
 
 TILESIGNALMAP x14_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7392,10 +7393,10 @@ TILESIGNALMAP x14_y25_searchtable[] =
 
 TILESIGNALMAP x14_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7403,10 +7404,10 @@ TILESIGNALMAP x14_y26_searchtable[] =
 
 TILESIGNALMAP x14_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7414,10 +7415,10 @@ TILESIGNALMAP x14_y27_searchtable[] =
 
 TILESIGNALMAP x14_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7425,10 +7426,10 @@ TILESIGNALMAP x14_y28_searchtable[] =
 
 TILESIGNALMAP x14_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7436,10 +7437,10 @@ TILESIGNALMAP x14_y29_searchtable[] =
 
 TILESIGNALMAP x14_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7447,10 +7448,10 @@ TILESIGNALMAP x14_y30_searchtable[] =
 
 TILESIGNALMAP x14_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7458,10 +7459,10 @@ TILESIGNALMAP x14_y31_searchtable[] =
 
 TILESIGNALMAP x14_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7469,10 +7470,10 @@ TILESIGNALMAP x14_y32_searchtable[] =
 
 TILESIGNALMAP x14_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7480,10 +7481,10 @@ TILESIGNALMAP x14_y33_searchtable[] =
 
 TILESIGNALMAP x14_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7491,10 +7492,10 @@ TILESIGNALMAP x14_y34_searchtable[] =
 
 TILESIGNALMAP x14_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7502,10 +7503,10 @@ TILESIGNALMAP x14_y35_searchtable[] =
 
 TILESIGNALMAP x14_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7513,8 +7514,8 @@ TILESIGNALMAP x14_y36_searchtable[] =
 
 TILESIGNALMAP x14_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -7522,9 +7523,9 @@ TILESIGNALMAP x14_y37_searchtable[] =
 
 TILESIGNALMAP x15_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
-  { emb32k_b0_0, "emb32k_b0" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
+  { emb32k_b0_0, "emb32k_b0", "emb32k_b0" },
   { 0, 0 },
 };
 
@@ -7532,10 +7533,10 @@ TILESIGNALMAP x15_y0_searchtable[] =
 
 TILESIGNALMAP x15_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7543,10 +7544,10 @@ TILESIGNALMAP x15_y1_searchtable[] =
 
 TILESIGNALMAP x15_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7554,10 +7555,10 @@ TILESIGNALMAP x15_y2_searchtable[] =
 
 TILESIGNALMAP x15_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7565,10 +7566,10 @@ TILESIGNALMAP x15_y3_searchtable[] =
 
 TILESIGNALMAP x15_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7576,10 +7577,10 @@ TILESIGNALMAP x15_y4_searchtable[] =
 
 TILESIGNALMAP x15_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7587,10 +7588,10 @@ TILESIGNALMAP x15_y5_searchtable[] =
 
 TILESIGNALMAP x15_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7598,10 +7599,10 @@ TILESIGNALMAP x15_y6_searchtable[] =
 
 TILESIGNALMAP x15_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7609,10 +7610,10 @@ TILESIGNALMAP x15_y7_searchtable[] =
 
 TILESIGNALMAP x15_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7620,10 +7621,10 @@ TILESIGNALMAP x15_y8_searchtable[] =
 
 TILESIGNALMAP x15_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7631,10 +7632,10 @@ TILESIGNALMAP x15_y9_searchtable[] =
 
 TILESIGNALMAP x15_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7642,10 +7643,10 @@ TILESIGNALMAP x15_y10_searchtable[] =
 
 TILESIGNALMAP x15_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7653,10 +7654,10 @@ TILESIGNALMAP x15_y11_searchtable[] =
 
 TILESIGNALMAP x15_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7664,10 +7665,10 @@ TILESIGNALMAP x15_y12_searchtable[] =
 
 TILESIGNALMAP x15_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7675,10 +7676,10 @@ TILESIGNALMAP x15_y13_searchtable[] =
 
 TILESIGNALMAP x15_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7686,10 +7687,10 @@ TILESIGNALMAP x15_y14_searchtable[] =
 
 TILESIGNALMAP x15_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7697,10 +7698,10 @@ TILESIGNALMAP x15_y15_searchtable[] =
 
 TILESIGNALMAP x15_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7708,10 +7709,10 @@ TILESIGNALMAP x15_y16_searchtable[] =
 
 TILESIGNALMAP x15_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7719,10 +7720,10 @@ TILESIGNALMAP x15_y17_searchtable[] =
 
 TILESIGNALMAP x15_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7730,10 +7731,10 @@ TILESIGNALMAP x15_y18_searchtable[] =
 
 TILESIGNALMAP x15_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7741,10 +7742,10 @@ TILESIGNALMAP x15_y19_searchtable[] =
 
 TILESIGNALMAP x15_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7752,10 +7753,10 @@ TILESIGNALMAP x15_y20_searchtable[] =
 
 TILESIGNALMAP x15_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7763,10 +7764,10 @@ TILESIGNALMAP x15_y21_searchtable[] =
 
 TILESIGNALMAP x15_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7774,10 +7775,10 @@ TILESIGNALMAP x15_y22_searchtable[] =
 
 TILESIGNALMAP x15_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7785,10 +7786,10 @@ TILESIGNALMAP x15_y23_searchtable[] =
 
 TILESIGNALMAP x15_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7796,10 +7797,10 @@ TILESIGNALMAP x15_y24_searchtable[] =
 
 TILESIGNALMAP x15_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7807,10 +7808,10 @@ TILESIGNALMAP x15_y25_searchtable[] =
 
 TILESIGNALMAP x15_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7818,10 +7819,10 @@ TILESIGNALMAP x15_y26_searchtable[] =
 
 TILESIGNALMAP x15_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7829,10 +7830,10 @@ TILESIGNALMAP x15_y27_searchtable[] =
 
 TILESIGNALMAP x15_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7840,10 +7841,10 @@ TILESIGNALMAP x15_y28_searchtable[] =
 
 TILESIGNALMAP x15_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7851,10 +7852,10 @@ TILESIGNALMAP x15_y29_searchtable[] =
 
 TILESIGNALMAP x15_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7862,10 +7863,10 @@ TILESIGNALMAP x15_y30_searchtable[] =
 
 TILESIGNALMAP x15_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7873,10 +7874,10 @@ TILESIGNALMAP x15_y31_searchtable[] =
 
 TILESIGNALMAP x15_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7884,10 +7885,10 @@ TILESIGNALMAP x15_y32_searchtable[] =
 
 TILESIGNALMAP x15_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7895,10 +7896,10 @@ TILESIGNALMAP x15_y33_searchtable[] =
 
 TILESIGNALMAP x15_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7906,10 +7907,10 @@ TILESIGNALMAP x15_y34_searchtable[] =
 
 TILESIGNALMAP x15_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7917,10 +7918,10 @@ TILESIGNALMAP x15_y35_searchtable[] =
 
 TILESIGNALMAP x15_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -7928,8 +7929,8 @@ TILESIGNALMAP x15_y36_searchtable[] =
 
 TILESIGNALMAP x15_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -7937,9 +7938,9 @@ TILESIGNALMAP x15_y37_searchtable[] =
 
 TILESIGNALMAP x16_y0_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
-  { emb32k_b0_0, "emb32k_b0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { emb32k_b0_0, "emb32k_b0", "emb32k_b0" },
   { 0, 0 },
 };
 
@@ -7947,9 +7948,9 @@ TILESIGNALMAP x16_y0_searchtable[] =
 
 TILESIGNALMAP x16_y1_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
-  { emb32k_b0_0, "emb32k_b0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { emb32k_b0_0, "emb32k_b0", "emb32k_b0" },
   { 0, 0 },
 };
 
@@ -7957,10 +7958,10 @@ TILESIGNALMAP x16_y1_searchtable[] =
 
 TILESIGNALMAP x16_y2_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -7968,8 +7969,8 @@ TILESIGNALMAP x16_y2_searchtable[] =
 
 TILESIGNALMAP x16_y3_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -7977,10 +7978,10 @@ TILESIGNALMAP x16_y3_searchtable[] =
 
 TILESIGNALMAP x16_y4_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -7988,8 +7989,8 @@ TILESIGNALMAP x16_y4_searchtable[] =
 
 TILESIGNALMAP x16_y5_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -7997,8 +7998,8 @@ TILESIGNALMAP x16_y5_searchtable[] =
 
 TILESIGNALMAP x16_y6_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8006,8 +8007,8 @@ TILESIGNALMAP x16_y6_searchtable[] =
 
 TILESIGNALMAP x16_y7_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8015,8 +8016,8 @@ TILESIGNALMAP x16_y7_searchtable[] =
 
 TILESIGNALMAP x16_y8_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8024,8 +8025,8 @@ TILESIGNALMAP x16_y8_searchtable[] =
 
 TILESIGNALMAP x16_y9_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8033,8 +8034,8 @@ TILESIGNALMAP x16_y9_searchtable[] =
 
 TILESIGNALMAP x16_y10_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8042,10 +8043,10 @@ TILESIGNALMAP x16_y10_searchtable[] =
 
 TILESIGNALMAP x16_y11_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8053,8 +8054,8 @@ TILESIGNALMAP x16_y11_searchtable[] =
 
 TILESIGNALMAP x16_y12_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8062,10 +8063,10 @@ TILESIGNALMAP x16_y12_searchtable[] =
 
 TILESIGNALMAP x16_y13_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8073,8 +8074,8 @@ TILESIGNALMAP x16_y13_searchtable[] =
 
 TILESIGNALMAP x16_y14_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8082,8 +8083,8 @@ TILESIGNALMAP x16_y14_searchtable[] =
 
 TILESIGNALMAP x16_y15_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8091,8 +8092,8 @@ TILESIGNALMAP x16_y15_searchtable[] =
 
 TILESIGNALMAP x16_y16_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8100,9 +8101,9 @@ TILESIGNALMAP x16_y16_searchtable[] =
 
 TILESIGNALMAP x16_y17_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
-  { dsp_0, "dsp" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
+  { dsp_0, "dsp", "mult" },
   { 0, 0 },
 };
 
@@ -8110,9 +8111,9 @@ TILESIGNALMAP x16_y17_searchtable[] =
 
 TILESIGNALMAP x16_y18_searchtable[] =
 {
-  { gclk_csb_0, "gclk_csb0" },
-  { gclk_csb_1, "gclk_csb1" },
-  { dsp_0, "dsp" },
+  { gclk_csb_0, "gclk_csb0", "gclk_csb" },
+  { gclk_csb_1, "gclk_csb1", "gclk_csb" },
+  { dsp_0, "dsp", "mult" },
   { 0, 0 },
 };
 
@@ -8120,9 +8121,9 @@ TILESIGNALMAP x16_y18_searchtable[] =
 
 TILESIGNALMAP x16_y19_searchtable[] =
 {
-  { gclk_csb_0, "gclk_csb0" },
-  { gclk_csb_1, "gclk_csb1" },
-  { dsp_0, "dsp" },
+  { gclk_csb_0, "gclk_csb0", "gclk_csb" },
+  { gclk_csb_1, "gclk_csb1", "gclk_csb" },
+  { dsp_0, "dsp", "mult" },
   { 0, 0 },
 };
 
@@ -8130,8 +8131,8 @@ TILESIGNALMAP x16_y19_searchtable[] =
 
 TILESIGNALMAP x16_y20_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8139,8 +8140,8 @@ TILESIGNALMAP x16_y20_searchtable[] =
 
 TILESIGNALMAP x16_y21_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8148,10 +8149,10 @@ TILESIGNALMAP x16_y21_searchtable[] =
 
 TILESIGNALMAP x16_y22_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8159,8 +8160,8 @@ TILESIGNALMAP x16_y22_searchtable[] =
 
 TILESIGNALMAP x16_y23_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8168,10 +8169,10 @@ TILESIGNALMAP x16_y23_searchtable[] =
 
 TILESIGNALMAP x16_y24_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8179,8 +8180,8 @@ TILESIGNALMAP x16_y24_searchtable[] =
 
 TILESIGNALMAP x16_y25_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8188,8 +8189,8 @@ TILESIGNALMAP x16_y25_searchtable[] =
 
 TILESIGNALMAP x16_y26_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8197,8 +8198,8 @@ TILESIGNALMAP x16_y26_searchtable[] =
 
 TILESIGNALMAP x16_y27_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8206,8 +8207,8 @@ TILESIGNALMAP x16_y27_searchtable[] =
 
 TILESIGNALMAP x16_y28_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8215,8 +8216,8 @@ TILESIGNALMAP x16_y28_searchtable[] =
 
 TILESIGNALMAP x16_y29_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8224,8 +8225,8 @@ TILESIGNALMAP x16_y29_searchtable[] =
 
 TILESIGNALMAP x16_y30_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8233,10 +8234,10 @@ TILESIGNALMAP x16_y30_searchtable[] =
 
 TILESIGNALMAP x16_y31_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8244,8 +8245,8 @@ TILESIGNALMAP x16_y31_searchtable[] =
 
 TILESIGNALMAP x16_y32_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8253,10 +8254,10 @@ TILESIGNALMAP x16_y32_searchtable[] =
 
 TILESIGNALMAP x16_y33_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8264,8 +8265,8 @@ TILESIGNALMAP x16_y33_searchtable[] =
 
 TILESIGNALMAP x16_y34_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8273,8 +8274,8 @@ TILESIGNALMAP x16_y34_searchtable[] =
 
 TILESIGNALMAP x16_y35_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8282,8 +8283,8 @@ TILESIGNALMAP x16_y35_searchtable[] =
 
 TILESIGNALMAP x16_y36_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8291,8 +8292,8 @@ TILESIGNALMAP x16_y36_searchtable[] =
 
 TILESIGNALMAP x16_y37_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -8300,9 +8301,9 @@ TILESIGNALMAP x16_y37_searchtable[] =
 
 TILESIGNALMAP x17_y0_searchtable[] =
 {
-  { emb32k_b0_0, "emb32k_b0" },
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { emb32k_b0_0, "emb32k_b0", "emb32k_b0" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -8310,10 +8311,10 @@ TILESIGNALMAP x17_y0_searchtable[] =
 
 TILESIGNALMAP x17_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8321,10 +8322,10 @@ TILESIGNALMAP x17_y1_searchtable[] =
 
 TILESIGNALMAP x17_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8332,10 +8333,10 @@ TILESIGNALMAP x17_y2_searchtable[] =
 
 TILESIGNALMAP x17_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8343,10 +8344,10 @@ TILESIGNALMAP x17_y3_searchtable[] =
 
 TILESIGNALMAP x17_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8354,10 +8355,10 @@ TILESIGNALMAP x17_y4_searchtable[] =
 
 TILESIGNALMAP x17_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8365,10 +8366,10 @@ TILESIGNALMAP x17_y5_searchtable[] =
 
 TILESIGNALMAP x17_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8376,10 +8377,10 @@ TILESIGNALMAP x17_y6_searchtable[] =
 
 TILESIGNALMAP x17_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8387,10 +8388,10 @@ TILESIGNALMAP x17_y7_searchtable[] =
 
 TILESIGNALMAP x17_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8398,10 +8399,10 @@ TILESIGNALMAP x17_y8_searchtable[] =
 
 TILESIGNALMAP x17_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8409,10 +8410,10 @@ TILESIGNALMAP x17_y9_searchtable[] =
 
 TILESIGNALMAP x17_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8420,10 +8421,10 @@ TILESIGNALMAP x17_y10_searchtable[] =
 
 TILESIGNALMAP x17_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8431,10 +8432,10 @@ TILESIGNALMAP x17_y11_searchtable[] =
 
 TILESIGNALMAP x17_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8442,10 +8443,10 @@ TILESIGNALMAP x17_y12_searchtable[] =
 
 TILESIGNALMAP x17_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8453,10 +8454,10 @@ TILESIGNALMAP x17_y13_searchtable[] =
 
 TILESIGNALMAP x17_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8464,10 +8465,10 @@ TILESIGNALMAP x17_y14_searchtable[] =
 
 TILESIGNALMAP x17_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8475,10 +8476,10 @@ TILESIGNALMAP x17_y15_searchtable[] =
 
 TILESIGNALMAP x17_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8486,10 +8487,10 @@ TILESIGNALMAP x17_y16_searchtable[] =
 
 TILESIGNALMAP x17_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8497,10 +8498,10 @@ TILESIGNALMAP x17_y17_searchtable[] =
 
 TILESIGNALMAP x17_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8508,10 +8509,10 @@ TILESIGNALMAP x17_y18_searchtable[] =
 
 TILESIGNALMAP x17_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8519,10 +8520,10 @@ TILESIGNALMAP x17_y19_searchtable[] =
 
 TILESIGNALMAP x17_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8530,10 +8531,10 @@ TILESIGNALMAP x17_y20_searchtable[] =
 
 TILESIGNALMAP x17_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8541,10 +8542,10 @@ TILESIGNALMAP x17_y21_searchtable[] =
 
 TILESIGNALMAP x17_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8552,10 +8553,10 @@ TILESIGNALMAP x17_y22_searchtable[] =
 
 TILESIGNALMAP x17_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8563,10 +8564,10 @@ TILESIGNALMAP x17_y23_searchtable[] =
 
 TILESIGNALMAP x17_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8574,10 +8575,10 @@ TILESIGNALMAP x17_y24_searchtable[] =
 
 TILESIGNALMAP x17_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8585,10 +8586,10 @@ TILESIGNALMAP x17_y25_searchtable[] =
 
 TILESIGNALMAP x17_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8596,10 +8597,10 @@ TILESIGNALMAP x17_y26_searchtable[] =
 
 TILESIGNALMAP x17_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8607,10 +8608,10 @@ TILESIGNALMAP x17_y27_searchtable[] =
 
 TILESIGNALMAP x17_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8618,10 +8619,10 @@ TILESIGNALMAP x17_y28_searchtable[] =
 
 TILESIGNALMAP x17_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8629,10 +8630,10 @@ TILESIGNALMAP x17_y29_searchtable[] =
 
 TILESIGNALMAP x17_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8640,10 +8641,10 @@ TILESIGNALMAP x17_y30_searchtable[] =
 
 TILESIGNALMAP x17_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8651,10 +8652,10 @@ TILESIGNALMAP x17_y31_searchtable[] =
 
 TILESIGNALMAP x17_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8662,10 +8663,10 @@ TILESIGNALMAP x17_y32_searchtable[] =
 
 TILESIGNALMAP x17_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8673,10 +8674,10 @@ TILESIGNALMAP x17_y33_searchtable[] =
 
 TILESIGNALMAP x17_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8684,10 +8685,10 @@ TILESIGNALMAP x17_y34_searchtable[] =
 
 TILESIGNALMAP x17_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8695,10 +8696,10 @@ TILESIGNALMAP x17_y35_searchtable[] =
 
 TILESIGNALMAP x17_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8706,8 +8707,8 @@ TILESIGNALMAP x17_y36_searchtable[] =
 
 TILESIGNALMAP x17_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -8715,9 +8716,9 @@ TILESIGNALMAP x17_y37_searchtable[] =
 
 TILESIGNALMAP x18_y0_searchtable[] =
 {
-  { emb32k_b0_0, "emb32k_b0" },
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { emb32k_b0_0, "emb32k_b0", "emb32k_b0" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -8725,10 +8726,10 @@ TILESIGNALMAP x18_y0_searchtable[] =
 
 TILESIGNALMAP x18_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8736,10 +8737,10 @@ TILESIGNALMAP x18_y1_searchtable[] =
 
 TILESIGNALMAP x18_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8747,10 +8748,10 @@ TILESIGNALMAP x18_y2_searchtable[] =
 
 TILESIGNALMAP x18_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8758,10 +8759,10 @@ TILESIGNALMAP x18_y3_searchtable[] =
 
 TILESIGNALMAP x18_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8769,10 +8770,10 @@ TILESIGNALMAP x18_y4_searchtable[] =
 
 TILESIGNALMAP x18_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8780,10 +8781,10 @@ TILESIGNALMAP x18_y5_searchtable[] =
 
 TILESIGNALMAP x18_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8791,10 +8792,10 @@ TILESIGNALMAP x18_y6_searchtable[] =
 
 TILESIGNALMAP x18_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8802,10 +8803,10 @@ TILESIGNALMAP x18_y7_searchtable[] =
 
 TILESIGNALMAP x18_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8813,10 +8814,10 @@ TILESIGNALMAP x18_y8_searchtable[] =
 
 TILESIGNALMAP x18_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8824,10 +8825,10 @@ TILESIGNALMAP x18_y9_searchtable[] =
 
 TILESIGNALMAP x18_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8835,10 +8836,10 @@ TILESIGNALMAP x18_y10_searchtable[] =
 
 TILESIGNALMAP x18_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8846,10 +8847,10 @@ TILESIGNALMAP x18_y11_searchtable[] =
 
 TILESIGNALMAP x18_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8857,10 +8858,10 @@ TILESIGNALMAP x18_y12_searchtable[] =
 
 TILESIGNALMAP x18_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8868,10 +8869,10 @@ TILESIGNALMAP x18_y13_searchtable[] =
 
 TILESIGNALMAP x18_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8879,10 +8880,10 @@ TILESIGNALMAP x18_y14_searchtable[] =
 
 TILESIGNALMAP x18_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8890,10 +8891,10 @@ TILESIGNALMAP x18_y15_searchtable[] =
 
 TILESIGNALMAP x18_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8901,10 +8902,10 @@ TILESIGNALMAP x18_y16_searchtable[] =
 
 TILESIGNALMAP x18_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8912,10 +8913,10 @@ TILESIGNALMAP x18_y17_searchtable[] =
 
 TILESIGNALMAP x18_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8923,10 +8924,10 @@ TILESIGNALMAP x18_y18_searchtable[] =
 
 TILESIGNALMAP x18_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8934,10 +8935,10 @@ TILESIGNALMAP x18_y19_searchtable[] =
 
 TILESIGNALMAP x18_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8945,10 +8946,10 @@ TILESIGNALMAP x18_y20_searchtable[] =
 
 TILESIGNALMAP x18_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8956,10 +8957,10 @@ TILESIGNALMAP x18_y21_searchtable[] =
 
 TILESIGNALMAP x18_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8967,10 +8968,10 @@ TILESIGNALMAP x18_y22_searchtable[] =
 
 TILESIGNALMAP x18_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8978,10 +8979,10 @@ TILESIGNALMAP x18_y23_searchtable[] =
 
 TILESIGNALMAP x18_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -8989,10 +8990,10 @@ TILESIGNALMAP x18_y24_searchtable[] =
 
 TILESIGNALMAP x18_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9000,10 +9001,10 @@ TILESIGNALMAP x18_y25_searchtable[] =
 
 TILESIGNALMAP x18_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9011,10 +9012,10 @@ TILESIGNALMAP x18_y26_searchtable[] =
 
 TILESIGNALMAP x18_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9022,10 +9023,10 @@ TILESIGNALMAP x18_y27_searchtable[] =
 
 TILESIGNALMAP x18_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9033,10 +9034,10 @@ TILESIGNALMAP x18_y28_searchtable[] =
 
 TILESIGNALMAP x18_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9044,10 +9045,10 @@ TILESIGNALMAP x18_y29_searchtable[] =
 
 TILESIGNALMAP x18_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9055,10 +9056,10 @@ TILESIGNALMAP x18_y30_searchtable[] =
 
 TILESIGNALMAP x18_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9066,10 +9067,10 @@ TILESIGNALMAP x18_y31_searchtable[] =
 
 TILESIGNALMAP x18_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9077,10 +9078,10 @@ TILESIGNALMAP x18_y32_searchtable[] =
 
 TILESIGNALMAP x18_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9088,10 +9089,10 @@ TILESIGNALMAP x18_y33_searchtable[] =
 
 TILESIGNALMAP x18_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9099,10 +9100,10 @@ TILESIGNALMAP x18_y34_searchtable[] =
 
 TILESIGNALMAP x18_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9110,10 +9111,10 @@ TILESIGNALMAP x18_y35_searchtable[] =
 
 TILESIGNALMAP x18_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9121,8 +9122,8 @@ TILESIGNALMAP x18_y36_searchtable[] =
 
 TILESIGNALMAP x18_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -9130,9 +9131,9 @@ TILESIGNALMAP x18_y37_searchtable[] =
 
 TILESIGNALMAP x19_y0_searchtable[] =
 {
-  { emb32k_b0_0, "emb32k_b0" },
-  { ioclk_0, "ioclk0" },
-  { ioclk_1, "ioclk1" },
+  { emb32k_b0_0, "emb32k_b0", "emb32k_b0" },
+  { ioclk_0, "ioclk0", "ioclk_bk4" },
+  { ioclk_1, "ioclk1", "ioclk_bk4" },
   { 0, 0 },
 };
 
@@ -9140,10 +9141,10 @@ TILESIGNALMAP x19_y0_searchtable[] =
 
 TILESIGNALMAP x19_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9151,10 +9152,10 @@ TILESIGNALMAP x19_y1_searchtable[] =
 
 TILESIGNALMAP x19_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9162,10 +9163,10 @@ TILESIGNALMAP x19_y2_searchtable[] =
 
 TILESIGNALMAP x19_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9173,10 +9174,10 @@ TILESIGNALMAP x19_y3_searchtable[] =
 
 TILESIGNALMAP x19_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9184,10 +9185,10 @@ TILESIGNALMAP x19_y4_searchtable[] =
 
 TILESIGNALMAP x19_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9195,10 +9196,10 @@ TILESIGNALMAP x19_y5_searchtable[] =
 
 TILESIGNALMAP x19_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9206,10 +9207,10 @@ TILESIGNALMAP x19_y6_searchtable[] =
 
 TILESIGNALMAP x19_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9217,10 +9218,10 @@ TILESIGNALMAP x19_y7_searchtable[] =
 
 TILESIGNALMAP x19_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9228,10 +9229,10 @@ TILESIGNALMAP x19_y8_searchtable[] =
 
 TILESIGNALMAP x19_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9239,10 +9240,10 @@ TILESIGNALMAP x19_y9_searchtable[] =
 
 TILESIGNALMAP x19_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9250,10 +9251,10 @@ TILESIGNALMAP x19_y10_searchtable[] =
 
 TILESIGNALMAP x19_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9261,10 +9262,10 @@ TILESIGNALMAP x19_y11_searchtable[] =
 
 TILESIGNALMAP x19_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9272,10 +9273,10 @@ TILESIGNALMAP x19_y12_searchtable[] =
 
 TILESIGNALMAP x19_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9283,10 +9284,10 @@ TILESIGNALMAP x19_y13_searchtable[] =
 
 TILESIGNALMAP x19_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9294,10 +9295,10 @@ TILESIGNALMAP x19_y14_searchtable[] =
 
 TILESIGNALMAP x19_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9305,10 +9306,10 @@ TILESIGNALMAP x19_y15_searchtable[] =
 
 TILESIGNALMAP x19_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9316,10 +9317,10 @@ TILESIGNALMAP x19_y16_searchtable[] =
 
 TILESIGNALMAP x19_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9327,10 +9328,10 @@ TILESIGNALMAP x19_y17_searchtable[] =
 
 TILESIGNALMAP x19_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9338,10 +9339,10 @@ TILESIGNALMAP x19_y18_searchtable[] =
 
 TILESIGNALMAP x19_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9349,10 +9350,10 @@ TILESIGNALMAP x19_y19_searchtable[] =
 
 TILESIGNALMAP x19_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9360,10 +9361,10 @@ TILESIGNALMAP x19_y20_searchtable[] =
 
 TILESIGNALMAP x19_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9371,10 +9372,10 @@ TILESIGNALMAP x19_y21_searchtable[] =
 
 TILESIGNALMAP x19_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9382,10 +9383,10 @@ TILESIGNALMAP x19_y22_searchtable[] =
 
 TILESIGNALMAP x19_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9393,10 +9394,10 @@ TILESIGNALMAP x19_y23_searchtable[] =
 
 TILESIGNALMAP x19_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9404,10 +9405,10 @@ TILESIGNALMAP x19_y24_searchtable[] =
 
 TILESIGNALMAP x19_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9415,10 +9416,10 @@ TILESIGNALMAP x19_y25_searchtable[] =
 
 TILESIGNALMAP x19_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9426,10 +9427,10 @@ TILESIGNALMAP x19_y26_searchtable[] =
 
 TILESIGNALMAP x19_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9437,10 +9438,10 @@ TILESIGNALMAP x19_y27_searchtable[] =
 
 TILESIGNALMAP x19_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9448,10 +9449,10 @@ TILESIGNALMAP x19_y28_searchtable[] =
 
 TILESIGNALMAP x19_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9459,10 +9460,10 @@ TILESIGNALMAP x19_y29_searchtable[] =
 
 TILESIGNALMAP x19_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9470,10 +9471,10 @@ TILESIGNALMAP x19_y30_searchtable[] =
 
 TILESIGNALMAP x19_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9481,10 +9482,10 @@ TILESIGNALMAP x19_y31_searchtable[] =
 
 TILESIGNALMAP x19_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9492,10 +9493,10 @@ TILESIGNALMAP x19_y32_searchtable[] =
 
 TILESIGNALMAP x19_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9503,10 +9504,10 @@ TILESIGNALMAP x19_y33_searchtable[] =
 
 TILESIGNALMAP x19_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9514,10 +9515,10 @@ TILESIGNALMAP x19_y34_searchtable[] =
 
 TILESIGNALMAP x19_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9525,10 +9526,10 @@ TILESIGNALMAP x19_y35_searchtable[] =
 
 TILESIGNALMAP x19_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9536,8 +9537,8 @@ TILESIGNALMAP x19_y36_searchtable[] =
 
 TILESIGNALMAP x19_y37_searchtable[] =
 {
-  { ioclk_0, "ioclk0" },
-  { ioclk_1, "ioclk1" },
+  { ioclk_0, "ioclk0", "ioclk_bk7" },
+  { ioclk_1, "ioclk1", "ioclk_bk7" },
   { 0, 0 },
 };
 
@@ -9545,8 +9546,8 @@ TILESIGNALMAP x19_y37_searchtable[] =
 
 TILESIGNALMAP x20_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -9554,10 +9555,10 @@ TILESIGNALMAP x20_y0_searchtable[] =
 
 TILESIGNALMAP x20_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9565,10 +9566,10 @@ TILESIGNALMAP x20_y1_searchtable[] =
 
 TILESIGNALMAP x20_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9576,10 +9577,10 @@ TILESIGNALMAP x20_y2_searchtable[] =
 
 TILESIGNALMAP x20_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9587,10 +9588,10 @@ TILESIGNALMAP x20_y3_searchtable[] =
 
 TILESIGNALMAP x20_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9598,10 +9599,10 @@ TILESIGNALMAP x20_y4_searchtable[] =
 
 TILESIGNALMAP x20_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9609,10 +9610,10 @@ TILESIGNALMAP x20_y5_searchtable[] =
 
 TILESIGNALMAP x20_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9620,10 +9621,10 @@ TILESIGNALMAP x20_y6_searchtable[] =
 
 TILESIGNALMAP x20_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9631,10 +9632,10 @@ TILESIGNALMAP x20_y7_searchtable[] =
 
 TILESIGNALMAP x20_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9642,10 +9643,10 @@ TILESIGNALMAP x20_y8_searchtable[] =
 
 TILESIGNALMAP x20_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9653,10 +9654,10 @@ TILESIGNALMAP x20_y9_searchtable[] =
 
 TILESIGNALMAP x20_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9664,10 +9665,10 @@ TILESIGNALMAP x20_y10_searchtable[] =
 
 TILESIGNALMAP x20_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9675,10 +9676,10 @@ TILESIGNALMAP x20_y11_searchtable[] =
 
 TILESIGNALMAP x20_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9686,10 +9687,10 @@ TILESIGNALMAP x20_y12_searchtable[] =
 
 TILESIGNALMAP x20_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9697,10 +9698,10 @@ TILESIGNALMAP x20_y13_searchtable[] =
 
 TILESIGNALMAP x20_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9708,10 +9709,10 @@ TILESIGNALMAP x20_y14_searchtable[] =
 
 TILESIGNALMAP x20_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9719,10 +9720,10 @@ TILESIGNALMAP x20_y15_searchtable[] =
 
 TILESIGNALMAP x20_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9730,10 +9731,10 @@ TILESIGNALMAP x20_y16_searchtable[] =
 
 TILESIGNALMAP x20_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9741,10 +9742,10 @@ TILESIGNALMAP x20_y17_searchtable[] =
 
 TILESIGNALMAP x20_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9752,10 +9753,10 @@ TILESIGNALMAP x20_y18_searchtable[] =
 
 TILESIGNALMAP x20_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9763,10 +9764,10 @@ TILESIGNALMAP x20_y19_searchtable[] =
 
 TILESIGNALMAP x20_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9774,10 +9775,10 @@ TILESIGNALMAP x20_y20_searchtable[] =
 
 TILESIGNALMAP x20_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9785,10 +9786,10 @@ TILESIGNALMAP x20_y21_searchtable[] =
 
 TILESIGNALMAP x20_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9796,10 +9797,10 @@ TILESIGNALMAP x20_y22_searchtable[] =
 
 TILESIGNALMAP x20_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9807,10 +9808,10 @@ TILESIGNALMAP x20_y23_searchtable[] =
 
 TILESIGNALMAP x20_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9818,10 +9819,10 @@ TILESIGNALMAP x20_y24_searchtable[] =
 
 TILESIGNALMAP x20_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9829,10 +9830,10 @@ TILESIGNALMAP x20_y25_searchtable[] =
 
 TILESIGNALMAP x20_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9840,10 +9841,10 @@ TILESIGNALMAP x20_y26_searchtable[] =
 
 TILESIGNALMAP x20_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9851,10 +9852,10 @@ TILESIGNALMAP x20_y27_searchtable[] =
 
 TILESIGNALMAP x20_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9862,10 +9863,10 @@ TILESIGNALMAP x20_y28_searchtable[] =
 
 TILESIGNALMAP x20_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9873,10 +9874,10 @@ TILESIGNALMAP x20_y29_searchtable[] =
 
 TILESIGNALMAP x20_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9884,10 +9885,10 @@ TILESIGNALMAP x20_y30_searchtable[] =
 
 TILESIGNALMAP x20_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9895,10 +9896,10 @@ TILESIGNALMAP x20_y31_searchtable[] =
 
 TILESIGNALMAP x20_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9906,10 +9907,10 @@ TILESIGNALMAP x20_y32_searchtable[] =
 
 TILESIGNALMAP x20_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9917,10 +9918,10 @@ TILESIGNALMAP x20_y33_searchtable[] =
 
 TILESIGNALMAP x20_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9928,10 +9929,10 @@ TILESIGNALMAP x20_y34_searchtable[] =
 
 TILESIGNALMAP x20_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9939,10 +9940,10 @@ TILESIGNALMAP x20_y35_searchtable[] =
 
 TILESIGNALMAP x20_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9950,8 +9951,8 @@ TILESIGNALMAP x20_y36_searchtable[] =
 
 TILESIGNALMAP x20_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -9959,8 +9960,8 @@ TILESIGNALMAP x20_y37_searchtable[] =
 
 TILESIGNALMAP x21_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -9968,10 +9969,10 @@ TILESIGNALMAP x21_y0_searchtable[] =
 
 TILESIGNALMAP x21_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9979,10 +9980,10 @@ TILESIGNALMAP x21_y1_searchtable[] =
 
 TILESIGNALMAP x21_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -9990,10 +9991,10 @@ TILESIGNALMAP x21_y2_searchtable[] =
 
 TILESIGNALMAP x21_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10001,10 +10002,10 @@ TILESIGNALMAP x21_y3_searchtable[] =
 
 TILESIGNALMAP x21_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10012,10 +10013,10 @@ TILESIGNALMAP x21_y4_searchtable[] =
 
 TILESIGNALMAP x21_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10023,10 +10024,10 @@ TILESIGNALMAP x21_y5_searchtable[] =
 
 TILESIGNALMAP x21_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10034,10 +10035,10 @@ TILESIGNALMAP x21_y6_searchtable[] =
 
 TILESIGNALMAP x21_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10045,10 +10046,10 @@ TILESIGNALMAP x21_y7_searchtable[] =
 
 TILESIGNALMAP x21_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10056,10 +10057,10 @@ TILESIGNALMAP x21_y8_searchtable[] =
 
 TILESIGNALMAP x21_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10067,10 +10068,10 @@ TILESIGNALMAP x21_y9_searchtable[] =
 
 TILESIGNALMAP x21_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10078,10 +10079,10 @@ TILESIGNALMAP x21_y10_searchtable[] =
 
 TILESIGNALMAP x21_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10089,10 +10090,10 @@ TILESIGNALMAP x21_y11_searchtable[] =
 
 TILESIGNALMAP x21_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10100,10 +10101,10 @@ TILESIGNALMAP x21_y12_searchtable[] =
 
 TILESIGNALMAP x21_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10111,10 +10112,10 @@ TILESIGNALMAP x21_y13_searchtable[] =
 
 TILESIGNALMAP x21_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10122,10 +10123,10 @@ TILESIGNALMAP x21_y14_searchtable[] =
 
 TILESIGNALMAP x21_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10133,10 +10134,10 @@ TILESIGNALMAP x21_y15_searchtable[] =
 
 TILESIGNALMAP x21_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10144,10 +10145,10 @@ TILESIGNALMAP x21_y16_searchtable[] =
 
 TILESIGNALMAP x21_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10155,10 +10156,10 @@ TILESIGNALMAP x21_y17_searchtable[] =
 
 TILESIGNALMAP x21_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10166,10 +10167,10 @@ TILESIGNALMAP x21_y18_searchtable[] =
 
 TILESIGNALMAP x21_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10177,10 +10178,10 @@ TILESIGNALMAP x21_y19_searchtable[] =
 
 TILESIGNALMAP x21_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10188,10 +10189,10 @@ TILESIGNALMAP x21_y20_searchtable[] =
 
 TILESIGNALMAP x21_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10199,10 +10200,10 @@ TILESIGNALMAP x21_y21_searchtable[] =
 
 TILESIGNALMAP x21_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10210,10 +10211,10 @@ TILESIGNALMAP x21_y22_searchtable[] =
 
 TILESIGNALMAP x21_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10221,10 +10222,10 @@ TILESIGNALMAP x21_y23_searchtable[] =
 
 TILESIGNALMAP x21_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10232,10 +10233,10 @@ TILESIGNALMAP x21_y24_searchtable[] =
 
 TILESIGNALMAP x21_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10243,10 +10244,10 @@ TILESIGNALMAP x21_y25_searchtable[] =
 
 TILESIGNALMAP x21_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10254,10 +10255,10 @@ TILESIGNALMAP x21_y26_searchtable[] =
 
 TILESIGNALMAP x21_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10265,10 +10266,10 @@ TILESIGNALMAP x21_y27_searchtable[] =
 
 TILESIGNALMAP x21_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10276,10 +10277,10 @@ TILESIGNALMAP x21_y28_searchtable[] =
 
 TILESIGNALMAP x21_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10287,10 +10288,10 @@ TILESIGNALMAP x21_y29_searchtable[] =
 
 TILESIGNALMAP x21_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10298,10 +10299,10 @@ TILESIGNALMAP x21_y30_searchtable[] =
 
 TILESIGNALMAP x21_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10309,10 +10310,10 @@ TILESIGNALMAP x21_y31_searchtable[] =
 
 TILESIGNALMAP x21_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10320,10 +10321,10 @@ TILESIGNALMAP x21_y32_searchtable[] =
 
 TILESIGNALMAP x21_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10331,10 +10332,10 @@ TILESIGNALMAP x21_y33_searchtable[] =
 
 TILESIGNALMAP x21_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10342,10 +10343,10 @@ TILESIGNALMAP x21_y34_searchtable[] =
 
 TILESIGNALMAP x21_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10353,10 +10354,10 @@ TILESIGNALMAP x21_y35_searchtable[] =
 
 TILESIGNALMAP x21_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10364,8 +10365,8 @@ TILESIGNALMAP x21_y36_searchtable[] =
 
 TILESIGNALMAP x21_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -10373,8 +10374,8 @@ TILESIGNALMAP x21_y37_searchtable[] =
 
 TILESIGNALMAP x22_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -10382,10 +10383,10 @@ TILESIGNALMAP x22_y0_searchtable[] =
 
 TILESIGNALMAP x22_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10393,10 +10394,10 @@ TILESIGNALMAP x22_y1_searchtable[] =
 
 TILESIGNALMAP x22_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10404,10 +10405,10 @@ TILESIGNALMAP x22_y2_searchtable[] =
 
 TILESIGNALMAP x22_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10415,10 +10416,10 @@ TILESIGNALMAP x22_y3_searchtable[] =
 
 TILESIGNALMAP x22_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10426,10 +10427,10 @@ TILESIGNALMAP x22_y4_searchtable[] =
 
 TILESIGNALMAP x22_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10437,10 +10438,10 @@ TILESIGNALMAP x22_y5_searchtable[] =
 
 TILESIGNALMAP x22_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10448,10 +10449,10 @@ TILESIGNALMAP x22_y6_searchtable[] =
 
 TILESIGNALMAP x22_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10459,10 +10460,10 @@ TILESIGNALMAP x22_y7_searchtable[] =
 
 TILESIGNALMAP x22_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10470,10 +10471,10 @@ TILESIGNALMAP x22_y8_searchtable[] =
 
 TILESIGNALMAP x22_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10481,10 +10482,10 @@ TILESIGNALMAP x22_y9_searchtable[] =
 
 TILESIGNALMAP x22_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10492,10 +10493,10 @@ TILESIGNALMAP x22_y10_searchtable[] =
 
 TILESIGNALMAP x22_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10503,10 +10504,10 @@ TILESIGNALMAP x22_y11_searchtable[] =
 
 TILESIGNALMAP x22_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10514,10 +10515,10 @@ TILESIGNALMAP x22_y12_searchtable[] =
 
 TILESIGNALMAP x22_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10525,10 +10526,10 @@ TILESIGNALMAP x22_y13_searchtable[] =
 
 TILESIGNALMAP x22_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10536,10 +10537,10 @@ TILESIGNALMAP x22_y14_searchtable[] =
 
 TILESIGNALMAP x22_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10547,10 +10548,10 @@ TILESIGNALMAP x22_y15_searchtable[] =
 
 TILESIGNALMAP x22_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10558,10 +10559,10 @@ TILESIGNALMAP x22_y16_searchtable[] =
 
 TILESIGNALMAP x22_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10569,10 +10570,10 @@ TILESIGNALMAP x22_y17_searchtable[] =
 
 TILESIGNALMAP x22_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10580,10 +10581,10 @@ TILESIGNALMAP x22_y18_searchtable[] =
 
 TILESIGNALMAP x22_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10591,10 +10592,10 @@ TILESIGNALMAP x22_y19_searchtable[] =
 
 TILESIGNALMAP x22_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10602,10 +10603,10 @@ TILESIGNALMAP x22_y20_searchtable[] =
 
 TILESIGNALMAP x22_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10613,10 +10614,10 @@ TILESIGNALMAP x22_y21_searchtable[] =
 
 TILESIGNALMAP x22_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10624,10 +10625,10 @@ TILESIGNALMAP x22_y22_searchtable[] =
 
 TILESIGNALMAP x22_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10635,10 +10636,10 @@ TILESIGNALMAP x22_y23_searchtable[] =
 
 TILESIGNALMAP x22_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10646,10 +10647,10 @@ TILESIGNALMAP x22_y24_searchtable[] =
 
 TILESIGNALMAP x22_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10657,10 +10658,10 @@ TILESIGNALMAP x22_y25_searchtable[] =
 
 TILESIGNALMAP x22_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10668,10 +10669,10 @@ TILESIGNALMAP x22_y26_searchtable[] =
 
 TILESIGNALMAP x22_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10679,10 +10680,10 @@ TILESIGNALMAP x22_y27_searchtable[] =
 
 TILESIGNALMAP x22_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10690,10 +10691,10 @@ TILESIGNALMAP x22_y28_searchtable[] =
 
 TILESIGNALMAP x22_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10701,10 +10702,10 @@ TILESIGNALMAP x22_y29_searchtable[] =
 
 TILESIGNALMAP x22_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10712,10 +10713,10 @@ TILESIGNALMAP x22_y30_searchtable[] =
 
 TILESIGNALMAP x22_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10723,10 +10724,10 @@ TILESIGNALMAP x22_y31_searchtable[] =
 
 TILESIGNALMAP x22_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10734,10 +10735,10 @@ TILESIGNALMAP x22_y32_searchtable[] =
 
 TILESIGNALMAP x22_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10745,10 +10746,10 @@ TILESIGNALMAP x22_y33_searchtable[] =
 
 TILESIGNALMAP x22_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10756,10 +10757,10 @@ TILESIGNALMAP x22_y34_searchtable[] =
 
 TILESIGNALMAP x22_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10767,10 +10768,10 @@ TILESIGNALMAP x22_y35_searchtable[] =
 
 TILESIGNALMAP x22_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10778,8 +10779,8 @@ TILESIGNALMAP x22_y36_searchtable[] =
 
 TILESIGNALMAP x22_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -10787,8 +10788,8 @@ TILESIGNALMAP x22_y37_searchtable[] =
 
 TILESIGNALMAP x23_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -10796,10 +10797,10 @@ TILESIGNALMAP x23_y0_searchtable[] =
 
 TILESIGNALMAP x23_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10807,10 +10808,10 @@ TILESIGNALMAP x23_y1_searchtable[] =
 
 TILESIGNALMAP x23_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10818,10 +10819,10 @@ TILESIGNALMAP x23_y2_searchtable[] =
 
 TILESIGNALMAP x23_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10829,10 +10830,10 @@ TILESIGNALMAP x23_y3_searchtable[] =
 
 TILESIGNALMAP x23_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10840,10 +10841,10 @@ TILESIGNALMAP x23_y4_searchtable[] =
 
 TILESIGNALMAP x23_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10851,10 +10852,10 @@ TILESIGNALMAP x23_y5_searchtable[] =
 
 TILESIGNALMAP x23_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10862,10 +10863,10 @@ TILESIGNALMAP x23_y6_searchtable[] =
 
 TILESIGNALMAP x23_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10873,10 +10874,10 @@ TILESIGNALMAP x23_y7_searchtable[] =
 
 TILESIGNALMAP x23_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10884,10 +10885,10 @@ TILESIGNALMAP x23_y8_searchtable[] =
 
 TILESIGNALMAP x23_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10895,10 +10896,10 @@ TILESIGNALMAP x23_y9_searchtable[] =
 
 TILESIGNALMAP x23_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10906,10 +10907,10 @@ TILESIGNALMAP x23_y10_searchtable[] =
 
 TILESIGNALMAP x23_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10917,10 +10918,10 @@ TILESIGNALMAP x23_y11_searchtable[] =
 
 TILESIGNALMAP x23_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10928,10 +10929,10 @@ TILESIGNALMAP x23_y12_searchtable[] =
 
 TILESIGNALMAP x23_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10939,10 +10940,10 @@ TILESIGNALMAP x23_y13_searchtable[] =
 
 TILESIGNALMAP x23_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10950,10 +10951,10 @@ TILESIGNALMAP x23_y14_searchtable[] =
 
 TILESIGNALMAP x23_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10961,10 +10962,10 @@ TILESIGNALMAP x23_y15_searchtable[] =
 
 TILESIGNALMAP x23_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10972,10 +10973,10 @@ TILESIGNALMAP x23_y16_searchtable[] =
 
 TILESIGNALMAP x23_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10983,10 +10984,10 @@ TILESIGNALMAP x23_y17_searchtable[] =
 
 TILESIGNALMAP x23_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -10994,10 +10995,10 @@ TILESIGNALMAP x23_y18_searchtable[] =
 
 TILESIGNALMAP x23_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11005,10 +11006,10 @@ TILESIGNALMAP x23_y19_searchtable[] =
 
 TILESIGNALMAP x23_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11016,10 +11017,10 @@ TILESIGNALMAP x23_y20_searchtable[] =
 
 TILESIGNALMAP x23_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11027,10 +11028,10 @@ TILESIGNALMAP x23_y21_searchtable[] =
 
 TILESIGNALMAP x23_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11038,10 +11039,10 @@ TILESIGNALMAP x23_y22_searchtable[] =
 
 TILESIGNALMAP x23_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11049,10 +11050,10 @@ TILESIGNALMAP x23_y23_searchtable[] =
 
 TILESIGNALMAP x23_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11060,10 +11061,10 @@ TILESIGNALMAP x23_y24_searchtable[] =
 
 TILESIGNALMAP x23_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11071,10 +11072,10 @@ TILESIGNALMAP x23_y25_searchtable[] =
 
 TILESIGNALMAP x23_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11082,10 +11083,10 @@ TILESIGNALMAP x23_y26_searchtable[] =
 
 TILESIGNALMAP x23_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11093,10 +11094,10 @@ TILESIGNALMAP x23_y27_searchtable[] =
 
 TILESIGNALMAP x23_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11104,10 +11105,10 @@ TILESIGNALMAP x23_y28_searchtable[] =
 
 TILESIGNALMAP x23_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11115,10 +11116,10 @@ TILESIGNALMAP x23_y29_searchtable[] =
 
 TILESIGNALMAP x23_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11126,10 +11127,10 @@ TILESIGNALMAP x23_y30_searchtable[] =
 
 TILESIGNALMAP x23_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11137,10 +11138,10 @@ TILESIGNALMAP x23_y31_searchtable[] =
 
 TILESIGNALMAP x23_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11148,10 +11149,10 @@ TILESIGNALMAP x23_y32_searchtable[] =
 
 TILESIGNALMAP x23_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11159,10 +11160,10 @@ TILESIGNALMAP x23_y33_searchtable[] =
 
 TILESIGNALMAP x23_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11170,10 +11171,10 @@ TILESIGNALMAP x23_y34_searchtable[] =
 
 TILESIGNALMAP x23_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11181,10 +11182,10 @@ TILESIGNALMAP x23_y35_searchtable[] =
 
 TILESIGNALMAP x23_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11192,8 +11193,8 @@ TILESIGNALMAP x23_y36_searchtable[] =
 
 TILESIGNALMAP x23_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -11201,8 +11202,8 @@ TILESIGNALMAP x23_y37_searchtable[] =
 
 TILESIGNALMAP x24_y0_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11210,8 +11211,8 @@ TILESIGNALMAP x24_y0_searchtable[] =
 
 TILESIGNALMAP x24_y1_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11219,10 +11220,10 @@ TILESIGNALMAP x24_y1_searchtable[] =
 
 TILESIGNALMAP x24_y2_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11230,8 +11231,8 @@ TILESIGNALMAP x24_y2_searchtable[] =
 
 TILESIGNALMAP x24_y3_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11239,10 +11240,10 @@ TILESIGNALMAP x24_y3_searchtable[] =
 
 TILESIGNALMAP x24_y4_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11250,8 +11251,8 @@ TILESIGNALMAP x24_y4_searchtable[] =
 
 TILESIGNALMAP x24_y5_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11259,8 +11260,8 @@ TILESIGNALMAP x24_y5_searchtable[] =
 
 TILESIGNALMAP x24_y6_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11268,8 +11269,8 @@ TILESIGNALMAP x24_y6_searchtable[] =
 
 TILESIGNALMAP x24_y7_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11277,8 +11278,8 @@ TILESIGNALMAP x24_y7_searchtable[] =
 
 TILESIGNALMAP x24_y8_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11286,8 +11287,8 @@ TILESIGNALMAP x24_y8_searchtable[] =
 
 TILESIGNALMAP x24_y9_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11295,8 +11296,8 @@ TILESIGNALMAP x24_y9_searchtable[] =
 
 TILESIGNALMAP x24_y10_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11304,10 +11305,10 @@ TILESIGNALMAP x24_y10_searchtable[] =
 
 TILESIGNALMAP x24_y11_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11315,8 +11316,8 @@ TILESIGNALMAP x24_y11_searchtable[] =
 
 TILESIGNALMAP x24_y12_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11324,10 +11325,10 @@ TILESIGNALMAP x24_y12_searchtable[] =
 
 TILESIGNALMAP x24_y13_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11335,8 +11336,8 @@ TILESIGNALMAP x24_y13_searchtable[] =
 
 TILESIGNALMAP x24_y14_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11344,8 +11345,8 @@ TILESIGNALMAP x24_y14_searchtable[] =
 
 TILESIGNALMAP x24_y15_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11353,8 +11354,8 @@ TILESIGNALMAP x24_y15_searchtable[] =
 
 TILESIGNALMAP x24_y16_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11362,9 +11363,9 @@ TILESIGNALMAP x24_y16_searchtable[] =
 
 TILESIGNALMAP x24_y17_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
-  { dsp_0, "dsp" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
+  { dsp_0, "dsp", "mult" },
   { 0, 0 },
 };
 
@@ -11372,8 +11373,8 @@ TILESIGNALMAP x24_y17_searchtable[] =
 
 TILESIGNALMAP x24_y18_searchtable[] =
 {
-  { gclk_ctmux_0, "gclk_ctmux" },
-  { dsp_0, "dsp" },
+  { gclk_ctmux_0, "gclk_ctmux", "gclk_ctmux_l" },
+  { dsp_0, "dsp", "mult" },
   { 0, 0 },
 };
 
@@ -11381,8 +11382,8 @@ TILESIGNALMAP x24_y18_searchtable[] =
 
 TILESIGNALMAP x24_y19_searchtable[] =
 {
-  { dsp_0, "dsp" },
-  { gclk_ctmux_0, "gclk_ctmux" },
+  { dsp_0, "dsp", "mult" },
+  { gclk_ctmux_0, "gclk_ctmux", "gclk_ctmux_u" },
   { 0, 0 },
 };
 
@@ -11390,8 +11391,8 @@ TILESIGNALMAP x24_y19_searchtable[] =
 
 TILESIGNALMAP x24_y20_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11399,8 +11400,8 @@ TILESIGNALMAP x24_y20_searchtable[] =
 
 TILESIGNALMAP x24_y21_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11408,10 +11409,10 @@ TILESIGNALMAP x24_y21_searchtable[] =
 
 TILESIGNALMAP x24_y22_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11419,8 +11420,8 @@ TILESIGNALMAP x24_y22_searchtable[] =
 
 TILESIGNALMAP x24_y23_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11428,10 +11429,10 @@ TILESIGNALMAP x24_y23_searchtable[] =
 
 TILESIGNALMAP x24_y24_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11439,8 +11440,8 @@ TILESIGNALMAP x24_y24_searchtable[] =
 
 TILESIGNALMAP x24_y25_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11448,8 +11449,8 @@ TILESIGNALMAP x24_y25_searchtable[] =
 
 TILESIGNALMAP x24_y26_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11457,8 +11458,8 @@ TILESIGNALMAP x24_y26_searchtable[] =
 
 TILESIGNALMAP x24_y27_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11466,8 +11467,8 @@ TILESIGNALMAP x24_y27_searchtable[] =
 
 TILESIGNALMAP x24_y28_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11475,8 +11476,8 @@ TILESIGNALMAP x24_y28_searchtable[] =
 
 TILESIGNALMAP x24_y29_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11484,8 +11485,8 @@ TILESIGNALMAP x24_y29_searchtable[] =
 
 TILESIGNALMAP x24_y30_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { fifo_0, "fifo0" },
+  { emb_0, "emb0", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11493,10 +11494,10 @@ TILESIGNALMAP x24_y30_searchtable[] =
 
 TILESIGNALMAP x24_y31_searchtable[] =
 {
-  { emb_0, "emb0" },
-  { emb_1, "emb1" },
-  { fifo_0, "fifo0" },
-  { fifo_1, "fifo1" },
+  { emb_0, "emb0", "emb_slice" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_0, "fifo0", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11504,8 +11505,8 @@ TILESIGNALMAP x24_y31_searchtable[] =
 
 TILESIGNALMAP x24_y32_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { fifo_1, "fifo1" },
+  { emb_1, "emb1", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11513,10 +11514,10 @@ TILESIGNALMAP x24_y32_searchtable[] =
 
 TILESIGNALMAP x24_y33_searchtable[] =
 {
-  { emb_1, "emb1" },
-  { emb_2, "emb2" },
-  { fifo_1, "fifo1" },
-  { fifo_2, "fifo2" },
+  { emb_1, "emb1", "emb_slice" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_1, "fifo1", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11524,8 +11525,8 @@ TILESIGNALMAP x24_y33_searchtable[] =
 
 TILESIGNALMAP x24_y34_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11533,8 +11534,8 @@ TILESIGNALMAP x24_y34_searchtable[] =
 
 TILESIGNALMAP x24_y35_searchtable[] =
 {
-  { emb_2, "emb2" },
-  { fifo_2, "fifo2" },
+  { emb_2, "emb2", "emb_slice" },
+  { fifo_2, "fifo2", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11542,8 +11543,8 @@ TILESIGNALMAP x24_y35_searchtable[] =
 
 TILESIGNALMAP x24_y36_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11551,8 +11552,8 @@ TILESIGNALMAP x24_y36_searchtable[] =
 
 TILESIGNALMAP x24_y37_searchtable[] =
 {
-  { emb_3, "emb3" },
-  { fifo_3, "fifo3" },
+  { emb_3, "emb3", "emb_slice" },
+  { fifo_3, "fifo3", "emb_slice" },
   { 0, 0 },
 };
 
@@ -11560,9 +11561,9 @@ TILESIGNALMAP x24_y37_searchtable[] =
 
 TILESIGNALMAP x25_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
-  { ios_bankref_tb_0, "ios_bankref_tb" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
+  { ios_bankref_tb_0, "ios_bankref_tb", "ios_bankref_br" },
   { 0, 0 },
 };
 
@@ -11570,10 +11571,10 @@ TILESIGNALMAP x25_y0_searchtable[] =
 
 TILESIGNALMAP x25_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11581,10 +11582,10 @@ TILESIGNALMAP x25_y1_searchtable[] =
 
 TILESIGNALMAP x25_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11592,10 +11593,10 @@ TILESIGNALMAP x25_y2_searchtable[] =
 
 TILESIGNALMAP x25_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11603,10 +11604,10 @@ TILESIGNALMAP x25_y3_searchtable[] =
 
 TILESIGNALMAP x25_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11614,10 +11615,10 @@ TILESIGNALMAP x25_y4_searchtable[] =
 
 TILESIGNALMAP x25_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11625,10 +11626,10 @@ TILESIGNALMAP x25_y5_searchtable[] =
 
 TILESIGNALMAP x25_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11636,10 +11637,10 @@ TILESIGNALMAP x25_y6_searchtable[] =
 
 TILESIGNALMAP x25_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11647,10 +11648,10 @@ TILESIGNALMAP x25_y7_searchtable[] =
 
 TILESIGNALMAP x25_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11658,10 +11659,10 @@ TILESIGNALMAP x25_y8_searchtable[] =
 
 TILESIGNALMAP x25_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11669,10 +11670,10 @@ TILESIGNALMAP x25_y9_searchtable[] =
 
 TILESIGNALMAP x25_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11680,10 +11681,10 @@ TILESIGNALMAP x25_y10_searchtable[] =
 
 TILESIGNALMAP x25_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11691,10 +11692,10 @@ TILESIGNALMAP x25_y11_searchtable[] =
 
 TILESIGNALMAP x25_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11702,10 +11703,10 @@ TILESIGNALMAP x25_y12_searchtable[] =
 
 TILESIGNALMAP x25_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11713,10 +11714,10 @@ TILESIGNALMAP x25_y13_searchtable[] =
 
 TILESIGNALMAP x25_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11724,10 +11725,10 @@ TILESIGNALMAP x25_y14_searchtable[] =
 
 TILESIGNALMAP x25_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11735,10 +11736,10 @@ TILESIGNALMAP x25_y15_searchtable[] =
 
 TILESIGNALMAP x25_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11746,10 +11747,10 @@ TILESIGNALMAP x25_y16_searchtable[] =
 
 TILESIGNALMAP x25_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11757,10 +11758,10 @@ TILESIGNALMAP x25_y17_searchtable[] =
 
 TILESIGNALMAP x25_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11768,10 +11769,10 @@ TILESIGNALMAP x25_y18_searchtable[] =
 
 TILESIGNALMAP x25_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11779,10 +11780,10 @@ TILESIGNALMAP x25_y19_searchtable[] =
 
 TILESIGNALMAP x25_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11790,10 +11791,10 @@ TILESIGNALMAP x25_y20_searchtable[] =
 
 TILESIGNALMAP x25_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11801,10 +11802,10 @@ TILESIGNALMAP x25_y21_searchtable[] =
 
 TILESIGNALMAP x25_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11812,10 +11813,10 @@ TILESIGNALMAP x25_y22_searchtable[] =
 
 TILESIGNALMAP x25_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11823,10 +11824,10 @@ TILESIGNALMAP x25_y23_searchtable[] =
 
 TILESIGNALMAP x25_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11834,10 +11835,10 @@ TILESIGNALMAP x25_y24_searchtable[] =
 
 TILESIGNALMAP x25_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11845,10 +11846,10 @@ TILESIGNALMAP x25_y25_searchtable[] =
 
 TILESIGNALMAP x25_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11856,10 +11857,10 @@ TILESIGNALMAP x25_y26_searchtable[] =
 
 TILESIGNALMAP x25_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11867,10 +11868,10 @@ TILESIGNALMAP x25_y27_searchtable[] =
 
 TILESIGNALMAP x25_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11878,10 +11879,10 @@ TILESIGNALMAP x25_y28_searchtable[] =
 
 TILESIGNALMAP x25_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11889,10 +11890,10 @@ TILESIGNALMAP x25_y29_searchtable[] =
 
 TILESIGNALMAP x25_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11900,10 +11901,10 @@ TILESIGNALMAP x25_y30_searchtable[] =
 
 TILESIGNALMAP x25_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11911,10 +11912,10 @@ TILESIGNALMAP x25_y31_searchtable[] =
 
 TILESIGNALMAP x25_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11922,10 +11923,10 @@ TILESIGNALMAP x25_y32_searchtable[] =
 
 TILESIGNALMAP x25_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11933,10 +11934,10 @@ TILESIGNALMAP x25_y33_searchtable[] =
 
 TILESIGNALMAP x25_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11944,10 +11945,10 @@ TILESIGNALMAP x25_y34_searchtable[] =
 
 TILESIGNALMAP x25_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11955,10 +11956,10 @@ TILESIGNALMAP x25_y35_searchtable[] =
 
 TILESIGNALMAP x25_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11966,9 +11967,9 @@ TILESIGNALMAP x25_y36_searchtable[] =
 
 TILESIGNALMAP x25_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
-  { ios_bankref_tb_0, "ios_bankref_tb" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
+  { ios_bankref_tb_0, "ios_bankref_tb", "ios_bankref_tr" },
   { 0, 0 },
 };
 
@@ -11976,8 +11977,8 @@ TILESIGNALMAP x25_y37_searchtable[] =
 
 TILESIGNALMAP x26_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -11985,10 +11986,10 @@ TILESIGNALMAP x26_y0_searchtable[] =
 
 TILESIGNALMAP x26_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -11996,10 +11997,10 @@ TILESIGNALMAP x26_y1_searchtable[] =
 
 TILESIGNALMAP x26_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12007,10 +12008,10 @@ TILESIGNALMAP x26_y2_searchtable[] =
 
 TILESIGNALMAP x26_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12018,10 +12019,10 @@ TILESIGNALMAP x26_y3_searchtable[] =
 
 TILESIGNALMAP x26_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12029,10 +12030,10 @@ TILESIGNALMAP x26_y4_searchtable[] =
 
 TILESIGNALMAP x26_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12040,10 +12041,10 @@ TILESIGNALMAP x26_y5_searchtable[] =
 
 TILESIGNALMAP x26_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12051,10 +12052,10 @@ TILESIGNALMAP x26_y6_searchtable[] =
 
 TILESIGNALMAP x26_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12062,10 +12063,10 @@ TILESIGNALMAP x26_y7_searchtable[] =
 
 TILESIGNALMAP x26_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12073,10 +12074,10 @@ TILESIGNALMAP x26_y8_searchtable[] =
 
 TILESIGNALMAP x26_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12084,10 +12085,10 @@ TILESIGNALMAP x26_y9_searchtable[] =
 
 TILESIGNALMAP x26_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12095,10 +12096,10 @@ TILESIGNALMAP x26_y10_searchtable[] =
 
 TILESIGNALMAP x26_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12106,10 +12107,10 @@ TILESIGNALMAP x26_y11_searchtable[] =
 
 TILESIGNALMAP x26_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12117,10 +12118,10 @@ TILESIGNALMAP x26_y12_searchtable[] =
 
 TILESIGNALMAP x26_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12128,10 +12129,10 @@ TILESIGNALMAP x26_y13_searchtable[] =
 
 TILESIGNALMAP x26_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12139,10 +12140,10 @@ TILESIGNALMAP x26_y14_searchtable[] =
 
 TILESIGNALMAP x26_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12150,10 +12151,10 @@ TILESIGNALMAP x26_y15_searchtable[] =
 
 TILESIGNALMAP x26_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12161,10 +12162,10 @@ TILESIGNALMAP x26_y16_searchtable[] =
 
 TILESIGNALMAP x26_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12172,10 +12173,10 @@ TILESIGNALMAP x26_y17_searchtable[] =
 
 TILESIGNALMAP x26_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12183,10 +12184,10 @@ TILESIGNALMAP x26_y18_searchtable[] =
 
 TILESIGNALMAP x26_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12194,10 +12195,10 @@ TILESIGNALMAP x26_y19_searchtable[] =
 
 TILESIGNALMAP x26_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12205,10 +12206,10 @@ TILESIGNALMAP x26_y20_searchtable[] =
 
 TILESIGNALMAP x26_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12216,10 +12217,10 @@ TILESIGNALMAP x26_y21_searchtable[] =
 
 TILESIGNALMAP x26_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12227,10 +12228,10 @@ TILESIGNALMAP x26_y22_searchtable[] =
 
 TILESIGNALMAP x26_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12238,10 +12239,10 @@ TILESIGNALMAP x26_y23_searchtable[] =
 
 TILESIGNALMAP x26_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12249,10 +12250,10 @@ TILESIGNALMAP x26_y24_searchtable[] =
 
 TILESIGNALMAP x26_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12260,10 +12261,10 @@ TILESIGNALMAP x26_y25_searchtable[] =
 
 TILESIGNALMAP x26_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12271,10 +12272,10 @@ TILESIGNALMAP x26_y26_searchtable[] =
 
 TILESIGNALMAP x26_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12282,10 +12283,10 @@ TILESIGNALMAP x26_y27_searchtable[] =
 
 TILESIGNALMAP x26_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12293,10 +12294,10 @@ TILESIGNALMAP x26_y28_searchtable[] =
 
 TILESIGNALMAP x26_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12304,10 +12305,10 @@ TILESIGNALMAP x26_y29_searchtable[] =
 
 TILESIGNALMAP x26_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12315,10 +12316,10 @@ TILESIGNALMAP x26_y30_searchtable[] =
 
 TILESIGNALMAP x26_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12326,10 +12327,10 @@ TILESIGNALMAP x26_y31_searchtable[] =
 
 TILESIGNALMAP x26_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12337,10 +12338,10 @@ TILESIGNALMAP x26_y32_searchtable[] =
 
 TILESIGNALMAP x26_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12348,10 +12349,10 @@ TILESIGNALMAP x26_y33_searchtable[] =
 
 TILESIGNALMAP x26_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12359,10 +12360,10 @@ TILESIGNALMAP x26_y34_searchtable[] =
 
 TILESIGNALMAP x26_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12370,10 +12371,10 @@ TILESIGNALMAP x26_y35_searchtable[] =
 
 TILESIGNALMAP x26_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12381,8 +12382,8 @@ TILESIGNALMAP x26_y36_searchtable[] =
 
 TILESIGNALMAP x26_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -12390,10 +12391,10 @@ TILESIGNALMAP x26_y37_searchtable[] =
 
 TILESIGNALMAP x27_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12401,10 +12402,10 @@ TILESIGNALMAP x27_y1_searchtable[] =
 
 TILESIGNALMAP x27_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12412,10 +12413,10 @@ TILESIGNALMAP x27_y2_searchtable[] =
 
 TILESIGNALMAP x27_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12423,10 +12424,10 @@ TILESIGNALMAP x27_y3_searchtable[] =
 
 TILESIGNALMAP x27_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12434,10 +12435,10 @@ TILESIGNALMAP x27_y4_searchtable[] =
 
 TILESIGNALMAP x27_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12445,10 +12446,10 @@ TILESIGNALMAP x27_y5_searchtable[] =
 
 TILESIGNALMAP x27_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12456,10 +12457,10 @@ TILESIGNALMAP x27_y6_searchtable[] =
 
 TILESIGNALMAP x27_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12467,10 +12468,10 @@ TILESIGNALMAP x27_y7_searchtable[] =
 
 TILESIGNALMAP x27_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12478,10 +12479,10 @@ TILESIGNALMAP x27_y8_searchtable[] =
 
 TILESIGNALMAP x27_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12489,10 +12490,10 @@ TILESIGNALMAP x27_y9_searchtable[] =
 
 TILESIGNALMAP x27_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12500,10 +12501,10 @@ TILESIGNALMAP x27_y10_searchtable[] =
 
 TILESIGNALMAP x27_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12511,10 +12512,10 @@ TILESIGNALMAP x27_y11_searchtable[] =
 
 TILESIGNALMAP x27_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12522,10 +12523,10 @@ TILESIGNALMAP x27_y12_searchtable[] =
 
 TILESIGNALMAP x27_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12533,10 +12534,10 @@ TILESIGNALMAP x27_y13_searchtable[] =
 
 TILESIGNALMAP x27_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12544,10 +12545,10 @@ TILESIGNALMAP x27_y14_searchtable[] =
 
 TILESIGNALMAP x27_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12555,10 +12556,10 @@ TILESIGNALMAP x27_y15_searchtable[] =
 
 TILESIGNALMAP x27_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12566,10 +12567,10 @@ TILESIGNALMAP x27_y16_searchtable[] =
 
 TILESIGNALMAP x27_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12577,10 +12578,10 @@ TILESIGNALMAP x27_y17_searchtable[] =
 
 TILESIGNALMAP x27_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12588,10 +12589,10 @@ TILESIGNALMAP x27_y18_searchtable[] =
 
 TILESIGNALMAP x27_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12599,10 +12600,10 @@ TILESIGNALMAP x27_y19_searchtable[] =
 
 TILESIGNALMAP x27_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12610,10 +12611,10 @@ TILESIGNALMAP x27_y20_searchtable[] =
 
 TILESIGNALMAP x27_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12621,10 +12622,10 @@ TILESIGNALMAP x27_y21_searchtable[] =
 
 TILESIGNALMAP x27_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12632,10 +12633,10 @@ TILESIGNALMAP x27_y22_searchtable[] =
 
 TILESIGNALMAP x27_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12643,10 +12644,10 @@ TILESIGNALMAP x27_y23_searchtable[] =
 
 TILESIGNALMAP x27_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12654,10 +12655,10 @@ TILESIGNALMAP x27_y24_searchtable[] =
 
 TILESIGNALMAP x27_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12665,10 +12666,10 @@ TILESIGNALMAP x27_y25_searchtable[] =
 
 TILESIGNALMAP x27_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12676,10 +12677,10 @@ TILESIGNALMAP x27_y26_searchtable[] =
 
 TILESIGNALMAP x27_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12687,10 +12688,10 @@ TILESIGNALMAP x27_y27_searchtable[] =
 
 TILESIGNALMAP x27_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12698,10 +12699,10 @@ TILESIGNALMAP x27_y28_searchtable[] =
 
 TILESIGNALMAP x27_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12709,10 +12710,10 @@ TILESIGNALMAP x27_y29_searchtable[] =
 
 TILESIGNALMAP x27_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12720,10 +12721,10 @@ TILESIGNALMAP x27_y30_searchtable[] =
 
 TILESIGNALMAP x27_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12731,10 +12732,10 @@ TILESIGNALMAP x27_y31_searchtable[] =
 
 TILESIGNALMAP x27_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12742,10 +12743,10 @@ TILESIGNALMAP x27_y32_searchtable[] =
 
 TILESIGNALMAP x27_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12753,10 +12754,10 @@ TILESIGNALMAP x27_y33_searchtable[] =
 
 TILESIGNALMAP x27_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12764,10 +12765,10 @@ TILESIGNALMAP x27_y34_searchtable[] =
 
 TILESIGNALMAP x27_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12775,10 +12776,10 @@ TILESIGNALMAP x27_y35_searchtable[] =
 
 TILESIGNALMAP x27_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12786,8 +12787,8 @@ TILESIGNALMAP x27_y36_searchtable[] =
 
 TILESIGNALMAP x28_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -12795,10 +12796,10 @@ TILESIGNALMAP x28_y0_searchtable[] =
 
 TILESIGNALMAP x28_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12806,10 +12807,10 @@ TILESIGNALMAP x28_y1_searchtable[] =
 
 TILESIGNALMAP x28_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12817,10 +12818,10 @@ TILESIGNALMAP x28_y2_searchtable[] =
 
 TILESIGNALMAP x28_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12828,10 +12829,10 @@ TILESIGNALMAP x28_y3_searchtable[] =
 
 TILESIGNALMAP x28_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12839,10 +12840,10 @@ TILESIGNALMAP x28_y4_searchtable[] =
 
 TILESIGNALMAP x28_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12850,10 +12851,10 @@ TILESIGNALMAP x28_y5_searchtable[] =
 
 TILESIGNALMAP x28_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12861,10 +12862,10 @@ TILESIGNALMAP x28_y6_searchtable[] =
 
 TILESIGNALMAP x28_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12872,10 +12873,10 @@ TILESIGNALMAP x28_y7_searchtable[] =
 
 TILESIGNALMAP x28_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12883,10 +12884,10 @@ TILESIGNALMAP x28_y8_searchtable[] =
 
 TILESIGNALMAP x28_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12894,10 +12895,10 @@ TILESIGNALMAP x28_y9_searchtable[] =
 
 TILESIGNALMAP x28_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12905,10 +12906,10 @@ TILESIGNALMAP x28_y10_searchtable[] =
 
 TILESIGNALMAP x28_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12916,10 +12917,10 @@ TILESIGNALMAP x28_y11_searchtable[] =
 
 TILESIGNALMAP x28_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12927,10 +12928,10 @@ TILESIGNALMAP x28_y12_searchtable[] =
 
 TILESIGNALMAP x28_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12938,10 +12939,10 @@ TILESIGNALMAP x28_y13_searchtable[] =
 
 TILESIGNALMAP x28_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12949,10 +12950,10 @@ TILESIGNALMAP x28_y14_searchtable[] =
 
 TILESIGNALMAP x28_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12960,10 +12961,10 @@ TILESIGNALMAP x28_y15_searchtable[] =
 
 TILESIGNALMAP x28_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12971,10 +12972,10 @@ TILESIGNALMAP x28_y16_searchtable[] =
 
 TILESIGNALMAP x28_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12982,10 +12983,10 @@ TILESIGNALMAP x28_y17_searchtable[] =
 
 TILESIGNALMAP x28_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -12993,10 +12994,10 @@ TILESIGNALMAP x28_y18_searchtable[] =
 
 TILESIGNALMAP x28_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13004,10 +13005,10 @@ TILESIGNALMAP x28_y19_searchtable[] =
 
 TILESIGNALMAP x28_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13015,10 +13016,10 @@ TILESIGNALMAP x28_y20_searchtable[] =
 
 TILESIGNALMAP x28_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13026,10 +13027,10 @@ TILESIGNALMAP x28_y21_searchtable[] =
 
 TILESIGNALMAP x28_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13037,10 +13038,10 @@ TILESIGNALMAP x28_y22_searchtable[] =
 
 TILESIGNALMAP x28_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13048,10 +13049,10 @@ TILESIGNALMAP x28_y23_searchtable[] =
 
 TILESIGNALMAP x28_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13059,10 +13060,10 @@ TILESIGNALMAP x28_y24_searchtable[] =
 
 TILESIGNALMAP x28_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13070,10 +13071,10 @@ TILESIGNALMAP x28_y25_searchtable[] =
 
 TILESIGNALMAP x28_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13081,10 +13082,10 @@ TILESIGNALMAP x28_y26_searchtable[] =
 
 TILESIGNALMAP x28_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13092,10 +13093,10 @@ TILESIGNALMAP x28_y27_searchtable[] =
 
 TILESIGNALMAP x28_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13103,10 +13104,10 @@ TILESIGNALMAP x28_y28_searchtable[] =
 
 TILESIGNALMAP x28_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13114,10 +13115,10 @@ TILESIGNALMAP x28_y29_searchtable[] =
 
 TILESIGNALMAP x28_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13125,10 +13126,10 @@ TILESIGNALMAP x28_y30_searchtable[] =
 
 TILESIGNALMAP x28_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13136,10 +13137,10 @@ TILESIGNALMAP x28_y31_searchtable[] =
 
 TILESIGNALMAP x28_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13147,10 +13148,10 @@ TILESIGNALMAP x28_y32_searchtable[] =
 
 TILESIGNALMAP x28_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13158,10 +13159,10 @@ TILESIGNALMAP x28_y33_searchtable[] =
 
 TILESIGNALMAP x28_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13169,10 +13170,10 @@ TILESIGNALMAP x28_y34_searchtable[] =
 
 TILESIGNALMAP x28_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13180,10 +13181,10 @@ TILESIGNALMAP x28_y35_searchtable[] =
 
 TILESIGNALMAP x28_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13191,8 +13192,8 @@ TILESIGNALMAP x28_y36_searchtable[] =
 
 TILESIGNALMAP x28_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -13200,8 +13201,8 @@ TILESIGNALMAP x28_y37_searchtable[] =
 
 TILESIGNALMAP x29_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
   { 0, 0 },
 };
 
@@ -13209,10 +13210,10 @@ TILESIGNALMAP x29_y0_searchtable[] =
 
 TILESIGNALMAP x29_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13220,10 +13221,10 @@ TILESIGNALMAP x29_y1_searchtable[] =
 
 TILESIGNALMAP x29_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13231,10 +13232,10 @@ TILESIGNALMAP x29_y2_searchtable[] =
 
 TILESIGNALMAP x29_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13242,10 +13243,10 @@ TILESIGNALMAP x29_y3_searchtable[] =
 
 TILESIGNALMAP x29_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13253,10 +13254,10 @@ TILESIGNALMAP x29_y4_searchtable[] =
 
 TILESIGNALMAP x29_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13264,10 +13265,10 @@ TILESIGNALMAP x29_y5_searchtable[] =
 
 TILESIGNALMAP x29_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13275,10 +13276,10 @@ TILESIGNALMAP x29_y6_searchtable[] =
 
 TILESIGNALMAP x29_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13286,10 +13287,10 @@ TILESIGNALMAP x29_y7_searchtable[] =
 
 TILESIGNALMAP x29_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13297,10 +13298,10 @@ TILESIGNALMAP x29_y8_searchtable[] =
 
 TILESIGNALMAP x29_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13308,10 +13309,10 @@ TILESIGNALMAP x29_y9_searchtable[] =
 
 TILESIGNALMAP x29_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13319,10 +13320,10 @@ TILESIGNALMAP x29_y10_searchtable[] =
 
 TILESIGNALMAP x29_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13330,10 +13331,10 @@ TILESIGNALMAP x29_y11_searchtable[] =
 
 TILESIGNALMAP x29_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13341,10 +13342,10 @@ TILESIGNALMAP x29_y12_searchtable[] =
 
 TILESIGNALMAP x29_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13352,10 +13353,10 @@ TILESIGNALMAP x29_y13_searchtable[] =
 
 TILESIGNALMAP x29_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13363,10 +13364,10 @@ TILESIGNALMAP x29_y14_searchtable[] =
 
 TILESIGNALMAP x29_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13374,10 +13375,10 @@ TILESIGNALMAP x29_y15_searchtable[] =
 
 TILESIGNALMAP x29_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13385,10 +13386,10 @@ TILESIGNALMAP x29_y16_searchtable[] =
 
 TILESIGNALMAP x29_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13396,10 +13397,10 @@ TILESIGNALMAP x29_y17_searchtable[] =
 
 TILESIGNALMAP x29_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13407,10 +13408,10 @@ TILESIGNALMAP x29_y18_searchtable[] =
 
 TILESIGNALMAP x29_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13418,10 +13419,10 @@ TILESIGNALMAP x29_y19_searchtable[] =
 
 TILESIGNALMAP x29_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13429,10 +13430,10 @@ TILESIGNALMAP x29_y20_searchtable[] =
 
 TILESIGNALMAP x29_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13440,10 +13441,10 @@ TILESIGNALMAP x29_y21_searchtable[] =
 
 TILESIGNALMAP x29_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13451,10 +13452,10 @@ TILESIGNALMAP x29_y22_searchtable[] =
 
 TILESIGNALMAP x29_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13462,10 +13463,10 @@ TILESIGNALMAP x29_y23_searchtable[] =
 
 TILESIGNALMAP x29_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13473,10 +13474,10 @@ TILESIGNALMAP x29_y24_searchtable[] =
 
 TILESIGNALMAP x29_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13484,10 +13485,10 @@ TILESIGNALMAP x29_y25_searchtable[] =
 
 TILESIGNALMAP x29_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13495,10 +13496,10 @@ TILESIGNALMAP x29_y26_searchtable[] =
 
 TILESIGNALMAP x29_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13506,10 +13507,10 @@ TILESIGNALMAP x29_y27_searchtable[] =
 
 TILESIGNALMAP x29_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13517,10 +13518,10 @@ TILESIGNALMAP x29_y28_searchtable[] =
 
 TILESIGNALMAP x29_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13528,10 +13529,10 @@ TILESIGNALMAP x29_y29_searchtable[] =
 
 TILESIGNALMAP x29_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13539,10 +13540,10 @@ TILESIGNALMAP x29_y30_searchtable[] =
 
 TILESIGNALMAP x29_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13550,10 +13551,10 @@ TILESIGNALMAP x29_y31_searchtable[] =
 
 TILESIGNALMAP x29_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13561,10 +13562,10 @@ TILESIGNALMAP x29_y32_searchtable[] =
 
 TILESIGNALMAP x29_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13572,10 +13573,10 @@ TILESIGNALMAP x29_y33_searchtable[] =
 
 TILESIGNALMAP x29_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13583,10 +13584,10 @@ TILESIGNALMAP x29_y34_searchtable[] =
 
 TILESIGNALMAP x29_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13594,10 +13595,10 @@ TILESIGNALMAP x29_y35_searchtable[] =
 
 TILESIGNALMAP x29_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13605,8 +13606,8 @@ TILESIGNALMAP x29_y36_searchtable[] =
 
 TILESIGNALMAP x29_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -13614,10 +13615,10 @@ TILESIGNALMAP x29_y37_searchtable[] =
 
 TILESIGNALMAP x30_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13625,10 +13626,10 @@ TILESIGNALMAP x30_y1_searchtable[] =
 
 TILESIGNALMAP x30_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13636,10 +13637,10 @@ TILESIGNALMAP x30_y2_searchtable[] =
 
 TILESIGNALMAP x30_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13647,10 +13648,10 @@ TILESIGNALMAP x30_y3_searchtable[] =
 
 TILESIGNALMAP x30_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13658,10 +13659,10 @@ TILESIGNALMAP x30_y4_searchtable[] =
 
 TILESIGNALMAP x30_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13669,10 +13670,10 @@ TILESIGNALMAP x30_y5_searchtable[] =
 
 TILESIGNALMAP x30_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13680,10 +13681,10 @@ TILESIGNALMAP x30_y6_searchtable[] =
 
 TILESIGNALMAP x30_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13691,10 +13692,10 @@ TILESIGNALMAP x30_y7_searchtable[] =
 
 TILESIGNALMAP x30_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13702,10 +13703,10 @@ TILESIGNALMAP x30_y8_searchtable[] =
 
 TILESIGNALMAP x30_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13713,10 +13714,10 @@ TILESIGNALMAP x30_y9_searchtable[] =
 
 TILESIGNALMAP x30_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13724,10 +13725,10 @@ TILESIGNALMAP x30_y10_searchtable[] =
 
 TILESIGNALMAP x30_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13735,10 +13736,10 @@ TILESIGNALMAP x30_y11_searchtable[] =
 
 TILESIGNALMAP x30_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13746,10 +13747,10 @@ TILESIGNALMAP x30_y12_searchtable[] =
 
 TILESIGNALMAP x30_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13757,10 +13758,10 @@ TILESIGNALMAP x30_y13_searchtable[] =
 
 TILESIGNALMAP x30_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13768,10 +13769,10 @@ TILESIGNALMAP x30_y14_searchtable[] =
 
 TILESIGNALMAP x30_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13779,10 +13780,10 @@ TILESIGNALMAP x30_y15_searchtable[] =
 
 TILESIGNALMAP x30_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13790,10 +13791,10 @@ TILESIGNALMAP x30_y16_searchtable[] =
 
 TILESIGNALMAP x30_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13801,10 +13802,10 @@ TILESIGNALMAP x30_y17_searchtable[] =
 
 TILESIGNALMAP x30_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13812,10 +13813,10 @@ TILESIGNALMAP x30_y18_searchtable[] =
 
 TILESIGNALMAP x30_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13823,10 +13824,10 @@ TILESIGNALMAP x30_y19_searchtable[] =
 
 TILESIGNALMAP x30_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13834,10 +13835,10 @@ TILESIGNALMAP x30_y20_searchtable[] =
 
 TILESIGNALMAP x30_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13845,10 +13846,10 @@ TILESIGNALMAP x30_y21_searchtable[] =
 
 TILESIGNALMAP x30_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13856,10 +13857,10 @@ TILESIGNALMAP x30_y22_searchtable[] =
 
 TILESIGNALMAP x30_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13867,10 +13868,10 @@ TILESIGNALMAP x30_y23_searchtable[] =
 
 TILESIGNALMAP x30_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13878,10 +13879,10 @@ TILESIGNALMAP x30_y24_searchtable[] =
 
 TILESIGNALMAP x30_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13889,10 +13890,10 @@ TILESIGNALMAP x30_y25_searchtable[] =
 
 TILESIGNALMAP x30_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13900,10 +13901,10 @@ TILESIGNALMAP x30_y26_searchtable[] =
 
 TILESIGNALMAP x30_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13911,10 +13912,10 @@ TILESIGNALMAP x30_y27_searchtable[] =
 
 TILESIGNALMAP x30_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13922,10 +13923,10 @@ TILESIGNALMAP x30_y28_searchtable[] =
 
 TILESIGNALMAP x30_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13933,10 +13934,10 @@ TILESIGNALMAP x30_y29_searchtable[] =
 
 TILESIGNALMAP x30_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13944,10 +13945,10 @@ TILESIGNALMAP x30_y30_searchtable[] =
 
 TILESIGNALMAP x30_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13955,10 +13956,10 @@ TILESIGNALMAP x30_y31_searchtable[] =
 
 TILESIGNALMAP x30_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13966,10 +13967,10 @@ TILESIGNALMAP x30_y32_searchtable[] =
 
 TILESIGNALMAP x30_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13977,10 +13978,10 @@ TILESIGNALMAP x30_y33_searchtable[] =
 
 TILESIGNALMAP x30_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13988,10 +13989,10 @@ TILESIGNALMAP x30_y34_searchtable[] =
 
 TILESIGNALMAP x30_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -13999,10 +14000,10 @@ TILESIGNALMAP x30_y35_searchtable[] =
 
 TILESIGNALMAP x30_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14010,9 +14011,9 @@ TILESIGNALMAP x30_y36_searchtable[] =
 
 TILESIGNALMAP x31_y0_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
-  { emb32k_b1_0, "emb32k_b1" },
+  { iol_tb_0, "pad0", "iol_quad_b" },
+  { iol_tb_1, "pad1", "iol_quad_b" },
+  { emb32k_b1_0, "emb32k_b1", "emb32k_b1" },
   { 0, 0 },
 };
 
@@ -14020,10 +14021,10 @@ TILESIGNALMAP x31_y0_searchtable[] =
 
 TILESIGNALMAP x31_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14031,10 +14032,10 @@ TILESIGNALMAP x31_y1_searchtable[] =
 
 TILESIGNALMAP x31_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14042,10 +14043,10 @@ TILESIGNALMAP x31_y2_searchtable[] =
 
 TILESIGNALMAP x31_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14053,10 +14054,10 @@ TILESIGNALMAP x31_y3_searchtable[] =
 
 TILESIGNALMAP x31_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14064,10 +14065,10 @@ TILESIGNALMAP x31_y4_searchtable[] =
 
 TILESIGNALMAP x31_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14075,10 +14076,10 @@ TILESIGNALMAP x31_y5_searchtable[] =
 
 TILESIGNALMAP x31_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14086,10 +14087,10 @@ TILESIGNALMAP x31_y6_searchtable[] =
 
 TILESIGNALMAP x31_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14097,10 +14098,10 @@ TILESIGNALMAP x31_y7_searchtable[] =
 
 TILESIGNALMAP x31_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14108,10 +14109,10 @@ TILESIGNALMAP x31_y8_searchtable[] =
 
 TILESIGNALMAP x31_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14119,10 +14120,10 @@ TILESIGNALMAP x31_y9_searchtable[] =
 
 TILESIGNALMAP x31_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14130,10 +14131,10 @@ TILESIGNALMAP x31_y10_searchtable[] =
 
 TILESIGNALMAP x31_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14141,10 +14142,10 @@ TILESIGNALMAP x31_y11_searchtable[] =
 
 TILESIGNALMAP x31_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14152,10 +14153,10 @@ TILESIGNALMAP x31_y12_searchtable[] =
 
 TILESIGNALMAP x31_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14163,10 +14164,10 @@ TILESIGNALMAP x31_y13_searchtable[] =
 
 TILESIGNALMAP x31_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14174,10 +14175,10 @@ TILESIGNALMAP x31_y14_searchtable[] =
 
 TILESIGNALMAP x31_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14185,10 +14186,10 @@ TILESIGNALMAP x31_y15_searchtable[] =
 
 TILESIGNALMAP x31_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14196,10 +14197,10 @@ TILESIGNALMAP x31_y16_searchtable[] =
 
 TILESIGNALMAP x31_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14207,10 +14208,10 @@ TILESIGNALMAP x31_y17_searchtable[] =
 
 TILESIGNALMAP x31_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14218,10 +14219,10 @@ TILESIGNALMAP x31_y18_searchtable[] =
 
 TILESIGNALMAP x31_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14229,10 +14230,10 @@ TILESIGNALMAP x31_y19_searchtable[] =
 
 TILESIGNALMAP x31_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14240,10 +14241,10 @@ TILESIGNALMAP x31_y20_searchtable[] =
 
 TILESIGNALMAP x31_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14251,10 +14252,10 @@ TILESIGNALMAP x31_y21_searchtable[] =
 
 TILESIGNALMAP x31_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14262,10 +14263,10 @@ TILESIGNALMAP x31_y22_searchtable[] =
 
 TILESIGNALMAP x31_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14273,10 +14274,10 @@ TILESIGNALMAP x31_y23_searchtable[] =
 
 TILESIGNALMAP x31_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14284,10 +14285,10 @@ TILESIGNALMAP x31_y24_searchtable[] =
 
 TILESIGNALMAP x31_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14295,10 +14296,10 @@ TILESIGNALMAP x31_y25_searchtable[] =
 
 TILESIGNALMAP x31_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14306,10 +14307,10 @@ TILESIGNALMAP x31_y26_searchtable[] =
 
 TILESIGNALMAP x31_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14317,10 +14318,10 @@ TILESIGNALMAP x31_y27_searchtable[] =
 
 TILESIGNALMAP x31_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14328,10 +14329,10 @@ TILESIGNALMAP x31_y28_searchtable[] =
 
 TILESIGNALMAP x31_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14339,10 +14340,10 @@ TILESIGNALMAP x31_y29_searchtable[] =
 
 TILESIGNALMAP x31_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14350,10 +14351,10 @@ TILESIGNALMAP x31_y30_searchtable[] =
 
 TILESIGNALMAP x31_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14361,10 +14362,10 @@ TILESIGNALMAP x31_y31_searchtable[] =
 
 TILESIGNALMAP x31_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14372,10 +14373,10 @@ TILESIGNALMAP x31_y32_searchtable[] =
 
 TILESIGNALMAP x31_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14383,10 +14384,10 @@ TILESIGNALMAP x31_y33_searchtable[] =
 
 TILESIGNALMAP x31_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14394,10 +14395,10 @@ TILESIGNALMAP x31_y34_searchtable[] =
 
 TILESIGNALMAP x31_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14405,10 +14406,10 @@ TILESIGNALMAP x31_y35_searchtable[] =
 
 TILESIGNALMAP x31_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14416,8 +14417,8 @@ TILESIGNALMAP x31_y36_searchtable[] =
 
 TILESIGNALMAP x31_y37_searchtable[] =
 {
-  { iol_tb_0, "pad0" },
-  { iol_tb_1, "pad1" },
+  { iol_tb_0, "pad0", "iol_quad_t" },
+  { iol_tb_1, "pad1", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -14425,9 +14426,9 @@ TILESIGNALMAP x31_y37_searchtable[] =
 
 TILESIGNALMAP x32_y0_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
-  { emb32k_b1_0, "emb32k_b1" },
+  { iol_tb_2, "pad2", "iol_quad_b" },
+  { iol_tb_3, "pad3", "iol_quad_b" },
+  { emb32k_b1_0, "emb32k_b1", "emb32k_b1" },
   { 0, 0 },
 };
 
@@ -14435,10 +14436,10 @@ TILESIGNALMAP x32_y0_searchtable[] =
 
 TILESIGNALMAP x32_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14446,10 +14447,10 @@ TILESIGNALMAP x32_y1_searchtable[] =
 
 TILESIGNALMAP x32_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14457,10 +14458,10 @@ TILESIGNALMAP x32_y2_searchtable[] =
 
 TILESIGNALMAP x32_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14468,10 +14469,10 @@ TILESIGNALMAP x32_y3_searchtable[] =
 
 TILESIGNALMAP x32_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14479,10 +14480,10 @@ TILESIGNALMAP x32_y4_searchtable[] =
 
 TILESIGNALMAP x32_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14490,10 +14491,10 @@ TILESIGNALMAP x32_y5_searchtable[] =
 
 TILESIGNALMAP x32_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14501,10 +14502,10 @@ TILESIGNALMAP x32_y6_searchtable[] =
 
 TILESIGNALMAP x32_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14512,10 +14513,10 @@ TILESIGNALMAP x32_y7_searchtable[] =
 
 TILESIGNALMAP x32_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14523,10 +14524,10 @@ TILESIGNALMAP x32_y8_searchtable[] =
 
 TILESIGNALMAP x32_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14534,10 +14535,10 @@ TILESIGNALMAP x32_y9_searchtable[] =
 
 TILESIGNALMAP x32_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14545,10 +14546,10 @@ TILESIGNALMAP x32_y10_searchtable[] =
 
 TILESIGNALMAP x32_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14556,10 +14557,10 @@ TILESIGNALMAP x32_y11_searchtable[] =
 
 TILESIGNALMAP x32_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14567,10 +14568,10 @@ TILESIGNALMAP x32_y12_searchtable[] =
 
 TILESIGNALMAP x32_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14578,10 +14579,10 @@ TILESIGNALMAP x32_y13_searchtable[] =
 
 TILESIGNALMAP x32_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14589,10 +14590,10 @@ TILESIGNALMAP x32_y14_searchtable[] =
 
 TILESIGNALMAP x32_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14600,10 +14601,10 @@ TILESIGNALMAP x32_y15_searchtable[] =
 
 TILESIGNALMAP x32_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14611,10 +14612,10 @@ TILESIGNALMAP x32_y16_searchtable[] =
 
 TILESIGNALMAP x32_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14622,10 +14623,10 @@ TILESIGNALMAP x32_y17_searchtable[] =
 
 TILESIGNALMAP x32_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14633,10 +14634,10 @@ TILESIGNALMAP x32_y18_searchtable[] =
 
 TILESIGNALMAP x32_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14644,10 +14645,10 @@ TILESIGNALMAP x32_y19_searchtable[] =
 
 TILESIGNALMAP x32_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14655,10 +14656,10 @@ TILESIGNALMAP x32_y20_searchtable[] =
 
 TILESIGNALMAP x32_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14666,10 +14667,10 @@ TILESIGNALMAP x32_y21_searchtable[] =
 
 TILESIGNALMAP x32_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14677,10 +14678,10 @@ TILESIGNALMAP x32_y22_searchtable[] =
 
 TILESIGNALMAP x32_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14688,10 +14689,10 @@ TILESIGNALMAP x32_y23_searchtable[] =
 
 TILESIGNALMAP x32_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14699,10 +14700,10 @@ TILESIGNALMAP x32_y24_searchtable[] =
 
 TILESIGNALMAP x32_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14710,10 +14711,10 @@ TILESIGNALMAP x32_y25_searchtable[] =
 
 TILESIGNALMAP x32_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14721,10 +14722,10 @@ TILESIGNALMAP x32_y26_searchtable[] =
 
 TILESIGNALMAP x32_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14732,10 +14733,10 @@ TILESIGNALMAP x32_y27_searchtable[] =
 
 TILESIGNALMAP x32_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14743,10 +14744,10 @@ TILESIGNALMAP x32_y28_searchtable[] =
 
 TILESIGNALMAP x32_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14754,10 +14755,10 @@ TILESIGNALMAP x32_y29_searchtable[] =
 
 TILESIGNALMAP x32_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14765,10 +14766,10 @@ TILESIGNALMAP x32_y30_searchtable[] =
 
 TILESIGNALMAP x32_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14776,10 +14777,10 @@ TILESIGNALMAP x32_y31_searchtable[] =
 
 TILESIGNALMAP x32_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14787,10 +14788,10 @@ TILESIGNALMAP x32_y32_searchtable[] =
 
 TILESIGNALMAP x32_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14798,10 +14799,10 @@ TILESIGNALMAP x32_y33_searchtable[] =
 
 TILESIGNALMAP x32_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14809,10 +14810,10 @@ TILESIGNALMAP x32_y34_searchtable[] =
 
 TILESIGNALMAP x32_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14820,10 +14821,10 @@ TILESIGNALMAP x32_y35_searchtable[] =
 
 TILESIGNALMAP x32_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14831,8 +14832,8 @@ TILESIGNALMAP x32_y36_searchtable[] =
 
 TILESIGNALMAP x32_y37_searchtable[] =
 {
-  { iol_tb_2, "pad2" },
-  { iol_tb_3, "pad3" },
+  { iol_tb_2, "pad2", "iol_quad_t" },
+  { iol_tb_3, "pad3", "iol_quad_t" },
   { 0, 0 },
 };
 
@@ -14840,7 +14841,7 @@ TILESIGNALMAP x32_y37_searchtable[] =
 
 TILESIGNALMAP x33_y0_searchtable[] =
 {
-  { emb32k_b1_0, "emb32k_b1" },
+  { emb32k_b1_0, "emb32k_b1", "emb32k_b1" },
   { 0, 0 },
 };
 
@@ -14848,10 +14849,10 @@ TILESIGNALMAP x33_y0_searchtable[] =
 
 TILESIGNALMAP x33_y1_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14859,10 +14860,10 @@ TILESIGNALMAP x33_y1_searchtable[] =
 
 TILESIGNALMAP x33_y2_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14870,10 +14871,10 @@ TILESIGNALMAP x33_y2_searchtable[] =
 
 TILESIGNALMAP x33_y3_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14881,10 +14882,10 @@ TILESIGNALMAP x33_y3_searchtable[] =
 
 TILESIGNALMAP x33_y4_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14892,10 +14893,10 @@ TILESIGNALMAP x33_y4_searchtable[] =
 
 TILESIGNALMAP x33_y5_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14903,10 +14904,10 @@ TILESIGNALMAP x33_y5_searchtable[] =
 
 TILESIGNALMAP x33_y6_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14914,10 +14915,10 @@ TILESIGNALMAP x33_y6_searchtable[] =
 
 TILESIGNALMAP x33_y7_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14925,10 +14926,10 @@ TILESIGNALMAP x33_y7_searchtable[] =
 
 TILESIGNALMAP x33_y8_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14936,10 +14937,10 @@ TILESIGNALMAP x33_y8_searchtable[] =
 
 TILESIGNALMAP x33_y9_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14947,10 +14948,10 @@ TILESIGNALMAP x33_y9_searchtable[] =
 
 TILESIGNALMAP x33_y10_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14958,10 +14959,10 @@ TILESIGNALMAP x33_y10_searchtable[] =
 
 TILESIGNALMAP x33_y11_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14969,10 +14970,10 @@ TILESIGNALMAP x33_y11_searchtable[] =
 
 TILESIGNALMAP x33_y12_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14980,10 +14981,10 @@ TILESIGNALMAP x33_y12_searchtable[] =
 
 TILESIGNALMAP x33_y13_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -14991,10 +14992,10 @@ TILESIGNALMAP x33_y13_searchtable[] =
 
 TILESIGNALMAP x33_y14_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15002,10 +15003,10 @@ TILESIGNALMAP x33_y14_searchtable[] =
 
 TILESIGNALMAP x33_y15_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15013,10 +15014,10 @@ TILESIGNALMAP x33_y15_searchtable[] =
 
 TILESIGNALMAP x33_y16_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15024,10 +15025,10 @@ TILESIGNALMAP x33_y16_searchtable[] =
 
 TILESIGNALMAP x33_y17_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15035,10 +15036,10 @@ TILESIGNALMAP x33_y17_searchtable[] =
 
 TILESIGNALMAP x33_y18_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15046,10 +15047,10 @@ TILESIGNALMAP x33_y18_searchtable[] =
 
 TILESIGNALMAP x33_y19_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15057,10 +15058,10 @@ TILESIGNALMAP x33_y19_searchtable[] =
 
 TILESIGNALMAP x33_y20_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15068,10 +15069,10 @@ TILESIGNALMAP x33_y20_searchtable[] =
 
 TILESIGNALMAP x33_y21_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15079,10 +15080,10 @@ TILESIGNALMAP x33_y21_searchtable[] =
 
 TILESIGNALMAP x33_y22_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15090,10 +15091,10 @@ TILESIGNALMAP x33_y22_searchtable[] =
 
 TILESIGNALMAP x33_y23_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15101,10 +15102,10 @@ TILESIGNALMAP x33_y23_searchtable[] =
 
 TILESIGNALMAP x33_y24_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15112,10 +15113,10 @@ TILESIGNALMAP x33_y24_searchtable[] =
 
 TILESIGNALMAP x33_y25_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15123,10 +15124,10 @@ TILESIGNALMAP x33_y25_searchtable[] =
 
 TILESIGNALMAP x33_y26_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15134,10 +15135,10 @@ TILESIGNALMAP x33_y26_searchtable[] =
 
 TILESIGNALMAP x33_y27_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15145,10 +15146,10 @@ TILESIGNALMAP x33_y27_searchtable[] =
 
 TILESIGNALMAP x33_y28_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15156,10 +15157,10 @@ TILESIGNALMAP x33_y28_searchtable[] =
 
 TILESIGNALMAP x33_y29_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15167,10 +15168,10 @@ TILESIGNALMAP x33_y29_searchtable[] =
 
 TILESIGNALMAP x33_y30_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15178,10 +15179,10 @@ TILESIGNALMAP x33_y30_searchtable[] =
 
 TILESIGNALMAP x33_y31_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15189,10 +15190,10 @@ TILESIGNALMAP x33_y31_searchtable[] =
 
 TILESIGNALMAP x33_y32_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15200,10 +15201,10 @@ TILESIGNALMAP x33_y32_searchtable[] =
 
 TILESIGNALMAP x33_y33_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15211,10 +15212,10 @@ TILESIGNALMAP x33_y33_searchtable[] =
 
 TILESIGNALMAP x33_y34_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15222,10 +15223,10 @@ TILESIGNALMAP x33_y34_searchtable[] =
 
 TILESIGNALMAP x33_y35_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15233,10 +15234,10 @@ TILESIGNALMAP x33_y35_searchtable[] =
 
 TILESIGNALMAP x33_y36_searchtable[] =
 {
-  { mslice_0, "mslice0" },
-  { mslice_1, "mslice1" },
-  { lslice_2, "lslice2" },
-  { lslice_3, "lslice3" },
+  { mslice_0, "mslice0", "plb" },
+  { mslice_1, "mslice1", "plb" },
+  { lslice_2, "lslice2", "plb" },
+  { lslice_3, "lslice3", "plb" },
   { 0, 0 },
 };
 
@@ -15244,8 +15245,8 @@ TILESIGNALMAP x33_y36_searchtable[] =
 
 TILESIGNALMAP x34_y0_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15253,9 +15254,9 @@ TILESIGNALMAP x34_y0_searchtable[] =
 
 TILESIGNALMAP x34_y1_searchtable[] =
 {
-  { emb32k_b1_0, "emb32k_b1" },
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { emb32k_b1_0, "emb32k_b1", "emb32k_b1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15263,8 +15264,8 @@ TILESIGNALMAP x34_y1_searchtable[] =
 
 TILESIGNALMAP x34_y2_searchtable[] =
 {
-  { emb32k_b1_0, "emb32k_b1" },
-  { ios_bankref_lr_0, "ios_bankref_lr" },
+  { emb32k_b1_0, "emb32k_b1", "emb32k_b1" },
+  { ios_bankref_lr_0, "ios_bankref_lr", "ios_bankref_r" },
   { 0, 0 },
 };
 
@@ -15272,9 +15273,9 @@ TILESIGNALMAP x34_y2_searchtable[] =
 
 TILESIGNALMAP x34_y3_searchtable[] =
 {
-  { emb32k_b1_0, "emb32k_b1" },
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { emb32k_b1_0, "emb32k_b1", "emb32k_b1" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15282,8 +15283,8 @@ TILESIGNALMAP x34_y3_searchtable[] =
 
 TILESIGNALMAP x34_y4_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15291,8 +15292,8 @@ TILESIGNALMAP x34_y4_searchtable[] =
 
 TILESIGNALMAP x34_y6_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15300,8 +15301,8 @@ TILESIGNALMAP x34_y6_searchtable[] =
 
 TILESIGNALMAP x34_y7_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15309,8 +15310,8 @@ TILESIGNALMAP x34_y7_searchtable[] =
 
 TILESIGNALMAP x34_y9_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15318,8 +15319,8 @@ TILESIGNALMAP x34_y9_searchtable[] =
 
 TILESIGNALMAP x34_y10_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15327,8 +15328,8 @@ TILESIGNALMAP x34_y10_searchtable[] =
 
 TILESIGNALMAP x34_y12_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15336,8 +15337,8 @@ TILESIGNALMAP x34_y12_searchtable[] =
 
 TILESIGNALMAP x34_y13_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15345,8 +15346,8 @@ TILESIGNALMAP x34_y13_searchtable[] =
 
 TILESIGNALMAP x34_y15_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15354,8 +15355,8 @@ TILESIGNALMAP x34_y15_searchtable[] =
 
 TILESIGNALMAP x34_y16_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15363,7 +15364,7 @@ TILESIGNALMAP x34_y16_searchtable[] =
 
 TILESIGNALMAP x34_y17_searchtable[] =
 {
-  { ios_bankref_lr_0, "ios_bankref_lr" },
+  { ios_bankref_lr_0, "ios_bankref_lr", "ios_bankref_r" },
   { 0, 0 },
 };
 
@@ -15371,9 +15372,9 @@ TILESIGNALMAP x34_y17_searchtable[] =
 
 TILESIGNALMAP x34_y18_searchtable[] =
 {
-  { ioclk_0, "ioclk0" },
-  { ioclk_1, "ioclk1" },
-  { gclk_premux_0, "gclk_premux" },
+  { ioclk_0, "ioclk0", "ioclk_bk5" },
+  { ioclk_1, "ioclk1", "ioclk_bk5" },
+  { gclk_premux_0, "gclk_premux", "gclk_premux_r" },
   { 0, 0 },
 };
 
@@ -15381,8 +15382,8 @@ TILESIGNALMAP x34_y18_searchtable[] =
 
 TILESIGNALMAP x34_y19_searchtable[] =
 {
-  { ioclk_0, "ioclk0" },
-  { ioclk_1, "ioclk1" },
+  { ioclk_0, "ioclk0", "ioclk_bk6" },
+  { ioclk_1, "ioclk1", "ioclk_bk6" },
   { 0, 0 },
 };
 
@@ -15390,8 +15391,8 @@ TILESIGNALMAP x34_y19_searchtable[] =
 
 TILESIGNALMAP x34_y20_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15399,8 +15400,8 @@ TILESIGNALMAP x34_y20_searchtable[] =
 
 TILESIGNALMAP x34_y21_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15408,8 +15409,8 @@ TILESIGNALMAP x34_y21_searchtable[] =
 
 TILESIGNALMAP x34_y23_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15417,8 +15418,8 @@ TILESIGNALMAP x34_y23_searchtable[] =
 
 TILESIGNALMAP x34_y24_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15426,8 +15427,8 @@ TILESIGNALMAP x34_y24_searchtable[] =
 
 TILESIGNALMAP x34_y26_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15435,8 +15436,8 @@ TILESIGNALMAP x34_y26_searchtable[] =
 
 TILESIGNALMAP x34_y27_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15444,8 +15445,8 @@ TILESIGNALMAP x34_y27_searchtable[] =
 
 TILESIGNALMAP x34_y29_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15453,8 +15454,8 @@ TILESIGNALMAP x34_y29_searchtable[] =
 
 TILESIGNALMAP x34_y30_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15462,8 +15463,8 @@ TILESIGNALMAP x34_y30_searchtable[] =
 
 TILESIGNALMAP x34_y32_searchtable[] =
 {
-  { iol_lr_2, "pad2" },
-  { iol_lr_3, "pad3" },
+  { iol_lr_2, "pad2", "iol_quad_r" },
+  { iol_lr_3, "pad3", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15471,8 +15472,8 @@ TILESIGNALMAP x34_y32_searchtable[] =
 
 TILESIGNALMAP x34_y33_searchtable[] =
 {
-  { iol_lr_0, "pad0" },
-  { iol_lr_1, "pad1" },
+  { iol_lr_0, "pad0", "iol_quad_r" },
+  { iol_lr_1, "pad1", "iol_quad_r" },
   { 0, 0 },
 };
 
@@ -15480,8 +15481,8 @@ TILESIGNALMAP x34_y33_searchtable[] =
 
 TILESIGNALMAP x34_y35_searchtable[] =
 {
-  { iol_pair_r_2, "pad2" },
-  { iol_pair_r_3, "pad3" },
+  { iol_pair_r_2, "pad2", "iol_pair_r" },
+  { iol_pair_r_3, "pad3", "iol_pair_r" },
   { 0, 0 },
 };
 
@@ -15489,7 +15490,7 @@ TILESIGNALMAP x34_y35_searchtable[] =
 
 TILESIGNALMAP x34_y37_searchtable[] =
 {
-  { pll_0, "pll2" },
+  { pll_0, "pll2", "pll2" },
   { 0, 0 },
 };
 
@@ -16896,6 +16897,12325 @@ pTILESIGNALMAP tilesignalmap[35][38] =
     x34_y35_searchtable,
     0,
     x34_y37_searchtable,
+  },
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Tables with the type names of the tiles for setting up a tile coordinates based array with type names
+
+char *x0_y0_tiletypes[] =
+{
+  "pib",
+  "pll0",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y1_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y2_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_pair_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y3_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y4_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y5_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_quad_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y6_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y7_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y8_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_quad_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y9_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y10_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y11_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_quad_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y12_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y13_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y14_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_quad_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y15_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y16_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y17_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_quad_l",
+  "ios_bankref_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y18_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ul",
+  "pib",
+  "ioclk_bk2",
+  "clkdiv_bk2",
+  "gclk_premux_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y19_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ul",
+  "pib",
+  "ioclk_bk1",
+  "clkdiv_bk1",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y20_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y21_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y22_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_quad_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y23_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y24_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y25_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_quad_l",
+  "ios_bankref_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y26_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y27_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y28_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_pair_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y29_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y30_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y31_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_quad_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y32_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y33_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y34_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "iol_quad_l",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y35_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y36_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x0_y37_tiletypes[] =
+{
+  "miscs_mic_io_l",
+  "pib",
+  "na",
+  "iol_quad_l",
+  "osc",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x1_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x2_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x3_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x4_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x5_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x6_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x7_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y0_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y1_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y2_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y3_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y4_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y5_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y6_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y7_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y8_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y9_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y10_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y11_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y12_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y13_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y14_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y15_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y16_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y17_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y18_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ur",
+  "pib",
+  "gclk_ctmux_l",
+  "mult",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y19_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ur",
+  "pib",
+  "gclk_ctmux_u",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y20_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y21_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y22_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y23_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y24_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y25_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y26_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y27_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y28_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y29_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y30_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y31_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y32_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y33_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y34_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y35_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y36_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x8_y37_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  "ios_bankref_bl",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x9_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  "ios_bankref_tl",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x10_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x11_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x12_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "ioclk_bk3",
+  "clkdiv_bk3",
+  "gclk_premux_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x13_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "ioclk_bk8",
+  "clkdiv_bk8",
+  "gclk_premux_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x14_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x15_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y0_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  "emb32k_b0",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y1_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y2_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y3_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y4_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y5_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y6_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y7_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y8_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y9_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y10_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y11_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y12_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y13_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y14_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y15_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y16_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y17_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y18_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ur",
+  "pib",
+  "gclk_csb",
+  "mult",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y19_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ur",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y20_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y21_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y22_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y23_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y24_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y25_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y26_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y27_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y28_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y29_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y30_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y31_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y32_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y33_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y34_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y35_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y36_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x16_y37_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x17_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x18_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "ioclk_bk4",
+  "clkdiv_bk4",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x19_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "ioclk_bk7",
+  "clkdiv_bk7",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x20_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x21_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x22_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x23_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y0_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y1_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y2_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y3_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y4_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y5_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y6_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y7_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y8_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y9_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y10_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y11_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y12_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y13_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y14_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y15_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y16_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y17_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y18_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ur",
+  "pib",
+  "gclk_ctmux_l",
+  "mult",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y19_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ur",
+  "pib",
+  "gclk_ctmux_u",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y20_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y21_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y22_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y23_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y24_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y25_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y26_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y27_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y28_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y29_tiletypes[] =
+{
+  "emb_slice",
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y30_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y31_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y32_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y33_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y34_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y35_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y36_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x24_y37_tiletypes[] =
+{
+  "pib",
+  "gclk_spine",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  "ios_bankref_br",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x25_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  "ios_bankref_tr",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x26_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x27_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x28_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x29_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x30_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  "iol_quad_b",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x31_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  "iol_quad_t",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x32_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y0_tiletypes[] =
+{
+  "miscs_mic_io_b",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y1_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y2_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y3_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y4_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y5_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y6_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y7_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y8_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y9_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y10_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y11_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y12_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y13_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y14_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y15_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y16_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y17_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y18_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y19_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y20_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y21_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y22_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y23_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y24_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y25_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y26_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y27_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y28_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y29_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y30_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y31_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y32_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y33_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y34_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y35_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y36_tiletypes[] =
+{
+  "plb",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x33_y37_tiletypes[] =
+{
+  "miscs_mic_io_t",
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y0_tiletypes[] =
+{
+  "pib",
+  "emb32k_b1",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y1_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y2_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  "ios_bankref_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y3_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y4_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y5_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y6_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y7_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y8_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y9_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y10_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y11_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y12_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y13_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y14_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y15_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y16_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y17_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  "ios_bankref_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y18_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ur",
+  "pib",
+  "ioclk_bk5",
+  "clkdiv_bk5",
+  "gclk_premux_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y19_tiletypes[] =
+{
+  "miscs_mic_io_lr_corner_ur",
+  "pib",
+  "ioclk_bk6",
+  "clkdiv_bk6",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y20_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y21_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y22_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y23_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y24_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y25_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y26_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y27_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y28_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y29_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y30_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y31_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y32_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y33_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y34_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_quad_r",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y35_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y36_tiletypes[] =
+{
+  "pib",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *x34_y37_tiletypes[] =
+{
+  "miscs_mic_io_r",
+  "pib",
+  "iol_pair_r",
+  "pll2",
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char **tiletypemap[35][38] =
+{
+  {
+    x0_y0_tiletypes,
+    x0_y1_tiletypes,
+    x0_y2_tiletypes,
+    x0_y3_tiletypes,
+    x0_y4_tiletypes,
+    x0_y5_tiletypes,
+    x0_y6_tiletypes,
+    x0_y7_tiletypes,
+    x0_y8_tiletypes,
+    x0_y9_tiletypes,
+    x0_y10_tiletypes,
+    x0_y11_tiletypes,
+    x0_y12_tiletypes,
+    x0_y13_tiletypes,
+    x0_y14_tiletypes,
+    x0_y15_tiletypes,
+    x0_y16_tiletypes,
+    x0_y17_tiletypes,
+    x0_y18_tiletypes,
+    x0_y19_tiletypes,
+    x0_y20_tiletypes,
+    x0_y21_tiletypes,
+    x0_y22_tiletypes,
+    x0_y23_tiletypes,
+    x0_y24_tiletypes,
+    x0_y25_tiletypes,
+    x0_y26_tiletypes,
+    x0_y27_tiletypes,
+    x0_y28_tiletypes,
+    x0_y29_tiletypes,
+    x0_y30_tiletypes,
+    x0_y31_tiletypes,
+    x0_y32_tiletypes,
+    x0_y33_tiletypes,
+    x0_y34_tiletypes,
+    x0_y35_tiletypes,
+    x0_y36_tiletypes,
+    x0_y37_tiletypes,
+  },
+  {
+    x1_y0_tiletypes,
+    x1_y1_tiletypes,
+    x1_y2_tiletypes,
+    x1_y3_tiletypes,
+    x1_y4_tiletypes,
+    x1_y5_tiletypes,
+    x1_y6_tiletypes,
+    x1_y7_tiletypes,
+    x1_y8_tiletypes,
+    x1_y9_tiletypes,
+    x1_y10_tiletypes,
+    x1_y11_tiletypes,
+    x1_y12_tiletypes,
+    x1_y13_tiletypes,
+    x1_y14_tiletypes,
+    x1_y15_tiletypes,
+    x1_y16_tiletypes,
+    x1_y17_tiletypes,
+    x1_y18_tiletypes,
+    x1_y19_tiletypes,
+    x1_y20_tiletypes,
+    x1_y21_tiletypes,
+    x1_y22_tiletypes,
+    x1_y23_tiletypes,
+    x1_y24_tiletypes,
+    x1_y25_tiletypes,
+    x1_y26_tiletypes,
+    x1_y27_tiletypes,
+    x1_y28_tiletypes,
+    x1_y29_tiletypes,
+    x1_y30_tiletypes,
+    x1_y31_tiletypes,
+    x1_y32_tiletypes,
+    x1_y33_tiletypes,
+    x1_y34_tiletypes,
+    x1_y35_tiletypes,
+    x1_y36_tiletypes,
+    x1_y37_tiletypes,
+  },
+  {
+    x2_y0_tiletypes,
+    x2_y1_tiletypes,
+    x2_y2_tiletypes,
+    x2_y3_tiletypes,
+    x2_y4_tiletypes,
+    x2_y5_tiletypes,
+    x2_y6_tiletypes,
+    x2_y7_tiletypes,
+    x2_y8_tiletypes,
+    x2_y9_tiletypes,
+    x2_y10_tiletypes,
+    x2_y11_tiletypes,
+    x2_y12_tiletypes,
+    x2_y13_tiletypes,
+    x2_y14_tiletypes,
+    x2_y15_tiletypes,
+    x2_y16_tiletypes,
+    x2_y17_tiletypes,
+    x2_y18_tiletypes,
+    x2_y19_tiletypes,
+    x2_y20_tiletypes,
+    x2_y21_tiletypes,
+    x2_y22_tiletypes,
+    x2_y23_tiletypes,
+    x2_y24_tiletypes,
+    x2_y25_tiletypes,
+    x2_y26_tiletypes,
+    x2_y27_tiletypes,
+    x2_y28_tiletypes,
+    x2_y29_tiletypes,
+    x2_y30_tiletypes,
+    x2_y31_tiletypes,
+    x2_y32_tiletypes,
+    x2_y33_tiletypes,
+    x2_y34_tiletypes,
+    x2_y35_tiletypes,
+    x2_y36_tiletypes,
+    x2_y37_tiletypes,
+  },
+  {
+    x3_y0_tiletypes,
+    x3_y1_tiletypes,
+    x3_y2_tiletypes,
+    x3_y3_tiletypes,
+    x3_y4_tiletypes,
+    x3_y5_tiletypes,
+    x3_y6_tiletypes,
+    x3_y7_tiletypes,
+    x3_y8_tiletypes,
+    x3_y9_tiletypes,
+    x3_y10_tiletypes,
+    x3_y11_tiletypes,
+    x3_y12_tiletypes,
+    x3_y13_tiletypes,
+    x3_y14_tiletypes,
+    x3_y15_tiletypes,
+    x3_y16_tiletypes,
+    x3_y17_tiletypes,
+    x3_y18_tiletypes,
+    x3_y19_tiletypes,
+    x3_y20_tiletypes,
+    x3_y21_tiletypes,
+    x3_y22_tiletypes,
+    x3_y23_tiletypes,
+    x3_y24_tiletypes,
+    x3_y25_tiletypes,
+    x3_y26_tiletypes,
+    x3_y27_tiletypes,
+    x3_y28_tiletypes,
+    x3_y29_tiletypes,
+    x3_y30_tiletypes,
+    x3_y31_tiletypes,
+    x3_y32_tiletypes,
+    x3_y33_tiletypes,
+    x3_y34_tiletypes,
+    x3_y35_tiletypes,
+    x3_y36_tiletypes,
+    x3_y37_tiletypes,
+  },
+  {
+    x4_y0_tiletypes,
+    x4_y1_tiletypes,
+    x4_y2_tiletypes,
+    x4_y3_tiletypes,
+    x4_y4_tiletypes,
+    x4_y5_tiletypes,
+    x4_y6_tiletypes,
+    x4_y7_tiletypes,
+    x4_y8_tiletypes,
+    x4_y9_tiletypes,
+    x4_y10_tiletypes,
+    x4_y11_tiletypes,
+    x4_y12_tiletypes,
+    x4_y13_tiletypes,
+    x4_y14_tiletypes,
+    x4_y15_tiletypes,
+    x4_y16_tiletypes,
+    x4_y17_tiletypes,
+    x4_y18_tiletypes,
+    x4_y19_tiletypes,
+    x4_y20_tiletypes,
+    x4_y21_tiletypes,
+    x4_y22_tiletypes,
+    x4_y23_tiletypes,
+    x4_y24_tiletypes,
+    x4_y25_tiletypes,
+    x4_y26_tiletypes,
+    x4_y27_tiletypes,
+    x4_y28_tiletypes,
+    x4_y29_tiletypes,
+    x4_y30_tiletypes,
+    x4_y31_tiletypes,
+    x4_y32_tiletypes,
+    x4_y33_tiletypes,
+    x4_y34_tiletypes,
+    x4_y35_tiletypes,
+    x4_y36_tiletypes,
+    x4_y37_tiletypes,
+  },
+  {
+    x5_y0_tiletypes,
+    x5_y1_tiletypes,
+    x5_y2_tiletypes,
+    x5_y3_tiletypes,
+    x5_y4_tiletypes,
+    x5_y5_tiletypes,
+    x5_y6_tiletypes,
+    x5_y7_tiletypes,
+    x5_y8_tiletypes,
+    x5_y9_tiletypes,
+    x5_y10_tiletypes,
+    x5_y11_tiletypes,
+    x5_y12_tiletypes,
+    x5_y13_tiletypes,
+    x5_y14_tiletypes,
+    x5_y15_tiletypes,
+    x5_y16_tiletypes,
+    x5_y17_tiletypes,
+    x5_y18_tiletypes,
+    x5_y19_tiletypes,
+    x5_y20_tiletypes,
+    x5_y21_tiletypes,
+    x5_y22_tiletypes,
+    x5_y23_tiletypes,
+    x5_y24_tiletypes,
+    x5_y25_tiletypes,
+    x5_y26_tiletypes,
+    x5_y27_tiletypes,
+    x5_y28_tiletypes,
+    x5_y29_tiletypes,
+    x5_y30_tiletypes,
+    x5_y31_tiletypes,
+    x5_y32_tiletypes,
+    x5_y33_tiletypes,
+    x5_y34_tiletypes,
+    x5_y35_tiletypes,
+    x5_y36_tiletypes,
+    x5_y37_tiletypes,
+  },
+  {
+    x6_y0_tiletypes,
+    x6_y1_tiletypes,
+    x6_y2_tiletypes,
+    x6_y3_tiletypes,
+    x6_y4_tiletypes,
+    x6_y5_tiletypes,
+    x6_y6_tiletypes,
+    x6_y7_tiletypes,
+    x6_y8_tiletypes,
+    x6_y9_tiletypes,
+    x6_y10_tiletypes,
+    x6_y11_tiletypes,
+    x6_y12_tiletypes,
+    x6_y13_tiletypes,
+    x6_y14_tiletypes,
+    x6_y15_tiletypes,
+    x6_y16_tiletypes,
+    x6_y17_tiletypes,
+    x6_y18_tiletypes,
+    x6_y19_tiletypes,
+    x6_y20_tiletypes,
+    x6_y21_tiletypes,
+    x6_y22_tiletypes,
+    x6_y23_tiletypes,
+    x6_y24_tiletypes,
+    x6_y25_tiletypes,
+    x6_y26_tiletypes,
+    x6_y27_tiletypes,
+    x6_y28_tiletypes,
+    x6_y29_tiletypes,
+    x6_y30_tiletypes,
+    x6_y31_tiletypes,
+    x6_y32_tiletypes,
+    x6_y33_tiletypes,
+    x6_y34_tiletypes,
+    x6_y35_tiletypes,
+    x6_y36_tiletypes,
+    x6_y37_tiletypes,
+  },
+  {
+    x7_y0_tiletypes,
+    x7_y1_tiletypes,
+    x7_y2_tiletypes,
+    x7_y3_tiletypes,
+    x7_y4_tiletypes,
+    x7_y5_tiletypes,
+    x7_y6_tiletypes,
+    x7_y7_tiletypes,
+    x7_y8_tiletypes,
+    x7_y9_tiletypes,
+    x7_y10_tiletypes,
+    x7_y11_tiletypes,
+    x7_y12_tiletypes,
+    x7_y13_tiletypes,
+    x7_y14_tiletypes,
+    x7_y15_tiletypes,
+    x7_y16_tiletypes,
+    x7_y17_tiletypes,
+    x7_y18_tiletypes,
+    x7_y19_tiletypes,
+    x7_y20_tiletypes,
+    x7_y21_tiletypes,
+    x7_y22_tiletypes,
+    x7_y23_tiletypes,
+    x7_y24_tiletypes,
+    x7_y25_tiletypes,
+    x7_y26_tiletypes,
+    x7_y27_tiletypes,
+    x7_y28_tiletypes,
+    x7_y29_tiletypes,
+    x7_y30_tiletypes,
+    x7_y31_tiletypes,
+    x7_y32_tiletypes,
+    x7_y33_tiletypes,
+    x7_y34_tiletypes,
+    x7_y35_tiletypes,
+    x7_y36_tiletypes,
+    x7_y37_tiletypes,
+  },
+  {
+    x8_y0_tiletypes,
+    x8_y1_tiletypes,
+    x8_y2_tiletypes,
+    x8_y3_tiletypes,
+    x8_y4_tiletypes,
+    x8_y5_tiletypes,
+    x8_y6_tiletypes,
+    x8_y7_tiletypes,
+    x8_y8_tiletypes,
+    x8_y9_tiletypes,
+    x8_y10_tiletypes,
+    x8_y11_tiletypes,
+    x8_y12_tiletypes,
+    x8_y13_tiletypes,
+    x8_y14_tiletypes,
+    x8_y15_tiletypes,
+    x8_y16_tiletypes,
+    x8_y17_tiletypes,
+    x8_y18_tiletypes,
+    x8_y19_tiletypes,
+    x8_y20_tiletypes,
+    x8_y21_tiletypes,
+    x8_y22_tiletypes,
+    x8_y23_tiletypes,
+    x8_y24_tiletypes,
+    x8_y25_tiletypes,
+    x8_y26_tiletypes,
+    x8_y27_tiletypes,
+    x8_y28_tiletypes,
+    x8_y29_tiletypes,
+    x8_y30_tiletypes,
+    x8_y31_tiletypes,
+    x8_y32_tiletypes,
+    x8_y33_tiletypes,
+    x8_y34_tiletypes,
+    x8_y35_tiletypes,
+    x8_y36_tiletypes,
+    x8_y37_tiletypes,
+  },
+  {
+    x9_y0_tiletypes,
+    x9_y1_tiletypes,
+    x9_y2_tiletypes,
+    x9_y3_tiletypes,
+    x9_y4_tiletypes,
+    x9_y5_tiletypes,
+    x9_y6_tiletypes,
+    x9_y7_tiletypes,
+    x9_y8_tiletypes,
+    x9_y9_tiletypes,
+    x9_y10_tiletypes,
+    x9_y11_tiletypes,
+    x9_y12_tiletypes,
+    x9_y13_tiletypes,
+    x9_y14_tiletypes,
+    x9_y15_tiletypes,
+    x9_y16_tiletypes,
+    x9_y17_tiletypes,
+    x9_y18_tiletypes,
+    x9_y19_tiletypes,
+    x9_y20_tiletypes,
+    x9_y21_tiletypes,
+    x9_y22_tiletypes,
+    x9_y23_tiletypes,
+    x9_y24_tiletypes,
+    x9_y25_tiletypes,
+    x9_y26_tiletypes,
+    x9_y27_tiletypes,
+    x9_y28_tiletypes,
+    x9_y29_tiletypes,
+    x9_y30_tiletypes,
+    x9_y31_tiletypes,
+    x9_y32_tiletypes,
+    x9_y33_tiletypes,
+    x9_y34_tiletypes,
+    x9_y35_tiletypes,
+    x9_y36_tiletypes,
+    x9_y37_tiletypes,
+  },
+  {
+    x10_y0_tiletypes,
+    x10_y1_tiletypes,
+    x10_y2_tiletypes,
+    x10_y3_tiletypes,
+    x10_y4_tiletypes,
+    x10_y5_tiletypes,
+    x10_y6_tiletypes,
+    x10_y7_tiletypes,
+    x10_y8_tiletypes,
+    x10_y9_tiletypes,
+    x10_y10_tiletypes,
+    x10_y11_tiletypes,
+    x10_y12_tiletypes,
+    x10_y13_tiletypes,
+    x10_y14_tiletypes,
+    x10_y15_tiletypes,
+    x10_y16_tiletypes,
+    x10_y17_tiletypes,
+    x10_y18_tiletypes,
+    x10_y19_tiletypes,
+    x10_y20_tiletypes,
+    x10_y21_tiletypes,
+    x10_y22_tiletypes,
+    x10_y23_tiletypes,
+    x10_y24_tiletypes,
+    x10_y25_tiletypes,
+    x10_y26_tiletypes,
+    x10_y27_tiletypes,
+    x10_y28_tiletypes,
+    x10_y29_tiletypes,
+    x10_y30_tiletypes,
+    x10_y31_tiletypes,
+    x10_y32_tiletypes,
+    x10_y33_tiletypes,
+    x10_y34_tiletypes,
+    x10_y35_tiletypes,
+    x10_y36_tiletypes,
+    x10_y37_tiletypes,
+  },
+  {
+    x11_y0_tiletypes,
+    x11_y1_tiletypes,
+    x11_y2_tiletypes,
+    x11_y3_tiletypes,
+    x11_y4_tiletypes,
+    x11_y5_tiletypes,
+    x11_y6_tiletypes,
+    x11_y7_tiletypes,
+    x11_y8_tiletypes,
+    x11_y9_tiletypes,
+    x11_y10_tiletypes,
+    x11_y11_tiletypes,
+    x11_y12_tiletypes,
+    x11_y13_tiletypes,
+    x11_y14_tiletypes,
+    x11_y15_tiletypes,
+    x11_y16_tiletypes,
+    x11_y17_tiletypes,
+    x11_y18_tiletypes,
+    x11_y19_tiletypes,
+    x11_y20_tiletypes,
+    x11_y21_tiletypes,
+    x11_y22_tiletypes,
+    x11_y23_tiletypes,
+    x11_y24_tiletypes,
+    x11_y25_tiletypes,
+    x11_y26_tiletypes,
+    x11_y27_tiletypes,
+    x11_y28_tiletypes,
+    x11_y29_tiletypes,
+    x11_y30_tiletypes,
+    x11_y31_tiletypes,
+    x11_y32_tiletypes,
+    x11_y33_tiletypes,
+    x11_y34_tiletypes,
+    x11_y35_tiletypes,
+    x11_y36_tiletypes,
+    x11_y37_tiletypes,
+  },
+  {
+    x12_y0_tiletypes,
+    x12_y1_tiletypes,
+    x12_y2_tiletypes,
+    x12_y3_tiletypes,
+    x12_y4_tiletypes,
+    x12_y5_tiletypes,
+    x12_y6_tiletypes,
+    x12_y7_tiletypes,
+    x12_y8_tiletypes,
+    x12_y9_tiletypes,
+    x12_y10_tiletypes,
+    x12_y11_tiletypes,
+    x12_y12_tiletypes,
+    x12_y13_tiletypes,
+    x12_y14_tiletypes,
+    x12_y15_tiletypes,
+    x12_y16_tiletypes,
+    x12_y17_tiletypes,
+    x12_y18_tiletypes,
+    x12_y19_tiletypes,
+    x12_y20_tiletypes,
+    x12_y21_tiletypes,
+    x12_y22_tiletypes,
+    x12_y23_tiletypes,
+    x12_y24_tiletypes,
+    x12_y25_tiletypes,
+    x12_y26_tiletypes,
+    x12_y27_tiletypes,
+    x12_y28_tiletypes,
+    x12_y29_tiletypes,
+    x12_y30_tiletypes,
+    x12_y31_tiletypes,
+    x12_y32_tiletypes,
+    x12_y33_tiletypes,
+    x12_y34_tiletypes,
+    x12_y35_tiletypes,
+    x12_y36_tiletypes,
+    x12_y37_tiletypes,
+  },
+  {
+    x13_y0_tiletypes,
+    x13_y1_tiletypes,
+    x13_y2_tiletypes,
+    x13_y3_tiletypes,
+    x13_y4_tiletypes,
+    x13_y5_tiletypes,
+    x13_y6_tiletypes,
+    x13_y7_tiletypes,
+    x13_y8_tiletypes,
+    x13_y9_tiletypes,
+    x13_y10_tiletypes,
+    x13_y11_tiletypes,
+    x13_y12_tiletypes,
+    x13_y13_tiletypes,
+    x13_y14_tiletypes,
+    x13_y15_tiletypes,
+    x13_y16_tiletypes,
+    x13_y17_tiletypes,
+    x13_y18_tiletypes,
+    x13_y19_tiletypes,
+    x13_y20_tiletypes,
+    x13_y21_tiletypes,
+    x13_y22_tiletypes,
+    x13_y23_tiletypes,
+    x13_y24_tiletypes,
+    x13_y25_tiletypes,
+    x13_y26_tiletypes,
+    x13_y27_tiletypes,
+    x13_y28_tiletypes,
+    x13_y29_tiletypes,
+    x13_y30_tiletypes,
+    x13_y31_tiletypes,
+    x13_y32_tiletypes,
+    x13_y33_tiletypes,
+    x13_y34_tiletypes,
+    x13_y35_tiletypes,
+    x13_y36_tiletypes,
+    x13_y37_tiletypes,
+  },
+  {
+    x14_y0_tiletypes,
+    x14_y1_tiletypes,
+    x14_y2_tiletypes,
+    x14_y3_tiletypes,
+    x14_y4_tiletypes,
+    x14_y5_tiletypes,
+    x14_y6_tiletypes,
+    x14_y7_tiletypes,
+    x14_y8_tiletypes,
+    x14_y9_tiletypes,
+    x14_y10_tiletypes,
+    x14_y11_tiletypes,
+    x14_y12_tiletypes,
+    x14_y13_tiletypes,
+    x14_y14_tiletypes,
+    x14_y15_tiletypes,
+    x14_y16_tiletypes,
+    x14_y17_tiletypes,
+    x14_y18_tiletypes,
+    x14_y19_tiletypes,
+    x14_y20_tiletypes,
+    x14_y21_tiletypes,
+    x14_y22_tiletypes,
+    x14_y23_tiletypes,
+    x14_y24_tiletypes,
+    x14_y25_tiletypes,
+    x14_y26_tiletypes,
+    x14_y27_tiletypes,
+    x14_y28_tiletypes,
+    x14_y29_tiletypes,
+    x14_y30_tiletypes,
+    x14_y31_tiletypes,
+    x14_y32_tiletypes,
+    x14_y33_tiletypes,
+    x14_y34_tiletypes,
+    x14_y35_tiletypes,
+    x14_y36_tiletypes,
+    x14_y37_tiletypes,
+  },
+  {
+    x15_y0_tiletypes,
+    x15_y1_tiletypes,
+    x15_y2_tiletypes,
+    x15_y3_tiletypes,
+    x15_y4_tiletypes,
+    x15_y5_tiletypes,
+    x15_y6_tiletypes,
+    x15_y7_tiletypes,
+    x15_y8_tiletypes,
+    x15_y9_tiletypes,
+    x15_y10_tiletypes,
+    x15_y11_tiletypes,
+    x15_y12_tiletypes,
+    x15_y13_tiletypes,
+    x15_y14_tiletypes,
+    x15_y15_tiletypes,
+    x15_y16_tiletypes,
+    x15_y17_tiletypes,
+    x15_y18_tiletypes,
+    x15_y19_tiletypes,
+    x15_y20_tiletypes,
+    x15_y21_tiletypes,
+    x15_y22_tiletypes,
+    x15_y23_tiletypes,
+    x15_y24_tiletypes,
+    x15_y25_tiletypes,
+    x15_y26_tiletypes,
+    x15_y27_tiletypes,
+    x15_y28_tiletypes,
+    x15_y29_tiletypes,
+    x15_y30_tiletypes,
+    x15_y31_tiletypes,
+    x15_y32_tiletypes,
+    x15_y33_tiletypes,
+    x15_y34_tiletypes,
+    x15_y35_tiletypes,
+    x15_y36_tiletypes,
+    x15_y37_tiletypes,
+  },
+  {
+    x16_y0_tiletypes,
+    x16_y1_tiletypes,
+    x16_y2_tiletypes,
+    x16_y3_tiletypes,
+    x16_y4_tiletypes,
+    x16_y5_tiletypes,
+    x16_y6_tiletypes,
+    x16_y7_tiletypes,
+    x16_y8_tiletypes,
+    x16_y9_tiletypes,
+    x16_y10_tiletypes,
+    x16_y11_tiletypes,
+    x16_y12_tiletypes,
+    x16_y13_tiletypes,
+    x16_y14_tiletypes,
+    x16_y15_tiletypes,
+    x16_y16_tiletypes,
+    x16_y17_tiletypes,
+    x16_y18_tiletypes,
+    x16_y19_tiletypes,
+    x16_y20_tiletypes,
+    x16_y21_tiletypes,
+    x16_y22_tiletypes,
+    x16_y23_tiletypes,
+    x16_y24_tiletypes,
+    x16_y25_tiletypes,
+    x16_y26_tiletypes,
+    x16_y27_tiletypes,
+    x16_y28_tiletypes,
+    x16_y29_tiletypes,
+    x16_y30_tiletypes,
+    x16_y31_tiletypes,
+    x16_y32_tiletypes,
+    x16_y33_tiletypes,
+    x16_y34_tiletypes,
+    x16_y35_tiletypes,
+    x16_y36_tiletypes,
+    x16_y37_tiletypes,
+  },
+  {
+    x17_y0_tiletypes,
+    x17_y1_tiletypes,
+    x17_y2_tiletypes,
+    x17_y3_tiletypes,
+    x17_y4_tiletypes,
+    x17_y5_tiletypes,
+    x17_y6_tiletypes,
+    x17_y7_tiletypes,
+    x17_y8_tiletypes,
+    x17_y9_tiletypes,
+    x17_y10_tiletypes,
+    x17_y11_tiletypes,
+    x17_y12_tiletypes,
+    x17_y13_tiletypes,
+    x17_y14_tiletypes,
+    x17_y15_tiletypes,
+    x17_y16_tiletypes,
+    x17_y17_tiletypes,
+    x17_y18_tiletypes,
+    x17_y19_tiletypes,
+    x17_y20_tiletypes,
+    x17_y21_tiletypes,
+    x17_y22_tiletypes,
+    x17_y23_tiletypes,
+    x17_y24_tiletypes,
+    x17_y25_tiletypes,
+    x17_y26_tiletypes,
+    x17_y27_tiletypes,
+    x17_y28_tiletypes,
+    x17_y29_tiletypes,
+    x17_y30_tiletypes,
+    x17_y31_tiletypes,
+    x17_y32_tiletypes,
+    x17_y33_tiletypes,
+    x17_y34_tiletypes,
+    x17_y35_tiletypes,
+    x17_y36_tiletypes,
+    x17_y37_tiletypes,
+  },
+  {
+    x18_y0_tiletypes,
+    x18_y1_tiletypes,
+    x18_y2_tiletypes,
+    x18_y3_tiletypes,
+    x18_y4_tiletypes,
+    x18_y5_tiletypes,
+    x18_y6_tiletypes,
+    x18_y7_tiletypes,
+    x18_y8_tiletypes,
+    x18_y9_tiletypes,
+    x18_y10_tiletypes,
+    x18_y11_tiletypes,
+    x18_y12_tiletypes,
+    x18_y13_tiletypes,
+    x18_y14_tiletypes,
+    x18_y15_tiletypes,
+    x18_y16_tiletypes,
+    x18_y17_tiletypes,
+    x18_y18_tiletypes,
+    x18_y19_tiletypes,
+    x18_y20_tiletypes,
+    x18_y21_tiletypes,
+    x18_y22_tiletypes,
+    x18_y23_tiletypes,
+    x18_y24_tiletypes,
+    x18_y25_tiletypes,
+    x18_y26_tiletypes,
+    x18_y27_tiletypes,
+    x18_y28_tiletypes,
+    x18_y29_tiletypes,
+    x18_y30_tiletypes,
+    x18_y31_tiletypes,
+    x18_y32_tiletypes,
+    x18_y33_tiletypes,
+    x18_y34_tiletypes,
+    x18_y35_tiletypes,
+    x18_y36_tiletypes,
+    x18_y37_tiletypes,
+  },
+  {
+    x19_y0_tiletypes,
+    x19_y1_tiletypes,
+    x19_y2_tiletypes,
+    x19_y3_tiletypes,
+    x19_y4_tiletypes,
+    x19_y5_tiletypes,
+    x19_y6_tiletypes,
+    x19_y7_tiletypes,
+    x19_y8_tiletypes,
+    x19_y9_tiletypes,
+    x19_y10_tiletypes,
+    x19_y11_tiletypes,
+    x19_y12_tiletypes,
+    x19_y13_tiletypes,
+    x19_y14_tiletypes,
+    x19_y15_tiletypes,
+    x19_y16_tiletypes,
+    x19_y17_tiletypes,
+    x19_y18_tiletypes,
+    x19_y19_tiletypes,
+    x19_y20_tiletypes,
+    x19_y21_tiletypes,
+    x19_y22_tiletypes,
+    x19_y23_tiletypes,
+    x19_y24_tiletypes,
+    x19_y25_tiletypes,
+    x19_y26_tiletypes,
+    x19_y27_tiletypes,
+    x19_y28_tiletypes,
+    x19_y29_tiletypes,
+    x19_y30_tiletypes,
+    x19_y31_tiletypes,
+    x19_y32_tiletypes,
+    x19_y33_tiletypes,
+    x19_y34_tiletypes,
+    x19_y35_tiletypes,
+    x19_y36_tiletypes,
+    x19_y37_tiletypes,
+  },
+  {
+    x20_y0_tiletypes,
+    x20_y1_tiletypes,
+    x20_y2_tiletypes,
+    x20_y3_tiletypes,
+    x20_y4_tiletypes,
+    x20_y5_tiletypes,
+    x20_y6_tiletypes,
+    x20_y7_tiletypes,
+    x20_y8_tiletypes,
+    x20_y9_tiletypes,
+    x20_y10_tiletypes,
+    x20_y11_tiletypes,
+    x20_y12_tiletypes,
+    x20_y13_tiletypes,
+    x20_y14_tiletypes,
+    x20_y15_tiletypes,
+    x20_y16_tiletypes,
+    x20_y17_tiletypes,
+    x20_y18_tiletypes,
+    x20_y19_tiletypes,
+    x20_y20_tiletypes,
+    x20_y21_tiletypes,
+    x20_y22_tiletypes,
+    x20_y23_tiletypes,
+    x20_y24_tiletypes,
+    x20_y25_tiletypes,
+    x20_y26_tiletypes,
+    x20_y27_tiletypes,
+    x20_y28_tiletypes,
+    x20_y29_tiletypes,
+    x20_y30_tiletypes,
+    x20_y31_tiletypes,
+    x20_y32_tiletypes,
+    x20_y33_tiletypes,
+    x20_y34_tiletypes,
+    x20_y35_tiletypes,
+    x20_y36_tiletypes,
+    x20_y37_tiletypes,
+  },
+  {
+    x21_y0_tiletypes,
+    x21_y1_tiletypes,
+    x21_y2_tiletypes,
+    x21_y3_tiletypes,
+    x21_y4_tiletypes,
+    x21_y5_tiletypes,
+    x21_y6_tiletypes,
+    x21_y7_tiletypes,
+    x21_y8_tiletypes,
+    x21_y9_tiletypes,
+    x21_y10_tiletypes,
+    x21_y11_tiletypes,
+    x21_y12_tiletypes,
+    x21_y13_tiletypes,
+    x21_y14_tiletypes,
+    x21_y15_tiletypes,
+    x21_y16_tiletypes,
+    x21_y17_tiletypes,
+    x21_y18_tiletypes,
+    x21_y19_tiletypes,
+    x21_y20_tiletypes,
+    x21_y21_tiletypes,
+    x21_y22_tiletypes,
+    x21_y23_tiletypes,
+    x21_y24_tiletypes,
+    x21_y25_tiletypes,
+    x21_y26_tiletypes,
+    x21_y27_tiletypes,
+    x21_y28_tiletypes,
+    x21_y29_tiletypes,
+    x21_y30_tiletypes,
+    x21_y31_tiletypes,
+    x21_y32_tiletypes,
+    x21_y33_tiletypes,
+    x21_y34_tiletypes,
+    x21_y35_tiletypes,
+    x21_y36_tiletypes,
+    x21_y37_tiletypes,
+  },
+  {
+    x22_y0_tiletypes,
+    x22_y1_tiletypes,
+    x22_y2_tiletypes,
+    x22_y3_tiletypes,
+    x22_y4_tiletypes,
+    x22_y5_tiletypes,
+    x22_y6_tiletypes,
+    x22_y7_tiletypes,
+    x22_y8_tiletypes,
+    x22_y9_tiletypes,
+    x22_y10_tiletypes,
+    x22_y11_tiletypes,
+    x22_y12_tiletypes,
+    x22_y13_tiletypes,
+    x22_y14_tiletypes,
+    x22_y15_tiletypes,
+    x22_y16_tiletypes,
+    x22_y17_tiletypes,
+    x22_y18_tiletypes,
+    x22_y19_tiletypes,
+    x22_y20_tiletypes,
+    x22_y21_tiletypes,
+    x22_y22_tiletypes,
+    x22_y23_tiletypes,
+    x22_y24_tiletypes,
+    x22_y25_tiletypes,
+    x22_y26_tiletypes,
+    x22_y27_tiletypes,
+    x22_y28_tiletypes,
+    x22_y29_tiletypes,
+    x22_y30_tiletypes,
+    x22_y31_tiletypes,
+    x22_y32_tiletypes,
+    x22_y33_tiletypes,
+    x22_y34_tiletypes,
+    x22_y35_tiletypes,
+    x22_y36_tiletypes,
+    x22_y37_tiletypes,
+  },
+  {
+    x23_y0_tiletypes,
+    x23_y1_tiletypes,
+    x23_y2_tiletypes,
+    x23_y3_tiletypes,
+    x23_y4_tiletypes,
+    x23_y5_tiletypes,
+    x23_y6_tiletypes,
+    x23_y7_tiletypes,
+    x23_y8_tiletypes,
+    x23_y9_tiletypes,
+    x23_y10_tiletypes,
+    x23_y11_tiletypes,
+    x23_y12_tiletypes,
+    x23_y13_tiletypes,
+    x23_y14_tiletypes,
+    x23_y15_tiletypes,
+    x23_y16_tiletypes,
+    x23_y17_tiletypes,
+    x23_y18_tiletypes,
+    x23_y19_tiletypes,
+    x23_y20_tiletypes,
+    x23_y21_tiletypes,
+    x23_y22_tiletypes,
+    x23_y23_tiletypes,
+    x23_y24_tiletypes,
+    x23_y25_tiletypes,
+    x23_y26_tiletypes,
+    x23_y27_tiletypes,
+    x23_y28_tiletypes,
+    x23_y29_tiletypes,
+    x23_y30_tiletypes,
+    x23_y31_tiletypes,
+    x23_y32_tiletypes,
+    x23_y33_tiletypes,
+    x23_y34_tiletypes,
+    x23_y35_tiletypes,
+    x23_y36_tiletypes,
+    x23_y37_tiletypes,
+  },
+  {
+    x24_y0_tiletypes,
+    x24_y1_tiletypes,
+    x24_y2_tiletypes,
+    x24_y3_tiletypes,
+    x24_y4_tiletypes,
+    x24_y5_tiletypes,
+    x24_y6_tiletypes,
+    x24_y7_tiletypes,
+    x24_y8_tiletypes,
+    x24_y9_tiletypes,
+    x24_y10_tiletypes,
+    x24_y11_tiletypes,
+    x24_y12_tiletypes,
+    x24_y13_tiletypes,
+    x24_y14_tiletypes,
+    x24_y15_tiletypes,
+    x24_y16_tiletypes,
+    x24_y17_tiletypes,
+    x24_y18_tiletypes,
+    x24_y19_tiletypes,
+    x24_y20_tiletypes,
+    x24_y21_tiletypes,
+    x24_y22_tiletypes,
+    x24_y23_tiletypes,
+    x24_y24_tiletypes,
+    x24_y25_tiletypes,
+    x24_y26_tiletypes,
+    x24_y27_tiletypes,
+    x24_y28_tiletypes,
+    x24_y29_tiletypes,
+    x24_y30_tiletypes,
+    x24_y31_tiletypes,
+    x24_y32_tiletypes,
+    x24_y33_tiletypes,
+    x24_y34_tiletypes,
+    x24_y35_tiletypes,
+    x24_y36_tiletypes,
+    x24_y37_tiletypes,
+  },
+  {
+    x25_y0_tiletypes,
+    x25_y1_tiletypes,
+    x25_y2_tiletypes,
+    x25_y3_tiletypes,
+    x25_y4_tiletypes,
+    x25_y5_tiletypes,
+    x25_y6_tiletypes,
+    x25_y7_tiletypes,
+    x25_y8_tiletypes,
+    x25_y9_tiletypes,
+    x25_y10_tiletypes,
+    x25_y11_tiletypes,
+    x25_y12_tiletypes,
+    x25_y13_tiletypes,
+    x25_y14_tiletypes,
+    x25_y15_tiletypes,
+    x25_y16_tiletypes,
+    x25_y17_tiletypes,
+    x25_y18_tiletypes,
+    x25_y19_tiletypes,
+    x25_y20_tiletypes,
+    x25_y21_tiletypes,
+    x25_y22_tiletypes,
+    x25_y23_tiletypes,
+    x25_y24_tiletypes,
+    x25_y25_tiletypes,
+    x25_y26_tiletypes,
+    x25_y27_tiletypes,
+    x25_y28_tiletypes,
+    x25_y29_tiletypes,
+    x25_y30_tiletypes,
+    x25_y31_tiletypes,
+    x25_y32_tiletypes,
+    x25_y33_tiletypes,
+    x25_y34_tiletypes,
+    x25_y35_tiletypes,
+    x25_y36_tiletypes,
+    x25_y37_tiletypes,
+  },
+  {
+    x26_y0_tiletypes,
+    x26_y1_tiletypes,
+    x26_y2_tiletypes,
+    x26_y3_tiletypes,
+    x26_y4_tiletypes,
+    x26_y5_tiletypes,
+    x26_y6_tiletypes,
+    x26_y7_tiletypes,
+    x26_y8_tiletypes,
+    x26_y9_tiletypes,
+    x26_y10_tiletypes,
+    x26_y11_tiletypes,
+    x26_y12_tiletypes,
+    x26_y13_tiletypes,
+    x26_y14_tiletypes,
+    x26_y15_tiletypes,
+    x26_y16_tiletypes,
+    x26_y17_tiletypes,
+    x26_y18_tiletypes,
+    x26_y19_tiletypes,
+    x26_y20_tiletypes,
+    x26_y21_tiletypes,
+    x26_y22_tiletypes,
+    x26_y23_tiletypes,
+    x26_y24_tiletypes,
+    x26_y25_tiletypes,
+    x26_y26_tiletypes,
+    x26_y27_tiletypes,
+    x26_y28_tiletypes,
+    x26_y29_tiletypes,
+    x26_y30_tiletypes,
+    x26_y31_tiletypes,
+    x26_y32_tiletypes,
+    x26_y33_tiletypes,
+    x26_y34_tiletypes,
+    x26_y35_tiletypes,
+    x26_y36_tiletypes,
+    x26_y37_tiletypes,
+  },
+  {
+    x27_y0_tiletypes,
+    x27_y1_tiletypes,
+    x27_y2_tiletypes,
+    x27_y3_tiletypes,
+    x27_y4_tiletypes,
+    x27_y5_tiletypes,
+    x27_y6_tiletypes,
+    x27_y7_tiletypes,
+    x27_y8_tiletypes,
+    x27_y9_tiletypes,
+    x27_y10_tiletypes,
+    x27_y11_tiletypes,
+    x27_y12_tiletypes,
+    x27_y13_tiletypes,
+    x27_y14_tiletypes,
+    x27_y15_tiletypes,
+    x27_y16_tiletypes,
+    x27_y17_tiletypes,
+    x27_y18_tiletypes,
+    x27_y19_tiletypes,
+    x27_y20_tiletypes,
+    x27_y21_tiletypes,
+    x27_y22_tiletypes,
+    x27_y23_tiletypes,
+    x27_y24_tiletypes,
+    x27_y25_tiletypes,
+    x27_y26_tiletypes,
+    x27_y27_tiletypes,
+    x27_y28_tiletypes,
+    x27_y29_tiletypes,
+    x27_y30_tiletypes,
+    x27_y31_tiletypes,
+    x27_y32_tiletypes,
+    x27_y33_tiletypes,
+    x27_y34_tiletypes,
+    x27_y35_tiletypes,
+    x27_y36_tiletypes,
+    x27_y37_tiletypes,
+  },
+  {
+    x28_y0_tiletypes,
+    x28_y1_tiletypes,
+    x28_y2_tiletypes,
+    x28_y3_tiletypes,
+    x28_y4_tiletypes,
+    x28_y5_tiletypes,
+    x28_y6_tiletypes,
+    x28_y7_tiletypes,
+    x28_y8_tiletypes,
+    x28_y9_tiletypes,
+    x28_y10_tiletypes,
+    x28_y11_tiletypes,
+    x28_y12_tiletypes,
+    x28_y13_tiletypes,
+    x28_y14_tiletypes,
+    x28_y15_tiletypes,
+    x28_y16_tiletypes,
+    x28_y17_tiletypes,
+    x28_y18_tiletypes,
+    x28_y19_tiletypes,
+    x28_y20_tiletypes,
+    x28_y21_tiletypes,
+    x28_y22_tiletypes,
+    x28_y23_tiletypes,
+    x28_y24_tiletypes,
+    x28_y25_tiletypes,
+    x28_y26_tiletypes,
+    x28_y27_tiletypes,
+    x28_y28_tiletypes,
+    x28_y29_tiletypes,
+    x28_y30_tiletypes,
+    x28_y31_tiletypes,
+    x28_y32_tiletypes,
+    x28_y33_tiletypes,
+    x28_y34_tiletypes,
+    x28_y35_tiletypes,
+    x28_y36_tiletypes,
+    x28_y37_tiletypes,
+  },
+  {
+    x29_y0_tiletypes,
+    x29_y1_tiletypes,
+    x29_y2_tiletypes,
+    x29_y3_tiletypes,
+    x29_y4_tiletypes,
+    x29_y5_tiletypes,
+    x29_y6_tiletypes,
+    x29_y7_tiletypes,
+    x29_y8_tiletypes,
+    x29_y9_tiletypes,
+    x29_y10_tiletypes,
+    x29_y11_tiletypes,
+    x29_y12_tiletypes,
+    x29_y13_tiletypes,
+    x29_y14_tiletypes,
+    x29_y15_tiletypes,
+    x29_y16_tiletypes,
+    x29_y17_tiletypes,
+    x29_y18_tiletypes,
+    x29_y19_tiletypes,
+    x29_y20_tiletypes,
+    x29_y21_tiletypes,
+    x29_y22_tiletypes,
+    x29_y23_tiletypes,
+    x29_y24_tiletypes,
+    x29_y25_tiletypes,
+    x29_y26_tiletypes,
+    x29_y27_tiletypes,
+    x29_y28_tiletypes,
+    x29_y29_tiletypes,
+    x29_y30_tiletypes,
+    x29_y31_tiletypes,
+    x29_y32_tiletypes,
+    x29_y33_tiletypes,
+    x29_y34_tiletypes,
+    x29_y35_tiletypes,
+    x29_y36_tiletypes,
+    x29_y37_tiletypes,
+  },
+  {
+    x30_y0_tiletypes,
+    x30_y1_tiletypes,
+    x30_y2_tiletypes,
+    x30_y3_tiletypes,
+    x30_y4_tiletypes,
+    x30_y5_tiletypes,
+    x30_y6_tiletypes,
+    x30_y7_tiletypes,
+    x30_y8_tiletypes,
+    x30_y9_tiletypes,
+    x30_y10_tiletypes,
+    x30_y11_tiletypes,
+    x30_y12_tiletypes,
+    x30_y13_tiletypes,
+    x30_y14_tiletypes,
+    x30_y15_tiletypes,
+    x30_y16_tiletypes,
+    x30_y17_tiletypes,
+    x30_y18_tiletypes,
+    x30_y19_tiletypes,
+    x30_y20_tiletypes,
+    x30_y21_tiletypes,
+    x30_y22_tiletypes,
+    x30_y23_tiletypes,
+    x30_y24_tiletypes,
+    x30_y25_tiletypes,
+    x30_y26_tiletypes,
+    x30_y27_tiletypes,
+    x30_y28_tiletypes,
+    x30_y29_tiletypes,
+    x30_y30_tiletypes,
+    x30_y31_tiletypes,
+    x30_y32_tiletypes,
+    x30_y33_tiletypes,
+    x30_y34_tiletypes,
+    x30_y35_tiletypes,
+    x30_y36_tiletypes,
+    x30_y37_tiletypes,
+  },
+  {
+    x31_y0_tiletypes,
+    x31_y1_tiletypes,
+    x31_y2_tiletypes,
+    x31_y3_tiletypes,
+    x31_y4_tiletypes,
+    x31_y5_tiletypes,
+    x31_y6_tiletypes,
+    x31_y7_tiletypes,
+    x31_y8_tiletypes,
+    x31_y9_tiletypes,
+    x31_y10_tiletypes,
+    x31_y11_tiletypes,
+    x31_y12_tiletypes,
+    x31_y13_tiletypes,
+    x31_y14_tiletypes,
+    x31_y15_tiletypes,
+    x31_y16_tiletypes,
+    x31_y17_tiletypes,
+    x31_y18_tiletypes,
+    x31_y19_tiletypes,
+    x31_y20_tiletypes,
+    x31_y21_tiletypes,
+    x31_y22_tiletypes,
+    x31_y23_tiletypes,
+    x31_y24_tiletypes,
+    x31_y25_tiletypes,
+    x31_y26_tiletypes,
+    x31_y27_tiletypes,
+    x31_y28_tiletypes,
+    x31_y29_tiletypes,
+    x31_y30_tiletypes,
+    x31_y31_tiletypes,
+    x31_y32_tiletypes,
+    x31_y33_tiletypes,
+    x31_y34_tiletypes,
+    x31_y35_tiletypes,
+    x31_y36_tiletypes,
+    x31_y37_tiletypes,
+  },
+  {
+    x32_y0_tiletypes,
+    x32_y1_tiletypes,
+    x32_y2_tiletypes,
+    x32_y3_tiletypes,
+    x32_y4_tiletypes,
+    x32_y5_tiletypes,
+    x32_y6_tiletypes,
+    x32_y7_tiletypes,
+    x32_y8_tiletypes,
+    x32_y9_tiletypes,
+    x32_y10_tiletypes,
+    x32_y11_tiletypes,
+    x32_y12_tiletypes,
+    x32_y13_tiletypes,
+    x32_y14_tiletypes,
+    x32_y15_tiletypes,
+    x32_y16_tiletypes,
+    x32_y17_tiletypes,
+    x32_y18_tiletypes,
+    x32_y19_tiletypes,
+    x32_y20_tiletypes,
+    x32_y21_tiletypes,
+    x32_y22_tiletypes,
+    x32_y23_tiletypes,
+    x32_y24_tiletypes,
+    x32_y25_tiletypes,
+    x32_y26_tiletypes,
+    x32_y27_tiletypes,
+    x32_y28_tiletypes,
+    x32_y29_tiletypes,
+    x32_y30_tiletypes,
+    x32_y31_tiletypes,
+    x32_y32_tiletypes,
+    x32_y33_tiletypes,
+    x32_y34_tiletypes,
+    x32_y35_tiletypes,
+    x32_y36_tiletypes,
+    x32_y37_tiletypes,
+  },
+  {
+    x33_y0_tiletypes,
+    x33_y1_tiletypes,
+    x33_y2_tiletypes,
+    x33_y3_tiletypes,
+    x33_y4_tiletypes,
+    x33_y5_tiletypes,
+    x33_y6_tiletypes,
+    x33_y7_tiletypes,
+    x33_y8_tiletypes,
+    x33_y9_tiletypes,
+    x33_y10_tiletypes,
+    x33_y11_tiletypes,
+    x33_y12_tiletypes,
+    x33_y13_tiletypes,
+    x33_y14_tiletypes,
+    x33_y15_tiletypes,
+    x33_y16_tiletypes,
+    x33_y17_tiletypes,
+    x33_y18_tiletypes,
+    x33_y19_tiletypes,
+    x33_y20_tiletypes,
+    x33_y21_tiletypes,
+    x33_y22_tiletypes,
+    x33_y23_tiletypes,
+    x33_y24_tiletypes,
+    x33_y25_tiletypes,
+    x33_y26_tiletypes,
+    x33_y27_tiletypes,
+    x33_y28_tiletypes,
+    x33_y29_tiletypes,
+    x33_y30_tiletypes,
+    x33_y31_tiletypes,
+    x33_y32_tiletypes,
+    x33_y33_tiletypes,
+    x33_y34_tiletypes,
+    x33_y35_tiletypes,
+    x33_y36_tiletypes,
+    x33_y37_tiletypes,
+  },
+  {
+    x34_y0_tiletypes,
+    x34_y1_tiletypes,
+    x34_y2_tiletypes,
+    x34_y3_tiletypes,
+    x34_y4_tiletypes,
+    x34_y5_tiletypes,
+    x34_y6_tiletypes,
+    x34_y7_tiletypes,
+    x34_y8_tiletypes,
+    x34_y9_tiletypes,
+    x34_y10_tiletypes,
+    x34_y11_tiletypes,
+    x34_y12_tiletypes,
+    x34_y13_tiletypes,
+    x34_y14_tiletypes,
+    x34_y15_tiletypes,
+    x34_y16_tiletypes,
+    x34_y17_tiletypes,
+    x34_y18_tiletypes,
+    x34_y19_tiletypes,
+    x34_y20_tiletypes,
+    x34_y21_tiletypes,
+    x34_y22_tiletypes,
+    x34_y23_tiletypes,
+    x34_y24_tiletypes,
+    x34_y25_tiletypes,
+    x34_y26_tiletypes,
+    x34_y27_tiletypes,
+    x34_y28_tiletypes,
+    x34_y29_tiletypes,
+    x34_y30_tiletypes,
+    x34_y31_tiletypes,
+    x34_y32_tiletypes,
+    x34_y33_tiletypes,
+    x34_y34_tiletypes,
+    x34_y35_tiletypes,
+    x34_y36_tiletypes,
+    x34_y37_tiletypes,
   },
 };
 
