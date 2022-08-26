@@ -53,7 +53,12 @@
 #define BLOCK_CLKDIV              8
 #define BLOCK_OSC                 9
 #define BLOCK_PLL                10
-#define BLOCK_OTHER              11
+#define BLOCK_GCLK_CSB           11
+#define BLOCK_GCLK_PREMUX        12
+#define BLOCK_GCLK_CTMUX         13
+#define BLOCK_GCLK_SPINE         14
+#define BLOCK_CONFIG             15
+#define BLOCK_OTHER              16
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -79,7 +84,7 @@ typedef struct tagBITNAMES         BITNAMES,         *pBITNAMES;
 
 typedef struct tagBITLISTITEM      BITLISTITEM,      *pBITLISTITEM;
 
-typedef struct tagBLOCKLISTITEM    BLOCKLISTITEM,    *pBLOCKLISTITEM;
+typedef struct tagBLOCKINFOITEM    BLOCKINFOITEM,    *pBLOCKINFOITEM,    **ppBLOCKINFOITEM;
 
 typedef struct tagNAMEITEM         NAMEITEM,         *pNAMEITEM;
 typedef struct tagROUTEINFOITEM    ROUTEINFOITEM,    *pROUTEINFOITEM;
@@ -109,23 +114,38 @@ struct tagNAMEITEM
 
 struct tagBITLISTITEM
 {
+  //This one is for the linking of the tile array list entries
+  pBITLISTITEM   link;
+  
+  //These are for the sorted list
   pBITLISTITEM   prev;
   pBITLISTITEM   next;
-  pTILEGRIDDATA  tiledata;
-  pCONFIGBITDATA bitdata;
-  pTILEPADPINMAP paddata;
-};
-
-struct tagBLOCKLISTITEM
-{
-  pBLOCKLISTITEM  prev;
-  pBLOCKLISTITEM  next;
   
   pTILEGRIDDATA  tiledata;
   pCONFIGBITDATA bitdata;
   pTILEPADPINMAP paddata;
+  
+  int            blocknumber;
+};
 
-  int            blocktype;  
+struct tagBLOCKINFOITEM
+{
+  pBLOCKINFOITEM  next;
+  
+  int             x;
+  int             y;
+  
+  int             blocknumber;
+  int             blocktype;
+  
+  int             lutid;
+  int             sliceid;
+  int             padid;
+  int             pinnumber;
+  int             embid;
+  int             pllid;
+  
+  char           *tiletype;
 };
 
 
@@ -140,8 +160,21 @@ struct tagROUTEINFOITEM
 
   pROUTEINFOITEM matingrouteitem;   //When a connection pair is found the other bit is linked here
   
+  int            toptilex;          //Coordinates of the tile a block belongs to
+  int            toptiley;          //For pad and emb slices these can differ from the signal coordinates
+  
   int            netnumber;         //Net this bit belongs to
   int            netsignal;         //Type of signal
+  
+  int            blocknumber;       //Id of the block this route point connects to
+  int            blocktype;         //The type of the block this route point connects to
+
+  int            lutid;
+  int            sliceid;
+  int            padid;
+  int            pinnumber;
+  int            embid;
+  int            pllid;
   
   int            routetype;         //Route type for this bit that signals for instance a start or end point 
   int            routestartentity;  //The ARCVAL entity that is used in the match with the mating bit
@@ -206,6 +239,13 @@ int tileroutecount;
 
 //Array for gathering settings bits for the tiles
 pBITLISTITEM tilesetuparray[COLUMNS][ROWS];
+
+//A sorted list of the blocks
+pBLOCKINFOITEM  blocklist = 0;
+ppBLOCKINFOITEM blocklistlast = 0;
+
+//A sorted list of setup bits
+pBITLISTITEM    blocksetuplist = 0;
 
 //A sorted route list is made in this list
 pNETLISTITEM  routelist = 0;
@@ -298,10 +338,15 @@ const BITNAMES bitnames[] =
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-const pTILEPADPINMAP getpinmapfortile(int x, int y, pCONFIGBITDATA bitdata)
+void getpinmapfortile(pBITLISTITEM item, pBLOCKINFOITEM block)
 {
   int iol = -1;
   int i;
+  
+  pCONFIGBITDATA bitdata = item->bitdata;
+  
+  int x = item->tiledata->x;
+  int y = item->tiledata->y;
   
   //Check the items that have a relation with a pad
   for(i=0;i<sizeof(bitnames) / sizeof(BITNAMES);i++)
@@ -316,17 +361,41 @@ const pTILEPADPINMAP getpinmapfortile(int x, int y, pCONFIGBITDATA bitdata)
     }
   }
   
+  //When no bit name matches check if it is a mux select
+  if((iol == -1) && (strncmp(bitdata->name, "TOP.", 4) == 0))
+  {
+    //For XI numbers from 300 and above it could be an IO route
+    if(atoi(&bitdata->name[6]) >= 300)
+    {
+      //To check if it is a IO mux the first data item can be checked
+      if(bitdata->datacount)
+      {
+        //This property seems to be a correct indicator for a pad number
+        if(strncmp(bitdata->bitdata[0].data, "PROPERTY(IOL", 12) == 0)
+        {
+          iol = atoi(&bitdata->bitdata[0].data[12]);
+        }
+      }
+    }
+  }  
+  
   //Check if a pad number has been found
   if(iol != -1)
   {
+    //Set the pad id for this bit
+    block->padid = iol;
+    
+    //See if it has a pin connected to it
     for(i=0;i<sizeof(tilepadmap)/sizeof(TILEPADPINMAP);i++)
     {
       if((x == tilepadmap[i].x) && (y == tilepadmap[i].y) && (iol == tilepadmap[i].iol))
-        return((const pTILEPADPINMAP)&tilepadmap[i]);
+      {
+        item->paddata = (const pTILEPADPINMAP)&tilepadmap[i];
+        
+        block->pinnumber = item->paddata->pin;
+      }
     }
   }  
-
-  return(0);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -338,22 +407,23 @@ void addtotilesetuplist(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
   //Get memory for the bit list item for this bit
   bitlistitem = malloc(sizeof(BITLISTITEM));
 
+  //Clear the linked list items for sorting
+  bitlistitem->prev = 0;
+  bitlistitem->next = 0;
+  
   //Set the source information
   bitlistitem->tiledata = tiledata;
   bitlistitem->bitdata  = bitdata;
+  bitlistitem->paddata  = 0;
   
-  //Only when the bit has an io block type try to find pin information for it
-  if((strncmp(tiledata->type, "iol_", 4) == 0) && (strncmp(bitdata->type, "MISCS_MIC_IO_", 13) == 0))
-  {
-    bitlistitem->paddata  = getpinmapfortile(tiledata->x, tiledata->y, bitdata);
-  }
+  //Signal not assigned yet
+  bitlistitem->blocknumber = -1;
   
   //Check if the route info list for this tile is not already started
   if(tilesetuparray[tiledata->x][tiledata->y] == 0)
   {
     //First item in the list, so no previous and next
-    bitlistitem->prev = 0;
-    bitlistitem->next = 0;
+    bitlistitem->link = 0;
     
     //Set it as the first item of the list
     tilesetuparray[tiledata->x][tiledata->y] = bitlistitem;
@@ -361,11 +431,7 @@ void addtotilesetuplist(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
   else
   {
     //Not the first item so add it to the start of the list since it is quicker then looping to the end
-    bitlistitem->prev = 0;
-    bitlistitem->next = tilesetuparray[tiledata->x][tiledata->y];
-
-    //Set the back track connection
-    tilesetuparray[tiledata->x][tiledata->y]->prev = bitlistitem;
+    bitlistitem->link = tilesetuparray[tiledata->x][tiledata->y];
 
     //Set it as the first item of the list
     tilesetuparray[tiledata->x][tiledata->y] = bitlistitem;
@@ -374,10 +440,30 @@ void addtotilesetuplist(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+void additemtoblocklist(pBLOCKINFOITEM item)
+{
+  //Add the route point to the net list
+  if(blocklist == 0)
+  {
+    //No items added yet so start with this one
+    blocklist = item;
+  }
+  else
+  {
+    //List exists so add to it
+    *blocklistlast = item;
+  }
+    
+  //Point to where the next item needs to be added
+  blocklistlast = &item->next;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 void additemtofinalnetlist(pROUTEINFOITEM item)
 {
   //Get memory for the net list item for this bit
-  pNETLISTITEM netitem = malloc(sizeof(pNETLISTITEM));
+  pNETLISTITEM netitem = malloc(sizeof(NETLISTITEM));
 
   //Setup the net list item
   netitem->routebit= item;
@@ -437,7 +523,7 @@ void additemtonetlist(pROUTEINFOITEM routebit)
   pNETLISTITEM  addlist;
   
   //Get memory for the net list item for this bit
-  pNETLISTITEM netitem = malloc(sizeof(pNETLISTITEM));
+  pNETLISTITEM netitem = malloc(sizeof(NETLISTITEM));
   
   //Setup the net list item
   netitem->routebit = routebit;
@@ -1576,7 +1662,7 @@ void buildgclknets(int *netnumber)
           //Check if the current route bit is not typed already
           if(bitlist->routetype == TYPE_NONE)
           {
-            //See if it is a ground point or not
+            //See if it is a clock route or not
             if(findgclkpoint(bitlist, *netnumber, clkname, clklength) == 1)
             {
               found = 1;
@@ -1589,7 +1675,7 @@ void buildgclknets(int *netnumber)
       }
     }
 
-    //Check if a ground net is found
+    //Check if a clock net is found
     if(found)
     {
       //Found a ground net then select next net number
@@ -1730,32 +1816,143 @@ pROUTEINFOITEM findmatchingpair(pROUTEINFOITEM routeinfoitem, int netnumber)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-int getnumberfromitem(pNAMEITEM item)
+void getsignalproperties(pROUTEINFOITEM item)
 {
-  int count = item->length;
-  int number = -1;
+  int blocktype = BLOCK_OTHER;
   
-  char *ptr = item->name;
+  int length;
   
-  //skip characters until a digit is found
-  while(count)
+  char *dptr;
+  
+ char *type;
+  
+  //The block type depends on several things. For instance the tile type for slices is plb in which mslices and lslices sit
+  //These depend on the numbers in the bit name
+  
+  //An emb block can be a fifo which can only be determined by checking more then one bit
+  
+  //Not sure if the tile type pib is used here because io is situated in dedicated tile types
+  
+  //Need to look into what is actually needed here to make it work
+  
+  
+  item->sliceid   = -1;
+  item->lutid     = -1;
+  item->padid     = -1;
+  item->pinnumber = -1;
+  item->embid     = -1;
+  item->pllid     = -1;
+  
+  //The signal properties are found in the signal name
+  if(item->signalprefix)
   {
-    //A route entity only has a single digit from 0 to max 7
-    if((*ptr >= '0') && (*ptr <= '7'))
-    {
-      //COnvert the digit into a number
-      number = *ptr - '0';
-      
-      //Found it so done
-      break;
-    }
+    type = item->signalprefix->tiletype;
     
-    //Skip to next character until done
-    ptr++;
-    count--;
+    if(strncmp(type, "plb", 3) == 0)
+    {
+      //signalname->hdl_name for lut determination
+      //signalprefix->signalprefix for slice determination
+      
+      item->sliceid = item->signalprefix->signalprefix[6] - '0';
+      
+      //The lut id is either 0 or 1 and can be found in the hdl name where either the second or third character is an _
+      if(dptr = strstr(item->signalname->hdl_name, "_"))
+      {
+        //There are signal names that do not have a lut id after the first _ so need to make sure it is a lut id
+        if(dptr[1] == '0')
+        {
+          item->lutid = 0;
+        }
+        else if(dptr[1] == '1')
+        {
+          item->lutid = 1;
+        }
+      }
+      
+      //Evaluate the slice number. 0 and 1 are for mslice and 2 and 3 are for lslice
+      if(item->sliceid < 2)
+      {
+        blocktype = BLOCK_MSLICE;
+      }
+      else
+      {
+        blocktype = BLOCK_LSLICE;
+      }
+    }
+    else if(strncmp(type, "iol_", 4) == 0)
+    {
+      if(item->paddata)
+      {
+        item->padid = item->paddata->iol;
+      }
+      else
+      {
+        item->padid = item->signalprefix->signalprefix[3] - '0';
+      }
+      
+      blocktype = BLOCK_PAD;
+    }
+    else if(strncmp(type, "emb_slice", 9) == 0)
+    {
+      item->embid = item->signalprefix->signalprefix[3] - '0';
+
+      //Have to see how to make sure this is correct
+      blocktype = BLOCK_EMB;
+    }
+    else if(strncmp(type, "mult", 4) == 0)
+    {
+      blocktype = BLOCK_DSP;
+    }
+    else if(strncmp(type, "emb32k_b", 8) == 0)
+    {
+      blocktype = BLOCK_EMB_32K;
+    }
+    else if(strncmp(type, "clkdiv", 6) == 0)
+    {
+      blocktype = BLOCK_CLKDIV;
+    }
+    else if(strncmp(type, "gclk_csb", 8) == 0)
+    {
+      blocktype = BLOCK_GCLK_CSB;
+    }
+    else if(strncmp(type, "gclk_ctmux", 10) == 0)
+    {
+      blocktype = BLOCK_GCLK_CTMUX;
+    }
+    else if(strncmp(type, "gclk_premux", 11) == 0)
+    {
+      blocktype = BLOCK_GCLK_PREMUX;
+    }
+    else if(strncmp(type, "gclk_spine", 10) == 0)
+    {
+      blocktype = BLOCK_GCLK_SPINE;
+    }
+    else if(strncmp(type, "ioclk", 5) == 0)
+    {
+      blocktype = BLOCK_OTHER;
+    }
+    else if(strncmp(type, "ios_", 4) == 0)
+    {
+      blocktype = BLOCK_OTHER;
+    }
+    else if(strncmp(type, "pll", 3) == 0)
+    {
+      item->pllid = type[3] - '0';
+
+      blocktype = BLOCK_PLL;
+    }
+    else if(strncmp(type, "osc", 3) == 0)
+    {
+      blocktype = BLOCK_OSC;
+    }
+    else if(strncmp(type, "na", 2) == 0)
+    {
+      blocktype = BLOCK_CONFIG;
+    }
   }
   
-  return(number);
+  //Set the found block type
+  item->blocktype = blocktype;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -1798,30 +1995,27 @@ void mapsignalname(pROUTEINFOITEM routeitem)
   //One block that has this is emb, which can also be a fifo
   //Needs a bit of investigation on how to check and use this
   
+  //The above seems not to be used in the FNIRSI-1013D FPGA so skipped for now
   
-  //The search system here is flawed because it has to be mapped back onto the original tile
-  //It seems to work for the pads but it is not be right for emb
+  //What needs to be done here is map a signal to a block in the block list
+  //Have to see if IO pads can be mapped correctly because in the net list there is a difference between the coordinates
+  //of a signal name and the coordinates of a pad. Same problem for emb slices.
   
-  //So when a match is found it has to be verified that the tile pointed to when the signal xoff and yoff are taken into account
-  //actually is of the intended type
+  //In the block map the tile coordinates are those for the top level tile. For example emb_slice 2 has its configuration done if 8,0 while the signals connect in 8,5 or 8,6
+  //So for the mapping the top level coordinates are needed. This is also done below to verify the type!
   
-  //A bit of an issue here is that a tile can have multiple meanings (types) that need to be checked
-  //The mapping tables need more data for this so might need to revisit the generation of them
   
-  //Need to add the tile types to the array, which means a separate set of tables with tile types and a pointer in the signal map
-  //and the tile type should also be added to the intermediate tables for pointing to the actual signal mapping tables
   
-  //Maybe better to make a separate type table!!!
-  
-  //This is the type map to check
-  //tiletypemap
-  
+  //Only do mapping when there is an actual translation table available
   if(tilesignalmapptr)
   {
-    //Check if this tile has emb logic in it
-    if((strncmp(tilesignalmapptr->signalprefix, "emb", 3) == 0) && (tilesignalmapptr->signalprefix[3] >= '0') && (tilesignalmapptr->signalprefix[3] <= '3'))
+    //Check if this tile has emb logic in it. prefixes in range are emb0 - emb3. emb32K_b0 and emb32K_b1 are not valid because they don't have fifo capability.
+    if((strncmp(tilesignalmapptr->signalprefix, "emb", 3) == 0) && (tilesignalmapptr->signalprefix[3] >= '0') && (tilesignalmapptr->signalprefix[3] <= '3') && (tilesignalmapptr->signalprefix[4] == 0))
     {
-      //If so there might be a need to skip to a fifo
+      //If so there might be a need to skip to a fifo based table
+      //Needs looping through the table to find the first fifo map
+      
+      //Check the block type which should be used. But for this it should be mapped to a block first
     }
     
     //Search the lists until the matching signal is found
@@ -1836,8 +2030,11 @@ void mapsignalname(pROUTEINFOITEM routeitem)
         //Need case insensitive searching because the ARCVAL entities are upper case and the mapping names are lower case
         if(strnicmp(signalname->name, signalsearchtable->signal_name, signalname->length) == 0)
         {
-          //Check the tile this match is offset from on the correct type to make sure the match is correct
-          typemap = tiletypemap[x - signalsearchtable->xoff][y - signalsearchtable->yoff];
+          routeitem->toptilex = x - signalsearchtable->xoff;
+          routeitem->toptiley = y - signalsearchtable->yoff;
+          
+          //Check the tile that this match is offset from, on the correct type to make sure the match is correct
+          typemap = tiletypemap[routeitem->toptilex][routeitem->toptiley];
           
           //Only if the originating tile has a typemap check it there is a match
           if(typemap)
@@ -1852,7 +2049,7 @@ void mapsignalname(pROUTEINFOITEM routeitem)
                 routeitem->signalname   = signalsearchtable;
                 routeitem->signalprefix = tilesignalmapptr;
 
-                //Done so break out both the loops
+                //Done so break out all the loops
                 found = 1;
               }
               
@@ -1870,7 +2067,7 @@ void mapsignalname(pROUTEINFOITEM routeitem)
       tilesignalmapptr++;
     }
   }
-
+  
   //When a name is found see if it could be an IO pin which are only situated in pib tiles and have a prefix name starting with pad
   if((found == 1) && (strncmp(routeitem->signalprefix->signalprefix, "pad", 3) == 0))
   {
@@ -1892,6 +2089,84 @@ void mapsignalname(pROUTEINFOITEM routeitem)
       }
     }
   }  
+
+  //When there is a signal match try to match it to a block
+  if(found == 1)
+  {
+    pBLOCKINFOITEM searchlist = blocklist;
+    //Search the block list for a matching block this signal connects to
+    //Need more info like slice and pad id's
+    
+    //Need to compare the type strings
+    //routeitem->signalprefix->tiletype
+    //blocklist->tiletype
+    
+    //When they match it is type dependent what needs to be checked next
+    
+    //First get the needed properties for this bit
+    getsignalproperties(routeitem);
+    
+    found = 0;
+    
+    //Just search the block list to find a match
+    while(searchlist && (found == 0))
+    {
+      found = 0;
+      
+      if((searchlist->x == routeitem->toptilex) && (searchlist->y == routeitem->toptiley) && (searchlist->blocktype == routeitem->blocktype))
+      {
+        //For the moment only the blocks used in the FNIRSI FPGA are checked
+        
+        switch(routeitem->blocktype)
+        {
+          case BLOCK_PAD:
+            if(searchlist->padid == routeitem->padid)
+            {
+              found = 1;
+            }
+            break;
+            
+          case BLOCK_MSLICE:
+          case BLOCK_LSLICE:
+            if(searchlist->sliceid == routeitem->sliceid)
+            {
+              found = 1;
+            }
+            break;
+
+          case BLOCK_EMB:
+            if(searchlist->embid == routeitem->embid)
+            {
+              found = 1;
+            }
+            break;
+            
+          case BLOCK_PLL:
+            if(searchlist->pllid == routeitem->pllid)
+            {
+              found = 1;
+            }
+            break;
+            
+          case BLOCK_GCLK_CSB:
+          case BLOCK_GCLK_PREMUX:
+          case BLOCK_GCLK_CTMUX:
+          case BLOCK_GCLK_SPINE:
+            found = 1;
+            break;
+        }
+      }
+      
+      if(found == 1)
+      {
+        routeitem->blocknumber = searchlist->blocknumber;
+      }
+      
+      searchlist = searchlist->next;
+    }
+    
+    
+  }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -1982,6 +2257,614 @@ void filterroutelist()
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+void insertitembeforesetuplist(pBITLISTITEM current, pBITLISTITEM new)
+{
+  //Do an insert
+  //Check if first item of the list
+  if(current->prev == 0)
+  {
+    //If so make this one the first item in the list, so no previous
+    new->prev = 0;
+    new->next = current;
+
+    //Set the back track connection
+    current->prev = new;
+
+    //Set it as the first item of the list
+    blocksetuplist = new;
+  }
+  else
+  {
+    //Insert it in the list
+    //Link the new item to the previous item
+    new->prev = current->prev;
+    current->prev->next = new;
+
+    //Link the item to insert before to the new item
+    new->next = current;
+    current->prev = new;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void additemtosetuplist(pBITLISTITEM item)
+{
+  pBITLISTITEM addlist;
+  
+  //Add the route point to the net list
+  if(blocksetuplist == 0)
+  {
+    //No items added yet so start with this one
+    blocksetuplist = item;
+  }
+  else
+  {
+    //Need to loop through to make a sorted list
+    addlist = blocksetuplist;
+    
+    //Look for where the data needs to be inserted or replaced
+    while(addlist)
+    {
+      //Sort on block number
+      if(item->blocknumber < addlist->blocknumber)
+      {
+        //Insert the item before the current one
+        insertitembeforesetuplist(addlist, item);
+        break;
+      }
+      
+      if(item->blocknumber == addlist->blocknumber)
+      {
+        //Need sorting on bit name here
+        if(strcmp(item->bitdata->name, addlist->bitdata->name) < 0)
+        {
+          //Insert the item before the current one
+          insertitembeforesetuplist(addlist, item);
+          break;
+        }
+      }
+    
+      //Point to the next item if there is one
+      if(addlist->next)
+      {
+        //Select the next item
+        addlist = addlist->next;
+      }
+      else
+      {
+        //Append to the list when this is the last item
+        item->prev = addlist;
+        item->next = 0;
+        addlist->next = item;
+
+        //Done so quit
+        break;
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
+{
+  int blocktype = BLOCK_OTHER;
+  
+  int length;
+  
+  char *dptr;
+  //The block type depends on several things. For instance the tile type for slices is plb in which mslices and lslices sit
+  //These depend on the numbers in the bit name
+  
+  //An emb block can be a fifo which can only be determined by checking more then one bit
+  
+  //Not sure if the tile type pib is used here because io is situated in dedicated tile types
+  
+  block->sliceid   = -1;
+  block->lutid     = -1;
+  block->padid     = -1;
+  block->pinnumber = -1;
+  block->embid     = -1;
+  block->pllid     = -1;
+  
+  if(strncmp(item->tiledata->type, "plb", 3) == 0)
+  {
+    //Need to check on the bit name to determine mslice or lslice
+    if(strncmp(item->bitdata->name, "LUT", 3) == 0)
+    {
+      //LUT name has three possibilities
+      //LUT0_S0_0, LUTF0_S0_0 or LUTG0_S0_0
+      //The digit after the _S is the slice id
+      //The digit directly after LUT, LUTF or LUTG is the lut id
+      dptr = strstr(item->bitdata->name, "S");
+      
+      //So find the S and convert the digit to a number
+      block->sliceid = dptr[1] - '0';
+      
+      //See what type of LUT it is
+      if((item->bitdata->name[3] == 'F') || (item->bitdata->name[3] == 'G'))
+      {
+        //A lslice LUT so convert the digit after the F or G to a number
+        block->lutid = item->bitdata->name[4] - '0';
+      }
+      else
+      {
+        //A mslice LUT so convert the digit directly after LUT to a number.
+        block->lutid = item->bitdata->name[3] - '0';
+      }
+    }
+    else if(strncmp(item->bitdata->name, "MC1", 3) == 0)
+    {
+      //MC1 setup items are slice settings only where the slice id is at the end of the string
+      length = strlen(item->bitdata->name);
+
+      block->sliceid = item->bitdata->name[length - 1] - '0';
+    }
+    else if(strncmp(item->bitdata->name, "TOP.", 4) == 0)
+    {
+      //Topology bits have the slice id in the property data
+      if(item->bitdata->datacount)
+      {
+        //This property seems to be a correct indicator for a pad number
+        if(strncmp(item->bitdata->bitdata[0].data, "PROPERTY(SLICE", 14) == 0)
+        {
+          block->sliceid = item->bitdata->bitdata[0].data[14] - '0';
+        }
+      }
+    }
+
+    //Evaluate the slice number. 0 and 1 are for mslice and 2 and 3 are for lslice
+    if(block->sliceid < 2)
+    {
+      blocktype = BLOCK_MSLICE;
+    }
+    else
+    {
+      blocktype = BLOCK_LSLICE;
+    }
+  }
+  else if(strncmp(item->tiledata->type, "iol_", 4) == 0)
+  {
+    //Get the pad/pin information for this bit
+    getpinmapfortile(item, block);
+    
+    blocktype = BLOCK_PAD;
+  }
+  else if(strncmp(item->tiledata->type, "emb_slice", 9) == 0)
+  {
+    //For emb type a check is needed to see if it is fifo or emb. Maybe a separate function to do the check since it requires multiple bits that need checking
+    //Further more the emb section needs to be identified. There are 4 emb sections for the tile with type emb
+    //Bits starting with F_  or NET have the emb id at the end of the string
+    if(strncmp(item->bitdata->name, "F_", 2) == 0)
+    {
+      //For these bits the emb id is at the end of the string
+      length = strlen(item->bitdata->name);
+
+      block->embid = item->bitdata->name[length - 1] - '0';
+    }
+    else if((strncmp(item->bitdata->name, "TOP.", 4) == 0) || (strncmp(item->bitdata->name, "MC1_", 4) == 0))
+    {
+      //Topology and MC1 bits have the emb id in the property data
+      //To check if it is a IO mux the first data item can be checked
+      if(item->bitdata->datacount)
+      {
+        //This property seems to be a correct indicator for a pad number
+        if(strncmp(item->bitdata->bitdata[0].data, "PROPERTY(EMB", 12) == 0)
+        {
+          block->embid = item->bitdata->bitdata[0].data[12] - '0';
+        }
+      }
+    }
+    
+    //Have to see how to make sure this is correct
+    blocktype = BLOCK_EMB;
+  }
+  else if(strncmp(item->tiledata->type, "mult", 4) == 0)
+  {
+    blocktype = BLOCK_DSP;
+  }
+  else if(strncmp(item->tiledata->type, "emb32k_b", 8) == 0)
+  {
+    blocktype = BLOCK_EMB_32K;
+  }
+  else if(strncmp(item->tiledata->type, "clkdiv", 6) == 0)
+  {
+    blocktype = BLOCK_CLKDIV;
+  }
+  else if(strncmp(item->tiledata->type, "gclk_csb", 8) == 0)
+  {
+    blocktype = BLOCK_GCLK_CSB;
+  }
+  else if(strncmp(item->tiledata->type, "gclk_ctmux", 10) == 0)
+  {
+    blocktype = BLOCK_GCLK_CTMUX;
+  }
+  else if(strncmp(item->tiledata->type, "gclk_premux", 11) == 0)
+  {
+    blocktype = BLOCK_GCLK_PREMUX;
+  }
+  else if(strncmp(item->tiledata->type, "gclk_spine", 10) == 0)
+  {
+    blocktype = BLOCK_GCLK_SPINE;
+  }
+  else if(strncmp(item->tiledata->type, "ioclk", 5) == 0)
+  {
+    blocktype = BLOCK_OTHER;
+  }
+  else if(strncmp(item->tiledata->type, "ios_", 4) == 0)
+  {
+    blocktype = BLOCK_OTHER;
+  }
+  else if(strncmp(item->tiledata->type, "pll", 3) == 0)
+  {
+    block->pllid = item->tiledata->type[3] - '0';
+    
+    blocktype = BLOCK_PLL;
+  }
+  else if(strncmp(item->tiledata->type, "osc", 3) == 0)
+  {
+    blocktype = BLOCK_OSC;
+  }
+  else if(strncmp(item->tiledata->type, "na", 2) == 0)
+  {
+    blocktype = BLOCK_CONFIG;
+  }
+  
+  //Set the found block type
+  block->blocktype = blocktype;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void makeblocksetuplist()
+{
+  int x;
+  int y;
+  
+  int bitfound;
+  int bitmatch;
+  
+  int blocknumber = 1;
+  
+  pBITLISTITEM bitlist;
+  
+  pBLOCKINFOITEM currentblock = 0;
+  
+  BLOCKINFOITEM checkblock;
+
+  //Need to walk through the tile setup array and mark all the used blocks
+  //To catch them all the tree is scanned multiple times until all the bits have been processed
+
+  //Walk through the tile array to trace the nets for the identified starting points
+  for(x=0;x<COLUMNS;x++)
+  {
+    for(y=0;y<ROWS;y++)
+    {
+      //Make sure every tile gets checked
+      bitfound = 1;
+      
+      //Search until the last bit has been done or no more matches have been found, which is an error condition
+      while(bitfound)
+      {
+        //When no more routes are found the loop will break
+        bitfound = 0;
+
+        //Get the first bit for this tile
+        bitlist = tilesetuparray[x][y];
+
+        //Only process when there are bits to handle
+        while(bitlist)
+        {
+#if 0
+          if((x == 7) && (y == 30) && (strcmp(bitlist->bitdata->name, "TOP.XI5.MC03") == 0))
+          {
+            bitfound = 0;
+          }
+#endif
+          
+          //Need to check if a setup bit belongs to the same block as the current one
+          //For this there needs to be information about the current one
+          
+          
+          //Check if the current setup bit is not assigned yet
+          if(bitlist->blocknumber == -1)
+          {
+            //Check if there is a current block or not
+            if(currentblock == 0)
+            {
+              //When not make one
+              currentblock = malloc(sizeof(BLOCKINFOITEM));
+              
+              //No next block yet
+              currentblock->next = 0;
+              
+              //Set the coordinates this block belongs to
+              currentblock->x = x;
+              currentblock->y = y;
+              
+              //Set the schematic block type and other properties for this block
+              findblocktype(bitlist, currentblock);
+              
+              //Set the tile type of this block
+              currentblock->tiletype = bitlist->tiledata->type;
+              
+              //Set the block number used for these bits
+              currentblock->blocknumber = blocknumber;
+
+              //Set the block number in this bit
+              bitlist->blocknumber = currentblock->blocknumber;
+              
+              //Select the next id for the next block
+              blocknumber++;
+              
+              //Add this block to the list
+              additemtoblocklist(currentblock);
+              
+              //Make a sorted settings list
+              additemtosetuplist(bitlist);
+            }
+            else
+            {
+              //No match yet
+              bitmatch = 0;
+              
+              //At this point a check is needed to see if the current bit is part of the same block
+              //Use a dummy block to get the type and compare the two
+              findblocktype(bitlist, &checkblock);
+              
+              //The block type only is part of the block identification
+              if(checkblock.blocktype == currentblock->blocktype)
+              {
+                //For some reason empty plb's show up in the list????
+                
+                //Need to check other properties too, but these depend on the type of block
+                switch(checkblock.blocktype)
+                {
+                  case BLOCK_PAD:
+                    if(checkblock.padid == currentblock->padid)
+                    {
+                      bitmatch = 1;
+                    }
+                    break;
+                    
+                  case BLOCK_MSLICE:
+                  case BLOCK_LSLICE:
+                    //Both luts in a block share the block number due to some signals being global to the slice
+                    if(checkblock.sliceid == currentblock->sliceid)
+                    {
+                      bitmatch = 1;
+                    }
+                    break;
+                    
+                  case BLOCK_EMB:
+                    //Make sure the bits are for the same memory block
+                    if(checkblock.embid == currentblock->embid)
+                    {
+                      bitmatch = 1;
+                    }
+                    break;
+ 
+                  case BLOCK_PLL:
+                  case BLOCK_GCLK_CSB:
+                  case BLOCK_GCLK_PREMUX:
+                  case BLOCK_GCLK_CTMUX:
+                  case BLOCK_GCLK_SPINE:
+                    //The pll is identified by the tile type alone
+                    bitmatch = 1;
+                    break;
+                }
+              }
+              
+              //A match is needed to assign this bit to the same block
+              if(bitmatch)
+              {
+                //Set the block number in this bit when a match is made
+                bitlist->blocknumber = currentblock->blocknumber;
+                
+                //Make a sorted settings list
+                additemtosetuplist(bitlist);
+              }
+            }
+            
+            //Signal a bit has been found, so good for another run
+            bitfound = 1;
+          }
+          
+          //Select the next bit to investigate
+          bitlist = bitlist->link;
+        }
+
+        //Reset for the next block to be detected
+        currentblock = 0;
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void printblocklist()
+{
+  char filename[255];
+
+  pBLOCKINFOITEM printlist;
+  
+  FILE *fo;
+  
+  snprintf(filename, sizeof(filename), "%s_block_list.csv", FILENAME);
+  
+  fo = fopen(filename, "w");  
+  
+  if(fo)
+  {
+    fprintf(fo, "block number,x,y,,block type,emb,slice,lut,pad,pin\n");
+    
+    printlist = blocklist;
+    
+    while(printlist)
+    {
+        
+      fprintf(fo, "%d,%d,%d,,\"%s\"", printlist->blocknumber, printlist->x, printlist->y, printlist->tiletype);
+
+      if(printlist->embid != -1)
+      {
+        fprintf(fo, ",%d", printlist->embid);
+      }
+      else
+      {
+        fprintf(fo, ",");
+      }
+      
+      if(printlist->sliceid != -1)
+      {
+        fprintf(fo, ",%d", printlist->sliceid);
+      }
+      else
+      {
+        fprintf(fo, ",");
+      }
+
+      if(printlist->lutid != -1)
+      {
+        fprintf(fo, ",%d", printlist->lutid);
+      }
+      else
+      {
+        fprintf(fo, ",");
+      }
+
+      if(printlist->padid != -1)
+      {
+        fprintf(fo, ",%d", printlist->padid);
+      }
+      else
+      {
+        fprintf(fo, ",");
+      }
+      
+      if(printlist->pinnumber != -1)
+      {
+        fprintf(fo, ",P%d", printlist->pinnumber);
+      }
+      else
+      {
+        fprintf(fo, ",");
+      }
+      
+      fprintf(fo, "\n");
+      
+      //Select the next item
+      printlist = printlist->next;
+    }
+    
+    fclose(fo);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void printbititem(FILE *fo, pBITLISTITEM bitlist)
+{
+  int count;
+  
+  //Print the net info
+  fprintf(fo, "%d,,", bitlist->blocknumber);
+
+  //Print the data for this item
+  fprintf(fo, "%s,%s,%d,%d,,", bitlist->tiledata->name, bitlist->tiledata->type, bitlist->tiledata->x, bitlist->tiledata->y);
+
+  if(bitlist->paddata)
+  {
+    fprintf(fo, "P%d,,", bitlist->paddata->pin);
+  }
+  else
+  {
+    fprintf(fo, ",,");
+  }
+
+  fprintf(fo, "%s,%s,%d,%d,%d,%d,,\"", bitlist->bitdata->name, bitlist->bitdata->type, bitlist->bitdata->x, bitlist->bitdata->y, bitlist->bitdata->xoff, bitlist->bitdata->yoff);
+
+  //Walk through all the expression items
+  for(count=0;count<bitlist->bitdata->exprcount;count++)
+  {
+    fprintf(fo, "%s", bitlist->bitdata->expr[count]);
+  }
+
+  fprintf(fo, "\",\"");
+
+  //Walk through all the reverse polar notation items
+  for(count=0;count<bitlist->bitdata->rpncount;count++)
+  {
+    fprintf(fo, "%s", bitlist->bitdata->rpn[count]);
+  }
+
+  fprintf(fo, "\",%d,,", bitlist->bitdata->datacount);
+
+  //Walk through all the data items
+  for(count=0;count<bitlist->bitdata->datacount;count++)
+  {
+    //Output them to the file
+    fprintf(fo, "\"%s\"", bitlist->bitdata->bitdata[count].data);
+
+    //Check if not the last item
+    if(count < (bitlist->bitdata->datacount - 1))
+    {
+      //Add a separator if so
+      fprintf(fo, ",");
+    }
+  }
+
+  fprintf(fo, "\n");
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void printsetuplist()
+{
+  char filename[255];
+
+  int blocknumber = 1;
+  
+  pBITLISTITEM printlist;
+  
+  FILE *fo;
+  
+  snprintf(filename, sizeof(filename), "%s_block_setup_list.csv", FILENAME);
+  
+  fo = fopen(filename, "w");  
+  
+  if(fo)
+  {
+    fprintf(fo, "Block,,Tile,,,,,Pin,,Bit\n");
+    fprintf(fo, "number,,name,type,x,y,,pin,,name,type,x,y,xoff,yoff,,expression,rpn,count,,data\n");
+    
+    printlist = blocksetuplist;
+    
+    while(printlist)
+    {
+      //Check if next block is found
+      if(printlist->blocknumber != blocknumber)
+      {
+        //Separate the nets with a blank line
+        fprintf(fo, "\n");
+        
+        //Set the new number for change check
+        blocknumber = printlist->blocknumber;
+      }
+      
+      printbititem(fo, printlist);
+      
+      //Select the next item
+      printlist = printlist->next;
+    }
+    
+    fclose(fo);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 #if 0
 
 void printroutebititem(FILE *fo, pROUTEINFOITEM bitlist)
@@ -2040,7 +2923,7 @@ void printroutebititem(FILE *fo, pROUTEINFOITEM bitlist)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void printnetlist()
+void printroutelist()
 {
   char filename[255];
 
@@ -2174,7 +3057,7 @@ void printnetlist()
   
   if(fo)
   {
-    fprintf(fo, "net number,,signal name,pin\n");
+    fprintf(fo, "net number,block number,,signal name,pin\n");
     
     printlist = netlist;
     
@@ -2194,7 +3077,7 @@ void printnetlist()
         netnumber = bitlist->netnumber;
       }
         
-      fprintf(fo, "%d,,", bitlist->netnumber);
+      fprintf(fo, "%d,%d,,", bitlist->netnumber, bitlist->blocknumber);
       
       if(bitlist->netsignal == SIGNAL_GND)
       {
@@ -2419,6 +3302,8 @@ void freeallmemory()
   
   pNETLISTITEM   netfree;
   
+  pBLOCKINFOITEM blockfree;
+  
   //Free all the route info data
   for(x=0;x<COLUMNS;x++)
   {
@@ -2450,7 +3335,7 @@ void freeallmemory()
         setupfree = setuplist;
         
         //Select the next item in the list before freeing the current one so the trail is not lost
-        setuplist = setuplist->next;
+        setuplist = setuplist->link;
         
         //Release this one back into the wild
         free(setupfree);
@@ -2476,6 +3361,16 @@ void freeallmemory()
     netfree = netlist;
     netlist = netlist->next;
     free(netfree);
+  }
+
+  //Free the memory used in the block list
+  //This is the list that holds the block numbers and types
+  while(blocklist)
+  {
+    //Same setup as for the bitlist freeing
+    blockfree = blocklist;
+    blocklist = blocklist->next;
+    free(blockfree);
   }
 }
 
@@ -2670,8 +3565,13 @@ int main(int argc, char** argv)
 
     //Need to make a list of blocks used in the design holding the setup bits
     //sorted on block number and bit name/type
+    makeblocksetuplist();
     
-    
+    //Print the block list
+    printblocklist();
+
+    //Print the setup list
+    printsetuplist();
     
     //Filter the route list into a net list
     filterroutelist();
