@@ -70,6 +70,8 @@
 
 #include "database/al3_10_tile_signal_map.h"
 
+#include "block_schematic_definitions.h"
+
 //----------------------------------------------------------------------------------------------------------------------------------
 
 typedef unsigned char  uchar;
@@ -90,6 +92,8 @@ typedef struct tagNAMEITEM         NAMEITEM,         *pNAMEITEM;
 typedef struct tagROUTEINFOITEM    ROUTEINFOITEM,    *pROUTEINFOITEM;
 
 typedef struct tagNETLISTITEM      NETLISTITEM,      *pNETLISTITEM,      **ppNETLISTITEM;
+
+typedef struct tagBLOCKCONNECTION  BLOCKCONNECTION,  *pBLOCKCONNECTION;
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -126,6 +130,16 @@ struct tagBITLISTITEM
   pTILEPADPINMAP paddata;
   
   int            blocknumber;
+  
+  pBLOCKINFOITEM block;
+};
+
+#define MAX_BLOCK_CONNECTIONS   100
+
+struct tagBLOCKCONNECTION
+{
+  char *signalname;
+  char *netname;
 };
 
 struct tagBLOCKINFOITEM
@@ -138,6 +152,10 @@ struct tagBLOCKINFOITEM
   int             blocknumber;
   int             blocktype;
   
+  int             bitcount;         //Number of setup bits in this block
+  
+  int             connected;        //Flag to signal if there are net connections to this block
+  
   int             lutid;
   int             sliceid;
   int             padid;
@@ -146,8 +164,13 @@ struct tagBLOCKINFOITEM
   int             pllid;
   
   char           *tiletype;
+  
+  int             connectioncount;  //Number of connections set in the connections array
+  
+  BLOCKCONNECTION connections[MAX_BLOCK_CONNECTIONS];
 };
 
+#define MAX_NET_NAME_LENGTH   32
 
 struct tagROUTEINFOITEM
 {
@@ -179,6 +202,8 @@ struct tagROUTEINFOITEM
   int            routetype;         //Route type for this bit that signals for instance a start or end point 
   int            routestartentity;  //The ARCVAL entity that is used in the match with the mating bit
   int            routeconnected;    //A flag to signal a connection to the next node has been made
+  
+  char           netname[MAX_NET_NAME_LENGTH];
   
   pSIGNALNAMEMAP signalname;        //Pointer to the translated signal name
   pTILESIGNALMAP signalprefix;      //Pointer to the signal prefix
@@ -213,19 +238,23 @@ uchar fpga_tiles[COLUMNS][ROWS];
 #if DESIGN == 1
 #include "pin_assignments/1013D_pin_assignment.h"
 
-#define FILENAME   "fpgas/Original_1013D_fpga"
+#define FILENAME     "fpgas/Original_1013D_fpga"
+#define BLOCKFOLDER  "fpgas/1013D_blocks"
 #elif DESIGN == 2
 #include "pin_assignments/1014D_pin_assignment.h"
 
-#define FILENAME   "fpgas/Original_1014D_fpga"
+#define FILENAME     "fpgas/Original_1014D_fpga"
+#define BLOCKFOLDER  "fpgas/1014D_blocks"
 #elif DESIGN == 3
 #include "pin_assignments/pin_test_pin_assignment.h"
 
-#define FILENAME   "/home/peter/Data/Anlogic_projects/pin_test/pin_test"
+#define FILENAME     "/home/peter/Data/Anlogic_projects/pin_test/pin_test"
+#define BLOCKFOLDER  "/home/peter/Data/Anlogic_projects/pin_test/blocks"
 #elif DESIGN == 4
 #include "pin_assignments/1013D_pin_assignment.h"
 
 #define FILENAME   "/home/peter/Data/Anlogic_projects/Scope15/Scope15"
+#define BLOCKFOLDER  "/home/peter/Data/Anlogic_projects/Scope15/blocks"
 #endif
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -286,6 +315,385 @@ int strnicmp(char *str1, char *str2, int length)
     return(-1);
 
   return(0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+extern unsigned char CharacterMap[256][8];
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void draw_horz_line(uint8 *buffer, uint32 bytesperrow, uint32 ypos, uint32 xstart, uint32 xend, uint32 color)
+{
+  uint8 *ptr;
+  uint32 x, xs, xe;
+  
+  uint8 red   = color;
+  uint8 green = color >> 8;
+  uint8 blue  = color >> 16;
+  
+  //Determine the lowest x for start point
+  if(xstart < xend)
+  {
+    //Use the coordinates as is
+    xs = xstart;
+    xe = xend;
+  }
+  else
+  {
+    //Swap start and end
+    xs = xend;
+    xe = xstart;
+  }
+
+  //Point to where the line needs to be drawn
+  ptr = buffer + ((ypos * bytesperrow) + (xs * 3));
+  
+  //Draw the dots
+  for(x=xs;x<=xe;x++)
+  {
+    //Fill the dot
+    *ptr++ = red;
+    *ptr++ = green;
+    *ptr++ = blue;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void draw_vert_line(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ystart, uint32 yend, uint32 color)
+{
+  uint8 *ptr;
+  uint32 y, ys, ye;
+  uint32 pixels = bytesperrow;
+  
+  uint8 red   = color;
+  uint8 green = color >> 8;
+  uint8 blue  = color >> 16;
+  
+  //Determine the lowest y for start point
+  if(ystart < yend)
+  {
+    //Use the coordinates as is
+    ys = ystart;
+    ye = yend;
+  }
+  else
+  {
+    //Swap start and end
+    ys = yend;
+    ye = ystart;
+  }
+
+  //Point to where the line needs to be drawn
+  ptr = buffer + ((ys * pixels) + (xpos * 3));
+  
+  //Draw the dots
+  for(y=ys;y<=ye;y++)
+  {
+    //Fill the dot
+    ptr[0] = red;
+    ptr[1] = green;
+    ptr[2] = blue;
+    
+    //Point to the next dot
+    ptr += pixels;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void draw_rect(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uint32 width, uint32 height, uint32 color)
+{
+  //Compensate for the last pixel
+  width--;
+  height--;
+  
+  uint32 xe = xpos + width;
+  uint32 ye = ypos + height;
+  
+  //Just draw the needed lines
+  draw_horz_line(buffer, bytesperrow, ypos, xpos, xe, color);
+  draw_horz_line(buffer, bytesperrow, ye, xpos, xe, color);
+  draw_vert_line(buffer, bytesperrow, xpos, ypos, ye, color);
+  draw_vert_line(buffer, bytesperrow, xe, ypos, ye, color);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void draw_character(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uint32 color, char character)
+{
+  unsigned char *rows = CharacterMap[character];
+  unsigned char  col;
+  int ri,ci;
+  
+  uint8 *ptr;
+  
+  uint8 red   = color;
+  uint8 green = color >> 8;
+  uint8 blue  = color >> 16;
+
+  //Each character has 8 rows and per row the top 5 bits are used
+  for(ri=0;ri<8;ri++)
+  {
+    //Get the pixels for this row
+    col = rows[ri];
+    
+    //Start at first dot
+    ptr = buffer + ((ypos * bytesperrow) + (xpos * 3));
+    
+    //Plot the on pixels
+    for(ci=0;ci<5;ci++)
+    {
+      //Check if current dot is on
+      if(col & 0x80)
+      {
+        //Fill the dot
+        *ptr++ = red;
+        *ptr++ = green;
+        *ptr++ = blue;
+      }
+      else
+      {
+        //Clear the dot
+        *ptr++ = 0;
+        *ptr++ = 0;
+        *ptr++ = 0;
+      }
+      
+      //Select next dot
+      col <<= 1;
+    }
+    
+    //Move to next row
+    ypos++;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void draw_text(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uint32 color, char *text)
+{
+  //Display the string
+  while(*text)
+  {
+    //Draw the current character
+    draw_character(buffer, bytesperrow, xpos, ypos, color, *text);
+    
+    //Select next character
+    text++;
+    
+    //Point to next character column
+    xpos += 6;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uint32 blockcolor, uint32 netcolor, pSCHEMATICBLOCK baseblock, pBLOCKINFOITEM designblock)
+{
+  int portidx = 0;
+  int xs,ys,xe,ye;
+  int len;
+  int count;
+  int idx;
+  
+  int nameidx;
+  
+  char name[128];
+  
+  pSCHEMATICPORT port;
+    
+  draw_rect(buffer, bytesperrow, xpos, ypos, baseblock->width, baseblock->height, blockcolor);
+
+  len = (strlen(baseblock->name) * 6) / 2;
+  
+  xs = xpos + (baseblock->width / 2) - len;
+  ys = ypos - 10;
+  
+  draw_text(buffer, bytesperrow, xs, ys, blockcolor, baseblock->name);
+  
+  //Need to map the type of block to a schematic block here
+  switch(designblock->blocktype)
+  {
+    case BLOCK_PAD:
+      if(designblock->pinnumber != -1)
+      {
+#ifdef PIN_ASSIGNMENTS
+        //try to find a hdl name assigned to the pin
+        pPINASSIGNMENTS pinlist = pin_assignments;
+
+        while(pinlist->hdl_name)
+        {
+          if(designblock->pinnumber == pinlist->pinnumber)
+          {
+            len = (strlen(pinlist->hdl_name) * 6) / 2;
+
+            xs = xpos + (baseblock->width / 2) - len;
+            ys = ypos + baseblock->height + 25;
+
+            draw_text(buffer, bytesperrow, xs, ys, blockcolor,  pinlist->hdl_name);
+            break;
+          }
+
+          pinlist++;
+        }
+#endif
+        
+        //Print the bitmap output file name
+        snprintf(name, sizeof(name), "pin_%d_tile_x%dy%d_block_%d", designblock->pinnumber, designblock->x, designblock->y, designblock->blocknumber);
+      }
+      else
+      {
+        //Print the bitmap output file name
+        snprintf(name, sizeof(name), "pad_%d_tile_x%dy%d_block_%d", designblock->padid, designblock->x, designblock->y, designblock->blocknumber);
+      }
+      break;
+
+    case BLOCK_MSLICE:
+      //Print the bitmap output file name
+      snprintf(name, sizeof(name), "mslice_%d_tile_x%dy%d_block_%d", designblock->sliceid, designblock->x, designblock->y, designblock->blocknumber);
+      break;
+
+    case BLOCK_LSLICE:
+      //Print the bitmap output file name
+      snprintf(name, sizeof(name), "lslice_%d_tile_x%dy%d_block_%d", designblock->sliceid, designblock->x, designblock->y, designblock->blocknumber);
+      break;
+
+    case BLOCK_EMB:
+      //Print the bitmap output file name
+      snprintf(name, sizeof(name), "emb_%d_tile_x%dy%d_block_%d", designblock->embid, designblock->x, designblock->y, designblock->blocknumber);
+      break;
+
+    case BLOCK_PLL:
+      //Print the bitmap output file name
+      snprintf(name, sizeof(name), "pll%d_tile_x%dy%d_block_%d", designblock->pllid, designblock->x, designblock->y, designblock->blocknumber);
+      break;
+
+    case BLOCK_GCLK_PREMUX:
+      //Print the bitmap output file name
+      snprintf(name, sizeof(name), "gclk_premux_tile_x%dy%d_block_%d", designblock->x, designblock->y, designblock->blocknumber);
+      break;
+
+    case BLOCK_GCLK_CTMUX:
+      //Print the bitmap output file name
+      snprintf(name, sizeof(name), "gclk_ctmux_tile_x%dy%d_block_%d", designblock->x, designblock->y, designblock->blocknumber);
+      break;
+  }
+  
+  len = (strlen(name) * 6) / 2;
+  
+  xs = xpos + (baseblock->width / 2) - len;
+  ys = ypos + baseblock->height + 10;
+  
+  draw_text(buffer, bytesperrow, xs, ys, blockcolor, name);
+  
+  //Process the ports on this block
+  port = &baseblock->ports[portidx];
+  
+  while(port->displayname)
+  {
+    if((port->direction == 0) || (port->direction == 2))
+    {
+      ys = ypos + port->step;
+    }
+    else
+    {
+      ys += port->step - 10;
+    }
+    
+    count = port->repeat;
+    
+    nameidx = 0;
+    
+    do
+    {
+      switch(port->direction)
+      {
+        case 0:
+        case 1:
+          xs = xpos - port->length;
+          xe = xpos;
+          break;
+
+        case 2:
+        case 3:
+          xs = xpos + baseblock->width;
+          xe = xs + port->length;
+          break;
+      }
+    
+      draw_horz_line(buffer, bytesperrow, ys, xs, xe, blockcolor);
+
+      if(port->repeat)
+      {
+        snprintf(name, sizeof(name), "%s_%d", port->displayname, nameidx++);
+      }
+      else
+      {
+        snprintf(name, sizeof(name), "%s", port->displayname);
+      }
+
+      switch(port->direction)
+      {
+        case 0:
+        case 1:
+          xs = xpos + 5;
+          ye = ys - 3;
+          break;
+
+        case 2:
+        case 3:
+          len = (strlen(name) * 6) + 5;
+          xs = xpos + baseblock->width - len;
+          ye = ys - 3;
+          break;
+      }
+      
+      draw_text(buffer, bytesperrow, xs, ye, blockcolor, name);
+      
+      //Find the matching connection for this signal
+      //Need a counter and then go through the list and do string compare against name
+      
+      //if found print it based on the direction before or after the pin
+      //Use the net color for this text
+      
+      
+      for(idx=0;idx<designblock->connectioncount;idx++)
+      {
+        if(strcmp(name, designblock->connections[idx].signalname) == 0)
+        {
+          
+          switch(port->direction)
+          {
+            case 0:
+            case 1:
+              len = (strlen(designblock->connections[idx].netname) * 6) + 5;
+              xs = xpos - port->length - len;
+              break;
+
+            case 2:
+            case 3:
+              xs = xpos + baseblock->width + port->length + 5;
+              break;
+          }
+          
+          draw_text(buffer, bytesperrow, xs, ye, netcolor, designblock->connections[idx].netname);
+          
+          break;
+        }
+      }
+      
+      
+      //Fixed basic step between wires
+      ys += 10;
+      
+    } while(--count > 0);
+    
+    portidx++;
+    
+    port = &baseblock->ports[portidx];
+  }  
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -1839,7 +2247,6 @@ void getsignalproperties(pROUTEINFOITEM item)
   item->sliceid   = -1;
   item->lutid     = -1;
   item->padid     = -1;
-  item->pinnumber = -1;
   item->embid     = -1;
   item->pllid     = -1;
   
@@ -1974,6 +2381,8 @@ void mapsignalname(pROUTEINFOITEM routeitem)
   pTILESIGNALMAP tilesignalmapptr;
   pSIGNALNAMEMAP signalsearchtable;
   
+  char *netname;
+  
   char **typemap;
 
   //Take action based on the signal type
@@ -2086,6 +2495,10 @@ void mapsignalname(pROUTEINFOITEM routeitem)
       {
         //When found set it in the route info item for printing
         routeitem->paddata = (const pTILEPADPINMAP)&tilepadmap[i];
+        
+        routeitem->pinnumber = routeitem->paddata->pin;
+        
+        break;
       }
     }
   }  
@@ -2095,13 +2508,6 @@ void mapsignalname(pROUTEINFOITEM routeitem)
   {
     pBLOCKINFOITEM searchlist = blocklist;
     //Search the block list for a matching block this signal connects to
-    //Need more info like slice and pad id's
-    
-    //Need to compare the type strings
-    //routeitem->signalprefix->tiletype
-    //blocklist->tiletype
-    
-    //When they match it is type dependent what needs to be checked next
     
     //First get the needed properties for this bit
     getsignalproperties(routeitem);
@@ -2160,6 +2566,16 @@ void mapsignalname(pROUTEINFOITEM routeitem)
       if(found == 1)
       {
         routeitem->blocknumber = searchlist->blocknumber;
+        
+        //Signal that the block has connections
+        searchlist->connected = 1;
+        
+        //Setup the names
+        searchlist->connections[searchlist->connectioncount].signalname = routeitem->signalname->hdl_name;
+        searchlist->connections[searchlist->connectioncount].netname = routeitem->netname;
+        
+        //Signal an extra connection to this block
+        searchlist->connectioncount++;
       }
       
       searchlist = searchlist->next;
@@ -2180,7 +2596,9 @@ void filterroutelist()
   char *name;
   int  length;
   
-  int netnumber = 0;  
+  int netnumber = 0;
+  
+  char *netname;
   
   //Within this function code should be added to identify a block based on a signal name
   //For the found block the settings data needs to be retrieved
@@ -2206,23 +2624,46 @@ void filterroutelist()
       {
         //For a ground item mark the first one as ground signal
         routeitem->netsignal = SIGNAL_GND;
+        
+        snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "ground");
       }
       else if(((length == 5) || (length == 6)) && (strncmp(name, "GCLK", 4) == 0))
       {
         //For a global clock mark it as a global clock signal
         routeitem->netsignal = SIGNAL_GCLK;
+        
+        snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "gclk_%d", routeitem->netnumber);
       }
       else
       {
         //Not a ground or a global clock means it is an output signal
         routeitem->netsignal = SIGNAL_OUTPUT;
-        
+
         //Translate the signal name to a hdl name and see if it has a connection with a pin
         mapsignalname(routeitem);
+        
+        //When the signal is mapped use the prefix and hdl name for the net
+        if(routeitem->signalprefix && routeitem->signalname)
+        {
+          if(routeitem->pinnumber != -1)
+          {
+            snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "x%dy%d_pin_%d_%s_net_%d", routeitem->tiledata->x, routeitem->tiledata->y, routeitem->pinnumber, routeitem->signalname->hdl_name, routeitem->netnumber);
+          }
+          else
+          {
+            snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "x%dy%d_%s_%s_net_%d", routeitem->tiledata->x, routeitem->tiledata->y, routeitem->signalprefix->signalprefix, routeitem->signalname->hdl_name, routeitem->netnumber);
+          }
+        }
+        else
+        {        
+          snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "x%dy%d_%s_net_%d", routeitem->tiledata->x, routeitem->tiledata->y, routeitem->tiledata->type, routeitem->netnumber);
+        }
       }
       
       //Add it to the net list
       additemtofinalnetlist(routeitem);
+      
+      netname = routeitem->netname;
       
       netnumber++;
     }
@@ -2241,6 +2682,8 @@ void filterroutelist()
           //If so flag it as input signal too so it will be filtered from the list
           routeitem->matingrouteitem->netsignal = SIGNAL_INPUT;
         }
+        
+        strncpy(routeitem->netname, netname, MAX_NET_NAME_LENGTH);
         
         //Translate the signal name to a hdl name and see if it has a connection with a pin
         mapsignalname(routeitem);
@@ -2360,6 +2803,10 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
   //An emb block can be a fifo which can only be determined by checking more then one bit
   
   //Not sure if the tile type pib is used here because io is situated in dedicated tile types
+  
+  //No connections made to the block just yet
+  block->connected = 0;
+  block->connectioncount = 0;
   
   block->sliceid   = -1;
   block->lutid     = -1;
@@ -2579,6 +3026,9 @@ void makeblocksetuplist()
               //No next block yet
               currentblock->next = 0;
               
+              //This is the first setup bit for this block
+              currentblock->bitcount = 1;
+              
               //Set the coordinates this block belongs to
               currentblock->x = x;
               currentblock->y = y;
@@ -2594,6 +3044,7 @@ void makeblocksetuplist()
 
               //Set the block number in this bit
               bitlist->blocknumber = currentblock->blocknumber;
+              bitlist->block = currentblock;
               
               //Select the next id for the next block
               blocknumber++;
@@ -2661,6 +3112,10 @@ void makeblocksetuplist()
               {
                 //Set the block number in this bit when a match is made
                 bitlist->blocknumber = currentblock->blocknumber;
+                bitlist->block = currentblock;
+                
+                //Added another setup bit to this block
+                currentblock->bitcount++;
                 
                 //Make a sorted settings list
                 additemtosetuplist(bitlist);
@@ -2692,70 +3147,97 @@ void printblocklist()
   
   FILE *fo;
   
+  int connected;
+  int count;
+  
   snprintf(filename, sizeof(filename), "%s_block_list.csv", FILENAME);
   
   fo = fopen(filename, "w");  
   
   if(fo)
   {
-    fprintf(fo, "block number,x,y,,block type,emb,slice,lut,pad,pin\n");
-    
-    printlist = blocklist;
-    
-    while(printlist)
+    for(connected=1;connected>=0;connected--)
     {
+      count = 0;
+      
+      if(connected == 1)
+      {
+        fprintf(fo, "Connected blocks\n");
+      }
+      else
+      {
+        fprintf(fo, "Unconnected blocks\n");
+      }
+
+      fprintf(fo, "block number,x,y,,block type,,emb,slice,lut,pad,pin\n");
+
+      printlist = blocklist;
+
+      while(printlist)
+      {
+        if(printlist->connected == connected)
+        {
+          if(!((printlist->blocktype == BLOCK_PAD) && (printlist->bitcount == 3)))
+          {
+            count++;
+
+            fprintf(fo, "%d,%d,%d,,\"%s\",", printlist->blocknumber, printlist->x, printlist->y, printlist->tiletype);
+
+            if(printlist->embid != -1)
+            {
+              fprintf(fo, ",%d", printlist->embid);
+            }
+            else
+            {
+              fprintf(fo, ",");
+            }
+
+            if(printlist->sliceid != -1)
+            {
+              fprintf(fo, ",%d", printlist->sliceid);
+            }
+            else
+            {
+              fprintf(fo, ",");
+            }
+
+            if(printlist->lutid != -1)
+            {
+              fprintf(fo, ",%d", printlist->lutid);
+            }
+            else
+            {
+              fprintf(fo, ",");
+            }
+
+            if(printlist->padid != -1)
+            {
+              fprintf(fo, ",%d", printlist->padid);
+            }
+            else
+            {
+              fprintf(fo, ",");
+            }
+
+            if(printlist->pinnumber != -1)
+            {
+              fprintf(fo, ",P%d", printlist->pinnumber);
+            }
+            else
+            {
+              fprintf(fo, ",");
+            }
+
+            fprintf(fo, "\n");
+          }
+        }
+
         
-      fprintf(fo, "%d,%d,%d,,\"%s\"", printlist->blocknumber, printlist->x, printlist->y, printlist->tiletype);
-
-      if(printlist->embid != -1)
-      {
-        fprintf(fo, ",%d", printlist->embid);
-      }
-      else
-      {
-        fprintf(fo, ",");
+        //Select the next item
+        printlist = printlist->next;
       }
       
-      if(printlist->sliceid != -1)
-      {
-        fprintf(fo, ",%d", printlist->sliceid);
-      }
-      else
-      {
-        fprintf(fo, ",");
-      }
-
-      if(printlist->lutid != -1)
-      {
-        fprintf(fo, ",%d", printlist->lutid);
-      }
-      else
-      {
-        fprintf(fo, ",");
-      }
-
-      if(printlist->padid != -1)
-      {
-        fprintf(fo, ",%d", printlist->padid);
-      }
-      else
-      {
-        fprintf(fo, ",");
-      }
-      
-      if(printlist->pinnumber != -1)
-      {
-        fprintf(fo, ",P%d", printlist->pinnumber);
-      }
-      else
-      {
-        fprintf(fo, ",");
-      }
-      
-      fprintf(fo, "\n");
-      
-      //Select the next item
-      printlist = printlist->next;
+      fprintf(fo, "\ncount,%d\n\n", count);
     }
     
     fclose(fo);
@@ -2827,6 +3309,9 @@ void printsetuplist()
   int blocknumber = 1;
   
   pBITLISTITEM printlist;
+
+  int connected;
+  int count;
   
   FILE *fo;
   
@@ -2836,27 +3321,51 @@ void printsetuplist()
   
   if(fo)
   {
-    fprintf(fo, "Block,,Tile,,,,,Pin,,Bit\n");
-    fprintf(fo, "number,,name,type,x,y,,pin,,name,type,x,y,xoff,yoff,,expression,rpn,count,,data\n");
-    
-    printlist = blocksetuplist;
-    
-    while(printlist)
+    for(connected=1;connected>=0;connected--)
     {
-      //Check if next block is found
-      if(printlist->blocknumber != blocknumber)
+      count = 0;
+      
+      if(connected == 1)
       {
-        //Separate the nets with a blank line
-        fprintf(fo, "\n");
-        
-        //Set the new number for change check
-        blocknumber = printlist->blocknumber;
+        fprintf(fo, "Connected blocks\n");
+      }
+      else
+      {
+        fprintf(fo, "Unconnected blocks\n");
+      }
+
+      fprintf(fo, "Block,,Tile,,,,,Pin,,Bit\n");
+      fprintf(fo, "number,,name,type,x,y,,pin,,name,type,x,y,xoff,yoff,,expression,rpn,count,,data\n");
+
+      printlist = blocksetuplist;
+
+      while(printlist)
+      {
+        if(printlist->block->connected == connected)
+        {
+          if(!((printlist->block->blocktype == BLOCK_PAD) && (printlist->block->bitcount == 3)))
+          {
+            count++;
+
+            //Check if next block is found
+            if(printlist->blocknumber != blocknumber)
+            {
+              //Separate the nets with a blank line
+              fprintf(fo, "\n");
+
+              //Set the new number for change check
+              blocknumber = printlist->blocknumber;
+            }
+
+            printbititem(fo, printlist);
+          }
+        }
+
+        //Select the next item
+        printlist = printlist->next;
       }
       
-      printbititem(fo, printlist);
-      
-      //Select the next item
-      printlist = printlist->next;
+      fprintf(fo, "\ncount,%d\n\n", count);
     }
     
     fclose(fo);
@@ -3057,7 +3566,7 @@ void printnetlist()
   
   if(fo)
   {
-    fprintf(fo, "net number,block number,,signal name,pin\n");
+    fprintf(fo, "net number,signal type,block number,,signal name,pin\n");
     
     printlist = netlist;
     
@@ -3077,7 +3586,7 @@ void printnetlist()
         netnumber = bitlist->netnumber;
       }
         
-      fprintf(fo, "%d,%d,,", bitlist->netnumber, bitlist->blocknumber);
+      fprintf(fo, "%d,%d,%d,,", bitlist->netnumber, bitlist->netsignal, bitlist->blocknumber);
       
       if(bitlist->netsignal == SIGNAL_GND)
       {
@@ -3376,6 +3885,229 @@ void freeallmemory()
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+void outputblockschematics()
+{
+  pBLOCKINFOITEM block = blocklist;
+
+  unsigned int   pixels = 600;
+  unsigned int   rows = 850;
+  unsigned int   bytesperrow;
+  unsigned int   size;
+  unsigned int   filesize;
+  unsigned char  buffer[54];
+  unsigned char *bitmap;
+
+  //Need the inverted rows for the bitmap header to maintain proper orientation of the image
+  unsigned int   invrows = rows * -1;
+  
+  char filename[255];
+  
+  pSCHEMATICBLOCK baseblock;
+  
+  FILE *fo;
+  
+  //Number of bytes on a row for a 24 bits per pixel bitmap
+  bytesperrow = pixels * 3;
+
+  //Adjust for 32 bit segments
+  bytesperrow = (bytesperrow + 3) & 0x0FFFFFFC;
+
+  //Calculate the size of the bitmap in bytes
+  size = bytesperrow * rows;
+  
+  bitmap = malloc(size);
+  
+  if(bitmap)
+  {
+    //Setup the bitmap header only once
+    //Bitmap magic number
+    buffer[0] = 'B';
+    buffer[1] = 'M';
+
+    filesize = size + 54;
+
+    //File size
+    buffer[2] = filesize & 0xFF;
+    buffer[3] = (filesize >>  8) & 0xFF;
+    buffer[4] = (filesize >> 16) & 0xFF;
+    buffer[5] = (filesize >> 24) & 0xFF;
+
+    //reserved
+    buffer[6] = 0;
+    buffer[7] = 0;
+    buffer[8] = 0;
+    buffer[9] = 0;
+
+    //Bitmap offset
+    buffer[10] = 54;
+    buffer[11] = 0;
+    buffer[12] = 0;
+    buffer[13] = 0;
+
+    //Header size
+    buffer[14] = 40;
+    buffer[15] = 0;
+    buffer[16] = 0;
+    buffer[17] = 0;
+
+    //Bitmap width
+    buffer[18] = pixels & 0xFF;
+    buffer[19] = (pixels >>  8) & 0xFF;
+    buffer[20] = (pixels >> 16) & 0xFF;
+    buffer[21] = (pixels >> 24) & 0xFF;
+
+    //Bitmap height
+    buffer[22] = invrows & 0xFF;
+    buffer[23] = (invrows >>  8) & 0xFF;
+    buffer[24] = (invrows >> 16) & 0xFF;
+    buffer[25] = (invrows >> 24) & 0xFF;
+
+    //Number of planes      
+    buffer[26] = 1;
+    buffer[27] = 0;
+
+    //Bits per pixel
+    buffer[28] = 24;
+    buffer[29] = 0;
+
+    //Bitmap compression
+    buffer[30] = 0;
+    buffer[31] = 0;
+    buffer[32] = 0;
+    buffer[33] = 0;
+
+    //Image size
+    buffer[34] = 0;
+    buffer[35] = 0;
+    buffer[36] = 0;
+    buffer[37] = 0;
+
+    //Horiz res
+    buffer[38] = 0;
+    buffer[39] = 0;
+    buffer[40] = 0;
+    buffer[41] = 0;
+
+    //Vert res
+    buffer[42] = 0;
+    buffer[43] = 0;
+    buffer[44] = 0;
+    buffer[45] = 0;
+
+    //Nof colors
+    buffer[46] = 0;
+    buffer[47] = 0;
+    buffer[48] = 0;
+    buffer[49] = 0;
+
+    //Colors important
+    buffer[50] = 0;
+    buffer[51] = 0;
+    buffer[52] = 0;
+    buffer[53] = 0;
+    
+    while(block)
+    {
+      if(block->connected)
+      {
+        memset(bitmap, 0, size);
+
+        //Blue outline around the current block
+        draw_rect(bitmap, bytesperrow, 5, 5, pixels - 10, rows -10, 0x0033AAFF);
+        draw_rect(bitmap, bytesperrow, 6, 6, pixels - 12, rows - 12, 0x0033AAFF);
+
+        //No block yet
+        baseblock = 0;
+
+        //Need to map the type of block to a schematic block here
+        switch(block->blocktype)
+        {
+          case BLOCK_PAD:
+            baseblock = &pad;
+
+            if(block->pinnumber != -1)
+            {
+              //Print the bitmap output file name
+              snprintf(filename, sizeof(filename), "%s/pin_%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->pinnumber, block->x, block->y, block->blocknumber);
+            }
+            else
+            {
+              //Print the bitmap output file name
+              snprintf(filename, sizeof(filename), "%s/pad_%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->padid, block->x, block->y, block->blocknumber);
+            }
+            break;
+
+          case BLOCK_MSLICE:
+            baseblock = &mslice;
+            
+            //Print the bitmap output file name
+            snprintf(filename, sizeof(filename), "%s/mslice_%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->sliceid, block->x, block->y, block->blocknumber);
+            break;
+
+          case BLOCK_LSLICE:
+            baseblock = &lslice;
+            
+            //Print the bitmap output file name
+            snprintf(filename, sizeof(filename), "%s/lslice_%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->sliceid, block->x, block->y, block->blocknumber);
+            break;
+
+          case BLOCK_EMB:
+            baseblock = &emb;
+            
+            //Print the bitmap output file name
+            snprintf(filename, sizeof(filename), "%s/emb_%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->embid, block->x, block->y, block->blocknumber);
+            break;
+
+          case BLOCK_PLL:
+            baseblock = &pll;
+            
+            //Print the bitmap output file name
+            snprintf(filename, sizeof(filename), "%s/pll%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->pllid, block->x, block->y, block->blocknumber);
+            break;
+
+          case BLOCK_GCLK_PREMUX:
+            baseblock = &gclk_premux;
+            
+            //Print the bitmap output file name
+            snprintf(filename, sizeof(filename), "%s/gclk_premux_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->x, block->y, block->blocknumber);
+            break;
+
+          case BLOCK_GCLK_CTMUX:
+            baseblock = &gclk_ctmux;
+            
+            //Print the bitmap output file name
+            snprintf(filename, sizeof(filename), "%s/gclk_ctmux_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->x, block->y, block->blocknumber);
+            break;
+        }
+
+        //Only when there is a block to draw
+        if(baseblock)
+        {
+          //Draw the block with the signal connections
+          draw_block(bitmap, bytesperrow, 250, 70, 0x0000FF00, 0x00FF0000, baseblock, block);
+
+          fo = fopen(filename, "wb");
+
+          if(fo)
+          {
+            fwrite(buffer, 1, 54, fo);
+
+            fwrite(bitmap, 1, size, fo);
+
+            fclose(fo);
+          }
+        }
+      }
+    
+      block = block->next;
+    }    
+    
+    free(bitmap);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 int main(int argc, char** argv)
 {
   int length;
@@ -3566,6 +4298,12 @@ int main(int argc, char** argv)
     //Need to make a list of blocks used in the design holding the setup bits
     //sorted on block number and bit name/type
     makeblocksetuplist();
+
+    //Implement a filter on the blocks to eliminate the unconnected io pads based on them only having three setup bits
+    //Maybe just a simple bit count during the making of the list will do???
+    
+    //Filter the route list into a net list
+    filterroutelist();
     
     //Print the block list
     printblocklist();
@@ -3573,11 +4311,11 @@ int main(int argc, char** argv)
     //Print the setup list
     printsetuplist();
     
-    //Filter the route list into a net list
-    filterroutelist();
-    
     //Print the net list
     printnetlist();
+
+    //Create block schematic pages
+    outputblockschematics();
     
     //Memory cleanup
     freeallmemory();
