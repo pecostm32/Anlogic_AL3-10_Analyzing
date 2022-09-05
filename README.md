@@ -41,3 +41,11 @@ and maybe a top level verilog file with the signal names of the pins.
 
 A drawing of gate level schematics might be a useful tool in reverse engineering to usable verilog. So I might look into that.
 
+-------------------------------------------------------------------------------------------------------------------------------
+05-09-2022
+
+Made good progress. The code of the netlist tracer now generates named block diagrams of each connected block. This gives insight in which blocks belong to which part of the design.
+
+I still need to get more insight in the global clock system to get an understanding about how the design is clocked. This means deeper investigation of property bits.
+
+Getting back to a verilog description of the design will require a lot of manual labour. Not a big deal since it is a one of task.
