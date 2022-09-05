@@ -2385,6 +2385,9 @@ void mapsignalname(pROUTEINFOITEM routeitem)
   
   char **typemap;
 
+  //No pin number found yet
+  routeitem->pinnumber = -1;  
+  
   //Take action based on the signal type
   if(routeitem->netsignal == SIGNAL_OUTPUT)
   {
