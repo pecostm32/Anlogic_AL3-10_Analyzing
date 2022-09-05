@@ -7,6 +7,7 @@
       <itemPath>pin_assignments/1013D_pin_assignment.h</itemPath>
       <itemPath>pin_assignments/1014D_pin_assignment.h</itemPath>
       <itemPath>database/al3_10_tile_signal_map.h</itemPath>
+      <itemPath>block_schematic_definitions.h</itemPath>
       <itemPath>database/clkdiv_bk1.h</itemPath>
       <itemPath>database/clkdiv_bk2.h</itemPath>
       <itemPath>database/clkdiv_bk3.h</itemPath>
@@ -66,6 +67,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Anlogic_netlist_tracer.c</itemPath>
+      <itemPath>character_set.c</itemPath>
       <itemPath>database/database.c</itemPath>
       <itemPath>frames/frame_bit_mapping.c</itemPath>
     </logicalFolder>
@@ -96,6 +98,10 @@
         </linkerTool>
       </compileType>
       <item path="Anlogic_netlist_tracer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="block_schematic_definitions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="character_set.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="database/al3_10_tile_signal_map.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -238,6 +244,10 @@
         </asmTool>
       </compileType>
       <item path="Anlogic_netlist_tracer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="block_schematic_definitions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="character_set.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="database/al3_10_tile_signal_map.h" ex="false" tool="3" flavor2="0">
       </item>

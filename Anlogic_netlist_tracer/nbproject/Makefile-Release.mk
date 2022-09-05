@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Anlogic_netlist_tracer.o \
+	${OBJECTDIR}/character_set.o \
 	${OBJECTDIR}/database/database.o \
 	${OBJECTDIR}/frames/frame_bit_mapping.o
 
@@ -68,6 +69,11 @@ ${OBJECTDIR}/Anlogic_netlist_tracer.o: Anlogic_netlist_tracer.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Anlogic_netlist_tracer.o Anlogic_netlist_tracer.c
+
+${OBJECTDIR}/character_set.o: character_set.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/character_set.o character_set.c
 
 ${OBJECTDIR}/database/database.o: database/database.c
 	${MKDIR} -p ${OBJECTDIR}/database
