@@ -30,6 +30,23 @@ struct tagTILESIGNALMAP
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+//Need translation tables for premux and ctmux signal routing
+
+//HTK, bits set, search table
+//0,   4, htk7
+
+//htk7
+//type 0 is S, 1 is Z
+//bit is 0 - 5 and is the modulo 6 of the bit number
+//type, bit
+//0, 0
+//0, 1
+//1, 0
+//1, 1
+
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 SIGNALNAMEMAP emb_0[] =
 {
   { "addra_0",              "a6",            0,  0 },
