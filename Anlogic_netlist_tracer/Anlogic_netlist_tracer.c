@@ -1,8 +1,15 @@
 //----------------------------------------------------------------------------------------------------------------------------------
 
 //This is experimental software to try to reverse engineer a specific Anlogic FPGA design
-//and is not written with security and reliability in mind.
+//and is not written with security, reliability and optimization in mind.
 //There are no checks on if memory is actually allocated!!!
+//Also setup bits for slice configuration that are not used in the design are not coded to be recognized.
+
+//For the global clock signals the FNIRSI design uses the same clocks on all the global clock lines enabled in both sides of the FPGA
+//so no special attention is payed to how the routing of the hidden global clocks is done
+//With manual inspection of the design the signals are mapped by using a table
+
+//This is to name the signals in the gate level verilog this code generates
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -60,6 +67,12 @@
 #define BLOCK_CONFIG             15
 #define BLOCK_OTHER              16
 
+#define PAD_NONE                  0
+#define PAD_INPUT                 1
+#define PAD_OUTPUT                2
+#define PAD_TS                    4
+#define PAD_BIDIRECTIONAL         7
+
 //----------------------------------------------------------------------------------------------------------------------------------
 
 #include "database/database.h"
@@ -92,6 +105,8 @@ typedef struct tagNAMEITEM         NAMEITEM,         *pNAMEITEM;
 typedef struct tagROUTEINFOITEM    ROUTEINFOITEM,    *pROUTEINFOITEM;
 
 typedef struct tagNETLISTITEM      NETLISTITEM,      *pNETLISTITEM,      **ppNETLISTITEM;
+
+typedef struct tagTREELISTITEM     TREELISTITEM,     *pTREELISTITEM,     **ppTREELISTITEM;
 
 typedef struct tagBLOCKCONNECTION  BLOCKCONNECTION,  *pBLOCKCONNECTION;
 
@@ -135,6 +150,7 @@ struct tagBITLISTITEM
 };
 
 #define MAX_BLOCK_CONNECTIONS   100
+#define MAX_VERILOG_LENGTH      4096
 
 struct tagBLOCKCONNECTION
 {
@@ -148,7 +164,7 @@ struct tagBLOCKINFOITEM
   
   int             x;
   int             y;
-  
+
   int             blocknumber;
   int             blocktype;
   
@@ -168,6 +184,14 @@ struct tagBLOCKINFOITEM
   int             connectioncount;  //Number of connections set in the connections array
   
   BLOCKCONNECTION connections[MAX_BLOCK_CONNECTIONS];
+  
+  char            verilog[MAX_VERILOG_LENGTH];
+  
+  int             veriloglength;
+  
+  char            padname[64];
+  
+  int             padtype;
 };
 
 #define MAX_NET_NAME_LENGTH   32
@@ -192,6 +216,8 @@ struct tagROUTEINFOITEM
   int            blocknumber;       //Id of the block this route point connects to
   int            blocktype;         //The type of the block this route point connects to
 
+  pBLOCKINFOITEM block;
+  
   int            lutid;
   int            sliceid;
   int            padid;
@@ -223,6 +249,16 @@ struct tagNETLISTITEM
   pROUTEINFOITEM routebit;
 };
 
+struct tagTREELISTITEM
+{
+  pTREELISTITEM  next;
+  
+  pTREELISTITEM  child;
+
+  pROUTEINFOITEM fromsignal;
+  pROUTEINFOITEM tosignal;
+};
+
 //----------------------------------------------------------------------------------------------------------------------------------
 
 uchar fpga_frames[FRAMES][BITS_PER_FRAME / 8];
@@ -233,20 +269,28 @@ uchar fpga_tiles[COLUMNS][ROWS];
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-#define DESIGN 1
+#define OUTPUT_SCHEMATICS   1
+
+#define DESIGN 3
 
 #if DESIGN == 1
 #include "pin_assignments/1013D_pin_assignment.h"
 
-#define FILENAME     "fpgas/Original_1013D_fpga"
-#define BLOCKFOLDER  "fpgas/1013D_blocks"
+#define MODULENAME   "FNIRSI_1013D"
+
+#define FILENAME     "fpgas/Original_1013D/Original_1013D_fpga"
+#define BLOCKFOLDER  "fpgas/Original_1013D/1013D_blocks"
 #elif DESIGN == 2
 #include "pin_assignments/1014D_pin_assignment.h"
 
-#define FILENAME     "fpgas/Original_1014D_fpga"
-#define BLOCKFOLDER  "fpgas/1014D_blocks"
+#define MODULENAME   "FNIRSI_1014D"
+
+#define FILENAME     "fpgas/Original_1014D/Original_1014D_fpga"
+#define BLOCKFOLDER  "fpgas/Original_1014D/1014D_blocks"
 #elif DESIGN == 3
 #include "pin_assignments/pin_test_pin_assignment.h"
+
+#define MODULENAME   "pin_test"
 
 #define FILENAME     "/home/peter/Data/Anlogic_projects/pin_test/pin_test"
 #define BLOCKFOLDER  "/home/peter/Data/Anlogic_projects/pin_test/blocks"
@@ -255,6 +299,11 @@ uchar fpga_tiles[COLUMNS][ROWS];
 
 #define FILENAME   "/home/peter/Data/Anlogic_projects/Scope15/Scope15"
 #define BLOCKFOLDER  "/home/peter/Data/Anlogic_projects/Scope15/blocks"
+#elif DESIGN == 5
+#include "pin_assignments/1013D_pin_assignment.h"
+
+#define FILENAME   "fpgas/FNIRSI_1013D/FNIRSI_1013D"
+#define BLOCKFOLDER  "fpgas/FNIRSI_1013D/blocks"
 #endif
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -282,6 +331,9 @@ pNETLISTITEM  routelist = 0;
 //A sorted and filtered net list is made in this list
 pNETLISTITEM  netlist = 0;
 ppNETLISTITEM netlistlast  = 0;
+
+//A tree of how the blocks are connected to each other
+pTREELISTITEM inputtreelist = 0;
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -540,43 +592,43 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
         }
 #endif
         
-        //Print the bitmap output file name
+        //Print the block name
         snprintf(name, sizeof(name), "pin_%d_tile_x%dy%d_block_%d", designblock->pinnumber, designblock->x, designblock->y, designblock->blocknumber);
       }
       else
       {
-        //Print the bitmap output file name
+        //Print the block name
         snprintf(name, sizeof(name), "pad_%d_tile_x%dy%d_block_%d", designblock->padid, designblock->x, designblock->y, designblock->blocknumber);
       }
       break;
 
     case BLOCK_MSLICE:
-      //Print the bitmap output file name
+      //Print the block name
       snprintf(name, sizeof(name), "mslice_%d_tile_x%dy%d_block_%d", designblock->sliceid, designblock->x, designblock->y, designblock->blocknumber);
       break;
 
     case BLOCK_LSLICE:
-      //Print the bitmap output file name
+      //Print the block name
       snprintf(name, sizeof(name), "lslice_%d_tile_x%dy%d_block_%d", designblock->sliceid, designblock->x, designblock->y, designblock->blocknumber);
       break;
 
     case BLOCK_EMB:
-      //Print the bitmap output file name
+      //Print the block name
       snprintf(name, sizeof(name), "emb_%d_tile_x%dy%d_block_%d", designblock->embid, designblock->x, designblock->y, designblock->blocknumber);
       break;
 
     case BLOCK_PLL:
-      //Print the bitmap output file name
+      //Print the block name
       snprintf(name, sizeof(name), "pll%d_tile_x%dy%d_block_%d", designblock->pllid, designblock->x, designblock->y, designblock->blocknumber);
       break;
 
     case BLOCK_GCLK_PREMUX:
-      //Print the bitmap output file name
+      //Print the block name
       snprintf(name, sizeof(name), "gclk_premux_tile_x%dy%d_block_%d", designblock->x, designblock->y, designblock->blocknumber);
       break;
 
     case BLOCK_GCLK_CTMUX:
-      //Print the bitmap output file name
+      //Print the block name
       snprintf(name, sizeof(name), "gclk_ctmux_tile_x%dy%d_block_%d", designblock->x, designblock->y, designblock->blocknumber);
       break;
   }
@@ -2569,6 +2621,7 @@ void mapsignalname(pROUTEINFOITEM routeitem)
       if(found == 1)
       {
         routeitem->blocknumber = searchlist->blocknumber;
+        routeitem->block = searchlist;
         
         //Signal that the block has connections
         searchlist->connected = 1;
@@ -2600,6 +2653,7 @@ void filterroutelist()
   int  length;
   
   int netnumber = 0;
+  int gclkid;
   
   char *netname;
   
@@ -2635,7 +2689,9 @@ void filterroutelist()
         //For a global clock mark it as a global clock signal
         routeitem->netsignal = SIGNAL_GCLK;
         
-        snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "gclk_%d", routeitem->netnumber);
+        gclkid = atoi(&name[4]);
+        
+        snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "gclk_%d", gclkid);
       }
       else
       {
@@ -2699,6 +2755,113 @@ void filterroutelist()
     //Get the next item to process
     fromlist = fromlist->next;
   }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void additemtotreelist(ppTREELISTITEM list, pROUTEINFOITEM fromsignal, pROUTEINFOITEM tosignal)
+{
+  pTREELISTITEM item = malloc(sizeof(TREELISTITEM));
+  
+  item->next = 0;
+  item->child = 0;
+  item->fromsignal = fromsignal;
+  item->tosignal = tosignal;
+  
+  //Add this new one to the given list point
+  *list = item;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void createtreelist()
+{
+  //Need to walk through the net list and when a pad is found as first entry of a net trace down the connections
+  int netnumber = 0;
+  
+  int addtochildlist = 0;
+  
+  pNETLISTITEM searchlist = netlist;
+ 
+  pROUTEINFOITEM fromsignal;
+  pROUTEINFOITEM tosignal;
+  
+  pTREELISTITEM treelist;
+  
+  ppTREELISTITEM mainaddlist = &inputtreelist;
+  
+  ppTREELISTITEM childaddlist;
+  
+  while(searchlist)
+  {
+    tosignal = searchlist->routebit;
+    
+    //Detect the start of the next net
+    if(netnumber != tosignal->netnumber)
+    {
+      //The first entry of a net is always an output, so when the type is pad it means a signal coming into the FPGA
+      //And there fore a good starting point for getting an insight in the logic
+      if(tosignal->blocktype == BLOCK_PAD)
+      {
+        //Create and add a new item to the list
+        //Then all the items within this net should be hooked onto a child list
+        additemtotreelist(mainaddlist, 0, tosignal);
+        
+        //Set this signal as the originator for the child items
+        fromsignal = tosignal;
+        
+        //Get the current list point        
+        treelist = *mainaddlist;
+        
+        //Setup the child list for it
+        childaddlist = &treelist->child;
+        
+        //Have the main list continue at the next point
+        mainaddlist = &treelist->next;
+        
+        //Signal the rest of the signals of this net need to be added to the child list
+        addtochildlist = 1;
+      }
+      else
+      {
+        //Not a pad so no tracing this net
+        addtochildlist = 0;
+      }
+    }
+    
+    if(addtochildlist)
+    {
+      //Add this item to the child list and trace it down through the blocks
+      additemtotreelist(childaddlist, fromsignal, tosignal);
+      
+      //Get the current list point        
+      treelist = *childaddlist;
+
+      //Have the child list continue at the next point
+      childaddlist = &treelist->next;
+      
+      
+      //The next block needs to be found based on the current block input found here and the start point of a net matching the block number
+      //Only when the signal matches with the current input signal it should add the next signals to the child list of the current one
+      
+      //A problem here is the fact that embedded block memory has a displacement in the signals when 2 bit mode is used
+      //A2 in seems to go to B0 output and A5 in to B2
+      //For slices the lut id needs to be used in tracing
+      
+      
+      //Probably need both input and output route items added to the current item, to have this connection data
+      //&treelist->child;
+      
+      
+      
+    }
+    
+    searchlist = searchlist->next;
+  }
+  
+  
+  
+  
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -3139,6 +3302,388 @@ void makeblocksetuplist()
     }
   }
 }
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *getconnectionnet(pBLOCKINFOITEM block, char *signal)
+{
+  int connection;
+  
+  for(connection=0;connection<block->connectioncount;connection++)
+  {
+    if(strcmp(block->connections[connection].signalname, signal) == 0)
+    {
+      return(block->connections[connection].netname);
+    }
+  }
+  
+  return(0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+int getsetupbitidx(char *bit, int skip, int modulo)
+{
+  char *dptr = bit + skip;
+  
+  int idx = atoi(dptr) % modulo;
+  
+  return(idx);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+#define PULL_UP          0
+#define PULL_NONE        1
+#define PULL_KEEPER      2
+#define PULL_DOWN        3
+
+#define SLEW_RATE_NONE   0
+#define SLEW_RATE_MED    1
+#define SLEW_RATE_FAST   2
+
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void processpadsettings(pBLOCKINFOITEM block)
+{
+  int connection;
+  
+  int padtype = PAD_NONE;
+  int pulltype = PULL_UP;
+  int slewrate = SLEW_RATE_NONE;
+  
+  int found = 0;
+  
+  char *dptr = block->verilog;
+  
+  char *netname;
+  
+  //Have to check if the bits are consecutive for a block and if the starting bit is set in the block
+  //If so the processing can start directly at the first bit and by detecting a change in block number it can stop
+  
+  //When the block is not connected assume it to be an output
+  if(block->connected == 0)
+  {
+    padtype = PAD_OUTPUT;
+  }
+  
+  pBITLISTITEM setuplist = blocksetuplist;
+  
+  //Need to walk through the settings list and pick the matching bits for the current block
+  while(setuplist)
+  {
+    //Only check the bits that belong to this block
+    if(setuplist->blocknumber == block->blocknumber)
+    {
+      //To determine the slew rate setting MC12_SLEW_ bits need to be checked
+      if(strncmp(setuplist->bitdata->name, "MC12_SLEW_", 10) == 0)
+      {
+        //Get the index of this bit to determine the slew rate setting
+        switch(getsetupbitidx(setuplist->bitdata->name, 10, 2))
+        {
+          case 0:
+            //If the first bit is set it means medium slew rate
+            slewrate |= SLEW_RATE_MED;
+            break;
+            
+          case 1:
+            //If the second bit is set it means fast slew rate
+            slewrate |= SLEW_RATE_FAST;
+            break;
+        }
+      }
+      //To determine the PULLTYPE MC12_USR_ bits need to be checked
+      else if(strncmp(setuplist->bitdata->name, "MC12_USR_PD_", 12) == 0)
+      {
+        //When the PD bit is set it could mean NO PULLUP
+        pulltype |= PULL_NONE;
+      }
+      else if(strncmp(setuplist->bitdata->name, "MC12_USR_PU_N_", 14) == 0)
+      {
+        //When the PU_N bit is set it could mean KEEPER
+        pulltype |= PULL_KEEPER;
+      }
+      
+      //When there is no connection to the block it needs to be determined by the settings what it is. Input or output
+      //This is the case for clock input blocks that connect to the PLL
+      if(block->connected == 0)
+      {
+        //When the bit MC1_TRI_ is set it is an input
+        if(strncmp(setuplist->bitdata->name, "MC1_TRI_", 8) == 0)
+        {
+          padtype = PAD_INPUT;
+        }
+      }
+      
+      //Other bits can be checked here to determine more settings like drive strength
+      //but for this defaults are assumed
+    }
+    
+    setuplist = setuplist->next;
+  }
+  
+  //When the block is connected the type can be deduced more easily by checking the connections
+  if(block->connected)
+  {
+    //Check the connections on input, output and ts to determine the PAD MODE
+    for(connection=0;connection<block->connectioncount;connection++)
+    {
+      //A bidirectional pad has all three of the connections, so flags are set based on which signal is connected
+      if(strcmp(block->connections[connection].signalname, "di") == 0)
+      {
+        padtype |= PAD_INPUT;
+      }
+      else if(strcmp(block->connections[connection].signalname, "otrue") == 0)
+      {
+        padtype |= PAD_OUTPUT;
+      }
+      else if(strcmp(block->connections[connection].signalname, "ts") == 0)
+      {
+        padtype |= PAD_TS;
+      }
+    }
+  }
+  else
+  {
+    //Mark it as connected
+    block->connected = 1;
+    
+    //When it is an input it must be a clock signal and needs to be connected to the pll some how
+    
+    //When it is an output it needs to be connected to a 1. Have to figure out some signal name for this.
+  }
+  
+#ifdef PIN_ASSIGNMENTS
+  //try to find a hdl name assigned to the pin
+  pPINASSIGNMENTS pinlist = pin_assignments;
+
+  while(pinlist->hdl_name)
+  {
+    if(block->pinnumber == pinlist->pinnumber)
+    {
+      snprintf(block->padname, sizeof(block->padname), "%s", pinlist->hdl_name);
+      found = 1;
+      break;
+    }
+
+    pinlist++;
+  }
+#endif
+
+  //No name found or search disabled, then assign one based on type, block and pin number
+  if(found == 0)
+  {
+    if(padtype == PAD_BIDIRECTIONAL)
+    {
+      snprintf(block->padname, sizeof(block->padname), "io_block_%d_pin_%d", block->blocknumber, block->pinnumber);
+    }
+    else if(padtype & PAD_INPUT)
+    {
+      snprintf(block->padname, sizeof(block->padname), "i_block_%d_pin_%d", block->blocknumber, block->pinnumber);
+    }    
+    else
+    {
+      snprintf(block->padname, sizeof(block->padname), "o_block_%d_pin_%d", block->blocknumber, block->pinnumber);
+    }    
+  }
+  
+  //Set the type for printing in the module io list
+  block->padtype = padtype;
+  
+  //Setup the constraint for the pin
+  dptr += sprintf(dptr, "set_pin_assignment { %s } { LOCATION = P%d; IOSTANDARD = LVCMOS33; PULLTYPE = ", block->padname, block->pinnumber);
+  
+  //Add the needed PULLTYPE
+  switch(pulltype)
+  {
+    case PULL_UP:
+      dptr += sprintf(dptr, "PULLUP; ");
+      break;
+
+    case PULL_NONE:
+      dptr += sprintf(dptr, "NONE; ");
+      break;
+
+    case PULL_KEEPER:
+      dptr += sprintf(dptr, "KEEPER; ");
+      break;
+
+    case PULL_DOWN:
+      dptr += sprintf(dptr, "PULLDOWN; ");
+      break;
+  }
+  
+  //Add the needed slew rate
+  if(slewrate == SLEW_RATE_MED)
+  {
+    dptr += sprintf(dptr, "SLEWRATE = MED; ");
+  }
+  else if(slewrate == SLEW_RATE_FAST)
+  {
+    dptr += sprintf(dptr, "SLEWRATE = FAST; ");
+  }
+  
+  //Finish the line
+  dptr += sprintf(dptr, "}\n");
+  
+  //Only when all three are present, it is a bidirectional one
+  //Add a connection for the schematic block
+  if(padtype == PAD_BIDIRECTIONAL)
+  {
+    block->connections[block->connectioncount].signalname = "bpad";
+  }
+  else if(padtype & PAD_INPUT)
+  {
+    block->connections[block->connectioncount].signalname = "ipad";
+  }
+  else if(padtype & PAD_OUTPUT)
+  {
+    block->connections[block->connectioncount].signalname = "opad";
+  }
+
+  //Finish the connection for the schematic block
+  block->connections[block->connectioncount].netname = block->padname;
+  block->connectioncount++;
+  
+  //Set the length of the generated block for writing to the output file
+  block->veriloglength = dptr - block->verilog;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void creategatelevelverilog()
+{
+  char filename[255];
+  
+  pBLOCKINFOITEM printlist;
+  
+  FILE *fo;
+  
+  int count;
+  
+  int needcomma = 0;
+  
+  snprintf(filename, sizeof(filename), "%s_gate_level.v", FILENAME);
+  
+  fo = fopen(filename, "w");  
+  
+  if(fo)
+  {
+    fprintf(fo, "module %s\n(", MODULENAME);
+    
+    printlist = blocklist;
+    
+    //Process the PAD blocks
+    while(printlist)
+    {
+      //Needs to be of type PAD. Pin less and actual unconnected pads need to be filtered based on number of bits
+      //Pins that are configured but have connections to the PLL or global clocks can exist without visible connections
+      if((printlist->blocktype == BLOCK_PAD) && (printlist->bitcount > 3))
+      {
+        //Need to process the settings for the current pad
+        processpadsettings(printlist);
+        
+        if(needcomma)
+        {
+          fprintf(fo, ",");
+        }
+
+        fprintf(fo, "\n");
+        
+        //output this in the io list of the module
+        if(printlist->padtype == PAD_BIDIRECTIONAL)
+        {
+          fprintf(fo, "  inout wire %s", printlist->padname);
+        }
+        else if(printlist->padtype & PAD_INPUT)
+        {
+          fprintf(fo, "  input wire %s", printlist->padname);
+        }
+        else if(printlist->padtype & PAD_OUTPUT)
+        {
+          fprintf(fo, "  output wire %s", printlist->padname);
+        }
+        
+        needcomma = 1;
+      }
+      
+      printlist = printlist->next;
+    }
+
+    fprintf(fo, "\n);\n\n");
+    
+    //Need a wire list??
+    
+    //Need some method of connecting the clock signals
+    //There are blockless premux connections that need to be resolved for this
+    
+    
+    //Process the lslises
+    
+    
+    //process the mslices
+    
+    
+    //process the bram
+    
+    
+    //process the pll
+    
+    
+#if 0
+    printlist = blocklist;
+    
+    //Process the PAD blocks
+    while(printlist)
+    {
+      //Needs to be connected and of type PAD
+      if((printlist->connected == 1) && (printlist->blocktype == BLOCK_PAD))
+      {
+        //output this in the body of the module
+        fwrite(printlist->verilog, printlist->veriloglength, 1, fo);
+      }
+      
+      printlist = printlist->next;
+    }
+    
+    //A bit of a problem is the connection that needs to be made and the wires it needs to do it
+    //especially when other logic comes into the mix
+    
+#endif
+    
+    fprintf(fo, "endmodule\n");
+    
+    fclose(fo);
+  }
+  
+  //Create a pin constraints file
+  snprintf(filename, sizeof(filename), "%s_generated.adc", FILENAME);
+  
+  fo = fopen(filename, "w");  
+  
+  if(fo)
+  {
+    printlist = blocklist;
+    
+    //Process the PAD blocks
+    while(printlist)
+    {
+      //Needs to be of type PAD to go into the constraints file and have enough settings bits to be used
+      if((printlist->blocktype == BLOCK_PAD) && (printlist->bitcount > 3))
+      {
+        //Output the constraint line
+        fwrite(printlist->verilog, printlist->veriloglength, 1, fo);
+      }
+      
+      printlist = printlist->next;
+    }
+    
+    fclose(fo);
+  }  
+  
+}
+
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -4308,6 +4853,26 @@ int main(int argc, char** argv)
     //Filter the route list into a net list
     filterroutelist();
     
+    //At this point the data can be converted in gate level verilog by reading both the nets and the block setup data
+    
+    //The file starts with a module and it's external signals.
+    
+    //Need to flag the signal names to avoid listing them double
+    
+    //Then a list of all the wires that are needed.
+    
+    //After that the AL_PHY_PAD macros to put all the pads in the verilog
+    
+    //Then the LUTS and SLICES
+    
+    //And last the BRAM and PLL
+    
+    creategatelevelverilog();
+    
+    
+    //Create a tree list for the connected blocks
+//    createtreelist();
+    
     //Print the block list
     printblocklist();
 
@@ -4318,7 +4883,9 @@ int main(int argc, char** argv)
     printnetlist();
 
     //Create block schematic pages
+#ifdef OUTPUT_SCHEMATICS    
     outputblockschematics();
+#endif
     
     //Memory cleanup
     freeallmemory();
