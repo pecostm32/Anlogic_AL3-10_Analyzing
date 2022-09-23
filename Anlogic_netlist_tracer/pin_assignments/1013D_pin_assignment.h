@@ -19,7 +19,7 @@ struct tagPINASSIGNMENTS
 PINASSIGNMENTS pin_assignments[] =
 {
   { "i_xtal",         23 },
-  { "i_reset"         25 },
+  { "i_reset",        25 },
   { "i_adc1A_d[0]",   66 },
   { "i_adc1A_d[1]",   65 },
   { "i_adc1A_d[2]",   64 },
@@ -82,7 +82,7 @@ PINASSIGNMENTS pin_assignments[] =
   { "o_relay2_2",    125 },
   { "o_relay2_3",    127 },
   { "io_i2c_sda",     38 },
-  { "io_i2c_scl",     39 },
+  { "o_i2c_scl",      39 },
   { 0,                 0 }
 };
 

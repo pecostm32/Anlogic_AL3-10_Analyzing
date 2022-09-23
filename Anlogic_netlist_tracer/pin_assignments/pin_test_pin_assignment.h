@@ -18,12 +18,14 @@ struct tagPINASSIGNMENTS
 
 PINASSIGNMENTS pin_assignments[] =
 {
-  { "i_led_red_control",   28 },
-  { "o_led_yellow",        34 },
-  { "o_led_blue",          49 },
-  { "i_led_blue_control",  88 },
-  { "o_led_red",          112 },
-  { 0,                      0 }
+  { "i_led_red_control",     28 },
+  { "i_led_yellow_control",  31 },
+  { "o_led_yellow",          34 },
+  { "o_led_green",           39 },
+  { "o_led_blue",            49 },
+  { "i_led_blue_control",    88 },
+  { "o_led_red",            112 },
+  { 0,                        0 }
 };
 
 //----------------------------------------------------------------------------------------------------------------------------------
