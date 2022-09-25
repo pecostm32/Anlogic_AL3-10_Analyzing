@@ -2964,6 +2964,13 @@ void additemtosetuplist(pBLOCKINFOITEM block, pBITLISTITEM item)
         item->next = 0;
         addlist->next = item;
 
+        //Check if not already a first bit set, because setting it again would move the pointer to a later in the list bit
+        if(block->firstsettingsbit == 0)
+        {
+          //Set the first bit found for this block as the first one
+          block->firstsettingsbit = item;
+        }
+        
         //Done so quit
         break;
       }
@@ -3630,6 +3637,21 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+void createpadassignment(FILE *fo, pBLOCKINFOITEM block)
+{
+  if(block->padtype & PAD_INPUT)
+  {
+    fprintf(fo, "  assign %s = %s;\n", getconnectionnet(block, "di"), block->padname);
+  }
+  
+  if(block->padtype & PAD_OUTPUT)
+  {
+    fprintf(fo, "  assign %s = %s;\n", block->padname, getconnectionnet(block, "otrue"));
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 #define LOGIC_NONE         0x00000000
 #define LOGIC_LUT0         0x00000001
 #define LOGIC_LUT1         0x00000002
@@ -3641,6 +3663,10 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
 #define LOGIC_FF1_SR       0x00000080
 #define LOGIC_FF_LATCH     0x00000100
 #define LOGIC_FF_SYNC      0x00000200
+#define LOGIC_FF_CLK       0x00000400
+#define LOGIC_FF_GSR       0x00000800
+#define LOGIC_FF_CE        0x00001000
+#define LOGIC_FF_SR        0x00002000
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -3875,43 +3901,50 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
   
   //Filter out the input pins for determining the weights of the macros "a" and "b" inputs
   inputpins = usedpins & INPUT_PINS;
+
+//This part is wrong in mapping the inputs from the fabric onto the inputs of the LUT macro
+//The question is then also if the generation of th equation is wrong
+//I guess that for the weighing the setup is still correct in relation with the given lookup table
   
-  //Determine the weight for the "a" input.
-  aidx = weighinputpin(&inputpins, 1);
+  
+//For a two input LUT the top connected bit should be mapped onto "a"
+//The next one down should be mapped onto "b"
 
-  //When there are more inputs connected weigh the next pin
-  if(inputcount > 1)
+//Have to verify the formula by using something with an inverted input (A*~B)
+  
+//For a three input LUT it seems to differ
+  
+//There might be the need for a translation table to make the mappings based on the number of inputs
+
+//For LUT2
+//Assume that
+//"d" is always "a"
+//"c" is always "b"
+  
+  
+//For LUT3
+//Assume that
+//"d" is always "a"
+//"b" is always "b"
+//"c" is always "c"
+  
+  //Set the input weights based on the number of inputs
+  switch(inputcount)
   {
-    //The "b" input has at least the next input weight
-    bidx = weighinputpin(&inputpins, (aidx << 1));
-
-    //When there are still more inputs connected weigh the next pin
-    if(inputcount > 2)
-    {
-      //The "c" input has at least the next input weight
-      cidx = weighinputpin(&inputpins, (bidx << 1));
-
-      //When there are still more inputs connected weigh the next pin
-      if(inputcount > 3)
-      {
-        //The "d" input has at least the next input weight
-        didx = weighinputpin(&inputpins, (cidx << 1));
-
-        //When there are still more inputs connected weigh the next pin
-        if(inputcount > 4)
-        {
-          //The "e" input has at least the next input weight
-          eidx = weighinputpin(&inputpins, (didx << 1));
-
-          //When there are still more inputs connected weigh the next pin
-          if(inputcount > 5)
-          {
-            //The "mi" input has the next input weight and is the last possible
-            miidx = eidx << 1;
-          }
-        }
-      }
-    }
+    case 1:
+      aidx = 8;
+      break;
+      
+    case 2:
+      aidx = 8;
+      bidx = 4;
+      break;
+      
+    case 3:
+      aidx = 8;
+      bidx = 2;
+      cidx = 4;
+      break;
   }
   
   //Output the header line of the macro
@@ -3953,33 +3986,33 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
   fprintf(fo, "  _al_block_%d_lut_%d\n  (\n", block->blocknumber, lutid);
 
   //Get the net name for the "a" input and output it to the file
-  fprintf(fo, "    .a(%s),\n" ,getconnectionnet(block, lutinputnames[aidx]));
+  fprintf(fo, "    .a(%s),\n" , getconnectionnet(block, lutinputnames[aidx]));
   
   //Connect the additional inputs as needed
   if(inputcount > 1)
   {
     //Get the net name for the "b" input and output it to the file
-    fprintf(fo, "    .b(%s),\n" ,getconnectionnet(block, lutinputnames[bidx]));
+    fprintf(fo, "    .b(%s),\n" , getconnectionnet(block, lutinputnames[bidx]));
 
     if(inputcount > 2)
     {
       //Get the net name for the "c" input and output it to the file
-      fprintf(fo, "    .c(%s),\n" ,getconnectionnet(block, lutinputnames[cidx]));
+      fprintf(fo, "    .c(%s),\n" , getconnectionnet(block, lutinputnames[cidx]));
       
       if(inputcount > 3)
       {
         //Get the net name for the "d" input and output it to the file
-        fprintf(fo, "    .d(%s),\n" ,getconnectionnet(block, lutinputnames[didx]));
+        fprintf(fo, "    .d(%s),\n" , getconnectionnet(block, lutinputnames[didx]));
       
         if(inputcount > 4)
         {
           //Get the net name for the "e" input and output it to the file
-          fprintf(fo, "    .e(%s),\n" ,getconnectionnet(block, lutinputnames[eidx]));
+          fprintf(fo, "    .e(%s),\n" , getconnectionnet(block, lutinputnames[eidx]));
 
           if(inputcount > 5)
           {
             //Get the net name for the "mi" input and output it to the file
-            fprintf(fo, "    .f(%s),\n" ,getconnectionnet(block, lutinputnames[miidx]));
+            fprintf(fo, "    .f(%s),\n" , getconnectionnet(block, lutinputnames[miidx]));
           }          
         }
       }      
@@ -4010,7 +4043,7 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
     snprintf(lutoutput, MAX_NAME_LENGTH, "sig_block_%d_lut_%d", block->blocknumber, lutid);
 
     //Output the given name to the file
-    fprintf(fo, "    .o(%s)\n" ,lutoutput);
+    fprintf(fo, "    .o(%s)\n", lutoutput);
   }
   
   //That is all for the macro setup part
@@ -4021,13 +4054,232 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
 
 void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int logictype, int usedpins)
 {
-      //LOGIC_FF0_F and LOGIC_FF0_FX determine which input is to be used
+  char *dname;
+  char *qname;
+  char *regset  = "SET";
+  char *dffmode = "FF";
+  char *srmode  = "ASYNC";
+  char *clkmux  = "CLK";
+  char *gsrmode = "ENABLE";
+  char *cemux   = "0";
+  char *srmux   = "0";
   
-      //LOGIC_FF0_SR     for REGSET   RESET
+  int ceused = 0;
+  int srused = 0;
   
-      //LOGIC_FF_LATCH   for DFFMODE  LATCH
-      //LOGIC_F1_SYNC    for SRMODE   SYNC
+  //Setup the needed names based on the given FF id
+  if(ffid)
+  {
+    //Check which input is used for the flip flop
+    if(logictype & LOGIC_FF1_F)
+    {
+      //The LUT1 "f" is selected in this case
+      //Check if the "f" output is connected to a net
+      if(usedpins & PIN_F1)
+      {
+        //If so use the net name
+        dname = getconnectionnet(block, "f_1");
+      }
+      else
+      {
+        //When not use the generated name
+        dname =  block->lut1output;
+      }
+    }
+    else if(logictype & LOGIC_FF1_FX)
+    {
+      //The question is how this actually works and if the FX signal is routed onto the grid
+      //or a name needs to be made up, but what is it connected to then???
+      dname = getconnectionnet(block, "fx_1");
+    }
+    else
+    {
+      //per default the "mi" input is used
+      dname = getconnectionnet(block, "mi_1");
+    }
+    
+    //See if the REGSET property needs to be changed
+    if(logictype & LOGIC_FF1_SR)
+    {
+      regset = "RESET";
+    }
+  
+    //Use the "q_1" net for FF1
+    qname =  "q_1";
+  }
+  else
+  {
+    //Check which input is used for the flip flop
+    if(logictype & LOGIC_FF0_F)
+    {
+      //The LUT0 "f" is selected in this case
+      //Check if the "f" output is connected to a net
+      if(usedpins & PIN_F0)
+      {
+        //Check if the "f" output is connected to a net
+        dname = getconnectionnet(block, "f_0");
+      }
+      else
+      {
+        //When not use the generated name
+        dname =  block->lut0output;
+      }
+    }
+    else if(logictype & LOGIC_FF0_FX)
+    {
+      //The question is how this actually works and if the FX signal is routed onto the grid
+      //or a name needs to be made up, but what is it connected to then???
+      dname = getconnectionnet(block, "fx_0");
+    }
+    else
+    {
+      //per default the "mi" input is used
+      dname = getconnectionnet(block, "mi_0");
+    }
+    
+    //See if the REGSET property needs to be changed
+    if(logictype & LOGIC_FF0_SR)
+    {
+      regset = "RESET";
+    }
 
+    //Use the "q_0" net for FF0
+    qname =  "q_0";
+  }
+
+  //Check if the "ce" pin is actually used or connected to ground
+  if(usedpins & PIN_CE)
+  {
+    //Check if not connected to the ground net
+    if(strcmp(getconnectionnet(block, "ce"), "ground"))
+    {
+      ceused = 1;
+    }
+  }
+
+  //Check if the "sr" pin is actually used or connected to ground
+  if(usedpins & PIN_SR)
+  {
+    //Check if not connected to the ground net
+    if(strcmp(getconnectionnet(block, "sr"), "ground"))
+    {
+      srused = 1;
+    }
+  }
+  
+  //See if the DFFMODE property needs to be changed
+  if(logictype & LOGIC_FF_LATCH)
+  {
+    dffmode = "LATCH";
+  }
+
+  //See if the SRMODE property needs to be changed
+  if(logictype & LOGIC_FF_SYNC)
+  {
+    srmode = "SYNC";
+  }
+  
+  //See if the CLKMUX property needs to be changed
+  if(logictype & LOGIC_FF_CLK)
+  {
+    clkmux = "INV";
+  }
+  
+  //See if the GSR property needs to be changed
+  if(logictype & LOGIC_FF_GSR)
+  {
+    gsrmode = "DISABLE";
+  }
+  
+  //Check the ce and sr pins on connection to decide on the setting of these two
+  //Also need to check some settings bits???
+  
+  //Might need to detect if connected to ground to set the proper selection
+  
+  //When the "ce" input is connected and the CEMUX mode bit is set the input is inverted
+  if((ceused) && (logictype & LOGIC_FF_CE))
+  {
+    cemux = "INV";
+  }
+  //When the "ce" input pin is connected but the CEMUX mode bit is not set it is the actual input
+  else if(ceused)
+  {
+    cemux = "CE";
+  }
+  //When the "ce" input is not connected and the CEMUX mode bit is set it is "1"
+  else if(logictype & LOGIC_FF_CE)
+  {
+    cemux = "1";
+  }
+  
+  //When the "sr" input is connected and the SRMUX mode bit is set the input is inverted
+  if((srused) && (logictype & LOGIC_FF_SR))
+  {
+    srmux = "INV";
+  }
+  //When the "sr" input pin is connected but the SRMUX mode bit is not set it is the actual input
+  else if(srused)
+  {
+    srmux = "SR";
+  }
+  //When the "sr" input is not connected and the SRMUX mode bit is set it is "1"
+  else if(logictype & LOGIC_FF_SR)
+  {
+    srmux = "1";
+  }
+  
+  //Output the header line of the macro
+  fprintf(fo, "  AL_MAP_SEQ #\n  (\n");
+  
+  //Output the given CEMUX setting
+  fprintf(fo, "    .CEMUX(\"%s\"),\n" , cemux);
+  
+  //Output the given CLKMUX setting
+  fprintf(fo, "    .CLKMUX(\"%s\"),\n" , clkmux);
+  
+  //Output the given DFFMODE setting
+  fprintf(fo, "    .DFFMODE(\"%s\"),\n" , dffmode);
+  
+  //Output the given REGSET setting
+  fprintf(fo, "    .REGSET(\"%s\"),\n" , regset);
+  
+  //Output the given SRMODE setting
+  fprintf(fo, "    .SRMODE(\"%s\"),\n" , srmode);
+
+  //Output the given GSR setting
+  fprintf(fo, "    .GSR(\"%s\"),\n" , gsrmode);
+
+  //Output the given SRMUX setting and close the header
+  fprintf(fo, "    .SRMUX(\"%s\")\n  )\n" , srmux);
+  
+  //Start the connections section
+  fprintf(fo, "  reg_block_%d_ff_%d\n  (\n", block->blocknumber, ffid);
+  
+  //Add the connected pins as needed
+  if(usedpins & PIN_CLK)
+  {
+    //Get the net name for the "clk" input and output it to the file
+    fprintf(fo, "    .clk(%s),\n" ,getconnectionnet(block, "clk"));
+  }
+  
+  if(ceused)
+  {
+    //Get the net name for the "ce" input and output it to the file
+    fprintf(fo, "    .ce(%s),\n" ,getconnectionnet(block, "ce"));
+  }
+  
+  if(srused)
+  {
+    //Get the net name for the "sr" input and output it to the file
+    fprintf(fo, "    .sr(%s),\n" ,getconnectionnet(block, "sr"));
+  }
+
+  //Output the found connection name for the "d" input to the file
+  fprintf(fo, "    .d(%s),\n", dname);
+
+  //Get the net name for the "q" output and output it to the file
+  //Also finish the macro
+  fprintf(fo, "    .q(%s)\n  );\n\n" ,getconnectionnet(block, qname));
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -4125,6 +4377,30 @@ void processlslicesettings(FILE *fo, pBLOCKINFOITEM block)
     {
       logictype |= LOGIC_FF_SYNC;
     }
+    //Check the CLKMUX setting for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "MC1_CLK_", 8) == 0)
+    {
+      logictype |= LOGIC_FF_CLK;
+    }
+    //Check the GSR setting for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "MC1_DISGSR_S", 12) == 0)
+    {
+      logictype |= LOGIC_FF_GSR;
+    }
+    //Check the CEMUX setting for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "TOP.XI322.MCS", 13) == 0)
+    {
+      logictype |= LOGIC_FF_CE;
+    }
+    //Check the SRMUX setting for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "TOP.XI322.MCUNUSED", 18) == 0)
+    {
+      logictype |= LOGIC_FF_SR;
+    }
+    
+    
+    
+    
 
     //Need the remainder of the settings checked for the SEQ macro and fill in the macro printing based on it
     
@@ -4338,6 +4614,66 @@ void processmslicesettings(FILE *fo, pBLOCKINFOITEM block)
     {
       luttoff1 = 1;
     }
+    //Check if the F0 output is routed to FF0
+    else if(strncmp(setuplist->bitdata->name, "MC1_DI0_S", 9) == 0)
+    {
+      logictype |= LOGIC_FF0_F;
+    }
+    //Check if the F1 output is routed to FF1
+    else if(strncmp(setuplist->bitdata->name, "MC1_DI1_S", 9) == 0)
+    {
+      logictype |= LOGIC_FF1_F;
+    }
+    //Check if the FX0 output is routed to FF0
+    else if(strncmp(setuplist->bitdata->name, "MC1_FX0_S", 9) == 0)
+    {
+      logictype |= LOGIC_FF0_FX;
+    }
+    //Check if the FX1 output is routed to FF1
+    else if(strncmp(setuplist->bitdata->name, "MC1_FX1_S", 9) == 0)
+    {
+      logictype |= LOGIC_FF1_FX;
+    }
+    //Check the REGSET mode for FF0
+    else if(strncmp(setuplist->bitdata->name, "MC1_SR0_S", 9) == 0)
+    {
+      logictype |= LOGIC_FF0_SR;
+    }
+    //Check the REGSET mode for FF1
+    else if(strncmp(setuplist->bitdata->name, "MC1_SR1_S", 9) == 0)
+    {
+      logictype |= LOGIC_FF1_SR;
+    }
+    //Check the DFFMODET mode for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "MC1_FFMODE_S", 12) == 0)
+    {
+      logictype |= LOGIC_FF_LATCH;
+    }
+    //Check the SRMODE mode for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "MC1_SYNCMODE_S", 14) == 0)
+    {
+      logictype |= LOGIC_FF_SYNC;
+    }
+    //Check the CLKMUX setting for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "MC1_CLK_", 8) == 0)
+    {
+      logictype |= LOGIC_FF_CLK;
+    }
+    //Check the GSR setting for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "MC1_DISGSR_S", 12) == 0)
+    {
+      logictype |= LOGIC_FF_GSR;
+    }
+    //Check the CEMUX setting for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "TOP.XI321.MCS", 13) == 0)
+    {
+      logictype |= LOGIC_FF_CE;
+    }
+    //Check the SRMUX setting for the flip flops
+    else if(strncmp(setuplist->bitdata->name, "TOP.XI321.MCUNUSED", 18) == 0)
+    {
+      logictype |= LOGIC_FF_SR;
+    }
     
     
     
@@ -4366,8 +4702,21 @@ void processmslicesettings(FILE *fo, pBLOCKINFOITEM block)
     outputlutmacro(fo, block, 1, inputsusedcount[((usedpins >> 12) & 0x0F)], lut1, usedpins);
   }
 
-  
-  //Handle the flip flops as SEQ macro at this point
+  //Check if SEQ macro is needed for FF0
+  if(usedpins & PIN_Q0)
+  {
+    //The logic bits signal what settings to use and which input to use
+    //The used pins signal which input name to use
+    outputseqmacro(fo, block, 0, logictype, usedpins);
+  }
+
+  //Check if SEQ macro is needed for FF1
+  if(usedpins & PIN_Q1)
+  {
+    //The logic bits signal what settings to use and which input to use
+    //The used pins signal which input name to use
+    outputseqmacro(fo, block, 1, logictype, usedpins);
+  }
   
   
   //Need to figure out how to extend the detected logic type based on the connections
@@ -4468,6 +4817,25 @@ void creategatelevelverilog()
     //Need to setup a wire list at this point, but need to see what to list
     
     
+    
+    //The pad names need to be assigned to the internally used wires.
+    printlist = blocklist;
+    
+    //Process the connected PAD blocks
+    while(printlist)
+    {
+      //Needs to be connected and of type PAD
+      if((printlist->connected == 1) && (printlist->blocktype == BLOCK_PAD))
+      {
+        //Create an assign statement for making the connection between the pad and the internally used signal
+        createpadassignment(fverilog, printlist);
+      }
+      
+      printlist = printlist->next;
+    }
+    
+    //Extra line between pad assignments and the logic
+    fprintf(fverilog, "\n");
     
     //Process the remaining logic
     printlist = blocklist;
