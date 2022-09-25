@@ -49,3 +49,15 @@ Made good progress. The code of the netlist tracer now generates named block dia
 I still need to get more insight in the global clock system to get an understanding about how the design is clocked. This means deeper investigation of property bits.
 
 Getting back to a verilog description of the design will require a lot of manual labour. Not a big deal since it is a one of task.
+
+-------------------------------------------------------------------------------------------------------------------------------
+25-09-2022
+
+The code is able to generate gate level verilog for a simple design with 2 and 3 input logic and registers.
+
+Need to verify things like logic equations being properly generated and also have to implement the 1, 4, 5, and 6 input LUT macros.
+
+Once these are done and verified things like adders need to be implemented. Other macros to do are PLL and embedded memory.
+Also have to fix some things concerning the global clocks.
+
+Still al ot of work to be done.
