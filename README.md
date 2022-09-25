@@ -60,4 +60,4 @@ Need to verify things like logic equations being properly generated and also hav
 Once these are done and verified things like adders need to be implemented. Other macros to do are PLL and embedded memory.
 Also have to fix some things concerning the global clocks.
 
-Still al ot of work to be done.
+Still a lot of work to be done.
