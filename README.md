@@ -61,3 +61,15 @@ Once these are done and verified things like adders need to be implemented. Othe
 Also have to fix some things concerning the global clocks.
 
 Still a lot of work to be done.
+
+-------------------------------------------------------------------------------------------------------------------------------
+10-10-2022
+
+Had a break but now back on the project. Without documentation it is very time consuming to work out what all the setting bits
+for the logic slices do, and what type of gate level macros to generate for specific settings. The approach of making test designs
+in the IDE and then create the gate level verilog only got me so far, because the IDE does not always deliver the wanted setup.
+For instance a LUT6 is devided up into multiple smaller LUT's in different slices, instead of using the combined LUT's in a single
+slice.
+
+So I'm now analyzing the FNIRSI-1013D bit stream on what settings are present and try to create the needed macros based on it.
+For know I'm focusing on the mslice, which is simpler but also has its quirks.
