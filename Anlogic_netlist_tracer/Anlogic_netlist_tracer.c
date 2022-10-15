@@ -25,8 +25,8 @@
 #define COLUMNS                  35      //x last is 34
 #define ROWS                     38      //y last is 37
 
-#define LAST_COLUMN            (COLUMNS - 1)  
-#define LAST_ROW               (ROWS - 1)  
+#define LAST_COLUMN            (COLUMNS - 1)
+#define LAST_ROW               (ROWS - 1)
 
 #define FRAMES                 1075
 #define BITS_PER_FRAME         2056
@@ -111,6 +111,50 @@
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+//emb settings 1
+#define EMB_NONE                       0x00000000
+#define EMB_ENABLE                     0x00000001             //F_EBR_ENABLE_EMB
+#define EMB_CSAMUX_0                   0x00000002             //F_PCSA_0_EMB (Several TOP. bits) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_CSAMUX_1                   0x00000004             //F_PCSA_1_EMB (Several TOP. bits) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_CSAMUX_2                   0x00000008             //F_PCSA_2_EMB (Several TOP. bits) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_CSBMUX_0                   0x00000010             //F_PCSB_0_EMB (Several TOP. bits) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_CSBMUX_1                   0x00000020             //F_PCSB_1_EMB (Several TOP. bits) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_CSBMUX_2                   0x00000040             //F_PCSB_2_EMB (Several TOP. bits) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_WEAMUX                     0x00000080             //F_PW_RA_EMB (TOP.XI322.MC01, TOP.XI322.MC06) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_WEBMUX                     0x00000100             //F_PW_RB_EMB (TOP.XI322.MC01, TOP.XI322.MC06) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_CEAMUX                     0x00000200             //TOP.XI321.MCS1 (TOP.XI321.MC11, TOP.XI321.MC16) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_CEBMUX                     0x00000400             //TOP.XI321.MCS1 (TOP.XI321.MC11, TOP.XI321.MC16) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_OCEAMUX                    0x00000800             //TOP.XI321.MCS0 (TOP.XI321.MC01, TOP.XI321.MC06) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_OCEBMUX                    0x00001000             //TOP.XI321.MCS0 (TOP.XI321.MC01, TOP.XI321.MC06) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_RSTAMUX                    0x00002000             //TOP.XI320.MCUNUSED_W11B2 (TOP.XI283.MC01, TOP.XI283.MC06) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_RSTBMUX                    0x00004000             //TOP.XI320.MCUNUSED_W11B2 (TOP.XI283.MC01, TOP.XI283.MC06) (Need to check the properties to figure out the setting and the fact if the signals is connected to ground or actual signal)
+#define EMB_CLKAMUX                    0x00008000             //MC1_CLK_0 (Need to check the property for which EMB and which CLK MUX)
+#define EMB_CLKBMUX                    0x00010000             //MC1_CLK_0 (Need to check the property for which EMB and which CLK MUX)
+#define EMB_RESETMODE                  0x00020000             //F_SYNC_EMB
+#define EMB_ASYNCRESETRELEASE          0x00040000             //F_RST_SYNC_DIS_EMB
+#define EMB_READBEFOREWRITEA           0x00080000             //F_RBWA_EMB
+#define EMB_READBEFOREWRITEB           0x00100000             //F_RBWB_EMB
+#define EMB_WRITETHROUGHA              0x00200000             //F_WTA_EMB
+#define EMB_WRITETHROUGHB              0x00400000             //F_WTB_EMB
+#define EMB_GLOBALRESETDISABLE         0x00800000             //F_GRDIS_EMB
+#define EMB_REGMODE_A                  0x01000000             //F_OREGSELA_EMB
+#define EMB_REGMODE_B                  0x02000000             //F_OREGSELB_EMB
+#define EMB_READBACK_OFF               0x04000000             //F_WEN_0_EMB
+#define EMB_DEBUGGABLE_YES             0x08000000             //F_WEN_1_EMB
+#define EMB_MODE_1SHOT                 0x10000000             //F_1SHOT_EMB
+#define EMB_MODE_FIFO                  0x20000000             //F_FIFO_EN_EMB
+#define EMB_MODE_DOUBLEWIDE            0x40000000             //F_DOUBLEWIDEA_EMB
+
+//emb settings 2
+#define EMB_WIDTH_A_0                  0x00000001              //F_W_CTRL_A_0_EMB
+#define EMB_WIDTH_A_1                  0x00000002              //F_W_CTRL_A_1_EMB
+#define EMB_WIDTH_A_2                  0x00000004              //F_W_CTRL_A_2_EMB
+#define EMB_WIDTH_B_0                  0x00000008              //F_W_CTRL_B_0_EMB
+#define EMB_WIDTH_B_1                  0x00000010              //F_W_CTRL_B_1_EMB
+#define EMB_WIDTH_B_2                  0x00000020              //F_W_CTRL_B_2_EMB
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 #define PIN_NONE      0x00000000
 
 #define PIN_A0        0x00000001
@@ -154,10 +198,10 @@
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-#define OUTPUT_SCHEMATICS   0
+#define OUTPUT_SCHEMATICS   1
 #define OUTPUT_VERILOG      1
 
-#define DESIGN 1
+#define DESIGN 3
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -176,7 +220,8 @@
 #define FILENAME     "fpgas/Original_1014D/Original_1014D_fpga"
 #define BLOCKFOLDER  "fpgas/Original_1014D/1014D_blocks"
 #elif DESIGN == 3
-#include "pin_assignments/pin_test_pin_assignment.h"
+//#include "pin_assignments/pin_test_pin_assignment.h"
+#include "pin_assignments/1013D_pin_assignment.h"
 
 #define MODULENAME   "pin_test"
 
@@ -257,17 +302,17 @@ struct tagBITLISTITEM
 {
   //This one is for the linking of the tile array list entries
   pBITLISTITEM   link;
-  
+
   //These are for the sorted list
   pBITLISTITEM   prev;
   pBITLISTITEM   next;
-  
+
   pTILEGRIDDATA  tiledata;
   pCONFIGBITDATA bitdata;
   pTILEPADPINMAP paddata;
-  
+
   int            blocknumber;
-  
+
   pBLOCKINFOITEM block;
 };
 
@@ -284,45 +329,55 @@ struct tagBLOCKINFOITEM
 {
   pBLOCKINFOITEM  prev;
   pBLOCKINFOITEM  next;
-  
+
   pBITLISTITEM    firstsettingsbit;
-  
+
   int             x;
   int             y;
 
   int             blocknumber;
   int             blocktype;
-  
+
   int             bitcount;         //Number of setup bits in this block
-  
+
   int             connected;        //Flag to signal if there are net connections to this block
-  
+
+  int             processed;        //Flag to signal if the block has already been processed during verilog generation
+                                    //This is to accomodate for carry chain connection
+
   int             logicsettings;    //Bit array to reflect the settings bits set for this block
-  
+
   int             lut0;             //Lookup pattern for mslice lut0
   int             lutf0;            //Lookup pattern for lslice lutf0
   int             lutg0;            //Lookup pattern for lslice lutg0
-  
+
   int             lut1;             //Lookup pattern for mslice lut1
   int             lutf1;            //Lookup pattern for lslice lutf1
   int             lutg1;            //Lookup pattern for lslice lutg1
-  
+
+  int             embsettings1;     //Settings for the embedded memory blocks
+  int             embsettings2;
+  int             embrid;           //Variable to capture the read id bits. Not sure what these are used for and are only mentioned as comment in the macro
+  int             embwid;           //Variable to capture the write bits
+
   int             sliceid;
   int             padid;
   int             pinnumber;
   int             embid;
   int             pllid;
-  
+
   char           *tiletype;
-  
+
   int             connectioncount;  //Number of connections set in the connections array
-  
+
   BLOCKCONNECTION connections[MAX_BLOCK_CONNECTIONS];
-  
+
   char            padname[MAX_NAME_LENGTH];
   char            lut0output[MAX_NAME_LENGTH];
   char            lut1output[MAX_NAME_LENGTH];
-  
+
+  char            carryoutname[MAX_NAME_LENGTH];
+
   int             padtype;
 };
 
@@ -332,42 +387,42 @@ struct tagROUTEINFOITEM
 {
   pROUTEINFOITEM prev;              //Linked list pointers
   pROUTEINFOITEM next;
-  
+
   pTILEGRIDDATA  tiledata;          //Info about the tile the bit belongs to
   pCONFIGBITDATA bitdata;           //Info about what the bit means
   pTILEPADPINMAP paddata;           //Info about the IO pad the bit possibly belongs to
 
   pROUTEINFOITEM matingrouteitem;   //When a connection pair is found the other bit is linked here
-  
+
   int            toptilex;          //Coordinates of the tile a block belongs to
   int            toptiley;          //For pad and emb slices these can differ from the signal coordinates
-  
+
   int            netnumber;         //Net this bit belongs to
   int            netsignal;         //Type of signal
-  
+
   int            blocknumber;       //Id of the block this route point connects to
   int            blocktype;         //The type of the block this route point connects to
 
   pBLOCKINFOITEM block;
-  
+
   int            lutid;
   int            sliceid;
   int            padid;
   int            pinnumber;
   int            embid;
   int            pllid;
-  
-  int            routetype;         //Route type for this bit that signals for instance a start or end point 
+
+  int            routetype;         //Route type for this bit that signals for instance a start or end point
   int            routestartentity;  //The ARCVAL entity that is used in the match with the mating bit
   int            routeconnected;    //A flag to signal a connection to the next node has been made
-  
+
   char           netname[MAX_NET_NAME_LENGTH];
-  
+
   pSIGNALNAMEMAP signalname;        //Pointer to the translated signal name
   pTILESIGNALMAP signalprefix;      //Pointer to the signal prefix
-  
+
   int            nofentities;       //The number of entities to check
-  
+
   NAMEITEM       startpoints[MAXENTITIES];
   NAMEITEM       endpoints[MAXENTITIES];
   NAMEITEM       pointpairs[MAXENTITIES];
@@ -384,7 +439,7 @@ struct tagNETLISTITEM
 struct tagTREELISTITEM
 {
   pTREELISTITEM  next;
-  
+
   pTREELISTITEM  child;
 
   pROUTEINFOITEM fromsignal;
@@ -547,7 +602,7 @@ int strnicmp(char *str1, char *str2, int length)
     str2++;
     length--;
   }
-  
+
   if(length == 0)
     return(0);
 
@@ -570,11 +625,11 @@ void draw_horz_line(uint8 *buffer, uint32 bytesperrow, uint32 ypos, uint32 xstar
 {
   uint8 *ptr;
   uint32 x, xs, xe;
-  
+
   uint8 red   = color;
   uint8 green = color >> 8;
   uint8 blue  = color >> 16;
-  
+
   //Determine the lowest x for start point
   if(xstart < xend)
   {
@@ -591,7 +646,7 @@ void draw_horz_line(uint8 *buffer, uint32 bytesperrow, uint32 ypos, uint32 xstar
 
   //Point to where the line needs to be drawn
   ptr = buffer + ((ypos * bytesperrow) + (xs * 3));
-  
+
   //Draw the dots
   for(x=xs;x<=xe;x++)
   {
@@ -609,11 +664,11 @@ void draw_vert_line(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ystar
   uint8 *ptr;
   uint32 y, ys, ye;
   uint32 pixels = bytesperrow;
-  
+
   uint8 red   = color;
   uint8 green = color >> 8;
   uint8 blue  = color >> 16;
-  
+
   //Determine the lowest y for start point
   if(ystart < yend)
   {
@@ -630,7 +685,7 @@ void draw_vert_line(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ystar
 
   //Point to where the line needs to be drawn
   ptr = buffer + ((ys * pixels) + (xpos * 3));
-  
+
   //Draw the dots
   for(y=ys;y<=ye;y++)
   {
@@ -638,7 +693,7 @@ void draw_vert_line(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ystar
     ptr[0] = red;
     ptr[1] = green;
     ptr[2] = blue;
-    
+
     //Point to the next dot
     ptr += pixels;
   }
@@ -651,10 +706,10 @@ void draw_rect(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uint
   //Compensate for the last pixel
   width--;
   height--;
-  
+
   uint32 xe = xpos + width;
   uint32 ye = ypos + height;
-  
+
   //Just draw the needed lines
   draw_horz_line(buffer, bytesperrow, ypos, xpos, xe, color);
   draw_horz_line(buffer, bytesperrow, ye, xpos, xe, color);
@@ -669,9 +724,9 @@ void draw_character(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos,
   unsigned char *rows = CharacterMap[character];
   unsigned char  col;
   int ri,ci;
-  
+
   uint8 *ptr;
-  
+
   uint8 red   = color;
   uint8 green = color >> 8;
   uint8 blue  = color >> 16;
@@ -681,10 +736,10 @@ void draw_character(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos,
   {
     //Get the pixels for this row
     col = rows[ri];
-    
+
     //Start at first dot
     ptr = buffer + ((ypos * bytesperrow) + (xpos * 3));
-    
+
     //Plot the on pixels
     for(ci=0;ci<5;ci++)
     {
@@ -703,11 +758,11 @@ void draw_character(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos,
         *ptr++ = 0;
         *ptr++ = 0;
       }
-      
+
       //Select next dot
       col <<= 1;
     }
-    
+
     //Move to next row
     ypos++;
   }
@@ -722,10 +777,10 @@ void draw_text(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uint
   {
     //Draw the current character
     draw_character(buffer, bytesperrow, xpos, ypos, color, *text);
-    
+
     //Select next character
     text++;
-    
+
     //Point to next character column
     xpos += 6;
   }
@@ -740,22 +795,22 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
   int len;
   int count;
   int idx;
-  
+
   int nameidx;
-  
+
   char name[128];
-  
+
   pSCHEMATICPORT port;
-    
+
   draw_rect(buffer, bytesperrow, xpos, ypos, baseblock->width, baseblock->height, blockcolor);
 
   len = (strlen(baseblock->name) * 6) / 2;
-  
+
   xs = xpos + (baseblock->width / 2) - len;
   ys = ypos - 10;
-  
+
   draw_text(buffer, bytesperrow, xs, ys, blockcolor, baseblock->name);
-  
+
   //Need to map the type of block to a schematic block here
   switch(designblock->blocktype)
   {
@@ -782,7 +837,7 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
           pinlist++;
         }
 #endif
-        
+
         //Print the block name
         snprintf(name, sizeof(name), "pin_%d_tile_x%dy%d_block_%d", designblock->pinnumber, designblock->x, designblock->y, designblock->blocknumber);
       }
@@ -823,17 +878,17 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
       snprintf(name, sizeof(name), "gclk_ctmux_tile_x%dy%d_block_%d", designblock->x, designblock->y, designblock->blocknumber);
       break;
   }
-  
+
   len = (strlen(name) * 6) / 2;
-  
+
   xs = xpos + (baseblock->width / 2) - len;
   ys = ypos + baseblock->height + 10;
-  
+
   draw_text(buffer, bytesperrow, xs, ys, blockcolor, name);
-  
+
   //Process the ports on this block
   port = &baseblock->ports[portidx];
-  
+
   while(port->displayname)
   {
     if((port->direction == 0) || (port->direction == 2))
@@ -844,11 +899,11 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
     {
       ys += port->step - 10;
     }
-    
+
     count = port->repeat;
-    
+
     nameidx = 0;
-    
+
     do
     {
       switch(port->direction)
@@ -865,7 +920,7 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
           xe = xs + port->length;
           break;
       }
-    
+
       draw_horz_line(buffer, bytesperrow, ys, xs, xe, blockcolor);
 
       if(port->repeat)
@@ -892,21 +947,21 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
           ye = ys - 3;
           break;
       }
-      
+
       draw_text(buffer, bytesperrow, xs, ye, blockcolor, name);
-      
+
       //Find the matching connection for this signal
       //Need a counter and then go through the list and do string compare against name
-      
+
       //if found print it based on the direction before or after the pin
       //Use the net color for this text
-      
-      
+
+
       for(idx=0;idx<designblock->connectioncount;idx++)
       {
         if(strcmp(name, designblock->connections[idx].signalname) == 0)
         {
-          
+
           switch(port->direction)
           {
             case 0:
@@ -920,23 +975,23 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
               xs = xpos + baseblock->width + port->length + 5;
               break;
           }
-          
+
           draw_text(buffer, bytesperrow, xs, ye, netcolor, designblock->connections[idx].netname);
-          
+
           break;
         }
       }
-      
-      
+
+
       //Fixed basic step between wires
       ys += 10;
-      
+
     } while(--count > 0);
-    
+
     portidx++;
-    
+
     port = &baseblock->ports[portidx];
-  }  
+  }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -993,12 +1048,12 @@ void getpinmapfortile(pBITLISTITEM item, pBLOCKINFOITEM block)
 {
   int iol = -1;
   int i;
-  
+
   pCONFIGBITDATA bitdata = item->bitdata;
-  
+
   int x = item->tiledata->x;
   int y = item->tiledata->y;
-  
+
   //Check the items that have a relation with a pad
   for(i=0;i<sizeof(bitnames) / sizeof(BITNAMES);i++)
   {
@@ -1011,7 +1066,7 @@ void getpinmapfortile(pBITLISTITEM item, pBLOCKINFOITEM block)
       break;
     }
   }
-  
+
   //When no bit name matches check if it is a mux select
   if((iol == -1) && (strncmp(bitdata->name, "TOP.", 4) == 0))
   {
@@ -1028,25 +1083,25 @@ void getpinmapfortile(pBITLISTITEM item, pBLOCKINFOITEM block)
         }
       }
     }
-  }  
-  
+  }
+
   //Check if a pad number has been found
   if(iol != -1)
   {
     //Set the pad id for this bit
     block->padid = iol;
-    
+
     //See if it has a pin connected to it
     for(i=0;i<sizeof(tilepadmap)/sizeof(TILEPADPINMAP);i++)
     {
       if((x == tilepadmap[i].x) && (y == tilepadmap[i].y) && (iol == tilepadmap[i].iol))
       {
         item->paddata = (const pTILEPADPINMAP)&tilepadmap[i];
-        
+
         block->pinnumber = item->paddata->pin;
       }
     }
-  }  
+  }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -1054,28 +1109,28 @@ void getpinmapfortile(pBITLISTITEM item, pBLOCKINFOITEM block)
 void addtotilesetuplist(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
 {
   pBITLISTITEM bitlistitem;
-  
+
   //Get memory for the bit list item for this bit
   bitlistitem = malloc(sizeof(BITLISTITEM));
 
   //Clear the linked list items for sorting
   bitlistitem->prev = 0;
   bitlistitem->next = 0;
-  
+
   //Set the source information
   bitlistitem->tiledata = tiledata;
   bitlistitem->bitdata  = bitdata;
   bitlistitem->paddata  = 0;
-  
+
   //Signal not assigned yet
   bitlistitem->blocknumber = -1;
-  
+
   //Check if the route info list for this tile is not already started
   if(tilesetuparray[tiledata->x][tiledata->y] == 0)
   {
     //First item in the list, so no previous and next
     bitlistitem->link = 0;
-    
+
     //Set it as the first item of the list
     tilesetuparray[tiledata->x][tiledata->y] = bitlistitem;
   }
@@ -1104,10 +1159,10 @@ void additemtoblocklist(pBLOCKINFOITEM item)
   {
     //Set the forward link
     blocklistend->next = item;
-    
+
     //Set the backward link
     item->prev = blocklistend;
-    
+
     //Set the new end
     blocklistend = item;
   }
@@ -1135,7 +1190,7 @@ void additemtofinalnetlist(pROUTEINFOITEM item)
     //List exists so add to it
     *netlistlast = netitem;
   }
-    
+
   //Point to where the next item needs to be added
   netlistlast = &netitem->next;
 }
@@ -1176,20 +1231,20 @@ void insertitembeforenetlist(pNETLISTITEM current, pNETLISTITEM new)
 void additemtonetlist(pROUTEINFOITEM routebit)
 {
   pNETLISTITEM  addlist;
-  
+
   //Get memory for the net list item for this bit
   pNETLISTITEM netitem = malloc(sizeof(NETLISTITEM));
-  
+
   //Setup the net list item
   netitem->routebit = routebit;
-  
+
   //Add the route point to the net list
   if(routelist == 0)
   {
     //First item in the list, so no previous and next
     netitem->prev = 0;
     netitem->next = 0;
-    
+
     //No items added yet so start with this one
     routelist = netitem;
   }
@@ -1197,7 +1252,7 @@ void additemtonetlist(pROUTEINFOITEM routebit)
   {
     //Need to loop through to make a sorted list
     addlist = routelist;
-    
+
     //Look for where the data needs to be inserted or replaced
     while(addlist)
     {
@@ -1208,7 +1263,7 @@ void additemtonetlist(pROUTEINFOITEM routebit)
         insertitembeforenetlist(addlist, netitem);
         break;
       }
-    
+
       //Point to the next item if there is one
       if(addlist->next)
       {
@@ -1242,14 +1297,14 @@ void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
   //Add the item to the tile route array based on the tile it belongs to
   //Need to create a route info item to dissect the data into.
   routinfoitem = malloc(sizeof(ROUTEINFOITEM));
-  
+
   //Check if the route info list for this tile is not already started
   if(tileroutearray[tiledata->x][tiledata->y] == 0)
   {
     //First item in the list, so no previous and next
     routinfoitem->prev = 0;
     routinfoitem->next = 0;
-    
+
     //Set it as the first item of the list
     tileroutearray[tiledata->x][tiledata->y] = routinfoitem;
   }
@@ -1269,30 +1324,30 @@ void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
   //Adjust the counters for later checking if all route bits have been handled
   tileroutecountarray[tiledata->x][tiledata->y]++;
   tileroutecount++;
-  
+
   //Set the data for later use
   routinfoitem->tiledata = tiledata;
   routinfoitem->bitdata  = bitdata;
-  
+
   //No type determined yet
   routinfoitem->routetype = TYPE_NONE;
-  
+
   //No start entity found yet
   routinfoitem->routestartentity = 0;
-  
+
   //No connection yet
   routinfoitem->routeconnected = 0;
-  
+
   //No net number assigned yet
   routinfoitem->netnumber = 0;
-  
+
   //No mating bit found yet
   routinfoitem->matingrouteitem = 0;
-  
+
   //Need to dissect the data into start and end points
   //Set the count for limiting searching through only the actual data
   routinfoitem->nofentities = bitdata->datacount;
-  
+
   //Walk through all the data items
   for(count=0;count<bitdata->datacount;count++)
   {
@@ -1307,7 +1362,7 @@ void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
 
       //Set the name in the point pair for matching complete pairs
       routinfoitem->pointpairs[count].name = name;
-      
+
       //Find the end of it
       end = strstr(name, ",");
 
@@ -1320,11 +1375,11 @@ void addtotileroutearray(pTILEGRIDDATA tiledata, pCONFIGBITDATA bitdata)
 
       //Find the end of it
       end = strstr(name, ")");
-      
+
       //Second entity is a start point
       routinfoitem->startpoints[count].name   = name;
       routinfoitem->startpoints[count].length = end - name;
-      
+
       //Set the length in the point pair for matching complete pairs
       routinfoitem->pointpairs[count].length = end - routinfoitem->pointpairs[count].name;
     }
@@ -1338,17 +1393,17 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
 {
   int item = routeinfoitem->routestartentity;
   int pair;
-  
+
   char *name;
   int   length;
-  
+
   pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
-  
+
   pROUTEINFOITEM tileroutelist;
-  
+
   pROUTEINFOITEM matchitem;
   pROUTEINFOITEM matchlist;
-  
+
   //Get the current start point entity to check
   name   = routeinfoitem->startpoints[item].name;
   length = routeinfoitem->startpoints[item].length;
@@ -1362,7 +1417,7 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
 
   //Get the route list for the tile the original route belongs to
   tileroutelist = tileroutearray[tiledata->x][tiledata->y];
-  
+
   //Check the other route bits in this tile for a matching start point
   while(tileroutelist)
   {
@@ -1372,7 +1427,7 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
       pair = 0;
     }
 #endif
-    
+
     //Make sure this is not the original item and that it is not yet assigned
     if((tileroutelist != routeinfoitem) && (tileroutelist->routetype == TYPE_NONE))
     {
@@ -1390,10 +1445,10 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
             {
               //Set the index for the entity that matches for this route item
               tileroutelist->routestartentity = item;
-              
+
               //Set the net number for this route item
               tileroutelist->netnumber = netnumber;
-              
+
               //Make this a either a single point or an endpoint
               tileroutelist->routetype = TYPE_ENDPOINT;
 
@@ -1410,7 +1465,7 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
               //Signal that a connection has been found
               return(1);
             }
-            
+
             //Set the found one as the one to match with
             matchitem = tileroutelist;
 
@@ -1446,16 +1501,16 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
                          ((length == 3) &&  (name[0] == 'M') && (name[1] == 'I')) ||
                          ((length == 3) &&  (name[0] == 'C') && (name[1] == 'E')) ||
                          ((length == 3) &&  (name[0] == 'S') && (name[1] == 'R')) ||
-                         ((length == 7) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')  && (name[3] == 'N') && (name[4] == '_') && (name[5] == 'S')))                        
+                         ((length == 7) &&  (name[0] == 'C') && (name[1] == 'L')  && (name[2] == 'K')  && (name[3] == 'N') && (name[4] == '_') && (name[5] == 'S')))
                       {
                         //Mark both route items as a net or endpoint depending on the source
                         matchitem->routetype = routetype;
                         matchlist->routetype = routetype;
-                        
+
                         //Flag both route items as connected
                         matchitem->routeconnected = 1;
                         matchlist->routeconnected = 1;
-                        
+
                         //This means two bits are done so adjust the counters
                         tileroutecountarray[tiledata->x][tiledata->y] -= 2;
                         tileroutecount -= 2;
@@ -1488,7 +1543,7 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
                       //Signal that a starting route has been found
                       return(1);
                     }
-                  }              
+                  }
                 }
               }
 
@@ -1496,14 +1551,14 @@ int findmatchingpoints(pROUTEINFOITEM routeinfoitem, int netnumber, int routetyp
               matchlist = matchlist->next;
             }
           }
-        }              
+        }
       }
     }
 
     //Select the next item to check for the starting point
     tileroutelist = tileroutelist->next;
   }
-  
+
   //No matching start point found so also done
   return(0);
 }
@@ -1514,37 +1569,37 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
 {
   int item;
   int pair;
-  
+
   char *name;
   int   length;
-  
+
   pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
-  
+
   pROUTEINFOITEM tileroutelist;
-  
+
   //Check all the arcval start point entities to see if it is an output (starting with F, FX or Q)
   for(item=0;item<routeinfoitem->nofentities;item++)
   {
     //Get the current start point entity to check
     name   = routeinfoitem->startpoints[item].name;
     length = routeinfoitem->startpoints[item].length;
-    
+
     //When separate scanning is done for GND and GCLK nets then this can be simplified
-    
-#if 0    
+
+#if 0
     if((tiledata->x == 25) && (tiledata->y == 15) && (strcmp(routeinfoitem->bitdata->name, "TOP.XI20.MC10") == 0))
     {
       pair = 0;
     }
 #endif
-    
+
     //CE, SR can be both a start or an end point, but seeing them as start point is basically wrong so needs attention
-    
+
     //The question is if CLK0 and CLK1 can be seen as a start point. It might be that they are local clock wires and as such part of bigger nets
     //For now they will be used as starting points too
-    
+
     //Maybe a more dedicated matching can be done with strncmp and per type signal this in the route to know if it is a global clock or any of the other signals
-    
+
     //See if the current start point matches an output entity
     if(((length == 2) && ((name[0] == 'F') || (name[0] == 'Q'))) ||
        ((length == 3) &&  (name[0] == 'F') && (name[1] == 'X'))  ||
@@ -1572,7 +1627,7 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
                 //Set the index for the entity that matches for these route items
                 routeinfoitem->routestartentity = item;
                 tileroutelist->routestartentity = pair;
-                
+
                 //Get the current endpoint specifics
                 name   = routeinfoitem->endpoints[item].name;
                 length = routeinfoitem->endpoints[item].length;
@@ -1589,7 +1644,7 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
                   //Mark both route items as a net since it is in the same tile as the start point
                   routeinfoitem->routetype = TYPE_NET;
                   tileroutelist->routetype = TYPE_NET;
-                        
+
                   //Flag both route items as connected
                   routeinfoitem->routeconnected = 1;
                   tileroutelist->routeconnected = 1;
@@ -1604,7 +1659,7 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
                   routeinfoitem->routetype = TYPE_STARTPOINT;
                   tileroutelist->routetype = TYPE_STARTPOINT;
                 }
-                
+
                 //Set the net number for both items
                 routeinfoitem->netnumber = netnumber;
                 tileroutelist->netnumber = netnumber;
@@ -1612,15 +1667,15 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
                 //Add both items to the net list
                 additemtonetlist(routeinfoitem);
                 additemtonetlist(tileroutelist);
-                
+
                 //Link the two bits together
                 routeinfoitem->matingrouteitem = tileroutelist;
                 tileroutelist->matingrouteitem = routeinfoitem;
-                
+
                 //Signal that a starting route has been found
                 return(1);
               }
-            }              
+            }
           }
         }
 
@@ -1628,7 +1683,7 @@ int checkstartingpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
       }
     }
   }
-  
+
   return(0);
 }
 
@@ -1638,21 +1693,21 @@ int findgndpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
 {
   int item;
   int pair;
-  
+
   char *name;
   int   length;
-  
+
   pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
-  
+
   pROUTEINFOITEM tileroutelist;
-  
+
   //Check all the arcval start point entities to see if it is a GND
   for(item=0;item<routeinfoitem->nofentities;item++)
   {
     //Get the current start point entity to check
     name   = routeinfoitem->startpoints[item].name;
     length = routeinfoitem->startpoints[item].length;
-    
+
     //See if the current start point matches a  GND entity
     if((length == 3) &&  (strncmp(name, "GND", 3) == 0))
     {
@@ -1678,7 +1733,7 @@ int findgndpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
                 //Set the index for the entity that matches for these route items
                 routeinfoitem->routestartentity = item;
                 tileroutelist->routestartentity = pair;
-                
+
                 //Mark both route items as a net since it is in the same tile as the start point
                 routeinfoitem->routetype = TYPE_NET;
                 tileroutelist->routetype = TYPE_NET;
@@ -1690,7 +1745,7 @@ int findgndpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
                 //This means two bits are done so adjust the counters
                 tileroutecountarray[tiledata->x][tiledata->y] -= 2;
                 tileroutecount -= 2;
-                
+
                 //Set the net number for both items
                 routeinfoitem->netnumber = netnumber;
                 tileroutelist->netnumber = netnumber;
@@ -1698,15 +1753,15 @@ int findgndpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
                 //Add both items to the net list
                 additemtonetlist(routeinfoitem);
                 additemtonetlist(tileroutelist);
-                
+
                 //Link the two bits together
                 routeinfoitem->matingrouteitem = tileroutelist;
                 tileroutelist->matingrouteitem = routeinfoitem;
-                
+
                 //Signal that a starting route has been found
                 return(1);
               }
-            }              
+            }
           }
         }
 
@@ -1714,7 +1769,7 @@ int findgndpoint(pROUTEINFOITEM routeinfoitem, int netnumber)
       }
     }
   }
-  
+
   return(0);
 }
 
@@ -1726,21 +1781,21 @@ int findgclkpoint(pROUTEINFOITEM routeinfoitem, int netnumber, char *clkname, in
 {
   int item;
   int pair;
-  
+
   char *name;
   int   length;
-  
+
   pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
-  
+
   pROUTEINFOITEM tileroutelist;
-  
+
   //Check all the arcval start point entities to see if it is a GND
   for(item=0;item<routeinfoitem->nofentities;item++)
   {
     //Get the current start point entity to check
     name   = routeinfoitem->startpoints[item].name;
     length = routeinfoitem->startpoints[item].length;
-    
+
     //See if the current start point matches a GCLK entity
     if((length == clklength) &&  (strncmp(name, clkname, clklength) == 0))
     {
@@ -1783,11 +1838,11 @@ int findgclkpoint(pROUTEINFOITEM routeinfoitem, int netnumber, char *clkname, in
                   tileroutecountarray[tiledata->x][tiledata->y] -= 2;
                   tileroutecount -= 2;
                 }
-                
+
                 //Set the index for the entity that matches for these route items
                 routeinfoitem->routestartentity = item;
                 tileroutelist->routestartentity = pair;
-                
+
                 //Set the net number for both items
                 routeinfoitem->netnumber = netnumber;
                 tileroutelist->netnumber = netnumber;
@@ -1795,15 +1850,15 @@ int findgclkpoint(pROUTEINFOITEM routeinfoitem, int netnumber, char *clkname, in
                 //Add both items to the net list
                 additemtonetlist(routeinfoitem);
                 additemtonetlist(tileroutelist);
-                
+
                 //Link the two bits together
                 routeinfoitem->matingrouteitem = tileroutelist;
                 tileroutelist->matingrouteitem = routeinfoitem;
-                
+
                 //Signal that a starting route has been found
                 return(1);
               }
-            }              
+            }
           }
         }
 
@@ -1811,7 +1866,7 @@ int findgclkpoint(pROUTEINFOITEM routeinfoitem, int netnumber, char *clkname, in
       }
     }
   }
-  
+
   return(0);
 }
 
@@ -1822,12 +1877,12 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
 {
   int item;
   int pair;
-  
+
   pNAMEITEM      arcvalentity;
-  
+
   pROUTEINFOITEM tileroutelist = searchlist;
   pROUTEINFOITEM matchlist;
-  
+
   //Check the other route bits in this tile to find a matching pair
   while(tileroutelist)
   {
@@ -1839,7 +1894,7 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
       {
         //Get the current start point entity to check
         arcvalentity = &tileroutelist->startpoints[item];
-        
+
         //String check only needed when the lengths match
         if(length == arcvalentity->length)
         {
@@ -1851,10 +1906,10 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
             {
               //Set the index for the entity that matches for this route item
               tileroutelist->routestartentity = item;
-              
+
               //Set the net number for this route item
               tileroutelist->netnumber = netnumber;
-              
+
               //Make this a either a single point or an endpoint
               tileroutelist->routetype = TYPE_ENDPOINT;
 
@@ -1871,7 +1926,7 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
               //Signal that a connection has been found
               return(tileroutelist);
             }
-            
+
             //Setup the list to search a match in
             matchlist = searchlist;
 
@@ -1910,11 +1965,11 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
                         //Make this a either a single point or an endpoint
                         tileroutelist->routetype = TYPE_ENDPOINT;
                         matchlist->routetype = TYPE_ENDPOINT;
-                        
+
                         //Signal the bits as connected
                         tileroutelist->routeconnected = 1;
                         matchlist->routeconnected = 1;
-                        
+
                         //This means two bits are done so adjust the counters
                         tileroutecountarray[tileroutelist->tiledata->x][tileroutelist->tiledata->y] -= 2;
                         tileroutecount -= 2;
@@ -1925,7 +1980,7 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
                         tileroutelist->routetype = TYPE_ROUTEPOINT;
                         matchlist->routetype = TYPE_ROUTEPOINT;
                       }
-                      
+
                       //Set the net number for both items
                       tileroutelist->netnumber = netnumber;
                       matchlist->netnumber = netnumber;
@@ -1937,11 +1992,11 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
                       //Link the pair to each other
                       tileroutelist->matingrouteitem = matchlist;
                       matchlist->matingrouteitem = tileroutelist;
-                      
+
                       //Signal that a connection has been found
                       return(tileroutelist);
                     }
-                  }              
+                  }
                 }
               }
 
@@ -1956,7 +2011,7 @@ pROUTEINFOITEM findrouteconnection(pROUTEINFOITEM searchlist, char *entity, int 
     //Next item to find a starting point in
     tileroutelist = tileroutelist->next;
   }
-  
+
   //No match found so signal this. When on the last hop this needs to be considered an error
   return(0);
 }
@@ -1967,23 +2022,23 @@ int findconnectionpoint(pROUTEINFOITEM routeinfoitem)
 {
   char *name;
   int   length;
-  
+
   int x;
   int y;
 
   char direction;
   char wire;
-  
+
   char entity[12];
-  
+
   int hop;
   int hops;
   int nexthop;
-  
+
   int foundconnection = 0;
-  
+
   pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
-  
+
   pROUTEINFOITEM tileroutelist;
   pROUTEINFOITEM foundrouteitem = 0;
 
@@ -1993,11 +2048,11 @@ int findconnectionpoint(pROUTEINFOITEM routeinfoitem)
     hop = 0;
   }
 #endif
-  
+
   //Get the endpoint entity to search for
   name   = routeinfoitem->endpoints[routeinfoitem->routestartentity].name;
   length = routeinfoitem->endpoints[routeinfoitem->routestartentity].length;
-  
+
   //LOCAL connect wires are only driven from interconnect wires, and only drive local inputs
   //CE, SR and CLK are similar to local wires
   if((strncmp(name, "LOCAL", 5) == 0) || (strncmp(name, "CE", 2) == 0) || (strncmp(name, "SR", 2) == 0) || (strncmp(name, "CLK", 3) == 0))
@@ -2022,7 +2077,7 @@ int findconnectionpoint(pROUTEINFOITEM routeinfoitem)
       //For a connection point see if there are more matches in the same tile for this specific one
       //Done here because for the interconnect there can be multiple connections on both the mid and the end point
       while(findmatchingpoints(foundrouteitem, foundrouteitem->netnumber, TYPE_ENDPOINT) == 1);
-      
+
       //Signal a connection has been found
       foundconnection = 1;
     }
@@ -2149,12 +2204,12 @@ int findconnectionpoint(pROUTEINFOITEM routeinfoitem)
         //For a connection point see if there are more matches in the same tile for this specific one
         //Done here because for the interconnect there can be multiple connections on both the mid and the end point
         while(findmatchingpoints(foundrouteitem, foundrouteitem->netnumber, TYPE_ENDPOINT) == 1);
-        
+
         //Signal at least one connection has been found
         foundconnection = 1;
       }
     }
-    
+
     //At this point nothing found means an error so mark the originating route as such
     if(foundconnection == 0)
     {
@@ -2164,7 +2219,7 @@ int findconnectionpoint(pROUTEINFOITEM routeinfoitem)
         direction = 'A';
       }
 #endif
-      
+
       //Mark the originating bit pair with an error
       //Might need a check on matingrouteitem being a valid pointer
       routeinfoitem->routetype = TYPE_ERROR;
@@ -2179,7 +2234,7 @@ int findconnectionpoint(pROUTEINFOITEM routeinfoitem)
     routeinfoitem->routetype = TYPE_ERROR;
     routeinfoitem->matingrouteitem->routetype = TYPE_ERROR;
   }
-  
+
   return(foundconnection);
 }
 
@@ -2189,14 +2244,14 @@ void identifynetstarts(int *netnumber)
 {
   int x;
   int y;
-  
+
   pROUTEINFOITEM bitlist;
-  
+
   //Scan the tiles to find the starting points (block outputs)
-  
+
   //When a starting point is found (matching bit pair) then use the starting point to see if there are more.
   //If not then check for other starting points
-  
+
   //Walk through the tile array to search for the starting points
   for(x=0;x<COLUMNS;x++)
   {
@@ -2204,7 +2259,7 @@ void identifynetstarts(int *netnumber)
     {
       //Get the first bit for this tile
       bitlist = tileroutearray[x][y];
-      
+
       //Only process when there are bits
       while(bitlist)
       {
@@ -2216,12 +2271,12 @@ void identifynetstarts(int *netnumber)
           {
             //For a starting point see if there are more matches for this specific one
             while(findmatchingpoints(bitlist, *netnumber, TYPE_NET) == 1);
-            
+
             //Last match found then up to the next net
             (*netnumber)++;
           }
         }
-        
+
         //Select the next bit to check
         bitlist = bitlist->next;
       }
@@ -2237,9 +2292,9 @@ void buildgndnet(int *netnumber)
   int y;
 
   int found = 0;
-  
+
   pROUTEINFOITEM bitlist;
-  
+
   //Walk through the tile array to search for the GND starting points
   for(x=0;x<COLUMNS;x++)
   {
@@ -2247,7 +2302,7 @@ void buildgndnet(int *netnumber)
     {
       //Get the first bit for this tile
       bitlist = tileroutearray[x][y];
-      
+
       //Only process when there are bits
       while(bitlist)
       {
@@ -2260,13 +2315,13 @@ void buildgndnet(int *netnumber)
             found = 1;
           }
         }
-        
+
         //Select the next bit to check
         bitlist = bitlist->next;
       }
     }
   }
-  
+
   //Check if a ground net is found
   if(found)
   {
@@ -2287,22 +2342,22 @@ void buildgclknets(int *netnumber)
 
   char  clkname[12];
   int   clklength;
-  
+
   pROUTEINFOITEM bitlist;
 
   for(clkid=0;clkid<16;clkid++)
   {
     //No item found yet at the start of each new global clock signal
     found = 0;
-    
+
     //There is no GCLK1 net so skip it
     if(clkid == 1)
     {
       clkid++;
     }
-  
+
     clklength = snprintf(clkname, sizeof(clkname), "GCLK%d", clkid);
-    
+
     //Walk through the tile array to search for the GND starting points
     for(x=0;x<COLUMNS;x++)
     {
@@ -2345,9 +2400,9 @@ void traceroutelist()
 {
   int x;
   int y;
-  
+
   int routefound = 1;
-  
+
   pROUTEINFOITEM bitlist;
 
   //Need to walk through the tile route array and trace all the identified nets down to the endpoints
@@ -2358,7 +2413,7 @@ void traceroutelist()
   {
     //When no more routes are found the loop will break
     routefound = 0;
-    
+
     //Walk through the tile array to trace the nets for the identified starting points
     for(x=0;x<COLUMNS;x++)
     {
@@ -2376,18 +2431,18 @@ void traceroutelist()
             routefound = 0;
           }
 #endif
-          
+
           //Check if the current route bit is a starting or a route point and not connected yet
           if((bitlist->routeconnected == 0) && ((bitlist->routetype == TYPE_STARTPOINT) || (bitlist->routetype == TYPE_ROUTEPOINT)))
           {
             //Could have this function return the number of bits tagged to cope with the single bit clock routes
-            
+
             //Try to find a connection for this route bit
             if(findconnectionpoint(bitlist))
             {
               //Signal a route has been found, so good for another run
               routefound = 1;
-              
+
               //Mark originating route bits as connected
               //Might need a check on matingrouteitem being a valid pointer
               bitlist->routeconnected = 1;
@@ -2413,11 +2468,11 @@ pROUTEINFOITEM findmatchingpair(pROUTEINFOITEM routeinfoitem, int netnumber)
 {
   int item;
   int pair;
-  
+
   pTILEGRIDDATA  tiledata = routeinfoitem->tiledata;
-  
+
   pROUTEINFOITEM tileroutelist;
-  
+
   //Check all the arcval pairs on having a match in another route bit within this tile
   for(item=0;item<routeinfoitem->nofentities;item++)
   {
@@ -2458,14 +2513,14 @@ pROUTEINFOITEM findmatchingpair(pROUTEINFOITEM routeinfoitem, int netnumber)
               //Signal that a starting route has been found
               return(routeinfoitem);
             }
-          }              
+          }
         }
       }
 
       tileroutelist = tileroutelist->next;
     }
   }
-  
+
   return(0);
 }
 
@@ -2474,41 +2529,41 @@ pROUTEINFOITEM findmatchingpair(pROUTEINFOITEM routeinfoitem, int netnumber)
 void getsignalproperties(pROUTEINFOITEM item)
 {
   int blocktype = BLOCK_OTHER;
-  
+
   int length;
-  
+
   char *dptr;
-  
+
  char *type;
-  
+
   //The block type depends on several things. For instance the tile type for slices is plb in which mslices and lslices sit
   //These depend on the numbers in the bit name
-  
+
   //An emb block can be a fifo which can only be determined by checking more then one bit
-  
+
   //Not sure if the tile type pib is used here because io is situated in dedicated tile types
-  
+
   //Need to look into what is actually needed here to make it work
-  
-  
+
+
   item->sliceid   = -1;
   item->lutid     = -1;
   item->padid     = -1;
   item->embid     = -1;
   item->pllid     = -1;
-  
+
   //The signal properties are found in the signal name
   if(item->signalprefix)
   {
     type = item->signalprefix->tiletype;
-    
+
     if(strncmp(type, "plb", 3) == 0)
     {
       //signalname->hdl_name for lut determination
       //signalprefix->signalprefix for slice determination
-      
+
       item->sliceid = item->signalprefix->signalprefix[6] - '0';
-      
+
       //The lut id is either 0 or 1 and can be found in the hdl name where either the second or third character is an _
       if(dptr = strstr(item->signalname->hdl_name, "_"))
       {
@@ -2522,7 +2577,7 @@ void getsignalproperties(pROUTEINFOITEM item)
           item->lutid = 1;
         }
       }
-      
+
       //Evaluate the slice number. 0 and 1 are for mslice and 2 and 3 are for lslice
       if(item->sliceid < 2)
       {
@@ -2543,7 +2598,7 @@ void getsignalproperties(pROUTEINFOITEM item)
       {
         item->padid = item->signalprefix->signalprefix[3] - '0';
       }
-      
+
       blocktype = BLOCK_PAD;
     }
     else if(strncmp(type, "emb_slice", 9) == 0)
@@ -2604,7 +2659,7 @@ void getsignalproperties(pROUTEINFOITEM item)
       blocktype = BLOCK_CONFIG;
     }
   }
-  
+
   //Set the found block type
   item->blocktype = blocktype;
 }
@@ -2615,26 +2670,26 @@ void mapsignalname(pROUTEINFOITEM routeitem)
 {
   int iol = -1;
   int i;
-  
+
   int found = 0;
-  
+
   pTILEGRIDDATA  tiledata = routeitem->tiledata;
 
   int x = tiledata->x;
   int y = tiledata->y;
-  
+
   pNAMEITEM signalname;
-  
+
   pTILESIGNALMAP tilesignalmapptr;
   pSIGNALNAMEMAP signalsearchtable;
-  
+
   char *netname;
-  
+
   char **typemap;
 
   //No pin number found yet
-  routeitem->pinnumber = -1;  
-  
+  routeitem->pinnumber = -1;
+
   //Take action based on the signal type
   if(routeitem->netsignal == SIGNAL_OUTPUT)
   {
@@ -2653,18 +2708,18 @@ void mapsignalname(pROUTEINFOITEM routeitem)
   //A bit of an issue is when a block can have different modes where the signals map differently
   //One block that has this is emb, which can also be a fifo
   //Needs a bit of investigation on how to check and use this
-  
+
   //The above seems not to be used in the FNIRSI-1013D FPGA so skipped for now
-  
+
   //What needs to be done here is map a signal to a block in the block list
   //Have to see if IO pads can be mapped correctly because in the net list there is a difference between the coordinates
   //of a signal name and the coordinates of a pad. Same problem for emb slices.
-  
+
   //In the block map the tile coordinates are those for the top level tile. For example emb_slice 2 has its configuration done if 8,0 while the signals connect in 8,5 or 8,6
   //So for the mapping the top level coordinates are needed. This is also done below to verify the type!
-  
-  
-  
+
+
+
   //Only do mapping when there is an actual translation table available
   if(tilesignalmapptr)
   {
@@ -2673,10 +2728,10 @@ void mapsignalname(pROUTEINFOITEM routeitem)
     {
       //If so there might be a need to skip to a fifo based table
       //Needs looping through the table to find the first fifo map
-      
+
       //Check the block type which should be used. But for this it should be mapped to a block first
     }
-    
+
     //Search the lists until the matching signal is found
     while(tilesignalmapptr->signaltable && (found == 0))
     {
@@ -2691,10 +2746,10 @@ void mapsignalname(pROUTEINFOITEM routeitem)
         {
           routeitem->toptilex = x - signalsearchtable->xoff;
           routeitem->toptiley = y - signalsearchtable->yoff;
-          
+
           //Check the tile that this match is offset from, on the correct type to make sure the match is correct
           typemap = tiletypemap[routeitem->toptilex][routeitem->toptiley];
-          
+
           //Only if the originating tile has a typemap check it there is a match
           if(typemap)
           {
@@ -2711,7 +2766,7 @@ void mapsignalname(pROUTEINFOITEM routeitem)
                 //Done so break out all the loops
                 found = 1;
               }
-              
+
               //Select the next type string to check
               typemap++;
             }
@@ -2726,17 +2781,17 @@ void mapsignalname(pROUTEINFOITEM routeitem)
       tilesignalmapptr++;
     }
   }
-  
+
   //When a name is found see if it could be an IO pin which are only situated in pib tiles and have a prefix name starting with pad
   if((found == 1) && (strncmp(routeitem->signalprefix->signalprefix, "pad", 3) == 0))
   {
     //Get the pad number
     iol = routeitem->signalprefix->signalprefix[3] - '0';
-    
+
     //Calculate the coordinates of the tile the pad belongs to based on the found offsets
     x -= routeitem->signalname->xoff;
     y -= routeitem->signalname->yoff;
-    
+
     //Try to match the found pad number to an actual pin number
     for(i=0;i<sizeof(tilepadmap)/sizeof(TILEPADPINMAP);i++)
     {
@@ -2745,34 +2800,34 @@ void mapsignalname(pROUTEINFOITEM routeitem)
       {
         //When found set it in the route info item for printing
         routeitem->paddata = (const pTILEPADPINMAP)&tilepadmap[i];
-        
+
         routeitem->pinnumber = routeitem->paddata->pin;
-        
+
         break;
       }
     }
-  }  
+  }
 
   //When there is a signal match try to match it to a block
   if(found == 1)
   {
     pBLOCKINFOITEM searchlist = blocklist;
     //Search the block list for a matching block this signal connects to
-    
+
     //First get the needed properties for this bit
     getsignalproperties(routeitem);
-    
+
     found = 0;
-    
+
     //Just search the block list to find a match
     while(searchlist && (found == 0))
     {
       found = 0;
-      
+
       if((searchlist->x == routeitem->toptilex) && (searchlist->y == routeitem->toptiley) && (searchlist->blocktype == routeitem->blocktype))
       {
         //For the moment only the blocks used in the FNIRSI FPGA are checked
-        
+
         switch(routeitem->blocktype)
         {
           case BLOCK_PAD:
@@ -2781,7 +2836,7 @@ void mapsignalname(pROUTEINFOITEM routeitem)
               found = 1;
             }
             break;
-            
+
           case BLOCK_MSLICE:
           case BLOCK_LSLICE:
             if(searchlist->sliceid == routeitem->sliceid)
@@ -2796,14 +2851,14 @@ void mapsignalname(pROUTEINFOITEM routeitem)
               found = 1;
             }
             break;
-            
+
           case BLOCK_PLL:
             if(searchlist->pllid == routeitem->pllid)
             {
               found = 1;
             }
             break;
-            
+
           case BLOCK_GCLK_CSB:
           case BLOCK_GCLK_PREMUX:
           case BLOCK_GCLK_CTMUX:
@@ -2812,27 +2867,27 @@ void mapsignalname(pROUTEINFOITEM routeitem)
             break;
         }
       }
-      
+
       if(found == 1)
       {
         routeitem->blocknumber = searchlist->blocknumber;
         routeitem->block = searchlist;
-        
+
         //Signal that the block has connections
         searchlist->connected = 1;
-        
+
         //Setup the names
         searchlist->connections[searchlist->connectioncount].signalname = routeitem->signalname->hdl_name;
         searchlist->connections[searchlist->connectioncount].netname = routeitem->netname;
-        
+
         //Signal an extra connection to this block
         searchlist->connectioncount++;
       }
-      
+
       searchlist = searchlist->next;
     }
-    
-    
+
+
   }
 }
 
@@ -2841,51 +2896,51 @@ void mapsignalname(pROUTEINFOITEM routeitem)
 void filterroutelist()
 {
   pNETLISTITEM  fromlist = routelist;
-  
+
   pROUTEINFOITEM routeitem;
-  
+
   char *name;
   int  length;
-  
+
   int netnumber = 0;
   int gclkid;
-  
+
   char *netname;
-  
+
   //Within this function code should be added to identify a block based on a signal name
   //For the found block the settings data needs to be retrieved
   //Could be coded in the mapsignalname function. This way it is also possible to select the correct type to match the signal names
   //It does require a bitlist per tile with the remainder of the bits
-  
-  
+
+
   //Process all the items in the route list
   while(fromlist)
   {
     //Get the current item to process
     routeitem = fromlist->routebit;
-    
+
     //Detect switch to new net
     if(netnumber != fromlist->routebit->netnumber)
     {
       //Get the start point for typing the signal
       name   = routeitem->startpoints[routeitem->routestartentity].name;
       length = routeitem->startpoints[routeitem->routestartentity].length;
-      
+
       //Check the first entry of this net on what it is
       if((length == 3) && (strncmp(name, "GND", 3) == 0))
       {
         //For a ground item mark the first one as ground signal
         routeitem->netsignal = SIGNAL_GND;
-        
+
         snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "ground");
       }
       else if(((length == 5) || (length == 6)) && (strncmp(name, "GCLK", 4) == 0))
       {
         //For a global clock mark it as a global clock signal
         routeitem->netsignal = SIGNAL_GCLK;
-        
+
         gclkid = atoi(&name[4]);
-        
+
         snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "gclk_%d", gclkid);
       }
       else
@@ -2895,7 +2950,7 @@ void filterroutelist()
 
         //Translate the signal name to a hdl name and see if it has a connection with a pin
         mapsignalname(routeitem);
-        
+
         //When the signal is mapped use the prefix and hdl name for the net
         if(routeitem->signalprefix && routeitem->signalname)
         {
@@ -2909,16 +2964,16 @@ void filterroutelist()
           }
         }
         else
-        {        
+        {
           snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "x%dy%d_%s_net_%d", routeitem->tiledata->x, routeitem->tiledata->y, routeitem->tiledata->type, routeitem->netnumber);
         }
       }
-      
+
       //Add it to the net list
       additemtofinalnetlist(routeitem);
-      
+
       netname = routeitem->netname;
-      
+
       netnumber++;
     }
     else
@@ -2929,24 +2984,24 @@ void filterroutelist()
       {
         //Signal it as an input
         routeitem->netsignal = SIGNAL_INPUT;
-        
+
         //Check if there is a matching pair for this route bit, which is not already marked
         if((routeitem->matingrouteitem) && (routeitem->matingrouteitem->netsignal == 0))
         {
           //If so flag it as input signal too so it will be filtered from the list
           routeitem->matingrouteitem->netsignal = SIGNAL_INPUT;
         }
-        
+
         strncpy(routeitem->netname, netname, MAX_NET_NAME_LENGTH);
-        
+
         //Translate the signal name to a hdl name and see if it has a connection with a pin
         mapsignalname(routeitem);
-        
+
         //Add it to the net list
         additemtofinalnetlist(routeitem);
       }
     }
-    
+
     //Get the next item to process
     fromlist = fromlist->next;
   }
@@ -2957,12 +3012,12 @@ void filterroutelist()
 void additemtotreelist(ppTREELISTITEM list, pROUTEINFOITEM fromsignal, pROUTEINFOITEM tosignal)
 {
   pTREELISTITEM item = malloc(sizeof(TREELISTITEM));
-  
+
   item->next = 0;
   item->child = 0;
   item->fromsignal = fromsignal;
   item->tosignal = tosignal;
-  
+
   //Add this new one to the given list point
   *list = item;
 }
@@ -2973,24 +3028,24 @@ void createtreelist()
 {
   //Need to walk through the net list and when a pad is found as first entry of a net trace down the connections
   int netnumber = 0;
-  
+
   int addtochildlist = 0;
-  
+
   pNETLISTITEM searchlist = netlist;
- 
+
   pROUTEINFOITEM fromsignal;
   pROUTEINFOITEM tosignal;
-  
+
   pTREELISTITEM treelist;
-  
+
   ppTREELISTITEM mainaddlist = &inputtreelist;
-  
+
   ppTREELISTITEM childaddlist;
-  
+
   while(searchlist)
   {
     tosignal = searchlist->routebit;
-    
+
     //Detect the start of the next net
     if(netnumber != tosignal->netnumber)
     {
@@ -3001,19 +3056,19 @@ void createtreelist()
         //Create and add a new item to the list
         //Then all the items within this net should be hooked onto a child list
         additemtotreelist(mainaddlist, 0, tosignal);
-        
+
         //Set this signal as the originator for the child items
         fromsignal = tosignal;
-        
-        //Get the current list point        
+
+        //Get the current list point
         treelist = *mainaddlist;
-        
+
         //Setup the child list for it
         childaddlist = &treelist->child;
-        
+
         //Have the main list continue at the next point
         mainaddlist = &treelist->next;
-        
+
         //Signal the rest of the signals of this net need to be added to the child list
         addtochildlist = 1;
       }
@@ -3023,40 +3078,40 @@ void createtreelist()
         addtochildlist = 0;
       }
     }
-    
+
     if(addtochildlist)
     {
       //Add this item to the child list and trace it down through the blocks
       additemtotreelist(childaddlist, fromsignal, tosignal);
-      
-      //Get the current list point        
+
+      //Get the current list point
       treelist = *childaddlist;
 
       //Have the child list continue at the next point
       childaddlist = &treelist->next;
-      
-      
+
+
       //The next block needs to be found based on the current block input found here and the start point of a net matching the block number
       //Only when the signal matches with the current input signal it should add the next signals to the child list of the current one
-      
+
       //A problem here is the fact that embedded block memory has a displacement in the signals when 2 bit mode is used
       //A2 in seems to go to B0 output and A5 in to B2
       //For slices the lut id needs to be used in tracing
-      
-      
+
+
       //Probably need both input and output route items added to the current item, to have this connection data
       //&treelist->child;
-      
-      
-      
+
+
+
     }
-    
+
     searchlist = searchlist->next;
   }
-  
-  
-  
-  
+
+
+
+
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -3088,14 +3143,14 @@ void insertitembeforesetuplist(pBLOCKINFOITEM block, pBITLISTITEM current, pBITL
     new->next = current;
     current->prev = new;
   }
-  
+
   //To get the first item of the settings list for this block the previous bit needs to have a different block number
   //When there is no previous bit it is the first for this block
   if((new->prev == 0) || (new->prev && (new->prev->blocknumber < block->blocknumber)))
   {
     //Set this bit as the first for this block
     block->firstsettingsbit = new;
-  }       
+  }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -3103,7 +3158,7 @@ void insertitembeforesetuplist(pBLOCKINFOITEM block, pBITLISTITEM current, pBITL
 void additemtosetuplist(pBLOCKINFOITEM block, pBITLISTITEM item)
 {
   pBITLISTITEM addlist;
-  
+
   //Add the route point to the net list
   if(blocksetuplist == 0)
   {
@@ -3114,7 +3169,7 @@ void additemtosetuplist(pBLOCKINFOITEM block, pBITLISTITEM item)
   {
     //Need to loop through to make a sorted list
     addlist = blocksetuplist;
-    
+
     //Look for where the data needs to be inserted or replaced
     while(addlist)
     {
@@ -3125,7 +3180,7 @@ void additemtosetuplist(pBLOCKINFOITEM block, pBITLISTITEM item)
         insertitembeforesetuplist(block, addlist, item);
         break;
       }
-      
+
       if(item->blocknumber == addlist->blocknumber)
       {
         //Need sorting on bit name here
@@ -3136,7 +3191,7 @@ void additemtosetuplist(pBLOCKINFOITEM block, pBITLISTITEM item)
           break;
         }
       }
-    
+
       //Point to the next item if there is one
       if(addlist->next)
       {
@@ -3156,7 +3211,7 @@ void additemtosetuplist(pBLOCKINFOITEM block, pBITLISTITEM item)
           //Set the first bit found for this block as the first one
           block->firstsettingsbit = item;
         }
-        
+
         //Done so quit
         break;
       }
@@ -3173,9 +3228,9 @@ void additemtosetuplist(pBLOCKINFOITEM block, pBITLISTITEM item)
 int getsetupbitidx(char *bit, int skip, int modulo)
 {
   char *dptr = bit + skip;
-  
+
   int idx = atoi(dptr) % modulo;
-  
+
   return(idx);
 }
 
@@ -3186,27 +3241,27 @@ int getsetupbitidx(char *bit, int skip, int modulo)
 void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
 {
   int blocktype = BLOCK_OTHER;
-  
+
   int length;
-  
+
   char *dptr;
   //The block type depends on several things. For instance the tile type for slices is plb in which mslices and lslices sit
   //These depend on the numbers in the bit name
-  
+
   //An emb block can be a fifo which can only be determined by checking more then one bit
-  
+
   //Not sure if the tile type pib is used here because io is situated in dedicated tile types
-  
+
   //No connections made to the block just yet
   block->connected = 0;
   block->connectioncount = 0;
-  
+
   block->sliceid   = -1;
   block->padid     = -1;
   block->pinnumber = -1;
   block->embid     = -1;
   block->pllid     = -1;
-  
+
   if(strncmp(item->tiledata->type, "plb", 3) == 0)
   {
     //Get the lookup table setting for the two luts in the mslice
@@ -3214,14 +3269,14 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
     {
       //A set bit determines a 1 in the table
       block->lut0 = (1 << getsetupbitidx(item->bitdata->name, 8, 16));
-      
+
       //Signal LUT0 has settings
       block->logicsettings = LOGIC_LUT0;
     }
     else if(strncmp(item->bitdata->name, "LUT1_S", 6) == 0)
     {
       block->lut1 = (1 << getsetupbitidx(item->bitdata->name, 8, 16));
-      
+
       //Signal LUT 1 has settings
       block->logicsettings = LOGIC_LUT1;
     }
@@ -3230,7 +3285,7 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
     {
       //A set bit determines a 1 in the table
       block->lutf0 = (1 << getsetupbitidx(item->bitdata->name, 9, 16));
-      
+
       //Might need dedicated indicators for F and G lut
       //Signal LUT0 has settings
       block->logicsettings = LOGIC_LUTF0;
@@ -3238,21 +3293,21 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
     else if(strncmp(item->bitdata->name, "LUTG0_S", 7) == 0)
     {
       block->lutg0 = (1 << getsetupbitidx(item->bitdata->name, 9, 16));
-      
+
       //Signal LUT0 has settings
       block->logicsettings = LOGIC_LUTG0;
     }
     else if(strncmp(item->bitdata->name, "LUTF1_S", 7) == 0)
     {
       block->lutf1 = (1 << getsetupbitidx(item->bitdata->name, 9, 16));
-      
+
       //Signal LUT0 has settings
       block->logicsettings = LOGIC_LUTF1;
     }
     else if(strncmp(item->bitdata->name, "LUTG1_S", 7) == 0)
     {
       block->lutg1 = (1 << getsetupbitidx(item->bitdata->name, 9, 16));
-      
+
       //Signal LUT0 has settings
       block->logicsettings = LOGIC_LUTG1;
     }
@@ -3396,14 +3451,14 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
     {
       block->logicsettings = LOGIC_FXMUXON;
     }
-    
+
     //To determine the slice id it is more code efficient to check on the three possible types
     //then doing it in each of the if statements above
     if(strncmp(item->bitdata->name, "LUT", 3) == 0)
     {
       //Find the slice identifier for this bit
       dptr = strstr(item->bitdata->name, "S");
-      
+
       //And convert the digit to a number
       block->sliceid = dptr[1] - '0';
     }
@@ -3440,15 +3495,194 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
   {
     //Get the pad/pin information for this bit
     getpinmapfortile(item, block);
-    
+
     blocktype = BLOCK_PAD;
   }
   else if(strncmp(item->tiledata->type, "emb_slice", 9) == 0)
   {
-    //For emb type a check is needed to see if it is fifo or emb. Maybe a separate function to do the check since it requires multiple bits that need checking
-    //Further more the emb section needs to be identified. There are 4 emb sections for the tile with type emb
-    //Bits starting with F_  or NET have the emb id at the end of the string
-    if(strncmp(item->bitdata->name, "F_", 2) == 0)
+    //Check on all the needed bits for the 1013D bit stream
+    if(strncmp(item->bitdata->name, "F_EBR_ENABLE_EMB", 16) == 0)
+    {
+      block->embsettings1 |= EMB_ENABLE;
+    }
+    else if(strncmp(item->bitdata->name, "F_PCSA_0_EMB", 12) == 0)
+    {
+      block->embsettings1 |= EMB_CSAMUX_0;
+    }
+    else if(strncmp(item->bitdata->name, "F_PCSA_1_EMB", 12) == 0)
+    {
+      block->embsettings1 |= EMB_CSAMUX_1;
+    }
+    else if(strncmp(item->bitdata->name, "F_PCSA_2_EMB", 12) == 0)
+    {
+      block->embsettings1 |= EMB_CSAMUX_2;
+    }
+    else if(strncmp(item->bitdata->name, "F_PCSB_0_EMB", 12) == 0)
+    {
+      block->embsettings1 |= EMB_CSBMUX_0;
+    }
+    else if(strncmp(item->bitdata->name, "F_PCSB_1_EMB", 12) == 0)
+    {
+      block->embsettings1 |= EMB_CSBMUX_1;
+    }
+    else if(strncmp(item->bitdata->name, "F_PCSB_2_EMB", 12) == 0)
+    {
+      block->embsettings1 |= EMB_CSBMUX_2;
+    }
+    else if(strncmp(item->bitdata->name, "F_PW_RA_EMB", 11) == 0)
+    {
+      block->embsettings1 |= EMB_WEAMUX;
+    }
+    else if(strncmp(item->bitdata->name, "F_PW_RB_EMB", 11) == 0)
+    {
+      block->embsettings1 |= EMB_WEBMUX;
+    }
+    else if(strncmp(item->bitdata->name, "F_SYNC_EMB", 10) == 0)
+    {
+      block->embsettings1 |= EMB_RESETMODE;
+    }
+    else if(strncmp(item->bitdata->name, "F_RST_SYNC_DIS_EMB", 18) == 0)
+    {
+      block->embsettings1 |= EMB_ASYNCRESETRELEASE;
+    }
+    else if(strncmp(item->bitdata->name, "F_RBWA_EMB", 10) == 0)
+    {
+      block->embsettings1 |= EMB_READBEFOREWRITEA;
+    }
+    else if(strncmp(item->bitdata->name, "F_RBWB_EMB", 10) == 0)
+    {
+      block->embsettings1 |= EMB_READBEFOREWRITEB;
+    }
+    else if(strncmp(item->bitdata->name, "F_WTA_EMB", 9) == 0)
+    {
+      block->embsettings1 |= EMB_WRITETHROUGHA;
+    }
+    else if(strncmp(item->bitdata->name, "F_WTB_EMB", 9) == 0)
+    {
+      block->embsettings1 |= EMB_WRITETHROUGHB;
+    }
+    else if(strncmp(item->bitdata->name, "F_GRDIS_EMB", 11) == 0)
+    {
+      block->embsettings1 |= EMB_GLOBALRESETDISABLE;
+    }
+    else if(strncmp(item->bitdata->name, "F_OREGSELA_EMB", 14) == 0)
+    {
+      block->embsettings1 |= EMB_REGMODE_A;
+    }
+    else if(strncmp(item->bitdata->name, "F_OREGSELB_EMB", 14) == 0)
+    {
+      block->embsettings1 |= EMB_REGMODE_B;
+    }
+    else if(strncmp(item->bitdata->name, "F_WEN_0_EMB", 11) == 0)
+    {
+      block->embsettings1 |= EMB_READBACK_OFF;
+    }
+    else if(strncmp(item->bitdata->name, "F_WEN_1_EMB", 11) == 0)
+    {
+      block->embsettings1 |= EMB_DEBUGGABLE_YES;
+    }
+    else if(strncmp(item->bitdata->name, "F_1SHOT_EMB", 11) == 0)
+    {
+      block->embsettings1 |= EMB_MODE_1SHOT;
+    }
+    else if(strncmp(item->bitdata->name, "F_FIFO_EN_EMB", 13) == 0)
+    {
+      block->embsettings1 |= EMB_MODE_FIFO;
+    }
+    else if(strncmp(item->bitdata->name, "F_DOUBLEWIDEA_EMB", 17) == 0)
+    {
+      block->embsettings1 |= EMB_MODE_DOUBLEWIDE;
+    }
+    //Second set of settings
+    else if(strncmp(item->bitdata->name, "F_W_CTRL_A_0_EMB", 16) == 0)
+    {
+      block->embsettings2 |= EMB_WIDTH_A_0;
+    }
+    else if(strncmp(item->bitdata->name, "F_W_CTRL_A_1_EMB", 16) == 0)
+    {
+      block->embsettings2 |= EMB_WIDTH_A_1;
+    }
+    else if(strncmp(item->bitdata->name, "F_W_CTRL_A_2_EMB", 16) == 0)
+    {
+      block->embsettings2 |= EMB_WIDTH_A_2;
+    }
+    else if(strncmp(item->bitdata->name, "F_W_CTRL_B_0_EMB", 16) == 0)
+    {
+      block->embsettings2 |= EMB_WIDTH_B_0;
+    }
+    else if(strncmp(item->bitdata->name, "F_W_CTRL_B_1_EMB", 16) == 0)
+    {
+      block->embsettings2 |= EMB_WIDTH_B_1;
+    }
+    else if(strncmp(item->bitdata->name, "F_W_CTRL_B_2_EMB", 16) == 0)
+    {
+      block->embsettings2 |= EMB_WIDTH_B_2;
+    }
+    //Read id settings
+    else if(strncmp(item->bitdata->name, "F_RID_", 6) == 0)
+    {
+      //These bits are numbered 0 to 8 and represent a bit set based on that number
+      block->embrid |= 1 << (item->bitdata->name[6] - '0');
+    }
+    //Write id settings
+    else if(strncmp(item->bitdata->name, "F_WID_", 6) == 0)
+    {
+      //These bits are numbered 0 to 8 and represent a bit set based on that number
+      block->embwid |= 1 << (item->bitdata->name[6] - '0');
+    }
+    //Settings that need to be read from the properties
+    else if(strncmp(item->bitdata->name, "MC1_CLK_0", 9) == 0)
+    {
+      //The parameter name in the first property signals either the A or the B mux
+      if(strncmp(&item->bitdata->bitdata[0].data[14], "CLKAMUX", 7) == 0)
+      {
+        block->embsettings1 |= EMB_CLKAMUX;
+      }
+      else if(strncmp(&item->bitdata->bitdata[0].data[14], "CLKBMUX", 7) == 0)
+      {
+        block->embsettings1 |= EMB_CLKBMUX;
+      }
+    }
+    else if(strncmp(item->bitdata->name, "TOP.XI321.MCS1", 14) == 0)
+    {
+      //The parameter name in the first property signals either the A or the B mux
+      if(strncmp(&item->bitdata->bitdata[0].data[14], "CEAMUX", 6) == 0)
+      {
+        block->embsettings1 |= EMB_CEAMUX;
+      }
+      else if(strncmp(&item->bitdata->bitdata[0].data[14], "CEBMUX", 6) == 0)
+      {
+        block->embsettings1 |= EMB_CEBMUX;
+      }
+    }
+    else if(strncmp(item->bitdata->name, "TOP.XI321.MCS0", 14) == 0)
+    {
+      //The parameter name in the first property signals either the A or the B mux
+      if(strncmp(&item->bitdata->bitdata[0].data[14], "OCEAMUX", 7) == 0)
+      {
+        block->embsettings1 |= EMB_OCEAMUX;
+      }
+      else if(strncmp(&item->bitdata->bitdata[0].data[14], "OCEBMUX", 7) == 0)
+      {
+        block->embsettings1 |= EMB_OCEBMUX;
+      }
+    }
+    else if(strncmp(item->bitdata->name, "TOP.XI320.MCUNUSED_W11B2", 24) == 0)
+    {
+      //The parameter name in the first property signals either the A or the B mux
+      if(strncmp(&item->bitdata->bitdata[0].data[14], "RSTAMUX", 7) == 0)
+      {
+        block->embsettings1 |= EMB_RSTAMUX;
+      }
+      else if(strncmp(&item->bitdata->bitdata[0].data[14], "RSTBMUX", 7) == 0)
+      {
+        block->embsettings1 |= EMB_RSTBMUX;
+      }
+    }
+
+    //The emb needs to be identified. There are 4 emb available for the tile with type emb
+    //Bits starting with F_, FN_  or NET have the emb id at the end of the string
+    if((strncmp(item->bitdata->name, "F_", 2) == 0) || (strncmp(item->bitdata->name, "FN_", 3) == 0) || (strncmp(item->bitdata->name, "NET", 3) == 0))
     {
       //For these bits the emb id is at the end of the string
       length = strlen(item->bitdata->name);
@@ -3458,18 +3692,16 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
     else if((strncmp(item->bitdata->name, "TOP.", 4) == 0) || (strncmp(item->bitdata->name, "MC1_", 4) == 0))
     {
       //Topology and MC1 bits have the emb id in the property data
-      //To check if it is a IO mux the first data item can be checked
       if(item->bitdata->datacount)
       {
-        //This property seems to be a correct indicator for a pad number
+        //This property seems to be a correct indicator for an emb id
         if(strncmp(item->bitdata->bitdata[0].data, "PROPERTY(EMB", 12) == 0)
         {
           block->embid = item->bitdata->bitdata[0].data[12] - '0';
         }
       }
     }
-    
-    //Have to see how to make sure this is correct
+
     blocktype = BLOCK_EMB;
   }
   else if(strncmp(item->tiledata->type, "mult", 4) == 0)
@@ -3511,7 +3743,7 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
   else if(strncmp(item->tiledata->type, "pll", 3) == 0)
   {
     block->pllid = item->tiledata->type[3] - '0';
-    
+
     blocktype = BLOCK_PLL;
   }
   else if(strncmp(item->tiledata->type, "osc", 3) == 0)
@@ -3522,7 +3754,7 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
   {
     blocktype = BLOCK_CONFIG;
   }
-  
+
   //Set the found block type
   block->blocktype = blocktype;
 }
@@ -3533,16 +3765,16 @@ void makeblocksetuplist()
 {
   int x;
   int y;
-  
+
   int bitfound;
   int bitmatch;
-  
+
   int blocknumber = 1;
-  
+
   pBITLISTITEM bitlist;
-  
+
   pBLOCKINFOITEM currentblock = 0;
-  
+
   BLOCKINFOITEM checkblock;
 
   //Need to walk through the tile setup array and mark all the used blocks
@@ -3555,7 +3787,7 @@ void makeblocksetuplist()
     {
       //Make sure every tile gets checked
       bitfound = 1;
-      
+
       //Search until the last bit has been done or no more matches have been found, which is an error condition
       while(bitfound)
       {
@@ -3574,7 +3806,7 @@ void makeblocksetuplist()
             bitfound = 0;
           }
 #endif
-          
+
           //Check if the current setup bit is not assigned yet
           if(bitlist->blocknumber == -1)
           {
@@ -3583,46 +3815,36 @@ void makeblocksetuplist()
             {
               //When not make one
               currentblock = malloc(sizeof(BLOCKINFOITEM));
-              
-              //No previous and next block yet
-              currentblock->prev = 0;
-              currentblock->next = 0;
-              
+
+              //Clear the pointers, flags and the settings
+              memset(currentblock, 0, sizeof(BLOCKINFOITEM));
+
               //This is the first setup bit for this block
               currentblock->bitcount = 1;
-              
+
               //Set the coordinates this block belongs to
               currentblock->x = x;
               currentblock->y = y;
-              
-              //Clear the settings
-              currentblock->logicsettings = 0;
-              currentblock->lut0  = 0;
-              currentblock->lut1  = 0;
-              currentblock->lutf0 = 0;
-              currentblock->lutf1 = 0;
-              currentblock->lutg0 = 0;
-              currentblock->lutg1 = 0;
-              
+
               //Set the schematic block type and other properties for this block
               findblocktype(bitlist, currentblock);
-              
+
               //Set the tile type of this block
               currentblock->tiletype = bitlist->tiledata->type;
-              
+
               //Set the block number used for these bits
               currentblock->blocknumber = blocknumber;
 
               //Set the block number in this bit
               bitlist->blocknumber = currentblock->blocknumber;
               bitlist->block = currentblock;
-              
+
               //Select the next id for the next block
               blocknumber++;
-              
+
               //Add this block to the list
               additemtoblocklist(currentblock);
-              
+
               //Make a sorted settings list
               additemtosetuplist(currentblock, bitlist);
             }
@@ -3630,25 +3852,19 @@ void makeblocksetuplist()
             {
               //No match yet
               bitmatch = 0;
-              
+
               //Make sure the settings are clean
-              checkblock.logicsettings = 0;
-              checkblock.lut0  = 0;
-              checkblock.lut1  = 0;
-              checkblock.lutf0 = 0;
-              checkblock.lutf1 = 0;
-              checkblock.lutg0 = 0;
-              checkblock.lutg1 = 0;
-              
+              memset(&checkblock, 0, sizeof(BLOCKINFOITEM));
+
               //At this point a check is needed to see if the current bit is part of the same block
               //Use a dummy block to get the type and compare the two
               findblocktype(bitlist, &checkblock);
-              
+
               //The block type needs to match before deciding it is the same block
               if(checkblock.blocktype == currentblock->blocktype)
               {
                 //For some reason empty plb's show up in the list????
-                
+
                 //Need to check other properties too, but these depend on the type of block
                 switch(checkblock.blocktype)
                 {
@@ -3658,24 +3874,39 @@ void makeblocksetuplist()
                       bitmatch = 1;
                     }
                     break;
-                    
+
                   case BLOCK_MSLICE:
                   case BLOCK_LSLICE:
                     //Both luts in a block share the block number due to some signals being global to the slice
                     if(checkblock.sliceid == currentblock->sliceid)
                     {
                       bitmatch = 1;
+
+                      //Merge the logic settings when the block matches
+                      currentblock->logicsettings |= checkblock.logicsettings;
+                      currentblock->lut0  |= checkblock.lut0;
+                      currentblock->lut1  |= checkblock.lut1;
+                      currentblock->lutf0 |= checkblock.lutf0;
+                      currentblock->lutf1 |= checkblock.lutf1;
+                      currentblock->lutg0 |= checkblock.lutg0;
+                      currentblock->lutg1 |= checkblock.lutg1;
                     }
                     break;
-                    
+
                   case BLOCK_EMB:
                     //Make sure the bits are for the same memory block
                     if(checkblock.embid == currentblock->embid)
                     {
                       bitmatch = 1;
+
+                      //Merge the emb settings when the block matches
+                      currentblock->embsettings1 |= checkblock.embsettings1;
+                      currentblock->embsettings2 |= checkblock.embsettings2;
+                      currentblock->embrid |= checkblock.embrid;
+                      currentblock->embwid |= checkblock.embwid;
                     }
                     break;
- 
+
                   case BLOCK_PLL:
                   case BLOCK_GCLK_CSB:
                   case BLOCK_GCLK_PREMUX:
@@ -3686,36 +3917,26 @@ void makeblocksetuplist()
                     break;
                 }
               }
-              
+
               //A match is needed to assign this bit to the same block
               if(bitmatch)
               {
                 //Set the block number in this bit when a match is made
                 bitlist->blocknumber = currentblock->blocknumber;
                 bitlist->block = currentblock;
-                
+
                 //Added another setup bit to this block
                 currentblock->bitcount++;
-                
-                //Merge the settings
-                currentblock->logicsettings |= checkblock.logicsettings;
-                currentblock->lut0  |= checkblock.lut0;
-                currentblock->lut1  |= checkblock.lut1;
-                currentblock->lutf0 |= checkblock.lutf0;
-                currentblock->lutf1 |= checkblock.lutf1;
-                currentblock->lutg0 |= checkblock.lutg0;
-                currentblock->lutg1 |= checkblock.lutg1;
-                
-                
+
                 //Make a sorted settings list
                 additemtosetuplist(currentblock, bitlist);
               }
             }
-            
+
             //Signal a bit has been found, so good for another run
             bitfound = 1;
           }
-          
+
           //Select the next bit to investigate
           bitlist = bitlist->link;
         }
@@ -3732,7 +3953,7 @@ void makeblocksetuplist()
 char *getconnectionnet(pBLOCKINFOITEM block, char *signal)
 {
   int connection;
-  
+
   for(connection=0;connection<block->connectioncount;connection++)
   {
     if(strcmp(block->connections[connection].signalname, signal) == 0)
@@ -3740,7 +3961,7 @@ char *getconnectionnet(pBLOCKINFOITEM block, char *signal)
       return(block->connections[connection].netname);
     }
   }
-  
+
   return(0);
 }
 
@@ -3792,7 +4013,7 @@ char *getlut2equation(int aidx, int bidx, int cdidx, int lutdata)
   int tableidx = 0;
   int lidx = 0;
   int oidx;
-  
+
   for(oidx=0;oidx<4;oidx++)
   {
     //Determine the index into the lookup table based on the given input indexes
@@ -3818,11 +4039,11 @@ char *getlut2equation(int aidx, int bidx, int cdidx, int lutdata)
         lidx = aidx + bidx + cdidx;
         break;
     }
-    
+
     //Fill in the current table index bit based on the needed bit from the given lookup table
     tableidx |= ((lutdata >> lidx) & 1) << oidx;
   }
-  
+
   return(lutequationlookup[tableidx]);
 }
 
@@ -3831,24 +4052,24 @@ char *getlut2equation(int aidx, int bidx, int cdidx, int lutdata)
 void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
 {
   int connection;
-  
+
   int padtype = PAD_NONE;
   int pulltype = PULL_UP;
   int slewrate = SLEW_RATE_NONE;
-  
+
   int found = 0;
-  
+
   char *netname;
-  
+
   //When the block is not connected assume it to be an output
   if(block->connected == 0)
   {
     padtype = PAD_OUTPUT;
   }
-  
+
   //Start with the first settings bit for this block
   pBITLISTITEM setuplist = block->firstsettingsbit;
-  
+
   //Need to walk through the settings list and pick the matching bits for the current block
   //The bits in the setup list are sorted on block number so when a change from needed to next one is detected the check can stop
   while((setuplist) && (setuplist->blocknumber == block->blocknumber))
@@ -3895,10 +4116,10 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
 
     //Other bits can be checked here to determine more settings like drive strength
     //but for this defaults are assumed
-    
+
     setuplist = setuplist->next;
   }
-  
+
   //When the block is connected the type can be deduced more easily by checking the connections
   if(block->connected)
   {
@@ -3924,13 +4145,13 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
   {
     //Mark it as connected
     block->connected = 1;
-    
+
     //When it is an input it must be a clock signal and needs to be connected to the pll some how
-    
+
     //When it is an output it needs to be connected to a 1. Have to figure out some signal name for this.
     //A ground connection is made via the visible routing
   }
-  
+
 #ifdef PIN_ASSIGNMENTS
   //try to find a hdl name assigned to the pin
   pPINASSIGNMENTS pinlist = pin_assignments;
@@ -3958,19 +4179,19 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
     else if(padtype & PAD_INPUT)
     {
       snprintf(block->padname, sizeof(block->padname), "i_block_%d_pin_%d", block->blocknumber, block->pinnumber);
-    }    
+    }
     else
     {
       snprintf(block->padname, sizeof(block->padname), "o_block_%d_pin_%d", block->blocknumber, block->pinnumber);
-    }    
+    }
   }
-  
+
   //Set the type for printing in the module io list
   block->padtype = padtype;
-  
+
   //Setup the constraint for the pin
   fprintf(fo, "set_pin_assignment { %s } { LOCATION = P%d; IOSTANDARD = LVCMOS33; PULLTYPE = ", block->padname, block->pinnumber);
-  
+
   //Add the needed PULLTYPE
   switch(pulltype)
   {
@@ -3990,7 +4211,7 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
       fprintf(fo, "PULLDOWN; ");
       break;
   }
-  
+
   //Add the needed slew rate
   if(slewrate == SLEW_RATE_MED)
   {
@@ -4000,10 +4221,10 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
   {
     fprintf(fo, "SLEWRATE = FAST; ");
   }
-  
+
   //Finish the line
   fprintf(fo, "}\n");
-  
+
   //Only when all three are present, it is a bidirectional one
   //Add a connection for the schematic block
   if(padtype == PAD_BIDIRECTIONAL)
@@ -4032,7 +4253,7 @@ void createpadassignment(FILE *fo, pBLOCKINFOITEM block)
   {
     fprintf(fo, "  assign %s = %s;\n", getconnectionnet(block, "di"), block->padname);
   }
-  
+
   if(block->padtype & PAD_OUTPUT)
   {
     fprintf(fo, "  assign %s = %s;\n", block->padname, getconnectionnet(block, "otrue"));
@@ -4051,9 +4272,9 @@ int inputsusedcount[] = { B4(0), B4(1), B4(1), B4(2) };
 int getsliceusedpins(pBLOCKINFOITEM block)
 {
   int usedpins = PIN_NONE;
-  
+
   int connection;
-  
+
   pPINTYPE pintable;
 
   //When the block is connected the type can be deduced more easily by checking the connections
@@ -4064,7 +4285,7 @@ int getsliceusedpins(pBLOCKINFOITEM block)
     {
       //Reset the pin lookup pointer
       pintable = slicepins;
-      
+
       //Need to search through the pin lookup table to find the index for the current one
       //Based on the combined indexes the logic type can be further determined
       while(pintable->name)
@@ -4075,12 +4296,12 @@ int getsliceusedpins(pBLOCKINFOITEM block)
           //If so mark it in the used pins
           usedpins |= pintable->indexbit;
         }
-        
+
         pintable++;
       }
     }
   }
-  
+
   return(usedpins);
 }
 
@@ -4165,7 +4386,7 @@ char *lut1inputnames[] =
 int weighinputpin(int *inputpins, int *index)
 {
   int found = 0;
-  
+
   //Determine the weight for the input.
   //When first input is set it will be 1, 2 for the second, 4 for the third, etc
   while((found == 0) && *inputpins)
@@ -4175,12 +4396,12 @@ int weighinputpin(int *inputpins, int *index)
     {
       found = *index;
     }
-    
+
     //Bump the weight and pins
     *index <<= 1;
     *inputpins >>= 1;
   }
-  
+
   return(found);
 }
 
@@ -4193,53 +4414,53 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
   int cidx = 0;
   int didx = 0;
   int eidx = 0;
-  
+
   int index = 1;
   int inputpins;
   int partprinted;
-  
+
   char **lutinputnames = lut0inputnames;
-  
+
   char *equation;
   char *outname;
   char *lutoutput = block->lut0output;
-  
+
   //Get the set of used pins belonging to the given lut
   if(lutid)
   {
     //There are 12 bits reserved for LUT0 pins so to get the LUt1 pins shift them down by 12.
     usedpins >>= 12;
-    
+
     //Select the input name table for LUT1
     lutinputnames = lut1inputnames;
-    
+
     //Set the lut output name destination for LUT1
     lutoutput = block->lut1output;
   }
-  
+
   //Filter out the input pins for determining the weights of the macros "a" and "b" inputs
   inputpins = usedpins & LUT_INPUT_PINS;
 
 //This part is wrong in mapping the inputs from the fabric onto the inputs of the LUT macro
 //The question is then also if the generation of th equation is wrong
 //I guess that for the weighing the setup is still correct in relation with the given lookup table
-  
-  
+
+
 //For a two input LUT the top connected bit should be mapped onto "a"
 //The next one down should be mapped onto "b"
 
 //Have to verify the formula by using something with an inverted input (A*~B)
-  
+
 //For a three input LUT it seems to differ
-  
+
 //There might be the need for a translation table to make the mappings based on the number of inputs
 
 //For LUT2
 //Assume that
 //"d" is always "a"
 //"c" is always "b"
-  
-  
+
+
 //For LUT3
 //Assume that
 //"d" is always "a"
@@ -4247,25 +4468,25 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
 //"c" is always "c"
 
 //Need to verify if the below actually is the case for all occurrences of LUT1, 2 and 3 and maybe 4
-  
+
 //A mslice can be combined into a lut5 by setting FXMUXON. Both luts are then combined and the mi0 input is then used as the 5th input
 //Since this is a somewhat special case the question is how to handle it here
 
 //This is definitely not correct because for some LUT2 it uses the actual b input instead of the c input
 //Need to check the connected inputs to make it work
-#if 0  
+#if 0
   //Set the input weights based on the number of inputs
   switch(inputcount)
   {
     case 1:
       aidx = 8;
       break;
-      
+
     case 2:
       aidx = 8;
       bidx = 4;
       break;
-      
+
     case 3:
       aidx = 8;
       bidx = 2;
@@ -4278,7 +4499,7 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
       cidx = 4;  //c input pin  28 red
       didx = 8;  //d input pin  31 yellow
       break;
-      
+
     case 5:
       aidx = 1;
       bidx = 2;
@@ -4288,12 +4509,12 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
       break;
   }
 #endif
-  
+
   //Even though this setup does not match with the gate level code generated by the IDE for simulation it should yield correct equations
-  
+
   //Determine the weight for the "a" input.
   aidx = weighinputpin(&inputpins, &index);
-  
+
   //When there are more inputs connected weigh the next pin
   if(inputcount > 1)
   {
@@ -4321,19 +4542,19 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
       }
     }
   }
-  
+
   //Output the header line of the macro
   fprintf(fo, "  AL_MAP_LUT%d #\n  (\n", inputcount);
-  
+
   //The setup below works but needs a looping code to make it maintainable and easier to grasp
-  
+
   //Another solution would be looping through the table bits and when a one is found makeup an equation part
   //The bit index holds the information on which inputs are set and which are not
-  
+
   //It depends on the number of inputs, but there is still the problem of the inputs having these weights that are not in logical order
-  
-  
-  
+
+
+
   //Print the equation based on the lookup table data and the input weights and the number of inputs
   switch(inputcount)
   {
@@ -4366,16 +4587,16 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
     case 3:
       //No need for an or statement yet
       partprinted = 0;
-      
+
       //Print the first part of the line for the equation to allow for filtering the zero parts
       fprintf(fo, "    .EQN(\"");
-      
+
       //Get the equation part for C input being zero
       if(equation = getlut2equation(aidx, bidx, 0, lutdata))
       {
         //If there is a result add it to the line
         fprintf(fo, "(~C*(%s))", equation);
-        
+
         //Signal first part is printed
         partprinted = 1;
       }
@@ -4389,21 +4610,21 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Check if the lut has no ones set
       if(partprinted == 0)
       {
         //Set the equation to zero in this case
         fprintf(fo, "0");
       }
-      
+
       //Finish the equation line
       fprintf(fo, "\")\n");
       break;
@@ -4411,16 +4632,16 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
     case 4:
       //No need for an or statement yet
       partprinted = 0;
-      
+
       //Print the first part of the line for the equation to allow for filtering the zero parts
       fprintf(fo, "    .EQN(\"");
-      
+
       //Get the equation part for C and D input being zero
       if(equation = getlut2equation(aidx, bidx, 0, lutdata))
       {
         //If there is a result add it to the line
         fprintf(fo, "(~D*~C*(%s))", equation);
-        
+
         //Signal first part is printed
         partprinted = 1;
       }
@@ -4434,14 +4655,14 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(~D*C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Get the equation part for C input being zero and D input being set
       if(equation = getlut2equation(aidx, bidx, didx, lutdata))
       {
@@ -4451,14 +4672,14 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(D*~C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Get the equation part for C and D input being set
       if(equation = getlut2equation(aidx, bidx, didx + cidx, lutdata))
       {
@@ -4468,21 +4689,21 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(D*C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Check if the lut has no ones set
       if(partprinted == 0)
       {
         //Set the equation to zero in this case
         fprintf(fo, "0");
       }
-      
+
       //Finish the equation line
       fprintf(fo, "\")\n");
       break;
@@ -4490,16 +4711,16 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
     case 5:
       //No need for an or statement yet
       partprinted = 0;
-      
+
       //Print the first part of the line for the equation to allow for filtering the zero parts
       fprintf(fo, "    .EQN(\"");
-      
+
       //Get the equation part for C, D and E input being zero
       if(equation = getlut2equation(aidx, bidx, 0, lutdata))
       {
         //If there is a result add it to the line
         fprintf(fo, "(~E*~D*~C*(%s))", equation);
-        
+
         //Signal first part is printed
         partprinted = 1;
       }
@@ -4513,14 +4734,14 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(~E*~D*C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Get the equation part for C and E input being zero and D input being set
       if(equation = getlut2equation(aidx, bidx, didx, lutdata))
       {
@@ -4530,14 +4751,14 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(~E*D*~C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Get the equation part for C and D input being set and E input being zero
       if(equation = getlut2equation(aidx, bidx, didx + cidx, lutdata))
       {
@@ -4547,14 +4768,14 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(~E*D*C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Get the equation part for C, D input being zero and E being set
       if(equation = getlut2equation(aidx, bidx, eidx, lutdata))
       {
@@ -4564,10 +4785,10 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(E*~D*~C*(%s))", equation);
-        
+
         //Signal first part is printed
         partprinted = 1;
       }
@@ -4581,14 +4802,14 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(E*~D*C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Get the equation part for C input being zero and D and E input being set
       if(equation = getlut2equation(aidx, bidx, eidx + didx, lutdata))
       {
@@ -4598,14 +4819,14 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(E*D*~C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Get the equation part for C, D and E input being set
       if(equation = getlut2equation(aidx, bidx, eidx + didx + cidx, lutdata))
       {
@@ -4615,54 +4836,54 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
           //If so add the or statement to the line
           fprintf(fo, "+");
         }
-        
+
         //If there is a result add it to the line
         fprintf(fo, "(E*D*C*(%s))", equation);
-        
+
         //Signal second part is printed
         partprinted = 1;
       }
-      
+
       //Check if the lut has no ones set
       if(partprinted == 0)
       {
         //Set the equation to zero in this case
         fprintf(fo, "0");
       }
-      
+
       //Finish the equation line
       fprintf(fo, "\")\n");
       break;
   }
-  
-  
+
+
   //The .INIT is not really needed so left out
-  
+
   //That is all for the macro setup part
   fprintf(fo, "  )\n");
-  
+
   //To have the IDE generate the same bit stream the gates need to be numbered in a special way
   //By the looks of things the name needs to be _al_ux, where x can be 1 for most of the blocks
   //but when two luts are used in the same slice the lut0 one needs a 2 for x
-  
+
   //This does not work. The blocks need to be numbered from 0 with the last block in the list starting at the first number after the pads
   //The pads are numbered starting from zero
   //Need to do this numbering on before hand, but how is the question
   //The order of the lut output generation needs to be swapped back to lut0 first
-  
+
   //Need to count the pads first, which is no problem because they are processed first. Then it is a bit problematic because the order has to be from end back to front
   //It seems to work when the blocks are processed from last to first, but this needs a last pointer and prev pointers to track back
   //Have to see how to set the last pointer
-  
+
   //Start the connections section
   fprintf(fo, "  _al_u%d_block_%d_lut_%d\n  (\n", *uid, block->blocknumber, lutid);
-  
+
   //One more _al_u entity dealt with
   *uid = *uid + 1;
 
   //Get the net name for the "a" input and output it to the file
   fprintf(fo, "    .a(%s),\n" , getconnectionnet(block, lutinputnames[aidx]));
-  
+
   //Connect the additional inputs as needed
   if(inputcount > 1)
   {
@@ -4673,25 +4894,25 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
     {
       //Get the net name for the "c" input and output it to the file
       fprintf(fo, "    .c(%s),\n" , getconnectionnet(block, lutinputnames[cidx]));
-      
+
       if(inputcount > 3)
       {
         //Get the net name for the "d" input and output it to the file
         fprintf(fo, "    .d(%s),\n" , getconnectionnet(block, lutinputnames[didx]));
-      
+
         if(inputcount > 4)
         {
           //Get the net name for the "e" input and output it to the file
           fprintf(fo, "    .e(%s),\n" , getconnectionnet(block, lutinputnames[eidx]));
         }
-      }      
+      }
     }
   }
-  
+
   //For the mslice it can also be FX0 when LOGIC_FXMUXON is set
   //This means that for the LUT it always needs a generated name for the connection
   //This is implicitly handled with the F output not being connected
-  
+
   //Check if the "f" output is connected to a net
   //Since the pins for LUT1 are shifted into LUT0 position check can be done with only f_0
   if(usedpins & PIN_F0)
@@ -4705,20 +4926,20 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
     {
       outname = "f_0";
     }
-    
+
     //Get the net name for the "f" output and output it to the file
     fprintf(fo, "    .o(%s)\n" ,getconnectionnet(block, outname));
   }
   else
   {
-    //When the LUT is connected to the flip flop there is the need for a internal wire to connect them  
+    //When the LUT is connected to the flip flop there is the need for a internal wire to connect them
     //Make a name to identify the signal between the LUT and the FF and save it in the space for the given lut
     snprintf(lutoutput, MAX_NAME_LENGTH, "sig_block_%d_lut_%d", block->blocknumber, lutid);
 
     //Output the given name to the file
     fprintf(fo, "    .o(%s)\n", lutoutput);
   }
-  
+
   //That is all for the macro setup part
   fprintf(fo, "  );\n\n");
 }
@@ -4736,16 +4957,16 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
   char *gsrmode = "ENABLE";
   char *cemux   = "0";
   char *srmux   = "0";
-  
+
   int ceused = 0;
   int srused = 0;
-  
+
   //Setup the needed names based on the given FF id
   if(ffid)
   {
-    //For slice 0 the default is the F output instead of the mi input unless the FX MUX is on
+    //For slice 0 the default is the F output instead of the mi input unless the FX MUX is on and the LUT must have bits set
     //Check which input is used for the flip flop
-    if((block->logicsettings & LOGIC_FF1_F) || ((block->sliceid == 0) && ((block->logicsettings & LOGIC_FXMUXON) == 0)))
+    if((block->logicsettings & LOGIC_FF1_F) || ((block->sliceid == 0) && ((block->logicsettings & LOGIC_FXMUXON) == 0) && (block->logicsettings & LOGIC_LUT1)))
     {
       //The LUT1 "f" is selected in this case
       //Check if the "f" output is connected to a net
@@ -4779,21 +5000,21 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
       //per default the "mi" input is used
       dname = getconnectionnet(block, "mi_1");
     }
-    
+
     //See if the REGSET property needs to be changed
     if(block->logicsettings & LOGIC_FF1_SR)
     {
       regset = "RESET";
     }
-  
+
     //Use the "q_1" net for FF1
     qname =  "q_1";
   }
   else
   {
-    //For slice 0 the default is the F output instead of the mi input unless the FX MUX is on
+    //For slice 0 the default is the F output instead of the mi input unless the FX MUX is on and the LUT must have bits set
     //Check which input is used for the flip flop
-    if((block->logicsettings & LOGIC_FF0_F) || ((block->sliceid == 0) && ((block->logicsettings & LOGIC_FXMUXON) == 0)))
+    if((block->logicsettings & LOGIC_FF0_F) || ((block->sliceid == 0) && ((block->logicsettings & LOGIC_FXMUXON) == 0) && (block->logicsettings & LOGIC_LUT0)))
     {
       //The LUT0 "f" is selected in this case
       //Check if the "f" output is connected to a net
@@ -4828,7 +5049,7 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
       //per default the "mi" input is used
       dname = getconnectionnet(block, "mi_0");
     }
-    
+
     //See if the REGSET property needs to be changed
     if(block->logicsettings & LOGIC_FF0_SR)
     {
@@ -4858,7 +5079,7 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
       srused = 1;
     }
   }
-  
+
   //See if the DFFMODE property needs to be changed
   if(block->logicsettings & LOGIC_FF_LATCH)
   {
@@ -4870,24 +5091,24 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
   {
     srmode = "SYNC";
   }
-  
+
   //See if the CLKMUX property needs to be changed
   if(block->logicsettings & LOGIC_FF_CLK)
   {
     clkmux = "INV";
   }
-  
+
   //See if the GSR property needs to be changed
   if(block->logicsettings & LOGIC_FF_GSR)
   {
     gsrmode = "DISABLE";
   }
-  
+
   //Check the ce and sr pins on connection to decide on the setting of these two
   //Also need to check some settings bits???
-  
+
   //Might need to detect if connected to ground to set the proper selection
-  
+
   //When the "ce" input is connected and the CEMUX mode bit is set the input is inverted
   if((ceused) && (block->logicsettings & LOGIC_FF_CE))
   {
@@ -4903,7 +5124,7 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
   {
     cemux = "1";
   }
-  
+
   //When the "sr" input is connected and the SRMUX mode bit is set the input is inverted
   if((srused) && (block->logicsettings & LOGIC_FF_SR))
   {
@@ -4919,22 +5140,22 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
   {
     srmux = "1";
   }
-  
+
   //Output the header line of the macro
   fprintf(fo, "  AL_MAP_SEQ #\n  (\n");
-  
+
   //Output the given CEMUX setting
   fprintf(fo, "    .CEMUX(\"%s\"),\n" , cemux);
-  
+
   //Output the given CLKMUX setting
   fprintf(fo, "    .CLKMUX(\"%s\"),\n" , clkmux);
-  
+
   //Output the given DFFMODE setting
   fprintf(fo, "    .DFFMODE(\"%s\"),\n" , dffmode);
-  
+
   //Output the given REGSET setting
   fprintf(fo, "    .REGSET(\"%s\"),\n" , regset);
-  
+
   //Output the given SRMODE setting
   fprintf(fo, "    .SRMODE(\"%s\"),\n" , srmode);
 
@@ -4943,23 +5164,23 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
 
   //Output the given SRMUX setting and close the header
   fprintf(fo, "    .SRMUX(\"%s\")\n  )\n" , srmux);
-  
+
   //Start the connections section
   fprintf(fo, "  reg_block_%d_ff_%d\n  (\n", block->blocknumber, ffid);
-  
+
   //Add the connected pins as needed
   if(usedpins & PIN_CLK)
   {
     //Get the net name for the "clk" input and output it to the file
     fprintf(fo, "    .clk(%s),\n" ,getconnectionnet(block, "clk"));
   }
-  
+
   if(ceused)
   {
     //Get the net name for the "ce" input and output it to the file
     fprintf(fo, "    .ce(%s),\n" ,getconnectionnet(block, "ce"));
   }
-  
+
   if(srused)
   {
     //Get the net name for the "sr" input and output it to the file
@@ -4976,300 +5197,1638 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void processlslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid)
+void outputlslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int *opennetid)
 {
-  int inputcnt;
-  
+  char *signame;
+  char *reg0set = "SET";
+  char *reg1set = "SET";
+  char *reg0sd  = "MI";
+  char *reg1sd  = "MI";
+  char *dffmode = "FF";
+  char *srmode  = "ASYNC";
+  char *clkmux  = "CLK";
+  char *gsrmode = "ENABLE";
+  char *cemux   = "CE";
+  char *srmux   = "SR";
+
+  int ceused = 0;
+  int srused = 0;
+
+  int needcomma = 0;
+  int foundnext = 0;
+
+  pBLOCKINFOITEM nextblock = block->next;
+
+  //Need to asses the used pins here because it is used reentrant with different blocks that need to be evaluated
   int usedpins = getsliceusedpins(block);
-  
-    
-    
-    //Need the remainder of the settings checked for the SEQ macro and fill in the macro printing based on it
-    
-    //Check on MC1_F0MUXLUT5_S to confirm LUT_5 mode on f output
-    //When not set it might be LUT_4 mode???
-    //Have to see if it is needed to check upon, because it seems to work for at least the basic stuff
-    
-    
-    
-    //For the AL_MAP_SEQ macro it is needed to check the 
-    //TOP.XI322.MCS0 bit to see if CEMUX is set
-    //There is also something about the CLKMUX
-    
-    
-    
-    //Need to detect an adder setup based on ripple setting
-    
-    //Need to detect the usage of either of the flip flops
-    
-    //For a full adder the slice macro can be used?
-    
-    
-    
-    //Within the properties there are the values FUNC5, FUNC6 and FUNC7 which I guess are to indicate the basic and extended lut types
-    //Have to work through the logic of it to determine the correct intended setting
-    
-    
-    //MC1_CLK bit set indicates inverted clock which is either a slice or a seq property
-    
-    
-    //MC1_CMISEL is for the MI input used only on lslice and is per lut.
-    //for lut 0
-    //LUTF0 setting must be MI together with CMIMUX0 setting being MI and FUNC6 must not be set for LSFXMUX0
-    //for lut 1
-    //LUTF1 setting must be MI together with CMIMUX1 setting being MI and FUNC7 must not be set for LSFXMUX1
-    
-    //MC1_DESEL is for something with the G lut
-    //(LUTG must be E, DEMUX must be E and LSFXMUX must not be FUNC5) or MODE is set to RIPPLE
-    
-    //MC1_RIPMODE selection of the carry borrow mode???
-    //MODE must be RIPPLE and INJECT must not be YES
-    
-    //MC1_DISGSR is per slice but no idea what it does
-    //GSR must be DISABLE
-    
-    
-    //MC1_DISRAM is per tile and enabled distributed ram but how and what is involved no idea
-    //Not used so no problem
-    
-    //MC1_F0MUXLUT5_S  something to do with the F output of the two luts ??
-    //LSFXMUX0 must be FUNC5, LUTG0 not E and DEMUX0 not E
-    
-    //MC1_FX0MUXLUT4G something to do with the FX output of the two luts
-    //(LSFXMUX0 must be FUNC6, LUTF0 must not be MI and CMIMUX must not be MI) or LSFXMUX0 == SUM
-    
-    //MC1_FX0MUXRIP_N ??
-    //(LSFXMUX0 must be FUNC6, LUTF0 must not be MI and CMIMUX must not be MI) or LSFXMUX0 == LUTG
-    
-    
-    
-    
-    
-    
-    //MC1_TESTSH ??
-    //TESTMODE must be SHIFT
-    
-    
-    //There are some topology bits that have SRMUX and CEMUX properties says something about inverted signals.
-  
-  //This is not going to work properly, because the TD IDE uses different mapping when it is just a LUT and not a more complex function within the slice
-  //So based on the different settings the type of "gate" needs to be determined, which is a bit tricky.
-  
-  //To detect for instance a single input lut the used input needs to be determined and no flip flop should be used
-  //But when a flip flop is used it could be a sequence "gate"
-  
-  
-  //How to determine the type of the slice??????
-  //Need to define the possible types to start with.
-  
-  //Then when it turns out that there is no flip flop used for both and it is not an adder it must be an AL_MAP_LUT and then
-  //The number of inputs needs to be determine, by scanning the connections
-  
-  //Need to examine the possible logic combinations for the lslice based on the settings!!!!!!
-  
-  //Check if the lslice macro needs to be used
-  //Skip the rest if so  
-   
-  
-  if(block->logicsettings & (LOGIC_LUTF0 | LOGIC_LUTG0))
-  {
-    block->lut0 = block->lutg0 << 16 | block->lutf0;
-    
-    //Need to determine the needed macro based on the number of input signals
-    //For the lslice the LUT has a, b, c, d and e as possible inputs so only these are counted
-    outputlutmacro(fo, block, 0, inputsusedcount[(usedpins & 0x1F)], block->lut0, usedpins, uid);
-  }
-  
-  if(block->logicsettings & (LOGIC_LUTF1 | LOGIC_LUTG1))
-  {
-    block->lut1 = block->lutg1 << 16 | block->lutf1;
-    
-    //Need to determine the needed macro based on the number of input signals
-    //For the lslice the LUT only has a, b, c, d and e as possible inputs so only these are counted
-    outputlutmacro(fo, block, 1, inputsusedcount[((usedpins >> 12) & 0x1F)], block->lut1, usedpins, uid);
-  }
- 
 
-  
-  //Probably need to check if the f output is connected and if so use the f connected net name and do the same in the SEQ macro is used
-  //The question is if the flip flop can be used separate from the LUT. It is possible to select different input signals to it
-  //Question is if the default is mi. It looks like it, since there are only two bits for the select, MC1_DI and MC1_FX
-  //But these are not available for slice 0!!!! For slice 0 it seems to be that F is the default and only option
-
-  //Make it so that when there is no connection to the f_ signal that the output of the LUT is connected to the made up name
-  //The flip flop can then be connected based on the settings of the two bits MC1_DI and MC1_FX. Default is mi as input. Either DI or FX is set, and for as far as I can tell, never both
-
-  //This means there is a need for different bit settings to make up the FF input setting
-  
-  
-  //Check if SEQ macro is needed for FF0
-  if(usedpins & PIN_Q0)
+  while((foundnext == 0) && nextblock)
   {
-    //The logic bits signal what settings to use and which input to use
-    //The used pins signal which input name to use
-    outputseqmacro(fo, block, 0, usedpins);
+    //The block needs to be of type mslice to be part of the carry chain
+    if(nextblock->blocktype == BLOCK_LSLICE)
+    {
+      //If the current is lslice2 it needs to be same x,y0 with lslice3 and ripmode set otherwise it is done
+      //If the current is lslice3 it needs to be the next x,y1 with lslice2 and ripmode set otherwise it is done
+      if(((block->sliceid == 2) && (nextblock->sliceid == 3) && (block->x == nextblock->x) && (block->y == nextblock->y)) ||
+         ((block->sliceid == 3) && (nextblock->sliceid == 2) && (block->x == nextblock->x) && ((block->y + 1) == nextblock->y)))
+      {
+        if(nextblock->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
+        {
+          //There is a next block in the chain
+          foundnext = 1;
+
+          //Need to skip the selection of the next block
+          break;
+        }
+      }
+    }
+
+    nextblock = nextblock->next;
   }
 
-  //Check if SEQ macro is needed for FF1
-  if(usedpins & PIN_Q1)
+  //There also is the FX select but does not seem to be used in the adder setup
+  //Also no idea if the flipflops of slice 1 can be separately used from the adder functionality
+
+  //See if the REGSD0 property needs to be changed
+  //For slice 0 the FF0_F bit does not exist and is implied when the q output is used
+  if((block->logicsettings & LOGIC_FF0_F) | ((usedpins & PIN_Q0) && (block->sliceid == 0)))
   {
-    //The logic bits signal what settings to use and which input to use
-    //The used pins signal which input name to use
-    outputseqmacro(fo, block, 1, usedpins);
+    reg0sd = "F";
   }
 
+  //See if the REGSD1 property needs to be changed
+  //For slice 0 the FF1_F bit does not exist and is implied when the q output is used
+  if((block->logicsettings & LOGIC_FF1_F) | ((usedpins & PIN_Q1) && (block->sliceid == 0)))
+  {
+    reg1sd = "F";
+  }
 
-  
+  //See if the REGSET0 property needs to be changed
+  if(block->logicsettings & LOGIC_FF0_SR)
+  {
+    reg0set = "RESET";
+  }
 
-  //Create a function for each macro
-  
-  //Setup the common verilog for the pad
-//  dptr += sprintf(dptr, "  AL_PHY_LSLICE #\n  (\n");
-//  dptr += sprintf(dptr, "    .INIT_LUTF0(16'h%4.4X\"),\n", lutf0);
-//  dptr += sprintf(dptr, "    .INIT_LUTG0(16'h%4.4X\"),\n", lutg0);
-//  dptr += sprintf(dptr, "    .INIT_LUTF1(16'h%4.4X\"),\n", lutf1);
-//  dptr += sprintf(dptr, "    .INIT_LUTG1(16'h%4.4X\"),\n", lutg1);
+  //See if the REGSET1 property needs to be changed
+  if(block->logicsettings & LOGIC_FF1_SR)
+  {
+    reg1set = "RESET";
+  }
 
-//  dptr += sprintf(dptr, "    .INDEL(\"1\"),\n");
-  //Need a block name and list the connections
+  //Check if the "ce" pin is actually used or connected to ground
+  if(usedpins & PIN_CE)
+  {
+    //Check if connected to the ground net
+    if(strcmp(getconnectionnet(block, "ce"), "ground") == 0)
+    {
+      //Ground it if so
+      cemux = "0";
+    }
+    else
+    {
+      ceused = 1;
+    }
+  }
+
+  //Check if the "sr" pin is actually used or connected to ground
+  if(usedpins & PIN_SR)
+  {
+    //Check if connected to the ground net
+    if(strcmp(getconnectionnet(block, "sr"), "ground") == 0)
+    {
+      //Ground it if so
+      srmux = "0";
+    }
+    else
+    {
+      //Otherwise it needs to be connected
+      srused = 1;
+    }
+  }
+
+  //See if the DFFMODE property needs to be changed
+  if(block->logicsettings & LOGIC_FF_LATCH)
+  {
+    dffmode = "LATCH";
+  }
+
+  //See if the SRMODE property needs to be changed
+  if(block->logicsettings & LOGIC_FF_SYNC)
+  {
+    srmode = "SYNC";
+  }
+
+  //See if the CLKMUX property needs to be changed
+  if(block->logicsettings & LOGIC_FF_CLK)
+  {
+    clkmux = "INV";
+  }
+
+  //See if the GSR property needs to be changed
+  if(block->logicsettings & LOGIC_FF_GSR)
+  {
+    gsrmode = "DISABLE";
+  }
+
+  //When the "ce" input is connected and the CEMUX mode bit is set the input is inverted
+  if((ceused) && (block->logicsettings & LOGIC_FF_CE))
+  {
+    cemux = "INV";
+  }
+  //When the "ce" input is not connected and the CEMUX mode bit is set it is "1"
+  else if((ceused == 0) && (block->logicsettings & LOGIC_FF_CE))
+  {
+    cemux = "1";
+  }
+
+  //When the "sr" input is connected and the SRMUX mode bit is set the input is inverted
+  if((srused) && (block->logicsettings & LOGIC_FF_SR))
+  {
+    srmux = "INV";
+  }
+  //When the "sr" input is not connected and the SRMUX mode bit is set it is "1"
+  else if((srused == 0) && (block->logicsettings & LOGIC_FF_SR))
+  {
+    srmux = "1";
+  }
+
+  //Have to check if DEMUX, CMIMUX, LSFMUX and LSFXMUX need to be controlled based on the given settings
+
+  //Output the header line of the macro
+  fprintf(fo, "  AL_PHY_LSLICE #\n  (\n");
+
+  //Fill in the parameters
+  fprintf(fo, "    .INIT_LUTF0(\"16'h%4.4X\"),\n", block->lutf0);
+  fprintf(fo, "    .INIT_LUTG0(\"16'h%4.4X\"),\n", block->lutg0);
+  fprintf(fo, "    .INIT_LUTF1(\"16'h%4.4X\"),\n", block->lutf1);
+  fprintf(fo, "    .INIT_LUTG1(\"16'h%4.4X\"),\n", block->lutg1);
+  fprintf(fo, "    .MODE(\"RIPPLE\"),\n");
+  fprintf(fo, "    .GSR(\"%s\"),\n", gsrmode);
+  fprintf(fo, "    .CEMUX(\"%s\"),\n", cemux);
+  fprintf(fo, "    .SRMUX(\"%s\"),\n", srmux);
+  fprintf(fo, "    .CLKMUX(\"%s\"),\n", clkmux);
+  fprintf(fo, "    .DFFMODE(\"%s\"),\n", dffmode);
+  fprintf(fo, "    .DEMUX0(\"E\"),\n");
+  fprintf(fo, "    .DEMUX1(\"E\"),\n");
+  fprintf(fo, "    .LSFMUX0(\"SUM\"),\n");
+  fprintf(fo, "    .LSFMUX1(\"SUM\"),\n");
+  fprintf(fo, "    .LSFXMUX0(\"SUM\"),\n");
+  fprintf(fo, "    .LSFXMUX1(\"SUM\"),\n");
+  fprintf(fo, "    .REG0_REGSET(\"%s\"),\n", reg0set);
+  fprintf(fo, "    .REG0_SD(\"%s\"),\n", reg0sd);
+  fprintf(fo, "    .REG1_REGSET(\"%s\"),\n", reg1set);
+  fprintf(fo, "    .REG1_SD(\"%s\"),\n", reg1sd);
+  fprintf(fo, "    .SRMODE(\"%s\"),\n", srmode);
+  fprintf(fo, "    .TESTMODE(\"OFF\")\n  )\n");
+
+  //Start the connections section
+  fprintf(fo, "  add_block_%d\n  (\n", block->blocknumber);
+
+  //Add the connected pins as needed
+  if(usedpins & PIN_CLK)
+  {
+    //Get the net name for the "clk" input and output it to the file
+    fprintf(fo, "    .clk(%s),\n", getconnectionnet(block, "clk"));
+  }
+
+  if(ceused)
+  {
+    //Get the net name for the "ce" input and output it to the file
+    fprintf(fo, "    .ce(%s),\n", getconnectionnet(block, "ce"));
+  }
+
+  if(srused)
+  {
+    //Get the net name for the "sr" input and output it to the file
+    fprintf(fo, "    .sr(%s),\n", getconnectionnet(block, "sr"));
+  }
+
+  //Need to output the connections as a bit pair, and when a signal is not connected use an open net for it.
+  //The top bit needs to come first
+  if(usedpins & PIN_A1)
+  {
+    signame = getconnectionnet(block, "a_1");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "    .a({1'b0,");
+    }
+    else
+    {
+      fprintf(fo, "    .a({%s,", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "    .a({open_n%d,", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //Finish it of with the lsb
+  if(usedpins & PIN_A0)
+  {
+    signame = getconnectionnet(block, "a_0");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "1'b0}),\n");
+    }
+    else
+    {
+      fprintf(fo, "%s}),\n", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "open_n%d}),\n", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //The top bit needs to come first
+  if(usedpins & PIN_B1)
+  {
+    signame = getconnectionnet(block, "b_1");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "    .b({1'b0,");
+    }
+    else
+    {
+      fprintf(fo, "    .b({%s,", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "    .b({open_n%d,", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //Finish it of with the lsb
+  if(usedpins & PIN_B0)
+  {
+    signame = getconnectionnet(block, "b_0");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "1'b0}),\n");
+    }
+    else
+    {
+      fprintf(fo, "%s}),\n", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "open_n%d}),\n", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //The top bit needs to come first
+  if(usedpins & PIN_C1)
+  {
+    signame = getconnectionnet(block, "c_1");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "    .c({1'b0,");
+    }
+    else
+    {
+      fprintf(fo, "    .c({%s,", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "    .c({open_n%d,", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //Finish it of with the lsb
+  if(usedpins & PIN_C0)
+  {
+    signame = getconnectionnet(block, "c_0");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "1'b0}),\n");
+    }
+    else
+    {
+      fprintf(fo, "%s}),\n", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "open_n%d}),\n", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //The top bit needs to come first
+  if(usedpins & PIN_D1)
+  {
+    signame = getconnectionnet(block, "d_1");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "    .d({1'b0,");
+    }
+    else
+    {
+      fprintf(fo, "    .d({%s,", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "    .d({open_n%d,", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //Finish it of with the lsb
+  if(usedpins & PIN_D0)
+  {
+    signame = getconnectionnet(block, "d_0");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "1'b0}),\n");
+    }
+    else
+    {
+      fprintf(fo, "%s}),\n", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "open_n%d}),\n", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //The top bit needs to come first
+  if(usedpins & PIN_E1)
+  {
+    signame = getconnectionnet(block, "e_1");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "    .e({1'b0,");
+    }
+    else
+    {
+      fprintf(fo, "    .e({%s,", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "    .e({open_n%d,", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //Finish it of with the lsb
+  if(usedpins & PIN_E0)
+  {
+    signame = getconnectionnet(block, "e_0");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "1'b0}),\n");
+    }
+    else
+    {
+      fprintf(fo, "%s}),\n", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "open_n%d}),\n", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //Only and the mi connection when used
+  if(usedpins & (PIN_MI0 | PIN_MI1))
+  {
+    //The top bit needs to come first
+    if(usedpins & PIN_MI1)
+    {
+      signame = getconnectionnet(block, "mi_1");
+
+      if(strcmp(signame, "ground") == 0)
+      {
+        fprintf(fo, "    .mi({1'b0,");
+      }
+      else
+      {
+        fprintf(fo, "    .mi({%s,", signame);
+      }
+    }
+    else
+    {
+      fprintf(fo, "    .mi({open_n%d,", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Finish it of with the lsb
+    if(usedpins & PIN_MI0)
+    {
+      signame = getconnectionnet(block, "mi_0");
+
+      if(strcmp(signame, "ground") == 0)
+      {
+        fprintf(fo, "1'b0}),\n");
+      }
+      else
+      {
+        fprintf(fo, "%s}),\n", signame);
+      }
+    }
+    else
+    {
+      fprintf(fo, "open_n%d}),\n", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+  }
+
+  //When there is a carryin the .fci signal needs to be connected
+  if(carryin)
+  {
+    fprintf(fo, "    .fci(%s),\n", carryin->carryoutname);
+  }
+
+  //Here it is assumed that both the f, fx and q signals can be uses alongside
+  if(usedpins & (PIN_F0 | PIN_F1))
+  {
+    //The top bit needs to come first
+    if(usedpins & PIN_F1)
+    {
+      fprintf(fo, "    .f({%s,", getconnectionnet(block, "f_1"));
+    }
+    else
+    {
+      fprintf(fo, "    .f({open_n%d,", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Finish it of with the lsb
+    if(usedpins & PIN_F0)
+    {
+      fprintf(fo, "%s})", getconnectionnet(block, "f_0"));
+    }
+    else
+    {
+      fprintf(fo, "open_n%d})", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Next signal needs a comma and new line before
+    needcomma = 1;
+  }
+
+  if(usedpins & (PIN_FX0 | PIN_FX1))
+  {
+    //If the f outputs are also present output the comma and newline
+    if(needcomma)
+    {
+      fprintf(fo, ",\n");
+    }
+
+    //The top bit needs to come first
+    if(usedpins & PIN_FX1)
+    {
+      fprintf(fo, "    .fx({%s,", getconnectionnet(block, "fx_1"));
+    }
+    else
+    {
+      fprintf(fo, "    .fx({open_n%d,", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Finish it of with the lsb
+    if(usedpins & PIN_FX0)
+    {
+      fprintf(fo, "%s})", getconnectionnet(block, "fx_0"));
+    }
+    else
+    {
+      fprintf(fo, "open_n%d})", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Next signal needs a comma and new line before
+    needcomma = 1;
+  }
+
+  //If either of the signals is connected add them to the macro
+  if(usedpins & (PIN_Q0 | PIN_Q1))
+  {
+    //If the f or fx outputs are also present output the comma and newline
+    if(needcomma)
+    {
+      fprintf(fo, ",\n");
+    }
+
+    //The top bit needs to come first
+    if(usedpins & PIN_Q1)
+    {
+      fprintf(fo, "    .q({%s,", getconnectionnet(block, "q_1"));
+    }
+    else
+    {
+      fprintf(fo, "    .q({open_n%d,", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Finish it of with the lsb
+    if(usedpins & PIN_Q0)
+    {
+      fprintf(fo, "%s})", getconnectionnet(block, "q_0"));
+    }
+    else
+    {
+      fprintf(fo, "open_n%d})", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Next signal needs a comma and new line before
+    needcomma = 1;
+  }
+
+  //When there is a next block in the chain the .fco signal needs to be connected
+  if(foundnext)
+  {
+    //If the f outputs are also present output the comma and newline
+    if(needcomma)
+    {
+      fprintf(fo, ",\n");
+    }
+
+    snprintf(block->carryoutname, MAX_NAME_LENGTH, "sig_block_%d_carry", block->blocknumber);
+
+    fprintf(fo, "    .fco(%s)\n", block->carryoutname);
+  }
+  else
+  {
+    //No .fco then a new line is needed to finish of the f, fx or q output line
+    fprintf(fo, "\n");
+  }
+
+  //Close of the macro
+  fprintf(fo, "  );\n\n");
+
+  //Signal the block has been processed so it will be skipped in the main loop
+  block->processed = 1;
+
+  //When there is a next block in the chain call this function again
+  if(foundnext)
+  {
+    outputlslicemacro(fo, nextblock, block, opennetid);
+  }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void processmslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid)
+void processlslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid, int *opennetid)
 {
   int inputcnt;
-  
+
   int usedpins = getsliceusedpins(block);
 
-    
-    
-  //MC1_FXMUXON  MSFXMUX needs to be ON. What does this route???
-  
-  //Need some checks here to see if the mslice macro needs to be used
-  //When the mslice macro is used the rest needs to be skipped
-
-
-//Need to look into RIPMODE and how to process that when set. Each LUT has its own setting for it!!
-//But it looks like it is always enabled on both the LUT's. The question is if a macro needs to be created if one of the LUT's is not connected
-//And which macro is suited
-//When both are set just use the MSLICE macro??
-//How to deal with not connected signals??
-//Also the fcim and fcom signals need to be taken care of. This needs checking the tiles in the same column on having the RIPMODE also set
-  
-//Can it be done with the AL_MAP_ADDER macro. If so how to make the connections, and what if the flip flop is used???
-// Is it possible to just use the SEQ macro in addition to the ADDER macro???
-
-
-  
-  //Need to look at the connected signals for a block with just LUT logic
-  
-
-  //When MC1_FXMUXON bit is set for the slice the LOGIC_FXMUXON bit is set in block->logicsettings
-  //The two LUT's are the n combined to a LUT5 setup, but the inputs to the two LUT's can be connected
-  //differently. By outputting two LUT4 macros this is dealt with, but then the two outputs need to
-  //be merged in a LUT3 macro with the two outputs connected to A and B inputs and mi_0 to the C input
-  //The output of the LUT3 macro needs either a generated name or be connected to the fx_0 output.
-  //When the first flipflop is used it should be connected to the proper signal.
-
-  //When FXMUXON is set one of the LUT's might have zero bits set, so need to force generation of the LUT macros
-  if(block->logicsettings & (LOGIC_LUT0 | LOGIC_FXMUXON))
+  //For now the assumption is made that when one of the bits is set it is ok to just use the lslice macro
+  //In the 1013D bit stream it seems to be that both are always set when used as adder. Also the FX0MUXLUT4G and FX1MUXLUT4G bits seems to be set in this case
+  if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
   {
-    //Need to determine the needed macro based on the number of input signals
-    //For the mslice the LUT only has a, b, c and d as possible inputs so only these are counted
-    outputlutmacro(fo, block, 0, inputsusedcount[(usedpins & 0x0F)], block->lut0, usedpins, uid);
+    //Create the lslice macro for this given block without carry input
+    outputlslicemacro(fo, block, 0, opennetid);
   }
-
-  //When FXMUXON is set one of the LUT's might have zero bits set, so need to force generation of the LUT macros
-  if(block->logicsettings & (LOGIC_LUT1 | LOGIC_FXMUXON))
+ else
   {
-    //Need to determine the needed macro based on the number of input signals
-    //For the mslice the LUT only has a, b, c and d as possible inputs so only these are counted
-    outputlutmacro(fo, block, 1, inputsusedcount[((usedpins >> 12) & 0x0F)], block->lut1, usedpins, uid);
-  }
-
-  if(block->logicsettings & LOGIC_FXMUXON)
-  {
-    //Output the header line of the macro
-    fprintf(fo, "  AL_MAP_LUT3 #\n  (\n");
-
-    //Followed by the fixed equation for the 2 input MUX
-    fprintf(fo, "    .EQN(\"(~C*A)+(C*B)\")\n");
-
-    //That is all for the macro setup part
-    fprintf(fo, "  )\n");
-
-    //Start the connections section
-    fprintf(fo, "  _al_u%d_block_%d\n  (\n", *uid, block->blocknumber);
-
-    //One more _al_u entity dealt with
-    *uid = *uid + 1;
-
-    //Use the generated name for the "a" input and output it to the file
-    fprintf(fo, "    .a(%s),\n" , block->lut0output);
-
-    //Use the generated name for the "b" input and output it to the file
-    fprintf(fo, "    .b(%s),\n" , block->lut1output);
-    
-    //Get the net name for the "c" input and output it to the file. This is always the mi_0 input
-    fprintf(fo, "    .c(%s),\n" , getconnectionnet(block, "mi_0"));
-
-    //Check if the "fx_0" output is connected to a net
-    if(usedpins & PIN_FX0)
+    //F0MUXLUT5 indicates both LUT's of a group being used together
+    //Might need to modify this to have it an AND condition
+    if(block->logicsettings & (LOGIC_LUTF0 | LOGIC_LUTG0 | LOGIC_F0MUXLUT5))
     {
-      //Get the net name for the "f" output and output it to the file
-      fprintf(fo, "    .o(%s)\n" ,getconnectionnet(block, "fx_0"));
+      block->lut0 = block->lutg0 << 16 | block->lutf0;
+
+      //Need to determine the needed macro based on the number of input signals
+      //For the lslice the LUT has a, b, c, d and e as possible inputs so only these are counted
+      outputlutmacro(fo, block, 0, inputsusedcount[(usedpins & 0x1F)], block->lut0, usedpins, uid);
+    }
+
+    if(block->logicsettings & (LOGIC_LUTF1 | LOGIC_LUTG1 | LOGIC_F1MUXLUT5))
+    {
+      block->lut1 = block->lutg1 << 16 | block->lutf1;
+
+      //Need to determine the needed macro based on the number of input signals
+      //For the lslice the LUT only has a, b, c, d and e as possible inputs so only these are counted
+      outputlutmacro(fo, block, 1, inputsusedcount[((usedpins >> 12) & 0x1F)], block->lut1, usedpins, uid);
+    }
+
+    //Check if SEQ macro is needed for FF0
+    if(usedpins & PIN_Q0)
+    {
+      //The logic bits signal what settings to use and which input to use
+      //The used pins signal which input name to use
+      outputseqmacro(fo, block, 0, usedpins);
+    }
+
+    //Check if SEQ macro is needed for FF1
+    if(usedpins & PIN_Q1)
+    {
+      //The logic bits signal what settings to use and which input to use
+      //The used pins signal which input name to use
+      outputseqmacro(fo, block, 1, usedpins);
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+//This function needs to recursively call the next as long as needed
+
+void outputmslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int *opennetid)
+{
+  char *signame;
+  char *alutype = "ADD_CARRY";
+  char *reg0set = "SET";
+  char *reg1set = "SET";
+  char *reg0sd  = "MI";
+  char *reg1sd  = "MI";
+  char *dffmode = "FF";
+  char *srmode  = "ASYNC";
+  char *clkmux  = "CLK";
+  char *gsrmode = "ENABLE";
+  char *cemux   = "CE";
+  char *srmux   = "SR";
+
+  int ceused = 0;
+  int srused = 0;
+
+  int needcomma = 0;
+  int foundnext = 0;
+
+  pBLOCKINFOITEM nextblock = block->next;
+
+  //Need to asses the used pins here because it is used reentrant with different blocks that need to be evaluated
+  int usedpins = getsliceusedpins(block);
+
+  while((foundnext == 0) && nextblock)
+  {
+    //The block needs to be of type mslice to be part of the carry chain
+    if(nextblock->blocktype == BLOCK_MSLICE)
+    {
+      //If the current is mslice0 it needs to be same x,y0 with mslice1 and ripmode set otherwise it is done
+      //If the current is mslice1 it needs to be the next x,y1 with mslice0 and ripmode set otherwise it is done
+      if(((block->sliceid == 0) && (nextblock->sliceid == 1) && (block->x == nextblock->x) && (block->y == nextblock->y)) ||
+         ((block->sliceid == 1) && (nextblock->sliceid == 0) && (block->x == nextblock->x) && ((block->y + 1) == nextblock->y)))
+      {
+        if(nextblock->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
+        {
+          //There is a next block in the chain
+          foundnext = 1;
+
+          //Need to skip the selection of the next block
+          break;
+        }
+      }
+    }
+
+    nextblock = nextblock->next;
+  }
+
+  //The IDE shows that the first in the chain gets the ADD_CARRY type and the rest the ADD type
+  if(carryin)
+  {
+    alutype = "ADD";
+  }
+
+  //There also is the FX select but does not seem to be used in the adder setup
+  //Also no idea if the flipflops of slice 1 can be separately used from the adder functionality
+
+  //See if the REGSD0 property needs to be changed
+  //For slice 0 the FF0_F bit does not exist and is implied when the q output is used
+  if((block->logicsettings & LOGIC_FF0_F) | ((usedpins & PIN_Q0) && (block->sliceid == 0)))
+  {
+    reg0sd = "F";
+  }
+
+  //See if the REGSD1 property needs to be changed
+  //For slice 0 the FF1_F bit does not exist and is implied when the q output is used
+  if((block->logicsettings & LOGIC_FF1_F) | ((usedpins & PIN_Q1) && (block->sliceid == 0)))
+  {
+    reg1sd = "F";
+  }
+
+  //See if the REGSET0 property needs to be changed
+  if(block->logicsettings & LOGIC_FF0_SR)
+  {
+    reg0set = "RESET";
+  }
+
+  //See if the REGSET1 property needs to be changed
+  if(block->logicsettings & LOGIC_FF1_SR)
+  {
+    reg1set = "RESET";
+  }
+
+  //Check if the "ce" pin is actually used or connected to ground
+  if(usedpins & PIN_CE)
+  {
+    //Check if connected to the ground net
+    if(strcmp(getconnectionnet(block, "ce"), "ground") == 0)
+    {
+      //Ground it if so
+      cemux = "0";
     }
     else
     {
-      //When the LUT is connected to the flip flop there is the need for a internal wire to connect them  
-      //Make a name to identify the signal between the LUT and the FF and save it in the space for the given lut
-      //It is ok to overwrite the generated name here, since it is not needed elsewhere
-      //Also sets it for the use in the SEQ macro if needed
-      snprintf(block->lut0output, MAX_NAME_LENGTH, "sig_block_%d_ff0_in", block->blocknumber);
+      ceused = 1;
+    }
+  }
 
-      //Output the given name to the file
-      fprintf(fo, "    .o(%s)\n", block->lut0output);
+  //Check if the "sr" pin is actually used or connected to ground
+  if(usedpins & PIN_SR)
+  {
+    //Check if connected to the ground net
+    if(strcmp(getconnectionnet(block, "sr"), "ground") == 0)
+    {
+      //Ground it if so
+      srmux = "0";
+    }
+    else
+    {
+      //Otherwise it needs to be connected
+      srused = 1;
+    }
+  }
+
+  //See if the DFFMODE property needs to be changed
+  if(block->logicsettings & LOGIC_FF_LATCH)
+  {
+    dffmode = "LATCH";
+  }
+
+  //See if the SRMODE property needs to be changed
+  if(block->logicsettings & LOGIC_FF_SYNC)
+  {
+    srmode = "SYNC";
+  }
+
+  //See if the CLKMUX property needs to be changed
+  if(block->logicsettings & LOGIC_FF_CLK)
+  {
+    clkmux = "INV";
+  }
+
+  //See if the GSR property needs to be changed
+  if(block->logicsettings & LOGIC_FF_GSR)
+  {
+    gsrmode = "DISABLE";
+  }
+
+  //When the "ce" input is connected and the CEMUX mode bit is set the input is inverted
+  if((ceused) && (block->logicsettings & LOGIC_FF_CE))
+  {
+    cemux = "INV";
+  }
+  //When the "ce" input is not connected and the CEMUX mode bit is set it is "1"
+  else if((ceused == 0) && (block->logicsettings & LOGIC_FF_CE))
+  {
+    cemux = "1";
+  }
+
+  //When the "sr" input is connected and the SRMUX mode bit is set the input is inverted
+  if((srused) && (block->logicsettings & LOGIC_FF_SR))
+  {
+    srmux = "INV";
+  }
+  //When the "sr" input is not connected and the SRMUX mode bit is set it is "1"
+  else if((srused == 0) && (block->logicsettings & LOGIC_FF_SR))
+  {
+    srmux = "1";
+  }
+
+  //Output the header line of the macro
+  fprintf(fo, "  AL_PHY_MSLICE #\n  (\n");
+
+  //Fill in the parameters
+  fprintf(fo, "    .ALUTYPE(\"%s\"),\n", alutype);
+  fprintf(fo, "    .CEMUX(\"%s\"),\n", cemux);
+  fprintf(fo, "    .DFFMODE(\"%s\"),\n", dffmode);
+  fprintf(fo, "    .GSR(\"%s\"),\n", gsrmode);
+  fprintf(fo, "    .INIT_LUT0(\"16'h%4.4X\"),\n", block->lut0);  //Might need bit instead of hex
+  fprintf(fo, "    .INIT_LUT1(\"16'h%4.4X\"),\n", block->lut1);
+  fprintf(fo, "    .MODE(\"RIPPLE\"),\n");
+  fprintf(fo, "    .MSFXMUX(\"OFF\"),\n");
+  fprintf(fo, "    .REG0_REGSET(\"%s\"),\n", reg0set);
+  fprintf(fo, "    .REG0_SD(\"%s\"),\n", reg0sd);
+  fprintf(fo, "    .REG1_REGSET(\"%s\"),\n", reg1set);
+  fprintf(fo, "    .REG1_SD(\"%s\"),\n", reg1sd);
+  fprintf(fo, "    .SRMODE(\"%s\"),\n", srmode);
+  fprintf(fo, "    .SRMUX(\"%s\"),\n", srmux);
+  fprintf(fo, "    .CLKMUX(\"%s\"),\n", clkmux);
+  fprintf(fo, "    .TESTMODE(\"OFF\")\n  )\n");
+
+  //Start the connections section
+  fprintf(fo, "  add_block_%d\n  (\n", block->blocknumber);
+
+  //Add the connected pins as needed
+  if(usedpins & PIN_CLK)
+  {
+    //Get the net name for the "clk" input and output it to the file
+    fprintf(fo, "    .clk(%s),\n", getconnectionnet(block, "clk"));
+  }
+
+  if(ceused)
+  {
+    //Get the net name for the "ce" input and output it to the file
+    fprintf(fo, "    .ce(%s),\n", getconnectionnet(block, "ce"));
+  }
+
+  if(srused)
+  {
+    //Get the net name for the "sr" input and output it to the file
+    fprintf(fo, "    .sr(%s),\n", getconnectionnet(block, "sr"));
+  }
+
+  //NEED to check input pins on ground connection and insert 1'b0 in that case
+
+
+  //Need to output the connections as a bit pair, and when a signal is not connected use an open net for it.
+  //The top bit needs to come first
+  if(usedpins & PIN_A1)
+  {
+    signame = getconnectionnet(block, "a_1");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "    .a({1'b0,");
+    }
+    else
+    {
+      fprintf(fo, "    .a({%s,", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "    .a({open_n%d,", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //Finish it of with the lsb
+  if(usedpins & PIN_A0)
+  {
+    signame = getconnectionnet(block, "a_0");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "1'b0}),\n");
+    }
+    else
+    {
+      fprintf(fo, "%s}),\n", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "open_n%d}),\n", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //The top bit needs to come first
+  if(usedpins & PIN_B1)
+  {
+    signame = getconnectionnet(block, "b_1");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "    .b({1'b0,");
+    }
+    else
+    {
+      fprintf(fo, "    .b({%s,", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "    .b({open_n%d,", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //Finish it of with the lsb
+  if(usedpins & PIN_B0)
+  {
+    signame = getconnectionnet(block, "b_0");
+
+    if(strcmp(signame, "ground") == 0)
+    {
+      fprintf(fo, "1'b0}),\n");
+    }
+    else
+    {
+      fprintf(fo, "%s}),\n", signame);
+    }
+  }
+  else
+  {
+    fprintf(fo, "open_n%d}),\n", *opennetid);
+
+    //Used an open net so bump the counter
+    *opennetid = *opennetid + 1;
+  }
+
+  //When there is a carryin the .fci signal needs to be connected
+  if(carryin)
+  {
+    fprintf(fo, "    .fci(%s),\n", carryin->carryoutname);
+  }
+
+  //Here it is assumed that both the f and q signals can be uses alongside
+  if(usedpins & (PIN_F0 | PIN_F1))
+  {
+    //The top bit needs to come first
+    if(usedpins & PIN_F1)
+    {
+      fprintf(fo, "    .f({%s,", getconnectionnet(block, "f_1"));
+    }
+    else
+    {
+      fprintf(fo, "    .f({open_n%d,", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
     }
 
-    //That is all for the macro setup part
-    fprintf(fo, "  );\n\n");
+    //Finish it of with the lsb
+    if(usedpins & PIN_F0)
+    {
+      fprintf(fo, "%s})", getconnectionnet(block, "f_0"));
+    }
+    else
+    {
+      fprintf(fo, "open_n%d})", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Next signal needs a comma and new line before
+    needcomma = 1;
   }
 
-  //Check if SEQ macro is needed for FF0
-  if(usedpins & PIN_Q0)
+  //If either of the signals is connected add them to the macro
+  if(usedpins & (PIN_Q0 | PIN_Q1))
   {
-    //The logic bits signal what settings to use and which input to use
-    //The used pins signal which input name to use
-    outputseqmacro(fo, block, 0, usedpins);
+    //If the f outputs are also present output the comma and newline
+    if(needcomma)
+    {
+      fprintf(fo, ",\n");
+    }
+
+    //The top bit needs to come first
+    if(usedpins & PIN_Q1)
+    {
+      fprintf(fo, "    .q({%s,", getconnectionnet(block, "q_1"));
+    }
+    else
+    {
+      fprintf(fo, "    .q({open_n%d,", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Finish it of with the lsb
+    if(usedpins & PIN_Q0)
+    {
+      fprintf(fo, "%s})", getconnectionnet(block, "q_0"));
+    }
+    else
+    {
+      fprintf(fo, "open_n%d})", *opennetid);
+
+      //Used an open net so bump the counter
+      *opennetid = *opennetid + 1;
+    }
+
+    //Next signal needs a comma and new line before
+    needcomma = 1;
   }
 
-  //Check if SEQ macro is needed for FF1
-  if(usedpins & PIN_Q1)
+  //When there is a next block in the chain the .fco signal needs to be connected
+  if(foundnext)
   {
-    //The logic bits signal what settings to use and which input to use
-    //The used pins signal which input name to use
-    outputseqmacro(fo, block, 1, usedpins);
+    //If the f outputs are also present output the comma and newline
+    if(needcomma)
+    {
+      fprintf(fo, ",\n");
+    }
+
+    snprintf(block->carryoutname, MAX_NAME_LENGTH, "sig_block_%d_carry", block->blocknumber);
+
+    fprintf(fo, "    .fco(%s)\n", block->carryoutname);
   }
-  
-  
-  //Need to figure out how to extend the detected logic type based on the connections
-  //A simple lut uses the F output and A, B, C and D inputs
-  //Have to see if other pins are grounded or not and if so do they matter?
-  //Can the clock be used with flip flop 0 or 1 and the other lut be just a lut???
-  
-  
-  
-  //Scan the connections and decide on the type of logic
-  
-  //For the available connections a table lookup would require 9 bits is 512 entries to fill
-  //But would be a quick way to determine the logic.
-  
-  //Have to check out the latest with a register if the lut and register are combined in the same block
-  
-//  dptr += sprintf(dptr, "  AL_PHY_MSLICE #\n  (\n");
-//  dptr += sprintf(dptr, "    .INIT_LUT0(16'h%4.4X\"),\n", lut0);
-//  dptr += sprintf(dptr, "    .INIT_LUT1(16'h%4.4X\"),\n", lut1);
+  else
+  {
+    //No .fco then a new line is needed to finish of the f or q output line
+    fprintf(fo, "\n");
+  }
+
+  //Close of the macro
+  fprintf(fo, "  );\n\n");
+
+  //Signal the block has been processed so it will be skipped in the main loop
+  block->processed = 1;
+
+  //When there is a next block in the chain call this function again
+  if(foundnext)
+  {
+    outputmslicemacro(fo, nextblock, block, opennetid);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void processmslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid, int *opennetid)
+{
+  int inputcnt;
+
+  int usedpins = getsliceusedpins(block);
+
+  //Need to look into RIPMODE and how to process that when set. Each LUT has its own setting for it!!
+  //But it looks like it is always enabled on both the LUT's. The question is if a macro needs to be created if one of the LUT's is not connected
+  //And which macro is suited
+  //When both are set just use the MSLICE macro??
+  //How to deal with not connected signals??
+  //Also the fcim and fcom signals need to be taken care of. This needs checking the tiles in the same column on having the RIPMODE also set
+
+  //Can it be done with the AL_MAP_ADDER macro. If so how to make the connections, and what if the flip flop is used???
+  // Is it possible to just use the SEQ macro in addition to the ADDER macro???
+
+  //For now the assumption is made that when one of the bits is set it is ok to just use the mslice macro
+  if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
+  {
+    //A bit of a problem is that there can be a carry chain which needs to be followed.
+    //This means that it is also necessary to signal a block as processed
+    //The block list is in x,y ascending order, so the first block found with RIPMODE set is the start of an adder with a carry chain
+
+    //Create the mslice macro for this given block without carry input
+    outputmslicemacro(fo, block, 0, opennetid);
+  }
+  else
+  {
+    //When MC1_FXMUXON bit is set for the slice the LOGIC_FXMUXON bit is set in block->logicsettings
+    //The two LUT's are then combined to a LUT5 setup, but the inputs to the two LUT's can be connected
+    //differently. By outputting two LUT4 macros this is dealt with, but then the two outputs need to
+    //be merged in a LUT3 macro with the two outputs connected to A and B inputs and mi_0 to the C input
+    //The output of the LUT3 macro needs either a generated name or be connected to the fx_0 output.
+    //When the first flipflop is used it should be connected to the proper signal.
+
+    //When FXMUXON is set one of the LUT's might have zero bits set, so need to force generation of the LUT macros
+    if(block->logicsettings & (LOGIC_LUT0 | LOGIC_FXMUXON))
+    {
+      //Need to determine the needed macro based on the number of input signals
+      //For the mslice the LUT only has a, b, c and d as possible inputs so only these are counted
+      outputlutmacro(fo, block, 0, inputsusedcount[(usedpins & 0x0F)], block->lut0, usedpins, uid);
+    }
+
+    //When FXMUXON is set one of the LUT's might have zero bits set, so need to force generation of the LUT macros
+    if(block->logicsettings & (LOGIC_LUT1 | LOGIC_FXMUXON))
+    {
+      //Need to determine the needed macro based on the number of input signals
+      //For the mslice the LUT only has a, b, c and d as possible inputs so only these are counted
+      outputlutmacro(fo, block, 1, inputsusedcount[((usedpins >> 12) & 0x0F)], block->lut1, usedpins, uid);
+    }
+
+    if(block->logicsettings & LOGIC_FXMUXON)
+    {
+      //Output the header line of the macro
+      fprintf(fo, "  AL_MAP_LUT3 #\n  (\n");
+
+      //Followed by the fixed equation for the 2 input MUX
+      fprintf(fo, "    .EQN(\"(~C*A)+(C*B)\")\n");
+
+      //That is all for the macro setup part
+      fprintf(fo, "  )\n");
+
+      //Start the connections section
+      fprintf(fo, "  _al_u%d_block_%d\n  (\n", *uid, block->blocknumber);
+
+      //One more _al_u entity dealt with
+      *uid = *uid + 1;
+
+      //Use the generated name for the "a" input and output it to the file
+      fprintf(fo, "    .a(%s),\n", block->lut0output);
+
+      //Use the generated name for the "b" input and output it to the file
+      fprintf(fo, "    .b(%s),\n", block->lut1output);
+
+      //Get the net name for the "c" input and output it to the file. This is always the mi_0 input
+      fprintf(fo, "    .c(%s),\n", getconnectionnet(block, "mi_0"));
+
+      //Check if the "fx_0" output is connected to a net
+      if(usedpins & PIN_FX0)
+      {
+        //Get the net name for the "f" output and output it to the file
+        fprintf(fo, "    .o(%s)\n", getconnectionnet(block, "fx_0"));
+      }
+      else
+      {
+        //When the LUT is connected to the flip flop there is the need for a internal wire to connect them
+        //Make a name to identify the signal between the LUT and the FF and save it in the space for the given lut
+        //It is ok to overwrite the generated name here, since it is not needed elsewhere
+        //Also sets it for the use in the SEQ macro if needed
+        snprintf(block->lut0output, MAX_NAME_LENGTH, "sig_block_%d_ff0_in", block->blocknumber);
+
+        //Output the given name to the file
+        fprintf(fo, "    .o(%s)\n", block->lut0output);
+      }
+
+      //That is all for the macro setup part
+      fprintf(fo, "  );\n\n");
+    }
+
+    //Check if SEQ macro is needed for FF0
+    if(usedpins & PIN_Q0)
+    {
+      //The logic bits signal what settings to use and which input to use
+      //The used pins signal which input name to use
+      outputseqmacro(fo, block, 0, usedpins);
+    }
+
+    //Check if SEQ macro is needed for FF1
+    if(usedpins & PIN_Q1)
+    {
+      //The logic bits signal what settings to use and which input to use
+      //The used pins signal which input name to use
+      outputseqmacro(fo, block, 1, usedpins);
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void outputembmuxsetting(FILE *fo, pBLOCKINFOITEM block, char *signal, char *parameter, int settingbit, int printcomma)
+{
+  char *setting = "SIG";
+  char *connection;
+
+  int sigused = 0;
+
+  //Get the name of the possible connection made to this signal
+  connection = getconnectionnet(block, signal);
+
+  //Need to check if it is connected to ground when it is connected
+  if(connection)
+  {
+    //Check if connected to the ground net
+    if(strcmp(connection, "ground") == 0)
+    {
+      //Ground it if so
+      setting = "0";
+    }
+    else
+    {
+      sigused = 1;
+    }
+  }
+
+  //When the setting bit for this setting is set the parameter value needs to be either "INV" or "1" based on if the pin is used
+  if(block->embsettings1 & settingbit)
+  {
+    if(sigused)
+    {
+      setting = "INV";
+    }
+    else
+    {
+      setting = "1";
+    }
+  }
+
+  //Output the string to the file
+  fprintf(fo, "    .%s(\"%s\")", parameter, setting);
+
+  //The last parameter should be printed without a comma
+  if(printcomma)
+  {
+    fprintf(fo, ",\n");
+  }
+  else
+  {
+    fprintf(fo, "\n");
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to scan the signals of a bus on being connected
+//It makes up the name of the bus members based on a base and an index
+
+int scanembbusconnected(pBLOCKINFOITEM block, char *signalbase, int width)
+{
+  char signame[64];
+  int sigidx;
+  int connected = 0;
+
+  //Scan all the signals in the given bus
+  for(sigidx=0;sigidx<width;sigidx++)
+  {
+    //Print the name of the current bus member
+    snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
+
+    //Check if there is a connection made to it
+    if(getconnectionnet(block, signame))
+    {
+      //If so signal this and quit the loop
+      connected = 1;
+      break;
+    }
+  }
+
+  return(connected);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to output the signals of a bus
+//It makes up the name of the bus members based on a base and an index
+
+void outputembbusconnections(FILE *fo, pBLOCKINFOITEM block, char *busname, char *signalbase, int width, int printcomma, int *opennetid)
+{
+  char *connection;
+  char  signame[64];
+  int   sigidx;
+
+  //Check if a comma is needed to close of the previous item
+  if(printcomma)
+  {
+    fprintf(fo, ",\n");
+  }
+  else
+  {
+    fprintf(fo, "\n");
+  }
+
+  //Start the line with the bus name and the open a bit collection marker
+  fprintf(fo, "    .%s({", busname);
+
+  //Process all the signals in the given bus from high to low
+  for(sigidx=width-1;sigidx>=0;sigidx--)
+  {
+    //Print the name of the current bus member
+    snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
+
+    //Check if there is a connection made to it
+    if(connection = getconnectionnet(block, signame))
+    {
+      if(strcmp(connection, "ground") == 0)
+      {
+        //Output it to the file
+        fprintf(fo, "1'b0");
+      }
+      else
+      {
+        //Output it to the file
+        fprintf(fo, "%s", connection);
+      }
+    }
+    else
+    {
+      //Not connected should be marked with an open signal
+      fprintf(fo, "open_n%d", *opennetid);
+
+      //Bump the open net counter to the next one
+      *opennetid = *opennetid + 1;
+    }
+
+    if(sigidx)
+    {
+      //No comma on the last item
+      fprintf(fo, ",");
+    }
+  }
+
+  //Close of the bit collection and the statement
+  fprintf(fo, "})");
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+int outputembconnection(FILE *fo, pBLOCKINFOITEM block, char *name, char *signalname, int printcomma)
+{
+  char *connection;
+
+  //Get the possible connection for this signal
+  if(connection = getconnectionnet(block, signalname))
+  {
+    //Might need to change this to convert ground to 1'b0
+
+    //Check if it is not connected to ground
+    if(strcmp(connection, "ground"))
+    {
+      //Check if a comma is needed to close of the previous item
+      if(printcomma)
+      {
+        fprintf(fo, ",\n");
+      }
+      else
+      {
+        fprintf(fo, "\n");
+      }
+
+      fprintf(fo, "    .%s(%s)", name, connection);
+
+      printcomma = 1;
+    }
+  }
+
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void processembsettings(FILE *fo, pBLOCKINFOITEM block, int *opennetid)
+{
+  char *signame;
+  char *mode              = "SP8K";
+  char *datawidtha        = "9";
+  char *datawidthb        = "9";
+  char *readback          = "ON";
+  char *regmodea          = "NOREG";
+  char *regmodeb          = "NOREG";
+  char *writemodea        = "NORMAL";
+  char *writemodeb        = "NORMAL";
+  char *gsrmode           = "ENABLE";
+  char *resetmode         = "ASYNC";
+  char *asyncresetrelease = "SYNC";
+
+  int needcomma = 0;
+
+  //Process the setting bits to set the correct parameter values
+  //Need to figure out how to determine the mode in use.
+  //For now fixed to dual port
+  //When READBACK mode is of it seems to need dual port setting
+  mode = "DP8K";
+
+  //This code can be improved upon to reduce the number of variables by outputting the lines directly
+
+  //Determine the data width of channel a
+  if((block->embsettings2 & (EMB_WIDTH_A_0 | EMB_WIDTH_A_1 | EMB_WIDTH_A_2)) == (EMB_WIDTH_A_0 | EMB_WIDTH_A_1 | EMB_WIDTH_A_2))
+  {
+    datawidtha = "1";
+  }
+  else if((block->embsettings2 & (EMB_WIDTH_A_0 | EMB_WIDTH_A_1 | EMB_WIDTH_A_2)) == (EMB_WIDTH_A_1 | EMB_WIDTH_A_2))
+  {
+    datawidtha = "2";
+  }
+  else if((block->embsettings2 & (EMB_WIDTH_A_0 | EMB_WIDTH_A_1 | EMB_WIDTH_A_2)) == EMB_WIDTH_A_2)
+  {
+    datawidtha = "4";
+  }
+
+  //Determine the data width of channel b
+  if((block->embsettings2 & (EMB_WIDTH_B_0 | EMB_WIDTH_B_1 | EMB_WIDTH_B_2)) == (EMB_WIDTH_B_0 | EMB_WIDTH_B_1 | EMB_WIDTH_B_2))
+  {
+    datawidthb = "1";
+  }
+  else if((block->embsettings2 & (EMB_WIDTH_B_0 | EMB_WIDTH_B_1 | EMB_WIDTH_B_2)) == (EMB_WIDTH_B_1 | EMB_WIDTH_B_2))
+  {
+    datawidthb = "2";
+  }
+  else if((block->embsettings2 & (EMB_WIDTH_B_0 | EMB_WIDTH_B_1 | EMB_WIDTH_B_2)) == EMB_WIDTH_B_2)
+  {
+    datawidthb = "4";
+  }
+
+  //Determine the read back mode
+  if(block->embsettings1 & EMB_READBACK_OFF)
+  {
+    readback = "OFF";
+  }
+
+  //Determine the output registered mode for channel a
+  if(block->embsettings1 & EMB_REGMODE_A)
+  {
+    regmodea = "OUTREG";
+  }
+
+  //Determine the output registered mode for channel b
+  if(block->embsettings1 & EMB_REGMODE_B)
+  {
+    regmodeb = "OUTREG";
+  }
+
+  //Determine the write mode for channel a
+  if(block->embsettings1 & EMB_READBEFOREWRITEA)
+  {
+    writemodea = "READBEFOREWRITE";
+  }
+  else if(block->embsettings1 & EMB_WRITETHROUGHA)
+  {
+    writemodea = "WRITETHROUGH";
+  }
+
+  //Determine the write mode for channel b
+  if(block->embsettings1 & EMB_READBEFOREWRITEB)
+  {
+    writemodeb = "READBEFOREWRITE";
+  }
+  else if(block->embsettings1 & EMB_WRITETHROUGHB)
+  {
+    writemodeb = "WRITETHROUGH";
+  }
+
+  //Determine the global set reset mode
+  if(block->embsettings1 & EMB_GLOBALRESETDISABLE)
+  {
+    gsrmode = "DISABLE";
+  }
+
+  //Determine the reset mode
+  if(block->embsettings1 & EMB_RESETMODE)
+  {
+    resetmode = "SYNC";
+  }
+
+  //Determine the async reset release mode
+  if(block->embsettings1 & EMB_ASYNCRESETRELEASE)
+  {
+    asyncresetrelease = "ASYNC";
+  }
+
+  //Output the header line of the macro
+  fprintf(fo, "  AL_PHY_BRAM #\n  (\n");
+
+  //Fill in the parameters
+  fprintf(fo, "    //.RID(\"0x%4.4X\"),\n", block->embrid);
+  fprintf(fo, "    //.WID(\"0x%4.4X\"),\n", block->embwid);
+  fprintf(fo, "    .MODE(\"%s\"),\n", mode);
+  fprintf(fo, "    .DATA_WIDTH_A(\"%s\"),\n", datawidtha);
+  fprintf(fo, "    .DATA_WIDTH_B(\"%s\"),\n", datawidthb);
+  fprintf(fo, "    .READBACK(\"%s\"),\n", readback);
+  fprintf(fo, "    .REGMODE_A(\"%s\"),\n", regmodea);
+  fprintf(fo, "    .REGMODE_B(\"%s\"),\n", regmodeb);
+  fprintf(fo, "    .WRITEMODE_A(\"%s\"),\n", writemodea);
+  fprintf(fo, "    .WRITEMODE_B(\"%s\"),\n", writemodeb);
+  fprintf(fo, "    .GSR(\"%s\"),\n", gsrmode);
+  fprintf(fo, "    .RESETMODE(\"%s\"),\n", resetmode);
+  fprintf(fo, "    .ASYNC_RESET_RELEASE(\"%s\"),\n", asyncresetrelease);
+
+  outputembmuxsetting(fo, block, "cea", "CEAMUX", EMB_CEAMUX, 1);
+  outputembmuxsetting(fo, block, "ceb", "CEBMUX", EMB_CEBMUX, 1);
+  outputembmuxsetting(fo, block, "oea", "OCEAMUX", EMB_OCEAMUX, 1);
+  outputembmuxsetting(fo, block, "oeb", "OCEBMUX", EMB_OCEBMUX, 1);
+  outputembmuxsetting(fo, block, "rsta", "OCEAMUX", EMB_RSTAMUX, 1);
+  outputembmuxsetting(fo, block, "rstb", "OCEBMUX", EMB_RSTBMUX, 1);
+  outputembmuxsetting(fo, block, "clka", "CLKAMUX", EMB_CLKAMUX, 1);
+  outputembmuxsetting(fo, block, "clkb", "CLKBMUX", EMB_CLKBMUX, 1);
+  outputembmuxsetting(fo, block, "wea", "WEAMUX", EMB_WEAMUX, 1);
+  outputembmuxsetting(fo, block, "web", "WEBMUX", EMB_WEBMUX, 1);
+  outputembmuxsetting(fo, block, "csa_0", "CSA0", EMB_CSAMUX_0, 1);
+  outputembmuxsetting(fo, block, "csa_1", "CSA1", EMB_CSAMUX_1, 1);
+  outputembmuxsetting(fo, block, "csa_2", "CSA2", EMB_CSAMUX_2, 1);
+  outputembmuxsetting(fo, block, "csb_0", "CSB0", EMB_CSBMUX_0, 1);
+  outputembmuxsetting(fo, block, "csb_1", "CSB1", EMB_CSBMUX_1, 1);
+  outputembmuxsetting(fo, block, "csb_2", "CSB2", EMB_CSBMUX_2, 0);
+
+  //Finish of the parameter section
+  fprintf(fo, "  )\n");
+
+  //Start the connections section (Next line is outputted in next output statement)
+  fprintf(fo, "  emb_block_%d\n  (", block->blocknumber);
+
+  //Check if the a channel input bus has connections
+  if(scanembbusconnected(block, "dia_", 9))
+  {
+    //If so output the connection list for it
+    outputembbusconnections(fo, block, "dia", "dia_", 9, 0, opennetid);
+
+    //Signal a comma is needed before the next line
+    needcomma = 1;
+  }
+
+  //Check if the a channel output bus has connections
+  if(scanembbusconnected(block, "doa_", 9))
+  {
+    //If so output the connection list for it
+    outputembbusconnections(fo, block, "doa", "doa_", 9, needcomma, opennetid);
+
+    //Signal a comma is needed before the next line
+    needcomma = 1;
+  }
+
+  //Check if the a channel address bus has connections
+  if(scanembbusconnected(block, "addra_", 13))
+  {
+    //If so output the connection list for it
+    outputembbusconnections(fo, block, "addra", "addra_", 13, needcomma, opennetid);
+
+    //Signal a comma is needed before the next line
+    needcomma = 1;
+  }
+
+  //Check if the a channel chip enable bus has connections
+  if(scanembbusconnected(block, "csa_", 3))
+  {
+    //If so output the connection list for it
+    outputembbusconnections(fo, block, "csa", "csa_", 3, needcomma, opennetid);
+
+    //Signal a comma is needed before the next line
+    needcomma = 1;
+  }
+
+  needcomma = outputembconnection(fo, block, "cea", "cea", needcomma);
+  needcomma = outputembconnection(fo, block, "ocea", "oea", needcomma);
+  needcomma = outputembconnection(fo, block, "wea", "wea", needcomma);
+  needcomma = outputembconnection(fo, block, "rsta", "rsta", needcomma);
+  needcomma = outputembconnection(fo, block, "clka", "clka", needcomma);
+
+  //Check if the b channel input bus has connections
+  if(scanembbusconnected(block, "dib_", 9))
+  {
+    //If so output the connection list for it
+    outputembbusconnections(fo, block, "dib", "dib_", 9, needcomma, opennetid);
+
+    //Signal a comma is needed before the next line
+    needcomma = 1;
+  }
+
+  //Check if the b channel output bus has connections
+  if(scanembbusconnected(block, "dob_", 9))
+  {
+    //If so output the connection list for it
+    outputembbusconnections(fo, block, "dob", "dob_", 9, needcomma, opennetid);
+
+    //Signal a comma is needed before the next line
+    needcomma = 1;
+  }
+
+  //Check if the b channel address bus has connections
+  if(scanembbusconnected(block, "addrb_", 13))
+  {
+    //If so output the connection list for it
+    outputembbusconnections(fo, block, "addrb", "addrb_", 13, needcomma, opennetid);
+
+    //Signal a comma is needed before the next line
+    needcomma = 1;
+  }
+
+  //Check if the a channel chip enable bus has connections
+  if(scanembbusconnected(block, "csb_", 3))
+  {
+    //If so output the connection list for it
+    outputembbusconnections(fo, block, "csb", "csb_", 3, needcomma, opennetid);
+
+    //Signal a comma is needed before the next line
+    needcomma = 1;
+  }
+
+  needcomma = outputembconnection(fo, block, "ceb", "ceb", needcomma);
+  needcomma = outputembconnection(fo, block, "oceb", "oeb", needcomma);
+  needcomma = outputembconnection(fo, block, "web", "web", needcomma);
+  needcomma = outputembconnection(fo, block, "rstb", "rstb", needcomma);
+  needcomma = outputembconnection(fo, block, "clkb", "clkb", needcomma);
+
+  //Finish of the connection section
+  fprintf(fo, "\n  );\n\n");
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -5277,33 +6836,34 @@ void processmslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid)
 void creategatelevelverilog()
 {
   char filename[255];
-  
+
   pBLOCKINFOITEM printlist;
-  
+
   FILE *fverilog;
   FILE *fconstraint;
-  
+
   int count;
-  
-  int uid = 0;
-  
+
+  int uid = 0;            //macro identifier counter
+  int opennetid = 0;      //open net identifier counter
+
   int needcomma = 0;
-  
+
   //Create a gate level verilog file
   snprintf(filename, sizeof(filename), "%s_gate_level.v", FILENAME);
-  fverilog = fopen(filename, "w");  
-  
+  fverilog = fopen(filename, "w");
+
   //Create a pin constraints file
   snprintf(filename, sizeof(filename), "%s_generated.adc", FILENAME);
-  fconstraint = fopen(filename, "w");  
-  
-  
+  fconstraint = fopen(filename, "w");
+
+
   if(fverilog && fconstraint)
   {
     fprintf(fverilog, "module %s\n(", MODULENAME);
-    
+
     printlist = blocklist;
-    
+
     //Process the PAD blocks
     while(printlist)
     {
@@ -5313,14 +6873,14 @@ void creategatelevelverilog()
       {
         //Need to process the settings for the current pad
         processpadsettings(fconstraint, printlist);
-        
+
         if(needcomma)
         {
           fprintf(fverilog, ",");
         }
 
         fprintf(fverilog, "\n");
-        
+
         //output this in the io list of the module
         if(printlist->padtype == PAD_BIDIRECTIONAL)
         {
@@ -5334,32 +6894,32 @@ void creategatelevelverilog()
         {
           fprintf(fverilog, "  output wire %s", printlist->padname);
         }
-        
+
         needcomma = 1;
-        
+
         //Need to index the pads to get the _al_u number for the LUT logic blocks
         uid++;
       }
-      
+
       printlist = printlist->next;
     }
 
     fprintf(fverilog, "\n);\n\n");
-    
+
     //Need a wire list??
-    
+
     //Need some method of connecting the clock signals
     //There are blockless premux connections that need to be resolved for this
     //Have to see if this can be done in an earlier stage
-    
-    
+
+
     //Need to setup a wire list at this point, but need to see what to list
-    
-    
-    
+
+
+
     //The pad names need to be assigned to the internally used wires.
     printlist = blocklist;
-    
+
     //Process the connected PAD blocks
     while(printlist)
     {
@@ -5369,84 +6929,110 @@ void creategatelevelverilog()
         //Create an assign statement for making the connection between the pad and the internally used signal
         createpadassignment(fverilog, printlist);
       }
-      
+
       printlist = printlist->next;
     }
-    
+
+    //Output the clock assigns. These are manually determined and just outputted
+    fprintf(fverilog, "  assign gclk_2 = x6y18_mslice1_f_0_net_18;\n");
+    fprintf(fverilog, "  assign gclk_3 = x14y22_lslice3_q_0_net_730;\n");
+    fprintf(fverilog, "  assign gclk_4 = x13y9_lslice2_q_0_net_504;\n");
+    fprintf(fverilog, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
+    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
+
     //Extra line between pad assignments and the logic
     fprintf(fverilog, "\n");
-    
-    
+
     //At this point the list needs to be processed backwards for naming the _al_u macros in specific order
     //Unfortunately this does not always result in the exact same bit stream due to different placing of the logic
+    //To properly process the adder carry chains it needs to go forward again.
+
     //Process the remaining logic
-    printlist = blocklistend;
-    
+    printlist = blocklist;
+
     //Process the blocks
     while(printlist)
     {
-      if(printlist->blocktype == BLOCK_LSLICE)
+      //Only handle blocks that are not already processed in making carry chains
+      if(printlist->processed == 0)
       {
-        //Need to process the settings for the current lslice into the needed macro(s)
-//        processlslicesettings(fverilog, printlist, &uid);
+        if(printlist->blocktype == BLOCK_LSLICE)
+        {
+          //Need to process the settings for the current lslice into the needed macro(s)
+          processlslicesettings(fverilog, printlist, &uid, &opennetid);
+        }
+        else if(printlist->blocktype == BLOCK_MSLICE)
+        {
+          //Need to process the settings for the current mslice into the needed macro(s)
+          processmslicesettings(fverilog, printlist, &uid, &opennetid);
+        }
+        else if(printlist->blocktype == BLOCK_EMB)
+        {
+          //process the bram
+          processembsettings(fverilog, printlist, &opennetid);
+        }
       }
-      else if(printlist->blocktype == BLOCK_MSLICE)
-      {
-        //Need to process the settings for the current mslice into the needed macro(s)
-        processmslicesettings(fverilog, printlist, &uid);
-      }
-      
-      //process the bram
+
 
 
       //process the pll
-      
-      
-      
-      printlist = printlist->prev;
-    }    
-    
-    //Have to see if there is a need for assign statements at this point to connect the in and output signals to internal signals    
-    
-#if 0
-    printlist = blocklist;
-    
-    //Process the PAD blocks
-    while(printlist)
-    {
-      //Needs to be connected and of type PAD
-      if((printlist->connected == 1) && (printlist->blocktype == BLOCK_PAD))
-      {
-        //output this in the body of the module
-        fwrite(printlist->verilog, printlist->veriloglength, 1, fo);
-      }
-      
+
+
       printlist = printlist->next;
     }
-    
-    //A bit of a problem is the connection that needs to be made and the wires it needs to do it
-    //especially when other logic comes into the mix
-    
-#endif
-    
-    fprintf(fverilog, "endmodule\n\n");
-    
-    
-  }
 
+    //Output the PLL code
+    fprintf(fverilog, "  AL_PHY_PLL #\n");
+    fprintf(fverilog, "  (\n");
+    fprintf(fverilog, "    .FIN(\"50.000\"),\n");
+    fprintf(fverilog, "    .FEEDBK_MODE(\"NOCOMP\"),\n");
+    fprintf(fverilog, "    .FEEDBK_PATH(\"VCO_PHASE_0\"),\n");
+    fprintf(fverilog, "    .STDBY_ENABLE(\"DISABLE\"),\n");
+    fprintf(fverilog, "    .PLLRST_ENA(\"ENABLE\"),\n");
+    fprintf(fverilog, "    .SYNC_ENABLE(\"DISABLE\"),\n");
+    fprintf(fverilog, "    .DERIVE_PLL_CLOCKS(\"DISABLE\"),\n");
+    fprintf(fverilog, "    .GEN_BASIC_CLOCK(\"DISABLE\"),\n");
+    fprintf(fverilog, "    .GMC_GAIN(\"4\"),\n");
+    fprintf(fverilog, "    .ICP_CURRENT(11),\n");
+    fprintf(fverilog, "    .KVCO(\"4\"),\n");
+    fprintf(fverilog, "    .LPF_CAPACITOR(\"1\"),\n");
+    fprintf(fverilog, "    .LPF_RESISTOR(4),\n");
+    fprintf(fverilog, "    .REFCLK_DIV(1),\n");
+    fprintf(fverilog, "    .FBCLK_DIV(20),\n");
+    fprintf(fverilog, "    .CLKC0_ENABLE(\"ENABLE\"),\n");
+    fprintf(fverilog, "    .CLKC0_DIV(5),\n");
+    fprintf(fverilog, "    .CLKC0_CPHASE(4),\n");
+    fprintf(fverilog, "    .CLKC0_FPHASE(\"0\")\n");
+    fprintf(fverilog, "  )\n");
+    fprintf(fverilog, "  pll_inst\n");
+    fprintf(fverilog, "  (\n");
+    fprintf(fverilog, "    .refclk(i_xtal),\n");
+    fprintf(fverilog, "    .pllreset(1'b0),\n");
+    fprintf(fverilog, "    .stdby(1'b0),\n");
+    fprintf(fverilog, "    .ext_lock(open),\n");
+    fprintf(fverilog, "    .load_reg(1'b0),\n");
+    fprintf(fverilog, "    .scanclk(1'b0),\n");
+    fprintf(fverilog, "    .phaseupdown(1'b0),\n");
+    fprintf(fverilog, "    .phasestep(1'b0),\n");
+    fprintf(fverilog, "    .phcntsel(3'b000),\n");
+    fprintf(fverilog, "    .phasedone(open),\n");
+    fprintf(fverilog, "    .fbclk(1'b0),\n");
+    fprintf(fverilog, "    .clkc({open, open, open, open, gclk_0})\n");
+    fprintf(fverilog, "  );\n\n");
+
+    fprintf(fverilog, "endmodule\n\n");
+  }
 
   if(fverilog)
   {
     fclose(fverilog);
   }
-  
+
   if(fconstraint)
   {
     fclose(fconstraint);
   }
-  
 }
-
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -5455,26 +7041,26 @@ void printblocklist()
   char filename[255];
 
   pBLOCKINFOITEM printlist;
-  
+
   FILE *fo;
-  
+
   int connected;
   int count;
   int idx;
   int logicsettings;
-  
+
   char **settingnames;
-  
+
   snprintf(filename, sizeof(filename), "%s_block_list.csv", FILENAME);
-  
-  fo = fopen(filename, "w");  
-  
+
+  fo = fopen(filename, "w");
+
   if(fo)
   {
     for(connected=1;connected>=0;connected--)
     {
       count = 0;
-      
+
       if(connected == 1)
       {
         fprintf(fo, "Connected blocks\n");
@@ -5538,7 +7124,7 @@ void printblocklist()
             {
               //Get the settings for this slice
               logicsettings = printlist->logicsettings;
-              
+
               if(printlist->blocktype == BLOCK_MSLICE)
               {
                 settingnames = mslicesettingnames;
@@ -5550,7 +7136,7 @@ void printblocklist()
 
               //Additional separator to align the columns
               fprintf(fo, ",");
-              
+
               //Print them as set
               for(idx=0;idx<32;idx++)
               {
@@ -5559,24 +7145,24 @@ void printblocklist()
                 {
                   fprintf(fo, ",%s", settingnames[idx]);
                 }
-                
+
                 logicsettings >>= 1;
               }
             }
-            
-            
+
+
             fprintf(fo, "\n");
           }
         }
 
-        
+
         //Select the next item
         printlist = printlist->next;
       }
-      
+
       fprintf(fo, "\ncount,%d\n\n", count);
     }
-    
+
     fclose(fo);
   }
 }
@@ -5586,7 +7172,7 @@ void printblocklist()
 void printbititem(FILE *fo, pBITLISTITEM bitlist)
 {
   int count;
-  
+
   //Print the net info
   fprintf(fo, "%d,,", bitlist->blocknumber);
 
@@ -5644,24 +7230,24 @@ void printsetuplist()
   char filename[255];
 
   int blocknumber = 1;
-  
+
   pBITLISTITEM printlist;
 
   int connected;
   int count;
-  
+
   FILE *fo;
-  
+
   snprintf(filename, sizeof(filename), "%s_block_setup_list.csv", FILENAME);
-  
-  fo = fopen(filename, "w");  
-  
+
+  fo = fopen(filename, "w");
+
   if(fo)
   {
     for(connected=1;connected>=0;connected--)
     {
       count = 0;
-      
+
       if(connected == 1)
       {
         fprintf(fo, "Connected blocks\n");
@@ -5701,10 +7287,10 @@ void printsetuplist()
         //Select the next item
         printlist = printlist->next;
       }
-      
+
       fprintf(fo, "\ncount,%d\n\n", count);
     }
-    
+
     fclose(fo);
   }
 }
@@ -5716,7 +7302,7 @@ void printsetuplist()
 void printroutebititem(FILE *fo, pROUTEINFOITEM bitlist)
 {
   int count;
-  
+
   //Print the net info
   fprintf(fo, "%d,%d,\"%s\",,", bitlist->netnumber, bitlist->routetype, bitlist->bitdata->bitdata[bitlist->routestartentity].data);
 
@@ -5775,31 +7361,31 @@ void printroutelist()
 
   int count;
   int lines = 0;
-  
+
   int netnumber = 1;
 
   int x;
   int y;
 
   pROUTEINFOITEM bitlist;
-  
+
   pNETLISTITEM printlist;
-  
+
   FILE *fo;
-  
+
   snprintf(filename, sizeof(filename), "%s_net_list.csv", FILENAME);
-  
-  fo = fopen(filename, "w");  
-  
+
+  fo = fopen(filename, "w");
+
   if(fo)
   {
     fprintf(fo, "Net,,,,Tile,,,,,Pin,,Bit\n");
     fprintf(fo, "number,type,match,,name,type,x,y,,pin,,name,type,x,y,xoff,yoff,,expression,rpn,count,,data\n");
-    
+
     printlist = netlist;
-    
+
     netnumber = 1;
-    
+
     while(printlist)
     {
       bitlist = printlist->routebit;
@@ -5809,15 +7395,15 @@ void printroutelist()
       {
         //Separate the nets with a blank line
         fprintf(fo, "\n");
-        
+
         //Set the new number for change check
         netnumber = bitlist->netnumber;
       }
-      
+
       printroutebititem(fo, bitlist);
-      
+
       lines++;
-      
+
       //Select the next item
       printlist = printlist->next;
     }
@@ -5828,11 +7414,11 @@ void printroutelist()
     if(tileroutecount)
     {
       pROUTEINFOITEM foundrouteitem;
-      
+
       int netnumber = 1;
-      
+
       lines = 0;
-      
+
       //Walk through the tile array to trace the nets for the identified starting points
       for(x=0;x<COLUMNS;x++)
       {
@@ -5846,23 +7432,23 @@ void printroutelist()
             if(bitlist->routetype == TYPE_NONE)
             {
               //Need to match the loose bits
-              
+
               //Try to find a connection for this route bit
               if(foundrouteitem = findmatchingpair(bitlist, netnumber))
               {
                 printroutebititem(fo, foundrouteitem);
                 printroutebititem(fo, foundrouteitem->matingrouteitem);
                 fprintf(fo, "\n");
-                
+
                 lines += 2;
-                
+
                 netnumber++;
               }
               else
               {
                 printroutebititem(fo, bitlist);
                 fprintf(fo, "\n");
-                
+
                 lines++;
               }
 
@@ -5876,7 +7462,7 @@ void printroutelist()
 
       fprintf(fo, "\n%d\n", lines);
     }
-    
+
     fclose(fo);
   }
 }
@@ -5888,27 +7474,27 @@ void printnetlist()
   char filename[255];
 
   char namebuffer[32];
-  
+
   int netnumber = 1;
 
   pROUTEINFOITEM bitlist;
-  
+
   pNETLISTITEM printlist;
-  
+
   FILE *fo;
-  
+
   snprintf(filename, sizeof(filename), "%s_net_list.csv", FILENAME);
-  
-  fo = fopen(filename, "w");  
-  
+
+  fo = fopen(filename, "w");
+
   if(fo)
   {
     fprintf(fo, "net number,signal type,block number,,signal name,pin\n");
-    
+
     printlist = netlist;
-    
+
     netnumber = 1;
-    
+
     while(printlist)
     {
       bitlist = printlist->routebit;
@@ -5918,13 +7504,13 @@ void printnetlist()
       {
         //Separate the nets with a blank line
         fprintf(fo, "\n");
-        
+
         //Set the new number for change check
         netnumber = bitlist->netnumber;
       }
-        
+
       fprintf(fo, "%d,%d,%d,,", bitlist->netnumber, bitlist->netsignal, bitlist->blocknumber);
-      
+
       if(bitlist->netsignal == SIGNAL_GND)
       {
         fprintf(fo, "gnd");
@@ -5933,13 +7519,13 @@ void printnetlist()
       {
         memcpy(namebuffer, bitlist->startpoints[bitlist->routestartentity].name, bitlist->startpoints[bitlist->routestartentity].length);
         namebuffer[bitlist->startpoints[bitlist->routestartentity].length] = 0;
-        
+
         fprintf(fo, "\"%s\"", namebuffer);
       }
       else
       {
         fprintf(fo, "\"x%d_y%d_", bitlist->tiledata->x, bitlist->tiledata->y);
-        
+
         if(bitlist->signalprefix && bitlist->signalname)
         {
           fprintf(fo, "%s_%s\"", bitlist->signalprefix->signalprefix, bitlist->signalname->hdl_name);
@@ -5956,37 +7542,37 @@ void printnetlist()
             memcpy(namebuffer, bitlist->endpoints[bitlist->routestartentity].name, bitlist->endpoints[bitlist->routestartentity].length);
             namebuffer[bitlist->endpoints[bitlist->routestartentity].length] = 0;
           }
-          
+
           fprintf(fo, "%s\"", namebuffer);
         }
 
         if(bitlist->paddata)
         {
           fprintf(fo, ",P%d", bitlist->paddata->pin);
-          
+
 #ifdef PIN_ASSIGNMENTS
           //try to find a hdl name assigned to the pin
           pPINASSIGNMENTS pinlist = pin_assignments;
-          
+
           while(pinlist->hdl_name)
           {
             if(bitlist->paddata->pin == pinlist->pinnumber)
             {
               fprintf(fo, ",\"%s\"", pinlist->hdl_name);
             }
-            
+
             pinlist++;
           }
 #endif
         }
       }
-        
+
       fprintf(fo, "\n");
-      
+
       //Select the next item
       printlist = printlist->next;
     }
-    
+
     fclose(fo);
   }
 }
@@ -6000,14 +7586,14 @@ pTILEGRIDDATA gettileforbit(int frame, int bitindex)
   int i;
   int endframe;
   int endbit;
-  
+
   for(i=0;i<TILEGRIDCOUNT;i++)
   {
     if(TileGridData[i].flag == -1)
     {
       endframe = TileGridData[i].startframe + TileGridData[i].rows;
       endbit = TileGridData[i].startbit + TileGridData[i].columns;
-      
+
       if((frame >= TileGridData[i].startframe) && (frame < endframe))
       {
         if((bitindex >= TileGridData[i].startbit) && (bitindex < endbit))
@@ -6017,13 +7603,13 @@ pTILEGRIDDATA gettileforbit(int frame, int bitindex)
       }
     }
   }
-  
+
   return(0);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-BITDATAPOINTERS bitdatapointers[] = 
+BITDATAPOINTERS bitdatapointers[] =
 {
   { clkdiv_bk1_COUNT, clkdiv_bk1_Data },
   { clkdiv_bk2_COUNT, clkdiv_bk2_Data },
@@ -6033,12 +7619,12 @@ BITDATAPOINTERS bitdatapointers[] =
   { clkdiv_bk6_COUNT, clkdiv_bk6_Data },
   { clkdiv_bk7_COUNT, clkdiv_bk7_Data },
   { clkdiv_bk8_COUNT, clkdiv_bk8_Data },
-  
+
   { emb32k_b0_COUNT, emb32k_b0_Data },
   { emb32k_b1_COUNT, emb32k_b1_Data },
-  
+
   { emb_slice_COUNT, emb_slice_Data },
-  
+
   { gclk_csb_COUNT,      gclk_csb_Data },
   { gclk_ctmux_l_COUNT,  gclk_ctmux_l_Data },
   { gclk_ctmux_u_COUNT,  gclk_ctmux_u_Data },
@@ -6084,7 +7670,7 @@ pCONFIGBITDATA getbitforbitsearchall(int x, int y)
 {
   int i;
   int bitdata;
-  
+
   for(bitdata=0;bitdata<(sizeof(bitdatapointers)/sizeof(BITDATAPOINTERS));bitdata++)
   {
     for(i=0;i<bitdatapointers[bitdata].count;i++)
@@ -6095,7 +7681,7 @@ pCONFIGBITDATA getbitforbitsearchall(int x, int y)
       }
     }
   }
-  
+
   return(0);
 }
 
@@ -6104,7 +7690,7 @@ pCONFIGBITDATA getbitforbitsearchall(int x, int y)
 pCONFIGBITDATA getbitforbit(int x, int y, int xoff, pCONFIGBITDATA data, int count)
 {
   int i;
-  
+
   for(i=0;i<count;i++)
   {
     if((x == data[i].x) && (y == data[i].y) && (xoff == data[i].xoff))
@@ -6112,7 +7698,7 @@ pCONFIGBITDATA getbitforbit(int x, int y, int xoff, pCONFIGBITDATA data, int cou
       return(&data[i]);
     }
   }
-  
+
   return(0);
 }
 
@@ -6121,7 +7707,7 @@ pCONFIGBITDATA getbitforbit(int x, int y, int xoff, pCONFIGBITDATA data, int cou
 pTILEGRIDDATA gettileforxy(int x, int y, pTILEGRIDDATA starttile)
 {
   int i;
-  
+
   for(;starttile < &TileGridData[TILEGRIDCOUNT]; starttile++)
   {
     if((starttile->flag == -1) && (x == starttile->x) && (y == starttile->y))
@@ -6129,7 +7715,7 @@ pTILEGRIDDATA gettileforxy(int x, int y, pTILEGRIDDATA starttile)
       return(starttile);
     }
   }
-  
+
   return(0);
 }
 
@@ -6139,17 +7725,17 @@ void freeallmemory()
 {
   int x;
   int y;
-  
+
   pROUTEINFOITEM bitlist;
   pROUTEINFOITEM bitfree;
 
   pBITLISTITEM   setuplist;
   pBITLISTITEM   setupfree;
-  
+
   pNETLISTITEM   netfree;
-  
+
   pBLOCKINFOITEM blockfree;
-  
+
   //Free all the route info data
   for(x=0;x<COLUMNS;x++)
   {
@@ -6157,20 +7743,20 @@ void freeallmemory()
     {
       //Get the list for this tile
       bitlist = tileroutearray[x][y];
-      
+
       //Free all the items in the list
       while(bitlist)
       {
         //Save guard for freeing
         bitfree = bitlist;
-        
+
         //Select the next item in the list before freeing the current one so the trail is not lost
         bitlist = bitlist->next;
-        
+
         //Release this one back into the wild
         free(bitfree);
       }
-      
+
       //Clear the setup lists too
       setuplist = tilesetuparray[x][y];
 
@@ -6179,16 +7765,16 @@ void freeallmemory()
       {
         //Save guard for freeing
         setupfree = setuplist;
-        
+
         //Select the next item in the list before freeing the current one so the trail is not lost
         setuplist = setuplist->link;
-        
+
         //Release this one back into the wild
         free(setupfree);
       }
     }
   }
-  
+
   //Free the memory used in the route list
   //This is the list that holds all the routing items used to form a net
   while(routelist)
@@ -6236,13 +7822,13 @@ void outputblockschematics()
 
   //Need the inverted rows for the bitmap header to maintain proper orientation of the image
   unsigned int   invrows = rows * -1;
-  
+
   char filename[255];
-  
+
   pSCHEMATICBLOCK baseblock;
-  
+
   FILE *fo;
-  
+
   //Number of bytes on a row for a 24 bits per pixel bitmap
   bytesperrow = pixels * 3;
 
@@ -6251,9 +7837,9 @@ void outputblockschematics()
 
   //Calculate the size of the bitmap in bytes
   size = bytesperrow * rows;
-  
+
   bitmap = malloc(size);
-  
+
   if(bitmap)
   {
     //Setup the bitmap header only once
@@ -6299,7 +7885,7 @@ void outputblockschematics()
     buffer[24] = (invrows >> 16) & 0xFF;
     buffer[25] = (invrows >> 24) & 0xFF;
 
-    //Number of planes      
+    //Number of planes
     buffer[26] = 1;
     buffer[27] = 0;
 
@@ -6342,7 +7928,7 @@ void outputblockschematics()
     buffer[51] = 0;
     buffer[52] = 0;
     buffer[53] = 0;
-    
+
     while(block)
     {
       if(block->connected)
@@ -6376,42 +7962,42 @@ void outputblockschematics()
 
           case BLOCK_MSLICE:
             baseblock = &mslice;
-            
+
             //Print the bitmap output file name
             snprintf(filename, sizeof(filename), "%s/mslice_%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->sliceid, block->x, block->y, block->blocknumber);
             break;
 
           case BLOCK_LSLICE:
             baseblock = &lslice;
-            
+
             //Print the bitmap output file name
             snprintf(filename, sizeof(filename), "%s/lslice_%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->sliceid, block->x, block->y, block->blocknumber);
             break;
 
           case BLOCK_EMB:
             baseblock = &emb;
-            
+
             //Print the bitmap output file name
             snprintf(filename, sizeof(filename), "%s/emb_%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->embid, block->x, block->y, block->blocknumber);
             break;
 
           case BLOCK_PLL:
             baseblock = &pll;
-            
+
             //Print the bitmap output file name
             snprintf(filename, sizeof(filename), "%s/pll%d_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->pllid, block->x, block->y, block->blocknumber);
             break;
 
           case BLOCK_GCLK_PREMUX:
             baseblock = &gclk_premux;
-            
+
             //Print the bitmap output file name
             snprintf(filename, sizeof(filename), "%s/gclk_premux_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->x, block->y, block->blocknumber);
             break;
 
           case BLOCK_GCLK_CTMUX:
             baseblock = &gclk_ctmux;
-            
+
             //Print the bitmap output file name
             snprintf(filename, sizeof(filename), "%s/gclk_ctmux_tile_x%dy%d_block_%d.bmp", BLOCKFOLDER, block->x, block->y, block->blocknumber);
             break;
@@ -6435,10 +8021,10 @@ void outputblockschematics()
           }
         }
       }
-    
+
       block = block->next;
-    }    
-    
+    }
+
     free(bitmap);
   }
 }
@@ -6451,42 +8037,42 @@ int main(int argc, char** argv)
   int size;
   int frames;
   int b,i,j;
-  
+
   char filename[255];
-  
+
   uchar bit;
-  
+
   int item;
-  
+
   int netnumber = 1;
-  
+
   int routebit;
-  
+
   pTILEGRIDDATA tilegriddata;
-  
+
   pCONFIGBITDATA bitdata;
-  
+
   pFRAMEBITMAPPING framebitdata;
 
   uchar *sptr = bitstreamdata;
-  
+
   //Clear the needed lists
   memset(tileroutearray, 0, sizeof(tileroutearray));
   memset(tilesetuparray, 0, sizeof(tilesetuparray));
   memset(fpga_tiles, 0, sizeof(fpga_tiles));
-  
+
   //Print the input file name. Expect it to be .bit
   snprintf(filename, sizeof(filename), "%s.bit", FILENAME);
-  
+
   FILE *fin = fopen(filename, "rb");
 
   if(fin)
   {
     //Load the bitstream data
     length = fread(&bitstreamdata, 1, sizeof(bitstreamdata), fin);
-    
+
     fclose(fin);
-    
+
     //Find the preamble
     while(length)
     {
@@ -6496,21 +8082,21 @@ int main(int argc, char** argv)
         sptr += 4;
         break;
       }
-      
+
       //Point to the next character range to check
       sptr++;
-      
+
       //One character done
       length--;
     }
-    
+
     //Go through the block data until the 0xEC tag is found
     while(length)
     {
       //Get the length based on MSB first (big endian) and divide by 8 since it is given in number of bits. Add two for the length field
       //Could do with error handling but nah
       size = (((sptr[0] << 8) | sptr[1]) / 8) + 2;
-      
+
       //Check the tag
       if(sptr[2] == 0xEC)
       {
@@ -6518,32 +8104,32 @@ int main(int argc, char** argv)
         sptr += 4;
         break;
       }
-      
+
       //Skip to the next block size
       sptr += size;
-      
+
       //Take of the bytes done
       length -= size;
     }
-    
+
     //Get the number of frames to load
     frames = (sptr[0] << 8) | sptr[1];
     sptr += 2;
-    
+
     //Load the frame data
     for(i=0;i<frames;i++)
     {
       //Could do a CRC check but the data is trusted to be good
       size = (((sptr[0] << 8) | sptr[1]) / 8);
       sptr += 2;
-      
+
       //The data is known to be 257 bytes for the actual frame data.
       memcpy(fpga_frames[i], sptr, 257);
-      
+
       //Skip to the next block
       sptr += size;
     }
-    
+
     for(i=0;i<FRAMES;i++)
     {
       for(j=0;j<DB_BITS_PER_FRAME;j++)
@@ -6579,13 +8165,13 @@ int main(int argc, char** argv)
 
           //Need to create a setup bits list per tile
           //Better yet a list per logic block with per type sorted lists.
-          
-          
+
+
           if(bitdata)
           {
             //Since not all TOP. bits are for routing, this flag is for signaling a bit is used for routing and does not need to be added to the block setup list
             routebit = 0;
-            
+
             //Make a route list
             //Only bits with TOP. in the name indicate routing
             if(strncmp(bitdata->name, "TOP.", 4) == 0)
@@ -6599,7 +8185,7 @@ int main(int argc, char** argv)
                 {
                   //If so this is a proper connection item and the bit needs to be added to the list
                   addtotileroutearray(tilegriddata, bitdata);
-                  
+
                   //Signal this bit is used for routing
                   routebit = 1;
 
@@ -6608,13 +8194,13 @@ int main(int argc, char** argv)
                 }
               }
             }
-            
+
             //Only non route bits need to be checked for setup data
             if(routebit == 0)
             {
               //Add it to the tile block array lists
               addtotilesetuplist(tilegriddata, bitdata);
-            }            
+            }
           }
         }
       }
@@ -6625,7 +8211,7 @@ int main(int argc, char** argv)
 
     //Create single global clock nets
     buildgclknets(&netnumber);
-    
+
     //Walk through the tile array and mark all the starting points of the routes
     identifynetstarts(&netnumber);
 
@@ -6638,45 +8224,45 @@ int main(int argc, char** argv)
 
     //Implement a filter on the blocks to eliminate the unconnected io pads based on them only having three setup bits
     //Maybe just a simple bit count during the making of the list will do???
-    
+
     //Filter the route list into a net list
     filterroutelist();
-    
+
     //At this point the data can be converted in gate level verilog by reading both the nets and the block setup data
-    
+
     //The file starts with a module and it's external signals.
-    
+
     //Need to flag the signal names to avoid listing them double
-    
+
     //Then a list of all the wires that are needed.
-    
+
     //After that the AL_PHY_PAD macros to put all the pads in the verilog
-    
+
     //Then the LUTS and SLICES
-    
+
     //And last the BRAM and PLL
-    
-#ifdef OUTPUT_VERILOG
+
+#if OUTPUT_VERILOG
     creategatelevelverilog();
 #endif
-    
+
     //Create a tree list for the connected blocks
 //    createtreelist();
-    
+
     //Print the block list
     printblocklist();
 
     //Print the setup list
     printsetuplist();
-    
+
     //Print the net list
     printnetlist();
 
     //Create block schematic pages
-#ifdef OUTPUT_SCHEMATICS    
+#if OUTPUT_SCHEMATICS
     outputblockschematics();
 #endif
-    
+
     //Memory cleanup
     freeallmemory();
   }
