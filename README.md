@@ -73,3 +73,9 @@ slice.
 
 So I'm now analyzing the FNIRSI-1013D bit stream on what settings are present and try to create the needed macros based on it.
 For know I'm focusing on the mslice, which is simpler but also has its quirks.
+
+-------------------------------------------------------------------------------------------------------------------------------
+15-10-2022
+
+Managed to get complete gate level verilog generated for the 1013D bit stream, but when compiled in the IDE the new bit stream
+is different and a test in the scope showed it not working, so still some problems to solve.
