@@ -48,6 +48,7 @@
 #define SIGNAL_GCLK               2
 #define SIGNAL_OUTPUT             3
 #define SIGNAL_INPUT              4
+#define SIGNAL_CARRY              5
 
 #define BLOCK_NONE                0
 #define BLOCK_PAD                 1
@@ -109,6 +110,12 @@
 #define LOGIC_FXMUXON      0x10000000
 #define LOGIC_TESTSH       0x20000000
 
+
+#define LOGIC_TYPE_LUT     0
+#define LOGIC_TYPE_ADDER   1
+
+#define LOGIC_REGISTERED   1
+
 //----------------------------------------------------------------------------------------------------------------------------------
 
 //emb settings 1
@@ -155,6 +162,12 @@
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
+#define ADDED_NONE     0
+#define ADDER_ADD      1
+#define ADDER_SUB      2
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 #define PIN_NONE      0x00000000
 
 #define PIN_A0        0x00000001
@@ -197,11 +210,18 @@
 #include "block_schematic_definitions.h"
 
 //----------------------------------------------------------------------------------------------------------------------------------
+//Option to select if the logic is outputted as a SLICE macro or as LUT and SEQ macros
 
-#define OUTPUT_SCHEMATICS   1
+#define USE_SLICE_NOT_LUT_SEQ    1
+
+#define USE_SHORT_NET_NAMES      1
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+#define OUTPUT_SCHEMATICS   0
 #define OUTPUT_VERILOG      1
 
-#define DESIGN 3
+#define DESIGN 1
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -241,6 +261,12 @@
 
 #define FILENAME   "fpgas/FNIRSI_1013D/FNIRSI_1013D"
 #define BLOCKFOLDER  "fpgas/FNIRSI_1013D/blocks"
+#elif DESIGN == 6
+#include "pin_assignments/1013D_pin_assignment.h"
+
+#define MODULENAME   "FNIRSI_1013D"
+#define FILENAME     "/home/peter/Data/Anlogic_projects/My_1013D/My_1013D"
+#define BLOCKFOLDER  "/home/peter/Data/Anlogic_projects/My_1013D/blocks"
 #endif
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -266,8 +292,6 @@ typedef struct tagNAMEITEM         NAMEITEM,         *pNAMEITEM;
 typedef struct tagROUTEINFOITEM    ROUTEINFOITEM,    *pROUTEINFOITEM;
 
 typedef struct tagNETLISTITEM      NETLISTITEM,      *pNETLISTITEM,      **ppNETLISTITEM;
-
-typedef struct tagTREELISTITEM     TREELISTITEM,     *pTREELISTITEM,     **ppTREELISTITEM;
 
 typedef struct tagBLOCKCONNECTION  BLOCKCONNECTION,  *pBLOCKCONNECTION;
 
@@ -321,8 +345,12 @@ struct tagBITLISTITEM
 
 struct tagBLOCKCONNECTION
 {
-  char *signalname;
-  char *netname;
+  char *signalname;         //Name of the signal on the block
+  char *netname;            //Name of the signal connected to it
+  
+  int type;                 //To indicate if the signal is an input or an output
+  
+  pNETLISTITEM   net;       //The net a signal belongs to, which makes it easy to find the connected signals
 };
 
 struct tagBLOCKINFOITEM
@@ -330,6 +358,9 @@ struct tagBLOCKINFOITEM
   pBLOCKINFOITEM  prev;
   pBLOCKINFOITEM  next;
 
+  pBLOCKINFOITEM  carryprev;        //For tracking the carry chain back to get the needed nets
+  pBLOCKINFOITEM  carrynext;        //For tracking the carry chain forward for listing the used blocks.
+  
   pBITLISTITEM    firstsettingsbit;
 
   int             x;
@@ -345,7 +376,11 @@ struct tagBLOCKINFOITEM
   int             processed;        //Flag to signal if the block has already been processed during verilog generation
                                     //This is to accomodate for carry chain connection
 
+  int             usedpins;
+  
   int             logicsettings;    //Bit array to reflect the settings bits set for this block
+  int             logictype;        //Flag to signal if it is a LUT or an ADDER
+  int             logicregistered;  //Flag to signal if a register is used
 
   int             lut0;             //Lookup pattern for mslice lut0
   int             lutf0;            //Lookup pattern for lslice lutf0
@@ -359,6 +394,7 @@ struct tagBLOCKINFOITEM
   int             embsettings2;
   int             embrid;           //Variable to capture the read id bits. Not sure what these are used for and are only mentioned as comment in the macro
   int             embwid;           //Variable to capture the write bits
+  int             embtype;          //Flag to signal if it is normal memory or a fifo
 
   int             sliceid;
   int             padid;
@@ -366,6 +402,9 @@ struct tagBLOCKINFOITEM
   int             embid;
   int             pllid;
 
+  int             addertype;        //Type of math, either add or subtract.
+  int             adderregistered;  //Flag to signal always statement needs to be used for the adder
+  
   char           *tiletype;
 
   int             connectioncount;  //Number of connections set in the connections array
@@ -375,6 +414,7 @@ struct tagBLOCKINFOITEM
   char            padname[MAX_NAME_LENGTH];
   char            lut0output[MAX_NAME_LENGTH];
   char            lut1output[MAX_NAME_LENGTH];
+  char            lut5output[MAX_NAME_LENGTH];
 
   char            carryoutname[MAX_NAME_LENGTH];
 
@@ -434,16 +474,6 @@ struct tagNETLISTITEM
   pNETLISTITEM next;
 
   pROUTEINFOITEM routebit;
-};
-
-struct tagTREELISTITEM
-{
-  pTREELISTITEM  next;
-
-  pTREELISTITEM  child;
-
-  pROUTEINFOITEM fromsignal;
-  pROUTEINFOITEM tosignal;
 };
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -577,9 +607,6 @@ pNETLISTITEM  routelist = 0;
 //A sorted and filtered net list is made in this list
 pNETLISTITEM  netlist = 0;
 ppNETLISTITEM netlistlast  = 0;
-
-//A tree of how the blocks are connected to each other
-pTREELISTITEM inputtreelist = 0;
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -886,6 +913,12 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
 
   draw_text(buffer, bytesperrow, xs, ys, blockcolor, name);
 
+  
+  if(designblock->blocknumber == 149)
+  {
+    len = 10;
+  }
+  
   //Process the ports on this block
   port = &baseblock->ports[portidx];
 
@@ -1170,7 +1203,7 @@ void additemtoblocklist(pBLOCKINFOITEM item)
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void additemtofinalnetlist(pROUTEINFOITEM item)
+pNETLISTITEM additemtofinalnetlist(pROUTEINFOITEM item)
 {
   //Get memory for the net list item for this bit
   pNETLISTITEM netitem = malloc(sizeof(NETLISTITEM));
@@ -1193,6 +1226,8 @@ void additemtofinalnetlist(pROUTEINFOITEM item)
 
   //Point to where the next item needs to be added
   netlistlast = &netitem->next;
+  
+  return(netitem);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -2665,8 +2700,12 @@ void getsignalproperties(pROUTEINFOITEM item)
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
+//This function maps a signal onto a blocks hdl name and sets it as connected in the block it belongs to
+//The given routeitem holds information about the tile the signal is connected to
+//The given outputblock is a pointer to the block the signal originates from
+//The given net is the start point of the net the signal is connected to
 
-void mapsignalname(pROUTEINFOITEM routeitem)
+void mapsignalname(pROUTEINFOITEM routeitem, pNETLISTITEM net)
 {
   int iol = -1;
   int i;
@@ -2682,6 +2721,7 @@ void mapsignalname(pROUTEINFOITEM routeitem)
 
   pTILESIGNALMAP tilesignalmapptr;
   pSIGNALNAMEMAP signalsearchtable;
+  pBLOCKINFOITEM searchlist = 0;
 
   char *netname;
 
@@ -2811,7 +2851,7 @@ void mapsignalname(pROUTEINFOITEM routeitem)
   //When there is a signal match try to match it to a block
   if(found == 1)
   {
-    pBLOCKINFOITEM searchlist = blocklist;
+    searchlist = blocklist;
     //Search the block list for a matching block this signal connects to
 
     //First get the needed properties for this bit
@@ -2822,8 +2862,6 @@ void mapsignalname(pROUTEINFOITEM routeitem)
     //Just search the block list to find a match
     while(searchlist && (found == 0))
     {
-      found = 0;
-
       if((searchlist->x == routeitem->toptilex) && (searchlist->y == routeitem->toptiley) && (searchlist->blocktype == routeitem->blocktype))
       {
         //For the moment only the blocks used in the FNIRSI FPGA are checked
@@ -2880,14 +2918,23 @@ void mapsignalname(pROUTEINFOITEM routeitem)
         searchlist->connections[searchlist->connectioncount].signalname = routeitem->signalname->hdl_name;
         searchlist->connections[searchlist->connectioncount].netname = routeitem->netname;
 
+        //For tracing signals through the blocks it is needed to know the net the signal originated from
+        //and the type of the signal is known.
+        searchlist->connections[searchlist->connectioncount].type = routeitem->netsignal;
+        searchlist->connections[searchlist->connectioncount].net = net;
+
+        //Check an the q outputs being connected to signal the logic is registered
+        if(strncmp(routeitem->signalname->hdl_name, "q_", 2) == 0)
+        {
+          searchlist->logicregistered = LOGIC_REGISTERED;
+        }
+        
         //Signal an extra connection to this block
         searchlist->connectioncount++;
       }
 
       searchlist = searchlist->next;
     }
-
-
   }
 }
 
@@ -2895,17 +2942,19 @@ void mapsignalname(pROUTEINFOITEM routeitem)
 
 void filterroutelist()
 {
-  pNETLISTITEM  fromlist = routelist;
+  pNETLISTITEM fromlist = routelist;
 
   pROUTEINFOITEM routeitem;
 
   char *name;
   int  length;
 
-  int netnumber = 0;
+  int netnumber = 0;  //Net numbers start at 1, so with 0 it is possible to detect the first net
   int gclkid;
 
   char *netname;
+  
+  pNETLISTITEM   net;
 
   //Within this function code should be added to identify a block based on a signal name
   //For the found block the settings data needs to be retrieved
@@ -2926,6 +2975,9 @@ void filterroutelist()
       name   = routeitem->startpoints[routeitem->routestartentity].name;
       length = routeitem->startpoints[routeitem->routestartentity].length;
 
+      //Add it to the net list and get the pointer to the net item
+      net = additemtofinalnetlist(routeitem);
+      
       //Check the first entry of this net on what it is
       if((length == 3) && (strncmp(name, "GND", 3) == 0))
       {
@@ -2949,8 +3001,43 @@ void filterroutelist()
         routeitem->netsignal = SIGNAL_OUTPUT;
 
         //Translate the signal name to a hdl name and see if it has a connection with a pin
-        mapsignalname(routeitem);
+        mapsignalname(routeitem, net);
 
+        //At this point it is also an option to use the pin hdl name if one is given, but might make it tricky when generating the verilog
+        //Have to check this
+        
+        
+        
+        
+#if USE_SHORT_NET_NAMES
+        int found = 0;
+        
+#ifdef PIN_ASSIGNMENTS
+        //try to find a hdl name assigned to the pin
+        pPINASSIGNMENTS pinlist = pin_assignments;
+
+        while(pinlist->hdl_name)
+        {
+          if(routeitem->pinnumber == pinlist->pinnumber)
+          {
+            found = 1;
+            break;
+          }
+
+          pinlist++;
+        }
+#endif
+        
+        if(found)
+        {
+          snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "%s", pinlist->hdl_name);
+        }
+        else
+        {
+          //To make the verilog more readable only net_xxx is used for the naming of the signals
+          snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "net_%d", routeitem->netnumber);
+        }
+#else          
         //When the signal is mapped use the prefix and hdl name for the net
         if(routeitem->signalprefix && routeitem->signalname)
         {
@@ -2967,11 +3054,9 @@ void filterroutelist()
         {
           snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "x%dy%d_%s_net_%d", routeitem->tiledata->x, routeitem->tiledata->y, routeitem->tiledata->type, routeitem->netnumber);
         }
+#endif
       }
-
-      //Add it to the net list
-      additemtofinalnetlist(routeitem);
-
+      
       netname = routeitem->netname;
 
       netnumber++;
@@ -2995,7 +3080,7 @@ void filterroutelist()
         strncpy(routeitem->netname, netname, MAX_NET_NAME_LENGTH);
 
         //Translate the signal name to a hdl name and see if it has a connection with a pin
-        mapsignalname(routeitem);
+        mapsignalname(routeitem, net);
 
         //Add it to the net list
         additemtofinalnetlist(routeitem);
@@ -3005,113 +3090,6 @@ void filterroutelist()
     //Get the next item to process
     fromlist = fromlist->next;
   }
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------
-
-void additemtotreelist(ppTREELISTITEM list, pROUTEINFOITEM fromsignal, pROUTEINFOITEM tosignal)
-{
-  pTREELISTITEM item = malloc(sizeof(TREELISTITEM));
-
-  item->next = 0;
-  item->child = 0;
-  item->fromsignal = fromsignal;
-  item->tosignal = tosignal;
-
-  //Add this new one to the given list point
-  *list = item;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------
-
-void createtreelist()
-{
-  //Need to walk through the net list and when a pad is found as first entry of a net trace down the connections
-  int netnumber = 0;
-
-  int addtochildlist = 0;
-
-  pNETLISTITEM searchlist = netlist;
-
-  pROUTEINFOITEM fromsignal;
-  pROUTEINFOITEM tosignal;
-
-  pTREELISTITEM treelist;
-
-  ppTREELISTITEM mainaddlist = &inputtreelist;
-
-  ppTREELISTITEM childaddlist;
-
-  while(searchlist)
-  {
-    tosignal = searchlist->routebit;
-
-    //Detect the start of the next net
-    if(netnumber != tosignal->netnumber)
-    {
-      //The first entry of a net is always an output, so when the type is pad it means a signal coming into the FPGA
-      //And there fore a good starting point for getting an insight in the logic
-      if(tosignal->blocktype == BLOCK_PAD)
-      {
-        //Create and add a new item to the list
-        //Then all the items within this net should be hooked onto a child list
-        additemtotreelist(mainaddlist, 0, tosignal);
-
-        //Set this signal as the originator for the child items
-        fromsignal = tosignal;
-
-        //Get the current list point
-        treelist = *mainaddlist;
-
-        //Setup the child list for it
-        childaddlist = &treelist->child;
-
-        //Have the main list continue at the next point
-        mainaddlist = &treelist->next;
-
-        //Signal the rest of the signals of this net need to be added to the child list
-        addtochildlist = 1;
-      }
-      else
-      {
-        //Not a pad so no tracing this net
-        addtochildlist = 0;
-      }
-    }
-
-    if(addtochildlist)
-    {
-      //Add this item to the child list and trace it down through the blocks
-      additemtotreelist(childaddlist, fromsignal, tosignal);
-
-      //Get the current list point
-      treelist = *childaddlist;
-
-      //Have the child list continue at the next point
-      childaddlist = &treelist->next;
-
-
-      //The next block needs to be found based on the current block input found here and the start point of a net matching the block number
-      //Only when the signal matches with the current input signal it should add the next signals to the child list of the current one
-
-      //A problem here is the fact that embedded block memory has a displacement in the signals when 2 bit mode is used
-      //A2 in seems to go to B0 output and A5 in to B2
-      //For slices the lut id needs to be used in tracing
-
-
-      //Probably need both input and output route items added to the current item, to have this connection data
-      //&treelist->child;
-
-
-
-    }
-
-    searchlist = searchlist->next;
-  }
-
-
-
-
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -3311,23 +3289,23 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
       //Signal LUT0 has settings
       block->logicsettings = LOGIC_LUTG1;
     }
-    //Check if the F0 output is routed to FF0
-    else if(strncmp(item->bitdata->name, "MC1_DI0_S", 9) == 0)
+    //Check if the F0 output is routed to FF0 (For slice 0 the TOP bit is used to control this setting)
+    else if((strncmp(item->bitdata->name, "MC1_DI0_S", 9) == 0) || (strncmp(item->bitdata->name, "TOP.XI390.NET104", 16) == 0))
     {
       block->logicsettings = LOGIC_FF0_F;
     }
-    //Check if the F1 output is routed to FF1
-    else if(strncmp(item->bitdata->name, "MC1_DI1_S", 9) == 0)
+    //Check if the F1 output is routed to FF1 (For slice 0 the TOP bit is used to control this setting)
+    else if((strncmp(item->bitdata->name, "MC1_DI1_S", 9) == 0) || (strncmp(item->bitdata->name, "TOP.XI390.NET97", 15) == 0))
     {
       block->logicsettings = LOGIC_FF1_F;
     }
-    //Check if the FX0 output is routed to FF0
-    else if(strncmp(item->bitdata->name, "MC1_FX0_S", 9) == 0)
+    //Check if the FX0 output is routed to FF0 (For slice 0 the TOP bit is used to control this setting)
+    else if((strncmp(item->bitdata->name, "MC1_FX0_S", 9) == 0) || (strncmp(item->bitdata->name, "TOP.XI389.NET104", 16) == 0))
     {
       block->logicsettings = LOGIC_FF0_FX;
     }
-    //Check if the FX1 output is routed to FF1
-    else if(strncmp(item->bitdata->name, "MC1_FX1_S", 9) == 0)
+    //Check if the FX1 output is routed to FF1 (For slice 0 the TOP bit is used to control this setting)
+    else if((strncmp(item->bitdata->name, "MC1_FX1_S", 9) == 0) || (strncmp(item->bitdata->name, "TOP.XI389.NET97", 15) == 0))
     {
       block->logicsettings = LOGIC_FF1_FX;
     }
@@ -3435,11 +3413,17 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
     else if(strncmp(item->bitdata->name, "MC1_RIPMODE0_S", 14) == 0)
     {
       block->logicsettings = LOGIC_RIPMODE0;
+      
+      //When a RIPMODE bit is set the logic behaves as an adder
+      block->logictype = LOGIC_TYPE_ADDER;
     }
     //Check the RIPMODE1 setting for adder setup
     else if(strncmp(item->bitdata->name, "MC1_RIPMODE1_S", 14) == 0)
     {
       block->logicsettings = LOGIC_RIPMODE1;
+      
+      //When a RIPMODE bit is set the logic behaves as an adder
+      block->logictype = LOGIC_TYPE_ADDER;
     }
     //Check the TESTSH setting for ??
     else if(strncmp(item->bitdata->name, "MC1_TESTSH_S", 12) == 0)
@@ -4172,6 +4156,20 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
   //No name found or search disabled, then assign one based on type, block and pin number
   if(found == 0)
   {
+#if USE_SHORT_NET_NAMES
+    if(padtype == PAD_BIDIRECTIONAL)
+    {
+      snprintf(block->padname, sizeof(block->padname), "io_pin_%d", block->pinnumber);
+    }
+    else if(padtype & PAD_INPUT)
+    {
+      snprintf(block->padname, sizeof(block->padname), "i_pin_%d", block->pinnumber);
+    }
+    else
+    {
+      snprintf(block->padname, sizeof(block->padname), "o__pin_%d", block->pinnumber);
+    }
+#else
     if(padtype == PAD_BIDIRECTIONAL)
     {
       snprintf(block->padname, sizeof(block->padname), "io_block_%d_pin_%d", block->blocknumber, block->pinnumber);
@@ -4184,6 +4182,7 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
     {
       snprintf(block->padname, sizeof(block->padname), "o_block_%d_pin_%d", block->blocknumber, block->pinnumber);
     }
+#endif
   }
 
   //Set the type for printing in the module io list
@@ -4249,15 +4248,29 @@ void processpadsettings(FILE *fo, pBLOCKINFOITEM block)
 
 void createpadassignment(FILE *fo, pBLOCKINFOITEM block)
 {
-  if(block->padtype & PAD_INPUT)
+  //output this in the io list of the module
+  if(block->padtype == PAD_BIDIRECTIONAL)
+  {
+    //Provide a tristate output for the bidirectional signal
+    //It might be that it is needed to check the setting of the INV property fort this mux
+    //When set it should be like below and when not it might be needed to swap the true and false bits
+    fprintf(fo, "  assign %s = %s ? %s : 1'bZ;\n", block->padname, getconnectionnet(block, "ts"), getconnectionnet(block, "otrue"));
+    
+    //Taken out because the net name is replaced with the pad name in an early stage
+    //Provide the input route for the same bidirectional signal
+    //fprintf(fo, "  assign %s = %s;\n", getconnectionnet(block, "di"), block->padname);
+  }
+#if 0 
+  //Taken out because the net name is replaced with the pad name in an early stage
+  else if(block->padtype & PAD_INPUT)
   {
     fprintf(fo, "  assign %s = %s;\n", getconnectionnet(block, "di"), block->padname);
   }
-
-  if(block->padtype & PAD_OUTPUT)
+  else if(block->padtype & PAD_OUTPUT)
   {
     fprintf(fo, "  assign %s = %s;\n", block->padname, getconnectionnet(block, "otrue"));
   }
+#endif
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -4934,7 +4947,7 @@ void outputlutmacro(FILE *fo, pBLOCKINFOITEM block, int lutid, int inputcount, i
   {
     //When the LUT is connected to the flip flop there is the need for a internal wire to connect them
     //Make a name to identify the signal between the LUT and the FF and save it in the space for the given lut
-    snprintf(lutoutput, MAX_NAME_LENGTH, "sig_block_%d_lut_%d", block->blocknumber, lutid);
+    snprintf(lutoutput, MAX_NAME_LENGTH, "sig_%d_lut_%d", block->blocknumber, lutid);
 
     //Output the given name to the file
     fprintf(fo, "    .o(%s)\n", lutoutput);
@@ -4966,7 +4979,7 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
   {
     //For slice 0 the default is the F output instead of the mi input unless the FX MUX is on and the LUT must have bits set
     //Check which input is used for the flip flop
-    if((block->logicsettings & LOGIC_FF1_F) || ((block->sliceid == 0) && ((block->logicsettings & LOGIC_FXMUXON) == 0) && (block->logicsettings & LOGIC_LUT1)))
+    if(block->logicsettings & LOGIC_FF1_F)
     {
       //The LUT1 "f" is selected in this case
       //Check if the "f" output is connected to a net
@@ -5000,7 +5013,7 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
       //per default the "mi" input is used
       dname = getconnectionnet(block, "mi_1");
     }
-
+    
     //See if the REGSET property needs to be changed
     if(block->logicsettings & LOGIC_FF1_SR)
     {
@@ -5012,9 +5025,8 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
   }
   else
   {
-    //For slice 0 the default is the F output instead of the mi input unless the FX MUX is on and the LUT must have bits set
     //Check which input is used for the flip flop
-    if((block->logicsettings & LOGIC_FF0_F) || ((block->sliceid == 0) && ((block->logicsettings & LOGIC_FXMUXON) == 0) && (block->logicsettings & LOGIC_LUT0)))
+    if(block->logicsettings & LOGIC_FF0_F)
     {
       //The LUT0 "f" is selected in this case
       //Check if the "f" output is connected to a net
@@ -5029,8 +5041,7 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
         dname =  block->lut0output;
       }
     }
-    //For slice 0 LUT 0 the default is the FX output when the FX MUX is on
-    else if((block->logicsettings & LOGIC_FF0_FX) || ((block->sliceid == 0) && (block->logicsettings & LOGIC_FXMUXON)))
+    else if(block->logicsettings & LOGIC_FF0_FX)
     {
       //Check if the "fx" output is connected to a net
       if(usedpins & PIN_FX0)
@@ -5049,7 +5060,7 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
       //per default the "mi" input is used
       dname = getconnectionnet(block, "mi_0");
     }
-
+    
     //See if the REGSET property needs to be changed
     if(block->logicsettings & LOGIC_FF0_SR)
     {
@@ -5196,31 +5207,390 @@ void outputseqmacro(FILE *fo, pBLOCKINFOITEM block, int ffid, int usedpins)
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
+//Function to scan the signals of a bus on being connected
+//It makes up the name of the bus members based on a base and an index
 
-void outputlslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int *opennetid)
+int scanbusconnected(pBLOCKINFOITEM block, char *signalbase, int width)
 {
-  char *signame;
-  char *reg0set = "SET";
-  char *reg1set = "SET";
-  char *reg0sd  = "MI";
-  char *reg1sd  = "MI";
-  char *dffmode = "FF";
-  char *srmode  = "ASYNC";
-  char *clkmux  = "CLK";
-  char *gsrmode = "ENABLE";
-  char *cemux   = "CE";
-  char *srmux   = "SR";
+  char signame[64];
+  int sigidx;
+  int connected = 0;
 
-  int ceused = 0;
-  int srused = 0;
+  //Scan all the signals in the given bus
+  for(sigidx=0;sigidx<width;sigidx++)
+  {
+    //Print the name of the current bus member
+    snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
+
+    //Check if there is a connection made to it
+    if(getconnectionnet(block, signame))
+    {
+      //If so signal this and quit the loop
+      connected = 1;
+      break;
+    }
+  }
+
+  return(connected);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to output the signals of a bus
+//It makes up the name of the bus members based on a base and an index
+
+int outputbusconnections(FILE *fo, pBLOCKINFOITEM block, char *busname, char *signalbase, int width, int printcomma, int *opennetid, int openisone)
+{
+  char *connection;
+  char  signame[64];
+  int   sigidx;
+
+  if((scanbusconnected(block, signalbase, width)) || openisone)
+  {
+    //Check if a comma is needed to close of the previous item
+    if(printcomma)
+    {
+      fprintf(fo, ",\n");
+    }
+    else
+    {
+      fprintf(fo, "\n");
+    }
+
+    //Start the line with the bus name and the open a bit collection marker
+    fprintf(fo, "    .%s({", busname);
+
+    //Process all the signals in the given bus from high to low
+    for(sigidx=width-1;sigidx>=0;sigidx--)
+    {
+      //Print the name of the current bus member
+      snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
+
+      //Check if there is a connection made to it
+      if(connection = getconnectionnet(block, signame))
+      {
+        if(strcmp(connection, "ground") == 0)
+        {
+          //Output it to the file
+          fprintf(fo, "1'b0");
+        }
+        else
+        {
+          //Output it to the file
+          fprintf(fo, "%s", connection);
+        }
+      }
+      else
+      {
+        //When a open input needs to be seen as a 1
+        if(openisone)
+        {
+          //Output it to the file
+          fprintf(fo, "1'b1");
+        }
+        else
+        {
+          //Not connected should be marked with an open signal
+          fprintf(fo, "open_n%d", *opennetid);
+
+          //Bump the open net counter to the next one
+          *opennetid = *opennetid + 1;
+        }
+      }
+
+      if(sigidx)
+      {
+        //No comma on the last item
+        fprintf(fo, ",");
+      }
+    }
+
+    //Close of the bit collection and the statement
+    fprintf(fo, "})");
+    
+    printcomma = 1;
+  }
+  
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+int outputconnection(FILE *fo, pBLOCKINFOITEM block, char *name, char *signalname, int printcomma)
+{
+  char *connection;
+
+  //Get the possible connection for this signal
+  if(connection = getconnectionnet(block, signalname))
+  {
+    //Might need to change this to convert ground to 1'b0
+
+    //Check if it is not connected to ground
+    if(strcmp(connection, "ground"))
+    {
+      //Check if a comma is needed to close of the previous item
+      if(printcomma)
+      {
+        fprintf(fo, ",\n");
+      }
+      else
+      {
+        fprintf(fo, "\n");
+      }
+
+      fprintf(fo, "    .%s(%s)", name, connection);
+
+      printcomma = 1;
+    }
+  }
+
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void outputlogicmuxsetting(FILE *fo, pBLOCKINFOITEM block, char *signal, char *parameter, char *value, int settingbit, int printcomma)
+{
+  char *setting = value;
+  char *connection;
+
+  int sigused = 0;
+
+  //Get the name of the possible connection made to this signal
+  connection = getconnectionnet(block, signal);
+
+  //Need to check if it is connected to ground when it is connected
+  if(connection)
+  {
+    //Check if connected to the ground net
+    if(strcmp(connection, "ground") == 0)
+    {
+      //Ground it if so
+      setting = "0";
+    }
+    else
+    {
+      sigused = 1;
+    }
+  }
+
+  //When the setting bit for this setting is set the parameter value needs to be either "INV" or "1" based on if the pin is used
+  if(block->logicsettings & settingbit)
+  {
+    if(sigused)
+    {
+      setting = "INV";
+    }
+    else
+    {
+      setting = "1";
+    }
+  }
+
+  //Output the string to the file
+  fprintf(fo, "    .%s(\"%s\")", parameter, setting);
+
+  //The last parameter should be printed without a comma
+  if(printcomma)
+  {
+    fprintf(fo, ",\n");
+  }
+  else
+  {
+    fprintf(fo, "\n");
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void outputparameter(FILE *fo, char *name, char *defaultvalue, char *setvalue, int settings, int check, int printcomma)
+{
+  if(settings & check)
+  {
+    defaultvalue = setvalue;
+  }
+  
+  fprintf(fo, "    .%s(\"%s\")", name, defaultvalue);
+  
+  //The last parameter should be printed without a comma
+  if(printcomma)
+  {
+    fprintf(fo, ",\n");
+  }
+  else
+  {
+    fprintf(fo, "\n");
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void outputffinputselect(FILE *fo, char *name, pBLOCKINFOITEM block, int usedpins, int check1, int check2, int checkpin, int printcomma)
+{
+  char *value = "MI";
+  
+  if(block->logicsettings & check1)
+  {
+    value = "F";
+  }
+  else if(block->logicsettings & check2)
+  {
+    value = "FX";
+  }
+  
+  fprintf(fo, "    .%s(\"%s\")", name, value);
+  
+  //The last parameter should be printed without a comma
+  if(printcomma)
+  {
+    fprintf(fo, ",\n");
+  }
+  else
+  {
+    fprintf(fo, "\n");
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to output a LSLICE macro to the verilog gate level file
+
+void outputlslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int foundnext, int *opennetid)
+{
+  char *function = "FUNC5";
+
+  char *signame;
 
   int needcomma = 0;
-  int foundnext = 0;
-
-  pBLOCKINFOITEM nextblock = block->next;
 
   //Need to asses the used pins here because it is used reentrant with different blocks that need to be evaluated
   int usedpins = getsliceusedpins(block);
+  
+  //There also is the FX select but does not seem to be used in the adder setup
+  //Also no idea if the flipflops of slice 1 can be separately used from the adder functionality
+
+  //If MC1_F0MUXLUT5_S is set LSFMUX0 = FUNC5 and LSFXMUX0 is set to FUNC5
+  //If MC1_FX0MUXLUT4G_S is set it depends on the RIPMODE if it is SUM or FUNC6
+
+  //For know only two usages of the LSLICE are considered, LUT5 and ADDER
+  if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
+  {
+    function = "SUM";
+  }
+  
+  //Output the header line of the macro
+  fprintf(fo, "  AL_PHY_LSLICE #\n  (\n");
+
+  //Fill in the parameters
+  fprintf(fo, "    .INIT_LUTF0(\"16'h%4.4X\"),\n", block->lutf0);
+  fprintf(fo, "    .INIT_LUTG0(\"16'h%4.4X\"),\n", block->lutg0);
+  fprintf(fo, "    .INIT_LUTF1(\"16'h%4.4X\"),\n", block->lutf1);
+  fprintf(fo, "    .INIT_LUTG1(\"16'h%4.4X\"),\n", block->lutg1);
+
+  //If one of the RIPMODE bits is set the mode becomes RIPPLE. There are other modes to consider but these are not used in the 1013D bit stream
+  //According to the database they are always set to the same value depending on MODE
+  outputparameter(fo, "MODE", "LOGIC", "RIPPLE", block->logicsettings, (LOGIC_RIPMODE0 | LOGIC_RIPMODE1), 1);
+  outputparameter(fo, "GSR", "ENABLE", "DISABLE", block->logicsettings, LOGIC_FF_GSR, 1);
+  
+  outputlogicmuxsetting(fo, block, "ce", "CEMUX", "CE", LOGIC_FF_CE, 1);
+  outputlogicmuxsetting(fo, block, "sr", "SRMUX", "SR", LOGIC_FF_SR, 1);
+  outputlogicmuxsetting(fo, block, "clk", "CLKMUX", "CLK", LOGIC_FF_CLK, 1);
+
+  outputparameter(fo, "DFFMODE", "FF", "LATCH", block->logicsettings, LOGIC_FF_LATCH, 1);
+  outputparameter(fo, "DEMUX0", "D", "E", block->logicsettings, LOGIC_DEMUX0, 1);
+  outputparameter(fo, "DEMUX1", "D", "E", block->logicsettings, LOGIC_DEMUX1, 1);
+  outputparameter(fo, "CMIMUX0", "C", "MI", block->logicsettings, LOGIC_CMIMUX0, 1);
+  outputparameter(fo, "CMIMUX1", "C", "MI", block->logicsettings, LOGIC_CMIMUX1, 1);
+  
+  fprintf(fo, "    .LSFMUX0(\"%s\"),\n", function);
+  fprintf(fo, "    .LSFMUX1(\"%s\"),\n", function);
+  fprintf(fo, "    .LSFXMUX0(\"%s\"),\n", function);
+  fprintf(fo, "    .LSFXMUX1(\"%s\"),\n", function);
+  
+  outputffinputselect(fo, "REG0_SD", block, usedpins, LOGIC_FF0_F, LOGIC_FF0_FX, PIN_Q0, 1);
+  outputffinputselect(fo, "REG1_SD", block, usedpins, LOGIC_FF1_F, LOGIC_FF1_FX, PIN_Q1, 1);
+  
+  outputparameter(fo, "REG0_REGSET", "SET", "RESET", block->logicsettings, LOGIC_FF0_SR, 1);
+  outputparameter(fo, "REG1_REGSET", "SET", "RESET", block->logicsettings, LOGIC_FF1_SR, 1);
+  outputparameter(fo, "SRMODE", "ASYNC", "SYNC", block->logicsettings, LOGIC_FF_SYNC, 1);
+  outputparameter(fo, "TESTMODE", "OFF", "SHIFT", block->logicsettings, LOGIC_TESTSH, 0);
+
+  //Finish the parameter section
+  fprintf(fo, "  )\n");
+
+  //Start the connections section
+  fprintf(fo, "  lslice_block_%d\n  (", block->blocknumber);
+
+  needcomma = outputconnection(fo, block, "clk", "clk", needcomma);
+  needcomma = outputconnection(fo, block, "ce", "ce", needcomma);
+  needcomma = outputconnection(fo, block, "sr", "sr", needcomma);
+  
+  needcomma = outputbusconnections(fo, block, "a", "a_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "b", "b_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "c", "c_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "d", "d_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "e", "e_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "mi", "mi_", 2, needcomma, opennetid, 0);
+
+  //When there is a carryin the .fci signal needs to be connected
+  if(carryin)
+  {
+    //Just assume a comma is needed here because for a carry chain there will be inputs
+    fprintf(fo, ",\n    .fci(%s)", carryin->carryoutname);
+    
+    //Add the name to the connection list for schematic block printing
+    block->connections[block->connectioncount].signalname = "fci";
+    block->connections[block->connectioncount].netname = carryin->carryoutname;
+    block->connections[block->connectioncount].type = SIGNAL_CARRY;
+
+    //Signal an extra connection to this block
+    block->connectioncount++;
+  }
+
+  needcomma = outputbusconnections(fo, block, "f", "f_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "fx", "fx_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "q", "q_", 2, needcomma, opennetid, 0);
+
+  //When there is a next block in the chain the .fco signal needs to be connected
+  if(foundnext)
+  {
+    //If the f outputs are also present output the comma and newline
+    if(needcomma)
+    {
+      fprintf(fo, ",\n");
+    }
+
+    snprintf(block->carryoutname, MAX_NAME_LENGTH, "sig_%d_carry", block->blocknumber);
+
+    fprintf(fo, "    .fco(%s)\n", block->carryoutname);
+    
+    //Add the name to the connection list for schematic block printing
+    block->connections[block->connectioncount].signalname = "fco";
+    block->connections[block->connectioncount].netname = block->carryoutname;
+    block->connections[block->connectioncount].type = SIGNAL_CARRY;
+
+    //Signal an extra connection to this block
+    block->connectioncount++;
+  }
+  else
+  {
+    //No .fco then a new line is needed to finish of the f, fx or q output line
+    fprintf(fo, "\n");
+  }
+
+  //Close of the macro
+  fprintf(fo, "  );\n\n");
+
+  //Signal the block has been processed so it will be skipped in the main loop
+  block->processed = 1;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to output all the LSLICE macros linked in a carry chain
+
+void outputlslicecarrychain(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int *opennetid)
+{
+  int foundnext = 0;
+
+  pBLOCKINFOITEM nextblock = block->next;
 
   while((foundnext == 0) && nextblock)
   {
@@ -5245,578 +5615,15 @@ void outputlslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, i
 
     nextblock = nextblock->next;
   }
-
-  //There also is the FX select but does not seem to be used in the adder setup
-  //Also no idea if the flipflops of slice 1 can be separately used from the adder functionality
-
-  //See if the REGSD0 property needs to be changed
-  //For slice 0 the FF0_F bit does not exist and is implied when the q output is used
-  if((block->logicsettings & LOGIC_FF0_F) | ((usedpins & PIN_Q0) && (block->sliceid == 0)))
-  {
-    reg0sd = "F";
-  }
-
-  //See if the REGSD1 property needs to be changed
-  //For slice 0 the FF1_F bit does not exist and is implied when the q output is used
-  if((block->logicsettings & LOGIC_FF1_F) | ((usedpins & PIN_Q1) && (block->sliceid == 0)))
-  {
-    reg1sd = "F";
-  }
-
-  //See if the REGSET0 property needs to be changed
-  if(block->logicsettings & LOGIC_FF0_SR)
-  {
-    reg0set = "RESET";
-  }
-
-  //See if the REGSET1 property needs to be changed
-  if(block->logicsettings & LOGIC_FF1_SR)
-  {
-    reg1set = "RESET";
-  }
-
-  //Check if the "ce" pin is actually used or connected to ground
-  if(usedpins & PIN_CE)
-  {
-    //Check if connected to the ground net
-    if(strcmp(getconnectionnet(block, "ce"), "ground") == 0)
-    {
-      //Ground it if so
-      cemux = "0";
-    }
-    else
-    {
-      ceused = 1;
-    }
-  }
-
-  //Check if the "sr" pin is actually used or connected to ground
-  if(usedpins & PIN_SR)
-  {
-    //Check if connected to the ground net
-    if(strcmp(getconnectionnet(block, "sr"), "ground") == 0)
-    {
-      //Ground it if so
-      srmux = "0";
-    }
-    else
-    {
-      //Otherwise it needs to be connected
-      srused = 1;
-    }
-  }
-
-  //See if the DFFMODE property needs to be changed
-  if(block->logicsettings & LOGIC_FF_LATCH)
-  {
-    dffmode = "LATCH";
-  }
-
-  //See if the SRMODE property needs to be changed
-  if(block->logicsettings & LOGIC_FF_SYNC)
-  {
-    srmode = "SYNC";
-  }
-
-  //See if the CLKMUX property needs to be changed
-  if(block->logicsettings & LOGIC_FF_CLK)
-  {
-    clkmux = "INV";
-  }
-
-  //See if the GSR property needs to be changed
-  if(block->logicsettings & LOGIC_FF_GSR)
-  {
-    gsrmode = "DISABLE";
-  }
-
-  //When the "ce" input is connected and the CEMUX mode bit is set the input is inverted
-  if((ceused) && (block->logicsettings & LOGIC_FF_CE))
-  {
-    cemux = "INV";
-  }
-  //When the "ce" input is not connected and the CEMUX mode bit is set it is "1"
-  else if((ceused == 0) && (block->logicsettings & LOGIC_FF_CE))
-  {
-    cemux = "1";
-  }
-
-  //When the "sr" input is connected and the SRMUX mode bit is set the input is inverted
-  if((srused) && (block->logicsettings & LOGIC_FF_SR))
-  {
-    srmux = "INV";
-  }
-  //When the "sr" input is not connected and the SRMUX mode bit is set it is "1"
-  else if((srused == 0) && (block->logicsettings & LOGIC_FF_SR))
-  {
-    srmux = "1";
-  }
-
-  //Have to check if DEMUX, CMIMUX, LSFMUX and LSFXMUX need to be controlled based on the given settings
-
-  //Output the header line of the macro
-  fprintf(fo, "  AL_PHY_LSLICE #\n  (\n");
-
-  //Fill in the parameters
-  fprintf(fo, "    .INIT_LUTF0(\"16'h%4.4X\"),\n", block->lutf0);
-  fprintf(fo, "    .INIT_LUTG0(\"16'h%4.4X\"),\n", block->lutg0);
-  fprintf(fo, "    .INIT_LUTF1(\"16'h%4.4X\"),\n", block->lutf1);
-  fprintf(fo, "    .INIT_LUTG1(\"16'h%4.4X\"),\n", block->lutg1);
-  fprintf(fo, "    .MODE(\"RIPPLE\"),\n");
-  fprintf(fo, "    .GSR(\"%s\"),\n", gsrmode);
-  fprintf(fo, "    .CEMUX(\"%s\"),\n", cemux);
-  fprintf(fo, "    .SRMUX(\"%s\"),\n", srmux);
-  fprintf(fo, "    .CLKMUX(\"%s\"),\n", clkmux);
-  fprintf(fo, "    .DFFMODE(\"%s\"),\n", dffmode);
-  fprintf(fo, "    .DEMUX0(\"E\"),\n");
-  fprintf(fo, "    .DEMUX1(\"E\"),\n");
-  fprintf(fo, "    .LSFMUX0(\"SUM\"),\n");
-  fprintf(fo, "    .LSFMUX1(\"SUM\"),\n");
-  fprintf(fo, "    .LSFXMUX0(\"SUM\"),\n");
-  fprintf(fo, "    .LSFXMUX1(\"SUM\"),\n");
-  fprintf(fo, "    .REG0_REGSET(\"%s\"),\n", reg0set);
-  fprintf(fo, "    .REG0_SD(\"%s\"),\n", reg0sd);
-  fprintf(fo, "    .REG1_REGSET(\"%s\"),\n", reg1set);
-  fprintf(fo, "    .REG1_SD(\"%s\"),\n", reg1sd);
-  fprintf(fo, "    .SRMODE(\"%s\"),\n", srmode);
-  fprintf(fo, "    .TESTMODE(\"OFF\")\n  )\n");
-
-  //Start the connections section
-  fprintf(fo, "  add_block_%d\n  (\n", block->blocknumber);
-
-  //Add the connected pins as needed
-  if(usedpins & PIN_CLK)
-  {
-    //Get the net name for the "clk" input and output it to the file
-    fprintf(fo, "    .clk(%s),\n", getconnectionnet(block, "clk"));
-  }
-
-  if(ceused)
-  {
-    //Get the net name for the "ce" input and output it to the file
-    fprintf(fo, "    .ce(%s),\n", getconnectionnet(block, "ce"));
-  }
-
-  if(srused)
-  {
-    //Get the net name for the "sr" input and output it to the file
-    fprintf(fo, "    .sr(%s),\n", getconnectionnet(block, "sr"));
-  }
-
-  //Need to output the connections as a bit pair, and when a signal is not connected use an open net for it.
-  //The top bit needs to come first
-  if(usedpins & PIN_A1)
-  {
-    signame = getconnectionnet(block, "a_1");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "    .a({1'b0,");
-    }
-    else
-    {
-      fprintf(fo, "    .a({%s,", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "    .a({open_n%d,", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //Finish it of with the lsb
-  if(usedpins & PIN_A0)
-  {
-    signame = getconnectionnet(block, "a_0");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "1'b0}),\n");
-    }
-    else
-    {
-      fprintf(fo, "%s}),\n", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "open_n%d}),\n", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //The top bit needs to come first
-  if(usedpins & PIN_B1)
-  {
-    signame = getconnectionnet(block, "b_1");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "    .b({1'b0,");
-    }
-    else
-    {
-      fprintf(fo, "    .b({%s,", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "    .b({open_n%d,", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //Finish it of with the lsb
-  if(usedpins & PIN_B0)
-  {
-    signame = getconnectionnet(block, "b_0");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "1'b0}),\n");
-    }
-    else
-    {
-      fprintf(fo, "%s}),\n", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "open_n%d}),\n", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //The top bit needs to come first
-  if(usedpins & PIN_C1)
-  {
-    signame = getconnectionnet(block, "c_1");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "    .c({1'b0,");
-    }
-    else
-    {
-      fprintf(fo, "    .c({%s,", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "    .c({open_n%d,", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //Finish it of with the lsb
-  if(usedpins & PIN_C0)
-  {
-    signame = getconnectionnet(block, "c_0");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "1'b0}),\n");
-    }
-    else
-    {
-      fprintf(fo, "%s}),\n", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "open_n%d}),\n", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //The top bit needs to come first
-  if(usedpins & PIN_D1)
-  {
-    signame = getconnectionnet(block, "d_1");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "    .d({1'b0,");
-    }
-    else
-    {
-      fprintf(fo, "    .d({%s,", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "    .d({open_n%d,", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //Finish it of with the lsb
-  if(usedpins & PIN_D0)
-  {
-    signame = getconnectionnet(block, "d_0");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "1'b0}),\n");
-    }
-    else
-    {
-      fprintf(fo, "%s}),\n", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "open_n%d}),\n", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //The top bit needs to come first
-  if(usedpins & PIN_E1)
-  {
-    signame = getconnectionnet(block, "e_1");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "    .e({1'b0,");
-    }
-    else
-    {
-      fprintf(fo, "    .e({%s,", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "    .e({open_n%d,", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //Finish it of with the lsb
-  if(usedpins & PIN_E0)
-  {
-    signame = getconnectionnet(block, "e_0");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "1'b0}),\n");
-    }
-    else
-    {
-      fprintf(fo, "%s}),\n", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "open_n%d}),\n", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //Only and the mi connection when used
-  if(usedpins & (PIN_MI0 | PIN_MI1))
-  {
-    //The top bit needs to come first
-    if(usedpins & PIN_MI1)
-    {
-      signame = getconnectionnet(block, "mi_1");
-
-      if(strcmp(signame, "ground") == 0)
-      {
-        fprintf(fo, "    .mi({1'b0,");
-      }
-      else
-      {
-        fprintf(fo, "    .mi({%s,", signame);
-      }
-    }
-    else
-    {
-      fprintf(fo, "    .mi({open_n%d,", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Finish it of with the lsb
-    if(usedpins & PIN_MI0)
-    {
-      signame = getconnectionnet(block, "mi_0");
-
-      if(strcmp(signame, "ground") == 0)
-      {
-        fprintf(fo, "1'b0}),\n");
-      }
-      else
-      {
-        fprintf(fo, "%s}),\n", signame);
-      }
-    }
-    else
-    {
-      fprintf(fo, "open_n%d}),\n", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-  }
-
-  //When there is a carryin the .fci signal needs to be connected
-  if(carryin)
-  {
-    fprintf(fo, "    .fci(%s),\n", carryin->carryoutname);
-  }
-
-  //Here it is assumed that both the f, fx and q signals can be uses alongside
-  if(usedpins & (PIN_F0 | PIN_F1))
-  {
-    //The top bit needs to come first
-    if(usedpins & PIN_F1)
-    {
-      fprintf(fo, "    .f({%s,", getconnectionnet(block, "f_1"));
-    }
-    else
-    {
-      fprintf(fo, "    .f({open_n%d,", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Finish it of with the lsb
-    if(usedpins & PIN_F0)
-    {
-      fprintf(fo, "%s})", getconnectionnet(block, "f_0"));
-    }
-    else
-    {
-      fprintf(fo, "open_n%d})", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Next signal needs a comma and new line before
-    needcomma = 1;
-  }
-
-  if(usedpins & (PIN_FX0 | PIN_FX1))
-  {
-    //If the f outputs are also present output the comma and newline
-    if(needcomma)
-    {
-      fprintf(fo, ",\n");
-    }
-
-    //The top bit needs to come first
-    if(usedpins & PIN_FX1)
-    {
-      fprintf(fo, "    .fx({%s,", getconnectionnet(block, "fx_1"));
-    }
-    else
-    {
-      fprintf(fo, "    .fx({open_n%d,", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Finish it of with the lsb
-    if(usedpins & PIN_FX0)
-    {
-      fprintf(fo, "%s})", getconnectionnet(block, "fx_0"));
-    }
-    else
-    {
-      fprintf(fo, "open_n%d})", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Next signal needs a comma and new line before
-    needcomma = 1;
-  }
-
-  //If either of the signals is connected add them to the macro
-  if(usedpins & (PIN_Q0 | PIN_Q1))
-  {
-    //If the f or fx outputs are also present output the comma and newline
-    if(needcomma)
-    {
-      fprintf(fo, ",\n");
-    }
-
-    //The top bit needs to come first
-    if(usedpins & PIN_Q1)
-    {
-      fprintf(fo, "    .q({%s,", getconnectionnet(block, "q_1"));
-    }
-    else
-    {
-      fprintf(fo, "    .q({open_n%d,", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Finish it of with the lsb
-    if(usedpins & PIN_Q0)
-    {
-      fprintf(fo, "%s})", getconnectionnet(block, "q_0"));
-    }
-    else
-    {
-      fprintf(fo, "open_n%d})", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Next signal needs a comma and new line before
-    needcomma = 1;
-  }
-
-  //When there is a next block in the chain the .fco signal needs to be connected
-  if(foundnext)
-  {
-    //If the f outputs are also present output the comma and newline
-    if(needcomma)
-    {
-      fprintf(fo, ",\n");
-    }
-
-    snprintf(block->carryoutname, MAX_NAME_LENGTH, "sig_block_%d_carry", block->blocknumber);
-
-    fprintf(fo, "    .fco(%s)\n", block->carryoutname);
-  }
-  else
-  {
-    //No .fco then a new line is needed to finish of the f, fx or q output line
-    fprintf(fo, "\n");
-  }
-
-  //Close of the macro
-  fprintf(fo, "  );\n\n");
-
-  //Signal the block has been processed so it will be skipped in the main loop
-  block->processed = 1;
+  
+  //Output the actual lslice macro based on the found carry option
+  outputlslicemacro(fo, block, carryin, foundnext, opennetid);
 
   //When there is a next block in the chain call this function again
   if(foundnext)
   {
-    outputlslicemacro(fo, nextblock, block, opennetid);
+    //Process the found block and keep running down the chain
+    outputlslicecarrychain(fo, nextblock, block, opennetid);
   }
 }
 
@@ -5824,37 +5631,50 @@ void outputlslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, i
 
 void processlslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid, int *opennetid)
 {
-  int inputcnt;
-
-  int usedpins = getsliceusedpins(block);
-
-  //For now the assumption is made that when one of the bits is set it is ok to just use the lslice macro
+  //For now the assumption is made that when one of the ripmode bits is set it is ok to assume a carry chain
   //In the 1013D bit stream it seems to be that both are always set when used as adder. Also the FX0MUXLUT4G and FX1MUXLUT4G bits seems to be set in this case
   if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
   {
-    //Create the lslice macro for this given block without carry input
-    outputlslicemacro(fo, block, 0, opennetid);
+    //Create the lslice macro for this given block without carry input and follow the chain
+    outputlslicecarrychain(fo, block, 0, opennetid);
   }
- else
+  else
   {
+#if USE_SLICE_NOT_LUT_SEQ
+    //Create the lslice macro for this given block without carry input or output
+    outputlslicemacro(fo, block, 0, 0, opennetid);
+#else
+    int usedpins = getsliceusedpins(block);
+    int pincount;
+
     //F0MUXLUT5 indicates both LUT's of a group being used together
     //Might need to modify this to have it an AND condition
     if(block->logicsettings & (LOGIC_LUTF0 | LOGIC_LUTG0 | LOGIC_F0MUXLUT5))
     {
-      block->lut0 = block->lutg0 << 16 | block->lutf0;
+      pincount = inputsusedcount[(usedpins & 0x1F)];
+      
+      if(pincount)
+      {
+        block->lut0 = block->lutg0 << 16 | block->lutf0;
 
-      //Need to determine the needed macro based on the number of input signals
-      //For the lslice the LUT has a, b, c, d and e as possible inputs so only these are counted
-      outputlutmacro(fo, block, 0, inputsusedcount[(usedpins & 0x1F)], block->lut0, usedpins, uid);
+        //Need to determine the needed macro based on the number of input signals
+        //For the lslice the LUT has a, b, c, d and e as possible inputs so only these are counted
+        outputlutmacro(fo, block, 0, pincount, block->lut0, usedpins, uid);
+      }
     }
 
     if(block->logicsettings & (LOGIC_LUTF1 | LOGIC_LUTG1 | LOGIC_F1MUXLUT5))
     {
-      block->lut1 = block->lutg1 << 16 | block->lutf1;
+      pincount = inputsusedcount[((usedpins >> 12) & 0x1F)];
+      
+      if(pincount)
+      {
+        block->lut1 = block->lutg1 << 16 | block->lutf1;
 
-      //Need to determine the needed macro based on the number of input signals
-      //For the lslice the LUT only has a, b, c, d and e as possible inputs so only these are counted
-      outputlutmacro(fo, block, 1, inputsusedcount[((usedpins >> 12) & 0x1F)], block->lut1, usedpins, uid);
+        //Need to determine the needed macro based on the number of input signals
+        //For the lslice the LUT only has a, b, c, d and e as possible inputs so only these are counted
+        outputlutmacro(fo, block, 1, pincount, block->lut1, usedpins, uid);
+      }
     }
 
     //Check if SEQ macro is needed for FF0
@@ -5872,38 +5692,148 @@ void processlslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid, int *openne
       //The used pins signal which input name to use
       outputseqmacro(fo, block, 1, usedpins);
     }
+#endif
   }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-//This function needs to recursively call the next as long as needed
-
-void outputmslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int *opennetid)
+void outputmslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int foundnext, int *opennetid)
 {
-  char *signame;
-  char *alutype = "ADD_CARRY";
-  char *reg0set = "SET";
-  char *reg1set = "SET";
-  char *reg0sd  = "MI";
-  char *reg1sd  = "MI";
-  char *dffmode = "FF";
-  char *srmode  = "ASYNC";
-  char *clkmux  = "CLK";
-  char *gsrmode = "ENABLE";
-  char *cemux   = "CE";
-  char *srmux   = "SR";
-
-  int ceused = 0;
-  int srused = 0;
-
   int needcomma = 0;
+
+  int usedpins = getsliceusedpins(block);
+  
+  //Output the header line of the macro
+  fprintf(fo, "  AL_PHY_MSLICE #\n  (\n");
+
+  fprintf(fo, "    .INIT_LUT0(\"16'h%4.4X\"),\n", block->lut0);
+  fprintf(fo, "    .INIT_LUT1(\"16'h%4.4X\"),\n", block->lut1);
+  
+  //The IDE shows that the first in the chain gets the ADD_CARRY type and the rest the ADD type
+  //Only used when RIPMODE is set
+  if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
+  {
+    if(carryin)
+    {
+      if(block->lut1 == 0x666A)
+      {
+        fprintf(fo, "    .ALUTYPE(\"ADD\"),\n");
+      }
+      else
+      {
+        fprintf(fo, "    .ALUTYPE(\"SUB\"),\n");
+      }
+    }
+    else 
+    {
+      if(block->lut1 == 0x666A)
+      {
+        fprintf(fo, "    .ALUTYPE(\"ADD_CARRY\"),\n");
+      }
+      else
+      {
+        fprintf(fo, "    .ALUTYPE(\"SUB_CARRY\"),\n");
+      }
+    }
+  }
+
+  //If one of the RIPMODE bits is set the mode becomes RIPPLE. There are other modes to consider but these are not used in the 1013D bit stream
+  //According to the database they are always set to the same value depending on MODE
+  outputparameter(fo, "MODE", "LOGIC", "RIPPLE", block->logicsettings, (LOGIC_RIPMODE0 | LOGIC_RIPMODE1), 1);
+  outputparameter(fo, "GSR", "ENABLE", "DISABLE", block->logicsettings, LOGIC_FF_GSR, 1);
+
+  outputlogicmuxsetting(fo, block, "ce", "CEMUX", "CE", LOGIC_FF_CE, 1);
+  outputlogicmuxsetting(fo, block, "sr", "SRMUX", "SR", LOGIC_FF_SR, 1);
+  outputlogicmuxsetting(fo, block, "clk", "CLKMUX", "CLK", LOGIC_FF_CLK, 1);
+
+  outputparameter(fo, "DFFMODE", "FF", "LATCH", block->logicsettings, LOGIC_FF_LATCH, 1);
+  outputparameter(fo, "MSFXMUX", "OFF", "ON", block->logicsettings, LOGIC_FXMUXON, 1);
+  
+  outputffinputselect(fo, "REG0_SD", block, usedpins, LOGIC_FF0_F, LOGIC_FF0_FX, PIN_Q0, 1);
+  outputffinputselect(fo, "REG1_SD", block, usedpins, LOGIC_FF1_F, LOGIC_FF1_FX, PIN_Q1, 1);
+  
+  outputparameter(fo, "REG0_REGSET", "SET", "RESET", block->logicsettings, LOGIC_FF0_SR, 1);
+  outputparameter(fo, "REG1_REGSET", "SET", "RESET", block->logicsettings, LOGIC_FF1_SR, 1);
+  outputparameter(fo, "SRMODE", "ASYNC", "SYNC", block->logicsettings, LOGIC_FF_SYNC, 1);
+  outputparameter(fo, "TESTMODE", "OFF", "SHIFT", block->logicsettings, LOGIC_TESTSH, 0);
+
+  //Finish the parameter section
+  fprintf(fo, "  )\n");
+  
+  //Start the connections section
+  fprintf(fo, "  mslice_block_%d\n  (", block->blocknumber);
+
+  needcomma = outputconnection(fo, block, "clk", "clk", needcomma);
+  needcomma = outputconnection(fo, block, "ce", "ce", needcomma);
+  needcomma = outputconnection(fo, block, "sr", "sr", needcomma);
+  
+  needcomma = outputbusconnections(fo, block, "a", "a_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "b", "b_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "c", "c_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "d", "d_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "mi", "mi_", 2, needcomma, opennetid, 0);
+
+  //When there is a carryin the .fci signal needs to be connected
+  if(carryin)
+  {
+    fprintf(fo, ",\n    .fci(%s)", carryin->carryoutname);
+    
+    //Add the name to the connection list for schematic block printing
+    block->connections[block->connectioncount].signalname = "fci";
+    block->connections[block->connectioncount].netname = carryin->carryoutname;
+    block->connections[block->connectioncount].type = SIGNAL_CARRY;
+
+    //Signal an extra connection to this block
+    block->connectioncount++;
+  }
+
+  needcomma = outputbusconnections(fo, block, "f", "f_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "fx", "fx_", 2, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "q", "q_", 2, needcomma, opennetid, 0);
+
+  //When there is a next block in the chain the .fco signal needs to be connected
+  if(foundnext)
+  {
+    //If the f outputs are also present output the comma and newline
+    if(needcomma)
+    {
+      fprintf(fo, ",\n");
+    }
+
+    snprintf(block->carryoutname, MAX_NAME_LENGTH, "block_%d_carry", block->blocknumber);
+
+    fprintf(fo, "    .fco(%s)\n", block->carryoutname);
+    
+    //Add the name to the connection list for schematic block printing
+    block->connections[block->connectioncount].signalname = "fco";
+    block->connections[block->connectioncount].netname = block->carryoutname;
+    block->connections[block->connectioncount].type = SIGNAL_CARRY;
+
+    //Signal an extra connection to this block
+    block->connectioncount++;
+  }
+  else
+  {
+    //No .fco then a new line is needed to finish of the f or q output line
+    fprintf(fo, "\n");
+  }
+
+  //Close of the macro
+  fprintf(fo, "  );\n\n");
+
+  //Signal the block has been processed so it will be skipped in the main loop
+  block->processed = 1;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to output all the MSLICE macros linked in a carry chain
+
+void outputmslicecarrychain(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int *opennetid)
+{
   int foundnext = 0;
 
   pBLOCKINFOITEM nextblock = block->next;
-
-  //Need to asses the used pins here because it is used reentrant with different blocks that need to be evaluated
-  int usedpins = getsliceusedpins(block);
 
   while((foundnext == 0) && nextblock)
   {
@@ -5928,361 +5858,15 @@ void outputmslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, i
 
     nextblock = nextblock->next;
   }
-
-  //The IDE shows that the first in the chain gets the ADD_CARRY type and the rest the ADD type
-  if(carryin)
-  {
-    alutype = "ADD";
-  }
-
-  //There also is the FX select but does not seem to be used in the adder setup
-  //Also no idea if the flipflops of slice 1 can be separately used from the adder functionality
-
-  //See if the REGSD0 property needs to be changed
-  //For slice 0 the FF0_F bit does not exist and is implied when the q output is used
-  if((block->logicsettings & LOGIC_FF0_F) | ((usedpins & PIN_Q0) && (block->sliceid == 0)))
-  {
-    reg0sd = "F";
-  }
-
-  //See if the REGSD1 property needs to be changed
-  //For slice 0 the FF1_F bit does not exist and is implied when the q output is used
-  if((block->logicsettings & LOGIC_FF1_F) | ((usedpins & PIN_Q1) && (block->sliceid == 0)))
-  {
-    reg1sd = "F";
-  }
-
-  //See if the REGSET0 property needs to be changed
-  if(block->logicsettings & LOGIC_FF0_SR)
-  {
-    reg0set = "RESET";
-  }
-
-  //See if the REGSET1 property needs to be changed
-  if(block->logicsettings & LOGIC_FF1_SR)
-  {
-    reg1set = "RESET";
-  }
-
-  //Check if the "ce" pin is actually used or connected to ground
-  if(usedpins & PIN_CE)
-  {
-    //Check if connected to the ground net
-    if(strcmp(getconnectionnet(block, "ce"), "ground") == 0)
-    {
-      //Ground it if so
-      cemux = "0";
-    }
-    else
-    {
-      ceused = 1;
-    }
-  }
-
-  //Check if the "sr" pin is actually used or connected to ground
-  if(usedpins & PIN_SR)
-  {
-    //Check if connected to the ground net
-    if(strcmp(getconnectionnet(block, "sr"), "ground") == 0)
-    {
-      //Ground it if so
-      srmux = "0";
-    }
-    else
-    {
-      //Otherwise it needs to be connected
-      srused = 1;
-    }
-  }
-
-  //See if the DFFMODE property needs to be changed
-  if(block->logicsettings & LOGIC_FF_LATCH)
-  {
-    dffmode = "LATCH";
-  }
-
-  //See if the SRMODE property needs to be changed
-  if(block->logicsettings & LOGIC_FF_SYNC)
-  {
-    srmode = "SYNC";
-  }
-
-  //See if the CLKMUX property needs to be changed
-  if(block->logicsettings & LOGIC_FF_CLK)
-  {
-    clkmux = "INV";
-  }
-
-  //See if the GSR property needs to be changed
-  if(block->logicsettings & LOGIC_FF_GSR)
-  {
-    gsrmode = "DISABLE";
-  }
-
-  //When the "ce" input is connected and the CEMUX mode bit is set the input is inverted
-  if((ceused) && (block->logicsettings & LOGIC_FF_CE))
-  {
-    cemux = "INV";
-  }
-  //When the "ce" input is not connected and the CEMUX mode bit is set it is "1"
-  else if((ceused == 0) && (block->logicsettings & LOGIC_FF_CE))
-  {
-    cemux = "1";
-  }
-
-  //When the "sr" input is connected and the SRMUX mode bit is set the input is inverted
-  if((srused) && (block->logicsettings & LOGIC_FF_SR))
-  {
-    srmux = "INV";
-  }
-  //When the "sr" input is not connected and the SRMUX mode bit is set it is "1"
-  else if((srused == 0) && (block->logicsettings & LOGIC_FF_SR))
-  {
-    srmux = "1";
-  }
-
-  //Output the header line of the macro
-  fprintf(fo, "  AL_PHY_MSLICE #\n  (\n");
-
-  //Fill in the parameters
-  fprintf(fo, "    .ALUTYPE(\"%s\"),\n", alutype);
-  fprintf(fo, "    .CEMUX(\"%s\"),\n", cemux);
-  fprintf(fo, "    .DFFMODE(\"%s\"),\n", dffmode);
-  fprintf(fo, "    .GSR(\"%s\"),\n", gsrmode);
-  fprintf(fo, "    .INIT_LUT0(\"16'h%4.4X\"),\n", block->lut0);  //Might need bit instead of hex
-  fprintf(fo, "    .INIT_LUT1(\"16'h%4.4X\"),\n", block->lut1);
-  fprintf(fo, "    .MODE(\"RIPPLE\"),\n");
-  fprintf(fo, "    .MSFXMUX(\"OFF\"),\n");
-  fprintf(fo, "    .REG0_REGSET(\"%s\"),\n", reg0set);
-  fprintf(fo, "    .REG0_SD(\"%s\"),\n", reg0sd);
-  fprintf(fo, "    .REG1_REGSET(\"%s\"),\n", reg1set);
-  fprintf(fo, "    .REG1_SD(\"%s\"),\n", reg1sd);
-  fprintf(fo, "    .SRMODE(\"%s\"),\n", srmode);
-  fprintf(fo, "    .SRMUX(\"%s\"),\n", srmux);
-  fprintf(fo, "    .CLKMUX(\"%s\"),\n", clkmux);
-  fprintf(fo, "    .TESTMODE(\"OFF\")\n  )\n");
-
-  //Start the connections section
-  fprintf(fo, "  add_block_%d\n  (\n", block->blocknumber);
-
-  //Add the connected pins as needed
-  if(usedpins & PIN_CLK)
-  {
-    //Get the net name for the "clk" input and output it to the file
-    fprintf(fo, "    .clk(%s),\n", getconnectionnet(block, "clk"));
-  }
-
-  if(ceused)
-  {
-    //Get the net name for the "ce" input and output it to the file
-    fprintf(fo, "    .ce(%s),\n", getconnectionnet(block, "ce"));
-  }
-
-  if(srused)
-  {
-    //Get the net name for the "sr" input and output it to the file
-    fprintf(fo, "    .sr(%s),\n", getconnectionnet(block, "sr"));
-  }
-
-  //NEED to check input pins on ground connection and insert 1'b0 in that case
-
-
-  //Need to output the connections as a bit pair, and when a signal is not connected use an open net for it.
-  //The top bit needs to come first
-  if(usedpins & PIN_A1)
-  {
-    signame = getconnectionnet(block, "a_1");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "    .a({1'b0,");
-    }
-    else
-    {
-      fprintf(fo, "    .a({%s,", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "    .a({open_n%d,", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //Finish it of with the lsb
-  if(usedpins & PIN_A0)
-  {
-    signame = getconnectionnet(block, "a_0");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "1'b0}),\n");
-    }
-    else
-    {
-      fprintf(fo, "%s}),\n", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "open_n%d}),\n", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //The top bit needs to come first
-  if(usedpins & PIN_B1)
-  {
-    signame = getconnectionnet(block, "b_1");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "    .b({1'b0,");
-    }
-    else
-    {
-      fprintf(fo, "    .b({%s,", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "    .b({open_n%d,", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //Finish it of with the lsb
-  if(usedpins & PIN_B0)
-  {
-    signame = getconnectionnet(block, "b_0");
-
-    if(strcmp(signame, "ground") == 0)
-    {
-      fprintf(fo, "1'b0}),\n");
-    }
-    else
-    {
-      fprintf(fo, "%s}),\n", signame);
-    }
-  }
-  else
-  {
-    fprintf(fo, "open_n%d}),\n", *opennetid);
-
-    //Used an open net so bump the counter
-    *opennetid = *opennetid + 1;
-  }
-
-  //When there is a carryin the .fci signal needs to be connected
-  if(carryin)
-  {
-    fprintf(fo, "    .fci(%s),\n", carryin->carryoutname);
-  }
-
-  //Here it is assumed that both the f and q signals can be uses alongside
-  if(usedpins & (PIN_F0 | PIN_F1))
-  {
-    //The top bit needs to come first
-    if(usedpins & PIN_F1)
-    {
-      fprintf(fo, "    .f({%s,", getconnectionnet(block, "f_1"));
-    }
-    else
-    {
-      fprintf(fo, "    .f({open_n%d,", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Finish it of with the lsb
-    if(usedpins & PIN_F0)
-    {
-      fprintf(fo, "%s})", getconnectionnet(block, "f_0"));
-    }
-    else
-    {
-      fprintf(fo, "open_n%d})", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Next signal needs a comma and new line before
-    needcomma = 1;
-  }
-
-  //If either of the signals is connected add them to the macro
-  if(usedpins & (PIN_Q0 | PIN_Q1))
-  {
-    //If the f outputs are also present output the comma and newline
-    if(needcomma)
-    {
-      fprintf(fo, ",\n");
-    }
-
-    //The top bit needs to come first
-    if(usedpins & PIN_Q1)
-    {
-      fprintf(fo, "    .q({%s,", getconnectionnet(block, "q_1"));
-    }
-    else
-    {
-      fprintf(fo, "    .q({open_n%d,", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Finish it of with the lsb
-    if(usedpins & PIN_Q0)
-    {
-      fprintf(fo, "%s})", getconnectionnet(block, "q_0"));
-    }
-    else
-    {
-      fprintf(fo, "open_n%d})", *opennetid);
-
-      //Used an open net so bump the counter
-      *opennetid = *opennetid + 1;
-    }
-
-    //Next signal needs a comma and new line before
-    needcomma = 1;
-  }
-
-  //When there is a next block in the chain the .fco signal needs to be connected
-  if(foundnext)
-  {
-    //If the f outputs are also present output the comma and newline
-    if(needcomma)
-    {
-      fprintf(fo, ",\n");
-    }
-
-    snprintf(block->carryoutname, MAX_NAME_LENGTH, "sig_block_%d_carry", block->blocknumber);
-
-    fprintf(fo, "    .fco(%s)\n", block->carryoutname);
-  }
-  else
-  {
-    //No .fco then a new line is needed to finish of the f or q output line
-    fprintf(fo, "\n");
-  }
-
-  //Close of the macro
-  fprintf(fo, "  );\n\n");
-
-  //Signal the block has been processed so it will be skipped in the main loop
-  block->processed = 1;
+  
+  //Output the actual lslice macro based on the found carry option
+  outputmslicemacro(fo, block, carryin, foundnext, opennetid);
 
   //When there is a next block in the chain call this function again
   if(foundnext)
   {
-    outputmslicemacro(fo, nextblock, block, opennetid);
+    //Process the found block and keep running down the chain
+    outputmslicecarrychain(fo, nextblock, block, opennetid);
   }
 }
 
@@ -6290,38 +5874,27 @@ void outputmslicemacro(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, i
 
 void processmslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid, int *opennetid)
 {
-  int inputcnt;
-
-  int usedpins = getsliceusedpins(block);
-
-  //Need to look into RIPMODE and how to process that when set. Each LUT has its own setting for it!!
-  //But it looks like it is always enabled on both the LUT's. The question is if a macro needs to be created if one of the LUT's is not connected
-  //And which macro is suited
-  //When both are set just use the MSLICE macro??
-  //How to deal with not connected signals??
-  //Also the fcim and fcom signals need to be taken care of. This needs checking the tiles in the same column on having the RIPMODE also set
-
-  //Can it be done with the AL_MAP_ADDER macro. If so how to make the connections, and what if the flip flop is used???
-  // Is it possible to just use the SEQ macro in addition to the ADDER macro???
-
-  //For now the assumption is made that when one of the bits is set it is ok to just use the mslice macro
+  //For now the assumption is made that when one of the ripmode bits is set it is ok to assume a carry chain
+  //In the 1013D bit stream it seems to be that both are always set when used as adder. Also the FX0MUXLUT4G and FX1MUXLUT4G bits seems to be set in this case
   if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
   {
-    //A bit of a problem is that there can be a carry chain which needs to be followed.
-    //This means that it is also necessary to signal a block as processed
-    //The block list is in x,y ascending order, so the first block found with RIPMODE set is the start of an adder with a carry chain
-
-    //Create the mslice macro for this given block without carry input
-    outputmslicemacro(fo, block, 0, opennetid);
+    //Create the lslice macro for this given block without carry input and follow the chain
+    outputmslicecarrychain(fo, block, 0, opennetid);
   }
   else
   {
+#if USE_SLICE_NOT_LUT_SEQ
+    //Create the lslice macro for this given block without carry input or output
+    outputmslicemacro(fo, block, 0, 0, opennetid);
+#else    
     //When MC1_FXMUXON bit is set for the slice the LOGIC_FXMUXON bit is set in block->logicsettings
     //The two LUT's are then combined to a LUT5 setup, but the inputs to the two LUT's can be connected
     //differently. By outputting two LUT4 macros this is dealt with, but then the two outputs need to
     //be merged in a LUT3 macro with the two outputs connected to A and B inputs and mi_0 to the C input
     //The output of the LUT3 macro needs either a generated name or be connected to the fx_0 output.
     //When the first flipflop is used it should be connected to the proper signal.
+    
+    int usedpins = getsliceusedpins(block);
 
     //When FXMUXON is set one of the LUT's might have zero bits set, so need to force generation of the LUT macros
     if(block->logicsettings & (LOGIC_LUT0 | LOGIC_FXMUXON))
@@ -6377,7 +5950,7 @@ void processmslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid, int *openne
         //Make a name to identify the signal between the LUT and the FF and save it in the space for the given lut
         //It is ok to overwrite the generated name here, since it is not needed elsewhere
         //Also sets it for the use in the SEQ macro if needed
-        snprintf(block->lut0output, MAX_NAME_LENGTH, "sig_block_%d_ff0_in", block->blocknumber);
+        snprintf(block->lut0output, MAX_NAME_LENGTH, "sig_%d_ff0_in", block->blocknumber);
 
         //Output the given name to the file
         fprintf(fo, "    .o(%s)\n", block->lut0output);
@@ -6402,6 +5975,7 @@ void processmslicesettings(FILE *fo, pBLOCKINFOITEM block, int *uid, int *openne
       //The used pins signal which input name to use
       outputseqmacro(fo, block, 1, usedpins);
     }
+#endif  
   }
 }
 
@@ -6457,130 +6031,6 @@ void outputembmuxsetting(FILE *fo, pBLOCKINFOITEM block, char *signal, char *par
   {
     fprintf(fo, "\n");
   }
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------
-//Function to scan the signals of a bus on being connected
-//It makes up the name of the bus members based on a base and an index
-
-int scanembbusconnected(pBLOCKINFOITEM block, char *signalbase, int width)
-{
-  char signame[64];
-  int sigidx;
-  int connected = 0;
-
-  //Scan all the signals in the given bus
-  for(sigidx=0;sigidx<width;sigidx++)
-  {
-    //Print the name of the current bus member
-    snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
-
-    //Check if there is a connection made to it
-    if(getconnectionnet(block, signame))
-    {
-      //If so signal this and quit the loop
-      connected = 1;
-      break;
-    }
-  }
-
-  return(connected);
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------
-//Function to output the signals of a bus
-//It makes up the name of the bus members based on a base and an index
-
-void outputembbusconnections(FILE *fo, pBLOCKINFOITEM block, char *busname, char *signalbase, int width, int printcomma, int *opennetid)
-{
-  char *connection;
-  char  signame[64];
-  int   sigidx;
-
-  //Check if a comma is needed to close of the previous item
-  if(printcomma)
-  {
-    fprintf(fo, ",\n");
-  }
-  else
-  {
-    fprintf(fo, "\n");
-  }
-
-  //Start the line with the bus name and the open a bit collection marker
-  fprintf(fo, "    .%s({", busname);
-
-  //Process all the signals in the given bus from high to low
-  for(sigidx=width-1;sigidx>=0;sigidx--)
-  {
-    //Print the name of the current bus member
-    snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
-
-    //Check if there is a connection made to it
-    if(connection = getconnectionnet(block, signame))
-    {
-      if(strcmp(connection, "ground") == 0)
-      {
-        //Output it to the file
-        fprintf(fo, "1'b0");
-      }
-      else
-      {
-        //Output it to the file
-        fprintf(fo, "%s", connection);
-      }
-    }
-    else
-    {
-      //Not connected should be marked with an open signal
-      fprintf(fo, "open_n%d", *opennetid);
-
-      //Bump the open net counter to the next one
-      *opennetid = *opennetid + 1;
-    }
-
-    if(sigidx)
-    {
-      //No comma on the last item
-      fprintf(fo, ",");
-    }
-  }
-
-  //Close of the bit collection and the statement
-  fprintf(fo, "})");
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------
-
-int outputembconnection(FILE *fo, pBLOCKINFOITEM block, char *name, char *signalname, int printcomma)
-{
-  char *connection;
-
-  //Get the possible connection for this signal
-  if(connection = getconnectionnet(block, signalname))
-  {
-    //Might need to change this to convert ground to 1'b0
-
-    //Check if it is not connected to ground
-    if(strcmp(connection, "ground"))
-    {
-      //Check if a comma is needed to close of the previous item
-      if(printcomma)
-      {
-        fprintf(fo, ",\n");
-      }
-      else
-      {
-        fprintf(fo, "\n");
-      }
-
-      fprintf(fo, "    .%s(%s)", name, connection);
-
-      printcomma = 1;
-    }
-  }
-
-  return(printcomma);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -6716,8 +6166,8 @@ void processembsettings(FILE *fo, pBLOCKINFOITEM block, int *opennetid)
   outputembmuxsetting(fo, block, "ceb", "CEBMUX", EMB_CEBMUX, 1);
   outputembmuxsetting(fo, block, "oea", "OCEAMUX", EMB_OCEAMUX, 1);
   outputembmuxsetting(fo, block, "oeb", "OCEBMUX", EMB_OCEBMUX, 1);
-  outputembmuxsetting(fo, block, "rsta", "OCEAMUX", EMB_RSTAMUX, 1);
-  outputembmuxsetting(fo, block, "rstb", "OCEBMUX", EMB_RSTBMUX, 1);
+  outputembmuxsetting(fo, block, "rsta", "RSTAMUX", EMB_RSTAMUX, 1);
+  outputembmuxsetting(fo, block, "rstb", "RSTBMUX", EMB_RSTBMUX, 1);
   outputembmuxsetting(fo, block, "clka", "CLKAMUX", EMB_CLKAMUX, 1);
   outputembmuxsetting(fo, block, "clkb", "CLKBMUX", EMB_CLKBMUX, 1);
   outputembmuxsetting(fo, block, "wea", "WEAMUX", EMB_WEAMUX, 1);
@@ -6735,97 +6185,31 @@ void processembsettings(FILE *fo, pBLOCKINFOITEM block, int *opennetid)
   //Start the connections section (Next line is outputted in next output statement)
   fprintf(fo, "  emb_block_%d\n  (", block->blocknumber);
 
-  //Check if the a channel input bus has connections
-  if(scanembbusconnected(block, "dia_", 9))
-  {
-    //If so output the connection list for it
-    outputembbusconnections(fo, block, "dia", "dia_", 9, 0, opennetid);
+  //Check the a channel busses if they need to be connected
+  needcomma = outputbusconnections(fo, block, "dia", "dia_", 9, 0, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "doa", "doa_", 9, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "addra", "addra_", 13, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "csa", "csa_", 3, needcomma, opennetid, 0);
 
-    //Signal a comma is needed before the next line
-    needcomma = 1;
-  }
+  //Check the a channel enable and clock signals
+  needcomma = outputconnection(fo, block, "cea", "cea", needcomma);
+  needcomma = outputconnection(fo, block, "ocea", "oea", needcomma);
+  needcomma = outputconnection(fo, block, "wea", "wea", needcomma);
+  needcomma = outputconnection(fo, block, "rsta", "rsta", needcomma);
+  needcomma = outputconnection(fo, block, "clka", "clka", needcomma);
 
-  //Check if the a channel output bus has connections
-  if(scanembbusconnected(block, "doa_", 9))
-  {
-    //If so output the connection list for it
-    outputembbusconnections(fo, block, "doa", "doa_", 9, needcomma, opennetid);
+  //Check the b channel busses if they need to be connected
+  needcomma = outputbusconnections(fo, block, "dib", "dib_", 9, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "dob", "dob_", 9, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "addrb", "addrb_", 13, needcomma, opennetid, 0);
+  needcomma = outputbusconnections(fo, block, "csb", "csb_", 3, needcomma, opennetid, 0);
 
-    //Signal a comma is needed before the next line
-    needcomma = 1;
-  }
-
-  //Check if the a channel address bus has connections
-  if(scanembbusconnected(block, "addra_", 13))
-  {
-    //If so output the connection list for it
-    outputembbusconnections(fo, block, "addra", "addra_", 13, needcomma, opennetid);
-
-    //Signal a comma is needed before the next line
-    needcomma = 1;
-  }
-
-  //Check if the a channel chip enable bus has connections
-  if(scanembbusconnected(block, "csa_", 3))
-  {
-    //If so output the connection list for it
-    outputembbusconnections(fo, block, "csa", "csa_", 3, needcomma, opennetid);
-
-    //Signal a comma is needed before the next line
-    needcomma = 1;
-  }
-
-  needcomma = outputembconnection(fo, block, "cea", "cea", needcomma);
-  needcomma = outputembconnection(fo, block, "ocea", "oea", needcomma);
-  needcomma = outputembconnection(fo, block, "wea", "wea", needcomma);
-  needcomma = outputembconnection(fo, block, "rsta", "rsta", needcomma);
-  needcomma = outputembconnection(fo, block, "clka", "clka", needcomma);
-
-  //Check if the b channel input bus has connections
-  if(scanembbusconnected(block, "dib_", 9))
-  {
-    //If so output the connection list for it
-    outputembbusconnections(fo, block, "dib", "dib_", 9, needcomma, opennetid);
-
-    //Signal a comma is needed before the next line
-    needcomma = 1;
-  }
-
-  //Check if the b channel output bus has connections
-  if(scanembbusconnected(block, "dob_", 9))
-  {
-    //If so output the connection list for it
-    outputembbusconnections(fo, block, "dob", "dob_", 9, needcomma, opennetid);
-
-    //Signal a comma is needed before the next line
-    needcomma = 1;
-  }
-
-  //Check if the b channel address bus has connections
-  if(scanembbusconnected(block, "addrb_", 13))
-  {
-    //If so output the connection list for it
-    outputembbusconnections(fo, block, "addrb", "addrb_", 13, needcomma, opennetid);
-
-    //Signal a comma is needed before the next line
-    needcomma = 1;
-  }
-
-  //Check if the a channel chip enable bus has connections
-  if(scanembbusconnected(block, "csb_", 3))
-  {
-    //If so output the connection list for it
-    outputembbusconnections(fo, block, "csb", "csb_", 3, needcomma, opennetid);
-
-    //Signal a comma is needed before the next line
-    needcomma = 1;
-  }
-
-  needcomma = outputembconnection(fo, block, "ceb", "ceb", needcomma);
-  needcomma = outputembconnection(fo, block, "oceb", "oeb", needcomma);
-  needcomma = outputembconnection(fo, block, "web", "web", needcomma);
-  needcomma = outputembconnection(fo, block, "rstb", "rstb", needcomma);
-  needcomma = outputembconnection(fo, block, "clkb", "clkb", needcomma);
+  //Check the b channel enable and clock signals
+  needcomma = outputconnection(fo, block, "ceb", "ceb", needcomma);
+  needcomma = outputconnection(fo, block, "oceb", "oeb", needcomma);
+  needcomma = outputconnection(fo, block, "web", "web", needcomma);
+  needcomma = outputconnection(fo, block, "rstb", "rstb", needcomma);
+  needcomma = outputconnection(fo, block, "clkb", "clkb", needcomma);
 
   //Finish of the connection section
   fprintf(fo, "\n  );\n\n");
@@ -6933,12 +6317,21 @@ void creategatelevelverilog()
       printlist = printlist->next;
     }
 
+#if USE_SHORT_NET_NAMES
+    //Output the clock assigns. These are manually determined and just outputted
+    fprintf(fverilog, "  assign gclk_2 = net_18;\n");
+    fprintf(fverilog, "  assign gclk_3 = net_730;\n");
+    fprintf(fverilog, "  assign gclk_4 = net_504;\n");
+    fprintf(fverilog, "  assign gclk_5 = net_1526;\n");
+    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
+#else    
     //Output the clock assigns. These are manually determined and just outputted
     fprintf(fverilog, "  assign gclk_2 = x6y18_mslice1_f_0_net_18;\n");
     fprintf(fverilog, "  assign gclk_3 = x14y22_lslice3_q_0_net_730;\n");
     fprintf(fverilog, "  assign gclk_4 = x13y9_lslice2_q_0_net_504;\n");
     fprintf(fverilog, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
     fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
+#endif
 
     //Extra line between pad assignments and the logic
     fprintf(fverilog, "\n");
@@ -7031,6 +6424,1987 @@ void creategatelevelverilog()
   if(fconstraint)
   {
     fclose(fconstraint);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//
+// Higher level verilog generation part
+//
+//----------------------------------------------------------------------------------------------------------------------------------
+
+char *verilogequationlookup[16] =
+{
+  0,
+  "~(%s + %s)",                             //(NOR)
+  "~(%s + ~%s)",
+  "~(%s + ~%s) + ~(%s + %s)",
+  "~(~%s + %s)",
+  "~(~%s + %s) + ~(%s + %s)",
+  "%s ^ %s",                                //(XOR)
+  "~(%s * %s)",                             //(NAND)
+  "%s * %s",                                //(AND)
+  "~(%s ^ %s)",                             //(NOT_XOR)
+  "(%s * %s) + ~(%s + ~%s)",
+  "(%s * %s) + ~(%s + ~%s) + ~(%s + %s)",
+  "(%s * %s) + ~(~%s + %s)",
+  "(%s * %s) + ~(~%s + %s) + ~(%s + %s)",
+  "%s + %s",                                //(OR)
+  0
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+//Need a function to distill the bits needed to get a 2 input equation matching the given LUT
+//The input needs the two lowest signals denominations plus the top level index and the lookup table in question
+//This can work up to LUT4 and only returns the equation for the selected part
+
+//A slice can use for instance the c and d inputs and not the a and b inputs for a LUT2
+//In this case aidx is 4 and bidx is 8 and cdidx is 0
+//It will then use the lut bits from position 0, 4, 8 and 12 to make up the index into the equation lookup table.
+
+//use a pointer pointer for the string and a pointer for the maxlen to shift the pointer to the end and decrease the available length
+//based on the addor being set add a or sign first
+
+int getlut2verilog(char **equation, int *maxlen, char *andpart, int aidx, char *neta, int bidx, char *netb, int cidx, int lutdata, int addor, int finish)
+{
+  int tableidx = 0;
+  int lidx = 0;
+  int oidx;
+  int length;
+  
+  char part[128];
+  
+
+  for(oidx=0;oidx<4;oidx++)
+  {
+    //Determine the index into the lookup table based on the given input indexes
+    switch(oidx)
+    {
+      case 0:
+        //The first index is based on the c input index
+        lidx = cidx;
+        break;
+
+      case 1:
+        //The second index is based on the a and c input indexes
+        lidx = aidx + cidx;
+        break;
+
+      case 2:
+        //The third index is based on the b and c input indexes
+        lidx = bidx + cidx;
+        break;
+
+      case 3:
+        //The fourth index is based on the a, b and c input indexes
+        lidx = aidx + bidx + cidx;
+        break;
+    }
+
+    //Fill in the current table index bit based on the needed bit from the given lookup table
+    tableidx |= ((lutdata >> lidx) & 1) << oidx;
+  }
+
+  //Check if a part needs to be added
+  if(tableidx > 0)
+  {
+    //Check if previously a part of the equation has been printed
+    if(addor)
+    {
+      //If so add the "or" statement to the line
+      length = snprintf(*equation, *maxlen, " + ");
+      
+      //Adjust the pointer and length
+      *equation = *equation + length;
+      *maxlen = *maxlen - length;
+    }
+
+    //There will be something added in the next bit so signal this to the caller
+    addor = 1;
+
+    //Check if an actual equation is found
+    if(tableidx == 15)
+    {
+      //All the selections yielded a one so the term is void. Only the and part needs to be added if given
+      if(andpart)
+      {
+        length = snprintf(*equation, *maxlen, "(%s)", andpart);
+      }
+      else
+      {
+        //No and part given then it is a logical 1
+        length = snprintf(*equation, *maxlen, "1'b1");
+      }
+    }
+    else
+    {
+      //Valid equation is found and needs to be added together with the and part if given
+      //Need to add enough a b pairs for the largest equation  
+      snprintf(part, sizeof(part), verilogequationlookup[tableidx], neta, netb, neta, netb, neta, netb);
+      
+      if(andpart)
+      {
+        //And part is given so and both parts of the equation
+        length = snprintf(*equation, *maxlen, "(%s * (%s))", andpart, part);
+      }
+      else
+      {
+        //No and part then just add the found equation
+        length = snprintf(*equation, *maxlen, "(%s)", part);
+      }
+    }
+
+    //Adjust the pointer and length
+    *equation = *equation + length;
+    *maxlen = *maxlen - length;
+  }
+  
+  //Check if the line needs to be terminated
+  if(finish && addor)
+  {
+    length = snprintf(*equation, *maxlen, ";\n");
+
+    //Adjust the pointer and length
+    *equation = *equation + length;
+    *maxlen = *maxlen - length;
+  }
+
+  //Signal back to the user if next time the "+" symbol needs to be used or not
+  return(addor);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+int veriloginputconnection(FILE *fo, pBLOCKINFOITEM block, char *signalname, int printcomma)
+{
+  char *connection;
+
+  //Get the possible connection for this signal
+  if(connection = getconnectionnet(block, signalname))
+  {
+    //Check if a comma is needed to close of the previous item
+    if(printcomma)
+    {
+      fprintf(fo, ",");
+    }
+    
+    //Check if it is connected to ground
+    if(strcmp(connection, "ground") == 0)
+    {
+      //Output a zero bit if so
+      fprintf(fo, " 1'b0");
+    }
+    else
+    {
+      //Else output the actual connection
+      fprintf(fo, " %s", connection);
+    }
+    
+    printcomma = 1;
+  }
+  else
+  {
+    //Check if a comma is needed to close of the previous item
+    //Also suppress open nets at the beginning of the list
+    if(printcomma)
+    {
+      fprintf(fo, ",");
+
+      //Add an one when not connected
+      fprintf(fo, " 1'b1");
+    }
+  }
+  
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+int verilogoutputconnection(FILE *fo, pBLOCKINFOITEM block, char *signalname, int printcomma, int *opennetid)
+{
+  char *connection;
+
+  //Get the possible connection for this signal
+  if(connection = getconnectionnet(block, signalname))
+  {
+    //Check if a comma is needed to close of the previous item
+    if(printcomma)
+    {
+      fprintf(fo, ",");
+    }
+    
+    //Output the actual connection
+    fprintf(fo, " %s", connection);
+    
+    printcomma = 1;
+  }
+  else
+  {
+    //Check if a comma is needed to close of the previous item
+    //Also suppress open nets at the beginning of the list
+    if(printcomma)
+    {
+      fprintf(fo, ",");
+
+      //Add an open net when not connected
+      fprintf(fo, " open_%d", *opennetid);
+
+      *opennetid = *opennetid + 1;
+    }
+  }
+  
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to print an equation for the given LUT and used input pins.
+//The used pins need to be given in range of LUT0 (a,b,c,d) for MSLICE or (a,b,c,d,e) for LSLICE
+
+void createequation(char *equation, int maxlen, pBLOCKINFOITEM block, int inputcount, int lutdata, int usedpins, char **lutinputnames, int finish)
+{
+  int aidx = 0;
+  int bidx = 0;
+  int cidx = 0;
+  int didx = 0;
+  int eidx = 0;
+  
+  char *neta;
+  char *netb;
+  char *netc;
+  char *netd;
+  char *nete;
+
+  int index = 1;
+  int addor = 0;
+  
+  char andpart[64];
+  
+  //Get rid of the non LUT input pins and the output pins
+  usedpins &= LUT_INPUT_PINS;
+  
+  //Determine the weight for the "a" input.
+  aidx = weighinputpin(&usedpins, &index);
+  
+  //Get the net for this input
+  neta = getconnectionnet(block, lutinputnames[aidx]);
+
+  //When there are more inputs connected weigh the next pin
+  if(inputcount > 1)
+  {
+    //The "b" input has at least the next input weight
+    bidx = weighinputpin(&usedpins, &index);
+
+    //Get the net for this input
+    netb = getconnectionnet(block, lutinputnames[bidx]);
+    
+    //When there are still more inputs connected weigh the next pin
+    if(inputcount > 2)
+    {
+      //The "c" input has at least the next input weight
+      cidx = weighinputpin(&usedpins, &index);
+
+      //Get the net for this input
+      netc = getconnectionnet(block, lutinputnames[cidx]);
+  
+      //When there are still more inputs connected weigh the next pin
+      if(inputcount > 3)
+      {
+        //The "d" input has at least the next input weight
+        didx = weighinputpin(&usedpins, &index);
+
+        //Get the net for this input
+        netd = getconnectionnet(block, lutinputnames[didx]);
+  
+        //When there are still more inputs connected weigh the next pin
+        if(inputcount > 4)
+        {
+          //The "e" input has at least the next input weight
+          eidx = weighinputpin(&usedpins, &index);
+          
+          //Get the net for this input
+          nete = getconnectionnet(block, lutinputnames[eidx]);
+  
+          //Five input equation
+          //First part with c low, d low, e low
+          snprintf(andpart, sizeof(andpart), "~%s * ~%s * ~%s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, 0, lutdata, addor, 0);
+          
+          //Second part with c high, d low, e low
+          snprintf(andpart, sizeof(andpart), "~%s * ~%s * %s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, cidx, lutdata, addor, 0);
+          
+          //Third part with c low, d high, e low
+          snprintf(andpart, sizeof(andpart), "~%s * %s * ~%s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx, lutdata, addor, 0);
+          
+          //Fourth part with c high, d high, e low
+          snprintf(andpart, sizeof(andpart), "~%s * %s * %s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx + cidx, lutdata, addor, 0);
+          
+          //Fifth part with c low, d low, e high
+          snprintf(andpart, sizeof(andpart), "%s * ~%s * ~%s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx, lutdata, addor, 0);
+          
+          //Sixth part with c high, d low, e high
+          snprintf(andpart, sizeof(andpart), "%s * ~%s * %s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx + cidx, lutdata, addor, 0);
+          
+          //Seventh part with c low, d high, e high
+          snprintf(andpart, sizeof(andpart), "%s * %s * ~%s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx + didx, lutdata, addor, 0);
+          
+          //Eighth part with c high, d high, e high
+          snprintf(andpart, sizeof(andpart), "%s * %s * %s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx + didx + cidx, lutdata, addor, finish);
+      
+          //When nothing has been generated and the line needs to be finished the resulting output should be a single zero bit
+          if(finish && !addor)
+          {
+            snprintf(equation, maxlen, "1'b0;\n");
+          }
+        }
+        else
+        {
+          //Four input equation
+          //First part with c and d low
+          snprintf(andpart, sizeof(andpart), "~%s * ~%s", netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, 0, lutdata, addor, 0);
+          
+          //Second part with c high and d low
+          snprintf(andpart, sizeof(andpart), "~%s * %s", netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, cidx, lutdata, addor, 0);
+          
+          //Third part with c low and d high
+          snprintf(andpart, sizeof(andpart), "%s * ~%s", netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx, lutdata, addor, 0);
+          
+          //Fourth part with c and d high
+          snprintf(andpart, sizeof(andpart), "%s * %s", netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx + cidx, lutdata, addor, finish);
+      
+          //When nothing has been generated and the line needs to be finished the resulting output should be a single zero bit
+          if(finish && !addor)
+          {
+            snprintf(equation, maxlen, "1'b0;\n");
+          }
+        }
+      }
+      else
+      {
+        //Three input equation
+        //First part with c low
+        snprintf(andpart, sizeof(andpart), "~%s", netc);
+        addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, 0, lutdata, addor, 0);
+        
+        //Second part with c high
+        snprintf(andpart, sizeof(andpart), "%s", netc);
+        addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, cidx, lutdata, addor, finish);
+      
+        //When nothing has been generated and the line needs to be finished the resulting output should be a single zero bit
+        if(finish && !addor)
+        {
+          snprintf(equation, maxlen, "1'b0;\n");
+        }
+      }
+    }
+    else
+    {
+      //Two input equation
+      addor = getlut2verilog(&equation, &maxlen, 0, aidx, neta, bidx, netb, 0, lutdata, addor, finish);
+      
+      //When nothing has been generated and the line needs to be finished the resulting output should be a single zero bit
+      if(finish && !addor)
+      {
+        snprintf(equation, maxlen, "1'b0;\n");
+      }
+    }
+  }
+  else
+  {
+    //For a single input lut it depends on two settings and is either A or ~A. If the first entry is 1 then it is ~A.
+    //But it only makes sense as an inverter so no check on it
+    snprintf(equation, maxlen, "~%s", neta);
+    
+    if(finish)
+    {
+      snprintf(equation, maxlen, ";\n");
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
+{
+  char *netce = 0;
+  char *netsr = 0;
+  char *netd0 = 0;
+  char *netd1 = 0;
+  char *netq0 = 0;
+  char *netq1 = 0;
+  
+  char *value;
+  
+  char *indent = "  ";
+  
+  //If one of or both the flip flops are used generate an always statement
+  if(usedpins & (PIN_Q0 | PIN_Q1))
+  {
+    //It depends on the type of reset what the header line needs to be
+    //Also need to find the edge of the clock or the reset signal
+
+    //Need to see if ce is connected to an actual signal
+    if(usedpins & PIN_CE)
+    {
+      netce = getconnectionnet(block, "ce");
+
+      if(strcmp(netce, "ground") == 0)
+      {
+        //When connected to ground it is seen as not connected
+        netce = 0;
+      }
+    }
+
+    //Need to see if sr is connected to an actual signal
+    if(usedpins & PIN_SR)
+    {
+      netsr = getconnectionnet(block, "sr");
+
+      if(strcmp(netsr, "ground") == 0)
+      {
+        //When connected to ground it is seen as not connected
+        netsr = 0;
+      }
+    }
+
+    //Declare the needed registers first
+    if(usedpins & PIN_Q0)
+    {
+      //Select the input to use
+      if(block->logicsettings & LOGIC_FF0_F)
+      {
+        netd0 = block->lut0output;
+      }
+      else if(block->logicsettings & LOGIC_FF0_FX)
+      {
+        //This might be wrong when FXMUXON is not set, but it does not happen in the 1013D bit stream
+        netd0 = block->lut5output;
+      }
+      else
+      {
+        netd0 = getconnectionnet(block, "mi_0");
+        
+        if(strcmp(netd0, "ground") == 0)
+        {
+          netd0 = "1'b0";
+        }
+      }
+
+      netq0 = getconnectionnet(block, "q_0");
+
+      //Setup a register for flip flop 0
+      fprintf(fo, "  reg %s;\n", netq0);
+    }
+
+    if(usedpins & PIN_Q1)
+    {
+      //Select the input to use
+      if(block->logicsettings & LOGIC_FF1_F)
+      {
+        netd1 = block->lut1output;
+      }
+      else if(block->logicsettings & LOGIC_FF1_FX)
+      {
+        //This is not used in the 1013D bit stream and no idea if it is an option
+        netd1 = getconnectionnet(block, "fx_1");
+      }
+      else
+      {
+        netd1 = getconnectionnet(block, "mi_1");
+        
+        if(strcmp(netd1, "ground") == 0)
+        {
+          netd1 = "1'b0";
+        }
+      }
+
+      netq1 = getconnectionnet(block, "q_1");
+
+      //Setup a register for flip flop 1
+      fprintf(fo, "  reg %s;\n", netq1);
+    }
+
+    fprintf(fo, "\n");
+
+    //LOGIC_FF0_SR when set means the register is initialized with a 0 else a 1??
+    //LOGIC_FF1_SR when set means the register is initialized with a 0 else a 1??
+
+    //STart the header for the always statement
+    fprintf(fo, "  always @(");
+
+    //Set the edge the clock works on
+    if(block->logicsettings & LOGIC_FF_CLK)
+    {
+      fprintf(fo, "negedge ");
+    }
+    else
+    {
+      fprintf(fo, "posedge ");
+    }
+
+    //Add the clock used for this block
+    fprintf(fo, "%s", getconnectionnet(block, "clk"));
+
+    //When the sr input is connected to a signal and the mode is async it needs to be added to the header
+    if(netsr && ((block->logicsettings & LOGIC_FF_SYNC) == 0))
+    {
+      //Set the edge the set reset works on
+      if(block->logicsettings & LOGIC_FF_SR)
+      {
+        fprintf(fo, " or negedge ");
+      }
+      else
+      {
+        fprintf(fo, " or posedge ");
+      }
+
+      //Add the set reset used for this block
+      fprintf(fo, "%s", netsr);
+    }
+
+    //Finish of the header and start the code block
+    fprintf(fo, ")\n  begin\n");
+
+    //Check if enable is used
+    if(netce)
+    {
+      //Set the value to check against in the "if" statement based on the setting bit for it
+      if(block->logicsettings & LOGIC_FF_CE)
+      {
+        value = "1'b0";
+      }
+      else
+      {
+        value = "1'b1";
+      }
+
+      //Start the enable if block
+      fprintf(fo, "    if(%s == %s)\n    begin\n", netce, value);
+
+      indent = "    ";
+    }
+
+    //Check if reset code is needed
+    if(netsr)
+    {
+      //Set the value to check against in the "if" statement based on the setting bit for it
+      if(block->logicsettings & LOGIC_FF_SR)
+      {
+        value = "1'b0";
+      }
+      else
+      {
+        value = "1'b1";
+      }
+
+      //Start the enable if block
+      fprintf(fo, "%s  if(%s == %s)\n%s  begin\n", indent, netsr, value, indent);
+
+      //Add the resets per flip flop
+      if(netq0)
+      {
+        //Set the value to load on reset
+        if(block->logicsettings & LOGIC_FF0_SR)
+        {
+          value = "1'b0";
+        }
+        else
+        {
+          value = "1'b1";
+        }
+
+        //Load the reset value in the register
+        fprintf(fo, "%s    %s <= %s;\n", indent, netq0, value);
+      }
+
+      if(netq1)
+      {
+        //Set the value to load on reset
+        if(block->logicsettings & LOGIC_FF0_SR)
+        {
+          value = "1'b0";
+        }
+        else
+        {
+          value = "1'b1";
+        }
+
+        //Load the reset value in the register
+        fprintf(fo, "%s    %s <= %s;\n", indent, netq1, value);
+      }
+
+      //End the if part of the reset and setup the else part
+      fprintf(fo, "%s  end\n%s  else\n%s  begin\n", indent, indent, indent);
+
+      //Set the new indent based on if enable is used
+      if(netce)
+      {
+        indent = "      ";
+      }
+      else
+      {
+        indent = "    ";
+      }
+    }
+
+    //Load the flip flops with the input signals
+    if(netq0)
+    {
+      //Load the reset value in the register
+      fprintf(fo, "%s  %s <= %s;\n", indent, netq0, netd0);
+    }
+
+    if(netq1)
+    {
+      //Load the reset value in the register
+      fprintf(fo, "%s  %s <= %s;\n", indent, netq1, netd1);
+    }
+
+    //If the set reset is used the else block needs to be ended
+    if(netsr)
+    {
+      fprintf(fo, "%send\n", indent);
+    }
+
+    //When enable is used the if block needs to be ended
+    if(netce)
+    {
+      fprintf(fo, "    end\n");
+    }
+
+    //End the code block
+    fprintf(fo, "  end\n\n");
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void outputlsliceverilogadder(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int foundnext)
+{
+  int usedpins = getsliceusedpins(block);
+  
+  //Check if a separate always statement is needed
+  if(((block->logicsettings & (LOGIC_FF0_F | LOGIC_FF1_F)) == 0) && (usedpins & (PIN_Q0 | PIN_Q1)))
+  {
+    //Show which block this is for
+    fprintf(fo, "//---------------------------------------------------------------------------\n");
+    fprintf(fo, "//Block %d, LSLICE %d\n\n", block->blocknumber, block->sliceid);
+    
+    //Add the always statement as needed
+    outputverilogalways(fo, block, usedpins);
+  }
+
+  block->usedpins = usedpins;
+
+  //Check if the output is fed into the registers
+  //This is not used in the 1013D and not sure if it is even an option
+  if(block->logicsettings & (LOGIC_FF0_F | LOGIC_FF1_F))
+  {
+    //Signal the registers are used for the adder
+    block->adderregistered = 1;
+  }
+  
+  if(carryin)
+  {
+    //When there is a previous block link it in to the back trace chain
+    block->carryprev = carryin;
+    
+    //Also set this one as the link for the forward trace
+    carryin->carrynext = block;
+  }
+  
+  //Check on math type
+  if(block->lutf0 == 0x000A)
+  {
+    block->addertype = ADDER_ADD;
+  }
+  else
+  {
+    block->addertype = ADDER_SUB;
+  }
+  
+  //Signal the block has been processed so it will be skipped in the main loop
+  block->processed = 2;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to output all the LSLICE macros linked in a carry chain
+
+void outputlsliceverilogadderchain(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin)
+{
+  int foundnext = 0;
+
+  pBLOCKINFOITEM nextblock = block->next;
+
+  while((foundnext == 0) && nextblock)
+  {
+    //The block needs to be of type mslice to be part of the carry chain
+    if(nextblock->blocktype == BLOCK_LSLICE)
+    {
+      //If the current is lslice2 it needs to be same x,y0 with lslice3 and ripmode set otherwise it is done
+      //If the current is lslice3 it needs to be the next x,y1 with lslice2 and ripmode set otherwise it is done
+      if(((block->sliceid == 2) && (nextblock->sliceid == 3) && (block->x == nextblock->x) && (block->y == nextblock->y)) ||
+         ((block->sliceid == 3) && (nextblock->sliceid == 2) && (block->x == nextblock->x) && ((block->y + 1) == nextblock->y)))
+      {
+        if(nextblock->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
+        {
+          //There is a next block in the chain
+          foundnext = 1;
+
+          //Need to skip the selection of the next block
+          break;
+        }
+      }
+    }
+
+    nextblock = nextblock->next;
+  }
+  
+  //Output the actual lslice macro based on the found carry option
+  outputlsliceverilogadder(fo, block, carryin, foundnext);
+
+  //When there is a next block in the chain call this function again
+  if(foundnext)
+  {
+    //Process the found block and keep running down the chain
+    outputlsliceverilogadderchain(fo, nextblock, block);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid)
+{
+  char lut0[1024];
+  char lut1[1024];
+  
+  pBLOCKINFOITEM carrylist;
+  pBLOCKINFOITEM carrylast;
+  
+  int needcomma = 0;
+  
+  int openidx;
+  
+  //For now the assumption is made that when one of the ripmode bits is set it is ok to assume a carry chain
+  //In the 1013D bit stream it seems to be that both are always set when used as adder. Also the FX0MUXLUT4G and FX1MUXLUT4G bits seems to be set in this case
+  if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
+  {
+    //Create the lslice macro for this given block without carry input and follow the chain
+    outputlsliceverilogadderchain(fverilog, block, 0);
+    
+    //Set a header to mark the code for this block
+    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
+    fprintf(fverilog, "//LSICE adder blocks");
+    
+    carrylist = block;
+    
+    //List all the blocks used in this adder
+    while(carrylist)
+    {
+      if(needcomma)
+      {
+        fprintf(fverilog, ",");
+      }
+      
+      needcomma = 1;
+      
+      fprintf(fverilog, " %d", carrylist->blocknumber);
+      
+      //Need to remember the last block to be able to traverse back from the last bit of the chain
+      carrylast = carrylist;
+      
+      carrylist = carrylist->carrynext;
+    }
+    
+    //Finish of the comment line
+    fprintf(fverilog, "\n\n");
+    
+    //Registered result is not used in the 1013D so not implemented here
+    
+    //Declare the output wires
+    fprintf(fverilog, "  wire");
+
+    needcomma = 0;
+
+    openidx = *opennetid;
+
+    carrylist = carrylast;
+
+    //List all the connected outputs
+    while(carrylist)
+    {
+      //Both the FX and F outputs are used to make up the adder
+      needcomma = verilogoutputconnection(fverilog, carrylist, "fx_1", needcomma, &openidx);
+      needcomma = verilogoutputconnection(fverilog, carrylist, "f_1", needcomma, &openidx);
+      needcomma = verilogoutputconnection(fverilog, carrylist, "fx_0", needcomma, &openidx);
+
+      //Need to suppress the lowest input since it is not used
+      if(carrylist != block)
+      {
+        needcomma = verilogoutputconnection(fverilog, carrylist, "f_0", needcomma, &openidx);
+      }
+
+      carrylist = carrylist->carryprev;
+    }
+
+    //Finish of the register declare line
+    fprintf(fverilog, ";\n\n");
+    
+    //Create the assign
+    fprintf(fverilog, "  assign {");
+
+    needcomma = 0;
+
+    openidx = *opennetid;
+
+    carrylist = carrylast;
+
+    //List all the connected outputs
+    while(carrylist)
+    {
+      needcomma = verilogoutputconnection(fverilog, carrylist, "fx_1", needcomma, &openidx);
+      needcomma = verilogoutputconnection(fverilog, carrylist, "f_1", needcomma, &openidx);
+      needcomma = verilogoutputconnection(fverilog, carrylist, "fx_0", needcomma, &openidx);
+
+      //Need to suppress the lowest input since it is not used
+      if(carrylist != block)
+      {
+        needcomma = verilogoutputconnection(fverilog, carrylist, "f_0", needcomma, &openidx);
+      }
+
+      carrylist = carrylist->carryprev;
+    }
+
+    //Save the open net id
+    *opennetid = openidx;
+
+    //Setup for the a input
+    fprintf(fverilog, " } = {");
+
+    needcomma = 0;
+
+    carrylist = carrylast;
+
+    //List all the connected outputs
+    while(carrylist)
+    {
+      //B and A inputs are combined for the left operand
+      needcomma = veriloginputconnection(fverilog, carrylist, "b_1", needcomma);
+      needcomma = veriloginputconnection(fverilog, carrylist, "a_1", needcomma);
+      needcomma = veriloginputconnection(fverilog, carrylist, "b_0", needcomma);
+
+      //Need to suppress the lowest input since it is not used
+      if(carrylist != block)
+      {
+        needcomma = veriloginputconnection(fverilog, carrylist, "a_0", needcomma);
+      }
+
+      carrylist = carrylist->carryprev;
+    }
+
+    //Setup for the b input
+    if(block->addertype == ADDER_ADD)
+    {
+      fprintf(fverilog, " } + {");
+    }
+    else
+    {
+      fprintf(fverilog, " } - {");
+    }
+
+    needcomma = 0;
+
+    carrylist = carrylast;
+
+    //List all the connected outputs
+    while(carrylist)
+    {
+      //E and D inputs are combined for the right operand
+      needcomma = veriloginputconnection(fverilog, carrylist, "e_1", needcomma);
+      needcomma = veriloginputconnection(fverilog, carrylist, "d_1", needcomma);
+      needcomma = veriloginputconnection(fverilog, carrylist, "e_0", needcomma);
+
+      //Need to suppress the lowest input since it is not used
+      if(carrylist != block)
+      {
+        needcomma = veriloginputconnection(fverilog, carrylist, "d_0", needcomma);
+      }
+
+      carrylist = carrylist->carryprev;
+    }
+
+    //Finish of the assign line
+    fprintf(fverilog, " };\n\n");
+  }
+  else
+  {
+    int usedpins = getsliceusedpins(block);
+
+    //Set a header to mark the code for this block
+    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
+    fprintf(fverilog, "//Block %d, LSLICE %d\n\n", block->blocknumber, block->sliceid);
+
+    //F0MUXLUT5 indicates both LUT's of a group being used together
+    //Might need to modify this to have it an AND condition
+    //But it might be that the separate LUT's are only used for adder setup???
+    
+    //Check if the luts are used
+    if((block->logicsettings & (LOGIC_LUTF0 | LOGIC_LUTG0 | LOGIC_F0MUXLUT5 | LOGIC_FF0_F | LOGIC_FF0_FX)) || (block->logicsettings & (LOGIC_LUTF1 | LOGIC_LUTG1 | LOGIC_F1MUXLUT5 | LOGIC_FF1_F | LOGIC_FF1_FX)))
+    {
+      if(block->logicsettings & (LOGIC_LUTF0 | LOGIC_LUTG0 | LOGIC_F0MUXLUT5 | LOGIC_FF0_F | LOGIC_FF0_FX))
+      {
+        block->lut0 = block->lutg0 << 16 | block->lutf0;
+        
+        //Make up the part for LUT0
+        createequation(lut0, sizeof(lut0), block, inputsusedcount[(usedpins & 0x1F)], block->lut0, usedpins, lut0inputnames, 0);
+
+        //If the f pin is not connected it is either a combined LUT or the input to the flip flop
+        if(usedpins & PIN_F0)
+        {
+          snprintf(block->lut0output, MAX_NAME_LENGTH, "%s", getconnectionnet(block, "f_0"));
+        }
+        else
+        {
+          //When the LUT is connected to the flip flop or it is a combined LUT there is the need for a internal wire to connect them
+          snprintf(block->lut0output, MAX_NAME_LENGTH, "sig_%d_lut_0", block->blocknumber);
+        }
+
+        //Create one assign statement for the equation for the given block
+        fprintf(fverilog, "  assign %s = %s;\n", block->lut0output, lut0);
+      }
+
+      if(block->logicsettings & (LOGIC_LUTF1 | LOGIC_LUTG1 | LOGIC_F1MUXLUT5 | LOGIC_FF1_F | LOGIC_FF1_FX))
+      {
+        block->lut1 = block->lutg1 << 16 | block->lutf1;
+        
+        //Make up the part for LUT1
+        createequation(lut1, sizeof(lut1), block, inputsusedcount[((usedpins >>12) & 0x1F)], block->lut1, (usedpins >> 12), lut1inputnames, 0);
+
+        //If the f pin is not connected it is either a combined LUT or the input to the flip flop
+        if(usedpins & PIN_F1)
+        {
+          snprintf(block->lut1output, MAX_NAME_LENGTH, "%s", getconnectionnet(block, "f_1"));
+        }
+        else
+        {
+          //When the LUT is connected to the flip flop or it is a combined LUT there is the need for a internal wire to connect them
+          snprintf(block->lut1output, MAX_NAME_LENGTH, "sig_%d_lut_1", block->blocknumber);
+        }
+
+        //Create one assign statement for the equation for the given block
+        fprintf(fverilog, "  assign %s = %s;\n", block->lut1output, lut1);
+      }
+
+
+      fprintf(fverilog, "\n");
+    }
+    
+    //Add the always statement as needed
+    outputverilogalways(fverilog, block, usedpins);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void outputmsliceverilogadder(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int foundnext)
+{
+  int usedpins = getsliceusedpins(block);
+  
+  //Check if a separate always statement is needed
+  if(((block->logicsettings & (LOGIC_FF0_F | LOGIC_FF1_F)) == 0) && (usedpins & (PIN_Q0 | PIN_Q1)))
+  {
+    //Show which block this is for
+    fprintf(fo, "//---------------------------------------------------------------------------\n");
+    fprintf(fo, "//Block %d, MSLICE %d\n\n", block->blocknumber, block->sliceid);
+    
+    //Add the always statement as needed
+    outputverilogalways(fo, block, usedpins);
+  }
+
+  block->usedpins = usedpins;
+  
+  //Check if the output is fed into the registers
+  if(block->logicsettings & (LOGIC_FF0_F | LOGIC_FF1_F))
+  {
+    //Signal the registers are used for the adder
+    block->adderregistered = 1;
+  }
+  
+  if(carryin)
+  {
+    //When there is a previous block link it in to the back trace chain
+    block->carryprev = carryin;
+    
+    //Also set this one as the link for the forward trace
+    carryin->carrynext = block;
+  }
+  
+  //Check on math type
+  if(block->lut1 == 0x666A)
+  {
+    block->addertype = ADDER_ADD;
+  }
+  else
+  {
+    block->addertype = ADDER_SUB;
+  }
+    
+  //Signal the block has been processed so it will be skipped in the main loop
+  block->processed = 2;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to output all the verilog parts in a mslice carry chain
+
+void outputmsliceverilogadderchain(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin)
+{
+  int foundnext = 0;
+
+  pBLOCKINFOITEM nextblock = block->next;
+
+  while((foundnext == 0) && nextblock)
+  {
+    //The block needs to be of type mslice to be part of the carry chain
+    if(nextblock->blocktype == BLOCK_MSLICE)
+    {
+      //If the current is mslice0 it needs to be same x,y0 with mslice1 and ripmode set otherwise it is done
+      //If the current is mslice1 it needs to be the next x,y1 with mslice0 and ripmode set otherwise it is done
+      if(((block->sliceid == 0) && (nextblock->sliceid == 1) && (block->x == nextblock->x) && (block->y == nextblock->y)) ||
+         ((block->sliceid == 1) && (nextblock->sliceid == 0) && (block->x == nextblock->x) && ((block->y + 1) == nextblock->y)))
+      {
+        if(nextblock->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
+        {
+          //There is a next block in the chain
+          foundnext = 1;
+
+          //Need to skip the selection of the next block
+          break;
+        }
+      }
+    }
+
+    nextblock = nextblock->next;
+  }
+  
+  //Output the actual mslice macro based on the found carry option
+  outputmsliceverilogadder(fo, block, carryin, foundnext);
+
+  //When there is a next block in the chain call this function again
+  if(foundnext)
+  {
+    //Process the found block and keep running down the chain
+    outputmsliceverilogadderchain(fo, nextblock, block);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid)
+{
+  char lut0[1024];
+  char lut1[1024];
+  
+  char *netmi = 0;
+  
+  char *netce = 0;
+  char *netsr = 0;
+  
+  char *value;
+  
+  char *indent = "  ";
+  
+  int needcomma = 0;
+  
+  int registered = 0;
+  
+  int openidx;
+  
+  pBLOCKINFOITEM carrylist;
+  pBLOCKINFOITEM carrylast;
+  
+  //For now the assumption is made that when one of the ripmode bits is set it is ok to assume a carry chain
+  //In the 1013D bit stream it seems to be that both are always set when used as adder. Also the FX0MUXLUT4G and FX1MUXLUT4G bits seems to be set in this case
+  if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
+  {
+    //Create the always statements for the separate flip flops and gather the needed information about this carry chain
+    outputmsliceverilogadderchain(fverilog, block, 0);
+
+    //Set a header to mark the code for this block
+    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
+    fprintf(fverilog, "//MSLICE adder blocks");
+    
+    carrylist = block;
+    
+    //List all the blocks used in this adder
+    while(carrylist)
+    {
+      if(needcomma)
+      {
+        fprintf(fverilog, ",");
+      }
+      
+      needcomma = 1;
+      
+      fprintf(fverilog, " %d", carrylist->blocknumber);
+      
+      //Need to know if it is a registered adder
+      registered |= carrylist->adderregistered;
+      
+      //Need to remember the last block to be able to traverse back from the last bit of the chain
+      carrylast = carrylist;
+      
+      carrylist = carrylist->carrynext;
+    }
+    
+    //Finish of the comment line
+    fprintf(fverilog, "\n\n");
+    
+    //At this point there are two options based on registered or not
+    if(registered)
+    {
+      //Need to declare the registers
+      fprintf(fverilog, "  reg");
+
+      needcomma = 0;
+      
+      carrylist = carrylast;
+      
+      //List all the connected outputs
+      while(carrylist)
+      {
+        needcomma = verilogoutputconnection(fverilog, carrylist, "q_1", needcomma, &openidx);
+        
+        //Need to suppress the lowest input since it is not used
+        if(carrylist != block)
+        {
+          needcomma = verilogoutputconnection(fverilog, carrylist, "q_0", needcomma, &openidx);
+        }
+        
+        carrylist = carrylist->carryprev;
+      }
+
+      //Finish of the register declare line
+      fprintf(fverilog, ";\n\n");
+      
+      //Setup the always
+      //Need to see if ce is connected to an actual signal
+      if(block->usedpins & PIN_CE)
+      {
+        netce = getconnectionnet(block, "ce");
+
+        if(strcmp(netce, "ground") == 0)
+        {
+          //When connected to ground it is seen as not connected
+          netce = 0;
+        }
+      }
+
+      //Need to see if sr is connected to an actual signal
+      if(block->usedpins & PIN_SR)
+      {
+        netsr = getconnectionnet(block, "sr");
+
+        if(strcmp(netsr, "ground") == 0)
+        {
+          //When connected to ground it is seen as not connected
+          netsr = 0;
+        }
+      }
+     
+      //Start the header for the always statement
+      fprintf(fverilog, "  always @(");
+
+      //Set the edge the clock works on
+      if(block->logicsettings & LOGIC_FF_CLK)
+      {
+        fprintf(fverilog, "negedge ");
+      }
+      else
+      {
+        fprintf(fverilog, "posedge ");
+      }
+
+      //Add the clock used for this block
+      fprintf(fverilog, "%s", getconnectionnet(block, "clk"));
+
+      //When the sr input is connected to a signal and the mode is async it needs to be added to the header
+      if(netsr && ((block->logicsettings & LOGIC_FF_SYNC) == 0))
+      {
+        //Set the edge the set reset works on
+        if(block->logicsettings & LOGIC_FF_SR)
+        {
+          fprintf(fverilog, " or negedge ");
+        }
+        else
+        {
+          fprintf(fverilog, " or posedge ");
+        }
+
+        //Add the set reset used for this block
+        fprintf(fverilog, "%s", netsr);
+      }
+
+      //Finish of the header and start the code block
+      fprintf(fverilog, ")\n  begin\n");
+
+      //Check if enable is used
+      if(netce)
+      {
+        //Set the value to check against in the "if" statement based on the setting bit for it
+        if(block->logicsettings & LOGIC_FF_CE)
+        {
+          value = "1'b0";
+        }
+        else
+        {
+          value = "1'b1";
+        }
+
+        //Start the enable if block
+        fprintf(fverilog, "    if(%s == %s)\n    begin\n", netce, value);
+
+        indent = "    ";
+      }
+
+      //Check if reset code is needed
+      if(netsr)
+      {
+        //Set the value to check against in the "if" statement based on the setting bit for it
+        if(block->logicsettings & LOGIC_FF_SR)
+        {
+          value = "1'b0";
+        }
+        else
+        {
+          value = "1'b1";
+        }
+
+        //Start the enable if block
+        fprintf(fverilog, "%s  if(%s == %s)\n%s  begin\n", indent, netsr, value, indent);
+
+        //Set the value to load on reset
+        if(block->logicsettings & LOGIC_FF0_SR)
+        {
+          value = "0";
+        }
+        else
+        {
+          value = "1";
+        }
+
+        //Load the reset value in the register
+        fprintf(fverilog, "%s    {", indent);
+        
+        openidx = *opennetid;
+        
+        needcomma = 0;
+
+        carrylist = carrylast;
+
+        //List all the connected outputs
+        while(carrylist)
+        {
+          needcomma = verilogoutputconnection(fverilog, carrylist, "q_1", needcomma, &openidx);
+          
+          //Need to suppress the lowest input since it is not used
+          if(carrylist != block)
+          {
+            needcomma = verilogoutputconnection(fverilog, carrylist, "q_0", needcomma, &openidx);
+          }
+
+          carrylist = carrylist->carryprev;
+        }
+
+        //Finish of the register reset line
+        fprintf(fverilog, " } <= %s;\n", value);
+
+        //End the if part of the reset and setup the else part
+        fprintf(fverilog, "%s  end\n%s  else\n%s  begin\n", indent, indent, indent);
+
+        //Set the new indent based on if enable is used
+        if(netce)
+        {
+          indent = "      ";
+        }
+        else
+        {
+          indent = "    ";
+        }
+      }
+
+      //Load the flip flops with the input signals
+      fprintf(fverilog, "%s  {", indent);
+      
+      openidx = *opennetid;
+      
+      needcomma = 0;
+
+      carrylist = carrylast;
+
+      //List all the connected outputs
+      while(carrylist)
+      {
+        needcomma = verilogoutputconnection(fverilog, carrylist, "q_1", needcomma, &openidx);
+
+        //Need to suppress the lowest input since it is not used
+        if(carrylist != block)
+        {
+          needcomma = verilogoutputconnection(fverilog, carrylist, "q_0", needcomma, &openidx);
+        }
+
+        carrylist = carrylist->carryprev;
+      }
+
+      //Save the open net id
+      *opennetid = openidx;
+      
+      //Setup for the a input
+      fprintf(fverilog, " } <= {");
+      
+      needcomma = 0;
+      
+      carrylist = carrylast;
+      
+      //List all the connected outputs
+      while(carrylist)
+      {
+        needcomma = veriloginputconnection(fverilog, carrylist, "a_1", needcomma);
+
+        //Need to suppress the lowest input since it is not used
+        if(carrylist != block)
+        {
+          needcomma = veriloginputconnection(fverilog, carrylist, "a_0", needcomma);
+        }
+        
+        carrylist = carrylist->carryprev;
+      }
+      
+      //Setup for the b input
+      if(block->addertype == ADDER_ADD)
+      {
+        fprintf(fverilog, " } + {");
+      }
+      else
+      {
+        fprintf(fverilog, " } - {");
+      }
+      
+      needcomma = 0;
+      
+      carrylist = carrylast;
+      
+      //List all the connected outputs
+      while(carrylist)
+      {
+        needcomma = veriloginputconnection(fverilog, carrylist, "b_1", needcomma);
+
+        //Need to suppress the lowest input since it is not used
+        if(carrylist != block)
+        {
+          needcomma = veriloginputconnection(fverilog, carrylist, "b_0", needcomma);
+        }
+        
+        carrylist = carrylist->carryprev;
+      }
+      
+      //Finish of the load register line
+      fprintf(fverilog, " };\n");
+      
+      //If the set reset is used the else block needs to be ended
+      if(netsr)
+      {
+        fprintf(fverilog, "%send\n", indent);
+      }
+
+      //When enable is used the if block needs to be ended
+      if(netce)
+      {
+        fprintf(fverilog, "    end\n");
+      }
+
+      //End the code block
+      fprintf(fverilog, "  end\n\n");
+    }
+    else
+    {
+      //Declare the output wires
+      fprintf(fverilog, "  wire");
+
+      needcomma = 0;
+      
+      openidx = *opennetid;
+      
+      carrylist = carrylast;
+      
+      //List all the connected outputs
+      while(carrylist)
+      {
+        needcomma = verilogoutputconnection(fverilog, carrylist, "f_1", needcomma, &openidx);
+
+        //Need to suppress the lowest input since it is not used
+        if(carrylist != block)
+        {
+          needcomma = verilogoutputconnection(fverilog, carrylist, "f_0", needcomma, &openidx);
+        }
+        
+        carrylist = carrylist->carryprev;
+      }
+
+      //Finish of the register declare line
+      fprintf(fverilog, ";\n\n");
+
+      //Create the assign
+      fprintf(fverilog, "  assign {");
+
+      needcomma = 0;
+      
+      openidx = *opennetid;
+      
+      carrylist = carrylast;
+      
+      //List all the connected outputs
+      while(carrylist)
+      {
+        needcomma = verilogoutputconnection(fverilog, carrylist, "f_1", needcomma, &openidx);
+
+        //Need to suppress the lowest input since it is not used
+        if(carrylist != block)
+        {
+          needcomma = verilogoutputconnection(fverilog, carrylist, "f_0", needcomma, &openidx);
+        }
+        
+        carrylist = carrylist->carryprev;
+      }
+
+      //Save the open net id
+      *opennetid = openidx;
+      
+      //Setup for the a input
+      fprintf(fverilog, " } = {");
+      
+      needcomma = 0;
+      
+      carrylist = carrylast;
+      
+      //List all the connected outputs
+      while(carrylist)
+      {
+        needcomma = veriloginputconnection(fverilog, carrylist, "a_1", needcomma);
+
+        //Need to suppress the lowest input since it is not used
+        if(carrylist != block)
+        {
+          needcomma = veriloginputconnection(fverilog, carrylist, "a_0", needcomma);
+        }
+        
+        carrylist = carrylist->carryprev;
+      }
+      
+      //Setup for the b input
+      if(block->addertype == ADDER_ADD)
+      {
+        fprintf(fverilog, " } + {");
+      }
+      else
+      {
+        fprintf(fverilog, " } - {");
+      }
+      
+      needcomma = 0;
+      
+      carrylist = carrylast;
+      
+      //List all the connected outputs
+      while(carrylist)
+      {
+        needcomma = veriloginputconnection(fverilog, carrylist, "b_1", needcomma);
+
+        //Need to suppress the lowest input since it is not used
+        if(carrylist != block)
+        {
+          needcomma = veriloginputconnection(fverilog, carrylist, "b_0", needcomma);
+        }
+        
+        carrylist = carrylist->carryprev;
+      }
+      
+      //Finish of the assign line
+      fprintf(fverilog, " };\n\n");
+    }
+  }
+  else
+  {
+    int usedpins = getsliceusedpins(block);
+
+    //Set a header to mark the code for this block
+    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
+    fprintf(fverilog, "//Block %d, MSLICE %d\n\n", block->blocknumber, block->sliceid);
+
+    //Check if the luts are used
+    if((block->logicsettings & (LOGIC_LUT0 | LOGIC_FXMUXON | LOGIC_FF0_F | LOGIC_FF0_FX)) || (block->logicsettings & (LOGIC_LUT1 | LOGIC_FXMUXON | LOGIC_FF1_F | LOGIC_FF1_FX)))
+    {
+      if(block->logicsettings & (LOGIC_LUT0 | LOGIC_FXMUXON | LOGIC_FF0_F | LOGIC_FF0_FX))
+      {
+        //Make up the part for LUT0
+        createequation(lut0, sizeof(lut0), block, inputsusedcount[(usedpins & 0x0F)], block->lut0, usedpins, lut0inputnames, 0);
+
+        //If the f pin is not connected it is either a combined LUT or the input to the flip flop
+        if(usedpins & PIN_F0)
+        {
+          snprintf(block->lut0output, MAX_NAME_LENGTH, "%s", getconnectionnet(block, "f_0"));
+        }
+        else
+        {
+          //When the LUT is connected to the flip flop or it is a combined LUT there is the need for a internal wire to connect them
+          snprintf(block->lut0output, MAX_NAME_LENGTH, "sig_%d_lut_0", block->blocknumber);
+        }
+
+        //Create one assign statement for the equation for the given block
+        fprintf(fverilog, "  assign %s = %s;\n", block->lut0output, lut0);
+      }
+
+      if(block->logicsettings & (LOGIC_LUT1 | LOGIC_FXMUXON | LOGIC_FF1_F | LOGIC_FF1_FX))
+      {
+        //Make up the part for LUT1
+        createequation(lut1, sizeof(lut1), block, inputsusedcount[((usedpins >>12) & 0x0F)], block->lut1, (usedpins >> 12), lut1inputnames, 0);
+
+        //If the f pin is not connected it is either a combined LUT or the input to the flip flop
+        if(usedpins & PIN_F1)
+        {
+          snprintf(block->lut1output, MAX_NAME_LENGTH, "%s", getconnectionnet(block, "f_1"));
+        }
+        else
+        {
+          //When the LUT is connected to the flip flop or it is a combined LUT there is the need for a internal wire to connect them
+          snprintf(block->lut1output, MAX_NAME_LENGTH, "sig_%d_lut_1", block->blocknumber);
+        }
+
+        //Create one assign statement for the equation for the given block
+        fprintf(fverilog, "  assign %s = %s;\n", block->lut1output, lut1);
+      }
+
+      //When the FX MUX is turned on add the merge function
+      if(block->logicsettings & LOGIC_FXMUXON)
+      {
+        //Assumption is made mi_0 is always connected in this case
+        netmi = getconnectionnet(block, "mi_0");
+
+        //Check if the fx pin is used
+        if(usedpins & PIN_FX0)
+        {
+          //Signal is the net connected to the fx output
+          snprintf(block->lut5output, MAX_NAME_LENGTH, "%s", getconnectionnet(block, "fx_0"));
+        }
+        else
+        {
+          //Signal needs to be made up
+          snprintf(block->lut5output, MAX_NAME_LENGTH, "sig_%d_ff0_d", block->blocknumber);
+        }
+
+        //Merge the two lut outputs into a single signal
+        fprintf(fverilog, "  assign %s = (~%s * %s) + (%s * %s);\n", block->lut5output, netmi, block->lut0output, netmi, block->lut1output);
+      }    
+
+      fprintf(fverilog, "\n");
+    }
+    
+    //Add the always statement as needed
+    outputverilogalways(fverilog, block, usedpins);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to scan the signals of a bus on being connected
+//It makes up the name of the bus members based on a base and an index
+
+int scanembbusconnected(pBLOCKINFOITEM block, char *signalbase, int first, int last)
+{
+  char signame[64];
+  int sigidx;
+  int connected = 0;
+  
+  //Scan all the signals in the given bus
+  for(sigidx=first;sigidx>=last;sigidx--)
+  {
+    //Print the name of the current bus member
+    snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
+
+    //Check if there is a connection made to it
+    if(getconnectionnet(block, signame))
+    {
+      //If so signal this and quit the loop
+      connected = 1;
+      break;
+    }
+  }
+
+  return(connected);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to output the signals of a bus
+//It makes up the name of the bus members based on a base and an index
+
+int outputembbusconnections(FILE *fo, pBLOCKINFOITEM block, char *busname, char *signalbase, int first, int last, int printcomma, int *opennetid)
+{
+  char *connection;
+  char  signame[64];
+  int   sigidx;
+
+  if((scanembbusconnected(block, signalbase, first, last)))
+  {
+    //Check if a comma is needed to close of the previous item
+    if(printcomma)
+    {
+      fprintf(fo, ",\n");
+    }
+    else
+    {
+      fprintf(fo, "\n");
+    }
+
+    //Start the line with the bus name and the open a bit collection marker
+    fprintf(fo, "    .%s({", busname);
+
+    //Process all the signals in the given bus from high to low
+    for(sigidx=first;sigidx>=last;sigidx--)
+    {
+      //Print the name of the current bus member
+      snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
+
+      //Check if there is a connection made to it
+      if(connection = getconnectionnet(block, signame))
+      {
+        if(strcmp(connection, "ground") == 0)
+        {
+          //Output it to the file
+          fprintf(fo, "1'b0");
+        }
+        else
+        {
+          //Output it to the file
+          fprintf(fo, "%s", connection);
+        }
+      }
+      else
+      {
+        //Not connected should be marked with an open signal
+        fprintf(fo, "open_n%d", *opennetid);
+
+        //Bump the open net counter to the next one
+        *opennetid = *opennetid + 1;
+      }
+
+      if(sigidx != last)
+      {
+        //No comma on the last item
+        fprintf(fo, ",");
+      }
+    }
+
+    //Close of the bit collection and the statement
+    fprintf(fo, "})");
+    
+    printcomma = 1;
+  }
+  
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void processembtoverilog(FILE *fo, pBLOCKINFOITEM block, int *opennetid)
+{
+  int datawidth = 9;
+  int addreslast = 3;
+  int needcomma = 0;
+ 
+  //Set a header to mark the code for this block
+  fprintf(fo, "//---------------------------------------------------------------------------\n");
+  fprintf(fo, "//Block %d, EMB %d\n\n", block->blocknumber, block->embid);
+
+  //Determine the data width of channel a and use it for both parts since this is how it is used in the 1013D
+  //Only 9 and 2 bits are used
+  if((block->embsettings2 & (EMB_WIDTH_A_0 | EMB_WIDTH_A_1 | EMB_WIDTH_A_2)) == (EMB_WIDTH_A_0 | EMB_WIDTH_A_1 | EMB_WIDTH_A_2))
+  {
+    datawidth = 1;
+    addreslast = 0;
+  }
+  else if((block->embsettings2 & (EMB_WIDTH_A_0 | EMB_WIDTH_A_1 | EMB_WIDTH_A_2)) == (EMB_WIDTH_A_1 | EMB_WIDTH_A_2))
+  {
+    datawidth = 2;
+    addreslast = 1;
+  }
+  else if((block->embsettings2 & (EMB_WIDTH_A_0 | EMB_WIDTH_A_1 | EMB_WIDTH_A_2)) == EMB_WIDTH_A_2)
+  {
+    datawidth = 4;
+    addreslast = 2;
+  }
+  
+  
+  //This fails on csa and csb for the 9 bit versions!!!!
+  //Need assigns for the combined signals and invert the signals as needed based on the settings for this BRAM
+  
+  //But it is not going to lead to working code I suspect
+  
+  //Bit of a pickle here is the address and chip select lines
+  //The 2 bit modules don't have the chip select extentions and use 12 bits address from top down, so need to improve on the bus connections
+  //The 9 bit modules do have the chip selects
+  
+  //!!!! This is specific for the 1013D !!!!
+  
+  if(datawidth == 9)
+  {
+    //This is specifically for the 1013D bit stream
+    fprintf(fo, "  assign sig_%d_cea = %s * ", block->blocknumber, getconnectionnet(block, "cea"));
+    
+    if(block->embsettings1 & EMB_CSAMUX_1)
+    {
+      fprintf(fo, "~");
+    }
+
+    fprintf(fo, "%s * ", getconnectionnet(block, "csa_1"));
+
+    if(block->embsettings1 & EMB_CSAMUX_0)
+    {
+      fprintf(fo, "~");
+    }
+
+    fprintf(fo, "%s;\n", getconnectionnet(block, "csa_0"));
+    
+    fprintf(fo, "  assign sig_%d_ceb = ", block->blocknumber);
+    
+    if(block->embsettings1 & EMB_CSBMUX_1)
+    {
+      fprintf(fo, "~");
+    }
+
+    fprintf(fo, "%s * ", getconnectionnet(block, "csb_1"));
+
+    if(block->embsettings1 & EMB_CSBMUX_0)
+    {
+      fprintf(fo, "~");
+    }
+
+    fprintf(fo, "%s;\n\n", getconnectionnet(block, "csb_0"));
+  }
+  
+
+  //Setup the memory module for it
+  fprintf(fo, "  sample_memory_%d samples_block_%d\n  (", datawidth, block->blocknumber);
+  
+  //For the 9 bits part the full data bus is used
+  if(datawidth == 9)
+  {
+    needcomma = outputbusconnections(fo, block, "dia", "dia_", 9, needcomma, opennetid, 0);
+  }
+  else
+  {
+    fprintf(fo, "\n    .dia({");
+    
+    //For two bit setup the A inputs are 2 and 5, B outputs are 0 and 1
+    needcomma = verilogoutputconnection(fo, block, "dia_5", 0, opennetid);
+    needcomma = verilogoutputconnection(fo, block, "dia_2", needcomma, opennetid);
+
+    fprintf(fo, " })");
+  }
+  
+  //Check the a channel buses if they need to be connected
+  needcomma = outputembbusconnections(fo, block, "addra", "addra_", 12, addreslast, needcomma, opennetid);
+
+  //The chip enable is a combined signal
+  if(datawidth == 9)
+  {
+    fprintf(fo, ",\n    .cea(sig_%d_cea)", block->blocknumber);
+  }
+  else
+  {
+    needcomma = outputconnection(fo, block, "cea", "cea", needcomma);
+  }
+
+  //Connect the clock signal
+  needcomma = outputconnection(fo, block, "clka", "clka", needcomma);
+
+  //Check the b channel busses if they need to be connected
+  needcomma = outputbusconnections(fo, block, "dob", "dob_", datawidth, needcomma, opennetid, 0);
+  needcomma = outputembbusconnections(fo, block, "addrb", "addrb_", 12, addreslast, needcomma, opennetid);
+
+  //The chip enable is a combined signal
+  if(datawidth == 9)
+  {
+    fprintf(fo, ",\n    .ceb(sig_%d_ceb)", block->blocknumber);
+  }
+  else
+  {
+    //B output is always enabled
+    fprintf(fo, ",\n    .ceb(1'b1)");
+  }
+  
+  //Connect the clock signal
+  needcomma = outputconnection(fo, block, "clkb", "clkb", needcomma);
+
+  //Finish of the module
+  fprintf(fo, "\n  );\n\n");
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void createverilog()
+{
+  char filename[255];
+
+  pBLOCKINFOITEM printlist;
+
+  FILE *fverilog;
+
+  int count;
+  
+  int opennetid = 0;
+
+  int needcomma = 0;
+
+  //Create a verilog file
+  snprintf(filename, sizeof(filename), "%s.v", FILENAME);
+  fverilog = fopen(filename, "w");
+
+  if(fverilog)
+  {
+    fprintf(fverilog, "module %s\n(", MODULENAME);
+
+    printlist = blocklist;
+
+    //Process the PAD blocks
+    while(printlist)
+    {
+      //Needs to be of type PAD. Pin less and actual unconnected pads need to be filtered based on number of bits
+      //Pins that are configured but have connections to the PLL or global clocks can exist without visible connections
+      if((printlist->blocktype == BLOCK_PAD) && (printlist->bitcount > 3))
+      {
+        if(needcomma)
+        {
+          fprintf(fverilog, ",");
+        }
+
+        fprintf(fverilog, "\n");
+
+        //output this in the io list of the module
+        if(printlist->padtype == PAD_BIDIRECTIONAL)
+        {
+          fprintf(fverilog, "  inout wire %s", printlist->padname);
+        }
+        else if(printlist->padtype & PAD_INPUT)
+        {
+          fprintf(fverilog, "  input wire %s", printlist->padname);
+        }
+        else if(printlist->padtype & PAD_OUTPUT)
+        {
+          fprintf(fverilog, "  output wire %s", printlist->padname);
+        }
+
+        needcomma = 1;
+      }
+
+      printlist = printlist->next;
+    }
+
+    fprintf(fverilog, "\n);\n\n");
+
+    //If the hdl names for the pins are used instead of net_xxx the next bit would only be needed for the bidirectional pins
+    
+    //The pad names need to be assigned to the internally used wires.
+    printlist = blocklist;
+
+    //Process the connected PAD blocks
+    while(printlist)
+    {
+      //Needs to be connected and of type PAD
+      if((printlist->connected == 1) && (printlist->blocktype == BLOCK_PAD))
+      {
+        //Create an assign statement for making the connection between the pad and the internally used signal
+        createpadassignment(fverilog, printlist);
+      }
+
+      printlist = printlist->next;
+    }
+
+#if USE_SHORT_NET_NAMES
+    //Output the clock assigns. These are manually determined and just outputted
+    fprintf(fverilog, "  assign gclk_2 = net_18;\n");
+    fprintf(fverilog, "  assign gclk_3 = net_730;\n");
+    fprintf(fverilog, "  assign gclk_4 = net_504;\n");
+    fprintf(fverilog, "  assign gclk_5 = net_1526;\n");
+    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
+#else    
+    //Output the clock assigns. These are manually determined and just outputted
+    fprintf(fverilog, "  assign gclk_2 = x6y18_mslice1_f_0_net_18;\n");
+    fprintf(fverilog, "  assign gclk_3 = x14y22_lslice3_q_0_net_730;\n");
+    fprintf(fverilog, "  assign gclk_4 = x13y9_lslice2_q_0_net_504;\n");
+    fprintf(fverilog, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
+    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
+#endif
+
+    //Extra line between pad assignments and the logic
+    fprintf(fverilog, "\n");
+
+    //Process the remaining logic
+    printlist = blocklist;
+
+    //Process the blocks
+    while(printlist)
+    {
+      //Only handle blocks that are not already processed in making carry chains
+      //Since the gate level verilog already marked the carry chain blocks they need to be reprocessed here
+      if(printlist->processed < 2)
+      {
+        //There is no difference in verilog between the two slices, but parts of the processing will differ
+        if(printlist->blocktype == BLOCK_LSLICE)
+        {
+          //Need to process the settings for the current lslice into the needed macro(s)
+          processlslicetoverilog(fverilog, printlist, &opennetid);
+        }
+        else if(printlist->blocktype == BLOCK_MSLICE)
+        {
+          //Need to process the settings for the current mslice into the needed macro(s)
+          processmslicetoverilog(fverilog, printlist, &opennetid);
+        }
+        else if(printlist->blocktype == BLOCK_EMB)
+        {
+          //process the bram
+          processembtoverilog(fverilog, printlist, &opennetid);
+        }
+      }
+
+
+      printlist = printlist->next;
+    }
+
+    //For the PLL the IP file generated with the IDE needs to be used
+    //The module is instantiated here
+    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
+    fprintf(fverilog, "//Clock part\n\n");
+    fprintf(fverilog, "  pll master_clock\n");
+    fprintf(fverilog, "  (\n");
+    fprintf(fverilog, "    .refclk   (i_xtal),\n");
+    fprintf(fverilog, "    .reset    (1'b0),\n");
+    fprintf(fverilog, "    .clk0_out (gclk_0)\n");
+    fprintf(fverilog, "  );\n\n");
+
+    //Finish of the module
+    fprintf(fverilog, "endmodule\n\n");
+    
+    //Done with the file
+    fclose(fverilog);
   }
 }
 
@@ -8228,26 +9602,11 @@ int main(int argc, char** argv)
     //Filter the route list into a net list
     filterroutelist();
 
-    //At this point the data can be converted in gate level verilog by reading both the nets and the block setup data
-
-    //The file starts with a module and it's external signals.
-
-    //Need to flag the signal names to avoid listing them double
-
-    //Then a list of all the wires that are needed.
-
-    //After that the AL_PHY_PAD macros to put all the pads in the verilog
-
-    //Then the LUTS and SLICES
-
-    //And last the BRAM and PLL
-
 #if OUTPUT_VERILOG
     creategatelevelverilog();
+    
+    createverilog();
 #endif
-
-    //Create a tree list for the connected blocks
-//    createtreelist();
 
     //Print the block list
     printblocklist();
