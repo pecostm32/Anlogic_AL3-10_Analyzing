@@ -79,3 +79,15 @@ For know I'm focusing on the mslice, which is simpler but also has its quirks.
 
 Managed to get complete gate level verilog generated for the 1013D bit stream, but when compiled in the IDE the new bit stream
 is different and a test in the scope showed it not working, so still some problems to solve.
+
+-------------------------------------------------------------------------------------------------------------------------------
+28-10-2022
+
+The code is now generating higher level verilog but needs improvements to order the output such that declares are near the top
+of the file.
+
+It is also needed to make something that merges signals into buses where that is needed. For instance the MCU databus interface
+or the memory address buses.
+
+Still no output that compiles back into the original bit stream or at least something that works in the scope.
+
