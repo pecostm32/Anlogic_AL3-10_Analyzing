@@ -91,3 +91,11 @@ or the memory address buses.
 
 Still no output that compiles back into the original bit stream or at least something that works in the scope.
 
+-------------------------------------------------------------------------------------------------------------------------------
+05-11-2022
+
+Made resonable progress. The generated verilog has some problems, but a lot of the communication with the MCU works.
+It is possible to set the channel input relays and the display brightness can be controlled.
+One problem is that the sampling reset bit does not work like the original.
+
+Working on renaming all the nets to get a clear insight in what things do. For this simulation is also used.
