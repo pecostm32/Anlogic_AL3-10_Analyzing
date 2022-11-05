@@ -227,6 +227,7 @@
 
 #if DESIGN == 1
 #include "pin_assignments/1013D_pin_assignment.h"
+#include "pin_assignments/1013D_net_renaming.h"
 
 #define MODULENAME   "FNIRSI_1013D"
 
@@ -252,8 +253,8 @@
 
 #define MODULENAME   "FNIRSI_1013D"
 
-#define FILENAME   "/home/peter/Data/Anlogic_projects/Scope15/Scope15"
-#define BLOCKFOLDER  "/home/peter/Data/Anlogic_projects/Scope15/blocks"
+#define FILENAME   "/home/peter/Data/Anlogic_projects/FNIRSI_Scope/Scope15/Scope15"
+#define BLOCKFOLDER  "/home/peter/Data/Anlogic_projects/FNIRSI_Scope/Scope15/blocks"
 #elif DESIGN == 5
 #include "pin_assignments/1013D_pin_assignment.h"
 
@@ -267,6 +268,13 @@
 #define MODULENAME   "FNIRSI_1013D"
 #define FILENAME     "/home/peter/Data/Anlogic_projects/My_1013D/My_1013D"
 #define BLOCKFOLDER  "/home/peter/Data/Anlogic_projects/My_1013D/blocks"
+#elif DESIGN == 7
+#include "pin_assignments/1013D_pin_assignment.h"
+
+#define MODULENAME   "FNIRSI_1013D"
+
+#define FILENAME   "/home/peter/Data/Anlogic_projects/scope_test/pin_test/pin_test"
+#define BLOCKFOLDER  "/home/peter/Data/Anlogic_projects/scope_test/pin_test/blocks"
 #endif
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -992,26 +1000,29 @@ void draw_block(uint8 *buffer, uint32 bytesperrow, uint32 xpos, uint32 ypos, uin
 
       for(idx=0;idx<designblock->connectioncount;idx++)
       {
-        if(strcmp(name, designblock->connections[idx].signalname) == 0)
+        if(designblock->connections[idx].signalname)
         {
-
-          switch(port->direction)
+          if(strcmp(name, designblock->connections[idx].signalname) == 0)
           {
-            case 0:
-            case 1:
-              len = (strlen(designblock->connections[idx].netname) * 6) + 5;
-              xs = xpos - port->length - len;
-              break;
 
-            case 2:
-            case 3:
-              xs = xpos + baseblock->width + port->length + 5;
-              break;
+            switch(port->direction)
+            {
+              case 0:
+              case 1:
+                len = (strlen(designblock->connections[idx].netname) * 6) + 5;
+                xs = xpos - port->length - len;
+                break;
+
+              case 2:
+              case 3:
+                xs = xpos + baseblock->width + port->length + 5;
+                break;
+            }
+
+            draw_text(buffer, bytesperrow, xs, ye, netcolor, designblock->connections[idx].netname);
+
+            break;
           }
-
-          draw_text(buffer, bytesperrow, xs, ye, netcolor, designblock->connections[idx].netname);
-
-          break;
         }
       }
 
@@ -2787,28 +2798,32 @@ void mapsignalname(pROUTEINFOITEM routeitem, pNETLISTITEM net)
           routeitem->toptilex = x - signalsearchtable->xoff;
           routeitem->toptiley = y - signalsearchtable->yoff;
 
-          //Check the tile that this match is offset from, on the correct type to make sure the match is correct
-          typemap = tiletypemap[routeitem->toptilex][routeitem->toptiley];
-
-          //Only if the originating tile has a typemap check it there is a match
-          if(typemap)
+          //Make sure the tile is within the coordinates
+          if((routeitem->toptilex < 35) && (routeitem->toptiley < 38))
           {
-            //Check all the entries in this type map
-            while(*typemap && (found == 0))
+            //Check the tile that this match is offset from, on the correct type to make sure the match is correct
+            typemap = tiletypemap[routeitem->toptilex][routeitem->toptiley];
+
+            //Only if the originating tile has a typemap check it there is a match
+            if(typemap)
             {
-              //The type of th originating tile has to match with the one found in the signal translation map for the current tile
-              if(strcmp(*typemap, tilesignalmapptr->tiletype) == 0)
+              //Check all the entries in this type map
+              while(*typemap && (found == 0))
               {
-                //When a match is found set both the name and the prefix pointer for printing
-                routeitem->signalname   = signalsearchtable;
-                routeitem->signalprefix = tilesignalmapptr;
+                //The type of th originating tile has to match with the one found in the signal translation map for the current tile
+                if(strcmp(*typemap, tilesignalmapptr->tiletype) == 0)
+                {
+                  //When a match is found set both the name and the prefix pointer for printing
+                  routeitem->signalname   = signalsearchtable;
+                  routeitem->signalprefix = tilesignalmapptr;
 
-                //Done so break out all the loops
-                found = 1;
+                  //Done so break out all the loops
+                  found = 1;
+                }
+
+                //Select the next type string to check
+                typemap++;
               }
-
-              //Select the next type string to check
-              typemap++;
             }
           }
         }
@@ -2994,6 +3009,26 @@ void filterroutelist()
         gclkid = atoi(&name[4]);
 
         snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "gclk_%d", gclkid);
+        
+#ifdef NET_RENAMING
+        //try to find the net name in the translate list
+        pNETRENAME clkrenamelist = clock_renaming_table;
+
+        while(clkrenamelist->net_name)
+        {
+          if(strcmp(routeitem->netname, clkrenamelist->net_name) == 0)
+          {
+            //Copy in the new name
+            snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "%s", clkrenamelist->new_name);
+            
+            break;
+          }
+
+          clkrenamelist++;
+        }
+#endif        
+        
+        
       }
       else
       {
@@ -3037,6 +3072,27 @@ void filterroutelist()
           //To make the verilog more readable only net_xxx is used for the naming of the signals
           snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "net_%d", routeitem->netnumber);
         }
+        
+        
+#ifdef NET_RENAMING
+        //try to find the net name in the translate list
+        pNETRENAME renamelist = net_renaming_table;
+
+        while(renamelist->net_name)
+        {
+          if(strcmp(routeitem->netname, renamelist->net_name) == 0)
+          {
+            //Copy in the new name
+            snprintf(routeitem->netname, MAX_NET_NAME_LENGTH, "%s", renamelist->new_name);
+            
+            break;
+          }
+
+          renamelist++;
+        }
+#endif        
+        
+        
 #else          
         //When the signal is mapped use the prefix and hdl name for the net
         if(routeitem->signalprefix && routeitem->signalname)
@@ -3964,22 +4020,22 @@ char *getconnectionnet(pBLOCKINFOITEM block, char *signal)
 
 char *lutequationlookup[16] =
 {
-  0,                             //Now filtered as it yields no ones, but could also be "0"
-  "~(B+A)",                      //(NOR)
-  "~(B+~A)",
-  "~(B+~A)+~(B+A)",
-  "~(~B+A)",
-  "~(~B+A)+~(B+A)",
-  "B@A",                         //(XOR)
-  "~(B*A)",                      //(NAND)
-  "B*A",                         //(AND)
-  "~(B@A)",                      //(NOT_XOR)
-  "(B*A)+~(B+~A)",
-  "(B*A)+~(B+~A)+~(B+A)",
-  "(B*A)+~(~B+A)",
-  "(B*A)+~(~B+A)+~(B+A)",
-  "B+A",                         //(OR)
-  "1"                            //The IDE seems to need equations with normal numbers and not single bit because it sees 1'b1 as 1 but also 1'b0 as 1.
+  0,                             //0 Now filtered as it yields no ones, but could also be "0"
+  "~B*~A",                       //1 (NOR)
+  "~B*A",                        //2
+  "(~B*~A)+(~B*A)",              //3
+  "B*~A",                        //4
+  "(~B*~A)+(B*~A)",              //5
+  "B@A",                         //6 (XOR)
+  "~(B*A)",                      //7 (NAND)
+  "B*A",                         //8 (AND)
+  "~(B@A)",                      //9 (XNOR)
+  "(~B*A)+(A*B)",                //A
+  "(~B*~A)+(~B*A)+(A*B)",        //B
+  "(B*~A)+(A*B)",                //C
+  "(~B*~A)+(B*~A)+(A*B)",        //D
+  "B+A",                         //E (OR)
+  "1"                            //F The IDE seems to need equations with normal numbers and not single bit because it sees 1'b1 as 1 but also 1'b0 as 1.
 };
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -4266,11 +4322,11 @@ void createpadassignment(FILE *fo, pBLOCKINFOITEM block)
   {
     fprintf(fo, "  assign %s = %s;\n", getconnectionnet(block, "di"), block->padname);
   }
+#endif
   else if(block->padtype & PAD_OUTPUT)
   {
     fprintf(fo, "  assign %s = %s;\n", block->padname, getconnectionnet(block, "otrue"));
   }
-#endif
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -6319,18 +6375,18 @@ void creategatelevelverilog()
 
 #if USE_SHORT_NET_NAMES
     //Output the clock assigns. These are manually determined and just outputted
-    fprintf(fverilog, "  assign gclk_2 = net_18;\n");
-    fprintf(fverilog, "  assign gclk_3 = net_730;\n");
-    fprintf(fverilog, "  assign gclk_4 = net_504;\n");
+//    fprintf(fverilog, "  assign gclk_2 = net_18;\n");
+//    fprintf(fverilog, "  assign gclk_3 = net_730;\n");
+//    fprintf(fverilog, "  assign gclk_4 = net_504;\n");
     fprintf(fverilog, "  assign gclk_5 = net_1526;\n");
-    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
+//    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
 #else    
     //Output the clock assigns. These are manually determined and just outputted
-    fprintf(fverilog, "  assign gclk_2 = x6y18_mslice1_f_0_net_18;\n");
-    fprintf(fverilog, "  assign gclk_3 = x14y22_lslice3_q_0_net_730;\n");
-    fprintf(fverilog, "  assign gclk_4 = x13y9_lslice2_q_0_net_504;\n");
+//    fprintf(fverilog, "  assign gclk_2 = x6y18_mslice1_f_0_net_18;\n");
+//    fprintf(fverilog, "  assign gclk_3 = x14y22_lslice3_q_0_net_730;\n");
+//    fprintf(fverilog, "  assign gclk_4 = x13y9_lslice2_q_0_net_504;\n");
     fprintf(fverilog, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
-    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
+//    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
 #endif
 
     //Extra line between pad assignments and the logic
@@ -6359,21 +6415,26 @@ void creategatelevelverilog()
           //Need to process the settings for the current mslice into the needed macro(s)
           processmslicesettings(fverilog, printlist, &uid, &opennetid);
         }
-        else if(printlist->blocktype == BLOCK_EMB)
-        {
-          //process the bram
-          processembsettings(fverilog, printlist, &opennetid);
-        }
       }
-
-
-
-      //process the pll
-
 
       printlist = printlist->next;
     }
+    
+    //Process the embedded memory
+    printlist = blocklist;
 
+    //Process the blocks
+    while(printlist)
+    {
+      if(printlist->blocktype == BLOCK_EMB)
+      {
+        //process the bram
+        processembsettings(fverilog, printlist, &opennetid);
+      }
+
+      printlist = printlist->next;
+    }    
+    
     //Output the PLL code
     fprintf(fverilog, "  AL_PHY_PLL #\n");
     fprintf(fverilog, "  (\n");
@@ -6410,7 +6471,7 @@ void creategatelevelverilog()
     fprintf(fverilog, "    .phcntsel(3'b000),\n");
     fprintf(fverilog, "    .phasedone(open),\n");
     fprintf(fverilog, "    .fbclk(1'b0),\n");
-    fprintf(fverilog, "    .clkc({open, open, open, open, gclk_0})\n");
+    fprintf(fverilog, "    .clkc({open, open, open, open, clock_200MHz})\n");
     fprintf(fverilog, "  );\n\n");
 
     fprintf(fverilog, "endmodule\n\n");
@@ -6432,24 +6493,42 @@ void creategatelevelverilog()
 // Higher level verilog generation part
 //
 //----------------------------------------------------------------------------------------------------------------------------------
+//Quick and simple change to allow for proper order of code in the verilog
+//The generation of the verilog is done in the three buffers below and written to the file in the correct order at the end
+
+char wires[1000000];
+char registers[1000000];
+char code[1000000];
+
+char *wireptr;
+char *wireend;
+char *regptr;
+char *regend;
+char *codeptr;
+char *codeend;
+
+char lut0[2048];
+char lut1[2048];
+
+//----------------------------------------------------------------------------------------------------------------------------------
 
 char *verilogequationlookup[16] =
 {
   0,
-  "~(%s + %s)",                             //(NOR)
-  "~(%s + ~%s)",
-  "~(%s + ~%s) + ~(%s + %s)",
-  "~(~%s + %s)",
-  "~(~%s + %s) + ~(%s + %s)",
-  "%s ^ %s",                                //(XOR)
-  "~(%s * %s)",                             //(NAND)
-  "%s * %s",                                //(AND)
-  "~(%s ^ %s)",                             //(NOT_XOR)
-  "(%s * %s) + ~(%s + ~%s)",
-  "(%s * %s) + ~(%s + ~%s) + ~(%s + %s)",
-  "(%s * %s) + ~(~%s + %s)",
-  "(%s * %s) + ~(~%s + %s) + ~(%s + %s)",
-  "%s + %s",                                //(OR)
+  "(~%s & ~%s)",                            //(NOR)
+  "(~%s & %s)",
+  "(~%s & ~%s) | (~%s & %s)",
+  "(%s & ~%s)",
+  "(~%s & ~%s) | (%s & ~%s)",
+  "(%s ^ %s)",                                //(XOR)
+  "~(%s & %s)",                               //(NAND)
+  "(%s & %s)",                                //(AND)
+  "~(%s ^ %s)",                               //(NOT_XOR)
+  "(~%s & %s) | (%s & %s)",
+  "(~%s & ~%s) | (~%s & %s) | (%s & %s)",
+  "(%s & ~%s) | (%s & %s)",
+  "(~%s & ~%s) | (%s & ~%s) | (%s & %s)",
+  "(%s | %s)",                                //(OR)
   0
 };
 
@@ -6466,7 +6545,7 @@ char *verilogequationlookup[16] =
 //use a pointer pointer for the string and a pointer for the maxlen to shift the pointer to the end and decrease the available length
 //based on the addor being set add a or sign first
 
-int getlut2verilog(char **equation, int *maxlen, char *andpart, int aidx, char *neta, int bidx, char *netb, int cidx, int lutdata, int addor, int finish)
+int getlut2verilog(char **equation, int *maxlen, char *andpart, int aidx, char *neta, int bidx, char *netb, int cidx, int lutdata, int addor)
 {
   int tableidx = 0;
   int lidx = 0;
@@ -6513,7 +6592,7 @@ int getlut2verilog(char **equation, int *maxlen, char *andpart, int aidx, char *
     if(addor)
     {
       //If so add the "or" statement to the line
-      length = snprintf(*equation, *maxlen, " + ");
+      length = snprintf(*equation, *maxlen, " | ");
       
       //Adjust the pointer and length
       *equation = *equation + length;
@@ -6541,12 +6620,12 @@ int getlut2verilog(char **equation, int *maxlen, char *andpart, int aidx, char *
     {
       //Valid equation is found and needs to be added together with the and part if given
       //Need to add enough a b pairs for the largest equation  
-      snprintf(part, sizeof(part), verilogequationlookup[tableidx], neta, netb, neta, netb, neta, netb);
+      snprintf(part, sizeof(part), verilogequationlookup[tableidx], netb, neta, netb, neta, netb, neta);
       
       if(andpart)
       {
         //And part is given so and both parts of the equation
-        length = snprintf(*equation, *maxlen, "(%s * (%s))", andpart, part);
+        length = snprintf(*equation, *maxlen, "(%s & (%s))", andpart, part);
       }
       else
       {
@@ -6559,47 +6638,39 @@ int getlut2verilog(char **equation, int *maxlen, char *andpart, int aidx, char *
     *equation = *equation + length;
     *maxlen = *maxlen - length;
   }
-  
-  //Check if the line needs to be terminated
-  if(finish && addor)
-  {
-    length = snprintf(*equation, *maxlen, ";\n");
 
-    //Adjust the pointer and length
-    *equation = *equation + length;
-    *maxlen = *maxlen - length;
-  }
-
-  //Signal back to the user if next time the "+" symbol needs to be used or not
+  //Signal back to the user if next time the "|" symbol needs to be used or not
   return(addor);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-int veriloginputconnection(FILE *fo, pBLOCKINFOITEM block, char *signalname, int printcomma)
+int verilogcodesetreset(pBLOCKINFOITEM block, int flag, char *signalname, int printcomma)
 {
+  char *value;
   char *connection;
-
-  //Get the possible connection for this signal
+  
+  //Check the setting for the given flag on what the value should be.
+  if(block->logicsettings & flag)
+  {
+    value = "1'b0";
+  }
+  else
+  {
+    value = "1'b1";
+  }
+  
+  //Get the possible connection for this signal to check if it is used
+  //need this to decide if a bit needs to be printed or not, to suppress the not connected top bit
   if(connection = getconnectionnet(block, signalname))
   {
-    //Check if a comma is needed to close of the previous item
     if(printcomma)
     {
-      fprintf(fo, ",");
+      codeptr += snprintf(codeptr, codeend - codeptr, ",");
     }
-    
-    //Check if it is connected to ground
-    if(strcmp(connection, "ground") == 0)
-    {
-      //Output a zero bit if so
-      fprintf(fo, " 1'b0");
-    }
-    else
-    {
-      //Else output the actual connection
-      fprintf(fo, " %s", connection);
-    }
+
+    //Output the actual value for this flip flop
+    codeptr += snprintf(codeptr, codeend - codeptr, " %s", value);
     
     printcomma = 1;
   }
@@ -6609,10 +6680,10 @@ int veriloginputconnection(FILE *fo, pBLOCKINFOITEM block, char *signalname, int
     //Also suppress open nets at the beginning of the list
     if(printcomma)
     {
-      fprintf(fo, ",");
+      codeptr += snprintf(codeptr, codeend - codeptr, ",");
 
-      //Add an one when not connected
-      fprintf(fo, " 1'b1");
+      //Output the actual value for this flip flop
+      codeptr += snprintf(codeptr, codeend - codeptr, " %s", value);
     }
   }
   
@@ -6621,7 +6692,7 @@ int veriloginputconnection(FILE *fo, pBLOCKINFOITEM block, char *signalname, int
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-int verilogoutputconnection(FILE *fo, pBLOCKINFOITEM block, char *signalname, int printcomma, int *opennetid)
+int veriloginputconnection(pBLOCKINFOITEM block, char *signalname, int printcomma)
 {
   char *connection;
 
@@ -6631,11 +6702,20 @@ int verilogoutputconnection(FILE *fo, pBLOCKINFOITEM block, char *signalname, in
     //Check if a comma is needed to close of the previous item
     if(printcomma)
     {
-      fprintf(fo, ",");
+      codeptr += snprintf(codeptr, codeend - codeptr, ",");
     }
     
-    //Output the actual connection
-    fprintf(fo, " %s", connection);
+    //Check if it is connected to ground
+    if(strcmp(connection, "ground") == 0)
+    {
+      //Output a zero bit if so
+      codeptr += snprintf(codeptr, codeend - codeptr, " 1'b0");
+    }
+    else
+    {
+      //Else output the actual connection
+      codeptr += snprintf(codeptr, codeend - codeptr, " %s", connection);
+    }
     
     printcomma = 1;
   }
@@ -6645,10 +6725,46 @@ int verilogoutputconnection(FILE *fo, pBLOCKINFOITEM block, char *signalname, in
     //Also suppress open nets at the beginning of the list
     if(printcomma)
     {
-      fprintf(fo, ",");
+      codeptr += snprintf(codeptr, codeend - codeptr, ",");
+
+      //Add an one when not connected
+      codeptr += snprintf(codeptr, codeend - codeptr, " 1'b1");
+    }
+  }
+  
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+int verilogcodeconnection(pBLOCKINFOITEM block, char *signalname, int printcomma, int *opennetid)
+{
+  char *connection;
+
+  //Get the possible connection for this signal
+  if(connection = getconnectionnet(block, signalname))
+  {
+    //Check if a comma is needed to close of the previous item
+    if(printcomma)
+    {
+      codeptr += snprintf(codeptr, codeend - codeptr, ",");
+    }
+    
+    //Output the actual connection
+    codeptr += snprintf(codeptr, codeend - codeptr, " %s", connection);
+    
+    printcomma = 1;
+  }
+  else
+  {
+    //Check if a comma is needed to close of the previous item
+    //Also suppress open nets at the beginning of the list
+    if(printcomma)
+    {
+      codeptr += snprintf(codeptr, codeend - codeptr, ",");
 
       //Add an open net when not connected
-      fprintf(fo, " open_%d", *opennetid);
+      codeptr += snprintf(codeptr, codeend - codeptr, " open_%d", *opennetid);
 
       *opennetid = *opennetid + 1;
     }
@@ -6658,10 +6774,83 @@ int verilogoutputconnection(FILE *fo, pBLOCKINFOITEM block, char *signalname, in
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
+
+int verilogwireconnection(pBLOCKINFOITEM block, char *signalname, int printcomma, int *opennetid)
+{
+  char *connection;
+
+  //Get the possible connection for this signal
+  if(connection = getconnectionnet(block, signalname))
+  {
+    //Check if a comma is needed to close of the previous item
+    if(printcomma)
+    {
+      wireptr += snprintf(wireptr, wireend - wireptr, ",");
+    }
+    
+    //Output the actual connection
+    wireptr += snprintf(wireptr, wireend - wireptr, " %s", connection);
+    
+    printcomma = 1;
+  }
+  else
+  {
+    //Check if a comma is needed to close of the previous item
+    //Also suppress open nets at the beginning of the list
+    if(printcomma)
+    {
+      wireptr += snprintf(wireptr, wireend - wireptr, ",");
+
+      //Add an open net when not connected
+      wireptr += snprintf(wireptr, wireend - wireptr, " open_%d", *opennetid);
+
+      *opennetid = *opennetid + 1;
+    }
+  }
+  
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+int verilogregconnection(pBLOCKINFOITEM block, int flag, char *signalname, int printcomma)
+{
+  char *value;
+  char *connection;
+
+  //Check the setting for the given flag on what the value should be.
+  if(block->logicsettings & flag)
+  {
+    value = "1'b0";
+  }
+  else
+  {
+    value = "1'b1";
+  }
+  
+  //Get the possible connection for this signal
+  if(connection = getconnectionnet(block, signalname))
+  {
+    //Check if a comma is needed to close of the previous item
+    if(printcomma)
+    {
+      regptr += snprintf(regptr, regend - regptr, ",");
+    }
+    
+    //Output the actual connection
+    regptr += snprintf(regptr, regend - regptr, " %s = %s", connection, value);
+    
+    printcomma = 1;
+  }
+  
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
 //Function to print an equation for the given LUT and used input pins.
 //The used pins need to be given in range of LUT0 (a,b,c,d) for MSLICE or (a,b,c,d,e) for LSLICE
 
-void createequation(char *equation, int maxlen, pBLOCKINFOITEM block, int inputcount, int lutdata, int usedpins, char **lutinputnames, int finish)
+void createequation(char *equation, int maxlen, pBLOCKINFOITEM block, int inputcount, int lutdata, int usedpins, char **lutinputnames)
 {
   int aidx = 0;
   int bidx = 0;
@@ -6679,6 +6868,11 @@ void createequation(char *equation, int maxlen, pBLOCKINFOITEM block, int inputc
   int addor = 0;
   
   char andpart[64];
+  
+  //Could even check on lutdata being zero to return a zero bit
+  
+  //Clear the previous equation
+  *equation = 0;
   
   //Get rid of the non LUT input pins and the output pins
   usedpins &= LUT_INPUT_PINS;
@@ -6727,66 +6921,66 @@ void createequation(char *equation, int maxlen, pBLOCKINFOITEM block, int inputc
   
           //Five input equation
           //First part with c low, d low, e low
-          snprintf(andpart, sizeof(andpart), "~%s * ~%s * ~%s", nete, netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, 0, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "~%s & ~%s & ~%s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, 0, lutdata, addor);
           
           //Second part with c high, d low, e low
-          snprintf(andpart, sizeof(andpart), "~%s * ~%s * %s", nete, netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, cidx, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "~%s & ~%s & %s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, cidx, lutdata, addor);
           
           //Third part with c low, d high, e low
-          snprintf(andpart, sizeof(andpart), "~%s * %s * ~%s", nete, netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "~%s & %s & ~%s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx, lutdata, addor);
           
           //Fourth part with c high, d high, e low
-          snprintf(andpart, sizeof(andpart), "~%s * %s * %s", nete, netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx + cidx, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "~%s & %s & %s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx + cidx, lutdata, addor);
           
           //Fifth part with c low, d low, e high
-          snprintf(andpart, sizeof(andpart), "%s * ~%s * ~%s", nete, netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "%s & ~%s & ~%s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx, lutdata, addor);
           
           //Sixth part with c high, d low, e high
-          snprintf(andpart, sizeof(andpart), "%s * ~%s * %s", nete, netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx + cidx, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "%s & ~%s & %s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx + cidx, lutdata, addor);
           
           //Seventh part with c low, d high, e high
-          snprintf(andpart, sizeof(andpart), "%s * %s * ~%s", nete, netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx + didx, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "%s & %s & ~%s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx + didx, lutdata, addor);
           
           //Eighth part with c high, d high, e high
-          snprintf(andpart, sizeof(andpart), "%s * %s * %s", nete, netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx + didx + cidx, lutdata, addor, finish);
+          snprintf(andpart, sizeof(andpart), "%s & %s & %s", nete, netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, eidx + didx + cidx, lutdata, addor);
       
           //When nothing has been generated and the line needs to be finished the resulting output should be a single zero bit
-          if(finish && !addor)
+          if(!addor)
           {
-            snprintf(equation, maxlen, "1'b0;\n");
+            snprintf(equation, maxlen, "1'b0");
           }
         }
         else
         {
           //Four input equation
           //First part with c and d low
-          snprintf(andpart, sizeof(andpart), "~%s * ~%s", netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, 0, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "~%s & ~%s", netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, 0, lutdata, addor);
           
           //Second part with c high and d low
-          snprintf(andpart, sizeof(andpart), "~%s * %s", netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, cidx, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "~%s & %s", netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, cidx, lutdata, addor);
           
           //Third part with c low and d high
-          snprintf(andpart, sizeof(andpart), "%s * ~%s", netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx, lutdata, addor, 0);
+          snprintf(andpart, sizeof(andpart), "%s & ~%s", netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx, lutdata, addor);
           
           //Fourth part with c and d high
-          snprintf(andpart, sizeof(andpart), "%s * %s", netd, netc);
-          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx + cidx, lutdata, addor, finish);
+          snprintf(andpart, sizeof(andpart), "%s & %s", netd, netc);
+          addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, didx + cidx, lutdata, addor);
       
           //When nothing has been generated and the line needs to be finished the resulting output should be a single zero bit
-          if(finish && !addor)
+          if(!addor)
           {
-            snprintf(equation, maxlen, "1'b0;\n");
+            snprintf(equation, maxlen, "1'b0");
           }
         }
       }
@@ -6795,28 +6989,28 @@ void createequation(char *equation, int maxlen, pBLOCKINFOITEM block, int inputc
         //Three input equation
         //First part with c low
         snprintf(andpart, sizeof(andpart), "~%s", netc);
-        addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, 0, lutdata, addor, 0);
+        addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, 0, lutdata, addor);
         
         //Second part with c high
         snprintf(andpart, sizeof(andpart), "%s", netc);
-        addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, cidx, lutdata, addor, finish);
+        addor = getlut2verilog(&equation, &maxlen, andpart, aidx, neta, bidx, netb, cidx, lutdata, addor);
       
         //When nothing has been generated and the line needs to be finished the resulting output should be a single zero bit
-        if(finish && !addor)
+        if(!addor)
         {
-          snprintf(equation, maxlen, "1'b0;\n");
+          snprintf(equation, maxlen, "1'b0");
         }
       }
     }
     else
     {
       //Two input equation
-      addor = getlut2verilog(&equation, &maxlen, 0, aidx, neta, bidx, netb, 0, lutdata, addor, finish);
+      addor = getlut2verilog(&equation, &maxlen, 0, aidx, neta, bidx, netb, 0, lutdata, addor);
       
       //When nothing has been generated and the line needs to be finished the resulting output should be a single zero bit
-      if(finish && !addor)
+      if(!addor)
       {
-        snprintf(equation, maxlen, "1'b0;\n");
+        snprintf(equation, maxlen, "1'b0");
       }
     }
   }
@@ -6825,17 +7019,12 @@ void createequation(char *equation, int maxlen, pBLOCKINFOITEM block, int inputc
     //For a single input lut it depends on two settings and is either A or ~A. If the first entry is 1 then it is ~A.
     //But it only makes sense as an inverter so no check on it
     snprintf(equation, maxlen, "~%s", neta);
-    
-    if(finish)
-    {
-      snprintf(equation, maxlen, ";\n");
-    }
   }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
+void outputverilogalways(pBLOCKINFOITEM block, int usedpins)
 {
   char *netce = 0;
   char *netsr = 0;
@@ -6903,8 +7092,18 @@ void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
 
       netq0 = getconnectionnet(block, "q_0");
 
+      //Set the value to load on reset
+      if(block->logicsettings & LOGIC_FF0_SR)
+      {
+        value = "1'b0";
+      }
+      else
+      {
+        value = "1'b1";
+      }
+      
       //Setup a register for flip flop 0
-      fprintf(fo, "  reg %s;\n", netq0);
+      regptr += snprintf(regptr, regend - regptr, "  reg %s = %s;\n", netq0, value);
     }
 
     if(usedpins & PIN_Q1)
@@ -6929,32 +7128,40 @@ void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
         }
       }
 
+      //Set the value to load on reset
+      if(block->logicsettings & LOGIC_FF1_SR)
+      {
+        value = "1'b0";
+      }
+      else
+      {
+        value = "1'b1";
+      }
+      
       netq1 = getconnectionnet(block, "q_1");
 
       //Setup a register for flip flop 1
-      fprintf(fo, "  reg %s;\n", netq1);
+      regptr += snprintf(regptr, regend - regptr, "  reg %s = %s;\n", netq1, value);
     }
-
-    fprintf(fo, "\n");
 
     //LOGIC_FF0_SR when set means the register is initialized with a 0 else a 1??
     //LOGIC_FF1_SR when set means the register is initialized with a 0 else a 1??
 
-    //STart the header for the always statement
-    fprintf(fo, "  always @(");
+    //Start the header for the always statement
+    codeptr += snprintf(codeptr, codeend - codeptr, "  always @(");
 
     //Set the edge the clock works on
     if(block->logicsettings & LOGIC_FF_CLK)
     {
-      fprintf(fo, "negedge ");
+      codeptr += snprintf(codeptr, codeend - codeptr, "negedge ");
     }
     else
     {
-      fprintf(fo, "posedge ");
+      codeptr += snprintf(codeptr, codeend - codeptr, "posedge ");
     }
 
     //Add the clock used for this block
-    fprintf(fo, "%s", getconnectionnet(block, "clk"));
+    codeptr += snprintf(codeptr, codeend - codeptr, "%s", getconnectionnet(block, "clk"));
 
     //When the sr input is connected to a signal and the mode is async it needs to be added to the header
     if(netsr && ((block->logicsettings & LOGIC_FF_SYNC) == 0))
@@ -6962,19 +7169,19 @@ void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
       //Set the edge the set reset works on
       if(block->logicsettings & LOGIC_FF_SR)
       {
-        fprintf(fo, " or negedge ");
+        codeptr += snprintf(codeptr, codeend - codeptr, " or negedge ");
       }
       else
       {
-        fprintf(fo, " or posedge ");
+        codeptr += snprintf(codeptr, codeend - codeptr, " or posedge ");
       }
 
       //Add the set reset used for this block
-      fprintf(fo, "%s", netsr);
+      codeptr += snprintf(codeptr, codeend - codeptr, "%s", netsr);
     }
 
     //Finish of the header and start the code block
-    fprintf(fo, ")\n  begin\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, ")\n  begin\n");
 
     //Check if enable is used
     if(netce)
@@ -6990,7 +7197,7 @@ void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
       }
 
       //Start the enable if block
-      fprintf(fo, "    if(%s == %s)\n    begin\n", netce, value);
+      codeptr += snprintf(codeptr, codeend - codeptr, "    if(%s == %s)\n    begin\n", netce, value);
 
       indent = "    ";
     }
@@ -7009,7 +7216,7 @@ void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
       }
 
       //Start the enable if block
-      fprintf(fo, "%s  if(%s == %s)\n%s  begin\n", indent, netsr, value, indent);
+      codeptr += snprintf(codeptr, codeend - codeptr, "%s  if(%s == %s)\n%s  begin\n", indent, netsr, value, indent);
 
       //Add the resets per flip flop
       if(netq0)
@@ -7025,7 +7232,7 @@ void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
         }
 
         //Load the reset value in the register
-        fprintf(fo, "%s    %s <= %s;\n", indent, netq0, value);
+        codeptr += snprintf(codeptr, codeend - codeptr, "%s    %s <= %s;\n", indent, netq0, value);
       }
 
       if(netq1)
@@ -7041,11 +7248,11 @@ void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
         }
 
         //Load the reset value in the register
-        fprintf(fo, "%s    %s <= %s;\n", indent, netq1, value);
+        codeptr += snprintf(codeptr, codeend - codeptr, "%s    %s <= %s;\n", indent, netq1, value);
       }
 
       //End the if part of the reset and setup the else part
-      fprintf(fo, "%s  end\n%s  else\n%s  begin\n", indent, indent, indent);
+      codeptr += snprintf(codeptr, codeend - codeptr, "%s  end\n%s  else\n%s  begin\n", indent, indent, indent);
 
       //Set the new indent based on if enable is used
       if(netce)
@@ -7062,35 +7269,35 @@ void outputverilogalways(FILE *fo, pBLOCKINFOITEM block, int usedpins)
     if(netq0)
     {
       //Load the reset value in the register
-      fprintf(fo, "%s  %s <= %s;\n", indent, netq0, netd0);
+      codeptr += snprintf(codeptr, codeend - codeptr, "%s  %s <= %s;\n", indent, netq0, netd0);
     }
 
     if(netq1)
     {
       //Load the reset value in the register
-      fprintf(fo, "%s  %s <= %s;\n", indent, netq1, netd1);
+      codeptr += snprintf(codeptr, codeend - codeptr, "%s  %s <= %s;\n", indent, netq1, netd1);
     }
 
     //If the set reset is used the else block needs to be ended
     if(netsr)
     {
-      fprintf(fo, "%send\n", indent);
+      codeptr += snprintf(codeptr, codeend - codeptr, "%send\n", indent);
     }
 
     //When enable is used the if block needs to be ended
     if(netce)
     {
-      fprintf(fo, "    end\n");
+      codeptr += snprintf(codeptr, codeend - codeptr, "    end\n");
     }
 
     //End the code block
-    fprintf(fo, "  end\n\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "  end\n\n");
   }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void outputlsliceverilogadder(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int foundnext)
+void outputlsliceverilogadder(pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int foundnext)
 {
   int usedpins = getsliceusedpins(block);
   
@@ -7098,11 +7305,11 @@ void outputlsliceverilogadder(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM car
   if(((block->logicsettings & (LOGIC_FF0_F | LOGIC_FF1_F)) == 0) && (usedpins & (PIN_Q0 | PIN_Q1)))
   {
     //Show which block this is for
-    fprintf(fo, "//---------------------------------------------------------------------------\n");
-    fprintf(fo, "//Block %d, LSLICE %d\n\n", block->blocknumber, block->sliceid);
+    codeptr += snprintf(codeptr, codeend - codeptr, "//---------------------------------------------------------------------------\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//Block %d, LSLICE %d\n\n", block->blocknumber, block->sliceid);
     
     //Add the always statement as needed
-    outputverilogalways(fo, block, usedpins);
+    outputverilogalways(block, usedpins);
   }
 
   block->usedpins = usedpins;
@@ -7141,7 +7348,7 @@ void outputlsliceverilogadder(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM car
 //----------------------------------------------------------------------------------------------------------------------------------
 //Function to output all the LSLICE macros linked in a carry chain
 
-void outputlsliceverilogadderchain(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin)
+void outputlsliceverilogadderchain(pBLOCKINFOITEM block, pBLOCKINFOITEM carryin)
 {
   int foundnext = 0;
 
@@ -7172,23 +7379,20 @@ void outputlsliceverilogadderchain(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITE
   }
   
   //Output the actual lslice macro based on the found carry option
-  outputlsliceverilogadder(fo, block, carryin, foundnext);
+  outputlsliceverilogadder(block, carryin, foundnext);
 
   //When there is a next block in the chain call this function again
   if(foundnext)
   {
     //Process the found block and keep running down the chain
-    outputlsliceverilogadderchain(fo, nextblock, block);
+    outputlsliceverilogadderchain(nextblock, block);
   }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid)
+void processlslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
 {
-  char lut0[1024];
-  char lut1[1024];
-  
   pBLOCKINFOITEM carrylist;
   pBLOCKINFOITEM carrylast;
   
@@ -7201,11 +7405,11 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
   if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
   {
     //Create the lslice macro for this given block without carry input and follow the chain
-    outputlsliceverilogadderchain(fverilog, block, 0);
+    outputlsliceverilogadderchain(block, 0);
     
     //Set a header to mark the code for this block
-    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
-    fprintf(fverilog, "//LSICE adder blocks");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//---------------------------------------------------------------------------\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//LSICE adder blocks");
     
     carrylist = block;
     
@@ -7214,12 +7418,12 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     {
       if(needcomma)
       {
-        fprintf(fverilog, ",");
+        codeptr += snprintf(codeptr, codeend - codeptr, ",");
       }
       
       needcomma = 1;
       
-      fprintf(fverilog, " %d", carrylist->blocknumber);
+      codeptr += snprintf(codeptr, codeend - codeptr, " %d", carrylist->blocknumber);
       
       //Need to remember the last block to be able to traverse back from the last bit of the chain
       carrylast = carrylist;
@@ -7228,12 +7432,12 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     }
     
     //Finish of the comment line
-    fprintf(fverilog, "\n\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "\n\n");
     
     //Registered result is not used in the 1013D so not implemented here
     
     //Declare the output wires
-    fprintf(fverilog, "  wire");
+    wireptr += snprintf(wireptr, wireend - wireptr, "  wire");
 
     needcomma = 0;
 
@@ -7245,24 +7449,24 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     while(carrylist)
     {
       //Both the FX and F outputs are used to make up the adder
-      needcomma = verilogoutputconnection(fverilog, carrylist, "fx_1", needcomma, &openidx);
-      needcomma = verilogoutputconnection(fverilog, carrylist, "f_1", needcomma, &openidx);
-      needcomma = verilogoutputconnection(fverilog, carrylist, "fx_0", needcomma, &openidx);
+      needcomma = verilogwireconnection(carrylist, "fx_1", needcomma, &openidx);
+      needcomma = verilogwireconnection(carrylist, "f_1", needcomma, &openidx);
+      needcomma = verilogwireconnection(carrylist, "fx_0", needcomma, &openidx);
 
       //Need to suppress the lowest input since it is not used
       if(carrylist != block)
       {
-        needcomma = verilogoutputconnection(fverilog, carrylist, "f_0", needcomma, &openidx);
+        needcomma = verilogwireconnection(carrylist, "f_0", needcomma, &openidx);
       }
 
       carrylist = carrylist->carryprev;
     }
 
-    //Finish of the register declare line
-    fprintf(fverilog, ";\n\n");
+    //Finish of the wire declare line
+    wireptr += snprintf(wireptr, wireend - wireptr, ";\n");
     
     //Create the assign
-    fprintf(fverilog, "  assign {");
+    codeptr += snprintf(codeptr, codeend - codeptr, "  assign {");
 
     needcomma = 0;
 
@@ -7273,14 +7477,14 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     //List all the connected outputs
     while(carrylist)
     {
-      needcomma = verilogoutputconnection(fverilog, carrylist, "fx_1", needcomma, &openidx);
-      needcomma = verilogoutputconnection(fverilog, carrylist, "f_1", needcomma, &openidx);
-      needcomma = verilogoutputconnection(fverilog, carrylist, "fx_0", needcomma, &openidx);
+      needcomma = verilogcodeconnection(carrylist, "fx_1", needcomma, &openidx);
+      needcomma = verilogcodeconnection(carrylist, "f_1", needcomma, &openidx);
+      needcomma = verilogcodeconnection(carrylist, "fx_0", needcomma, &openidx);
 
       //Need to suppress the lowest input since it is not used
       if(carrylist != block)
       {
-        needcomma = verilogoutputconnection(fverilog, carrylist, "f_0", needcomma, &openidx);
+        needcomma = verilogcodeconnection(carrylist, "f_0", needcomma, &openidx);
       }
 
       carrylist = carrylist->carryprev;
@@ -7290,7 +7494,7 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     *opennetid = openidx;
 
     //Setup for the a input
-    fprintf(fverilog, " } = {");
+    codeptr += snprintf(codeptr, codeend - codeptr, " } = {");
 
     needcomma = 0;
 
@@ -7300,14 +7504,14 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     while(carrylist)
     {
       //B and A inputs are combined for the left operand
-      needcomma = veriloginputconnection(fverilog, carrylist, "b_1", needcomma);
-      needcomma = veriloginputconnection(fverilog, carrylist, "a_1", needcomma);
-      needcomma = veriloginputconnection(fverilog, carrylist, "b_0", needcomma);
+      needcomma = veriloginputconnection(carrylist, "b_1", needcomma);
+      needcomma = veriloginputconnection(carrylist, "a_1", needcomma);
+      needcomma = veriloginputconnection(carrylist, "b_0", needcomma);
 
       //Need to suppress the lowest input since it is not used
       if(carrylist != block)
       {
-        needcomma = veriloginputconnection(fverilog, carrylist, "a_0", needcomma);
+        needcomma = veriloginputconnection(carrylist, "a_0", needcomma);
       }
 
       carrylist = carrylist->carryprev;
@@ -7316,11 +7520,11 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     //Setup for the b input
     if(block->addertype == ADDER_ADD)
     {
-      fprintf(fverilog, " } + {");
+      codeptr += snprintf(codeptr, codeend - codeptr, " } + {");
     }
     else
     {
-      fprintf(fverilog, " } - {");
+      codeptr += snprintf(codeptr, codeend - codeptr, " } - {");
     }
 
     needcomma = 0;
@@ -7331,29 +7535,29 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     while(carrylist)
     {
       //E and D inputs are combined for the right operand
-      needcomma = veriloginputconnection(fverilog, carrylist, "e_1", needcomma);
-      needcomma = veriloginputconnection(fverilog, carrylist, "d_1", needcomma);
-      needcomma = veriloginputconnection(fverilog, carrylist, "e_0", needcomma);
+      needcomma = veriloginputconnection(carrylist, "e_1", needcomma);
+      needcomma = veriloginputconnection(carrylist, "d_1", needcomma);
+      needcomma = veriloginputconnection(carrylist, "e_0", needcomma);
 
       //Need to suppress the lowest input since it is not used
       if(carrylist != block)
       {
-        needcomma = veriloginputconnection(fverilog, carrylist, "d_0", needcomma);
+        needcomma = veriloginputconnection(carrylist, "d_0", needcomma);
       }
 
       carrylist = carrylist->carryprev;
     }
 
     //Finish of the assign line
-    fprintf(fverilog, " };\n\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, " };\n\n");
   }
   else
   {
     int usedpins = getsliceusedpins(block);
 
     //Set a header to mark the code for this block
-    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
-    fprintf(fverilog, "//Block %d, LSLICE %d\n\n", block->blocknumber, block->sliceid);
+    codeptr += snprintf(codeptr, codeend - codeptr, "//---------------------------------------------------------------------------\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//Block %d, LSLICE %d\n\n", block->blocknumber, block->sliceid);
 
     //F0MUXLUT5 indicates both LUT's of a group being used together
     //Might need to modify this to have it an AND condition
@@ -7367,7 +7571,7 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
         block->lut0 = block->lutg0 << 16 | block->lutf0;
         
         //Make up the part for LUT0
-        createequation(lut0, sizeof(lut0), block, inputsusedcount[(usedpins & 0x1F)], block->lut0, usedpins, lut0inputnames, 0);
+        createequation(lut0, sizeof(lut0), block, inputsusedcount[(usedpins & 0x1F)], block->lut0, usedpins, lut0inputnames);
 
         //If the f pin is not connected it is either a combined LUT or the input to the flip flop
         if(usedpins & PIN_F0)
@@ -7380,8 +7584,11 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
           snprintf(block->lut0output, MAX_NAME_LENGTH, "sig_%d_lut_0", block->blocknumber);
         }
 
+        //Declare the wire
+        wireptr += snprintf(wireptr, wireend - wireptr, "  wire %s;\n", block->lut0output);
+        
         //Create one assign statement for the equation for the given block
-        fprintf(fverilog, "  assign %s = %s;\n", block->lut0output, lut0);
+        codeptr += snprintf(codeptr, codeend - codeptr, "  assign %s = %s;\n", block->lut0output, lut0);
       }
 
       if(block->logicsettings & (LOGIC_LUTF1 | LOGIC_LUTG1 | LOGIC_F1MUXLUT5 | LOGIC_FF1_F | LOGIC_FF1_FX))
@@ -7389,7 +7596,7 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
         block->lut1 = block->lutg1 << 16 | block->lutf1;
         
         //Make up the part for LUT1
-        createequation(lut1, sizeof(lut1), block, inputsusedcount[((usedpins >>12) & 0x1F)], block->lut1, (usedpins >> 12), lut1inputnames, 0);
+        createequation(lut1, sizeof(lut1), block, inputsusedcount[((usedpins >>12) & 0x1F)], block->lut1, (usedpins >> 12), lut1inputnames);
 
         //If the f pin is not connected it is either a combined LUT or the input to the flip flop
         if(usedpins & PIN_F1)
@@ -7402,22 +7609,25 @@ void processlslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
           snprintf(block->lut1output, MAX_NAME_LENGTH, "sig_%d_lut_1", block->blocknumber);
         }
 
+        //Declare the wire
+        wireptr += snprintf(wireptr, wireend - wireptr, "  wire %s;\n", block->lut1output);
+        
         //Create one assign statement for the equation for the given block
-        fprintf(fverilog, "  assign %s = %s;\n", block->lut1output, lut1);
+        codeptr += snprintf(codeptr, codeend - codeptr, "  assign %s = %s;\n", block->lut1output, lut1);
       }
 
-
-      fprintf(fverilog, "\n");
+      //Add an extra line to separate the code bits
+      codeptr += snprintf(codeptr, codeend - codeptr, "\n");
     }
     
     //Add the always statement as needed
-    outputverilogalways(fverilog, block, usedpins);
+    outputverilogalways(block, usedpins);
   }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void outputmsliceverilogadder(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int foundnext)
+void outputmsliceverilogadder(pBLOCKINFOITEM block, pBLOCKINFOITEM carryin, int foundnext)
 {
   int usedpins = getsliceusedpins(block);
   
@@ -7425,11 +7635,11 @@ void outputmsliceverilogadder(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM car
   if(((block->logicsettings & (LOGIC_FF0_F | LOGIC_FF1_F)) == 0) && (usedpins & (PIN_Q0 | PIN_Q1)))
   {
     //Show which block this is for
-    fprintf(fo, "//---------------------------------------------------------------------------\n");
-    fprintf(fo, "//Block %d, MSLICE %d\n\n", block->blocknumber, block->sliceid);
+    codeptr += snprintf(codeptr, codeend - codeptr, "//---------------------------------------------------------------------------\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//Block %d, MSLICE %d\n\n", block->blocknumber, block->sliceid);
     
     //Add the always statement as needed
-    outputverilogalways(fo, block, usedpins);
+    outputverilogalways(block, usedpins);
   }
 
   block->usedpins = usedpins;
@@ -7467,7 +7677,7 @@ void outputmsliceverilogadder(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM car
 //----------------------------------------------------------------------------------------------------------------------------------
 //Function to output all the verilog parts in a mslice carry chain
 
-void outputmsliceverilogadderchain(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITEM carryin)
+void outputmsliceverilogadderchain(pBLOCKINFOITEM block, pBLOCKINFOITEM carryin)
 {
   int foundnext = 0;
 
@@ -7498,23 +7708,20 @@ void outputmsliceverilogadderchain(FILE *fo, pBLOCKINFOITEM block, pBLOCKINFOITE
   }
   
   //Output the actual mslice macro based on the found carry option
-  outputmsliceverilogadder(fo, block, carryin, foundnext);
+  outputmsliceverilogadder(block, carryin, foundnext);
 
   //When there is a next block in the chain call this function again
   if(foundnext)
   {
     //Process the found block and keep running down the chain
-    outputmsliceverilogadderchain(fo, nextblock, block);
+    outputmsliceverilogadderchain(nextblock, block);
   }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid)
+void processmslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
 {
-  char lut0[1024];
-  char lut1[1024];
-  
   char *netmi = 0;
   
   char *netce = 0;
@@ -7538,11 +7745,11 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
   if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
   {
     //Create the always statements for the separate flip flops and gather the needed information about this carry chain
-    outputmsliceverilogadderchain(fverilog, block, 0);
+    outputmsliceverilogadderchain(block, 0);
 
     //Set a header to mark the code for this block
-    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
-    fprintf(fverilog, "//MSLICE adder blocks");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//---------------------------------------------------------------------------\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//MSLICE adder blocks");
     
     carrylist = block;
     
@@ -7551,12 +7758,12 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     {
       if(needcomma)
       {
-        fprintf(fverilog, ",");
+        codeptr += snprintf(codeptr, codeend - codeptr, ",");
       }
       
       needcomma = 1;
       
-      fprintf(fverilog, " %d", carrylist->blocknumber);
+      codeptr += snprintf(codeptr, codeend - codeptr, " %d", carrylist->blocknumber);
       
       //Need to know if it is a registered adder
       registered |= carrylist->adderregistered;
@@ -7568,13 +7775,13 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     }
     
     //Finish of the comment line
-    fprintf(fverilog, "\n\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "\n\n");
     
     //At this point there are two options based on registered or not
     if(registered)
     {
       //Need to declare the registers
-      fprintf(fverilog, "  reg");
+      regptr += snprintf(regptr, regend - regptr, "  reg");
 
       needcomma = 0;
       
@@ -7583,19 +7790,19 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //List all the connected outputs
       while(carrylist)
       {
-        needcomma = verilogoutputconnection(fverilog, carrylist, "q_1", needcomma, &openidx);
+        needcomma = verilogregconnection(carrylist, LOGIC_FF1_SR, "q_1", needcomma);
         
         //Need to suppress the lowest input since it is not used
         if(carrylist != block)
         {
-          needcomma = verilogoutputconnection(fverilog, carrylist, "q_0", needcomma, &openidx);
+          needcomma = verilogregconnection(carrylist, LOGIC_FF0_SR, "q_0", needcomma);
         }
         
         carrylist = carrylist->carryprev;
       }
 
       //Finish of the register declare line
-      fprintf(fverilog, ";\n\n");
+      regptr += snprintf(regptr, regend - regptr, ";\n");
       
       //Setup the always
       //Need to see if ce is connected to an actual signal
@@ -7623,20 +7830,20 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       }
      
       //Start the header for the always statement
-      fprintf(fverilog, "  always @(");
+      codeptr += snprintf(codeptr, codeend - codeptr, "  always @(");
 
       //Set the edge the clock works on
       if(block->logicsettings & LOGIC_FF_CLK)
       {
-        fprintf(fverilog, "negedge ");
+        codeptr += snprintf(codeptr, codeend - codeptr, "negedge ");
       }
       else
       {
-        fprintf(fverilog, "posedge ");
+        codeptr += snprintf(codeptr, codeend - codeptr, "posedge ");
       }
 
       //Add the clock used for this block
-      fprintf(fverilog, "%s", getconnectionnet(block, "clk"));
+      codeptr += snprintf(codeptr, codeend - codeptr, "%s", getconnectionnet(block, "clk"));
 
       //When the sr input is connected to a signal and the mode is async it needs to be added to the header
       if(netsr && ((block->logicsettings & LOGIC_FF_SYNC) == 0))
@@ -7644,19 +7851,19 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
         //Set the edge the set reset works on
         if(block->logicsettings & LOGIC_FF_SR)
         {
-          fprintf(fverilog, " or negedge ");
+          codeptr += snprintf(codeptr, codeend - codeptr, " or negedge ");
         }
         else
         {
-          fprintf(fverilog, " or posedge ");
+          codeptr += snprintf(codeptr, codeend - codeptr, " or posedge ");
         }
 
         //Add the set reset used for this block
-        fprintf(fverilog, "%s", netsr);
+        codeptr += snprintf(codeptr, codeend - codeptr, "%s", netsr);
       }
 
       //Finish of the header and start the code block
-      fprintf(fverilog, ")\n  begin\n");
+      codeptr += snprintf(codeptr, codeend - codeptr, ")\n  begin\n");
 
       //Check if enable is used
       if(netce)
@@ -7672,7 +7879,7 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
         }
 
         //Start the enable if block
-        fprintf(fverilog, "    if(%s == %s)\n    begin\n", netce, value);
+        codeptr += snprintf(codeptr, codeend - codeptr, "    if(%s == %s)\n    begin\n", netce, value);
 
         indent = "    ";
       }
@@ -7691,10 +7898,13 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
         }
 
         //Start the enable if block
-        fprintf(fverilog, "%s  if(%s == %s)\n%s  begin\n", indent, netsr, value, indent);
+        codeptr += snprintf(codeptr, codeend - codeptr, "%s  if(%s == %s)\n%s  begin\n", indent, netsr, value, indent);
 
+#if 0
+        //Removed to allow for checking per flip flop
         //Set the value to load on reset
-        if(block->logicsettings & LOGIC_FF0_SR)
+        //The first flip flop is not used so the setting of the second needs to be used
+        if(block->logicsettings & LOGIC_FF1_SR)
         {
           value = "0";
         }
@@ -7702,9 +7912,10 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
         {
           value = "1";
         }
-
+#endif
+        
         //Load the reset value in the register
-        fprintf(fverilog, "%s    {", indent);
+        codeptr += snprintf(codeptr, codeend - codeptr, "%s    {", indent);
         
         openidx = *opennetid;
         
@@ -7715,22 +7926,47 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
         //List all the connected outputs
         while(carrylist)
         {
-          needcomma = verilogoutputconnection(fverilog, carrylist, "q_1", needcomma, &openidx);
+          needcomma = verilogcodeconnection(carrylist, "q_1", needcomma, &openidx);
           
           //Need to suppress the lowest input since it is not used
           if(carrylist != block)
           {
-            needcomma = verilogoutputconnection(fverilog, carrylist, "q_0", needcomma, &openidx);
+            needcomma = verilogcodeconnection(carrylist, "q_0", needcomma, &openidx);
           }
 
           carrylist = carrylist->carryprev;
         }
 
         //Finish of the register reset line
-        fprintf(fverilog, " } <= %s;\n", value);
+        //codeptr += snprintf(codeptr, codeend - codeptr, " } <= %s;\n", value);
+        
+        //Open the load part for the reset bits
+        codeptr += snprintf(codeptr, codeend - codeptr, " } <= {");
+        
+        needcomma = 0;
 
+        carrylist = carrylast;
+
+        //List all the reset states
+        while(carrylist)
+        {
+          //This might be a bit that is not used so have to see if this needs checking
+          needcomma = verilogcodesetreset(carrylist, LOGIC_FF1_SR, "q_1", needcomma);
+          
+          //Need to suppress the lowest input since it is not used
+          if(carrylist != block)
+          {
+            needcomma = verilogcodesetreset(carrylist, LOGIC_FF0_SR, "q_0", needcomma);
+          }
+
+          carrylist = carrylist->carryprev;
+        }
+        
+        //Finish of the reset register line
+        codeptr += snprintf(codeptr, codeend - codeptr, " };\n");
+        
         //End the if part of the reset and setup the else part
-        fprintf(fverilog, "%s  end\n%s  else\n%s  begin\n", indent, indent, indent);
+        codeptr += snprintf(codeptr, codeend - codeptr, "%s  end\n%s  else\n%s  begin\n", indent, indent, indent);
 
         //Set the new indent based on if enable is used
         if(netce)
@@ -7744,7 +7980,7 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       }
 
       //Load the flip flops with the input signals
-      fprintf(fverilog, "%s  {", indent);
+      codeptr += snprintf(codeptr, codeend - codeptr, "%s  {", indent);
       
       openidx = *opennetid;
       
@@ -7755,12 +7991,12 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //List all the connected outputs
       while(carrylist)
       {
-        needcomma = verilogoutputconnection(fverilog, carrylist, "q_1", needcomma, &openidx);
+        needcomma = verilogcodeconnection(carrylist, "q_1", needcomma, &openidx);
 
         //Need to suppress the lowest input since it is not used
         if(carrylist != block)
         {
-          needcomma = verilogoutputconnection(fverilog, carrylist, "q_0", needcomma, &openidx);
+          needcomma = verilogcodeconnection(carrylist, "q_0", needcomma, &openidx);
         }
 
         carrylist = carrylist->carryprev;
@@ -7770,7 +8006,7 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       *opennetid = openidx;
       
       //Setup for the a input
-      fprintf(fverilog, " } <= {");
+      codeptr += snprintf(codeptr, codeend - codeptr, " } <= {");
       
       needcomma = 0;
       
@@ -7779,12 +8015,12 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //List all the connected outputs
       while(carrylist)
       {
-        needcomma = veriloginputconnection(fverilog, carrylist, "a_1", needcomma);
+        needcomma = veriloginputconnection(carrylist, "a_1", needcomma);
 
         //Need to suppress the lowest input since it is not used
         if(carrylist != block)
         {
-          needcomma = veriloginputconnection(fverilog, carrylist, "a_0", needcomma);
+          needcomma = veriloginputconnection(carrylist, "a_0", needcomma);
         }
         
         carrylist = carrylist->carryprev;
@@ -7793,11 +8029,11 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //Setup for the b input
       if(block->addertype == ADDER_ADD)
       {
-        fprintf(fverilog, " } + {");
+        codeptr += snprintf(codeptr, codeend - codeptr, " } + {");
       }
       else
       {
-        fprintf(fverilog, " } - {");
+        codeptr += snprintf(codeptr, codeend - codeptr, " } - {");
       }
       
       needcomma = 0;
@@ -7807,39 +8043,39 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //List all the connected outputs
       while(carrylist)
       {
-        needcomma = veriloginputconnection(fverilog, carrylist, "b_1", needcomma);
+        needcomma = veriloginputconnection(carrylist, "b_1", needcomma);
 
         //Need to suppress the lowest input since it is not used
         if(carrylist != block)
         {
-          needcomma = veriloginputconnection(fverilog, carrylist, "b_0", needcomma);
+          needcomma = veriloginputconnection(carrylist, "b_0", needcomma);
         }
         
         carrylist = carrylist->carryprev;
       }
       
       //Finish of the load register line
-      fprintf(fverilog, " };\n");
+      codeptr += snprintf(codeptr, codeend - codeptr, " };\n");
       
       //If the set reset is used the else block needs to be ended
       if(netsr)
       {
-        fprintf(fverilog, "%send\n", indent);
+        codeptr += snprintf(codeptr, codeend - codeptr, "%send\n", indent);
       }
 
       //When enable is used the if block needs to be ended
       if(netce)
       {
-        fprintf(fverilog, "    end\n");
+        codeptr += snprintf(codeptr, codeend - codeptr, "    end\n");
       }
 
       //End the code block
-      fprintf(fverilog, "  end\n\n");
+      codeptr += snprintf(codeptr, codeend - codeptr, "  end\n\n");
     }
     else
     {
       //Declare the output wires
-      fprintf(fverilog, "  wire");
+      wireptr += snprintf(wireptr, wireend - wireptr, "  wire");
 
       needcomma = 0;
       
@@ -7850,22 +8086,22 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //List all the connected outputs
       while(carrylist)
       {
-        needcomma = verilogoutputconnection(fverilog, carrylist, "f_1", needcomma, &openidx);
+        needcomma = verilogwireconnection(carrylist, "f_1", needcomma, &openidx);
 
         //Need to suppress the lowest input since it is not used
         if(carrylist != block)
         {
-          needcomma = verilogoutputconnection(fverilog, carrylist, "f_0", needcomma, &openidx);
+          needcomma = verilogwireconnection(carrylist, "f_0", needcomma, &openidx);
         }
         
         carrylist = carrylist->carryprev;
       }
 
       //Finish of the register declare line
-      fprintf(fverilog, ";\n\n");
+      wireptr += snprintf(wireptr, wireend - wireptr, ";\n");
 
       //Create the assign
-      fprintf(fverilog, "  assign {");
+      codeptr += snprintf(codeptr, codeend - codeptr, "  assign {");
 
       needcomma = 0;
       
@@ -7876,12 +8112,12 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //List all the connected outputs
       while(carrylist)
       {
-        needcomma = verilogoutputconnection(fverilog, carrylist, "f_1", needcomma, &openidx);
+        needcomma = verilogcodeconnection(carrylist, "f_1", needcomma, &openidx);
 
         //Need to suppress the lowest input since it is not used
         if(carrylist != block)
         {
-          needcomma = verilogoutputconnection(fverilog, carrylist, "f_0", needcomma, &openidx);
+          needcomma = verilogcodeconnection(carrylist, "f_0", needcomma, &openidx);
         }
         
         carrylist = carrylist->carryprev;
@@ -7891,7 +8127,7 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       *opennetid = openidx;
       
       //Setup for the a input
-      fprintf(fverilog, " } = {");
+      codeptr += snprintf(codeptr, codeend - codeptr, " } = {");
       
       needcomma = 0;
       
@@ -7900,12 +8136,12 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //List all the connected outputs
       while(carrylist)
       {
-        needcomma = veriloginputconnection(fverilog, carrylist, "a_1", needcomma);
+        needcomma = veriloginputconnection(carrylist, "a_1", needcomma);
 
         //Need to suppress the lowest input since it is not used
         if(carrylist != block)
         {
-          needcomma = veriloginputconnection(fverilog, carrylist, "a_0", needcomma);
+          needcomma = veriloginputconnection(carrylist, "a_0", needcomma);
         }
         
         carrylist = carrylist->carryprev;
@@ -7914,11 +8150,11 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //Setup for the b input
       if(block->addertype == ADDER_ADD)
       {
-        fprintf(fverilog, " } + {");
+        codeptr += snprintf(codeptr, codeend - codeptr, " } + {");
       }
       else
       {
-        fprintf(fverilog, " } - {");
+        codeptr += snprintf(codeptr, codeend - codeptr, " } - {");
       }
       
       needcomma = 0;
@@ -7928,19 +8164,19 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       //List all the connected outputs
       while(carrylist)
       {
-        needcomma = veriloginputconnection(fverilog, carrylist, "b_1", needcomma);
+        needcomma = veriloginputconnection(carrylist, "b_1", needcomma);
 
         //Need to suppress the lowest input since it is not used
         if(carrylist != block)
         {
-          needcomma = veriloginputconnection(fverilog, carrylist, "b_0", needcomma);
+          needcomma = veriloginputconnection(carrylist, "b_0", needcomma);
         }
         
         carrylist = carrylist->carryprev;
       }
       
       //Finish of the assign line
-      fprintf(fverilog, " };\n\n");
+      codeptr += snprintf(codeptr, codeend - codeptr, " };\n\n");
     }
   }
   else
@@ -7948,8 +8184,8 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
     int usedpins = getsliceusedpins(block);
 
     //Set a header to mark the code for this block
-    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
-    fprintf(fverilog, "//Block %d, MSLICE %d\n\n", block->blocknumber, block->sliceid);
+    codeptr += snprintf(codeptr, codeend - codeptr, "//---------------------------------------------------------------------------\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//Block %d, MSLICE %d\n\n", block->blocknumber, block->sliceid);
 
     //Check if the luts are used
     if((block->logicsettings & (LOGIC_LUT0 | LOGIC_FXMUXON | LOGIC_FF0_F | LOGIC_FF0_FX)) || (block->logicsettings & (LOGIC_LUT1 | LOGIC_FXMUXON | LOGIC_FF1_F | LOGIC_FF1_FX)))
@@ -7957,7 +8193,7 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
       if(block->logicsettings & (LOGIC_LUT0 | LOGIC_FXMUXON | LOGIC_FF0_F | LOGIC_FF0_FX))
       {
         //Make up the part for LUT0
-        createequation(lut0, sizeof(lut0), block, inputsusedcount[(usedpins & 0x0F)], block->lut0, usedpins, lut0inputnames, 0);
+        createequation(lut0, sizeof(lut0), block, inputsusedcount[(usedpins & 0x0F)], block->lut0, usedpins, lut0inputnames);
 
         //If the f pin is not connected it is either a combined LUT or the input to the flip flop
         if(usedpins & PIN_F0)
@@ -7970,14 +8206,17 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
           snprintf(block->lut0output, MAX_NAME_LENGTH, "sig_%d_lut_0", block->blocknumber);
         }
 
+        //Declare the wire
+        wireptr += snprintf(wireptr, wireend - wireptr, "  wire %s;\n", block->lut0output);
+        
         //Create one assign statement for the equation for the given block
-        fprintf(fverilog, "  assign %s = %s;\n", block->lut0output, lut0);
+        codeptr += snprintf(codeptr, codeend - codeptr, "  assign %s = %s;\n", block->lut0output, lut0);
       }
 
       if(block->logicsettings & (LOGIC_LUT1 | LOGIC_FXMUXON | LOGIC_FF1_F | LOGIC_FF1_FX))
       {
         //Make up the part for LUT1
-        createequation(lut1, sizeof(lut1), block, inputsusedcount[((usedpins >>12) & 0x0F)], block->lut1, (usedpins >> 12), lut1inputnames, 0);
+        createequation(lut1, sizeof(lut1), block, inputsusedcount[((usedpins >>12) & 0x0F)], block->lut1, (usedpins >> 12), lut1inputnames);
 
         //If the f pin is not connected it is either a combined LUT or the input to the flip flop
         if(usedpins & PIN_F1)
@@ -7990,8 +8229,11 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
           snprintf(block->lut1output, MAX_NAME_LENGTH, "sig_%d_lut_1", block->blocknumber);
         }
 
+        //Declare the wire
+        wireptr += snprintf(wireptr, wireend - wireptr, "  wire %s;\n", block->lut1output);
+        
         //Create one assign statement for the equation for the given block
-        fprintf(fverilog, "  assign %s = %s;\n", block->lut1output, lut1);
+        codeptr += snprintf(codeptr, codeend - codeptr, "  assign %s = %s;\n", block->lut1output, lut1);
       }
 
       //When the FX MUX is turned on add the merge function
@@ -8012,16 +8254,118 @@ void processmslicetoverilog(FILE *fverilog, pBLOCKINFOITEM block, int *opennetid
           snprintf(block->lut5output, MAX_NAME_LENGTH, "sig_%d_ff0_d", block->blocknumber);
         }
 
+        //Declare the wire
+        wireptr += snprintf(wireptr, wireend - wireptr, "  wire %s;\n", block->lut5output);
+        
         //Merge the two lut outputs into a single signal
-        fprintf(fverilog, "  assign %s = (~%s * %s) + (%s * %s);\n", block->lut5output, netmi, block->lut0output, netmi, block->lut1output);
+        codeptr += snprintf(codeptr, codeend - codeptr, "  assign %s = (~%s & %s) | (%s & %s);\n", block->lut5output, netmi, block->lut0output, netmi, block->lut1output);
       }    
 
-      fprintf(fverilog, "\n");
+      codeptr += snprintf(codeptr, codeend - codeptr, "\n");
     }
     
     //Add the always statement as needed
-    outputverilogalways(fverilog, block, usedpins);
+    outputverilogalways(block, usedpins);
   }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void outputembbuswires(pBLOCKINFOITEM block, char *signalbase, int width)
+{
+  char *connection;
+  char  signame[64];
+  int   sigidx;
+
+  if((scanbusconnected(block, signalbase, width)))
+  {
+    //Process all the signals in the given bus from high to low
+    for(sigidx=width-1;sigidx>=0;sigidx--)
+    {
+      //Print the name of the current bus member
+      snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
+
+      //Check if there is a connection made to it
+      if(connection = getconnectionnet(block, signame))
+      {
+        //Check if not connected to ground
+        if(strcmp(connection, "ground"))
+        {
+          wireptr += snprintf(wireptr, wireend - wireptr, "  wire %s;\n", connection);
+        }
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//Function to output the signals of a bus
+//It makes up the name of the bus members based on a base and an index
+
+int outputembbusconnections1(pBLOCKINFOITEM block, char *busname, char *signalbase, int width, int printcomma, int *opennetid)
+{
+  char *connection;
+  char  signame[64];
+  int   sigidx;
+
+  if((scanbusconnected(block, signalbase, width)))
+  {
+    //Check if a comma is needed to close of the previous item
+    if(printcomma)
+    {
+      codeptr += snprintf(codeptr, codeend - codeptr, ",\n");
+    }
+    else
+    {
+      codeptr += snprintf(codeptr, codeend - codeptr, "\n");
+    }
+
+    //Start the line with the bus name and the open a bit collection marker
+    codeptr += snprintf(codeptr, codeend - codeptr, "    .%s({", busname);
+
+    //Process all the signals in the given bus from high to low
+    for(sigidx=width-1;sigidx>=0;sigidx--)
+    {
+      //Print the name of the current bus member
+      snprintf(signame, sizeof(signame), "%s%d", signalbase, sigidx);
+
+      //Check if there is a connection made to it
+      if(connection = getconnectionnet(block, signame))
+      {
+        if(strcmp(connection, "ground") == 0)
+        {
+          //Output it to the file
+          codeptr += snprintf(codeptr, codeend - codeptr, "1'b0");
+        }
+        else
+        {
+          //Output it to the file
+          codeptr += snprintf(codeptr, codeend - codeptr, "%s", connection);
+        }
+      }
+      else
+      {
+        //Not connected should be marked with an open signal
+        codeptr += snprintf(codeptr, codeend - codeptr, "open_n%d", *opennetid);
+
+        //Bump the open net counter to the next one
+        *opennetid = *opennetid + 1;
+      }
+
+      if(sigidx)
+      {
+        //No comma on the last item
+        codeptr += snprintf(codeptr, codeend - codeptr, ",");
+      }
+    }
+
+    //Close of the bit collection and the statement
+    codeptr += snprintf(codeptr, codeend - codeptr, "})");
+    
+    printcomma = 1;
+  }
+  
+  return(printcomma);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -8056,7 +8400,7 @@ int scanembbusconnected(pBLOCKINFOITEM block, char *signalbase, int first, int l
 //Function to output the signals of a bus
 //It makes up the name of the bus members based on a base and an index
 
-int outputembbusconnections(FILE *fo, pBLOCKINFOITEM block, char *busname, char *signalbase, int first, int last, int printcomma, int *opennetid)
+int outputembbusconnections(pBLOCKINFOITEM block, char *busname, char *signalbase, int first, int last, int printcomma, int *opennetid)
 {
   char *connection;
   char  signame[64];
@@ -8067,15 +8411,15 @@ int outputembbusconnections(FILE *fo, pBLOCKINFOITEM block, char *busname, char 
     //Check if a comma is needed to close of the previous item
     if(printcomma)
     {
-      fprintf(fo, ",\n");
+      codeptr += snprintf(codeptr, codeend - codeptr, ",\n");
     }
     else
     {
-      fprintf(fo, "\n");
+      codeptr += snprintf(codeptr, codeend - codeptr, "\n");
     }
 
     //Start the line with the bus name and the open a bit collection marker
-    fprintf(fo, "    .%s({", busname);
+    codeptr += snprintf(codeptr, codeend - codeptr, "    .%s({", busname);
 
     //Process all the signals in the given bus from high to low
     for(sigidx=first;sigidx>=last;sigidx--)
@@ -8089,18 +8433,18 @@ int outputembbusconnections(FILE *fo, pBLOCKINFOITEM block, char *busname, char 
         if(strcmp(connection, "ground") == 0)
         {
           //Output it to the file
-          fprintf(fo, "1'b0");
+          codeptr += snprintf(codeptr, codeend - codeptr, "1'b0");
         }
         else
         {
           //Output it to the file
-          fprintf(fo, "%s", connection);
+          codeptr += snprintf(codeptr, codeend - codeptr, "%s", connection);
         }
       }
       else
       {
         //Not connected should be marked with an open signal
-        fprintf(fo, "open_n%d", *opennetid);
+        codeptr += snprintf(codeptr, codeend - codeptr, "open_n%d", *opennetid);
 
         //Bump the open net counter to the next one
         *opennetid = *opennetid + 1;
@@ -8109,12 +8453,12 @@ int outputembbusconnections(FILE *fo, pBLOCKINFOITEM block, char *busname, char 
       if(sigidx != last)
       {
         //No comma on the last item
-        fprintf(fo, ",");
+        codeptr += snprintf(codeptr, codeend - codeptr, ",");
       }
     }
 
     //Close of the bit collection and the statement
-    fprintf(fo, "})");
+    codeptr += snprintf(codeptr, codeend - codeptr, "})");
     
     printcomma = 1;
   }
@@ -8124,15 +8468,48 @@ int outputembbusconnections(FILE *fo, pBLOCKINFOITEM block, char *busname, char 
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-void processembtoverilog(FILE *fo, pBLOCKINFOITEM block, int *opennetid)
+int outputembconnection(pBLOCKINFOITEM block, char *name, char *signalname, int printcomma)
+{
+  char *connection;
+
+  //Get the possible connection for this signal
+  if(connection = getconnectionnet(block, signalname))
+  {
+    //Might need to change this to convert ground to 1'b0
+
+    //Check if it is not connected to ground
+    if(strcmp(connection, "ground"))
+    {
+      //Check if a comma is needed to close of the previous item
+      if(printcomma)
+      {
+        codeptr += snprintf(codeptr, codeend - codeptr, ",\n");
+      }
+      else
+      {
+        codeptr += snprintf(codeptr, codeend - codeptr, "\n");
+      }
+
+      codeptr += snprintf(codeptr, codeend - codeptr, "    .%s(%s)", name, connection);
+
+      printcomma = 1;
+    }
+  }
+
+  return(printcomma);
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+void processembtoverilog(pBLOCKINFOITEM block, int *opennetid)
 {
   int datawidth = 9;
   int addreslast = 3;
   int needcomma = 0;
  
   //Set a header to mark the code for this block
-  fprintf(fo, "//---------------------------------------------------------------------------\n");
-  fprintf(fo, "//Block %d, EMB %d\n\n", block->blocknumber, block->embid);
+  codeptr += snprintf(codeptr, codeend - codeptr, "//---------------------------------------------------------------------------\n");
+  codeptr += snprintf(codeptr, codeend - codeptr, "//Block %d, EMB %d\n\n", block->blocknumber, block->embid);
 
   //Determine the data width of channel a and use it for both parts since this is how it is used in the 1013D
   //Only 9 and 2 bits are used
@@ -8152,6 +8529,12 @@ void processembtoverilog(FILE *fo, pBLOCKINFOITEM block, int *opennetid)
     addreslast = 2;
   }
   
+  //For the 1013D it is known that the memory is 32bit wide dual port 4KB memory
+  //A is input from ADC's, B is output to MCU
+  //The question is how to arrange the data on the bus
+  //The address is not a problem because it is 12 bits based on a known set of nets
+  //Might need to make a translation list for this 
+  
   
   //This fails on csa and csb for the 9 bit versions!!!!
   //Need assigns for the combined signals and invert the signals as needed based on the settings for this BRAM
@@ -8163,99 +8546,109 @@ void processembtoverilog(FILE *fo, pBLOCKINFOITEM block, int *opennetid)
   //The 9 bit modules do have the chip selects
   
   //!!!! This is specific for the 1013D !!!!
-  
+  //Need to make up the chip selects for the memory blocks
   if(datawidth == 9)
   {
+    //Declare the wire
+    wireptr += snprintf(wireptr, wireend - wireptr, "  wire sig_%d_cea;\n", block->blocknumber);
+    
     //This is specifically for the 1013D bit stream
-    fprintf(fo, "  assign sig_%d_cea = %s * ", block->blocknumber, getconnectionnet(block, "cea"));
+    codeptr += snprintf(codeptr, codeend - codeptr, "  assign sig_%d_cea = %s & ", block->blocknumber, getconnectionnet(block, "cea"));
     
     if(block->embsettings1 & EMB_CSAMUX_1)
     {
-      fprintf(fo, "~");
+      codeptr += snprintf(codeptr, codeend - codeptr, "~");
     }
 
-    fprintf(fo, "%s * ", getconnectionnet(block, "csa_1"));
+    codeptr += snprintf(codeptr, codeend - codeptr, "%s & ", getconnectionnet(block, "csa_1"));
 
     if(block->embsettings1 & EMB_CSAMUX_0)
     {
-      fprintf(fo, "~");
+      codeptr += snprintf(codeptr, codeend - codeptr, "~");
     }
 
-    fprintf(fo, "%s;\n", getconnectionnet(block, "csa_0"));
+    codeptr += snprintf(codeptr, codeend - codeptr, "%s;\n", getconnectionnet(block, "csa_0"));
     
-    fprintf(fo, "  assign sig_%d_ceb = ", block->blocknumber);
+    //Declare the wire
+    wireptr += snprintf(wireptr, wireend - wireptr, "  wire sig_%d_ceb;\n", block->blocknumber);
+
+    //Signal for channel b
+    codeptr += snprintf(codeptr, codeend - codeptr, "  assign sig_%d_ceb = ", block->blocknumber);
     
     if(block->embsettings1 & EMB_CSBMUX_1)
     {
-      fprintf(fo, "~");
+      codeptr += snprintf(codeptr, codeend - codeptr, "~");
     }
 
-    fprintf(fo, "%s * ", getconnectionnet(block, "csb_1"));
+    codeptr += snprintf(codeptr, codeend - codeptr, "%s & ", getconnectionnet(block, "csb_1"));
 
     if(block->embsettings1 & EMB_CSBMUX_0)
     {
-      fprintf(fo, "~");
+      codeptr += snprintf(codeptr, codeend - codeptr, "~");
     }
 
-    fprintf(fo, "%s;\n\n", getconnectionnet(block, "csb_0"));
+    codeptr += snprintf(codeptr, codeend - codeptr, "%s;\n\n", getconnectionnet(block, "csb_0"));
   }
   
 
   //Setup the memory module for it
-  fprintf(fo, "  sample_memory_%d samples_block_%d\n  (", datawidth, block->blocknumber);
+  codeptr += snprintf(codeptr, codeend - codeptr, "  sample_memory_%d samples_block_%d\n  (", datawidth, block->blocknumber);
   
   //For the 9 bits part the full data bus is used
   if(datawidth == 9)
   {
-    needcomma = outputbusconnections(fo, block, "dia", "dia_", 9, needcomma, opennetid, 0);
+    needcomma = outputembbusconnections1(block, "dia", "dia_", 9, needcomma, opennetid);
   }
   else
   {
-    fprintf(fo, "\n    .dia({");
+    codeptr += snprintf(codeptr, codeend - codeptr, "\n    .dia({");
     
     //For two bit setup the A inputs are 2 and 5, B outputs are 0 and 1
-    needcomma = verilogoutputconnection(fo, block, "dia_5", 0, opennetid);
-    needcomma = verilogoutputconnection(fo, block, "dia_2", needcomma, opennetid);
+    needcomma = verilogcodeconnection(block, "dia_5", 0, opennetid);
+    needcomma = verilogcodeconnection(block, "dia_2", needcomma, opennetid);
 
-    fprintf(fo, " })");
+    codeptr += snprintf(codeptr, codeend - codeptr, " })");
   }
   
   //Check the a channel buses if they need to be connected
-  needcomma = outputembbusconnections(fo, block, "addra", "addra_", 12, addreslast, needcomma, opennetid);
+  needcomma = outputembbusconnections(block, "addra", "addra_", 12, addreslast, needcomma, opennetid);
 
   //The chip enable is a combined signal
   if(datawidth == 9)
   {
-    fprintf(fo, ",\n    .cea(sig_%d_cea)", block->blocknumber);
+    codeptr += snprintf(codeptr, codeend - codeptr, ",\n    .cea(sig_%d_cea)", block->blocknumber);
   }
   else
   {
-    needcomma = outputconnection(fo, block, "cea", "cea", needcomma);
+    needcomma = outputembconnection(block, "cea", "cea", needcomma);
   }
 
   //Connect the clock signal
-  needcomma = outputconnection(fo, block, "clka", "clka", needcomma);
+  needcomma = outputembconnection(block, "clka", "clka", needcomma);
 
+  //Need to declare the dob outputs as wires!!!!!
+  outputembbuswires(block, "dob_", datawidth);
+  
   //Check the b channel busses if they need to be connected
-  needcomma = outputbusconnections(fo, block, "dob", "dob_", datawidth, needcomma, opennetid, 0);
-  needcomma = outputembbusconnections(fo, block, "addrb", "addrb_", 12, addreslast, needcomma, opennetid);
+  needcomma = outputembbusconnections1(block, "dob", "dob_", datawidth, needcomma, opennetid);
+  needcomma = outputembbusconnections(block, "addrb", "addrb_", 12, addreslast, needcomma, opennetid);
 
   //The chip enable is a combined signal
   if(datawidth == 9)
   {
-    fprintf(fo, ",\n    .ceb(sig_%d_ceb)", block->blocknumber);
+    codeptr += snprintf(codeptr, codeend - codeptr, ",\n    .ceb(sig_%d_ceb)", block->blocknumber);
   }
   else
   {
     //B output is always enabled
-    fprintf(fo, ",\n    .ceb(1'b1)");
+    codeptr += snprintf(codeptr, codeend - codeptr, ",\n    .ceb(1'b1)");
   }
   
   //Connect the clock signal
-  needcomma = outputconnection(fo, block, "clkb", "clkb", needcomma);
+  needcomma = outputembconnection(block, "clkb", "clkb", needcomma);
 
   //Finish of the module
-  fprintf(fo, "\n  );\n\n");
+  codeptr += snprintf(codeptr, codeend - codeptr, "\n  );\n\n");
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -8319,43 +8712,67 @@ void createverilog()
     }
 
     fprintf(fverilog, "\n);\n\n");
-
-    //If the hdl names for the pins are used instead of net_xxx the next bit would only be needed for the bidirectional pins
+    
+    //From this point on the data is written to buffers first
+    //Need to setup the pointers for this
+    wireptr = wires;
+    wireend = wires + sizeof(wires);
+    regptr = registers;
+    regend = registers + sizeof(registers);
+    codeptr = code;
+    codeend = code + sizeof(code);
+    
+    //Mark the next bit as bidirectional pad assignments
+    codeptr += snprintf(codeptr, codeend - codeptr, "//---------------------------------------------------------------------------\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//Bidirectional and output pad assignments\n\n");
     
     //The pad names need to be assigned to the internally used wires.
     printlist = blocklist;
-
+    
     //Process the connected PAD blocks
     while(printlist)
     {
       //Needs to be connected and of type PAD
-      if((printlist->connected == 1) && (printlist->blocktype == BLOCK_PAD))
+      if((printlist->bitcount > 3) && (printlist->blocktype == BLOCK_PAD))
       {
-        //Create an assign statement for making the connection between the pad and the internally used signal
-        createpadassignment(fverilog, printlist);
+        if(printlist->padtype == PAD_BIDIRECTIONAL)
+        {
+          //Provide a tristate output for the bidirectional signal
+          //It might be that it is needed to check the setting of the INV property fort this mux
+          //When set it should be like below and when not it might be needed to swap the true and false bits
+          codeptr += snprintf(codeptr, codeend - codeptr, "  assign %s = %s ? %s : 1'bZ;\n", printlist->padname, getconnectionnet(printlist, "ts"), getconnectionnet(printlist, "otrue"));
+        }
+        else if(printlist->padtype & PAD_OUTPUT)
+        {
+          codeptr += snprintf(codeptr, codeend - codeptr, "  assign %s = %s;\n", printlist->padname, getconnectionnet(printlist, "otrue"));
+        }
       }
 
       printlist = printlist->next;
     }
 
+    //Mark the next bit as clock assignments
+    codeptr += snprintf(codeptr, codeend - codeptr, "\n//---------------------------------------------------------------------------\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "//Clock assignments\n\n");
+    
 #if USE_SHORT_NET_NAMES
     //Output the clock assigns. These are manually determined and just outputted
-    fprintf(fverilog, "  assign gclk_2 = net_18;\n");
-    fprintf(fverilog, "  assign gclk_3 = net_730;\n");
-    fprintf(fverilog, "  assign gclk_4 = net_504;\n");
-    fprintf(fverilog, "  assign gclk_5 = net_1526;\n");
-    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_2 = net_18;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_3 = net_730;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_4 = net_504;\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_5 = net_1526;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_6 = i_mcu_clk;\n");
 #else    
     //Output the clock assigns. These are manually determined and just outputted
-    fprintf(fverilog, "  assign gclk_2 = x6y18_mslice1_f_0_net_18;\n");
-    fprintf(fverilog, "  assign gclk_3 = x14y22_lslice3_q_0_net_730;\n");
-    fprintf(fverilog, "  assign gclk_4 = x13y9_lslice2_q_0_net_504;\n");
-    fprintf(fverilog, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
-    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_2 = x6y18_mslice1_f_0_net_18;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_3 = x14y22_lslice3_q_0_net_730;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_4 = x13y9_lslice2_q_0_net_504;\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_6 = i_mcu_clk;\n");
 #endif
 
     //Extra line between pad assignments and the logic
-    fprintf(fverilog, "\n");
+    codeptr += snprintf(codeptr, codeend - codeptr, "\n");
 
     //Process the remaining logic
     printlist = blocklist;
@@ -8371,23 +8788,52 @@ void createverilog()
         if(printlist->blocktype == BLOCK_LSLICE)
         {
           //Need to process the settings for the current lslice into the needed macro(s)
-          processlslicetoverilog(fverilog, printlist, &opennetid);
+          processlslicetoverilog(printlist, &opennetid);
         }
         else if(printlist->blocktype == BLOCK_MSLICE)
         {
           //Need to process the settings for the current mslice into the needed macro(s)
-          processmslicetoverilog(fverilog, printlist, &opennetid);
-        }
-        else if(printlist->blocktype == BLOCK_EMB)
-        {
-          //process the bram
-          processembtoverilog(fverilog, printlist, &opennetid);
+          processmslicetoverilog(printlist, &opennetid);
         }
       }
 
+      printlist = printlist->next;
+    }
+
+    
+    //Process the embedded memory
+    printlist = blocklist;
+
+    //Process the blocks
+    while(printlist)
+    {
+        if(printlist->blocktype == BLOCK_EMB)
+        {
+          //process the bram
+          processembtoverilog(printlist, &opennetid);
+        }
 
       printlist = printlist->next;
     }
+
+    //Output the generated data to the file before outputting the PLL and the end of the module bit
+
+    //Comment line starting the wire declarations
+    fprintf(fverilog, "//---------------------------------------------------------------------------\n");
+    fprintf(fverilog, "//Wire declarations\n\n");
+    
+    fwrite(wires, 1, wireptr - wires, fverilog);
+
+    //Comment line starting the register declarations
+    fprintf(fverilog, "\n//---------------------------------------------------------------------------\n");
+    fprintf(fverilog, "//Register declarations\n\n");
+    
+    fwrite(registers, 1, regptr - registers, fverilog);
+    
+    //Extra line between the registers and the code
+    fprintf(fverilog, "\n");
+
+    fwrite(code, 1, codeptr - code, fverilog);
 
     //For the PLL the IP file generated with the IDE needs to be used
     //The module is instantiated here
@@ -8397,7 +8843,7 @@ void createverilog()
     fprintf(fverilog, "  (\n");
     fprintf(fverilog, "    .refclk   (i_xtal),\n");
     fprintf(fverilog, "    .reset    (1'b0),\n");
-    fprintf(fverilog, "    .clk0_out (gclk_0)\n");
+    fprintf(fverilog, "    .clk0_out (clock_200MHz)\n");
     fprintf(fverilog, "  );\n\n");
 
     //Finish of the module
