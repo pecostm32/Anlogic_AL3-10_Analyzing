@@ -99,3 +99,10 @@ It is possible to set the channel input relays and the display brightness can be
 One problem is that the sampling reset bit does not work like the original.
 
 Working on renaming all the nets to get a clear insight in what things do. For this simulation is also used.
+
+-------------------------------------------------------------------------------------------------------------------------------
+10-11-2022
+
+Finaly succeded in reverse engineering the bit stream into working verilog. I missed two setting bits to set the reset level for
+mslice0 and lslice2, which caused some parts of the verilog to not work. Investigation of the I2C part that is in the verilog
+I discovered this problem. Simulation of the verilog helps a lot in getting an understanding of it.
