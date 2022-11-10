@@ -221,6 +221,8 @@
 #define OUTPUT_SCHEMATICS   0
 #define OUTPUT_VERILOG      1
 
+#define OUTPUT_FOR_SIM      1
+
 #define DESIGN 1
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -349,7 +351,7 @@ struct tagBITLISTITEM
 };
 
 #define MAX_BLOCK_CONNECTIONS   100
-#define MAX_NAME_LENGTH          64
+#define MAX_NAME_LENGTH         128
 
 struct tagBLOCKCONNECTION
 {
@@ -3401,7 +3403,7 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
       block->logicsettings = LOGIC_FF_CE;
     }
     //Check the SRMUX setting for the mslice flip flops
-    else if(strncmp(item->bitdata->name, "TOP.XI321.MCUNUSED", 18) == 0)
+    else if((strncmp(item->bitdata->name, "TOP.XI320.MCUNUSED", 18) == 0) | (strncmp(item->bitdata->name, "TOP.XI321.MCUNUSED", 18) == 0))
     {
       block->logicsettings = LOGIC_FF_SR;
     }
@@ -3411,7 +3413,7 @@ void findblocktype(pBITLISTITEM item, pBLOCKINFOITEM block)
       block->logicsettings = LOGIC_FF_CE;
     }
     //Check the SRMUX setting for the lslice flip flops
-    else if(strncmp(item->bitdata->name, "TOP.XI322.MCUNUSED", 18) == 0)
+    else if((strncmp(item->bitdata->name, "TOP.XI330.MCUNUSED_W11B2", 24) == 0) | (strncmp(item->bitdata->name, "TOP.XI322.MCUNUSED", 18) == 0))
     {
       block->logicsettings = LOGIC_FF_SR;
     }
@@ -6378,14 +6380,14 @@ void creategatelevelverilog()
 //    fprintf(fverilog, "  assign gclk_2 = net_18;\n");
 //    fprintf(fverilog, "  assign gclk_3 = net_730;\n");
 //    fprintf(fverilog, "  assign gclk_4 = net_504;\n");
-    fprintf(fverilog, "  assign gclk_5 = net_1526;\n");
+//    fprintf(fverilog, "  assign gclk_5 = net_1526;\n");
 //    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
 #else    
     //Output the clock assigns. These are manually determined and just outputted
 //    fprintf(fverilog, "  assign gclk_2 = x6y18_mslice1_f_0_net_18;\n");
 //    fprintf(fverilog, "  assign gclk_3 = x14y22_lslice3_q_0_net_730;\n");
 //    fprintf(fverilog, "  assign gclk_4 = x13y9_lslice2_q_0_net_504;\n");
-    fprintf(fverilog, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
+//    fprintf(fverilog, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
 //    fprintf(fverilog, "  assign gclk_6 = i_mcu_clk;\n");
 #endif
 
@@ -6507,8 +6509,8 @@ char *regend;
 char *codeptr;
 char *codeend;
 
-char lut0[2048];
-char lut1[2048];
+char lut0[4096];
+char lut1[4096];
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -6552,7 +6554,7 @@ int getlut2verilog(char **equation, int *maxlen, char *andpart, int aidx, char *
   int oidx;
   int length;
   
-  char part[128];
+  char part[256];
   
 
   for(oidx=0;oidx<4;oidx++)
@@ -6867,7 +6869,7 @@ void createequation(char *equation, int maxlen, pBLOCKINFOITEM block, int inputc
   int index = 1;
   int addor = 0;
   
-  char andpart[64];
+  char andpart[256];
   
   //Could even check on lutdata being zero to return a zero bit
   
@@ -7183,25 +7185,6 @@ void outputverilogalways(pBLOCKINFOITEM block, int usedpins)
     //Finish of the header and start the code block
     codeptr += snprintf(codeptr, codeend - codeptr, ")\n  begin\n");
 
-    //Check if enable is used
-    if(netce)
-    {
-      //Set the value to check against in the "if" statement based on the setting bit for it
-      if(block->logicsettings & LOGIC_FF_CE)
-      {
-        value = "1'b0";
-      }
-      else
-      {
-        value = "1'b1";
-      }
-
-      //Start the enable if block
-      codeptr += snprintf(codeptr, codeend - codeptr, "    if(%s == %s)\n    begin\n", netce, value);
-
-      indent = "    ";
-    }
-
     //Check if reset code is needed
     if(netsr)
     {
@@ -7216,7 +7199,7 @@ void outputverilogalways(pBLOCKINFOITEM block, int usedpins)
       }
 
       //Start the enable if block
-      codeptr += snprintf(codeptr, codeend - codeptr, "%s  if(%s == %s)\n%s  begin\n", indent, netsr, value, indent);
+      codeptr += snprintf(codeptr, codeend - codeptr, "%s  if(%s == %s)   //reset\n%s  begin\n", indent, netsr, value, indent);
 
       //Add the resets per flip flop
       if(netq0)
@@ -7238,7 +7221,7 @@ void outputverilogalways(pBLOCKINFOITEM block, int usedpins)
       if(netq1)
       {
         //Set the value to load on reset
-        if(block->logicsettings & LOGIC_FF0_SR)
+        if(block->logicsettings & LOGIC_FF1_SR)
         {
           value = "1'b0";
         }
@@ -7254,8 +7237,27 @@ void outputverilogalways(pBLOCKINFOITEM block, int usedpins)
       //End the if part of the reset and setup the else part
       codeptr += snprintf(codeptr, codeend - codeptr, "%s  end\n%s  else\n%s  begin\n", indent, indent, indent);
 
+      indent = "    ";
+    }
+
+    //Check if enable is used
+    if(netce)
+    {
+      //Set the value to check against in the "if" statement based on the setting bit for it
+      if(block->logicsettings & LOGIC_FF_CE)
+      {
+        value = "1'b0";
+      }
+      else
+      {
+        value = "1'b1";
+      }
+
+      //Start the enable if block
+      codeptr += snprintf(codeptr, codeend - codeptr, "%s  if(%s == %s)   //enable\n%s   begin\n", indent, netce, value, indent);
+
       //Set the new indent based on if enable is used
-      if(netce)
+      if(netsr)
       {
         indent = "      ";
       }
@@ -7264,7 +7266,7 @@ void outputverilogalways(pBLOCKINFOITEM block, int usedpins)
         indent = "    ";
       }
     }
-
+    
     //Load the flip flops with the input signals
     if(netq0)
     {
@@ -7278,18 +7280,19 @@ void outputverilogalways(pBLOCKINFOITEM block, int usedpins)
       codeptr += snprintf(codeptr, codeend - codeptr, "%s  %s <= %s;\n", indent, netq1, netd1);
     }
 
-    //If the set reset is used the else block needs to be ended
-    if(netsr)
-    {
-      codeptr += snprintf(codeptr, codeend - codeptr, "%send\n", indent);
-    }
 
     //When enable is used the if block needs to be ended
     if(netce)
     {
-      codeptr += snprintf(codeptr, codeend - codeptr, "    end\n");
+      codeptr += snprintf(codeptr, codeend - codeptr, "%send\n", indent);
     }
 
+    //If the set reset is used the else block needs to be ended
+    if(netsr)
+    {
+      codeptr += snprintf(codeptr, codeend - codeptr, "    end\n");
+    }
+    
     //End the code block
     codeptr += snprintf(codeptr, codeend - codeptr, "  end\n\n");
   }
@@ -7865,25 +7868,6 @@ void processmslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
       //Finish of the header and start the code block
       codeptr += snprintf(codeptr, codeend - codeptr, ")\n  begin\n");
 
-      //Check if enable is used
-      if(netce)
-      {
-        //Set the value to check against in the "if" statement based on the setting bit for it
-        if(block->logicsettings & LOGIC_FF_CE)
-        {
-          value = "1'b0";
-        }
-        else
-        {
-          value = "1'b1";
-        }
-
-        //Start the enable if block
-        codeptr += snprintf(codeptr, codeend - codeptr, "    if(%s == %s)\n    begin\n", netce, value);
-
-        indent = "    ";
-      }
-
       //Check if reset code is needed
       if(netsr)
       {
@@ -7898,7 +7882,7 @@ void processmslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
         }
 
         //Start the enable if block
-        codeptr += snprintf(codeptr, codeend - codeptr, "%s  if(%s == %s)\n%s  begin\n", indent, netsr, value, indent);
+        codeptr += snprintf(codeptr, codeend - codeptr, "%s  if(%s == %s)   //reset\n%s  begin\n", indent, netsr, value, indent);
 
 #if 0
         //Removed to allow for checking per flip flop
@@ -7968,8 +7952,28 @@ void processmslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
         //End the if part of the reset and setup the else part
         codeptr += snprintf(codeptr, codeend - codeptr, "%s  end\n%s  else\n%s  begin\n", indent, indent, indent);
 
-        //Set the new indent based on if enable is used
-        if(netce)
+        indent = "    ";
+      }
+
+      
+      //Check if enable is used
+      if(netce)
+      {
+        //Set the value to check against in the "if" statement based on the setting bit for it
+        if(block->logicsettings & LOGIC_FF_CE)
+        {
+          value = "1'b0";
+        }
+        else
+        {
+          value = "1'b1";
+        }
+
+        //Start the enable if block
+        codeptr += snprintf(codeptr, codeend - codeptr, "%s  if(%s == %s)   //enable\n%s  begin\n", indent, netce, value, indent);
+
+        //Set the new indent based on if reset is used
+        if(netsr)
         {
           indent = "      ";
         }
@@ -7978,7 +7982,7 @@ void processmslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
           indent = "    ";
         }
       }
-
+      
       //Load the flip flops with the input signals
       codeptr += snprintf(codeptr, codeend - codeptr, "%s  {", indent);
       
@@ -8057,14 +8061,14 @@ void processmslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
       //Finish of the load register line
       codeptr += snprintf(codeptr, codeend - codeptr, " };\n");
       
-      //If the set reset is used the else block needs to be ended
-      if(netsr)
+      //When enable is used the if block needs to be ended
+      if(netce)
       {
         codeptr += snprintf(codeptr, codeend - codeptr, "%send\n", indent);
       }
 
-      //When enable is used the if block needs to be ended
-      if(netce)
+      //If the set reset is used the else block needs to be ended
+      if(netsr)
       {
         codeptr += snprintf(codeptr, codeend - codeptr, "    end\n");
       }
@@ -8074,6 +8078,7 @@ void processmslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
     }
     else
     {
+      //Not registered adder
       //Declare the output wires
       wireptr += snprintf(wireptr, wireend - wireptr, "  wire");
 
@@ -8760,14 +8765,19 @@ void createverilog()
 //    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_2 = net_18;\n");
 //    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_3 = net_730;\n");
 //    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_4 = net_504;\n");
-    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_5 = net_1526;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_5 = net_1526;\n");
+    
+#if OUTPUT_FOR_SIM
+    codeptr += snprintf(codeptr, codeend - codeptr, "  assign clock_200MHz = i_xtal;\n");
+#endif    
+    
 //    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_6 = i_mcu_clk;\n");
 #else    
     //Output the clock assigns. These are manually determined and just outputted
 //    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_2 = x6y18_mslice1_f_0_net_18;\n");
 //    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_3 = x14y22_lslice3_q_0_net_730;\n");
 //    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_4 = x13y9_lslice2_q_0_net_504;\n");
-    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
+//    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_5 = x23y14_mslice1_q_0_net_1526;\n");
 //    codeptr += snprintf(codeptr, codeend - codeptr, "  assign gclk_6 = i_mcu_clk;\n");
 #endif
 
@@ -8800,7 +8810,7 @@ void createverilog()
       printlist = printlist->next;
     }
 
-    
+#if OUTPUT_FOR_SIM == 0
     //Process the embedded memory
     printlist = blocklist;
 
@@ -8815,6 +8825,7 @@ void createverilog()
 
       printlist = printlist->next;
     }
+#endif
 
     //Output the generated data to the file before outputting the PLL and the end of the module bit
 
@@ -8833,8 +8844,129 @@ void createverilog()
     //Extra line between the registers and the code
     fprintf(fverilog, "\n");
 
+#if OUTPUT_FOR_SIM
+    fprintf(fverilog, "\n//---------------------------------------------------------------------------\n");
+    fprintf(fverilog, "//Memory simulation bit\n\n");
+    fprintf(fverilog, "  reg o_adc2B_d_7 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc2B_d_6 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d_5 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d_4 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc2B_d_3 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc2B_d0_2 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d0_1 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d0_0 = 1'b0;\n\n");
+    fprintf(fverilog, "  reg o_adc2B_d1_2 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d1_1 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d1_0 = 1'b0;\n\n");
+    fprintf(fverilog, "  reg o_adc2B_d2_2 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d2_1 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d2_0 = 1'b0;\n\n");
+    fprintf(fverilog, "  reg o_adc2B_d3_2 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d3_1 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2B_d3_0 = 1'b0;\n\n");
+    fprintf(fverilog, "  reg o_adc2A_d0_7 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d0_6 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d0_5 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d0_4 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d0_3 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d0_2 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d0_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc2A_d0_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc2A_d1_7 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d1_6 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d1_5 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d1_4 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d1_3 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d1_2 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d1_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc2A_d1_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc2A_d2_7 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d2_6 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d2_5 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d2_4 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d2_3 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d2_2 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d2_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc2A_d2_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc2A_d3_7 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d3_6 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d3_5 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d3_4 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d3_3 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d3_2 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc2A_d3_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc2A_d3_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc1B_d0_7 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d0_6 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d0_5 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d0_4 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d0_3 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d0_2 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d0_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d0_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc1B_d1_7 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d1_6 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d1_5 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d1_4 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d1_3 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d1_2 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d1_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d1_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc1B_d2_7 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d2_6 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d2_5 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d2_4 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d2_3 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d2_2 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d2_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d2_0 = 1'b0;\n\n");
+    fprintf(fverilog, "  reg o_adc1B_d3_7 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d3_6 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d3_5 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d3_4 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d3_3 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d3_2 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d3_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1B_d3_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc1A_d0_7 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d0_6 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d0_5 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d0_4 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d0_3 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d0_2 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d0_1 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d0_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc1A_d1_7 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d1_6 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d1_5 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d1_4 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d1_3 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d1_2 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d1_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d1_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc1A_d2_7 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d2_6 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d2_5 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d2_4 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d2_3 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d2_2 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d2_1 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d2_0 = 1'b1;\n\n");
+    fprintf(fverilog, "  reg o_adc1A_d3_7 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d3_6 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d3_5 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d3_4 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d3_3 = 1'b0;\n");
+    fprintf(fverilog, "  reg o_adc1A_d3_2 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d3_1 = 1'b1;\n");
+    fprintf(fverilog, "  reg o_adc1A_d3_0 = 1'b0;\n\n");
+
+#endif
+    
     fwrite(code, 1, codeptr - code, fverilog);
 
+    
+#if OUTPUT_FOR_SIM == 0
     //For the PLL the IP file generated with the IDE needs to be used
     //The module is instantiated here
     fprintf(fverilog, "//---------------------------------------------------------------------------\n");
@@ -8845,6 +8977,7 @@ void createverilog()
     fprintf(fverilog, "    .reset    (1'b0),\n");
     fprintf(fverilog, "    .clk0_out (clock_200MHz)\n");
     fprintf(fverilog, "  );\n\n");
+#endif
 
     //Finish of the module
     fprintf(fverilog, "endmodule\n\n");
