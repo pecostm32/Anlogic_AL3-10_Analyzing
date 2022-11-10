@@ -148,7 +148,7 @@ module FNIRSI_1013D
   wire net_210;
   wire net_214;
   wire net_216;
-  wire net_215;
+  wire offset2_pwm_rst;
   wire net_212;
   wire sig_162_lut_0;
   wire sig_162_lut_1;
@@ -402,7 +402,7 @@ module FNIRSI_1013D
   wire sig_288_lut_0;
   wire net_470;
   wire cmd37_enable;
-  wire net_467;
+  wire cmd67_select;
   wire cmd1F_enable0;
   wire cmd_6F_1F_select;
   wire cmd14_select;
@@ -480,7 +480,7 @@ module FNIRSI_1013D
   wire mcu_d0000010x;
   wire mcu_d00000xxx;
   wire cmd0D_enable2;
-  wire smp_clk_l_cnt_out31, smp_clk_l_cnt_out30, smp_clk_l_cnt_out29, smp_clk_l_cnt_out28, smp_clk_l_cnt_out27, smp_clk_l_cnt_out26, smp_clk_l_cnt_out25, smp_clk_l_cnt_out24, smp_clk_l_cnt_out23, smp_clk_l_cnt_out22, smp_clk_l_cnt_out21, smp_clk_l_cnt_out20, smp_clk_l_cnt_out19, smp_clk_l_cnt_out18, smp_clk_l_cnt_out17, smp_clk_l_cnt_out16, smp_clk_l_cnt_out15, smp_clk_l_cnt_out14, smp_clk_l_cnt_out13, smp_clk_l_cnt_out12, smp_clk_l_cnt_out11, smp_clk_l_cnt_out10, smp_clk_l_cnt_out9, smp_clk_l_cnt_out8, smp_clk_l_cnt_out7, smp_clk_l_cnt_out6, smp_clk_l_cnt_out5, smp_clk_l_cnt_out4, smp_clk_l_cnt_out3, smp_clk_l_cnt_out2, smp_clk_l_cnt_out1, smp_clk_l_cnt_out0;
+  wire smp_clk_h_cnt_out31, smp_clk_h_cnt_out30, smp_clk_h_cnt_out29, smp_clk_h_cnt_out28, smp_clk_h_cnt_out27, smp_clk_h_cnt_out26, smp_clk_h_cnt_out25, smp_clk_h_cnt_out24, smp_clk_h_cnt_out23, smp_clk_h_cnt_out22, smp_clk_h_cnt_out21, smp_clk_h_cnt_out20, smp_clk_h_cnt_out19, smp_clk_h_cnt_out18, smp_clk_h_cnt_out17, smp_clk_h_cnt_out16, smp_clk_h_cnt_out15, smp_clk_h_cnt_out14, smp_clk_h_cnt_out13, smp_clk_h_cnt_out12, smp_clk_h_cnt_out11, smp_clk_h_cnt_out10, smp_clk_h_cnt_out9, smp_clk_h_cnt_out8, smp_clk_h_cnt_out7, smp_clk_h_cnt_out6, smp_clk_h_cnt_out5, smp_clk_h_cnt_out4, smp_clk_h_cnt_out3, smp_clk_h_cnt_out2, smp_clk_h_cnt_out1, smp_clk_h_cnt_out0;
   wire smp_read_offset_b9;
   wire cmd0D_enable0;
   wire sig_366_lut_0;
@@ -513,7 +513,7 @@ module FNIRSI_1013D
   wire sig_382_lut_0;
   wire sig_382_lut_1;
   wire cmd_write_enable;
-  wire net_705;
+  wire i2c_rcv_rst;
   wire sig_384_lut_0;
   wire sig_384_lut_1;
   wire net_712;
@@ -533,7 +533,7 @@ module FNIRSI_1013D
   wire sig_391_lut_0;
   wire net_726;
   wire net_723;
-  wire net_724;
+  wire i2c_cmd6D_e5;
   wire sig_393_lut_0;
   wire sig_393_lut_1;
   wire net_728;
@@ -552,10 +552,10 @@ module FNIRSI_1013D
   wire cmd0E_enable2;
   wire smp_read_offset_b8;
   wire smp_read_offset_b6;
-  wire net_745;
+  wire cmd3x_data_write;
   wire smp_read_offset_b1;
   wire cmd0D_enable1;
-  wire net_754;
+  wire calib_1KHz_f;
   wire pwm_enable_a;
   wire sig_408_lut_0;
   wire sig_408_lut_1;
@@ -564,7 +564,7 @@ module FNIRSI_1013D
   wire net_760;
   wire net_763;
   wire net_764;
-  wire net_759;
+  wire offset1_pwm_rst;
   wire net_766;
   wire net_757;
   wire net_755;
@@ -577,11 +577,11 @@ module FNIRSI_1013D
   wire net_770;
   wire net_776;
   wire net_777;
-  wire net_783;
+  wire i2c_cmd6A_e3;
   wire net_782;
   wire net_778;
-  wire net_780;
-  wire net_781;
+  wire i2c_cmd68_e4;
+  wire i2c_cmd69_e0;
   wire net_784;
   wire sig_420_lut_0;
   wire sig_420_lut_1;
@@ -589,7 +589,7 @@ module FNIRSI_1013D
   wire sig_421_lut_0;
   wire sig_421_lut_1;
   wire net_788;
-  wire net_790;
+  wire i2c_cmd6E_e7;
   wire net_791;
   wire net_793;
   wire net_789;
@@ -601,39 +601,39 @@ module FNIRSI_1013D
   wire net_798;
   wire net_795;
   wire net_800;
-  wire net_801;
+  wire i2c_cmd6B_e6;
   wire net_797;
   wire sig_428_lut_0;
   wire sig_428_lut_1;
   wire net_796;
-  wire net_803;
+  wire i2c_cmd6B_e7;
   wire net_805;
-  wire net_809;
+  wire i2c_cmd6D_e4;
   wire net_810;
-  wire net_807;
+  wire i2c_cmd6C_e4;
   wire net_808;
   wire sig_432_lut_0;
   wire sig_432_lut_1;
   wire net_814;
-  wire net_813;
-  wire net_811;
-  wire net_816;
+  wire i2c_cmd6D_e6;
+  wire i2c_state_0000000011000000;
+  wire i2c_cmd6D_e2;
   wire net_817;
-  wire net_819;
-  wire net_818;
-  wire net_821;
+  wire cmd6D_write_enable;
+  wire cmd6B_write_enable;
+  wire i2c_cmd6C_e6;
   wire net_822;
   wire sig_437_lut_0;
   wire net_823;
-  wire net_824;
-  wire net_820;
+  wire cmd6C_write_enable;
+  wire cmd6E_write_enable;
   wire sig_439_lut_0;
   wire sig_439_lut_1;
   wire sig_439_ff0_d;
   wire sig_440_lut_0;
   wire net_829;
   wire sig_441_lut_0;
-  wire net_831;
+  wire cmd69_write_enable;
   wire cmd0E_enable0;
   wire net_834;
   wire sig_447_lut_0;
@@ -643,11 +643,11 @@ module FNIRSI_1013D
   wire sig_449_lut_0;
   wire sig_449_lut_1;
   wire sig_449_ff0_d;
-  wire net_954, net_943, net_948, net_945, net_947, net_939, net_937, net_946, net_942, net_931, net_922, net_928, net_930, net_923, net_924, net_929, net_926, net_910, net_916, net_914, net_909, net_918, net_904, net_915, net_911, net_892, net_896, net_895, net_897, net_894, net_893, net_898;
-  wire net_919;
-  wire net_906;
-  wire net_917;
-  wire net_907;
+  wire calib_1KHz_c31, calib_1KHz_c30, calib_1KHz_c29, calib_1KHz_c28, calib_1KHz_c27, calib_1KHz_c26, calib_1KHz_c25, calib_1KHz_c24, calib_1KHz_c23, calib_1KHz_c22, calib_1KHz_c21, calib_1KHz_c20, calib_1KHz_c19, calib_1KHz_c18, calib_1KHz_c17, calib_1KHz_c16, calib_1KHz_c15, calib_1KHz_c14, calib_1KHz_c13, calib_1KHz_c12, calib_1KHz_c11, calib_1KHz_c10, calib_1KHz_c9, calib_1KHz_c8, calib_1KHz_c7, calib_1KHz_c6, calib_1KHz_c5, calib_1KHz_c4, calib_1KHz_c3, calib_1KHz_c2, calib_1KHz_c1, calib_1KHz_c0;
+  wire calib_1KHz_d;
+  wire calib_1KHz_e;
+  wire calib_1KHz_c;
+  wire calib_1KHz_b;
   wire sig_485_lut_0;
   wire sig_485_lut_1;
   wire net_944;
@@ -657,15 +657,15 @@ module FNIRSI_1013D
   wire net_955;
   wire net_958;
   wire net_957;
-  wire net_967;
+  wire i2c_cmd6E_e6;
   wire net_960;
-  wire net_963;
+  wire i2c_cmd6A_e2;
   wire net_964;
   wire net_970;
-  wire net_968;
-  wire net_966;
+  wire i2c_cmd69_e3;
+  wire i2c_cmd6D_e0;
   wire net_961;
-  wire net_975;
+  wire i2c_cmd69_e5;
   wire net_977;
   wire sig_497_lut_0;
   wire net_974;
@@ -676,40 +676,40 @@ module FNIRSI_1013D
   wire sig_500_lut_0;
   wire sig_500_lut_1;
   wire net_982;
-  wire net_983;
+  wire i2c_cmd6E_e3;
   wire net_980;
-  wire net_981;
+  wire i2c_state_0000000001010100;
   wire net_984;
   wire sig_503_lut_0;
   wire sig_503_lut_1;
   wire sig_503_ff0_d;
-  wire net_986;
-  wire net_987;
-  wire net_989;
+  wire i2c_state_00000000xxxx1001;
+  wire i2c_state_0000000011111001;
+  wire i2c_cmd6B_e0;
   wire net_990;
-  wire net_995;
+  wire i2c_cmd6C_e3;
   wire net_996;
-  wire net_992;
+  wire i2c_state_0000000010111110;
   wire net_993;
-  wire net_998;
+  wire i2c_cmd6E_e5;
   wire net_997;
-  wire net_1003;
+  wire i2c_cmd69_e1;
   wire net_1005;
-  wire net_1001;
-  wire net_1002;
+  wire i2c_cmd6D_e3;
+  wire i2c_state_198_200;
   wire sig_511_lut_0;
   wire sig_511_lut_1;
   wire net_1000;
   wire net_1092, open_32, open_33, open_34, open_35, open_36, open_37, open_38, open_39, open_40, open_41, open_42, open_43, open_44, open_45, open_46, open_47, open_48, open_49, open_50, open_51, open_52, open_53, open_54, open_55, open_56, open_57, open_58, open_59, open_60, open_61, open_62, open_63;
   wire sig_513_lut_0;
   wire net_1012;
-  wire net_1011;
+  wire i2c_state_00000000xxxx1111;
   wire net_1014;
   wire sig_517_lut_0;
   wire sig_517_lut_1;
   wire smp_clk_l_cnt_out31, smp_clk_l_cnt_out30, smp_clk_l_cnt_out29, smp_clk_l_cnt_out28, smp_clk_l_cnt_out27, smp_clk_l_cnt_out26, smp_clk_l_cnt_out25, smp_clk_l_cnt_out24, smp_clk_l_cnt_out23, smp_clk_l_cnt_out22, smp_clk_l_cnt_out21, smp_clk_l_cnt_out20, smp_clk_l_cnt_out19, smp_clk_l_cnt_out18, smp_clk_l_cnt_out17, smp_clk_l_cnt_out16, smp_clk_l_cnt_out15, smp_clk_l_cnt_out14, smp_clk_l_cnt_out13, smp_clk_l_cnt_out12, smp_clk_l_cnt_out11, smp_clk_l_cnt_out10, smp_clk_l_cnt_out9, smp_clk_l_cnt_out8, smp_clk_l_cnt_out7, smp_clk_l_cnt_out6, smp_clk_l_cnt_out5, smp_clk_l_cnt_out4, smp_clk_l_cnt_out3, smp_clk_l_cnt_out2, smp_clk_l_cnt_out1, smp_clk_l_cnt_out0;
-  wire net_1096;
-  wire net_1098;
+  wire calib_1KHz_rst;
+  wire calib_1KHz_a;
   wire net_1104;
   wire net_1103;
   wire net_1106;
@@ -718,33 +718,33 @@ module FNIRSI_1013D
   wire net_1112;
   wire net_1108;
   wire net_1116;
-  wire net_1115;
+  wire i2c_cmd6B_e2;
   wire net_1109;
   wire sig_552_lut_0;
   wire sig_552_lut_1;
   wire sig_552_ff0_d;
   wire net_1120;
-  wire net_1122;
-  wire net_1123;
+  wire i2c_cmd6C_e1;
+  wire i2c_cmd68_e2;
   wire net_1119;
   wire net_1134;
   wire net_1131;
   wire net_1127;
   wire sig_556_lut_1;
-  wire net_1133;
+  wire i2c_cmd69_e4;
   wire net_1126;
-  wire net_1130;
+  wire i2c_cmd6C_e5;
   wire net_1132;
-  wire net_1136;
+  wire i2c_cmd69_e2;
   wire net_1137;
   wire net_1144;
   wire net_1141;
-  wire net_1138;
-  wire net_1143;
-  wire net_1142;
+  wire i2c_state_000000001000xxxx;
+  wire i2c_state_0000000010001110;
+  wire i2c_cmd6B_e3;
   wire net_1139;
-  wire net_1150;
-  wire net_1147;
+  wire i2c_cmd69_e6;
+  wire i2c_state_0000000001001111;
   wire net_1149;
   wire net_1145;
   wire net_1152;
@@ -756,22 +756,22 @@ module FNIRSI_1013D
   wire net_1153;
   wire net_1156;
   wire net_1157;
-  wire net_1160;
+  wire i2c_cmd6D_e7;
   wire net_1159;
   wire net_1158;
-  wire net_1155;
+  wire i2c_state_0000000001010111;
   wire sig_571_lut_0;
   wire sig_571_lut_1;
   wire net_1165;
-  wire net_1164;
+  wire i2c_cmd6B_e5;
   wire net_1163;
   wire sig_573_lut_0;
   wire net_1166;
   wire sig_574_lut_0;
   wire sig_574_lut_1;
   wire net_1168;
-  wire net_1169;
-  wire net_1170;
+  wire i2c_cmd6E_e4;
+  wire i2c_state_0000000011101111;
   wire sig_576_lut_0;
   wire sig_576_lut_1;
   wire sig_576_ff0_d;
@@ -788,13 +788,13 @@ module FNIRSI_1013D
   wire sig_582_lut_0;
   wire sig_582_lut_1;
   wire net_1183;
-  wire net_1196;
-  wire net_1197;
+  wire calib_1KHz_g;
+  wire calib_1KHz_h;
   wire clk_a_div_c;
   wire clk_a_reset;
-  wire net_1203;
+  wire i2c_cmd6D_e1;
   wire net_1202;
-  wire net_1205;
+  wire i2c_state_0000000010001010;
   wire net_1206;
   wire net_1210;
   wire net_1207;
@@ -807,7 +807,7 @@ module FNIRSI_1013D
   wire sig_595_lut_0;
   wire sig_595_lut_1;
   wire net_1214;
-  wire net_1212;
+  wire i2c_cmd6C_e2;
   wire net_1213;
   wire net_1215;
   wire net_1211;
@@ -819,14 +819,14 @@ module FNIRSI_1013D
   wire net_1227;
   wire net_1222;
   wire net_1224;
-  wire net_1225;
+  wire i2c_cmd6B_e1;
   wire net_1221;
-  wire net_1232;
-  wire net_1231;
+  wire i2c_cmd68_e3;
+  wire i2c_state_0000000001010000;
   wire net_1228;
   wire net_1230;
   wire net_1234;
-  wire net_1233;
+  wire i2c_state_0000000001110100;
   wire net_1239;
   wire net_1237;
   wire net_1235;
@@ -834,7 +834,7 @@ module FNIRSI_1013D
   wire sig_608_lut_0;
   wire sig_608_lut_1;
   wire net_1238;
-  wire net_1240;
+  wire i2c_state_0000000000101001;
   wire net_1236;
   wire net_1246;
   wire net_1244;
@@ -864,24 +864,24 @@ module FNIRSI_1013D
   wire clk_a_div_d;
   wire clk_a_div_a;
   wire clk_a_div_out15, clk_a_div_out14, clk_a_div_out13, clk_a_div_out12, clk_a_div_out11, clk_a_div_out10, clk_a_div_out9, clk_a_div_out8, clk_a_div_out7, clk_a_div_out6, clk_a_div_out5, clk_a_div_out4, clk_a_div_out3, clk_a_div_out2, clk_a_div_out1, clk_a_div_out0;
-  wire net_1298;
+  wire i2c_cmd6E_e0;
   wire net_1297;
-  wire net_1296;
+  wire i2c_cmd68_e6;
   wire net_1293;
   wire net_1299;
-  wire net_1300;
+  wire i2c_out_cmd6E_b6;
   wire net_1305;
   wire net_1301;
-  wire net_1302;
+  wire i2c_state_000000001010xxxx;
   wire net_1303;
   wire net_1306;
   wire net_1304;
   wire sig_639_lut_0;
   wire sig_639_lut_1;
   wire net_1308;
-  wire net_1307;
+  wire i2c_state_00000000xxxx1101;
   wire net_1309;
-  wire net_1312;
+  wire i2c_cmd6A_e6;
   wire net_1311;
   wire sig_642_lut_0;
   wire sig_642_lut_1;
@@ -905,7 +905,7 @@ module FNIRSI_1013D
   wire sig_650_lut_0;
   wire sig_650_lut_1;
   wire net_1326;
-  wire net_1328;
+  wire i2c_cmd69_e7;
   wire net_1327;
   wire net_1329;
   wire net_1331;
@@ -926,8 +926,8 @@ module FNIRSI_1013D
   wire net_1340;
   wire sig_659_lut_0;
   wire net_1343;
-  wire net_1339;
-  wire net_1341;
+  wire cmd68_write_enable;
+  wire cmd6A_write_enable;
   wire state_sum_b3, state_sum_b2, state_sum_b1, state_sum_b0;
   wire sig_662_lut_0;
   wire net_1345;
@@ -936,32 +936,32 @@ module FNIRSI_1013D
   wire sig_666_lut_0;
   wire sig_666_lut_1;
   wire net_1361;
-  wire net_1357;
+  wire i2c_clk_rst;
   wire net_1363;
   wire net_1362;
-  wire net_1367;
-  wire net_1365;
-  wire net_1369;
+  wire i2c_cmd6A_e4;
+  wire i2c_state_xxxxxxxx0110xxxx;
+  wire i2c_cmd68_e7;
   wire net_1368;
-  wire net_1366;
-  wire net_1364;
+  wire i2c_state_xxxxxxxx1010xxxx;
+  wire i2c_state_xxxxxxxxxx10xxxx;
   wire clk_a_div_b;
-  wire net_1377;
-  wire net_1376;
-  wire net_1373;
+  wire i2c_state_000000000000xxxx;
+  wire i2c_state_000000000x1011x0;
+  wire i2c_state_xxxxxxxx1110xxxx;
   wire net_1378;
   wire net_1374;
-  wire net_1379;
-  wire net_1380;
+  wire i2c_state_000000001110xxxx;
+  wire i2c_state_0000000011101010;
   wire net_1387;
   wire net_1381;
   wire net_1383;
   wire net_1384;
   wire net_1386;
   wire net_1388;
-  wire net_1385;
-  wire net_1389;
-  wire net_1392;
+  wire i2c_cmd6C_e0;
+  wire i2c_state_00000000101011xx;
+  wire i2c_cmd6E_e1;
   wire net_1391;
   wire sig_685_lut_0;
   wire sig_685_lut_1;
@@ -979,15 +979,15 @@ module FNIRSI_1013D
   wire net_1401;
   wire net_1403;
   wire net_1399;
-  wire net_1410;
+  wire i2c_cmd6A_e0;
   wire net_1406;
-  wire net_1408;
+  wire i2c_state_0000000011001110;
   wire net_1409;
-  wire net_1411;
+  wire i2c_cmd6E_e2;
   wire net_1405;
   wire net_1415;
   wire net_1416;
-  wire net_1414;
+  wire i2c_cmd68_e0;
   wire net_1413;
   wire sig_697_lut_0;
   wire sig_697_lut_1;
@@ -1008,49 +1008,49 @@ module FNIRSI_1013D
   wire sig_703_ff0_d;
   wire sig_704_lut_0;
   wire net_1429;
-  wire net_1458, net_1451, net_1455, net_1449, net_1453, net_1454, net_1447, net_1452, net_1450, net_1439, net_1435, net_1440, net_1441, net_1436, net_1438, net_1442;
-  wire net_1459;
-  wire net_1462;
-  wire net_1460;
-  wire net_1461;
+  wire i2c_clk_div_out15, i2c_clk_div_out14, i2c_clk_div_out13, i2c_clk_div_out12, i2c_clk_div_out11, i2c_clk_div_out10, i2c_clk_div_out9, i2c_clk_div_out8, i2c_clk_div_out7, i2c_clk_div_out6, i2c_clk_div_out5, i2c_clk_div_out4, i2c_clk_div_out3, i2c_clk_div_out2, i2c_clk_div_out1, i2c_clk_div_out0;
+  wire i2c_state_xxxxxxxx1000xxxx;
+  wire i2c_state_xxxxxxxx1011xxxx;
+  wire i2c_state_xxxxxxxx1100xxxx;
+  wire i2c_state_xxxxxxxx1101xxxx;
   wire sig_716_lut_0;
   wire sig_716_lut_1;
-  wire net_1464;
-  wire net_1463;
-  wire net_1465;
-  wire net_1468;
-  wire net_1466;
-  wire net_1469;
-  wire net_1470;
+  wire i2c_state_000000000011xxxx;
+  wire i2c_state_xxxxxxxx01xxxxxx;
+  wire i2s_state_unknown_a;
+  wire i2c_cmd68_e5;
+  wire i2c_state_0000000000101xxx;
+  wire i2c_state_000000000100xxxx;
+  wire i2c_state_xxxxxxxx0100xxxx;
   wire net_1477;
   wire net_1478;
-  wire net_1474;
-  wire net_1471;
-  wire net_1476;
-  wire net_1472;
-  wire net_1479;
-  wire net_1483;
-  wire net_1482;
-  wire net_1480;
-  wire net_1484;
+  wire i2c_state_000000000101xxxx;
+  wire i2c_state_000000000111xxxx;
+  wire i2c_cmd6A_e7;
+  wire i2c_state_000000000110xxxx;
+  wire i2c_state_00000000xxxxxx10;
+  wire i2c_state_00000000xxxx1110;
+  wire i2c_cmd68_e1;
+  wire i2c_state_0000000000110xx1;
+  wire i2c_state_0000000011101101;
   wire net_1481;
   wire sig_726_lut_0;
   wire sig_726_lut_1;
   wire net_1485;
   wire net_1487;
   wire net_1489;
-  wire net_1490;
-  wire net_1491;
+  wire i2c_state_13_15;
+  wire i2c_state_0000000000000000;
   wire net_1488;
   wire net_1492;
-  wire net_1495;
+  wire i2c_state_00000000xxxx0001;
   wire net_1496;
   wire net_1493;
   wire net_1499;
-  wire net_1494;
-  wire net_1498;
+  wire i2c_state_00000000xxxx0000;
+  wire i2c_state_0000000010010000;
   wire net_1500;
-  wire net_1497;
+  wire i2c_state_0000000010110000;
   wire sig_734_lut_0;
   wire sig_734_lut_1;
   wire net_1501;
@@ -1083,46 +1083,46 @@ module FNIRSI_1013D
   wire net_1519;
   wire sig_746_lut_0;
   wire sig_746_lut_1;
-  wire net_1523;
-  wire net_1524;
-  wire net_1532;
-  wire net_1528;
-  wire net_1531;
-  wire net_1530;
-  wire net_1529;
-  wire net_1533;
+  wire i2c_state_xxxxxxxx0000xxxx;
+  wire i2c_state_xxxxxxxx1001xxxx;
+  wire i2c_state_xxxxxxxx0001xxxx;
+  wire i2c_state_xxxxxxxx1111xxxx;
+  wire i2c_state_000000000010xxxx;
+  wire i2c_state_xxxxxxxx0010xxxx;
+  wire i2c_state_00000000xxxx1010;
+  wire i2c_state_xxxxxxxx00010010;
   wire sig_756_lut_0;
   wire net_1527;
-  wire net_1560, net_1552, net_1547, net_1553, net_1555, net_1556, net_1548, net_1557, net_1554, net_1539, net_1543, net_1541, net_1545, net_1538, net_1540, net_1542;
+  wire i2c_state_c15, i2c_state_c14, i2c_state_c13, i2c_state_c12, i2c_state_c11, i2c_state_c10, i2c_state_c9, i2c_state_c8, i2c_state_c7, i2c_state_c6, i2c_state_c5, i2c_state_c4, i2c_state_c3, i2c_state_c2, i2c_state_c1, i2c_state_c0;
   wire sig_759_lut_0;
   wire sig_759_lut_1;
-  wire net_1544;
-  wire net_1559;
+  wire i2c_state_00000000xxxx1000;
+  wire i2c_state_xxxxxxxxxxxx00xx;
   wire net_1562;
   wire net_1564;
-  wire net_1563;
+  wire i2c_state_0000000010010010;
   wire sig_765_lut_0;
   wire sig_765_lut_1;
   wire net_1561;
-  wire net_1567;
+  wire i2c_cmd6A_e1;
   wire net_1568;
-  wire net_1565;
-  wire net_1566;
+  wire i2c_state_xxxxxxxxxxxx10x1;
+  wire i2c_state_xxxxxxxxxxxx1001;
   wire sig_768_lut_0;
   wire net_1571;
-  wire net_1573;
-  wire net_1574;
-  wire net_1572;
-  wire net_1576;
-  wire net_1578;
-  wire net_1579;
-  wire net_1575;
-  wire net_1577;
-  wire net_1583;
+  wire i2c_state_xxxxxxxxxxxx1011;
+  wire i2c_state_0000000011101011;
+  wire i2c_state_00000000xxxx0011;
+  wire i2c_state_0000000000010011;
+  wire i2c_state_0000000010010011;
+  wire i2c_state_0000000010110001;
+  wire i2c_state_195_203;
+  wire i2c_state_000000001100xxxx;
+  wire i2c_cmd6B_e4;
   wire net_1585;
   wire sig_774_lut_0;
   wire net_1581;
-  wire net_1584;
+  wire i2c_cmd6C_e7;
   wire net_1586;
   wire sig_776_lut_0;
   wire net_1588;
@@ -1148,182 +1148,45 @@ module FNIRSI_1013D
   wire sig_815_lut_0;
   wire sig_815_lut_1;
   wire sig_815_ff0_d;
-  wire net_1610;
-  wire net_1608;
+  wire i2c_session_enable;
+  wire i2c_state_00000000xxxxxxxx;
   wire net_1612;
   wire net_1611;
   wire net_1615;
-  wire net_1616;
-  wire net_1620;
-  wire net_1617;
+  wire i2c_state_0000xxxxxxxxxxxx;
+  wire i2c_cmd6A_e5;
+  wire i2c_state_xxxxxxxxxxxx1000;
   wire net_1619;
-  wire net_1621;
+  wire i2c_state_xxxxxxxxxxxx01xx;
   wire sig_821_lut_0;
   wire sig_821_lut_1;
-  wire net_1618;
-  wire net_1624;
-  wire net_1623;
-  wire net_1625;
-  wire net_1626;
-  wire net_1627;
+  wire i2c_state_00000000xxxx1100;
+  wire i2c_state_xxxxxxxxxxxx1111;
+  wire i2c_state_xxxxxxxxxxxx1101;
+  wire i2c_state_xxxxxxxxxxxx0010;
+  wire i2c_state_xxxxxxxxxxxx0000;
+  wire i2c_state_195_196;
   wire net_1628;
-  wire net_1630;
-  wire net_1629;
+  wire i2c_state_xxxxxxxxxxxx0011;
+  wire i2c_state_xxxxxxxxxxxx0001;
   wire sig_826_lut_0;
   wire net_1631;
-  wire net_1632;
-  wire net_1635;
-  wire net_1633;
-  wire net_1634;
+  wire i2c_state_xxxxxxxxxxxx0111;
+  wire i2c_state_xxxxxxxxxxxx0101;
+  wire i2c_state_xxxxxxxxxxxx0100;
+  wire i2c_state_xxxxxxxxxxxx0110;
   wire sig_829_lut_0;
-  wire net_1640;
+  wire i2c_out_cmd68_b2;
   wire sig_830_lut_0;
-  wire net_1638;
-  wire net_1642;
+  wire i2c_out_cmd6A_b2;
+  wire i2c_state_0000000001110001;
   wire net_1641;
   wire sig_832_lut_0;
   wire net_1644;
   wire sig_833_lut_0;
-  wire net_1645;
+  wire i2c_out_cmd6A_b1;
   wire sig_834_lut_0;
-  wire net_1649;
-  wire sig_82_cea;
-  wire sig_82_ceb;
-  wire o_adc2A_d0_1;
-  wire o_adc2A_d0_0;
-  wire o_adc1B_d0_7;
-  wire o_adc1B_d0_6;
-  wire o_adc1B_d0_5;
-  wire o_adc1B_d0_4;
-  wire o_adc1B_d0_3;
-  wire o_adc1B_d0_2;
-  wire o_adc1B_d0_1;
-  wire sig_83_cea;
-  wire sig_83_ceb;
-  wire o_adc2A_d1_1;
-  wire o_adc2A_d1_0;
-  wire o_adc1B_d1_7;
-  wire o_adc1B_d1_6;
-  wire o_adc1B_d1_5;
-  wire o_adc1B_d1_4;
-  wire o_adc1B_d1_3;
-  wire o_adc1B_d1_2;
-  wire o_adc1B_d1_1;
-  wire sig_84_cea;
-  wire sig_84_ceb;
-  wire o_adc2A_d3_1;
-  wire o_adc2A_d3_0;
-  wire o_adc1B_d3_7;
-  wire o_adc1B_d3_6;
-  wire o_adc1B_d3_5;
-  wire o_adc1B_d3_4;
-  wire o_adc1B_d3_3;
-  wire o_adc1B_d3_2;
-  wire o_adc1B_d3_1;
-  wire sig_94_cea;
-  wire sig_94_ceb;
-  wire o_adc2A_d2_1;
-  wire o_adc2A_d2_0;
-  wire o_adc1B_d2_7;
-  wire o_adc1B_d2_6;
-  wire o_adc1B_d2_5;
-  wire o_adc1B_d2_4;
-  wire o_adc1B_d2_3;
-  wire o_adc1B_d2_2;
-  wire o_adc1B_d2_1;
-  wire sig_95_cea;
-  wire sig_95_ceb;
-  wire o_adc2B_d2_2;
-  wire o_adc2B_d2_1;
-  wire o_adc2B_d2_0;
-  wire o_adc2A_d2_7;
-  wire o_adc2A_d2_6;
-  wire o_adc2A_d2_5;
-  wire o_adc2A_d2_4;
-  wire o_adc2A_d2_3;
-  wire o_adc2A_d2_2;
-  wire sig_96_cea;
-  wire sig_96_ceb;
-  wire o_adc2B_d3_2;
-  wire o_adc2B_d3_1;
-  wire o_adc2B_d3_0;
-  wire o_adc2A_d3_7;
-  wire o_adc2A_d3_6;
-  wire o_adc2A_d3_5;
-  wire o_adc2A_d3_4;
-  wire o_adc2A_d3_3;
-  wire o_adc2A_d3_2;
-  wire sig_97_cea;
-  wire sig_97_ceb;
-  wire o_adc2B_d1_2;
-  wire o_adc2B_d1_1;
-  wire o_adc2B_d1_0;
-  wire o_adc2A_d1_7;
-  wire o_adc2A_d1_6;
-  wire o_adc2A_d1_5;
-  wire o_adc2A_d1_4;
-  wire o_adc2A_d1_3;
-  wire o_adc2A_d1_2;
-  wire sig_114_cea;
-  wire sig_114_ceb;
-  wire o_adc2B_d0_2;
-  wire o_adc2B_d0_1;
-  wire o_adc2B_d0_0;
-  wire o_adc2A_d0_7;
-  wire o_adc2A_d0_6;
-  wire o_adc2A_d0_5;
-  wire o_adc2A_d0_4;
-  wire o_adc2A_d0_3;
-  wire o_adc2A_d0_2;
-  wire sig_450_cea;
-  wire sig_450_ceb;
-  wire o_adc1B_d0_0;
-  wire o_adc1A_d0_7;
-  wire o_adc1A_d0_6;
-  wire o_adc1A_d0_5;
-  wire o_adc1A_d0_4;
-  wire o_adc1A_d0_3;
-  wire o_adc1A_d0_2;
-  wire o_adc1A_d0_1;
-  wire o_adc1A_d0_0;
-  wire sig_455_cea;
-  wire sig_455_ceb;
-  wire o_adc1B_d1_0;
-  wire o_adc1A_d1_7;
-  wire o_adc1A_d1_6;
-  wire o_adc1A_d1_5;
-  wire o_adc1A_d1_4;
-  wire o_adc1A_d1_3;
-  wire o_adc1A_d1_2;
-  wire o_adc1A_d1_1;
-  wire o_adc1A_d1_0;
-  wire sig_456_cea;
-  wire sig_456_ceb;
-  wire o_adc1B_d3_0;
-  wire o_adc1A_d3_7;
-  wire o_adc1A_d3_6;
-  wire o_adc1A_d3_5;
-  wire o_adc1A_d3_4;
-  wire o_adc1A_d3_3;
-  wire o_adc1A_d3_2;
-  wire o_adc1A_d3_1;
-  wire o_adc1A_d3_0;
-  wire sig_457_cea;
-  wire sig_457_ceb;
-  wire o_adc1B_d2_0;
-  wire o_adc1A_d2_7;
-  wire o_adc1A_d2_6;
-  wire o_adc1A_d2_5;
-  wire o_adc1A_d2_4;
-  wire o_adc1A_d2_3;
-  wire o_adc1A_d2_2;
-  wire o_adc1A_d2_1;
-  wire o_adc1A_d2_0;
-  wire o_adc2B_d_4;
-  wire o_adc2B_d_3;
-  wire o_adc2B_d_6;
-  wire o_adc2B_d_5;
-  wire o_adc2B_d_7;
+  wire i2c_out_cmd6E_b2;
 
 //---------------------------------------------------------------------------
 //Register declarations
@@ -1407,7 +1270,7 @@ module FNIRSI_1013D
   reg cmd3C_b1 = 1'b0;
   reg net_376 = 1'b0;
   reg net_369 = 1'b0;
-  reg net_380 = 1'b0;
+  reg calib_1KHz_r22 = 1'b0;
   reg smp_read_offset_r6 = 1'b0;
   reg smp_read_offset_r10 = 1'b0;
   reg sclk_div_l_b16 = 1'b0;
@@ -1450,7 +1313,7 @@ module FNIRSI_1013D
   reg sclk_div_h_b26 = 1'b0;
   reg sclk_div_h_b27 = 1'b0;
   reg db_cnt_b15 = 1'b0, db_cnt_b14 = 1'b0, db_cnt_b13 = 1'b0, db_cnt_b12 = 1'b0, db_cnt_b11 = 1'b0, db_cnt_b10 = 1'b0, db_cnt_b9 = 1'b0, db_cnt_b8 = 1'b0, db_cnt_b7 = 1'b0, db_cnt_b6 = 1'b0, db_cnt_b5 = 1'b0, db_cnt_b4 = 1'b0, db_cnt_b3 = 1'b0, db_cnt_b2 = 1'b0, db_cnt_b1 = 1'b0, db_cnt_b0 = 1'b0;
-  reg clk_100MHz = 1'b0;
+  reg clk_50MHz = 1'b0;
   reg disp_bright_b7 = 1'b0;
   reg disp_bright_b5 = 1'b0;
   reg disp_bright_b14 = 1'b0;
@@ -1462,29 +1325,29 @@ module FNIRSI_1013D
   reg cmd_b3 = 1'b0;
   reg o_mcu_d_4 = 1'b0;
   reg relay2_1 = 1'b0;
-  reg smp_clk_l_cnt_reg6 = 1'b0;
-  reg smp_clk_l_cnt_reg2 = 1'b0;
-  reg smp_clk_l_cnt_reg5 = 1'b0;
+  reg smp_clk_h_cnt_reg6 = 1'b0;
+  reg smp_clk_h_cnt_reg2 = 1'b0;
+  reg smp_clk_h_cnt_reg5 = 1'b0;
   reg sclk_div_h_b3 = 1'b0;
   reg sclk_div_h_b4 = 1'b0;
   reg sclk_div_h_b5 = 1'b0;
   reg sclk_div_h_b6 = 1'b0;
   reg sclk_div_h_b7 = 1'b0;
   reg sclk_div_h_b9 = 1'b0;
-  reg smp_clk_l_cnt_reg9 = 1'b0;
-  reg smp_clk_l_cnt_reg8 = 1'b0;
-  reg smp_clk_l_cnt_reg13 = 1'b0;
-  reg smp_clk_l_cnt_reg14 = 1'b0;
-  reg smp_clk_l_cnt_reg21 = 1'b0;
-  reg smp_clk_l_cnt_reg22 = 1'b0;
-  reg smp_clk_l_cnt_reg17 = 1'b0;
-  reg smp_clk_l_cnt_reg18 = 1'b0;
+  reg smp_clk_h_cnt_reg9 = 1'b0;
+  reg smp_clk_h_cnt_reg8 = 1'b0;
+  reg smp_clk_h_cnt_reg13 = 1'b0;
+  reg smp_clk_h_cnt_reg14 = 1'b0;
+  reg smp_clk_h_cnt_reg21 = 1'b0;
+  reg smp_clk_h_cnt_reg22 = 1'b0;
+  reg smp_clk_h_cnt_reg17 = 1'b0;
+  reg smp_clk_h_cnt_reg18 = 1'b0;
   reg sclk_div_h_b20 = 1'b0;
   reg sclk_div_h_b21 = 1'b0;
   reg sclk_div_h_b22 = 1'b0;
   reg sclk_div_h_b23 = 1'b0;
-  reg smp_clk_l_cnt_reg25 = 1'b0;
-  reg smp_clk_l_cnt_reg26 = 1'b0;
+  reg smp_clk_h_cnt_reg25 = 1'b0;
+  reg smp_clk_h_cnt_reg26 = 1'b0;
   reg sclk_div_h_b28 = 1'b0;
   reg sclk_div_h_b29 = 1'b0;
   reg sclk_div_h_b30 = 1'b0;
@@ -1494,24 +1357,24 @@ module FNIRSI_1013D
   reg sclk_div_h_b1 = 1'b0;
   reg sclk_div_h_b11 = 1'b0;
   reg sclk_div_h_b10 = 1'b0;
-  reg smp_clk_l_cnt_reg0 = 1'b0;
-  reg smp_clk_l_cnt_reg1 = 1'b0;
-  reg smp_clk_l_cnt_reg3 = 1'b0;
-  reg smp_clk_l_cnt_reg4 = 1'b0;
-  reg smp_clk_l_cnt_reg10 = 1'b0;
-  reg smp_clk_l_cnt_reg7 = 1'b0;
-  reg smp_clk_l_cnt_reg11 = 1'b0;
-  reg smp_clk_l_cnt_reg12 = 1'b0;
-  reg smp_clk_l_cnt_reg15 = 1'b0;
-  reg smp_clk_l_cnt_reg16 = 1'b0;
-  reg smp_clk_l_cnt_reg19 = 1'b0;
-  reg smp_clk_l_cnt_reg20 = 1'b0;
-  reg smp_clk_l_cnt_reg23 = 1'b0;
-  reg smp_clk_l_cnt_reg24 = 1'b0;
-  reg smp_clk_l_cnt_reg27 = 1'b0;
-  reg smp_clk_l_cnt_reg28 = 1'b0;
-  reg smp_clk_l_cnt_reg31 = 1'b0;
-  reg smp_clk_l_cnt_reg29 = 1'b0;
+  reg smp_clk_h_cnt_reg0 = 1'b0;
+  reg smp_clk_h_cnt_reg1 = 1'b0;
+  reg smp_clk_h_cnt_reg3 = 1'b0;
+  reg smp_clk_h_cnt_reg4 = 1'b0;
+  reg smp_clk_h_cnt_reg10 = 1'b0;
+  reg smp_clk_h_cnt_reg7 = 1'b0;
+  reg smp_clk_h_cnt_reg11 = 1'b0;
+  reg smp_clk_h_cnt_reg12 = 1'b0;
+  reg smp_clk_h_cnt_reg15 = 1'b0;
+  reg smp_clk_h_cnt_reg16 = 1'b0;
+  reg smp_clk_h_cnt_reg19 = 1'b0;
+  reg smp_clk_h_cnt_reg20 = 1'b0;
+  reg smp_clk_h_cnt_reg23 = 1'b0;
+  reg smp_clk_h_cnt_reg24 = 1'b0;
+  reg smp_clk_h_cnt_reg27 = 1'b0;
+  reg smp_clk_h_cnt_reg28 = 1'b0;
+  reg smp_clk_h_cnt_reg31 = 1'b0;
+  reg smp_clk_h_cnt_reg29 = 1'b0;
   reg sclk_div_h_b25 = 1'b0;
   reg sclk_div_h_b24 = 1'b0;
   reg offset1_pwm_r0 = 1'b0;
@@ -1524,28 +1387,28 @@ module FNIRSI_1013D
   reg offset1_pwm_r12 = 1'b0;
   reg offset1_pwm_r15 = 1'b0;
   reg net_696 = 1'b0;
-  reg net_702 = 1'b0;
-  reg net_700 = 1'b0;
+  reg i2c_send_enable = 1'b0;
+  reg i2c_disable = 1'b0;
   reg cmd_b0 = 1'b0;
   reg cmd_b1 = 1'b0;
   reg offset_1 = 1'b0;
   reg ch1_offset_b10 = 1'b0;
   reg ch1_offset_b15 = 1'b0;
   reg smp_rst_state = 1'b0;
-  reg net_727 = 1'b0;
+  reg i_i2c_cmd6D_b5 = 1'b0;
   reg sclk_div_l_b0 = 1'b0;
   reg sample_write_clock = 1'b0;
   reg adc1_encB = 1'b0;
   reg smp_read_offset_r4 = 1'b0;
   reg cmd3C_b12 = 1'b0;
-  reg net_738 = 1'b0;
+  reg o_i2c_cmd6E_b5 = 1'b0;
   reg sclk_div_l_b10 = 1'b0;
   reg sclk_div_l_b8 = 1'b0;
   reg sclk_div_h_b14 = 1'b0;
   reg sclk_div_h_b17 = 1'b0;
   reg sclk_div_h_b16 = 1'b0;
-  reg smp_clk_l_cnt_reg30 = 1'b0;
-  reg net_751 = 1'b0;
+  reg smp_clk_h_cnt_reg30 = 1'b0;
+  reg calib_1KHz_r29 = 1'b0;
   reg offset1_pwm_r13 = 1'b0;
   reg offset1_pwm_r2 = 1'b0;
   reg ch1_offset_b8 = 1'b0;
@@ -1554,21 +1417,21 @@ module FNIRSI_1013D
   reg ch1_offset_b5 = 1'b0;
   reg ch1_offset_b0 = 1'b0;
   reg ch1_offset_b6 = 1'b0;
-  reg net_779 = 1'b0;
-  reg net_787 = 1'b1;
+  reg i_i2c_cmd6A_b3 = 1'b0;
+  reg i_i2c_cmd68_b4 = 1'b1;
   reg i_i2c_cmd69_b0 = 1'b0;
-  reg net_794 = 1'b0;
-  reg net_799 = 1'b0;
-  reg net_802 = 1'b0;
-  reg net_804 = 1'b0;
-  reg net_806 = 1'b0;
-  reg net_812 = 1'b0;
-  reg net_815 = 1'b1;
-  reg net_826 = 1'b0;
-  reg net_825 = 1'b0;
-  reg net_827 = 1'b0;
-  reg net_830 = 1'b0;
-  reg net_828 = 1'b0;
+  reg i_i2c_cmd6E_b7 = 1'b0;
+  reg i_i2c_cmd6B_b6 = 1'b0;
+  reg i_i2c_cmd6B_b7 = 1'b0;
+  reg i_i2c_cmd6D_b4 = 1'b0;
+  reg i_i2c_cmd6C_b4 = 1'b0;
+  reg i_i2c_cmd6D_b6 = 1'b0;
+  reg i_i2c_cmd6D_b2 = 1'b1;
+  reg i_i2c_cmd6C_b6 = 1'b0;
+  reg o_i2c_cmd6B_b2 = 1'b0;
+  reg o_i2c_cmd6C_b5 = 1'b0;
+  reg o_i2c_cmd6D_b6 = 1'b0;
+  reg o_i2c_cmd69_b5 = 1'b0;
   reg sclk_div_l_b24 = 1'b0;
   reg smp_rst_cnt_b3 = 1'b0, smp_rst_cnt_b2 = 1'b0, smp_rst_cnt_b1 = 1'b0, smp_rst_cnt_b0 = 1'b0;
   reg adc2_encA = 1'b0;
@@ -1578,46 +1441,46 @@ module FNIRSI_1013D
   reg relay1_2 = 1'b0;
   reg relay1_3 = 1'b0;
   reg relay1_1 = 1'b0;
-  reg net_899 = 1'b0;
-  reg net_890 = 1'b0;
-  reg net_889 = 1'b0;
-  reg net_891 = 1'b0;
-  reg net_903 = 1'b0;
-  reg net_902 = 1'b0;
-  reg net_901 = 1'b0;
-  reg net_905 = 1'b0;
-  reg net_920 = 1'b0;
-  reg net_927 = 1'b0;
-  reg net_921 = 1'b0;
-  reg net_925 = 1'b0;
-  reg net_932 = 1'b0;
-  reg net_949 = 1'b0;
-  reg net_933 = 1'b0;
-  reg net_936 = 1'b0;
-  reg net_950 = 1'b0;
-  reg net_952 = 1'b0;
-  reg net_908 = 1'b0;
-  reg net_900 = 1'b0;
-  reg net_912 = 1'b0;
-  reg net_913 = 1'b0;
-  reg net_934 = 1'b0;
+  reg calib_1KHz_r0 = 1'b0;
+  reg calib_1KHz_r1 = 1'b0;
+  reg calib_1KHz_r3 = 1'b0;
+  reg calib_1KHz_r4 = 1'b0;
+  reg calib_1KHz_r10 = 1'b0;
+  reg calib_1KHz_r7 = 1'b0;
+  reg calib_1KHz_r11 = 1'b0;
+  reg calib_1KHz_r12 = 1'b0;
+  reg calib_1KHz_r15 = 1'b0;
+  reg calib_1KHz_r16 = 1'b0;
+  reg calib_1KHz_r19 = 1'b0;
+  reg calib_1KHz_r20 = 1'b0;
+  reg calib_1KHz_r23 = 1'b0;
+  reg calib_1KHz_r24 = 1'b0;
+  reg calib_1KHz_r27 = 1'b0;
+  reg calib_1KHz_r28 = 1'b0;
+  reg calib_1KHz_r31 = 1'b0;
+  reg calib_1KHz_r18 = 1'b0;
+  reg calib_1KHz_r5 = 1'b0;
+  reg calib_1KHz_r17 = 1'b0;
+  reg calib_1KHz_r9 = 1'b0;
+  reg calib_1KHz_r8 = 1'b0;
+  reg calib_1KHz_r26 = 1'b0;
   reg ch1_offset_b13 = 1'b0;
   reg ch1_offset_b12 = 1'b0;
   reg ch1_offset_b14 = 1'b0;
   reg ch1_offset_b11 = 1'b0;
-  reg net_959 = 1'b0;
-  reg net_969 = 1'b1;
-  reg net_962 = 1'b0;
+  reg i_i2c_cmd6E_b6 = 1'b0;
+  reg i_i2c_cmd6A_b2 = 1'b1;
+  reg i_i2c_cmd69_b3 = 1'b0;
   reg i_i2c_cmd6D_b0 = 1'b0;
-  reg net_971 = 1'b0;
+  reg i_i2c_cmd69_b5 = 1'b0;
   reg i2c_sda_dir = 1'b0;
-  reg net_985 = 1'b0;
+  reg i_i2c_cmd6E_b3 = 1'b0;
   reg o_i2c_sda = 1'b0;
   reg i_i2c_cmd6B_b0 = 1'b0;
-  reg net_999 = 1'b0;
-  reg net_994 = 1'b0;
-  reg net_1004 = 1'b0;
-  reg net_1006 = 1'b0;
+  reg i_i2c_cmd6C_b3 = 1'b0;
+  reg i_i2c_cmd6E_b5 = 1'b0;
+  reg i_i2c_cmd69_b1 = 1'b0;
+  reg i_i2c_cmd6D_b3 = 1'b0;
   reg smp_clk_l_cnt_reg2 = 1'b0;
   reg smp_clk_l_cnt_reg5 = 1'b0;
   reg sclk_div_l_b1 = 1'b0;
@@ -1647,9 +1510,9 @@ module FNIRSI_1013D
   reg sclk_div_l_b29 = 1'b0;
   reg sclk_div_l_b30 = 1'b0;
   reg sclk_div_l_b31 = 1'b0;
-  reg net_1013 = 1'b0;
-  reg net_1020 = 1'b0;
-  reg net_1019 = 1'b0;
+  reg o_i2c_cmd6C_b2 = 1'b0;
+  reg o_i2c_cmd6B_b3 = 1'b0;
+  reg o_i2c_cmd6B_b4 = 1'b0;
   reg smp_clk_l_cnt_reg0 = 1'b0;
   reg smp_clk_l_cnt_reg1 = 1'b0;
   reg smp_clk_l_cnt_reg3 = 1'b0;
@@ -1668,10 +1531,10 @@ module FNIRSI_1013D
   reg smp_clk_l_cnt_reg28 = 1'b0;
   reg smp_clk_l_cnt_reg31 = 1'b0;
   reg smp_clk_l_cnt_reg29 = 1'b0;
-  reg net_1093 = 1'b0;
-  reg net_1094 = 1'b0;
-  reg net_1095 = 1'b0;
-  reg net_1097 = 1'b0;
+  reg calib_1KHz_r6 = 1'b0;
+  reg calib_1KHz_r2 = 1'b0;
+  reg calib_1KHz_r13 = 1'b0;
+  reg calib_1KHz_r14 = 1'b0;
   reg offset1_pwm_r5 = 1'b0;
   reg offset1_pwm_r14 = 1'b0;
   reg offset1_pwm_r6 = 1'b0;
@@ -1680,27 +1543,27 @@ module FNIRSI_1013D
   reg ch1_offset_b1 = 1'b0;
   reg ch1_offset_b4 = 1'b0;
   reg ch1_offset_b3 = 1'b0;
-  reg net_1110 = 1'b0;
-  reg net_1118 = 1'b0;
-  reg net_1124 = 1'b1;
-  reg net_1121 = 1'b1;
-  reg net_1125 = 1'b0;
-  reg net_1129 = 1'b0;
-  reg net_1128 = 1'b0;
-  reg net_1135 = 1'b0;
-  reg net_1140 = 1'b0;
-  reg net_1148 = 1'b0;
-  reg net_1161 = 1'b0;
-  reg net_1162 = 1'b0;
-  reg net_1167 = 1'b0;
-  reg net_1171 = 1'b0;
-  reg net_1176 = 1'b0;
-  reg net_1174 = 1'b0;
-  reg net_1175 = 1'b0;
+  reg i_i2c_cmd6B_b2 = 1'b0;
+  reg o_i2c_cmd6E_b6 = 1'b0;
+  reg i_i2c_cmd6C_b1 = 1'b1;
+  reg i_i2c_cmd68_b2 = 1'b1;
+  reg i2c_scl = 1'b0;
+  reg i_i2c_cmd69_b4 = 1'b0;
+  reg i_i2c_cmd6C_b5 = 1'b0;
+  reg i_i2c_cmd69_b2 = 1'b0;
+  reg i_i2c_cmd6B_b3 = 1'b0;
+  reg i_i2c_cmd69_b6 = 1'b0;
+  reg i_i2c_cmd6D_b7 = 1'b0;
+  reg i_i2c_cmd6B_b5 = 1'b0;
+  reg o_i2c_cmd6C_b1 = 1'b0;
+  reg i_i2c_cmd6E_b4 = 1'b0;
+  reg o_i2c_cmd6C_b4 = 1'b0;
+  reg o_i2c_cmd6C_b3 = 1'b0;
+  reg o_i2c_cmd6D_b1 = 1'b0;
   reg state_b2 = 1'b0;
   reg state_b1 = 1'b0;
-  reg net_1180 = 1'b0;
-  reg net_1182 = 1'b0;
+  reg o_i2c_cmd6B_b0 = 1'b0;
+  reg o_i2c_cmd6B_b1 = 1'b0;
   reg state_b0 = 1'b0;
   reg smp_clk_l_cnt_reg8 = 1'b0;
   reg smp_clk_l_cnt_reg18 = 1'b0;
@@ -1712,21 +1575,21 @@ module FNIRSI_1013D
   reg smp_clk_l_cnt_reg22 = 1'b0;
   reg smp_clk_l_cnt_reg26 = 1'b0;
   reg smp_clk_l_cnt_reg25 = 1'b0;
-  reg net_1194 = 1'b0;
-  reg net_1195 = 1'b0;
+  reg calib_1KHz_r25 = 1'b0;
+  reg calib_1KHz_r21 = 1'b0;
   reg clk_a_div_reg6 = 1'b0;
   reg clk_a_div_reg13 = 1'b0;
-  reg net_1204 = 1'b0;
-  reg net_1216 = 1'b0;
+  reg i_i2c_cmd6D_b1 = 1'b0;
+  reg i_i2c_cmd6C_b2 = 1'b0;
   reg adc2_encB = 1'b0;
-  reg net_1223 = 1'b1;
-  reg net_1229 = 1'b1;
-  reg net_1253 = 1'b0;
-  reg net_1256 = 1'b0;
-  reg net_1258 = 1'b0;
-  reg net_1257 = 1'b0;
+  reg i_i2c_cmd6B_b1 = 1'b1;
+  reg i_i2c_cmd68_b3 = 1'b1;
+  reg o_i2c_cmd6D_b5 = 1'b0;
+  reg o_i2c_cmd6C_b7 = 1'b0;
+  reg o_i2c_cmd6E_b7 = 1'b0;
+  reg o_i2c_cmd6E_b4 = 1'b0;
   reg state_b3 = 1'b0;
-  reg net_1263 = 1'b0;
+  reg calib_1KHz_r30 = 1'b0;
   reg clk_a_div_reg14 = 1'b0;
   reg clk_a_div_reg5 = 1'b0;
   reg clk_a_div_reg0 = 1'b0;
@@ -1741,100 +1604,234 @@ module FNIRSI_1013D
   reg clk_a_div_reg8 = 1'b0;
   reg clk_a_div_reg9 = 1'b0;
   reg i_i2c_cmd6E_b0 = 1'b1;
-  reg net_1292 = 1'b1;
-  reg net_1310 = 1'b0;
-  reg net_1332 = 1'b0;
-  reg net_1337 = 1'b0;
-  reg net_1344 = 1'b0;
-  reg net_1348 = 1'b0;
-  reg net_1347 = 1'b0;
-  reg net_1353 = 1'b0;
-  reg net_1354 = 1'b0;
-  reg net_1359 = 1'b0;
-  reg net_1360 = 1'b0;
-  reg net_1356 = 1'b0;
-  reg net_1358 = 1'b0;
-  reg net_1370 = 1'b1;
-  reg net_1371 = 1'b1;
+  reg i_i2c_cmd68_b6 = 1'b1;
+  reg i_i2c_cmd6A_b6 = 1'b0;
+  reg i_i2c_cmd69_b7 = 1'b0;
+  reg o_i2c_cmd6D_b0 = 1'b0;
+  reg o_i2c_cmd6D_b3 = 1'b0;
+  reg o_i2c_cmd6D_b2 = 1'b0;
+  reg o_i2c_cmd6C_b0 = 1'b0;
+  reg o_i2c_cmd69_b3 = 1'b0;
+  reg o_i2c_cmd69_b4 = 1'b0;
+  reg i2c_clk_div_reg2 = 1'b0;
+  reg i2c_clk_div_reg13 = 1'b0;
+  reg i2c_clk_div_reg6 = 1'b0;
+  reg i2c_clk_div_reg14 = 1'b0;
+  reg i_i2c_cmd6A_b4 = 1'b1;
+  reg i_i2c_cmd68_b7 = 1'b1;
   reg clk_a_div_reg2 = 1'b0;
   reg i_i2c_cmd6C_b0 = 1'b1;
-  reg net_1394 = 1'b0;
+  reg i_i2c_cmd6E_b1 = 1'b0;
   reg i_i2c_cmd6A_b0 = 1'b0;
-  reg net_1407 = 1'b1;
+  reg i_i2c_cmd6E_b2 = 1'b1;
   reg i_i2c_cmd68_b0 = 1'b1;
-  reg net_1421 = 1'b0;
-  reg net_1420 = 1'b0;
-  reg net_1425 = 1'b0;
-  reg net_1428 = 1'b0;
-  reg net_1426 = 1'b0;
-  reg net_1430 = 1'b0;
-  reg net_1443 = 1'b0;
-  reg net_1434 = 1'b0;
-  reg net_1433 = 1'b0;
-  reg net_1437 = 1'b0;
-  reg net_1445 = 1'b0;
-  reg net_1448 = 1'b0;
-  reg net_1444 = 1'b0;
-  reg net_1446 = 1'b0;
-  reg net_1456 = 1'b0;
-  reg net_1457 = 1'b0;
-  reg net_1467 = 1'b1;
-  reg net_1473 = 1'b0;
-  reg net_1475 = 1'b1;
-  reg net_1486 = 1'b1;
-  reg net_1505 = 1'b0;
-  reg net_1502 = 1'b0;
-  reg net_1510 = 1'b0;
-  reg net_1508 = 1'b0;
-  reg net_1513 = 1'b0;
-  reg net_1514 = 1'b0;
-  reg net_1515 = 1'b0;
-  reg net_1517 = 1'b0;
-  reg net_1518 = 1'b0;
-  reg net_1520 = 1'b0;
-  reg net_1522 = 1'b0;
-  reg net_1521 = 1'b0;
-  reg net_1525 = 1'b0;
-  reg net_1526 = 1'b0;
-  reg net_1535 = 1'b0;
-  reg net_1536 = 1'b0;
-  reg net_1534 = 1'b0;
-  reg net_1537 = 1'b0;
-  reg net_1550 = 1'b0;
-  reg net_1551 = 1'b0;
-  reg net_1546 = 1'b0;
-  reg net_1549 = 1'b0;
-  reg net_1558 = 1'b0;
-  reg net_1569 = 1'b0;
-  reg net_1570 = 1'b0;
-  reg net_1587 = 1'b0;
-  reg net_1582 = 1'b0;
-  reg net_1580 = 1'b0;
-  reg net_1589 = 1'b0;
-  reg net_1593 = 1'b0;
-  reg net_1594 = 1'b0;
-  reg net_1591 = 1'b0;
-  reg net_1596 = 1'b0;
-  reg net_1595 = 1'b0;
-  reg net_1597 = 1'b0;
-  reg net_1603 = 1'b0;
-  reg net_1606 = 1'b0;
-  reg net_1607 = 1'b0;
-  reg net_1609 = 1'b0;
-  reg net_1614 = 1'b0;
-  reg net_1613 = 1'b0;
-  reg net_1622 = 1'b1;
-  reg net_1636 = 1'b0;
-  reg net_1637 = 1'b0;
-  reg net_1639 = 1'b0;
-  reg net_1643 = 1'b0;
-  reg net_1646 = 1'b0;
-  reg net_1650 = 1'b0;
+  reg o_i2c_cmd6E_b0 = 1'b0;
+  reg o_i2c_cmd6A_b7 = 1'b0;
+  reg o_i2c_cmd69_b2 = 1'b0;
+  reg o_i2c_cmd69_b6 = 1'b0;
+  reg o_i2c_cmd6D_b4 = 1'b0;
+  reg o_i2c_cmd6A_b3 = 1'b0;
+  reg i2c_clk_div_reg0 = 1'b0;
+  reg i2c_clk_div_reg1 = 1'b0;
+  reg i2c_clk_div_reg3 = 1'b0;
+  reg i2c_clk_div_reg4 = 1'b0;
+  reg i2c_clk_div_reg10 = 1'b0;
+  reg i2c_clk_div_reg7 = 1'b0;
+  reg i2c_clk_div_reg11 = 1'b0;
+  reg i2c_clk_div_reg12 = 1'b0;
+  reg i2c_clk_div_reg15 = 1'b0;
+  reg i2c_clk_div_reg5 = 1'b0;
+  reg i_i2c_cmd68_b5 = 1'b1;
+  reg i2c_state_r5 = 1'b0;
+  reg i_i2c_cmd6A_b7 = 1'b1;
+  reg i_i2c_cmd68_b1 = 1'b1;
+  reg o_i2c_cmd69_b0 = 1'b0;
+  reg o_i2c_cmd68_b0 = 1'b0;
+  reg o_i2c_cmd6E_b1 = 1'b0;
+  reg o_i2c_cmd6D_b7 = 1'b0;
+  reg o_i2c_cmd6B_b5 = 1'b0;
+  reg o_i2c_cmd6A_b6 = 1'b0;
+  reg o_i2c_cmd6A_b4 = 1'b0;
+  reg o_i2c_cmd68_b5 = 1'b0;
+  reg o_i2c_cmd68_b1 = 1'b0;
+  reg o_i2c_cmd68_b3 = 1'b0;
+  reg i2c_clk_div_reg9 = 1'b0;
+  reg i2c_clk_div_reg8 = 1'b0;
+  reg i2c_state_r6 = 1'b0;
+  reg i2c_clock = 1'b0;
+  reg i2c_state_r1 = 1'b0;
+  reg i2c_state_r2 = 1'b0;
+  reg i2c_state_r3 = 1'b0;
+  reg i2c_state_r4 = 1'b0;
+  reg i2c_state_r10 = 1'b0;
+  reg i2c_state_r7 = 1'b0;
+  reg i2c_state_r11 = 1'b0;
+  reg i2c_state_r12 = 1'b0;
+  reg i2c_state_r15 = 1'b0;
+  reg i_i2c_cmd6A_b1 = 1'b0;
+  reg o_i2c_cmd6E_b3 = 1'b0;
+  reg i_i2c_cmd6B_b4 = 1'b0;
+  reg o_i2c_cmd69_b1 = 1'b0;
+  reg i_i2c_cmd6C_b7 = 1'b0;
+  reg o_i2c_cmd6B_b7 = 1'b0;
+  reg o_i2c_cmd6C_b6 = 1'b0;
+  reg o_i2c_cmd6A_b5 = 1'b0;
+  reg o_i2c_cmd68_b7 = 1'b0;
+  reg o_i2c_cmd69_b7 = 1'b0;
+  reg o_i2c_cmd68_b6 = 1'b0;
+  reg o_i2c_cmd68_b4 = 1'b0;
+  reg i2c_state_r13 = 1'b0;
+  reg i2c_session_done = 1'b0;
+  reg i2c_state_r9 = 1'b0;
+  reg i2c_state_r8 = 1'b0;
+  reg i2c_state_r0 = 1'b0;
+  reg i2c_state_r14 = 1'b0;
+  reg i_i2c_cmd6A_b5 = 1'b1;
+  reg o_i2c_cmd6B_b6 = 1'b0;
+  reg o_i2c_cmd68_b2 = 1'b0;
+  reg o_i2c_cmd6A_b2 = 1'b0;
+  reg o_i2c_cmd6A_b0 = 1'b0;
+  reg o_i2c_cmd6A_b1 = 1'b0;
+  reg o_i2c_cmd6E_b2 = 1'b0;
+
+
+//---------------------------------------------------------------------------
+//Memory simulation bit
+
+  reg o_adc2B_d_7 = 1'b1;
+  reg o_adc2B_d_6 = 1'b0;
+  reg o_adc2B_d_5 = 1'b0;
+  reg o_adc2B_d_4 = 1'b1;
+  reg o_adc2B_d_3 = 1'b1;
+
+  reg o_adc2B_d0_2 = 1'b0;
+  reg o_adc2B_d0_1 = 1'b0;
+  reg o_adc2B_d0_0 = 1'b0;
+
+  reg o_adc2B_d1_2 = 1'b0;
+  reg o_adc2B_d1_1 = 1'b0;
+  reg o_adc2B_d1_0 = 1'b0;
+
+  reg o_adc2B_d2_2 = 1'b0;
+  reg o_adc2B_d2_1 = 1'b0;
+  reg o_adc2B_d2_0 = 1'b0;
+
+  reg o_adc2B_d3_2 = 1'b0;
+  reg o_adc2B_d3_1 = 1'b0;
+  reg o_adc2B_d3_0 = 1'b0;
+
+  reg o_adc2A_d0_7 = 1'b0;
+  reg o_adc2A_d0_6 = 1'b0;
+  reg o_adc2A_d0_5 = 1'b0;
+  reg o_adc2A_d0_4 = 1'b0;
+  reg o_adc2A_d0_3 = 1'b0;
+  reg o_adc2A_d0_2 = 1'b0;
+  reg o_adc2A_d0_1 = 1'b1;
+  reg o_adc2A_d0_0 = 1'b1;
+
+  reg o_adc2A_d1_7 = 1'b0;
+  reg o_adc2A_d1_6 = 1'b0;
+  reg o_adc2A_d1_5 = 1'b0;
+  reg o_adc2A_d1_4 = 1'b0;
+  reg o_adc2A_d1_3 = 1'b0;
+  reg o_adc2A_d1_2 = 1'b0;
+  reg o_adc2A_d1_1 = 1'b1;
+  reg o_adc2A_d1_0 = 1'b1;
+
+  reg o_adc2A_d2_7 = 1'b0;
+  reg o_adc2A_d2_6 = 1'b0;
+  reg o_adc2A_d2_5 = 1'b0;
+  reg o_adc2A_d2_4 = 1'b0;
+  reg o_adc2A_d2_3 = 1'b0;
+  reg o_adc2A_d2_2 = 1'b0;
+  reg o_adc2A_d2_1 = 1'b1;
+  reg o_adc2A_d2_0 = 1'b1;
+
+  reg o_adc2A_d3_7 = 1'b0;
+  reg o_adc2A_d3_6 = 1'b0;
+  reg o_adc2A_d3_5 = 1'b0;
+  reg o_adc2A_d3_4 = 1'b0;
+  reg o_adc2A_d3_3 = 1'b0;
+  reg o_adc2A_d3_2 = 1'b0;
+  reg o_adc2A_d3_1 = 1'b1;
+  reg o_adc2A_d3_0 = 1'b1;
+
+  reg o_adc1B_d0_7 = 1'b1;
+  reg o_adc1B_d0_6 = 1'b1;
+  reg o_adc1B_d0_5 = 1'b1;
+  reg o_adc1B_d0_4 = 1'b1;
+  reg o_adc1B_d0_3 = 1'b1;
+  reg o_adc1B_d0_2 = 1'b1;
+  reg o_adc1B_d0_1 = 1'b1;
+  reg o_adc1B_d0_0 = 1'b1;
+
+  reg o_adc1B_d1_7 = 1'b1;
+  reg o_adc1B_d1_6 = 1'b1;
+  reg o_adc1B_d1_5 = 1'b1;
+  reg o_adc1B_d1_4 = 1'b1;
+  reg o_adc1B_d1_3 = 1'b1;
+  reg o_adc1B_d1_2 = 1'b1;
+  reg o_adc1B_d1_1 = 1'b1;
+  reg o_adc1B_d1_0 = 1'b1;
+
+  reg o_adc1B_d2_7 = 1'b1;
+  reg o_adc1B_d2_6 = 1'b1;
+  reg o_adc1B_d2_5 = 1'b1;
+  reg o_adc1B_d2_4 = 1'b1;
+  reg o_adc1B_d2_3 = 1'b1;
+  reg o_adc1B_d2_2 = 1'b1;
+  reg o_adc1B_d2_1 = 1'b1;
+  reg o_adc1B_d2_0 = 1'b0;
+
+  reg o_adc1B_d3_7 = 1'b1;
+  reg o_adc1B_d3_6 = 1'b1;
+  reg o_adc1B_d3_5 = 1'b1;
+  reg o_adc1B_d3_4 = 1'b1;
+  reg o_adc1B_d3_3 = 1'b1;
+  reg o_adc1B_d3_2 = 1'b1;
+  reg o_adc1B_d3_1 = 1'b1;
+  reg o_adc1B_d3_0 = 1'b1;
+
+  reg o_adc1A_d0_7 = 1'b0;
+  reg o_adc1A_d0_6 = 1'b0;
+  reg o_adc1A_d0_5 = 1'b0;
+  reg o_adc1A_d0_4 = 1'b1;
+  reg o_adc1A_d0_3 = 1'b1;
+  reg o_adc1A_d0_2 = 1'b1;
+  reg o_adc1A_d0_1 = 1'b0;
+  reg o_adc1A_d0_0 = 1'b1;
+
+  reg o_adc1A_d1_7 = 1'b0;
+  reg o_adc1A_d1_6 = 1'b1;
+  reg o_adc1A_d1_5 = 1'b0;
+  reg o_adc1A_d1_4 = 1'b0;
+  reg o_adc1A_d1_3 = 1'b1;
+  reg o_adc1A_d1_2 = 1'b0;
+  reg o_adc1A_d1_1 = 1'b1;
+  reg o_adc1A_d1_0 = 1'b1;
+
+  reg o_adc1A_d2_7 = 1'b1;
+  reg o_adc1A_d2_6 = 1'b0;
+  reg o_adc1A_d2_5 = 1'b0;
+  reg o_adc1A_d2_4 = 1'b1;
+  reg o_adc1A_d2_3 = 1'b0;
+  reg o_adc1A_d2_2 = 1'b1;
+  reg o_adc1A_d2_1 = 1'b0;
+  reg o_adc1A_d2_0 = 1'b1;
+
+  reg o_adc1A_d3_7 = 1'b0;
+  reg o_adc1A_d3_6 = 1'b1;
+  reg o_adc1A_d3_5 = 1'b0;
+  reg o_adc1A_d3_4 = 1'b0;
+  reg o_adc1A_d3_3 = 1'b0;
+  reg o_adc1A_d3_2 = 1'b1;
+  reg o_adc1A_d3_1 = 1'b1;
+  reg o_adc1A_d3_0 = 1'b0;
 
 //---------------------------------------------------------------------------
 //Bidirectional and output pad assignments
 
-  assign o_i2c_scl = net_1125;
+  assign o_i2c_scl = i2c_scl;
   assign io_i2c_sda = i2c_sda_dir ? o_i2c_sda : 1'bZ;
   assign io_mcu_d_4 = mcu_data_dir ? o_mcu_d_4 : 1'bZ;
   assign io_mcu_d_5 = mcu_data_dir ? o_mcu_d_5 : 1'bZ;
@@ -1864,7 +1861,7 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Clock assignments
 
-  assign gclk_5 = net_1526;
+  assign clock_200MHz = i_xtal;
 
 //---------------------------------------------------------------------------
 //Block 49, MSLICE 1
@@ -1922,8 +1919,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd17_enable == 1'b1)
-    begin
+    if(cmd17_enable == 1'b1)   //enable
+     begin
       trigger_level_b6 <= io_mcu_d_6;
     end
   end
@@ -1946,7 +1943,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       { sample_addr_11, sample_addr_10, sample_addr_9, sample_addr_8, sample_addr_7, sample_addr_6, sample_addr_5, sample_addr_4, sample_addr_3, sample_addr_2, sample_addr_1, sample_addr_0 } <= { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0 };
     end
@@ -1970,14 +1967,14 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_50 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_47 <= 1'b0;
-      end
-      else
-      begin
+      net_47 <= 1'b0;
+    end
+    else
+    begin
+      if(net_50 == 1'b1)   //enable
+       begin
         net_47 <= net_193;
       end
     end
@@ -1991,15 +1988,15 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_50 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_52 <= 1'b0;
-        net_49 <= 1'b0;
-      end
-      else
-      begin
+      net_52 <= 1'b0;
+      net_49 <= 1'b0;
+    end
+    else
+    begin
+      if(net_50 == 1'b1)   //enable
+       begin
         net_52 <= net_201;
         net_49 <= net_187;
       end
@@ -2009,9 +2006,9 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //MSLICE adder blocks 72, 73, 74, 76, 77, 78, 79, 80, 81
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_215 == 1'b1)
+    if(offset2_pwm_rst == 1'b1)   //reset
     begin
       { offset2_pwm_r15, offset2_pwm_r14, offset2_pwm_r13, offset2_pwm_r12, offset2_pwm_r11, offset2_pwm_r10, offset2_pwm_r9, offset2_pwm_r8, offset2_pwm_r7, offset2_pwm_r6, offset2_pwm_r5, offset2_pwm_r4, offset2_pwm_r3, offset2_pwm_r2, offset2_pwm_r1, offset2_pwm_r0 } <= { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0 };
     end
@@ -2029,8 +2026,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable1 == 1'b1)
-    begin
+    if(cmd35_enable1 == 1'b1)   //enable
+     begin
       ch2_offset_b2 <= io_mcu_d_2;
       ch2_offset_b1 <= io_mcu_d_1;
     end
@@ -2113,8 +2110,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd17_enable == 1'b1)
-    begin
+    if(cmd17_enable == 1'b1)   //enable
+     begin
       trigger_level_b7 <= io_mcu_d_7;
     end
   end
@@ -2140,14 +2137,14 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_enable == 1'b0)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        sample_write_enable <= 1'b1;
-      end
-      else
-      begin
+      sample_write_enable <= 1'b1;
+    end
+    else
+    begin
+      if(sampling_enable == 1'b0)   //enable
+       begin
         sample_write_enable <= 1'b0;
       end
     end
@@ -2161,8 +2158,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable0 == 1'b1)
-    begin
+    if(cmd38_enable0 == 1'b1)   //enable
+     begin
       disp_bright_b10 <= io_mcu_d_2;
       disp_bright_b15 <= io_mcu_d_7;
     end
@@ -2182,8 +2179,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd1A_enable == 1'b1)
-    begin
+    if(cmd1A_enable == 1'b1)   //enable
+     begin
       trigger_mode <= io_mcu_d_0;
     end
   end
@@ -2196,8 +2193,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable1 == 1'b1)
-    begin
+    if(cmd35_enable1 == 1'b1)   //enable
+     begin
       ch2_offset_b0 <= io_mcu_d_0;
       ch2_offset_b6 <= io_mcu_d_6;
     end
@@ -2211,8 +2208,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0F_enable == 1'b1)
-    begin
+    if(cmd0F_enable == 1'b1)   //enable
+     begin
       sample_read_enable <= io_mcu_d_0;
     end
   end
@@ -2222,13 +2219,13 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_696 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        { net_206, net_199, net_201, net_200, net_202, net_190, net_192, net_191, net_193, net_186, net_188, net_187 } <= { 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0 };
-      end
-      else
+      { net_206, net_199, net_201, net_200, net_202, net_190, net_192, net_191, net_193, net_186, net_188, net_187 } <= { 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0 };
+    end
+    else
+    begin
+      if(net_696 == 1'b1)   //enable
       begin
         { net_206, net_199, net_201, net_200, net_202, net_190, net_192, net_191, net_193, net_186, net_188, net_187 } <= { net_206, net_199, net_201, net_200, net_202, net_190, net_192, net_191, net_193, net_186, net_188, net_187 } + { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1 };
       end
@@ -2249,8 +2246,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable1 == 1'b1)
-    begin
+    if(cmd3C_enable1 == 1'b1)   //enable
+     begin
       cmd3C_b13 <= io_mcu_d_5;
       cmd3C_b11 <= io_mcu_d_3;
     end
@@ -2264,14 +2261,14 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_50 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_203 <= 1'b0;
-      end
-      else
-      begin
+      net_203 <= 1'b0;
+    end
+    else
+    begin
+      if(net_50 == 1'b1)   //enable
+       begin
         net_203 <= net_206;
       end
     end
@@ -2285,8 +2282,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable1 == 1'b1)
-    begin
+    if(cmd35_enable1 == 1'b1)   //enable
+     begin
       ch2_offset_b4 <= io_mcu_d_4;
       ch2_offset_b3 <= io_mcu_d_3;
     end
@@ -2300,8 +2297,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable1 == 1'b1)
-    begin
+    if(cmd35_enable1 == 1'b1)   //enable
+     begin
       ch2_offset_b7 <= io_mcu_d_7;
       ch2_offset_b5 <= io_mcu_d_5;
     end
@@ -2310,7 +2307,7 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 161, LSLICE 3
 
-  assign net_215 = (~net_381 & ~net_212 & ~offset2_pwm_r9) | (~net_381 & ~net_212 & offset2_pwm_r9) | (~net_381 & net_212 & ~offset2_pwm_r9) | (~net_381 & net_212 & offset2_pwm_r9) | (net_381 & net_212 & offset2_pwm_r9 & ((offset2_pwm_r8 & offset2_pwm_r7)));
+  assign offset2_pwm_rst = (~net_381 & ~net_212 & ~offset2_pwm_r9) | (~net_381 & ~net_212 & offset2_pwm_r9) | (~net_381 & net_212 & ~offset2_pwm_r9) | (~net_381 & net_212 & offset2_pwm_r9) | (net_381 & net_212 & offset2_pwm_r9 & ((offset2_pwm_r8 & offset2_pwm_r7)));
   assign net_212 = (offset2_pwm_r10 & ~offset2_pwm_r5 & ((offset2_pwm_r6 & offset2_pwm_r4))) | (offset2_pwm_r10 & offset2_pwm_r5 & ((offset2_pwm_r6 & ~offset2_pwm_r4) | (offset2_pwm_r6 & offset2_pwm_r4)));
 
 //---------------------------------------------------------------------------
@@ -2335,8 +2332,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable0 == 1'b1)
-    begin
+    if(cmd35_enable0 == 1'b1)   //enable
+     begin
       ch2_offset_b8 <= io_mcu_d_0;
     end
   end
@@ -2349,8 +2346,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable0 == 1'b1)
-    begin
+    if(cmd35_enable0 == 1'b1)   //enable
+     begin
       ch2_offset_b9 <= io_mcu_d_1;
     end
   end
@@ -2432,8 +2429,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd17_enable == 1'b1)
-    begin
+    if(cmd17_enable == 1'b1)   //enable
+     begin
       trigger_level_b4 <= io_mcu_d_4;
     end
   end
@@ -2446,8 +2443,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd17_enable == 1'b1)
-    begin
+    if(cmd17_enable == 1'b1)   //enable
+     begin
       trigger_level_b5 <= io_mcu_d_5;
     end
   end
@@ -2460,14 +2457,14 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_169 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_254 <= 1'b0;
-      end
-      else
-      begin
+      net_254 <= 1'b0;
+    end
+    else
+    begin
+      if(net_169 == 1'b1)   //enable
+       begin
         net_254 <= sig_182_lut_0;
       end
     end
@@ -2481,14 +2478,14 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_169 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_250 <= 1'b1;
-      end
-      else
-      begin
+      net_250 <= 1'b0;
+    end
+    else
+    begin
+      if(net_169 == 1'b1)   //enable
+       begin
         net_250 <= sig_183_lut_1;
       end
     end
@@ -2515,9 +2512,9 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg13 <= 1'b1;
+      smp_clk_l_cnt_reg13 <= 1'b0;
     end
     else
     begin
@@ -2539,8 +2536,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd01_enable == 1'b1)
-    begin
+    if(cmd01_enable == 1'b1)   //enable
+     begin
       sampling_reset <= io_mcu_d_0;
     end
   end
@@ -2586,8 +2583,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd_write_enable == 1'b1)
-    begin
+    if(cmd_write_enable == 1'b1)   //enable
+     begin
       cmd_b2 <= io_mcu_d_2;
     end
   end
@@ -2607,8 +2604,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable0 == 1'b1)
-    begin
+    if(cmd3C_enable0 == 1'b1)   //enable
+     begin
       cmd3C_b3 <= io_mcu_d_3;
       cmd3C_b2 <= io_mcu_d_2;
     end
@@ -2622,8 +2619,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable1 == 1'b1)
-    begin
+    if(cmd3C_enable1 == 1'b1)   //enable
+     begin
       cmd3C_b9 <= io_mcu_d_1;
       cmd3C_b8 <= io_mcu_d_0;
     end
@@ -2637,8 +2634,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable1 == 1'b1)
-    begin
+    if(cmd3C_enable1 == 1'b1)   //enable
+     begin
       cmd3C_b10 <= io_mcu_d_2;
     end
   end
@@ -2660,20 +2657,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 201, LSLICE 2
 
-  assign read_addr_8 = (~net_200 & ((sample_read_enable & smp_read_offset_r8))) | (net_200 & ((~sample_read_enable & ~smp_read_offset_r8) | (~sample_read_enable & smp_read_offset_r8) | (sample_read_enable & smp_read_offse));
+  assign read_addr_8 = (~net_200 & ((sample_read_enable & smp_read_offset_r8))) | (net_200 & ((~sample_read_enable & ~smp_read_offset_r8) | (~sample_read_enable & smp_read_offset_r8) | (sample_read_enable & smp_read_offset_r8)));
   assign read_addr_1 = (~smp_read_offset_r1 & ((~sample_read_enable & net_188))) | (smp_read_offset_r1 & ((sample_read_enable | net_188)));
 
   always @(posedge sample_write_clock)
   begin
-    if(net_50 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_292 <= 1'b0;
-        net_293 <= 1'b0;
-      end
-      else
-      begin
+      net_292 <= 1'b0;
+      net_293 <= 1'b0;
+    end
+    else
+    begin
+      if(net_50 == 1'b1)   //enable
+       begin
         net_292 <= net_200;
         net_293 <= net_188;
       end
@@ -2688,8 +2685,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable0 == 1'b1)
-    begin
+    if(cmd35_enable0 == 1'b1)   //enable
+     begin
       ch2_offset_b10 <= io_mcu_d_2;
       ch2_offset_b15 <= io_mcu_d_7;
     end
@@ -2703,8 +2700,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable1 == 1'b1)
-    begin
+    if(cmd3C_enable1 == 1'b1)   //enable
+     begin
       cmd3C_b15 <= io_mcu_d_7;
       cmd3C_b14 <= io_mcu_d_6;
     end
@@ -2718,14 +2715,14 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_50 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_299 <= 1'b0;
-      end
-      else
-      begin
+      net_299 <= 1'b0;
+    end
+    else
+    begin
+      if(net_50 == 1'b1)   //enable
+       begin
         net_299 <= net_199;
       end
     end
@@ -2735,19 +2732,19 @@ module FNIRSI_1013D
 //Block 205, LSLICE 3
 
   assign read_addr_7 = (~smp_read_offset_r7 & ((~sample_read_enable & net_202))) | (smp_read_offset_r7 & ((sample_read_enable | net_202)));
-  assign read_addr_2 = (~net_186 & ((sample_read_enable & smp_read_offset_r2))) | (net_186 & ((~sample_read_enable & ~smp_read_offset_r2) | (~sample_read_enable & smp_read_offset_r2) | (sample_read_enable & smp_read_offse));
+  assign read_addr_2 = (~net_186 & ((sample_read_enable & smp_read_offset_r2))) | (net_186 & ((~sample_read_enable & ~smp_read_offset_r2) | (~sample_read_enable & smp_read_offset_r2) | (sample_read_enable & smp_read_offset_r2)));
 
   always @(posedge sample_write_clock)
   begin
-    if(net_50 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_307 <= 1'b0;
-        net_303 <= 1'b0;
-      end
-      else
-      begin
+      net_307 <= 1'b0;
+      net_303 <= 1'b0;
+    end
+    else
+    begin
+      if(net_50 == 1'b1)   //enable
+       begin
         net_307 <= net_202;
         net_303 <= net_186;
       end
@@ -2762,8 +2759,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable0 == 1'b1)
-    begin
+    if(cmd35_enable0 == 1'b1)   //enable
+     begin
       ch2_offset_b13 <= io_mcu_d_5;
       ch2_offset_b12 <= io_mcu_d_4;
     end
@@ -2778,8 +2775,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(i_mcu_dcs == 1'b0)
-    begin
+    if(i_mcu_dcs == 1'b0)   //enable
+     begin
       smp_read_offset_r5 <= sig_207_ff0_d;
     end
   end
@@ -2792,8 +2789,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable0 == 1'b1)
-    begin
+    if(cmd35_enable0 == 1'b1)   //enable
+     begin
       ch2_offset_b14 <= io_mcu_d_6;
     end
   end
@@ -2807,8 +2804,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(i_mcu_dcs == 1'b0)
-    begin
+    if(i_mcu_dcs == 1'b0)   //enable
+     begin
       smp_read_offset_r9 <= sig_209_ff0_d;
     end
   end
@@ -2834,8 +2831,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable0 == 1'b1)
-    begin
+    if(cmd38_enable0 == 1'b1)   //enable
+     begin
       disp_bright_b8 <= io_mcu_d_0;
     end
   end
@@ -2878,8 +2875,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd17_enable == 1'b1)
-    begin
+    if(cmd17_enable == 1'b1)   //enable
+     begin
       trigger_level_b1 <= io_mcu_d_1;
     end
   end
@@ -2892,8 +2889,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd17_enable == 1'b1)
-    begin
+    if(cmd17_enable == 1'b1)   //enable
+     begin
       trigger_level_b3 <= io_mcu_d_3;
     end
   end
@@ -2936,8 +2933,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd17_enable == 1'b1)
-    begin
+    if(cmd17_enable == 1'b1)   //enable
+     begin
       trigger_level_b0 <= io_mcu_d_0;
       trigger_level_b2 <= io_mcu_d_2;
     end
@@ -2957,8 +2954,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable0 == 1'b1)
-    begin
+    if(cmd38_enable0 == 1'b1)   //enable
+     begin
       disp_bright_b13 <= io_mcu_d_5;
       disp_bright_b12 <= io_mcu_d_4;
     end
@@ -3002,8 +2999,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable0 == 1'b1)
-    begin
+    if(cmd3C_enable0 == 1'b1)   //enable
+     begin
       cmd3C_b0 <= io_mcu_d_0;
     end
   end
@@ -3060,8 +3057,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable0 == 1'b1)
-    begin
+    if(cmd3C_enable0 == 1'b1)   //enable
+     begin
       cmd3C_b6 <= io_mcu_d_6;
     end
   end
@@ -3097,14 +3094,14 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_50 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_378 <= 1'b0;
-      end
-      else
-      begin
+      net_378 <= 1'b0;
+    end
+    else
+    begin
+      if(net_50 == 1'b1)   //enable
+       begin
         net_378 <= net_192;
       end
     end
@@ -3118,8 +3115,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable0 == 1'b1)
-    begin
+    if(cmd3C_enable0 == 1'b1)   //enable
+     begin
       cmd3C_b1 <= io_mcu_d_1;
     end
   end
@@ -3132,14 +3129,14 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_50 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_376 <= 1'b0;
-      end
-      else
-      begin
+      net_376 <= 1'b0;
+    end
+    else
+    begin
+      if(net_50 == 1'b1)   //enable
+       begin
         net_376 <= net_191;
       end
     end
@@ -3153,14 +3150,14 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(net_50 == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      if(sampling_reset == 1'b1)
-      begin
-        net_369 <= 1'b0;
-      end
-      else
-      begin
+      net_369 <= 1'b0;
+    end
+    else
+    begin
+      if(net_50 == 1'b1)   //enable
+       begin
         net_369 <= net_190;
       end
     end
@@ -3173,15 +3170,15 @@ module FNIRSI_1013D
   assign sig_245_lut_1 = 1'b0;
   assign net_381 = (~offset2_pwm_r15 & sig_245_lut_0) | (offset2_pwm_r15 & sig_245_lut_1);
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_380 <= 1'b1;
+      calib_1KHz_r22 <= 1'b0;
     end
     else
     begin
-      net_380 <= net_931;
+      calib_1KHz_r22 <= calib_1KHz_c22;
     end
   end
 
@@ -3198,8 +3195,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(i_mcu_dcs == 1'b0)
-    begin
+    if(i_mcu_dcs == 1'b0)   //enable
+     begin
       smp_read_offset_r6 <= sig_247_lut_0;
       smp_read_offset_r10 <= sig_247_lut_1;
     end
@@ -3213,8 +3210,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable1 == 1'b1)
-    begin
+    if(cmd0E_enable1 == 1'b1)   //enable
+     begin
       sclk_div_l_b16 <= io_mcu_d_0;
     end
   end
@@ -3223,12 +3220,12 @@ module FNIRSI_1013D
 //Block 251, LSLICE 2
 
   assign sig_251_lut_0 = (~smp_read_offset_b7 & ~cmd001000xx_select & ~i_mcu_rws & ((smp_read_offset_r7 & ~smp_read_offset_c7) | (smp_read_offset_r7 & smp_read_offset_c7))) | (~smp_read_offset_b7 & ~cmd001000xx_select & i_mcu_rws) | (~smp_read_offset_b7 & cmd001000xx_select & ~i_mcu_rws & ((~smp_read_offset_r7 & smp_read_offset_c7) | (smp_read_offset_r7 & smp_read_offset_c7))) | (~smp_read_offset_b7 & cmd001000xx_select & i_mcu_rws);
-  assign sig_251_lut_1 = (~smp_read_offset_b0 & ~smp_read_offset_r0 & ~i_mcu_rws & ((cmd001000xx_select & smp_read_offset_c0))) | (~smp_read_offset_b0 & ~smp_read_offset_r0 & i_mcu_rws) | (~smp_read_offset_b0 & smp_read_offset_r0 & ~i_mcu_rws & ((~cmd001000xx_select & ~smp_read_offset_c0) | (~cmd001000xx_select & smp_read_offset_c0) | (cmd001000xx_select & smp_read_offse)) | (~smp_read_offset_b0 & smp_read_offset_r0 & i_mcu_rws);
+  assign sig_251_lut_1 = (~smp_read_offset_b0 & ~smp_read_offset_r0 & ~i_mcu_rws & ((cmd001000xx_select & smp_read_offset_c0))) | (~smp_read_offset_b0 & ~smp_read_offset_r0 & i_mcu_rws) | (~smp_read_offset_b0 & smp_read_offset_r0 & ~i_mcu_rws & ((~cmd001000xx_select & ~smp_read_offset_c0) | (~cmd001000xx_select & smp_read_offset_c0) | (cmd001000xx_select & smp_read_offset_c0))) | (~smp_read_offset_b0 & smp_read_offset_r0 & i_mcu_rws);
 
   always @(posedge i_mcu_clk)
   begin
-    if(i_mcu_dcs == 1'b0)
-    begin
+    if(i_mcu_dcs == 1'b0)   //enable
+     begin
       smp_read_offset_r7 <= sig_251_lut_0;
       smp_read_offset_r0 <= sig_251_lut_1;
     end
@@ -3242,8 +3239,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(i_mcu_dcs == 1'b0)
-    begin
+    if(i_mcu_dcs == 1'b0)   //enable
+     begin
       smp_read_offset_r2 <= sig_252_lut_0;
       smp_read_offset_r1 <= sig_252_lut_1;
     end
@@ -3258,8 +3255,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(i_mcu_dcs == 1'b0)
-    begin
+    if(i_mcu_dcs == 1'b0)   //enable
+     begin
       smp_read_offset_r8 <= sig_257_ff0_d;
     end
   end
@@ -3272,8 +3269,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable0 == 1'b1)
-    begin
+    if(cmd38_enable0 == 1'b1)   //enable
+     begin
       disp_bright_b9 <= io_mcu_d_1;
     end
   end
@@ -3293,8 +3290,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable1 == 1'b1)
-    begin
+    if(cmd38_enable1 == 1'b1)   //enable
+     begin
       disp_bright_b2 <= io_mcu_d_2;
       disp_bright_b3 <= io_mcu_d_3;
     end
@@ -3308,8 +3305,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable1 == 1'b1)
-    begin
+    if(cmd38_enable1 == 1'b1)   //enable
+     begin
       disp_bright_b4 <= io_mcu_d_4;
     end
   end
@@ -3329,8 +3326,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable0 == 1'b1)
-    begin
+    if(cmd38_enable0 == 1'b1)   //enable
+     begin
       disp_bright_b11 <= io_mcu_d_3;
     end
   end
@@ -3344,9 +3341,9 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg14 <= 1'b1;
+      smp_clk_l_cnt_reg14 <= 1'b0;
     end
     else
     begin
@@ -3380,8 +3377,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd15_enable == 1'b1)
-    begin
+    if(cmd15_enable == 1'b1)   //enable
+     begin
       trigger_channel <= io_mcu_d_0;
     end
   end
@@ -3404,10 +3401,10 @@ module FNIRSI_1013D
   assign sig_275_lut_0 = (~db_cnt_b15 & ((disp_bright_b15 | db_match_r))) | (db_cnt_b15 & ((disp_bright_b15 & db_match_r)));
   assign net_434 = (o_mcu_d_3 & ~not_cmd_05_0A) | (o_mcu_d_3 & not_cmd_05_0A & ((~net_470 & ~net_736) | (~net_470 & net_736) | (net_470 & net_736)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(pwm_enable == 1'b0)
-    begin
+    if(pwm_enable == 1'b0)   //enable
+     begin
       pwm_display <= sig_275_lut_0;
     end
   end
@@ -3452,8 +3449,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable1 == 1'b1)
-    begin
+    if(cmd38_enable1 == 1'b1)   //enable
+     begin
       disp_bright_b6 <= io_mcu_d_6;
     end
   end
@@ -3466,8 +3463,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd_write_enable == 1'b1)
-    begin
+    if(cmd_write_enable == 1'b1)   //enable
+     begin
       cmd_b4 <= io_mcu_d_4;
       cmd_b5 <= io_mcu_d_5;
     end
@@ -3481,8 +3478,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable0 == 1'b1)
-    begin
+    if(cmd3C_enable0 == 1'b1)   //enable
+     begin
       cmd3C_b7 <= io_mcu_d_7;
     end
   end
@@ -3495,8 +3492,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd_write_enable == 1'b1)
-    begin
+    if(cmd_write_enable == 1'b1)   //enable
+     begin
       cmd_b6 <= io_mcu_d_6;
       cmd_b7 <= io_mcu_d_7;
     end
@@ -3506,12 +3503,12 @@ module FNIRSI_1013D
 //Block 284, MSLICE 0
 
   assign cmd16_enable = (cmd_b1 & cmd1x_data_write & ((cmdxxxx01xx_select & ~cmd_b0)));
-  assign cmd36_enable = (cmdxxxx01xx_select & cmd_b1 & ((net_745 & ~cmd_b0)));
+  assign cmd36_enable = (cmdxxxx01xx_select & cmd_b1 & ((cmd3x_data_write & ~cmd_b0)));
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd16_enable == 1'b1)
-    begin
+    if(cmd16_enable == 1'b1)   //enable
+     begin
       trigger_edge <= io_mcu_d_0;
     end
   end
@@ -3528,10 +3525,10 @@ module FNIRSI_1013D
   assign sig_286_lut_0 = ~calib_1khz;
   assign net_461 = (~o_mcu_d_6 & ~net_736 & ((~net_710 & net_366) | (net_710 & net_366))) | (~o_mcu_d_6 & net_736 & ((~net_710 & net_366) | (net_710 & net_366))) | (o_mcu_d_6 & ~net_736 & ((net_710 & net_366)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
-    begin
+    if(calib_1KHz_rst == 1'b1)   //enable
+     begin
       calib_1khz <= sig_286_lut_0;
     end
   end
@@ -3544,8 +3541,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable1 == 1'b1)
-    begin
+    if(cmd38_enable1 == 1'b1)   //enable
+     begin
       disp_bright_b0 <= io_mcu_d_0;
       disp_bright_b1 <= io_mcu_d_1;
     end
@@ -3555,12 +3552,12 @@ module FNIRSI_1013D
 //Block 288, LSLICE 2
 
   assign sig_288_lut_0 = (~ch2_offset_b15 & ((~offset2_pwm_r15 & net_313))) | (ch2_offset_b15 & ((~offset2_pwm_r15 & ~net_313) | (~offset2_pwm_r15 & net_313) | (offset2_pwm_r15 & net_313)));
-  assign net_470 = (~net_459 & ((~cmd0001x000_select & ~net_467)));
+  assign net_470 = (~net_459 & ((~cmd0001x000_select & ~cmd67_select)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_215 == 1'b0)
-    begin
+    if(offset2_pwm_rst == 1'b0)   //enable
+     begin
       offset_2 <= sig_288_lut_0;
     end
   end
@@ -3568,13 +3565,13 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 289, MSLICE 1
 
-  assign cmd37_enable = (cmdxxxxxx11_select & ((cmdxxxx01xx_select & net_745)));
-  assign net_467 = (cmdxxxxxx11_select & ((cmdxxxx01xx_select & cmd6x_select)));
+  assign cmd37_enable = (cmdxxxxxx11_select & ((cmdxxxx01xx_select & cmd3x_data_write)));
+  assign cmd67_select = (cmdxxxxxx11_select & ((cmdxxxx01xx_select & cmd6x_select)));
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd37_enable == 1'b1)
-    begin
+    if(cmd37_enable == 1'b1)   //enable
+     begin
       ac_dc_2 <= io_mcu_d_0;
     end
   end
@@ -3599,8 +3596,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable3 == 1'b1)
-    begin
+    if(cmd0D_enable3 == 1'b1)   //enable
+     begin
       sclk_div_h_b2 <= io_mcu_d_2;
     end
   end
@@ -3613,8 +3610,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd35_enable0 == 1'b1)
-    begin
+    if(cmd35_enable0 == 1'b1)   //enable
+     begin
       ch2_offset_b11 <= io_mcu_d_3;
     end
   end
@@ -3633,8 +3630,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable2 == 1'b1)
-    begin
+    if(cmd0D_enable2 == 1'b1)   //enable
+     begin
       sclk_div_h_b8 <= io_mcu_d_0;
       sclk_div_h_b12 <= io_mcu_d_4;
     end
@@ -3644,12 +3641,12 @@ module FNIRSI_1013D
 //Block 296, LSLICE 3
 
   assign sig_296_lut_0 = (~smp_read_offset_b3 & ~cmd001000xx_select & ~i_mcu_rws & ((smp_read_offset_r3 & ~smp_read_offset_c3) | (smp_read_offset_r3 & smp_read_offset_c3))) | (~smp_read_offset_b3 & ~cmd001000xx_select & i_mcu_rws) | (~smp_read_offset_b3 & cmd001000xx_select & ~i_mcu_rws & ((~smp_read_offset_r3 & smp_read_offset_c3) | (smp_read_offset_r3 & smp_read_offset_c3))) | (~smp_read_offset_b3 & cmd001000xx_select & i_mcu_rws);
-  assign sig_296_lut_1 = (~smp_read_offset_b11 & ~smp_read_offset_r11 & ~i_mcu_rws & ((cmd001000xx_select & smp_read_offset_c11))) | (~smp_read_offset_b11 & ~smp_read_offset_r11 & i_mcu_rws) | (~smp_read_offset_b11 & smp_read_offset_r11 & ~i_mcu_rws & ((~cmd001000xx_select & ~smp_read_offset_c11) | (~cmd001000xx_select & smp_read_offset_c11) | (cmd001000xx_select & smp_read_off)) | (~smp_read_offset_b11 & smp_read_offset_r11 & i_mcu_rws);
+  assign sig_296_lut_1 = (~smp_read_offset_b11 & ~smp_read_offset_r11 & ~i_mcu_rws & ((cmd001000xx_select & smp_read_offset_c11))) | (~smp_read_offset_b11 & ~smp_read_offset_r11 & i_mcu_rws) | (~smp_read_offset_b11 & smp_read_offset_r11 & ~i_mcu_rws & ((~cmd001000xx_select & ~smp_read_offset_c11) | (~cmd001000xx_select & smp_read_offset_c11) | (cmd001000xx_select & smp_read_offset_c11))) | (~smp_read_offset_b11 & smp_read_offset_r11 & i_mcu_rws);
 
   always @(posedge i_mcu_clk)
   begin
-    if(i_mcu_dcs == 1'b0)
-    begin
+    if(i_mcu_dcs == 1'b0)   //enable
+     begin
       smp_read_offset_r3 <= sig_296_lut_0;
       smp_read_offset_r11 <= sig_296_lut_1;
     end
@@ -3663,8 +3660,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable2 == 1'b1)
-    begin
+    if(cmd0D_enable2 == 1'b1)   //enable
+     begin
       sclk_div_h_b15 <= io_mcu_d_7;
       sclk_div_h_b13 <= io_mcu_d_5;
     end
@@ -3678,8 +3675,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable1 == 1'b1)
-    begin
+    if(cmd0D_enable1 == 1'b1)   //enable
+     begin
       sclk_div_h_b19 <= io_mcu_d_3;
       sclk_div_h_b18 <= io_mcu_d_2;
     end
@@ -3693,8 +3690,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable0 == 1'b1)
-    begin
+    if(cmd0D_enable0 == 1'b1)   //enable
+     begin
       sclk_div_h_b26 <= io_mcu_d_2;
       sclk_div_h_b27 <= io_mcu_d_3;
     end
@@ -3703,9 +3700,9 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //MSLICE adder blocks 300, 301, 302, 304, 306, 307, 308, 309, 310
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(pwm_enable == 1'b1)
+    if(pwm_enable == 1'b1)   //reset
     begin
       { db_cnt_b15, db_cnt_b14, db_cnt_b13, db_cnt_b12, db_cnt_b11, db_cnt_b10, db_cnt_b9, db_cnt_b8, db_cnt_b7, db_cnt_b6, db_cnt_b5, db_cnt_b4, db_cnt_b3, db_cnt_b2, db_cnt_b1, db_cnt_b0 } <= { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0 };
     end
@@ -3718,14 +3715,14 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 303, LSLICE 2
 
-  assign sig_303_lut_0 = ~clk_100MHz;
+  assign sig_303_lut_0 = ~clk_50MHz;
   assign pwm_enable = (~pwm_enable_a & db_cnt_b15 & ((db_cnt_b13 & db_cnt_b14)));
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
-    begin
-      clk_100MHz <= sig_303_lut_0;
+    if(clk_a_reset == 1'b1)   //enable
+     begin
+      clk_50MHz <= sig_303_lut_0;
     end
   end
 
@@ -3743,8 +3740,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable1 == 1'b1)
-    begin
+    if(cmd38_enable1 == 1'b1)   //enable
+     begin
       disp_bright_b7 <= io_mcu_d_7;
       disp_bright_b5 <= io_mcu_d_5;
     end
@@ -3771,8 +3768,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd38_enable0 == 1'b1)
-    begin
+    if(cmd38_enable0 == 1'b1)   //enable
+     begin
       disp_bright_b14 <= io_mcu_d_6;
     end
   end
@@ -3781,7 +3778,7 @@ module FNIRSI_1013D
 //Block 315, LSLICE 3
 
   assign net_533 = (~o_adc1A_d2_3 & read_addr_l11 & (~(read_addr_l10 & o_adc1A_d3_3))) | (o_adc1A_d2_3 & read_addr_l11 & ((read_addr_l10 & ~o_adc1A_d3_3)));
-  assign read_addr_11 = (~net_206 & ((smp_read_offset_r11 & sample_read_enable))) | (net_206 & ((~smp_read_offset_r11 & ~sample_read_enable) | (smp_read_offset_r11 & ~sample_read_enable) | (smp_read_offset_r11 & sample_read));
+  assign read_addr_11 = (~net_206 & ((smp_read_offset_r11 & sample_read_enable))) | (net_206 & ((~smp_read_offset_r11 & ~sample_read_enable) | (smp_read_offset_r11 & ~sample_read_enable) | (smp_read_offset_r11 & sample_read_enable)));
 
   always @(posedge sample_read_clock)
   begin
@@ -3804,7 +3801,7 @@ module FNIRSI_1013D
 //Block 318, MSLICE 1
 
   assign sig_318_lut_0 = 1'b0;
-  assign sig_318_lut_1 = (net_544 & net_782 & (~(net_1006 & cmd6D_select)));
+  assign sig_318_lut_1 = (net_544 & net_782 & (~(i_i2c_cmd6D_b3 & cmd6D_select)));
   assign net_536 = (~net_796 & sig_318_lut_0) | (net_796 & sig_318_lut_1);
 
 //---------------------------------------------------------------------------
@@ -3813,9 +3810,9 @@ module FNIRSI_1013D
   assign net_545 = ((offset1_pwm_r9 & ~ch1_offset_b9));
   assign net_546 = (~net_736 & ~o_mcu_d_7 & ((net_451 & ~net_710) | (net_451 & net_710))) | (~net_736 & o_mcu_d_7 & ((net_451 & net_710))) | (net_736 & ~o_mcu_d_7 & ((net_451 & ~net_710) | (net_451 & net_710)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b1)
+    if(offset1_pwm_rst == 1'b1)   //reset
     begin
       offset1_pwm_r9 <= 1'b0;
     end
@@ -3829,13 +3826,13 @@ module FNIRSI_1013D
 //Block 320, LSLICE 2
 
   assign net_543 = (cmd001000xx_select & cmd_b1 & ~cmd_b0 & ((~o_adc2B_d_3 & net_24) | (o_adc2B_d_3 & net_24))) | (cmd001000xx_select & cmd_b1 & cmd_b0 & ((o_adc2B_d_3 & ~net_24) | (o_adc2B_d_3 & net_24)));
-  assign net_544 = (~net_543 & ~net_419 & ~net_534 & (~(net_1140 & cmd6B_select))) | (~net_543 & ~net_419 & net_534 & (~(net_1140 & cmd6B_select))) | (~net_543 & net_419 & ~net_534 & (~(net_1140 & cmd6B_select)));
+  assign net_544 = (~net_543 & ~net_419 & ~net_534 & (~(i_i2c_cmd6B_b3 & cmd6B_select))) | (~net_543 & ~net_419 & net_534 & (~(i_i2c_cmd6B_b3 & cmd6B_select))) | (~net_543 & net_419 & ~net_534 & (~(i_i2c_cmd6B_b3 & cmd6B_select)));
 
 //---------------------------------------------------------------------------
 //Block 321, LSLICE 3
 
-  assign net_547 = (net_1005 & ~net_1223 & ~cmd6B_select & (~(net_530 & net_534))) | (net_1005 & ~net_1223 & cmd6B_select & (~(net_530 & net_534))) | (net_1005 & net_1223 & ~cmd6B_select & (~(net_530 & net_534)));
-  assign net_542 = (net_547 & net_252 & ~net_467 & ((~net_718 & ~o_mcu_d_1) | (net_718 & ~o_mcu_d_1) | (net_718 & o_mcu_d_1))) | (net_547 & net_252 & net_467 & ((~net_718 & ~o_mcu_d_1) | (net_718 & ~o_mcu_d_1)));
+  assign net_547 = (net_1005 & ~i_i2c_cmd6B_b1 & ~cmd6B_select & (~(net_530 & net_534))) | (net_1005 & ~i_i2c_cmd6B_b1 & cmd6B_select & (~(net_530 & net_534))) | (net_1005 & i_i2c_cmd6B_b1 & ~cmd6B_select & (~(net_530 & net_534)));
+  assign net_542 = (net_547 & net_252 & ~cmd67_select & ((~net_718 & ~o_mcu_d_1) | (net_718 & ~o_mcu_d_1) | (net_718 & o_mcu_d_1))) | (net_547 & net_252 & cmd67_select & ((~net_718 & ~o_mcu_d_1) | (net_718 & ~o_mcu_d_1)));
 
 //---------------------------------------------------------------------------
 //Block 322, MSLICE 1
@@ -3868,8 +3865,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable0 == 1'b1)
-    begin
+    if(cmd3C_enable0 == 1'b1)   //enable
+     begin
       cmd3C_b4 <= io_mcu_d_4;
     end
   end
@@ -3889,8 +3886,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable0 == 1'b1)
-    begin
+    if(cmd3C_enable0 == 1'b1)   //enable
+     begin
       cmd3C_b5 <= io_mcu_d_5;
     end
   end
@@ -3899,12 +3896,12 @@ module FNIRSI_1013D
 //Block 328, LSLICE 3
 
   assign net_562 = (~cmd_b3 & ~cmd6C_select & ~cmd_b2 & ((~cmd6x_select & ~cmd2x_select) | (cmd6x_select & ~cmd2x_select))) | (~cmd_b3 & ~cmd6C_select & cmd_b2 & ((~cmd6x_select & ~cmd2x_select) | (cmd6x_select & ~cmd2x_select))) | (cmd_b3 & ~cmd6C_select & ~cmd_b2 & ((~cmd6x_select & ~cmd2x_select) | (~cmd6x_select & cmd2x_select))) | (cmd_b3 & ~cmd6C_select & cmd_b2);
-  assign net_561 = (net_562 & not_cmd_41_14_06 & ~net_467 & ((~cmd6D_select & ~cmd6E_select)));
+  assign net_561 = (net_562 & not_cmd_41_14_06 & ~cmd67_select & ((~cmd6D_select & ~cmd6E_select)));
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd_write_enable == 1'b1)
-    begin
+    if(cmd_write_enable == 1'b1)   //enable
+     begin
       cmd_b3 <= io_mcu_d_3;
     end
   end
@@ -3929,8 +3926,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd36_enable == 1'b1)
-    begin
+    if(cmd36_enable == 1'b1)   //enable
+     begin
       relay2_1 <= sig_330_lut_0;
     end
   end
@@ -3940,13 +3937,13 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg6 <= 1'b0;
+      smp_clk_h_cnt_reg6 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg6 <= smp_clk_l_cnt_out6;
+      smp_clk_h_cnt_reg6 <= smp_clk_h_cnt_out6;
     end
   end
 
@@ -3955,15 +3952,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg2 <= 1'b0;
-      smp_clk_l_cnt_reg5 <= 1'b0;
+      smp_clk_h_cnt_reg2 <= 1'b0;
+      smp_clk_h_cnt_reg5 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg2 <= smp_clk_l_cnt_out2;
-      smp_clk_l_cnt_reg5 <= smp_clk_l_cnt_out5;
+      smp_clk_h_cnt_reg2 <= smp_clk_h_cnt_out2;
+      smp_clk_h_cnt_reg5 <= smp_clk_h_cnt_out5;
     end
   end
 
@@ -3972,8 +3969,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable3 == 1'b1)
-    begin
+    if(cmd0D_enable3 == 1'b1)   //enable
+     begin
       sclk_div_h_b3 <= io_mcu_d_3;
       sclk_div_h_b4 <= io_mcu_d_4;
     end
@@ -3984,8 +3981,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable3 == 1'b1)
-    begin
+    if(cmd0D_enable3 == 1'b1)   //enable
+     begin
       sclk_div_h_b5 <= io_mcu_d_5;
       sclk_div_h_b6 <= io_mcu_d_6;
     end
@@ -3996,8 +3993,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable3 == 1'b1)
-    begin
+    if(cmd0D_enable3 == 1'b1)   //enable
+     begin
       sclk_div_h_b7 <= io_mcu_d_7;
     end
   end
@@ -4007,8 +4004,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable2 == 1'b1)
-    begin
+    if(cmd0D_enable2 == 1'b1)   //enable
+     begin
       sclk_div_h_b9 <= io_mcu_d_1;
     end
   end
@@ -4018,15 +4015,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg9 <= 1'b0;
-      smp_clk_l_cnt_reg8 <= 1'b0;
+      smp_clk_h_cnt_reg9 <= 1'b0;
+      smp_clk_h_cnt_reg8 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg9 <= smp_clk_l_cnt_out9;
-      smp_clk_l_cnt_reg8 <= smp_clk_l_cnt_out8;
+      smp_clk_h_cnt_reg9 <= smp_clk_h_cnt_out9;
+      smp_clk_h_cnt_reg8 <= smp_clk_h_cnt_out8;
     end
   end
 
@@ -4035,15 +4032,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg13 <= 1'b0;
-      smp_clk_l_cnt_reg14 <= 1'b0;
+      smp_clk_h_cnt_reg13 <= 1'b0;
+      smp_clk_h_cnt_reg14 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg13 <= smp_clk_l_cnt_out13;
-      smp_clk_l_cnt_reg14 <= smp_clk_l_cnt_out14;
+      smp_clk_h_cnt_reg13 <= smp_clk_h_cnt_out13;
+      smp_clk_h_cnt_reg14 <= smp_clk_h_cnt_out14;
     end
   end
 
@@ -4052,15 +4049,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg21 <= 1'b0;
-      smp_clk_l_cnt_reg22 <= 1'b0;
+      smp_clk_h_cnt_reg21 <= 1'b0;
+      smp_clk_h_cnt_reg22 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg21 <= smp_clk_l_cnt_out21;
-      smp_clk_l_cnt_reg22 <= smp_clk_l_cnt_out22;
+      smp_clk_h_cnt_reg21 <= smp_clk_h_cnt_out21;
+      smp_clk_h_cnt_reg22 <= smp_clk_h_cnt_out22;
     end
   end
 
@@ -4069,15 +4066,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg17 <= 1'b0;
-      smp_clk_l_cnt_reg18 <= 1'b0;
+      smp_clk_h_cnt_reg17 <= 1'b0;
+      smp_clk_h_cnt_reg18 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg17 <= smp_clk_l_cnt_out17;
-      smp_clk_l_cnt_reg18 <= smp_clk_l_cnt_out18;
+      smp_clk_h_cnt_reg17 <= smp_clk_h_cnt_out17;
+      smp_clk_h_cnt_reg18 <= smp_clk_h_cnt_out18;
     end
   end
 
@@ -4086,8 +4083,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable1 == 1'b1)
-    begin
+    if(cmd0D_enable1 == 1'b1)   //enable
+     begin
       sclk_div_h_b20 <= io_mcu_d_4;
     end
   end
@@ -4097,8 +4094,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable1 == 1'b1)
-    begin
+    if(cmd0D_enable1 == 1'b1)   //enable
+     begin
       sclk_div_h_b21 <= io_mcu_d_5;
       sclk_div_h_b22 <= io_mcu_d_6;
     end
@@ -4109,8 +4106,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable1 == 1'b1)
-    begin
+    if(cmd0D_enable1 == 1'b1)   //enable
+     begin
       sclk_div_h_b23 <= io_mcu_d_7;
     end
   end
@@ -4120,15 +4117,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg25 <= 1'b0;
-      smp_clk_l_cnt_reg26 <= 1'b0;
+      smp_clk_h_cnt_reg25 <= 1'b0;
+      smp_clk_h_cnt_reg26 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg25 <= smp_clk_l_cnt_out25;
-      smp_clk_l_cnt_reg26 <= smp_clk_l_cnt_out26;
+      smp_clk_h_cnt_reg25 <= smp_clk_h_cnt_out25;
+      smp_clk_h_cnt_reg26 <= smp_clk_h_cnt_out26;
     end
   end
 
@@ -4137,8 +4134,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable0 == 1'b1)
-    begin
+    if(cmd0D_enable0 == 1'b1)   //enable
+     begin
       sclk_div_h_b28 <= io_mcu_d_4;
     end
   end
@@ -4148,8 +4145,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable0 == 1'b1)
-    begin
+    if(cmd0D_enable0 == 1'b1)   //enable
+     begin
       sclk_div_h_b29 <= io_mcu_d_5;
       sclk_div_h_b30 <= io_mcu_d_6;
     end
@@ -4160,8 +4157,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable0 == 1'b1)
-    begin
+    if(cmd0D_enable0 == 1'b1)   //enable
+     begin
       sclk_div_h_b31 <= io_mcu_d_7;
     end
   end
@@ -4169,7 +4166,7 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //MSLICE adder blocks 331, 333, 335, 337, 339, 342, 343, 346, 347, 350, 351, 354, 355, 358, 359, 360, 361
 
-  assign { smp_clk_enable, open_0, open_1, open_2, open_3, open_4, open_5, open_6, open_7, open_8, open_9, open_10, open_11, open_12, open_13, open_14, open_15, open_16, open_17, open_18, open_19, open_20, open_21, open_22, open_23, open_24, open_25, open_26, open_27, open_28, open_29, open_30, open_31 } = { 1'b0, sclk_div_h_b31, sclk_div_h_b30, sclk_div_h_b29, sclk_div_h_b28, sclk_div_h_b27, sclk_div_h_b26, sclk_div_h_b25, sclk_div_h_b24, sclk_div_h_b23, sclk_div_h_b22, sclk_div_h_b21, sclk_div_h_b20, sclk_div_h_b19, sclk_div_h_b18, sclk_div_h_b17, sclk_div_h_b16, sclk_div_h_b15, sclk_div_h_b14, sclk_div_h_b13, sclk_div_h_b12, sclk_div_h_b11, sclk_div_h_b10, sclk_div_h_b9, sclk_div_h_b8, sclk_div_h_b7, sclk_div_h_b6, sclk_div_h_b5, sclk_div_h_b4, sclk_div_h_b3, sclk_div_h_b2, sclk_div_h_b1, sclk_div_h_b0 } - { smp_clk_l_cnt_reg31, smp_clk_l_cnt_reg30, smp_clk_l_cnt_reg29, smp_clk_l_cnt_reg28, smp_clk_l_cnt_reg27, smp_clk_l_cnt_reg26, smp_clk_l_cnt_reg25, smp_clk_l_cnt_reg24, smp_clk_l_cnt_reg23, smp_clk_l_cnt_reg22, smp_clk_l_cnt_reg21, smp_clk_l_cnt_reg20, smp_clk_l_cnt_reg19, smp_clk_l_cnt_reg18, smp_clk_l_cnt_reg17, smp_clk_l_cnt_reg16, smp_clk_l_cnt_reg15, smp_clk_l_cnt_reg14, smp_clk_l_cnt_reg13, smp_clk_l_cnt_reg12, smp_clk_l_cnt_reg11, smp_clk_l_cnt_reg10, smp_clk_l_cnt_reg9, smp_clk_l_cnt_reg8, smp_clk_l_cnt_reg7, smp_clk_l_cnt_reg6, smp_clk_l_cnt_reg5, smp_clk_l_cnt_reg4, smp_clk_l_cnt_reg3, smp_clk_l_cnt_reg2, smp_clk_l_cnt_reg1, smp_clk_l_cnt_reg0 };
+  assign { smp_clk_enable, open_0, open_1, open_2, open_3, open_4, open_5, open_6, open_7, open_8, open_9, open_10, open_11, open_12, open_13, open_14, open_15, open_16, open_17, open_18, open_19, open_20, open_21, open_22, open_23, open_24, open_25, open_26, open_27, open_28, open_29, open_30, open_31 } = { 1'b0, sclk_div_h_b31, sclk_div_h_b30, sclk_div_h_b29, sclk_div_h_b28, sclk_div_h_b27, sclk_div_h_b26, sclk_div_h_b25, sclk_div_h_b24, sclk_div_h_b23, sclk_div_h_b22, sclk_div_h_b21, sclk_div_h_b20, sclk_div_h_b19, sclk_div_h_b18, sclk_div_h_b17, sclk_div_h_b16, sclk_div_h_b15, sclk_div_h_b14, sclk_div_h_b13, sclk_div_h_b12, sclk_div_h_b11, sclk_div_h_b10, sclk_div_h_b9, sclk_div_h_b8, sclk_div_h_b7, sclk_div_h_b6, sclk_div_h_b5, sclk_div_h_b4, sclk_div_h_b3, sclk_div_h_b2, sclk_div_h_b1, sclk_div_h_b0 } - { smp_clk_h_cnt_reg31, smp_clk_h_cnt_reg30, smp_clk_h_cnt_reg29, smp_clk_h_cnt_reg28, smp_clk_h_cnt_reg27, smp_clk_h_cnt_reg26, smp_clk_h_cnt_reg25, smp_clk_h_cnt_reg24, smp_clk_h_cnt_reg23, smp_clk_h_cnt_reg22, smp_clk_h_cnt_reg21, smp_clk_h_cnt_reg20, smp_clk_h_cnt_reg19, smp_clk_h_cnt_reg18, smp_clk_h_cnt_reg17, smp_clk_h_cnt_reg16, smp_clk_h_cnt_reg15, smp_clk_h_cnt_reg14, smp_clk_h_cnt_reg13, smp_clk_h_cnt_reg12, smp_clk_h_cnt_reg11, smp_clk_h_cnt_reg10, smp_clk_h_cnt_reg9, smp_clk_h_cnt_reg8, smp_clk_h_cnt_reg7, smp_clk_h_cnt_reg6, smp_clk_h_cnt_reg5, smp_clk_h_cnt_reg4, smp_clk_h_cnt_reg3, smp_clk_h_cnt_reg2, smp_clk_h_cnt_reg1, smp_clk_h_cnt_reg0 };
 
 //---------------------------------------------------------------------------
 //Block 332, LSLICE 2
@@ -4180,13 +4177,13 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 334, LSLICE 3
 
-  assign cmd34_enable = (cmdxxxx01xx_select & net_745 & ((~cmd_b1 & ~cmd_b0)));
-  assign cmd33_enable = (~cmd_b2 & ~cmd_b3 & ((net_745 & cmdxxxxxx11_select)));
+  assign cmd34_enable = (cmdxxxx01xx_select & cmd3x_data_write & ((~cmd_b1 & ~cmd_b0)));
+  assign cmd33_enable = (~cmd_b2 & ~cmd_b3 & ((cmd3x_data_write & cmdxxxxxx11_select)));
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd34_enable == 1'b1)
-    begin
+    if(cmd34_enable == 1'b1)   //enable
+     begin
       ac_dc_1 <= io_mcu_d_0;
     end
   end
@@ -4199,8 +4196,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable3 == 1'b1)
-    begin
+    if(cmd0D_enable3 == 1'b1)   //enable
+     begin
       sclk_div_h_b0 <= io_mcu_d_0;
       sclk_div_h_b1 <= io_mcu_d_1;
     end
@@ -4214,8 +4211,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable2 == 1'b1)
-    begin
+    if(cmd0D_enable2 == 1'b1)   //enable
+     begin
       sclk_div_h_b11 <= io_mcu_d_3;
       sclk_div_h_b10 <= io_mcu_d_2;
     end
@@ -4226,15 +4223,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg0 <= 1'b0;
-      smp_clk_l_cnt_reg1 <= 1'b0;
+      smp_clk_h_cnt_reg0 <= 1'b0;
+      smp_clk_h_cnt_reg1 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg0 <= smp_clk_l_cnt_out0;
-      smp_clk_l_cnt_reg1 <= smp_clk_l_cnt_out1;
+      smp_clk_h_cnt_reg0 <= smp_clk_h_cnt_out0;
+      smp_clk_h_cnt_reg1 <= smp_clk_h_cnt_out1;
     end
   end
 
@@ -4243,15 +4240,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg3 <= 1'b0;
-      smp_clk_l_cnt_reg4 <= 1'b0;
+      smp_clk_h_cnt_reg3 <= 1'b0;
+      smp_clk_h_cnt_reg4 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg3 <= smp_clk_l_cnt_out3;
-      smp_clk_l_cnt_reg4 <= smp_clk_l_cnt_out4;
+      smp_clk_h_cnt_reg3 <= smp_clk_h_cnt_out3;
+      smp_clk_h_cnt_reg4 <= smp_clk_h_cnt_out4;
     end
   end
 
@@ -4260,15 +4257,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg10 <= 1'b0;
-      smp_clk_l_cnt_reg7 <= 1'b0;
+      smp_clk_h_cnt_reg10 <= 1'b0;
+      smp_clk_h_cnt_reg7 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg10 <= smp_clk_l_cnt_out10;
-      smp_clk_l_cnt_reg7 <= smp_clk_l_cnt_out7;
+      smp_clk_h_cnt_reg10 <= smp_clk_h_cnt_out10;
+      smp_clk_h_cnt_reg7 <= smp_clk_h_cnt_out7;
     end
   end
 
@@ -4277,15 +4274,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg11 <= 1'b0;
-      smp_clk_l_cnt_reg12 <= 1'b0;
+      smp_clk_h_cnt_reg11 <= 1'b0;
+      smp_clk_h_cnt_reg12 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg11 <= smp_clk_l_cnt_out11;
-      smp_clk_l_cnt_reg12 <= smp_clk_l_cnt_out12;
+      smp_clk_h_cnt_reg11 <= smp_clk_h_cnt_out11;
+      smp_clk_h_cnt_reg12 <= smp_clk_h_cnt_out12;
     end
   end
 
@@ -4294,15 +4291,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg15 <= 1'b0;
-      smp_clk_l_cnt_reg16 <= 1'b0;
+      smp_clk_h_cnt_reg15 <= 1'b0;
+      smp_clk_h_cnt_reg16 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg15 <= smp_clk_l_cnt_out15;
-      smp_clk_l_cnt_reg16 <= smp_clk_l_cnt_out16;
+      smp_clk_h_cnt_reg15 <= smp_clk_h_cnt_out15;
+      smp_clk_h_cnt_reg16 <= smp_clk_h_cnt_out16;
     end
   end
 
@@ -4311,15 +4308,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg19 <= 1'b0;
-      smp_clk_l_cnt_reg20 <= 1'b0;
+      smp_clk_h_cnt_reg19 <= 1'b0;
+      smp_clk_h_cnt_reg20 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg19 <= smp_clk_l_cnt_out19;
-      smp_clk_l_cnt_reg20 <= smp_clk_l_cnt_out20;
+      smp_clk_h_cnt_reg19 <= smp_clk_h_cnt_out19;
+      smp_clk_h_cnt_reg20 <= smp_clk_h_cnt_out20;
     end
   end
 
@@ -4328,15 +4325,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg23 <= 1'b0;
-      smp_clk_l_cnt_reg24 <= 1'b0;
+      smp_clk_h_cnt_reg23 <= 1'b0;
+      smp_clk_h_cnt_reg24 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg23 <= smp_clk_l_cnt_out23;
-      smp_clk_l_cnt_reg24 <= smp_clk_l_cnt_out24;
+      smp_clk_h_cnt_reg23 <= smp_clk_h_cnt_out23;
+      smp_clk_h_cnt_reg24 <= smp_clk_h_cnt_out24;
     end
   end
 
@@ -4345,15 +4342,15 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg27 <= 1'b0;
-      smp_clk_l_cnt_reg28 <= 1'b0;
+      smp_clk_h_cnt_reg27 <= 1'b0;
+      smp_clk_h_cnt_reg28 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg27 <= smp_clk_l_cnt_out27;
-      smp_clk_l_cnt_reg28 <= smp_clk_l_cnt_out28;
+      smp_clk_h_cnt_reg27 <= smp_clk_h_cnt_out27;
+      smp_clk_h_cnt_reg28 <= smp_clk_h_cnt_out28;
     end
   end
 
@@ -4362,22 +4359,22 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg31 <= 1'b0;
-      smp_clk_l_cnt_reg29 <= 1'b0;
+      smp_clk_h_cnt_reg31 <= 1'b0;
+      smp_clk_h_cnt_reg29 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg31 <= smp_clk_l_cnt_out31;
-      smp_clk_l_cnt_reg29 <= smp_clk_l_cnt_out29;
+      smp_clk_h_cnt_reg31 <= smp_clk_h_cnt_out31;
+      smp_clk_h_cnt_reg29 <= smp_clk_h_cnt_out29;
     end
   end
 
 //---------------------------------------------------------------------------
 //LSICE adder blocks 340, 341, 344, 345, 348, 349, 352, 353, 356
 
-  assign { smp_clk_l_cnt_out31, smp_clk_l_cnt_out30, smp_clk_l_cnt_out29, smp_clk_l_cnt_out28, smp_clk_l_cnt_out27, smp_clk_l_cnt_out26, smp_clk_l_cnt_out25, smp_clk_l_cnt_out24, smp_clk_l_cnt_out23, smp_clk_l_cnt_out22, smp_clk_l_cnt_out21, smp_clk_l_cnt_out20, smp_clk_l_cnt_out19, smp_clk_l_cnt_out18, smp_clk_l_cnt_out17, smp_clk_l_cnt_out16, smp_clk_l_cnt_out15, smp_clk_l_cnt_out14, smp_clk_l_cnt_out13, smp_clk_l_cnt_out12, smp_clk_l_cnt_out11, smp_clk_l_cnt_out10, smp_clk_l_cnt_out9, smp_clk_l_cnt_out8, smp_clk_l_cnt_out7, smp_clk_l_cnt_out6, smp_clk_l_cnt_out5, smp_clk_l_cnt_out4, smp_clk_l_cnt_out3, smp_clk_l_cnt_out2, smp_clk_l_cnt_out1, smp_clk_l_cnt_out0 } = { smp_clk_l_cnt_reg31, smp_clk_l_cnt_reg30, smp_clk_l_cnt_reg29, smp_clk_l_cnt_reg28, smp_clk_l_cnt_reg27, smp_clk_l_cnt_reg26, smp_clk_l_cnt_reg25, smp_clk_l_cnt_reg24, smp_clk_l_cnt_reg23, smp_clk_l_cnt_reg22, smp_clk_l_cnt_reg21, smp_clk_l_cnt_reg20, smp_clk_l_cnt_reg19, smp_clk_l_cnt_reg18, smp_clk_l_cnt_reg17, smp_clk_l_cnt_reg16, smp_clk_l_cnt_reg15, smp_clk_l_cnt_reg14, smp_clk_l_cnt_reg13, smp_clk_l_cnt_reg12, smp_clk_l_cnt_reg11, smp_clk_l_cnt_reg10, smp_clk_l_cnt_reg9, smp_clk_l_cnt_reg8, smp_clk_l_cnt_reg7, smp_clk_l_cnt_reg6, smp_clk_l_cnt_reg5, smp_clk_l_cnt_reg4, smp_clk_l_cnt_reg3, smp_clk_l_cnt_reg2, smp_clk_l_cnt_reg1, smp_clk_l_cnt_reg0 } + { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1 };
+  assign { smp_clk_h_cnt_out31, smp_clk_h_cnt_out30, smp_clk_h_cnt_out29, smp_clk_h_cnt_out28, smp_clk_h_cnt_out27, smp_clk_h_cnt_out26, smp_clk_h_cnt_out25, smp_clk_h_cnt_out24, smp_clk_h_cnt_out23, smp_clk_h_cnt_out22, smp_clk_h_cnt_out21, smp_clk_h_cnt_out20, smp_clk_h_cnt_out19, smp_clk_h_cnt_out18, smp_clk_h_cnt_out17, smp_clk_h_cnt_out16, smp_clk_h_cnt_out15, smp_clk_h_cnt_out14, smp_clk_h_cnt_out13, smp_clk_h_cnt_out12, smp_clk_h_cnt_out11, smp_clk_h_cnt_out10, smp_clk_h_cnt_out9, smp_clk_h_cnt_out8, smp_clk_h_cnt_out7, smp_clk_h_cnt_out6, smp_clk_h_cnt_out5, smp_clk_h_cnt_out4, smp_clk_h_cnt_out3, smp_clk_h_cnt_out2, smp_clk_h_cnt_out1, smp_clk_h_cnt_out0 } = { smp_clk_h_cnt_reg31, smp_clk_h_cnt_reg30, smp_clk_h_cnt_reg29, smp_clk_h_cnt_reg28, smp_clk_h_cnt_reg27, smp_clk_h_cnt_reg26, smp_clk_h_cnt_reg25, smp_clk_h_cnt_reg24, smp_clk_h_cnt_reg23, smp_clk_h_cnt_reg22, smp_clk_h_cnt_reg21, smp_clk_h_cnt_reg20, smp_clk_h_cnt_reg19, smp_clk_h_cnt_reg18, smp_clk_h_cnt_reg17, smp_clk_h_cnt_reg16, smp_clk_h_cnt_reg15, smp_clk_h_cnt_reg14, smp_clk_h_cnt_reg13, smp_clk_h_cnt_reg12, smp_clk_h_cnt_reg11, smp_clk_h_cnt_reg10, smp_clk_h_cnt_reg9, smp_clk_h_cnt_reg8, smp_clk_h_cnt_reg7, smp_clk_h_cnt_reg6, smp_clk_h_cnt_reg5, smp_clk_h_cnt_reg4, smp_clk_h_cnt_reg3, smp_clk_h_cnt_reg2, smp_clk_h_cnt_reg1, smp_clk_h_cnt_reg0 } + { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1 };
 
 //---------------------------------------------------------------------------
 //Block 357, LSLICE 3
@@ -4387,8 +4384,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable0 == 1'b1)
-    begin
+    if(cmd0D_enable0 == 1'b1)   //enable
+     begin
       sclk_div_h_b25 <= io_mcu_d_1;
       sclk_div_h_b24 <= io_mcu_d_0;
     end
@@ -4404,9 +4401,9 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 367, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b1)
+    if(offset1_pwm_rst == 1'b1)   //reset
     begin
       offset1_pwm_r0 <= 1'b0;
       offset1_pwm_r1 <= 1'b0;
@@ -4421,9 +4418,9 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 368, LSLICE 3
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b1)
+    if(offset1_pwm_rst == 1'b1)   //reset
     begin
       offset1_pwm_r3 <= 1'b0;
       offset1_pwm_r4 <= 1'b0;
@@ -4438,9 +4435,9 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 370, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b1)
+    if(offset1_pwm_rst == 1'b1)   //reset
     begin
       offset1_pwm_r10 <= 1'b0;
       offset1_pwm_r7 <= 1'b0;
@@ -4455,9 +4452,9 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 371, LSLICE 3
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b1)
+    if(offset1_pwm_rst == 1'b1)   //reset
     begin
       offset1_pwm_r11 <= 1'b0;
       offset1_pwm_r12 <= 1'b0;
@@ -4472,9 +4469,9 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 372, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b1)
+    if(offset1_pwm_rst == 1'b1)   //reset
     begin
       offset1_pwm_r15 <= 1'b0;
     end
@@ -4535,7 +4532,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       net_696 <= 1'b0;
     end
@@ -4555,27 +4552,27 @@ module FNIRSI_1013D
 //Block 380, MSLICE 0
 
   assign sig_380_lut_0 = 1'b0;
-  assign sig_380_lut_1 = (net_1109 & net_257 & (~(net_1135 & cmd69_select)));
+  assign sig_380_lut_1 = (net_1109 & net_257 & (~(i_i2c_cmd69_b2 & cmd69_select)));
   assign net_706 = (~net_283 & sig_380_lut_0) | (net_283 & sig_380_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 381, LSLICE 2
 
-  assign net_704 = (~net_340 & ~cmd25_select & ~i_adc1B_d_4 & (~(net_1171 & cmd6E_select))) | (~net_340 & ~cmd25_select & i_adc1B_d_4 & (~(net_1171 & cmd6E_select))) | (~net_340 & cmd25_select & ~i_adc1B_d_4 & (~(net_1171 & cmd6E_select)));
-  assign net_707 = (net_704 & ~cmd69_select & ~net_1129 & (~(o_adc2B_d_4 & cmd23_select))) | (net_704 & ~cmd69_select & net_1129 & (~(o_adc2B_d_4 & cmd23_select))) | (net_704 & cmd69_select & ~net_1129 & (~(o_adc2B_d_4 & cmd23_select)));
+  assign net_704 = (~net_340 & ~cmd25_select & ~i_adc1B_d_4 & (~(i_i2c_cmd6E_b4 & cmd6E_select))) | (~net_340 & ~cmd25_select & i_adc1B_d_4 & (~(i_i2c_cmd6E_b4 & cmd6E_select))) | (~net_340 & cmd25_select & ~i_adc1B_d_4 & (~(i_i2c_cmd6E_b4 & cmd6E_select)));
+  assign net_707 = (net_704 & ~cmd69_select & ~i_i2c_cmd69_b4 & (~(o_adc2B_d_4 & cmd23_select))) | (net_704 & ~cmd69_select & i_i2c_cmd69_b4 & (~(o_adc2B_d_4 & cmd23_select))) | (net_704 & cmd69_select & ~i_i2c_cmd69_b4 & (~(o_adc2B_d_4 & cmd23_select)));
 
 //---------------------------------------------------------------------------
 //Block 382, LSLICE 3
 
-  assign sig_382_lut_0 = (~net_702 & cmd6x_select & cmdxxxx01xx_select & ((~cmd_b1 & cmd_b0))) | (net_702 & ~cmd6x_select & ~cmdxxxx01xx_select) | (net_702 & ~cmd6x_select & cmdxxxx01xx_select) | (net_702 & cmd6x_select & ~cmdxxxx01xx_select) | (net_702 & cmd6x_select & cmdxxxx01xx_select & ((cmd_b1 | cmd_b0)));
-  assign sig_382_lut_1 = (~cmd_b0 & ~cmd6x_select & ~cmd_b1 & ((net_700 & ~cmdxxxx01xx_select) | (net_700 & cmdxxxx01xx_select))) | (~cmd_b0 & ~cmd6x_select & cmd_b1 & ((net_700 & ~cmdxxxx01xx_select) | (net_700 & cmdxxxx01xx_select))) | (~cmd_b0 & cmd6x_select & ~cmd_b1 & ((net_700 | cmdxxxx01xx_select))) | (~cmd_b0 & cmd6x_select & cmd_b1 & ((net_700 & ~cmdxxxx01xx_select))) | (cmd_b0 & ~cmd6x_select & ~cmd_b1 & ((net_700 & ~cmdxxxx01xx_select) | (net_700 & cmdxxxx01xx_select))) | (cmd_b0 & ~cmd6x_select & cmd_b1 & ((net_700 & ~cmdxxxx01xx_select) | (net_700 & cmdxxxx01xx_select))) | (cmd_b0 & cmd6x_select & ~cmd_b1 & ((net_700 | cmdxxxx01xx_select))) | (cmd_b0 & cmd6x_select & cmd_b1 & ((net_700 & ~cmdxxxx01xx_select) | (net_700 & cmdxxxx01xx_select)));
+  assign sig_382_lut_0 = (~i2c_send_enable & cmd6x_select & cmdxxxx01xx_select & ((~cmd_b1 & cmd_b0))) | (i2c_send_enable & ~cmd6x_select & ~cmdxxxx01xx_select) | (i2c_send_enable & ~cmd6x_select & cmdxxxx01xx_select) | (i2c_send_enable & cmd6x_select & ~cmdxxxx01xx_select) | (i2c_send_enable & cmd6x_select & cmdxxxx01xx_select & ((cmd_b1 | cmd_b0)));
+  assign sig_382_lut_1 = (~cmd_b0 & ~cmd6x_select & ~cmd_b1 & ((i2c_disable & ~cmdxxxx01xx_select) | (i2c_disable & cmdxxxx01xx_select))) | (~cmd_b0 & ~cmd6x_select & cmd_b1 & ((i2c_disable & ~cmdxxxx01xx_select) | (i2c_disable & cmdxxxx01xx_select))) | (~cmd_b0 & cmd6x_select & ~cmd_b1 & ((i2c_disable | cmdxxxx01xx_select))) | (~cmd_b0 & cmd6x_select & cmd_b1 & ((i2c_disable & ~cmdxxxx01xx_select))) | (cmd_b0 & ~cmd6x_select & ~cmd_b1 & ((i2c_disable & ~cmdxxxx01xx_select) | (i2c_disable & cmdxxxx01xx_select))) | (cmd_b0 & ~cmd6x_select & cmd_b1 & ((i2c_disable & ~cmdxxxx01xx_select) | (i2c_disable & cmdxxxx01xx_select))) | (cmd_b0 & cmd6x_select & ~cmd_b1 & ((i2c_disable | cmdxxxx01xx_select))) | (cmd_b0 & cmd6x_select & cmd_b1 & ((i2c_disable & ~cmdxxxx01xx_select) | (i2c_disable & cmdxxxx01xx_select)));
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd_write_enable == 1'b1)
-    begin
-      net_702 <= sig_382_lut_0;
-      net_700 <= sig_382_lut_1;
+    if(cmd_write_enable == 1'b1)   //enable
+     begin
+      i2c_send_enable <= sig_382_lut_0;
+      i2c_disable <= sig_382_lut_1;
     end
   end
 
@@ -4583,12 +4580,12 @@ module FNIRSI_1013D
 //Block 383, MSLICE 1
 
   assign cmd_write_enable = ((i_mcu_dcs & i_mcu_rws));
-  assign net_705 = ~net_700;
+  assign i2c_rcv_rst = ~i2c_disable;
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd_write_enable == 1'b1)
-    begin
+    if(cmd_write_enable == 1'b1)   //enable
+     begin
       cmd_b0 <= io_mcu_d_0;
       cmd_b1 <= io_mcu_d_1;
     end
@@ -4598,13 +4595,13 @@ module FNIRSI_1013D
 //Block 384, MSLICE 0
 
   assign sig_384_lut_0 = 1'b0;
-  assign sig_384_lut_1 = (net_778 & net_535 & (~(net_1587 & cmd6B_select)));
+  assign sig_384_lut_1 = (net_778 & net_535 & (~(i_i2c_cmd6B_b4 & cmd6B_select)));
   assign net_712 = (~net_707 & sig_384_lut_0) | (net_707 & sig_384_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 385, LSLICE 2
 
-  assign net_709 = (net_798 & net_698 & ~net_834 & (~(net_1162 & cmd6B_select)));
+  assign net_709 = (net_798 & net_698 & ~net_834 & (~(i_i2c_cmd6B_b5 & cmd6B_select)));
   assign net_711 = (~cmd25_select & net_709 & ((~i_adc1B_d_5 & net_350) | (i_adc1B_d_5 & net_350))) | (cmd25_select & net_709 & ((~i_adc1B_d_5 & net_350)));
 
 //---------------------------------------------------------------------------
@@ -4613,10 +4610,10 @@ module FNIRSI_1013D
   assign sig_386_lut_0 = (~net_956 & ((ch1_offset_b15 & ~offset1_pwm_r15))) | (net_956 & ((~ch1_offset_b15 & ~offset1_pwm_r15) | (ch1_offset_b15 & ~offset1_pwm_r15) | (ch1_offset_b15 & offset1_pwm_r15)));
   assign net_710 = ((net_470 & not_cmd_05_0A));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b0)
-    begin
+    if(offset1_pwm_rst == 1'b0)   //enable
+     begin
       offset_1 <= sig_386_lut_0;
     end
   end
@@ -4630,7 +4627,7 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 388, MSLICE 0
 
-  assign net_720 = (o_mcu_d_5 & ((cmd0001x000_select | net_467)));
+  assign net_720 = (o_mcu_d_5 & ((cmd0001x000_select | cmd67_select)));
   assign net_718 = ((not_cmd_05_0A & ~cmd0001x000_select));
 
 //---------------------------------------------------------------------------
@@ -4641,8 +4638,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd32_enable0 == 1'b1)
-    begin
+    if(cmd32_enable0 == 1'b1)   //enable
+     begin
       ch1_offset_b10 <= io_mcu_d_2;
       ch1_offset_b15 <= io_mcu_d_7;
     end
@@ -4652,7 +4649,7 @@ module FNIRSI_1013D
 //Block 390, MSLICE 1
 
   assign sig_390_lut_0 = 1'b0;
-  assign sig_390_lut_1 = (net_792 & ~net_375 & (~(net_1310 & cmd6A_select)));
+  assign sig_390_lut_1 = (net_792 & ~net_375 & (~(i_i2c_cmd6A_b6 & cmd6A_select)));
   assign net_721 = (~net_822 & sig_390_lut_0) | (net_822 & sig_390_lut_1);
 
 //---------------------------------------------------------------------------
@@ -4663,7 +4660,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b0)   //reset
     begin
       smp_rst_state <= 1'b0;
     end
@@ -4676,20 +4673,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 392, LSLICE 2
 
-  assign net_723 = (net_997 & ~net_720 & ~net_374 & (~(net_727 & cmd6D_select)));
-  assign net_724 = (net_1577 & ((~net_702 & net_1625)));
+  assign net_723 = (net_997 & ~net_720 & ~net_374 & (~(i_i2c_cmd6D_b5 & cmd6D_select)));
+  assign i2c_cmd6D_e5 = (i2c_state_000000001100xxxx & ((~i2c_send_enable & i2c_state_xxxxxxxxxxxx0010)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_724 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_727 <= 1'b1;
-      end
-      else
-      begin
-        net_727 <= io_i2c_sda;
+      i_i2c_cmd6D_b5 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6D_e5 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6D_b5 <= io_i2c_sda;
       end
     end
   end
@@ -4709,8 +4706,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable3 == 1'b1)
-    begin
+    if(cmd0E_enable3 == 1'b1)   //enable
+     begin
       sclk_div_l_b0 <= io_mcu_d_0;
     end
   end
@@ -4723,8 +4720,8 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
-    begin
+    if(smp_clk_enable == 1'b1)   //enable
+     begin
       sample_write_clock <= sig_395_lut_0;
       adc1_encB <= sig_395_lut_1;
     end
@@ -4739,8 +4736,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(i_mcu_dcs == 1'b0)
-    begin
+    if(i_mcu_dcs == 1'b0)   //enable
+     begin
       smp_read_offset_r4 <= sig_396_ff0_d;
     end
   end
@@ -4753,8 +4750,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd3C_enable1 == 1'b1)
-    begin
+    if(cmd3C_enable1 == 1'b1)   //enable
+     begin
       cmd3C_b12 <= io_mcu_d_4;
     end
   end
@@ -4762,13 +4759,13 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 398, MSLICE 1
 
-  assign sig_398_lut_0 = (net_820 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5)));
-  assign sig_398_lut_1 = (~io_mcu_d_5 & ~i_mcu_dcs & ((~net_431 & ~net_820) | (net_431 & ~net_820) | (net_431 & net_820))) | (~io_mcu_d_5 & i_mcu_dcs & ((net_431 & ~net_820) | (net_431 & net_820))) | (io_mcu_d_5 & ~i_mcu_dcs) | (io_mcu_d_5 & i_mcu_dcs & ((net_431 & ~net_820) | (net_431 & net_820)));
-  assign sig_398_ff0_d = (~net_738 & sig_398_lut_0) | (net_738 & sig_398_lut_1);
+  assign sig_398_lut_0 = (cmd6E_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5)));
+  assign sig_398_lut_1 = (~io_mcu_d_5 & ~i_mcu_dcs & ((~net_431 & ~cmd6E_write_enable) | (net_431 & ~cmd6E_write_enable) | (net_431 & cmd6E_write_enable))) | (~io_mcu_d_5 & i_mcu_dcs & ((net_431 & ~cmd6E_write_enable) | (net_431 & cmd6E_write_enable))) | (io_mcu_d_5 & ~i_mcu_dcs) | (io_mcu_d_5 & i_mcu_dcs & ((net_431 & ~cmd6E_write_enable) | (net_431 & cmd6E_write_enable)));
+  assign sig_398_ff0_d = (~o_i2c_cmd6E_b5 & sig_398_lut_0) | (o_i2c_cmd6E_b5 & sig_398_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_738 <= sig_398_ff0_d;
+    o_i2c_cmd6E_b5 <= sig_398_ff0_d;
   end
 
 //---------------------------------------------------------------------------
@@ -4779,8 +4776,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable2 == 1'b1)
-    begin
+    if(cmd0E_enable2 == 1'b1)   //enable
+     begin
       sclk_div_l_b10 <= io_mcu_d_2;
       sclk_div_l_b8 <= io_mcu_d_0;
     end
@@ -4790,12 +4787,12 @@ module FNIRSI_1013D
 //Block 400, MSLICE 1
 
   assign smp_read_offset_b6 = (i_mcu_rws & ~cmd1F_enable1 & ((~smp_read_offset_r6 & ~io_mcu_d_6) | (~smp_read_offset_r6 & io_mcu_d_6))) | (i_mcu_rws & cmd1F_enable1 & ((~smp_read_offset_r6 & ~io_mcu_d_6) | (smp_read_offset_r6 & ~io_mcu_d_6)));
-  assign net_745 = (cmd3x_select & ((i_mcu_rws & ~i_mcu_dcs)));
+  assign cmd3x_data_write = (cmd3x_select & ((i_mcu_rws & ~i_mcu_dcs)));
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable2 == 1'b1)
-    begin
+    if(cmd0D_enable2 == 1'b1)   //enable
+     begin
       sclk_div_h_b14 <= io_mcu_d_6;
     end
   end
@@ -4808,8 +4805,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0D_enable1 == 1'b1)
-    begin
+    if(cmd0D_enable1 == 1'b1)   //enable
+     begin
       sclk_div_h_b17 <= io_mcu_d_1;
       sclk_div_h_b16 <= io_mcu_d_0;
     end
@@ -4820,31 +4817,31 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
+    if(smp_clk_enable == 1'b1)   //reset
     begin
-      smp_clk_l_cnt_reg30 <= 1'b0;
+      smp_clk_h_cnt_reg30 <= 1'b0;
     end
     else
     begin
-      smp_clk_l_cnt_reg30 <= smp_clk_l_cnt_out30;
+      smp_clk_h_cnt_reg30 <= smp_clk_h_cnt_out30;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 407, LSLICE 2
 
-  assign net_754 = (net_1196 & ~net_950 & ((~net_1263 & ~net_751)));
+  assign calib_1KHz_f = (calib_1KHz_g & ~calib_1KHz_r31 & ((~calib_1KHz_r30 & ~calib_1KHz_r29)));
   assign pwm_enable_a = (~pwm_enable_b & ~db_cnt_b12 & (~(db_cnt_b11 & db_cnt_b10))) | (pwm_enable_b & ~db_cnt_b12 & ((~db_cnt_b11 & ~db_cnt_b10) | (~db_cnt_b11 & db_cnt_b10)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_751 <= 1'b0;
+      calib_1KHz_r29 <= 1'b0;
     end
     else
     begin
-      net_751 <= net_948;
+      calib_1KHz_r29 <= calib_1KHz_c29;
     end
   end
 
@@ -4870,12 +4867,12 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 411, LSLICE 3
 
-  assign net_759 = (~net_766 & ~net_1104 & ~offset1_pwm_r9) | (~net_766 & ~net_1104 & offset1_pwm_r9) | (~net_766 & net_1104 & ~offset1_pwm_r9) | (~net_766 & net_1104 & offset1_pwm_r9) | (net_766 & net_1104 & offset1_pwm_r9 & ((offset1_pwm_r8 & offset1_pwm_r7)));
+  assign offset1_pwm_rst = (~net_766 & ~net_1104 & ~offset1_pwm_r9) | (~net_766 & ~net_1104 & offset1_pwm_r9) | (~net_766 & net_1104 & ~offset1_pwm_r9) | (~net_766 & net_1104 & offset1_pwm_r9) | (net_766 & net_1104 & offset1_pwm_r9 & ((offset1_pwm_r8 & offset1_pwm_r7)));
   assign net_766 = (~offset1_pwm_r15 & ~offset1_pwm_r14 & ~offset1_pwm_r13 & ((~offset1_pwm_r12 & ~offset1_pwm_r11)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b1)
+    if(offset1_pwm_rst == 1'b1)   //reset
     begin
       offset1_pwm_r13 <= 1'b0;
       offset1_pwm_r2 <= 1'b0;
@@ -4895,8 +4892,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd32_enable0 == 1'b1)
-    begin
+    if(cmd32_enable0 == 1'b1)   //enable
+     begin
       ch1_offset_b8 <= io_mcu_d_0;
       ch1_offset_b9 <= io_mcu_d_1;
     end
@@ -4917,8 +4914,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd32_enable1 == 1'b1)
-    begin
+    if(cmd32_enable1 == 1'b1)   //enable
+     begin
       ch1_offset_b7 <= io_mcu_d_7;
       ch1_offset_b5 <= io_mcu_d_5;
     end
@@ -4932,8 +4929,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd32_enable1 == 1'b1)
-    begin
+    if(cmd32_enable1 == 1'b1)   //enable
+     begin
       ch1_offset_b0 <= io_mcu_d_0;
       ch1_offset_b6 <= io_mcu_d_6;
     end
@@ -4948,20 +4945,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 417, MSLICE 0
 
-  assign net_783 = ((net_1365 & net_1605));
-  assign net_782 = (~cmd26_select & ~i_adc2A_d_3 & (~(net_779 & cmd6A_select))) | (~cmd26_select & i_adc2A_d_3 & (~(net_779 & cmd6A_select))) | (cmd26_select & ~i_adc2A_d_3 & (~(net_779 & cmd6A_select)));
+  assign i2c_cmd6A_e3 = ((i2c_state_xxxxxxxx0110xxxx & net_1605));
+  assign net_782 = (~cmd26_select & ~i_adc2A_d_3 & (~(i_i2c_cmd6A_b3 & cmd6A_select))) | (~cmd26_select & i_adc2A_d_3 & (~(i_i2c_cmd6A_b3 & cmd6A_select))) | (cmd26_select & ~i_adc2A_d_3 & (~(i_i2c_cmd6A_b3 & cmd6A_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_783 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_779 <= 1'b0;
-      end
-      else
-      begin
-        net_779 <= io_i2c_sda;
+      i_i2c_cmd6A_b3 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6A_e3 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6A_b3 <= io_i2c_sda;
       end
     end
   end
@@ -4969,20 +4966,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 418, LSLICE 2
 
-  assign net_778 = (net_785 & net_728 & net_810 & (~(net_787 & cmd68_select)));
-  assign net_780 = (net_1530 & ((~net_702 & net_1483)));
+  assign net_778 = (net_785 & net_728 & net_810 & (~(i_i2c_cmd68_b4 & cmd68_select)));
+  assign i2c_cmd68_e4 = (i2c_state_xxxxxxxx0010xxxx & ((~i2c_send_enable & i2c_state_00000000xxxx1110)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_780 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_787 <= 1'b1;
-      end
-      else
-      begin
-        net_787 <= io_i2c_sda;
+      i_i2c_cmd68_b4 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd68_e4 == 1'b1)   //enable
+       begin
+        i_i2c_cmd68_b4 <= io_i2c_sda;
       end
     end
   end
@@ -4990,19 +4987,19 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 419, LSLICE 3
 
-  assign net_781 = ((~net_702 & net_981));
+  assign i2c_cmd69_e0 = ((~i2c_send_enable & i2c_state_0000000001010100));
   assign net_784 = (~net_534 & ~cmd69_select) | (~net_534 & cmd69_select & ((~net_690 & ~i_i2c_cmd69_b0) | (net_690 & ~i_i2c_cmd69_b0))) | (net_534 & ~cmd69_select & ((~net_690 & ~i_i2c_cmd69_b0) | (~net_690 & i_i2c_cmd69_b0))) | (net_534 & cmd69_select & ((~net_690 & ~i_i2c_cmd69_b0)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_781 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        i_i2c_cmd69_b0 <= 1'b0;
-      end
-      else
-      begin
+      i_i2c_cmd69_b0 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd69_e0 == 1'b1)   //enable
+       begin
         i_i2c_cmd69_b0 <= io_i2c_sda;
       end
     end
@@ -5025,20 +5022,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 422, LSLICE 2
 
-  assign net_790 = ((net_1605 & net_1461));
-  assign net_791 = (~i_adc2A_d_7 & ~cmd26_select & (~(cmd6E_select & net_794))) | (~i_adc2A_d_7 & cmd26_select & (~(cmd6E_select & net_794))) | (i_adc2A_d_7 & ~cmd26_select & (~(cmd6E_select & net_794)));
+  assign i2c_cmd6E_e7 = ((net_1605 & i2c_state_xxxxxxxx1101xxxx));
+  assign net_791 = (~i_adc2A_d_7 & ~cmd26_select & (~(cmd6E_select & i_i2c_cmd6E_b7))) | (~i_adc2A_d_7 & cmd26_select & (~(cmd6E_select & i_i2c_cmd6E_b7))) | (i_adc2A_d_7 & ~cmd26_select & (~(cmd6E_select & i_i2c_cmd6E_b7)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_790 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_794 <= 1'b0;
-      end
-      else
-      begin
-        net_794 <= io_i2c_sda;
+      i_i2c_cmd6E_b7 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6E_e7 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6E_b7 <= io_i2c_sda;
       end
     end
   end
@@ -5053,39 +5050,39 @@ module FNIRSI_1013D
 //Block 424, MSLICE 1
 
   assign sig_424_lut_0 = 1'b0;
-  assign sig_424_lut_1 = (~cmd68_select & ~net_1292 & (~(net_812 & cmd6D_select))) | (~cmd68_select & net_1292 & (~(net_812 & cmd6D_select))) | (cmd68_select & ~net_1292 & (~(net_812 & cmd6D_select)));
+  assign sig_424_lut_1 = (~cmd68_select & ~i_i2c_cmd68_b6 & (~(i_i2c_cmd6D_b6 & cmd6D_select))) | (~cmd68_select & i_i2c_cmd68_b6 & (~(i_i2c_cmd6D_b6 & cmd6D_select))) | (cmd68_select & ~i_i2c_cmd68_b6 & (~(i_i2c_cmd6D_b6 & cmd6D_select)));
   assign net_792 = (~net_960 & sig_424_lut_0) | (net_960 & sig_424_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 425, MSLICE 0
 
   assign sig_425_lut_0 = 1'b0;
-  assign sig_425_lut_1 = (~cmd68_select & ~i_adc2B_d_5) | (~cmd68_select & i_adc2B_d_5 & ((~net_1467 & ~cmd27_select) | (net_1467 & ~cmd27_select))) | (cmd68_select & ~i_adc2B_d_5 & ((~net_1467 & ~cmd27_select) | (~net_1467 & cmd27_select))) | (cmd68_select & i_adc2B_d_5 & ((~net_1467 & ~cmd27_select)));
+  assign sig_425_lut_1 = (~cmd68_select & ~i_adc2B_d_5) | (~cmd68_select & i_adc2B_d_5 & ((~i_i2c_cmd68_b5 & ~cmd27_select) | (i_i2c_cmd68_b5 & ~cmd27_select))) | (cmd68_select & ~i_adc2B_d_5 & ((~i_i2c_cmd68_b5 & ~cmd27_select) | (~i_i2c_cmd68_b5 & cmd27_select))) | (cmd68_select & i_adc2B_d_5 & ((~i_i2c_cmd68_b5 & ~cmd27_select)));
   assign net_798 = (~net_1132 & sig_425_lut_0) | (net_1132 & sig_425_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 426, LSLICE 2
 
-  assign net_795 = (net_791 & ~cmd68_select & ~net_1371 & (~(net_1161 & cmd6D_select))) | (net_791 & ~cmd68_select & net_1371 & (~(net_1161 & cmd6D_select))) | (net_791 & cmd68_select & ~net_1371 & (~(net_1161 & cmd6D_select)));
-  assign net_800 = (net_1586 & net_795 & ~net_389 & (~(net_1475 & cmd6A_select)));
+  assign net_795 = (net_791 & ~cmd68_select & ~i_i2c_cmd68_b7 & (~(i_i2c_cmd6D_b7 & cmd6D_select))) | (net_791 & ~cmd68_select & i_i2c_cmd68_b7 & (~(i_i2c_cmd6D_b7 & cmd6D_select))) | (net_791 & cmd68_select & ~i_i2c_cmd68_b7 & (~(i_i2c_cmd6D_b7 & cmd6D_select)));
+  assign net_800 = (net_1586 & net_795 & ~net_389 & (~(i_i2c_cmd6A_b7 & cmd6A_select)));
 
 //---------------------------------------------------------------------------
 //Block 427, LSLICE 3
 
-  assign net_801 = (net_1138 & ((net_1633 & ~net_702)));
-  assign net_797 = (~net_1148 & ~cmd69_select & (~(net_799 & cmd6B_select))) | (~net_1148 & cmd69_select & (~(net_799 & cmd6B_select))) | (net_1148 & ~cmd69_select & (~(net_799 & cmd6B_select)));
+  assign i2c_cmd6B_e6 = (i2c_state_000000001000xxxx & ((i2c_state_xxxxxxxxxxxx0100 & ~i2c_send_enable)));
+  assign net_797 = (~i_i2c_cmd69_b6 & ~cmd69_select & (~(i_i2c_cmd6B_b6 & cmd6B_select))) | (~i_i2c_cmd69_b6 & cmd69_select & (~(i_i2c_cmd6B_b6 & cmd6B_select))) | (i_i2c_cmd69_b6 & ~cmd69_select & (~(i_i2c_cmd6B_b6 & cmd6B_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_801 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_799 <= 1'b0;
-      end
-      else
-      begin
-        net_799 <= io_i2c_sda;
+      i_i2c_cmd6B_b6 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6B_e6 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6B_b6 <= io_i2c_sda;
       end
     end
   end
@@ -5094,26 +5091,26 @@ module FNIRSI_1013D
 //Block 428, MSLICE 1
 
   assign sig_428_lut_0 = 1'b0;
-  assign sig_428_lut_1 = (~cmd68_select & ~net_1229 & (~(net_999 & cmd6C_select))) | (~cmd68_select & net_1229 & (~(net_999 & cmd6C_select))) | (cmd68_select & ~net_1229 & (~(net_999 & cmd6C_select)));
+  assign sig_428_lut_1 = (~cmd68_select & ~i_i2c_cmd68_b3 & (~(i_i2c_cmd6C_b3 & cmd6C_select))) | (~cmd68_select & i_i2c_cmd68_b3 & (~(i_i2c_cmd6C_b3 & cmd6C_select))) | (cmd68_select & ~i_i2c_cmd68_b3 & (~(i_i2c_cmd6C_b3 & cmd6C_select)));
   assign net_796 = (~net_980 & sig_428_lut_0) | (net_980 & sig_428_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 429, LSLICE 2
 
-  assign net_803 = (net_1138 & ((~net_702 & net_1625)));
-  assign net_805 = (~net_1332 & ~net_802) | (~net_1332 & net_802 & ((~cmd69_select & ~cmd6B_select) | (cmd69_select & ~cmd6B_select))) | (net_1332 & ~net_802 & ((~cmd69_select & ~cmd6B_select) | (~cmd69_select & cmd6B_select))) | (net_1332 & net_802 & ((~cmd69_select & ~cmd6B_select)));
+  assign i2c_cmd6B_e7 = (i2c_state_000000001000xxxx & ((~i2c_send_enable & i2c_state_xxxxxxxxxxxx0010)));
+  assign net_805 = (~i_i2c_cmd69_b7 & ~i_i2c_cmd6B_b7) | (~i_i2c_cmd69_b7 & i_i2c_cmd6B_b7 & ((~cmd69_select & ~cmd6B_select) | (cmd69_select & ~cmd6B_select))) | (i_i2c_cmd69_b7 & ~i_i2c_cmd6B_b7 & ((~cmd69_select & ~cmd6B_select) | (~cmd69_select & cmd6B_select))) | (i_i2c_cmd69_b7 & i_i2c_cmd6B_b7 & ((~cmd69_select & ~cmd6B_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_803 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_802 <= 1'b0;
-      end
-      else
-      begin
-        net_802 <= io_i2c_sda;
+      i_i2c_cmd6B_b7 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6B_e7 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6B_b7 <= io_i2c_sda;
       end
     end
   end
@@ -5121,20 +5118,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 430, LSLICE 3
 
-  assign net_809 = (net_1577 & ((~net_702 & net_1633)));
-  assign net_810 = (~i_adc2B_d_4 & ~cmd27_select & (~(net_804 & cmd6D_select))) | (~i_adc2B_d_4 & cmd27_select & (~(net_804 & cmd6D_select))) | (i_adc2B_d_4 & ~cmd27_select & (~(net_804 & cmd6D_select)));
+  assign i2c_cmd6D_e4 = (i2c_state_000000001100xxxx & ((~i2c_send_enable & i2c_state_xxxxxxxxxxxx0100)));
+  assign net_810 = (~i_adc2B_d_4 & ~cmd27_select & (~(i_i2c_cmd6D_b4 & cmd6D_select))) | (~i_adc2B_d_4 & cmd27_select & (~(i_i2c_cmd6D_b4 & cmd6D_select))) | (i_adc2B_d_4 & ~cmd27_select & (~(i_i2c_cmd6D_b4 & cmd6D_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_809 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_804 <= 1'b0;
-      end
-      else
-      begin
-        net_804 <= io_i2c_sda;
+      i_i2c_cmd6D_b4 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6D_e4 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6D_b4 <= io_i2c_sda;
       end
     end
   end
@@ -5142,20 +5139,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 431, MSLICE 1
 
-  assign net_807 = (~net_702 & ((net_1302 & net_1634)));
-  assign net_808 = (~cmd6A_select & ~net_1370 & (~(net_806 & cmd6C_select))) | (~cmd6A_select & net_1370 & (~(net_806 & cmd6C_select))) | (cmd6A_select & ~net_1370 & (~(net_806 & cmd6C_select)));
+  assign i2c_cmd6C_e4 = (~i2c_send_enable & ((i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx0110)));
+  assign net_808 = (~cmd6A_select & ~i_i2c_cmd6A_b4 & (~(i_i2c_cmd6C_b4 & cmd6C_select))) | (~cmd6A_select & i_i2c_cmd6A_b4 & (~(i_i2c_cmd6C_b4 & cmd6C_select))) | (cmd6A_select & ~i_i2c_cmd6A_b4 & (~(i_i2c_cmd6C_b4 & cmd6C_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_807 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_806 <= 1'b0;
-      end
-      else
-      begin
-        net_806 <= io_i2c_sda;
+      i_i2c_cmd6C_b4 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6C_e4 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6C_b4 <= io_i2c_sda;
       end
     end
   end
@@ -5164,26 +5161,26 @@ module FNIRSI_1013D
 //Block 432, MSLICE 0
 
   assign sig_432_lut_0 = 1'b0;
-  assign sig_432_lut_1 = (~cmd6C_select & ~net_1216 & (~(net_1407 & cmd6E_select))) | (~cmd6C_select & net_1216 & (~(net_1407 & cmd6E_select))) | (cmd6C_select & ~net_1216 & (~(net_1407 & cmd6E_select)));
+  assign sig_432_lut_1 = (~cmd6C_select & ~i_i2c_cmd6C_b2 & (~(i_i2c_cmd6E_b2 & cmd6E_select))) | (~cmd6C_select & i_i2c_cmd6C_b2 & (~(i_i2c_cmd6E_b2 & cmd6E_select))) | (cmd6C_select & ~i_i2c_cmd6C_b2 & (~(i_i2c_cmd6E_b2 & cmd6E_select)));
   assign net_814 = (~net_817 & sig_432_lut_0) | (net_817 & sig_432_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 433, LSLICE 2
 
-  assign net_813 = ((~net_702 & net_811));
-  assign net_811 = ((net_1577 & net_1626));
+  assign i2c_cmd6D_e6 = ((~i2c_send_enable & i2c_state_0000000011000000));
+  assign i2c_state_0000000011000000 = ((i2c_state_000000001100xxxx & i2c_state_xxxxxxxxxxxx0000));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_813 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_812 <= 1'b0;
-      end
-      else
-      begin
-        net_812 <= io_i2c_sda;
+      i_i2c_cmd6D_b6 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6D_e6 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6D_b6 <= io_i2c_sda;
       end
     end
   end
@@ -5191,20 +5188,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 434, LSLICE 3
 
-  assign net_816 = (net_1617 & ((~net_702 & net_1577)));
-  assign net_817 = (~cmd27_select & ~i_adc2B_d_2 & (~(net_815 & cmd6D_select))) | (~cmd27_select & i_adc2B_d_2 & (~(net_815 & cmd6D_select))) | (cmd27_select & ~i_adc2B_d_2 & (~(net_815 & cmd6D_select)));
+  assign i2c_cmd6D_e2 = (i2c_state_xxxxxxxxxxxx1000 & ((~i2c_send_enable & i2c_state_000000001100xxxx)));
+  assign net_817 = (~cmd27_select & ~i_adc2B_d_2 & (~(i_i2c_cmd6D_b2 & cmd6D_select))) | (~cmd27_select & i_adc2B_d_2 & (~(i_i2c_cmd6D_b2 & cmd6D_select))) | (cmd27_select & ~i_adc2B_d_2 & (~(i_i2c_cmd6D_b2 & cmd6D_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_816 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_815 <= 1'b1;
-      end
-      else
-      begin
-        net_815 <= io_i2c_sda;
+      i_i2c_cmd6D_b2 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6D_e2 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6D_b2 <= io_i2c_sda;
       end
     end
   end
@@ -5212,26 +5209,26 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 435, MSLICE 0
 
-  assign net_819 = ((i_mcu_rws & cmd6D_select));
-  assign net_818 = ((i_mcu_rws & cmd6B_select));
+  assign cmd6D_write_enable = ((i_mcu_rws & cmd6D_select));
+  assign cmd6B_write_enable = ((i_mcu_rws & cmd6B_select));
 
 //---------------------------------------------------------------------------
 //Block 436, LSLICE 2
 
-  assign net_821 = (~net_702 & ((net_1625 & net_1302)));
-  assign net_822 = (~i_adc2B_d_6 & ~cmd27_select & (~(net_826 & cmd6C_select))) | (~i_adc2B_d_6 & cmd27_select & (~(net_826 & cmd6C_select))) | (i_adc2B_d_6 & ~cmd27_select & (~(net_826 & cmd6C_select)));
+  assign i2c_cmd6C_e6 = (~i2c_send_enable & ((i2c_state_xxxxxxxxxxxx0010 & i2c_state_000000001010xxxx)));
+  assign net_822 = (~i_adc2B_d_6 & ~cmd27_select & (~(i_i2c_cmd6C_b6 & cmd6C_select))) | (~i_adc2B_d_6 & cmd27_select & (~(i_i2c_cmd6C_b6 & cmd6C_select))) | (i_adc2B_d_6 & ~cmd27_select & (~(i_i2c_cmd6C_b6 & cmd6C_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_821 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_826 <= 1'b0;
-      end
-      else
-      begin
-        net_826 <= io_i2c_sda;
+      i_i2c_cmd6C_b6 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6C_e6 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6C_b6 <= io_i2c_sda;
       end
     end
   end
@@ -5239,52 +5236,52 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 437, LSLICE 3
 
-  assign sig_437_lut_0 = (~net_825 & net_818 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_825 & ~net_818 & ~i_mcu_dcs) | (net_825 & ~net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_825 & net_818 & ~i_mcu_dcs & ((net_431 | io_mcu_d_2))) | (net_825 & net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2)));
-  assign net_823 = (net_1573 & ((net_1138 & net_825)));
+  assign sig_437_lut_0 = (~o_i2c_cmd6B_b2 & cmd6B_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (o_i2c_cmd6B_b2 & ~cmd6B_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6B_b2 & ~cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (o_i2c_cmd6B_b2 & cmd6B_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_2))) | (o_i2c_cmd6B_b2 & cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2)));
+  assign net_823 = (i2c_state_xxxxxxxxxxxx1011 & ((i2c_state_000000001000xxxx & o_i2c_cmd6B_b2)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_825 <= sig_437_lut_0;
+    o_i2c_cmd6B_b2 <= sig_437_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 438, MSLICE 1
 
-  assign net_824 = ((cmd6C_select & i_mcu_rws));
-  assign net_820 = ((cmd6E_select & i_mcu_rws));
+  assign cmd6C_write_enable = ((cmd6C_select & i_mcu_rws));
+  assign cmd6E_write_enable = ((cmd6E_select & i_mcu_rws));
 
 //---------------------------------------------------------------------------
 //Block 439, MSLICE 0
 
-  assign sig_439_lut_0 = (net_824 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5)));
-  assign sig_439_lut_1 = (~net_824 & ~io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (~net_824 & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (net_824 & ~io_mcu_d_5 & ((net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (net_824 & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs)));
-  assign sig_439_ff0_d = (~net_827 & sig_439_lut_0) | (net_827 & sig_439_lut_1);
+  assign sig_439_lut_0 = (cmd6C_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5)));
+  assign sig_439_lut_1 = (~cmd6C_write_enable & ~io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (~cmd6C_write_enable & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (cmd6C_write_enable & ~io_mcu_d_5 & ((net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (cmd6C_write_enable & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs)));
+  assign sig_439_ff0_d = (~o_i2c_cmd6C_b5 & sig_439_lut_0) | (o_i2c_cmd6C_b5 & sig_439_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_827 <= sig_439_ff0_d;
+    o_i2c_cmd6C_b5 <= sig_439_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 440, LSLICE 2
 
-  assign sig_440_lut_0 = (~net_830 & net_819 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_830 & ~net_819 & ~i_mcu_dcs) | (net_830 & ~net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_830 & net_819 & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (net_830 & net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
-  assign net_829 = (net_702 & ~net_987 & ~net_830) | (net_702 & ~net_987 & net_830 & (~(net_1462 & net_1011)));
+  assign sig_440_lut_0 = (~o_i2c_cmd6D_b6 & cmd6D_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (o_i2c_cmd6D_b6 & ~cmd6D_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6D_b6 & ~cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (o_i2c_cmd6D_b6 & cmd6D_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (o_i2c_cmd6D_b6 & cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
+  assign net_829 = (i2c_send_enable & ~i2c_state_0000000011111001 & ~o_i2c_cmd6D_b6) | (i2c_send_enable & ~i2c_state_0000000011111001 & o_i2c_cmd6D_b6 & (~(i2c_state_xxxxxxxx1011xxxx & i2c_state_00000000xxxx1111)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_830 <= sig_440_lut_0;
+    o_i2c_cmd6D_b6 <= sig_440_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 441, LSLICE 3
 
-  assign sig_441_lut_0 = (~net_831 & ~i_mcu_dcs & net_828) | (~net_831 & i_mcu_dcs & ~net_828 & ((~net_431 & ~io_mcu_d_5) | (~net_431 & io_mcu_d_5))) | (~net_831 & i_mcu_dcs & net_828) | (net_831 & ~i_mcu_dcs & ~net_828 & ((~net_431 & io_mcu_d_5))) | (net_831 & ~i_mcu_dcs & net_828 & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5))) | (net_831 & i_mcu_dcs & ~net_828 & ((~net_431 & ~io_mcu_d_5) | (~net_431 & io_mcu_d_5))) | (net_831 & i_mcu_dcs & net_828);
-  assign net_831 = ((cmd69_select & i_mcu_rws));
+  assign sig_441_lut_0 = (~cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b5) | (~cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b5 & ((~net_431 & ~io_mcu_d_5) | (~net_431 & io_mcu_d_5))) | (~cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b5) | (cmd69_write_enable & ~i_mcu_dcs & ~o_i2c_cmd69_b5 & ((~net_431 & io_mcu_d_5))) | (cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b5 & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5))) | (cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b5 & ((~net_431 & ~io_mcu_d_5) | (~net_431 & io_mcu_d_5))) | (cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b5);
+  assign cmd69_write_enable = ((cmd69_select & i_mcu_rws));
 
   always @(posedge i_mcu_clk)
   begin
-    net_828 <= sig_441_lut_0;
+    o_i2c_cmd69_b5 <= sig_441_lut_0;
   end
 
 //---------------------------------------------------------------------------
@@ -5295,8 +5292,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable0 == 1'b1)
-    begin
+    if(cmd0E_enable0 == 1'b1)   //enable
+     begin
       sclk_div_l_b24 <= io_mcu_d_0;
     end
   end
@@ -5306,7 +5303,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b0)   //reset
     begin
       { smp_rst_cnt_b3, smp_rst_cnt_b2, smp_rst_cnt_b1, smp_rst_cnt_b0 } <= { 1'b0, 1'b0, 1'b0, 1'b0 };
     end
@@ -5321,8 +5318,8 @@ module FNIRSI_1013D
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
-    begin
+    if(smp_clk_enable == 1'b1)   //enable
+     begin
       adc2_encA <= adc2_encB;
       adc1_encA <= adc1_encB;
     end
@@ -5336,8 +5333,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd36_enable == 1'b1)
-    begin
+    if(cmd36_enable == 1'b1)   //enable
+     begin
       relay2_2 <= sig_447_lut_0;
       relay2_3 <= sig_447_lut_1;
     end
@@ -5351,8 +5348,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd33_enable == 1'b1)
-    begin
+    if(cmd33_enable == 1'b1)   //enable
+     begin
       relay1_2 <= sig_448_lut_0;
       relay1_3 <= sig_448_lut_1;
     end
@@ -5367,8 +5364,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd33_enable == 1'b1)
-    begin
+    if(cmd33_enable == 1'b1)   //enable
+     begin
       relay1_1 <= sig_449_ff0_d;
     end
   end
@@ -5376,198 +5373,198 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 477, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_899 <= 1'b0;
-      net_890 <= 1'b0;
+      calib_1KHz_r0 <= 1'b0;
+      calib_1KHz_r1 <= 1'b0;
     end
     else
     begin
-      net_899 <= net_898;
-      net_890 <= net_893;
+      calib_1KHz_r0 <= calib_1KHz_c0;
+      calib_1KHz_r1 <= calib_1KHz_c1;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 478, LSLICE 3
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_889 <= 1'b0;
-      net_891 <= 1'b0;
+      calib_1KHz_r3 <= 1'b0;
+      calib_1KHz_r4 <= 1'b0;
     end
     else
     begin
-      net_889 <= net_897;
-      net_891 <= net_895;
+      calib_1KHz_r3 <= calib_1KHz_c3;
+      calib_1KHz_r4 <= calib_1KHz_c4;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 480, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_903 <= 1'b0;
-      net_902 <= 1'b0;
+      calib_1KHz_r10 <= 1'b0;
+      calib_1KHz_r7 <= 1'b0;
     end
     else
     begin
-      net_903 <= net_918;
-      net_902 <= net_911;
+      calib_1KHz_r10 <= calib_1KHz_c10;
+      calib_1KHz_r7 <= calib_1KHz_c7;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 481, LSLICE 3
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_901 <= 1'b0;
-      net_905 <= 1'b0;
+      calib_1KHz_r11 <= 1'b0;
+      calib_1KHz_r12 <= 1'b0;
     end
     else
     begin
-      net_901 <= net_909;
-      net_905 <= net_914;
+      calib_1KHz_r11 <= calib_1KHz_c11;
+      calib_1KHz_r12 <= calib_1KHz_c12;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 483, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_920 <= 1'b0;
-      net_927 <= 1'b0;
+      calib_1KHz_r15 <= 1'b0;
+      calib_1KHz_r16 <= 1'b0;
     end
     else
     begin
-      net_920 <= net_926;
-      net_927 <= net_929;
+      calib_1KHz_r15 <= calib_1KHz_c15;
+      calib_1KHz_r16 <= calib_1KHz_c16;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 484, LSLICE 3
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_921 <= 1'b0;
-      net_925 <= 1'b0;
+      calib_1KHz_r19 <= 1'b0;
+      calib_1KHz_r20 <= 1'b0;
     end
     else
     begin
-      net_921 <= net_930;
-      net_925 <= net_928;
+      calib_1KHz_r19 <= calib_1KHz_c19;
+      calib_1KHz_r20 <= calib_1KHz_c20;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 486, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_932 <= 1'b0;
-      net_949 <= 1'b0;
+      calib_1KHz_r23 <= 1'b0;
+      calib_1KHz_r24 <= 1'b0;
     end
     else
     begin
-      net_932 <= net_942;
-      net_949 <= net_946;
+      calib_1KHz_r23 <= calib_1KHz_c23;
+      calib_1KHz_r24 <= calib_1KHz_c24;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 487, LSLICE 3
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_933 <= 1'b0;
-      net_936 <= 1'b0;
+      calib_1KHz_r27 <= 1'b0;
+      calib_1KHz_r28 <= 1'b0;
     end
     else
     begin
-      net_933 <= net_947;
-      net_936 <= net_945;
+      calib_1KHz_r27 <= calib_1KHz_c27;
+      calib_1KHz_r28 <= calib_1KHz_c28;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 490, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_950 <= 1'b0;
-      net_952 <= 1'b0;
+      calib_1KHz_r31 <= 1'b0;
+      calib_1KHz_r18 <= 1'b0;
     end
     else
     begin
-      net_950 <= net_954;
-      net_952 <= net_923;
+      calib_1KHz_r31 <= calib_1KHz_c31;
+      calib_1KHz_r18 <= calib_1KHz_c18;
     end
   end
 
 //---------------------------------------------------------------------------
 //LSICE adder blocks 477, 478, 480, 481, 483, 484, 486, 487, 490
 
-  assign { net_954, net_943, net_948, net_945, net_947, net_939, net_937, net_946, net_942, net_931, net_922, net_928, net_930, net_923, net_924, net_929, net_926, net_910, net_916, net_914, net_909, net_918, net_904, net_915, net_911, net_892, net_896, net_895, net_897, net_894, net_893, net_898 } = { net_950, net_1263, net_751, net_936, net_933, net_934, net_1194, net_949, net_932, net_380, net_1195, net_925, net_921, net_952, net_900, net_927, net_920, net_1097, net_1095, net_905, net_901, net_903, net_912, net_913, net_902, net_1093, net_908, net_891, net_889, net_1094, net_890, net_899 } + { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1 };
+  assign { calib_1KHz_c31, calib_1KHz_c30, calib_1KHz_c29, calib_1KHz_c28, calib_1KHz_c27, calib_1KHz_c26, calib_1KHz_c25, calib_1KHz_c24, calib_1KHz_c23, calib_1KHz_c22, calib_1KHz_c21, calib_1KHz_c20, calib_1KHz_c19, calib_1KHz_c18, calib_1KHz_c17, calib_1KHz_c16, calib_1KHz_c15, calib_1KHz_c14, calib_1KHz_c13, calib_1KHz_c12, calib_1KHz_c11, calib_1KHz_c10, calib_1KHz_c9, calib_1KHz_c8, calib_1KHz_c7, calib_1KHz_c6, calib_1KHz_c5, calib_1KHz_c4, calib_1KHz_c3, calib_1KHz_c2, calib_1KHz_c1, calib_1KHz_c0 } = { calib_1KHz_r31, calib_1KHz_r30, calib_1KHz_r29, calib_1KHz_r28, calib_1KHz_r27, calib_1KHz_r26, calib_1KHz_r25, calib_1KHz_r24, calib_1KHz_r23, calib_1KHz_r22, calib_1KHz_r21, calib_1KHz_r20, calib_1KHz_r19, calib_1KHz_r18, calib_1KHz_r17, calib_1KHz_r16, calib_1KHz_r15, calib_1KHz_r14, calib_1KHz_r13, calib_1KHz_r12, calib_1KHz_r11, calib_1KHz_r10, calib_1KHz_r9, calib_1KHz_r8, calib_1KHz_r7, calib_1KHz_r6, calib_1KHz_r5, calib_1KHz_r4, calib_1KHz_r3, calib_1KHz_r2, calib_1KHz_r1, calib_1KHz_r0 } + { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1 };
 
 //---------------------------------------------------------------------------
 //Block 479, MSLICE 0
 
-  assign net_919 = (~net_1093 & ~net_908) | (~net_1093 & net_908 & ((~net_891 & ~net_889)));
-  assign net_906 = (~net_921 & ~net_925 & ((~net_952 & ~net_900)));
+  assign calib_1KHz_d = (~calib_1KHz_r6 & ~calib_1KHz_r5) | (~calib_1KHz_r6 & calib_1KHz_r5 & ((~calib_1KHz_r4 & ~calib_1KHz_r3)));
+  assign calib_1KHz_e = (~calib_1KHz_r19 & ~calib_1KHz_r20 & ((~calib_1KHz_r18 & ~calib_1KHz_r17)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_908 <= 1'b0;
-      net_900 <= 1'b0;
+      calib_1KHz_r5 <= 1'b0;
+      calib_1KHz_r17 <= 1'b0;
     end
     else
     begin
-      net_908 <= net_896;
-      net_900 <= net_924;
+      calib_1KHz_r5 <= calib_1KHz_c5;
+      calib_1KHz_r17 <= calib_1KHz_c17;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 482, MSLICE 1
 
-  assign net_917 = (~net_912 & ~net_905 & ((~net_901 & ~net_903)));
-  assign net_907 = (~net_902 & ~net_913 & ((net_917 & ~net_919) | (net_917 & net_919))) | (~net_902 & net_913 & ((net_917 & ~net_919) | (net_917 & net_919))) | (net_902 & ~net_913 & ((net_917 & ~net_919) | (net_917 & net_919))) | (net_902 & net_913 & ((net_917 & net_919)));
+  assign calib_1KHz_c = (~calib_1KHz_r9 & ~calib_1KHz_r12 & ((~calib_1KHz_r11 & ~calib_1KHz_r10)));
+  assign calib_1KHz_b = (~calib_1KHz_r7 & ~calib_1KHz_r8 & ((calib_1KHz_c & ~calib_1KHz_d) | (calib_1KHz_c & calib_1KHz_d))) | (~calib_1KHz_r7 & calib_1KHz_r8 & ((calib_1KHz_c & ~calib_1KHz_d) | (calib_1KHz_c & calib_1KHz_d))) | (calib_1KHz_r7 & ~calib_1KHz_r8 & ((calib_1KHz_c & ~calib_1KHz_d) | (calib_1KHz_c & calib_1KHz_d))) | (calib_1KHz_r7 & calib_1KHz_r8 & ((calib_1KHz_c & calib_1KHz_d)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_912 <= 1'b0;
-      net_913 <= 1'b0;
+      calib_1KHz_r9 <= 1'b0;
+      calib_1KHz_r8 <= 1'b0;
     end
     else
     begin
-      net_912 <= net_904;
-      net_913 <= net_915;
+      calib_1KHz_r9 <= calib_1KHz_c9;
+      calib_1KHz_r8 <= calib_1KHz_c8;
     end
   end
 
@@ -5578,15 +5575,15 @@ module FNIRSI_1013D
   assign sig_485_lut_1 = (~net_1106 & ~net_545 & ((~offset1_pwm_r10 & ~ch1_offset_b10) | (offset1_pwm_r10 & ~ch1_offset_b10) | (offset1_pwm_r10 & ch1_offset_b10))) | (~net_1106 & net_545 & ((~offset1_pwm_r10 & ~ch1_offset_b10) | (offset1_pwm_r10 & ~ch1_offset_b10) | (offset1_pwm_r10 & ch1_offset_b10))) | (net_1106 & ~net_545 & ((~offset1_pwm_r10 & ~ch1_offset_b10) | (offset1_pwm_r10 & ~ch1_offset_b10) | (offset1_pwm_r10 & ch1_offset_b10))) | (net_1106 & net_545 & ((~offset1_pwm_r10 & ~ch1_offset_b10) | (offset1_pwm_r10 & ~ch1_offset_b10) | (offset1_pwm_r10 & ch1_offset_b10)));
   assign net_944 = (~net_757 & sig_485_lut_0) | (net_757 & sig_485_lut_1);
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_934 <= 1'b1;
+      calib_1KHz_r26 <= 1'b0;
     end
     else
     begin
-      net_934 <= net_939;
+      calib_1KHz_r26 <= calib_1KHz_c26;
     end
   end
 
@@ -5598,8 +5595,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd32_enable0 == 1'b1)
-    begin
+    if(cmd32_enable0 == 1'b1)   //enable
+     begin
       ch1_offset_b13 <= io_mcu_d_5;
       ch1_offset_b12 <= io_mcu_d_4;
     end
@@ -5613,8 +5610,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd32_enable0 == 1'b1)
-    begin
+    if(cmd32_enable0 == 1'b1)   //enable
+     begin
       ch1_offset_b14 <= io_mcu_d_6;
       ch1_offset_b11 <= io_mcu_d_3;
     end
@@ -5623,26 +5620,26 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 491, LSLICE 3
 
-  assign net_958 = (~net_351 & ~cmd25_select & ~i_adc1B_d_1 & (~(net_1394 & cmd6E_select))) | (~net_351 & ~cmd25_select & i_adc1B_d_1 & (~(net_1394 & cmd6E_select))) | (~net_351 & cmd25_select & ~i_adc1B_d_1 & (~(net_1394 & cmd6E_select)));
-  assign net_957 = (net_958 & net_1120 & net_1202 & (~(net_1486 & cmd68_select)));
+  assign net_958 = (~net_351 & ~cmd25_select & ~i_adc1B_d_1 & (~(i_i2c_cmd6E_b1 & cmd6E_select))) | (~net_351 & ~cmd25_select & i_adc1B_d_1 & (~(i_i2c_cmd6E_b1 & cmd6E_select))) | (~net_351 & cmd25_select & ~i_adc1B_d_1 & (~(i_i2c_cmd6E_b1 & cmd6E_select)));
+  assign net_957 = (net_958 & net_1120 & net_1202 & (~(i_i2c_cmd68_b1 & cmd68_select)));
 
 //---------------------------------------------------------------------------
 //Block 492, MSLICE 0
 
-  assign net_967 = (~net_702 & ((net_1461 & net_1483)));
-  assign net_960 = (~cmd26_select & ~i_adc2A_d_6 & (~(net_959 & cmd6E_select))) | (~cmd26_select & i_adc2A_d_6 & (~(net_959 & cmd6E_select))) | (cmd26_select & ~i_adc2A_d_6 & (~(net_959 & cmd6E_select)));
+  assign i2c_cmd6E_e6 = (~i2c_send_enable & ((i2c_state_xxxxxxxx1101xxxx & i2c_state_00000000xxxx1110)));
+  assign net_960 = (~cmd26_select & ~i_adc2A_d_6 & (~(i_i2c_cmd6E_b6 & cmd6E_select))) | (~cmd26_select & i_adc2A_d_6 & (~(i_i2c_cmd6E_b6 & cmd6E_select))) | (cmd26_select & ~i_adc2A_d_6 & (~(i_i2c_cmd6E_b6 & cmd6E_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_967 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_959 <= 1'b0;
-      end
-      else
-      begin
-        net_959 <= io_i2c_sda;
+      i_i2c_cmd6E_b6 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6E_e6 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6E_b6 <= io_i2c_sda;
       end
     end
   end
@@ -5650,20 +5647,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 493, LSLICE 2
 
-  assign net_963 = (net_1483 & ((net_1365 & ~net_702)));
-  assign net_964 = (~i_adc1B_d_2 & ~cmd25_select & (~(net_969 & cmd6A_select))) | (~i_adc1B_d_2 & cmd25_select & (~(net_969 & cmd6A_select))) | (i_adc1B_d_2 & ~cmd25_select & (~(net_969 & cmd6A_select)));
+  assign i2c_cmd6A_e2 = (i2c_state_00000000xxxx1110 & ((i2c_state_xxxxxxxx0110xxxx & ~i2c_send_enable)));
+  assign net_964 = (~i_adc1B_d_2 & ~cmd25_select & (~(i_i2c_cmd6A_b2 & cmd6A_select))) | (~i_adc1B_d_2 & cmd25_select & (~(i_i2c_cmd6A_b2 & cmd6A_select))) | (i_adc1B_d_2 & ~cmd25_select & (~(i_i2c_cmd6A_b2 & cmd6A_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_963 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_969 <= 1'b1;
-      end
-      else
-      begin
-        net_969 <= io_i2c_sda;
+      i_i2c_cmd6A_b2 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6A_e2 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6A_b2 <= io_i2c_sda;
       end
     end
   end
@@ -5671,20 +5668,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 494, LSLICE 3
 
-  assign net_970 = (net_684 & ~cmd24_select & ~i_adc1A_d_3 & (~(net_962 & cmd69_select))) | (net_684 & ~cmd24_select & i_adc1A_d_3 & (~(net_962 & cmd69_select))) | (net_684 & cmd24_select & ~i_adc1A_d_3 & (~(net_962 & cmd69_select)));
-  assign net_968 = (~net_702 & ((net_1470 & net_1483)));
+  assign net_970 = (net_684 & ~cmd24_select & ~i_adc1A_d_3 & (~(i_i2c_cmd69_b3 & cmd69_select))) | (net_684 & ~cmd24_select & i_adc1A_d_3 & (~(i_i2c_cmd69_b3 & cmd69_select))) | (net_684 & cmd24_select & ~i_adc1A_d_3 & (~(i_i2c_cmd69_b3 & cmd69_select)));
+  assign i2c_cmd69_e3 = (~i2c_send_enable & ((i2c_state_xxxxxxxx0100xxxx & i2c_state_00000000xxxx1110)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_968 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_962 <= 1'b1;
-      end
-      else
-      begin
-        net_962 <= io_i2c_sda;
+      i_i2c_cmd69_b3 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd69_e3 == 1'b1)   //enable
+       begin
+        i_i2c_cmd69_b3 <= io_i2c_sda;
       end
     end
   end
@@ -5692,19 +5689,19 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 495, MSLICE 1
 
-  assign net_966 = ((net_1605 & net_1460));
+  assign i2c_cmd6D_e0 = ((net_1605 & i2c_state_xxxxxxxx1100xxxx));
   assign net_961 = (~cmd0A_select & ~sample_write_enable & (~(i_i2c_cmd6D_b0 & cmd6D_select))) | (~cmd0A_select & sample_write_enable & (~(i_i2c_cmd6D_b0 & cmd6D_select))) | (cmd0A_select & sample_write_enable & (~(i_i2c_cmd6D_b0 & cmd6D_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_966 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        i_i2c_cmd6D_b0 <= 1'b0;
-      end
-      else
-      begin
+      i_i2c_cmd6D_b0 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6D_e0 == 1'b1)   //enable
+       begin
         i_i2c_cmd6D_b0 <= io_i2c_sda;
       end
     end
@@ -5713,20 +5710,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 496, MSLICE 0
 
-  assign net_975 = (net_1529 & ((~net_702 & net_1470)));
-  assign net_977 = (~net_971 & ~net_752) | (~net_971 & net_752 & ((~cmd69_select & ~net_534) | (cmd69_select & ~net_534))) | (net_971 & ~net_752 & ((~cmd69_select & ~net_534) | (~cmd69_select & net_534))) | (net_971 & net_752 & ((~cmd69_select & ~net_534)));
+  assign i2c_cmd69_e5 = (i2c_state_00000000xxxx1010 & ((~i2c_send_enable & i2c_state_xxxxxxxx0100xxxx)));
+  assign net_977 = (~i_i2c_cmd69_b5 & ~net_752) | (~i_i2c_cmd69_b5 & net_752 & ((~cmd69_select & ~net_534) | (cmd69_select & ~net_534))) | (i_i2c_cmd69_b5 & ~net_752 & ((~cmd69_select & ~net_534) | (~cmd69_select & net_534))) | (i_i2c_cmd69_b5 & net_752 & ((~cmd69_select & ~net_534)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_975 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_971 <= 1'b0;
-      end
-      else
-      begin
-        net_971 <= io_i2c_sda;
+      i_i2c_cmd69_b5 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd69_e5 == 1'b1)   //enable
+       begin
+        i_i2c_cmd69_b5 <= io_i2c_sda;
       end
     end
   end
@@ -5734,13 +5731,13 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 497, LSLICE 2
 
-  assign sig_497_lut_0 = (~net_982 & ~net_1403 & ~net_1338) | (~net_982 & ~net_1403 & net_1338) | (~net_982 & net_1403 & ~net_1338) | (~net_982 & net_1403 & net_1338 & ((net_974 | net_1155)));
+  assign sig_497_lut_0 = (~net_982 & ~net_1403 & ~net_1338) | (~net_982 & ~net_1403 & net_1338) | (~net_982 & net_1403 & ~net_1338) | (~net_982 & net_1403 & net_1338 & ((net_974 | i2c_state_0000000001010111)));
   assign net_974 = (~net_1317 & i2c_sda_dir) | (net_1317 & i2c_sda_dir & (~(net_979 & net_1222)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_700 == 1'b0)
-    begin
+    if(i2c_disable == 1'b0)   //enable
+     begin
       i2c_sda_dir <= sig_497_lut_0;
     end
   end
@@ -5755,7 +5752,7 @@ module FNIRSI_1013D
 //Block 499, LSLICE 3
 
   assign net_978 = (net_1207 & net_984 & ((net_1478 & ~net_1141)));
-  assign net_979 = ((~net_1141 & ~net_987));
+  assign net_979 = ((~net_1141 & ~i2c_state_0000000011111001));
 
 //---------------------------------------------------------------------------
 //Block 500, MSLICE 0
@@ -5767,20 +5764,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 501, LSLICE 2
 
-  assign net_983 = (~net_702 & ((net_1379 & net_1633)));
-  assign net_980 = (~i_adc2B_d_3 & ~cmd6E_select) | (~i_adc2B_d_3 & cmd6E_select & ((~net_985 & ~cmd27_select) | (~net_985 & cmd27_select))) | (i_adc2B_d_3 & ~cmd6E_select & ((~net_985 & ~cmd27_select) | (net_985 & ~cmd27_select))) | (i_adc2B_d_3 & cmd6E_select & ((~net_985 & ~cmd27_select)));
+  assign i2c_cmd6E_e3 = (~i2c_send_enable & ((i2c_state_000000001110xxxx & i2c_state_xxxxxxxxxxxx0100)));
+  assign net_980 = (~i_adc2B_d_3 & ~cmd6E_select) | (~i_adc2B_d_3 & cmd6E_select & ((~i_i2c_cmd6E_b3 & ~cmd27_select) | (~i_i2c_cmd6E_b3 & cmd27_select))) | (i_adc2B_d_3 & ~cmd6E_select & ((~i_i2c_cmd6E_b3 & ~cmd27_select) | (i_i2c_cmd6E_b3 & ~cmd27_select))) | (i_adc2B_d_3 & cmd6E_select & ((~i_i2c_cmd6E_b3 & ~cmd27_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_983 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_985 <= 1'b0;
-      end
-      else
-      begin
-        net_985 <= io_i2c_sda;
+      i_i2c_cmd6E_b3 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6E_e3 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6E_b3 <= io_i2c_sda;
       end
     end
   end
@@ -5788,7 +5785,7 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 502, LSLICE 3
 
-  assign net_981 = ((net_1474 & net_1633));
+  assign i2c_state_0000000001010100 = ((i2c_state_000000000101xxxx & i2c_state_xxxxxxxxxxxx0100));
   assign net_984 = (net_1487 & ~net_1400 & ((net_1153 & net_1381)));
 
 //---------------------------------------------------------------------------
@@ -5798,10 +5795,10 @@ module FNIRSI_1013D
   assign sig_503_lut_1 = (~net_1218 & ~net_1242) | (~net_1218 & net_1242 & ((~net_978 & ~net_1506) | (~net_978 & net_1506))) | (net_1218 & ~net_1242 & ((~net_978 & ~net_1506) | (net_978 & ~net_1506))) | (net_1218 & net_1242 & ((~net_978 & ~net_1506)));
   assign sig_503_ff0_d = (~o_i2c_sda & sig_503_lut_0) | (o_i2c_sda & sig_503_lut_1);
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_700 == 1'b0)
-    begin
+    if(i2c_disable == 1'b0)   //enable
+     begin
       o_i2c_sda <= sig_503_ff0_d;
     end
   end
@@ -5809,25 +5806,25 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 504, LSLICE 2
 
-  assign net_986 = ((net_1566 & net_1608));
-  assign net_987 = ((net_986 & net_1528));
+  assign i2c_state_00000000xxxx1001 = ((i2c_state_xxxxxxxxxxxx1001 & i2c_state_00000000xxxxxxxx));
+  assign i2c_state_0000000011111001 = ((i2c_state_00000000xxxx1001 & i2c_state_xxxxxxxx1111xxxx));
 
 //---------------------------------------------------------------------------
 //Block 505, MSLICE 1
 
-  assign net_989 = ((~net_702 & net_1498));
+  assign i2c_cmd6B_e0 = ((~i2c_send_enable & i2c_state_0000000010010000));
   assign net_990 = (~cmd6B_select & ~i_adc1B_d_0) | (~cmd6B_select & i_adc1B_d_0 & ((~i_i2c_cmd6B_b0 & ~cmd25_select) | (i_i2c_cmd6B_b0 & ~cmd25_select))) | (cmd6B_select & ~i_adc1B_d_0 & ((~i_i2c_cmd6B_b0 & ~cmd25_select) | (~i_i2c_cmd6B_b0 & cmd25_select))) | (cmd6B_select & i_adc1B_d_0 & ((~i_i2c_cmd6B_b0 & ~cmd25_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_989 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        i_i2c_cmd6B_b0 <= 1'b0;
-      end
-      else
-      begin
+      i_i2c_cmd6B_b0 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6B_e0 == 1'b1)   //enable
+       begin
         i_i2c_cmd6B_b0 <= io_i2c_sda;
       end
     end
@@ -5836,20 +5833,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 506, MSLICE 0
 
-  assign net_995 = (net_1302 & ((~net_702 & net_1617)));
-  assign net_996 = (~net_1617 & ((net_1302 & net_1634))) | (net_1617 & ((net_1302 & ~net_1634) | (net_1302 & net_1634)));
+  assign i2c_cmd6C_e3 = (i2c_state_000000001010xxxx & ((~i2c_send_enable & i2c_state_xxxxxxxxxxxx1000)));
+  assign net_996 = (~i2c_state_xxxxxxxxxxxx1000 & ((i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx0110))) | (i2c_state_xxxxxxxxxxxx1000 & ((i2c_state_000000001010xxxx & ~i2c_state_xxxxxxxxxxxx0110) | (i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx0110)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_995 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_999 <= 1'b0;
-      end
-      else
-      begin
-        net_999 <= io_i2c_sda;
+      i_i2c_cmd6C_b3 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6C_e3 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6C_b3 <= io_i2c_sda;
       end
     end
   end
@@ -5857,26 +5854,26 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 507, LSLICE 2
 
-  assign net_992 = ((net_1462 & net_1483));
-  assign net_993 = ((~net_992 & ~net_1497));
+  assign i2c_state_0000000010111110 = ((i2c_state_xxxxxxxx1011xxxx & i2c_state_00000000xxxx1110));
+  assign net_993 = ((~i2c_state_0000000010111110 & ~i2c_state_0000000010110000));
 
 //---------------------------------------------------------------------------
 //Block 508, LSLICE 3
 
-  assign net_998 = (net_1626 & ((~net_702 & net_1379)));
-  assign net_997 = (~net_1622 & ~cmd6A_select & (~(net_994 & cmd6E_select))) | (~net_1622 & cmd6A_select & (~(net_994 & cmd6E_select))) | (net_1622 & ~cmd6A_select & (~(net_994 & cmd6E_select)));
+  assign i2c_cmd6E_e5 = (i2c_state_xxxxxxxxxxxx0000 & ((~i2c_send_enable & i2c_state_000000001110xxxx)));
+  assign net_997 = (~i_i2c_cmd6A_b5 & ~cmd6A_select & (~(i_i2c_cmd6E_b5 & cmd6E_select))) | (~i_i2c_cmd6A_b5 & cmd6A_select & (~(i_i2c_cmd6E_b5 & cmd6E_select))) | (i_i2c_cmd6A_b5 & ~cmd6A_select & (~(i_i2c_cmd6E_b5 & cmd6E_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_998 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_994 <= 1'b0;
-      end
-      else
-      begin
-        net_994 <= io_i2c_sda;
+      i_i2c_cmd6E_b5 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6E_e5 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6E_b5 <= io_i2c_sda;
       end
     end
   end
@@ -5884,20 +5881,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 509, MSLICE 0
 
-  assign net_1003 = (net_1474 & ((~net_702 & net_1625)));
-  assign net_1005 = (~cmd69_select & ((~net_565 & ~net_1004) | (~net_565 & net_1004))) | (cmd69_select & ((~net_565 & ~net_1004)));
+  assign i2c_cmd69_e1 = (i2c_state_000000000101xxxx & ((~i2c_send_enable & i2c_state_xxxxxxxxxxxx0010)));
+  assign net_1005 = (~cmd69_select & ((~net_565 & ~i_i2c_cmd69_b1) | (~net_565 & i_i2c_cmd69_b1))) | (cmd69_select & ((~net_565 & ~i_i2c_cmd69_b1)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1003 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1004 <= 1'b0;
-      end
-      else
-      begin
-        net_1004 <= io_i2c_sda;
+      i_i2c_cmd69_b1 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd69_e1 == 1'b1)   //enable
+       begin
+        i_i2c_cmd69_b1 <= io_i2c_sda;
       end
     end
   end
@@ -5905,20 +5902,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 510, LSLICE 2
 
-  assign net_1001 = (net_1634 & ((net_1577 & ~net_702)));
-  assign net_1002 = (net_1577 & ((net_1634 | net_1617)));
+  assign i2c_cmd6D_e3 = (i2c_state_xxxxxxxxxxxx0110 & ((i2c_state_000000001100xxxx & ~i2c_send_enable)));
+  assign i2c_state_198_200 = (i2c_state_000000001100xxxx & ((i2c_state_xxxxxxxxxxxx0110 | i2c_state_xxxxxxxxxxxx1000)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1001 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1006 <= 1'b0;
-      end
-      else
-      begin
-        net_1006 <= io_i2c_sda;
+      i_i2c_cmd6D_b3 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6D_e3 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6D_b3 <= io_i2c_sda;
       end
     end
   end
@@ -5926,16 +5923,16 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 511, MSLICE 1
 
-  assign sig_511_lut_0 = (~net_1011 & ~net_1461) | (~net_1011 & net_1461 & ((~net_1462 & ~net_1483) | (net_1462 & ~net_1483))) | (net_1011 & ~net_1461 & ((~net_1462 & ~net_1483) | (~net_1462 & net_1483)));
+  assign sig_511_lut_0 = (~i2c_state_00000000xxxx1111 & ~i2c_state_xxxxxxxx1101xxxx) | (~i2c_state_00000000xxxx1111 & i2c_state_xxxxxxxx1101xxxx & ((~i2c_state_xxxxxxxx1011xxxx & ~i2c_state_00000000xxxx1110) | (i2c_state_xxxxxxxx1011xxxx & ~i2c_state_00000000xxxx1110))) | (i2c_state_00000000xxxx1111 & ~i2c_state_xxxxxxxx1101xxxx & ((~i2c_state_xxxxxxxx1011xxxx & ~i2c_state_00000000xxxx1110) | (~i2c_state_xxxxxxxx1011xxxx & i2c_state_00000000xxxx1110)));
   assign sig_511_lut_1 = 1'b0;
-  assign net_1000 = (~net_811 & sig_511_lut_0) | (net_811 & sig_511_lut_1);
+  assign net_1000 = (~i2c_state_0000000011000000 & sig_511_lut_0) | (i2c_state_0000000011000000 & sig_511_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 512, MSLICE 0
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg2 <= 1'b0;
       smp_clk_l_cnt_reg5 <= 1'b0;
@@ -5952,8 +5949,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable3 == 1'b1)
-    begin
+    if(cmd0E_enable3 == 1'b1)   //enable
+     begin
       sclk_div_l_b1 <= io_mcu_d_1;
       sclk_div_l_b2 <= io_mcu_d_2;
     end
@@ -5964,8 +5961,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable3 == 1'b1)
-    begin
+    if(cmd0E_enable3 == 1'b1)   //enable
+     begin
       sclk_div_l_b3 <= io_mcu_d_3;
       sclk_div_l_b4 <= io_mcu_d_4;
     end
@@ -5976,8 +5973,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable3 == 1'b1)
-    begin
+    if(cmd0E_enable3 == 1'b1)   //enable
+     begin
       sclk_div_l_b5 <= io_mcu_d_5;
       sclk_div_l_b6 <= io_mcu_d_6;
     end
@@ -5988,8 +5985,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable3 == 1'b1)
-    begin
+    if(cmd0E_enable3 == 1'b1)   //enable
+     begin
       sclk_div_l_b7 <= io_mcu_d_7;
     end
   end
@@ -5999,8 +5996,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable2 == 1'b1)
-    begin
+    if(cmd0E_enable2 == 1'b1)   //enable
+     begin
       sclk_div_l_b9 <= io_mcu_d_1;
     end
   end
@@ -6010,8 +6007,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable2 == 1'b1)
-    begin
+    if(cmd0E_enable2 == 1'b1)   //enable
+     begin
       sclk_div_l_b11 <= io_mcu_d_3;
       sclk_div_l_b12 <= io_mcu_d_4;
     end
@@ -6022,8 +6019,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable2 == 1'b1)
-    begin
+    if(cmd0E_enable2 == 1'b1)   //enable
+     begin
       sclk_div_l_b13 <= io_mcu_d_5;
       sclk_div_l_b14 <= io_mcu_d_6;
     end
@@ -6034,8 +6031,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable2 == 1'b1)
-    begin
+    if(cmd0E_enable2 == 1'b1)   //enable
+     begin
       sclk_div_l_b15 <= io_mcu_d_7;
     end
   end
@@ -6045,8 +6042,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable1 == 1'b1)
-    begin
+    if(cmd0E_enable1 == 1'b1)   //enable
+     begin
       sclk_div_l_b17 <= io_mcu_d_1;
       sclk_div_l_b18 <= io_mcu_d_2;
     end
@@ -6057,8 +6054,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable1 == 1'b1)
-    begin
+    if(cmd0E_enable1 == 1'b1)   //enable
+     begin
       sclk_div_l_b19 <= io_mcu_d_3;
       sclk_div_l_b20 <= io_mcu_d_4;
     end
@@ -6069,8 +6066,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable1 == 1'b1)
-    begin
+    if(cmd0E_enable1 == 1'b1)   //enable
+     begin
       sclk_div_l_b21 <= io_mcu_d_5;
       sclk_div_l_b22 <= io_mcu_d_6;
     end
@@ -6081,8 +6078,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable1 == 1'b1)
-    begin
+    if(cmd0E_enable1 == 1'b1)   //enable
+     begin
       sclk_div_l_b23 <= io_mcu_d_7;
     end
   end
@@ -6092,8 +6089,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable0 == 1'b1)
-    begin
+    if(cmd0E_enable0 == 1'b1)   //enable
+     begin
       sclk_div_l_b25 <= io_mcu_d_1;
       sclk_div_l_b26 <= io_mcu_d_2;
     end
@@ -6104,8 +6101,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable0 == 1'b1)
-    begin
+    if(cmd0E_enable0 == 1'b1)   //enable
+     begin
       sclk_div_l_b27 <= io_mcu_d_3;
       sclk_div_l_b28 <= io_mcu_d_4;
     end
@@ -6116,8 +6113,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable0 == 1'b1)
-    begin
+    if(cmd0E_enable0 == 1'b1)   //enable
+     begin
       sclk_div_l_b29 <= io_mcu_d_5;
       sclk_div_l_b30 <= io_mcu_d_6;
     end
@@ -6128,8 +6125,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd0E_enable0 == 1'b1)
-    begin
+    if(cmd0E_enable0 == 1'b1)   //enable
+     begin
       sclk_div_l_b31 <= io_mcu_d_7;
     end
   end
@@ -6142,30 +6139,30 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 513, LSLICE 2
 
-  assign sig_513_lut_0 = (~net_1013 & net_824 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_1013 & ~net_824 & ~i_mcu_dcs) | (net_1013 & ~net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_1013 & net_824 & ~i_mcu_dcs & ((net_431 | io_mcu_d_2))) | (net_1013 & net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2)));
-  assign net_1012 = (~net_1469 & ~net_828 & (~(net_1302 & net_1013))) | (~net_1469 & net_828 & (~(net_1302 & net_1013))) | (net_1469 & ~net_828 & (~(net_1302 & net_1013)));
+  assign sig_513_lut_0 = (~o_i2c_cmd6C_b2 & cmd6C_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (o_i2c_cmd6C_b2 & ~cmd6C_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6C_b2 & ~cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (o_i2c_cmd6C_b2 & cmd6C_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_2))) | (o_i2c_cmd6C_b2 & cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2)));
+  assign net_1012 = (~i2c_state_000000000100xxxx & ~o_i2c_cmd69_b5 & (~(i2c_state_000000001010xxxx & o_i2c_cmd6C_b2))) | (~i2c_state_000000000100xxxx & o_i2c_cmd69_b5 & (~(i2c_state_000000001010xxxx & o_i2c_cmd6C_b2))) | (i2c_state_000000000100xxxx & ~o_i2c_cmd69_b5 & (~(i2c_state_000000001010xxxx & o_i2c_cmd6C_b2)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1013 <= sig_513_lut_0;
+    o_i2c_cmd6C_b2 <= sig_513_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 514, LSLICE 3
 
-  assign net_1011 = ((net_1624 & net_1608));
-  assign net_1014 = (net_1461 & ((net_738 & net_1011)));
+  assign i2c_state_00000000xxxx1111 = ((i2c_state_xxxxxxxxxxxx1111 & i2c_state_00000000xxxxxxxx));
+  assign net_1014 = (i2c_state_xxxxxxxx1101xxxx & ((o_i2c_cmd6E_b5 & i2c_state_00000000xxxx1111)));
 
 //---------------------------------------------------------------------------
 //Block 517, LSLICE 2
 
-  assign sig_517_lut_0 = (~net_1020 & net_818 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1020 & ~net_818 & ~i_mcu_dcs) | (net_1020 & ~net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1020 & net_818 & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (net_1020 & net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
-  assign sig_517_lut_1 = (~net_1019 & net_818 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (net_1019 & ~net_818 & ~i_mcu_dcs) | (net_1019 & ~net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (net_1019 & net_818 & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (net_1019 & net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
+  assign sig_517_lut_0 = (~o_i2c_cmd6B_b3 & cmd6B_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6B_b3 & ~cmd6B_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6B_b3 & ~cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6B_b3 & cmd6B_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (o_i2c_cmd6B_b3 & cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
+  assign sig_517_lut_1 = (~o_i2c_cmd6B_b4 & cmd6B_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (o_i2c_cmd6B_b4 & ~cmd6B_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6B_b4 & ~cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (o_i2c_cmd6B_b4 & cmd6B_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (o_i2c_cmd6B_b4 & cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1020 <= sig_517_lut_0;
-    net_1019 <= sig_517_lut_1;
+    o_i2c_cmd6B_b3 <= sig_517_lut_0;
+    o_i2c_cmd6B_b4 <= sig_517_lut_1;
   end
 
 //---------------------------------------------------------------------------
@@ -6173,7 +6170,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg0 <= 1'b0;
       smp_clk_l_cnt_reg1 <= 1'b0;
@@ -6190,7 +6187,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg3 <= 1'b0;
       smp_clk_l_cnt_reg4 <= 1'b0;
@@ -6207,7 +6204,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg10 <= 1'b0;
       smp_clk_l_cnt_reg7 <= 1'b0;
@@ -6224,7 +6221,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg11 <= 1'b0;
       smp_clk_l_cnt_reg12 <= 1'b0;
@@ -6241,7 +6238,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg15 <= 1'b0;
       smp_clk_l_cnt_reg16 <= 1'b0;
@@ -6258,7 +6255,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg19 <= 1'b0;
       smp_clk_l_cnt_reg20 <= 1'b0;
@@ -6275,7 +6272,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg23 <= 1'b0;
       smp_clk_l_cnt_reg24 <= 1'b0;
@@ -6292,7 +6289,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg27 <= 1'b0;
       smp_clk_l_cnt_reg28 <= 1'b0;
@@ -6309,7 +6306,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg31 <= 1'b0;
       smp_clk_l_cnt_reg29 <= 1'b0;
@@ -6329,37 +6326,37 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 545, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_1093 <= 1'b0;
-      net_1094 <= 1'b0;
+      calib_1KHz_r6 <= 1'b0;
+      calib_1KHz_r2 <= 1'b0;
     end
     else
     begin
-      net_1093 <= net_892;
-      net_1094 <= net_894;
+      calib_1KHz_r6 <= calib_1KHz_c6;
+      calib_1KHz_r2 <= calib_1KHz_c2;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 546, LSLICE 2
 
-  assign net_1096 = (~net_1098 & ~net_907) | (~net_1098 & net_907) | (net_1098 & ~net_907 & ((net_1097 & net_1095)));
-  assign net_1098 = (net_906 & net_754 & ((~net_920 & ~net_927)));
+  assign calib_1KHz_rst = (~calib_1KHz_a & ~calib_1KHz_b) | (~calib_1KHz_a & calib_1KHz_b) | (calib_1KHz_a & ~calib_1KHz_b & ((calib_1KHz_r14 & calib_1KHz_r13)));
+  assign calib_1KHz_a = (calib_1KHz_e & calib_1KHz_f & ((~calib_1KHz_r15 & ~calib_1KHz_r16)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_1095 <= 1'b0;
-      net_1097 <= 1'b0;
+      calib_1KHz_r13 <= 1'b0;
+      calib_1KHz_r14 <= 1'b0;
     end
     else
     begin
-      net_1095 <= net_916;
-      net_1097 <= net_910;
+      calib_1KHz_r13 <= calib_1KHz_c13;
+      calib_1KHz_r14 <= calib_1KHz_c14;
     end
   end
 
@@ -6369,9 +6366,9 @@ module FNIRSI_1013D
   assign net_1104 = (offset1_pwm_r10 & offset1_pwm_r6 & ((offset1_pwm_r5 | offset1_pwm_r4)));
   assign net_1103 = (~ch1_offset_b13 & ~offset1_pwm_r14 & ((~ch1_offset_b14 & ~offset1_pwm_r13) | (~ch1_offset_b14 & offset1_pwm_r13))) | (~ch1_offset_b13 & offset1_pwm_r14) | (ch1_offset_b13 & ~offset1_pwm_r14 & ((~ch1_offset_b14 & offset1_pwm_r13))) | (ch1_offset_b13 & offset1_pwm_r14 & ((~ch1_offset_b14 & offset1_pwm_r13) | (ch1_offset_b14 & offset1_pwm_r13)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b1)
+    if(offset1_pwm_rst == 1'b1)   //reset
     begin
       offset1_pwm_r5 <= 1'b0;
       offset1_pwm_r14 <= 1'b0;
@@ -6389,9 +6386,9 @@ module FNIRSI_1013D
   assign net_1106 = (net_771 & net_1100 & ~offset1_pwm_r6 & ((~ch1_offset_b6 & ~net_1108))) | (net_771 & net_1100 & offset1_pwm_r6 & ((ch1_offset_b6 & ~net_1108)));
   assign net_1100 = (~net_755 & ((~ch1_offset_b8 & ~offset1_pwm_r8) | (~ch1_offset_b8 & offset1_pwm_r8) | (ch1_offset_b8 & offset1_pwm_r8)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_759 == 1'b1)
+    if(offset1_pwm_rst == 1'b1)   //reset
     begin
       offset1_pwm_r6 <= 1'b0;
       offset1_pwm_r8 <= 1'b0;
@@ -6411,8 +6408,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd32_enable1 == 1'b1)
-    begin
+    if(cmd32_enable1 == 1'b1)   //enable
+     begin
       ch1_offset_b2 <= io_mcu_d_2;
       ch1_offset_b1 <= io_mcu_d_1;
     end
@@ -6426,8 +6423,8 @@ module FNIRSI_1013D
 
   always @(posedge i_mcu_clk)
   begin
-    if(cmd32_enable1 == 1'b1)
-    begin
+    if(cmd32_enable1 == 1'b1)   //enable
+     begin
       ch1_offset_b4 <= io_mcu_d_4;
       ch1_offset_b3 <= io_mcu_d_3;
     end
@@ -6436,20 +6433,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 551, MSLICE 1
 
-  assign net_1115 = ((net_1605 & net_1459));
-  assign net_1109 = (net_1119 & net_426 & (~(net_1110 & cmd6B_select)));
+  assign i2c_cmd6B_e2 = ((net_1605 & i2c_state_xxxxxxxx1000xxxx));
+  assign net_1109 = (net_1119 & net_426 & (~(i_i2c_cmd6B_b2 & cmd6B_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1115 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1110 <= 1'b0;
-      end
-      else
-      begin
-        net_1110 <= io_i2c_sda;
+      i_i2c_cmd6B_b2 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6B_e2 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6B_b2 <= io_i2c_sda;
       end
     end
   end
@@ -6457,32 +6454,32 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 552, MSLICE 0
 
-  assign sig_552_lut_0 = (net_820 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6)));
-  assign sig_552_lut_1 = (~net_820 & ~i_mcu_dcs) | (~net_820 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_820 & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (net_820 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
-  assign sig_552_ff0_d = (~net_1118 & sig_552_lut_0) | (net_1118 & sig_552_lut_1);
+  assign sig_552_lut_0 = (cmd6E_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6)));
+  assign sig_552_lut_1 = (~cmd6E_write_enable & ~i_mcu_dcs) | (~cmd6E_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (cmd6E_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (cmd6E_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
+  assign sig_552_ff0_d = (~o_i2c_cmd6E_b6 & sig_552_lut_0) | (o_i2c_cmd6E_b6 & sig_552_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1118 <= sig_552_ff0_d;
+    o_i2c_cmd6E_b6 <= sig_552_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 553, LSLICE 2
 
-  assign net_1120 = (net_776 & ~cmd6A_select & ~net_1569 & (~(net_1124 & cmd6C_select))) | (net_776 & ~cmd6A_select & net_1569 & (~(net_1124 & cmd6C_select))) | (net_776 & cmd6A_select & ~net_1569 & (~(net_1124 & cmd6C_select)));
-  assign net_1122 = ((net_1366 & net_1605));
+  assign net_1120 = (net_776 & ~cmd6A_select & ~i_i2c_cmd6A_b1 & (~(i_i2c_cmd6C_b1 & cmd6C_select))) | (net_776 & ~cmd6A_select & i_i2c_cmd6A_b1 & (~(i_i2c_cmd6C_b1 & cmd6C_select))) | (net_776 & cmd6A_select & ~i_i2c_cmd6A_b1 & (~(i_i2c_cmd6C_b1 & cmd6C_select)));
+  assign i2c_cmd6C_e1 = ((i2c_state_xxxxxxxx1010xxxx & net_1605));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1122 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1124 <= 1'b1;
-      end
-      else
-      begin
-        net_1124 <= io_i2c_sda;
+      i_i2c_cmd6C_b1 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6C_e1 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6C_b1 <= io_i2c_sda;
       end
     end
   end
@@ -6490,20 +6487,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 554, MSLICE 1
 
-  assign net_1123 = (net_1464 & ((net_1625 & ~net_702)));
-  assign net_1119 = (~cmd26_select & ~i_adc2A_d_2 & (~(net_1121 & cmd68_select))) | (~cmd26_select & i_adc2A_d_2 & (~(net_1121 & cmd68_select))) | (cmd26_select & ~i_adc2A_d_2 & (~(net_1121 & cmd68_select)));
+  assign i2c_cmd68_e2 = (i2c_state_000000000011xxxx & ((i2c_state_xxxxxxxxxxxx0010 & ~i2c_send_enable)));
+  assign net_1119 = (~cmd26_select & ~i_adc2A_d_2 & (~(i_i2c_cmd68_b2 & cmd68_select))) | (~cmd26_select & i_adc2A_d_2 & (~(i_i2c_cmd68_b2 & cmd68_select))) | (cmd26_select & ~i_adc2A_d_2 & (~(i_i2c_cmd68_b2 & cmd68_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1123 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1121 <= 1'b1;
-      end
-      else
-      begin
-        net_1121 <= io_i2c_sda;
+      i_i2c_cmd68_b2 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd68_e2 == 1'b1)   //enable
+       begin
+        i_i2c_cmd68_b2 <= io_i2c_sda;
       end
     end
   end
@@ -6511,40 +6508,40 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 555, MSLICE 0
 
-  assign net_1134 = (net_973 & ((net_702 & net_1378)));
-  assign net_1131 = (~net_979 & ~net_1125 & ((net_1134 & ~net_1491) | (net_1134 & net_1491))) | (net_979 & ~net_1125 & ((net_1134 & ~net_1491) | (net_1134 & net_1491))) | (net_979 & net_1125 & ((net_1134 & ~net_1491)));
+  assign net_1134 = (net_973 & ((i2c_send_enable & net_1378)));
+  assign net_1131 = (~net_979 & ~i2c_scl & ((net_1134 & ~i2c_state_0000000000000000) | (net_1134 & i2c_state_0000000000000000))) | (net_979 & ~i2c_scl & ((net_1134 & ~i2c_state_0000000000000000) | (net_1134 & i2c_state_0000000000000000))) | (net_979 & i2c_scl & ((net_1134 & ~i2c_state_0000000000000000)));
 
 //---------------------------------------------------------------------------
 //Block 556, LSLICE 2
 
-  assign net_1127 = (net_973 & ~net_702 & ~net_1373) | (net_973 & ~net_702 & net_1373 & ((~net_1483 & ~net_1618)));
+  assign net_1127 = (net_973 & ~i2c_send_enable & ~i2c_state_xxxxxxxx1110xxxx) | (net_973 & ~i2c_send_enable & i2c_state_xxxxxxxx1110xxxx & ((~i2c_state_00000000xxxx1110 & ~i2c_state_00000000xxxx1100)));
   assign sig_556_lut_1 = (~net_1308 & ~net_1215 & ~net_1131) | (~net_1308 & ~net_1215 & net_1131) | (~net_1308 & net_1215 & ~net_1131) | (~net_1308 & net_1215 & net_1131) | (net_1308 & ~net_1215 & ~net_1131 & (~(net_1127 & net_1207))) | (net_1308 & ~net_1215 & net_1131 & ((~net_1127 & ~net_1207) | (net_1127 & ~net_1207))) | (net_1308 & net_1215 & ~net_1131) | (net_1308 & net_1215 & net_1131 & ((~net_1127 & ~net_1207) | (net_1127 & ~net_1207)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_700 == 1'b0)
-    begin
-      net_1125 <= sig_556_lut_1;
+    if(i2c_disable == 1'b0)   //enable
+     begin
+      i2c_scl <= sig_556_lut_1;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 557, LSLICE 3
 
-  assign net_1133 = ((net_1605 & net_1470));
-  assign net_1126 = (~net_1307 & ((net_1470 & net_1483))) | (net_1307 & ((net_1470 & ~net_1483) | (net_1470 & net_1483)));
+  assign i2c_cmd69_e4 = ((net_1605 & i2c_state_xxxxxxxx0100xxxx));
+  assign net_1126 = (~i2c_state_00000000xxxx1101 & ((i2c_state_xxxxxxxx0100xxxx & i2c_state_00000000xxxx1110))) | (i2c_state_00000000xxxx1101 & ((i2c_state_xxxxxxxx0100xxxx & ~i2c_state_00000000xxxx1110) | (i2c_state_xxxxxxxx0100xxxx & i2c_state_00000000xxxx1110)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1133 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1129 <= 1'b0;
-      end
-      else
-      begin
-        net_1129 <= io_i2c_sda;
+      i_i2c_cmd69_b4 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd69_e4 == 1'b1)   //enable
+       begin
+        i_i2c_cmd69_b4 <= io_i2c_sda;
       end
     end
   end
@@ -6552,20 +6549,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 558, MSLICE 1
 
-  assign net_1130 = (net_1302 & ((net_1633 & ~net_702)));
-  assign net_1132 = (~cmd26_select & ~i_adc2A_d_5 & (~(net_1128 & cmd6C_select))) | (~cmd26_select & i_adc2A_d_5 & (~(net_1128 & cmd6C_select))) | (cmd26_select & ~i_adc2A_d_5 & (~(net_1128 & cmd6C_select)));
+  assign i2c_cmd6C_e5 = (i2c_state_000000001010xxxx & ((i2c_state_xxxxxxxxxxxx0100 & ~i2c_send_enable)));
+  assign net_1132 = (~cmd26_select & ~i_adc2A_d_5 & (~(i_i2c_cmd6C_b5 & cmd6C_select))) | (~cmd26_select & i_adc2A_d_5 & (~(i_i2c_cmd6C_b5 & cmd6C_select))) | (cmd26_select & ~i_adc2A_d_5 & (~(i_i2c_cmd6C_b5 & cmd6C_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1130 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1128 <= 1'b0;
-      end
-      else
-      begin
-        net_1128 <= io_i2c_sda;
+      i_i2c_cmd6C_b5 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6C_e5 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6C_b5 <= io_i2c_sda;
       end
     end
   end
@@ -6573,20 +6570,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 559, MSLICE 0
 
-  assign net_1136 = ((~net_702 & net_1231));
-  assign net_1137 = (~net_1147 & ((~net_1231 & ~net_1126)));
+  assign i2c_cmd69_e2 = ((~i2c_send_enable & i2c_state_0000000001010000));
+  assign net_1137 = (~i2c_state_0000000001001111 & ((~i2c_state_0000000001010000 & ~net_1126)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1136 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1135 <= 1'b0;
-      end
-      else
-      begin
-        net_1135 <= io_i2c_sda;
+      i_i2c_cmd69_b2 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd69_e2 == 1'b1)   //enable
+       begin
+        i_i2c_cmd69_b2 <= io_i2c_sda;
       end
     end
   end
@@ -6594,32 +6591,32 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 560, LSLICE 2
 
-  assign net_1144 = ((net_1420 & net_1155));
+  assign net_1144 = ((o_i2c_cmd6A_b7 & i2c_state_0000000001010111));
   assign net_1141 = ((net_1314 & net_1322));
 
 //---------------------------------------------------------------------------
 //Block 561, LSLICE 3
 
-  assign net_1138 = ((net_1608 & net_1459));
-  assign net_1143 = ((net_1483 & net_1459));
+  assign i2c_state_000000001000xxxx = ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxx1000xxxx));
+  assign i2c_state_0000000010001110 = ((i2c_state_00000000xxxx1110 & i2c_state_xxxxxxxx1000xxxx));
 
 //---------------------------------------------------------------------------
 //Block 562, MSLICE 1
 
-  assign net_1142 = ((net_1205 & ~net_702));
-  assign net_1139 = (~net_1573 & ~net_1205 & ((~net_1246 & ~net_1138) | (~net_1246 & net_1138))) | (net_1573 & ~net_1205 & ((~net_1246 & ~net_1138)));
+  assign i2c_cmd6B_e3 = ((i2c_state_0000000010001010 & ~i2c_send_enable));
+  assign net_1139 = (~i2c_state_xxxxxxxxxxxx1011 & ~i2c_state_0000000010001010 & ((~net_1246 & ~i2c_state_000000001000xxxx) | (~net_1246 & i2c_state_000000001000xxxx))) | (i2c_state_xxxxxxxxxxxx1011 & ~i2c_state_0000000010001010 & ((~net_1246 & ~i2c_state_000000001000xxxx)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1142 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1140 <= 1'b0;
-      end
-      else
-      begin
-        net_1140 <= io_i2c_sda;
+      i_i2c_cmd6B_b3 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6B_e3 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6B_b3 <= io_i2c_sda;
       end
     end
   end
@@ -6627,20 +6624,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 563, MSLICE 0
 
-  assign net_1150 = (~net_702 & ((net_1469 & net_1617)));
-  assign net_1147 = ((net_1624 & net_1469));
+  assign i2c_cmd69_e6 = (~i2c_send_enable & ((i2c_state_000000000100xxxx & i2c_state_xxxxxxxxxxxx1000)));
+  assign i2c_state_0000000001001111 = ((i2c_state_xxxxxxxxxxxx1111 & i2c_state_000000000100xxxx));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1150 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1148 <= 1'b0;
-      end
-      else
-      begin
-        net_1148 <= io_i2c_sda;
+      i_i2c_cmd69_b6 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd69_e6 == 1'b1)   //enable
+       begin
+        i_i2c_cmd69_b6 <= io_i2c_sda;
       end
     end
   end
@@ -6648,51 +6645,51 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 564, LSLICE 2
 
-  assign net_1149 = (~net_996 & ~net_1231 & ~net_1483) | (~net_996 & ~net_1231 & net_1483 & ((~net_1366 & ~net_1461)));
-  assign net_1145 = (~net_986 & ((~net_996 & ~net_1366) | (~net_996 & net_1366))) | (net_986 & ((~net_996 & ~net_1366)));
+  assign net_1149 = (~net_996 & ~i2c_state_0000000001010000 & ~i2c_state_00000000xxxx1110) | (~net_996 & ~i2c_state_0000000001010000 & i2c_state_00000000xxxx1110 & ((~i2c_state_xxxxxxxx1010xxxx & ~i2c_state_xxxxxxxx1101xxxx)));
+  assign net_1145 = (~i2c_state_00000000xxxx1001 & ((~net_996 & ~i2c_state_xxxxxxxx1010xxxx) | (~net_996 & i2c_state_xxxxxxxx1010xxxx))) | (i2c_state_00000000xxxx1001 & ((~net_996 & ~i2c_state_xxxxxxxx1010xxxx)));
 
 //---------------------------------------------------------------------------
 //Block 565, LSLICE 3
 
-  assign net_1152 = (net_1163 & ~net_1498 & ~net_981 & (~(net_1625 & net_1138)));
-  assign net_1151 = (net_1152 & ~net_1233 & ~net_1474 & ((~net_1625 & ~net_1143) | (net_1625 & ~net_1143))) | (net_1152 & ~net_1233 & net_1474 & ((~net_1625 & ~net_1143)));
+  assign net_1152 = (net_1163 & ~i2c_state_0000000010010000 & ~i2c_state_0000000001010100 & (~(i2c_state_xxxxxxxxxxxx0010 & i2c_state_000000001000xxxx)));
+  assign net_1151 = (net_1152 & ~i2c_state_0000000001110100 & ~i2c_state_000000000101xxxx & ((~i2c_state_xxxxxxxxxxxx0010 & ~i2c_state_0000000010001110) | (i2c_state_xxxxxxxxxxxx0010 & ~i2c_state_0000000010001110))) | (net_1152 & ~i2c_state_0000000001110100 & i2c_state_000000000101xxxx & ((~i2c_state_xxxxxxxxxxxx0010 & ~i2c_state_0000000010001110)));
 
 //---------------------------------------------------------------------------
 //Block 566, MSLICE 1
 
-  assign sig_566_lut_0 = (~net_1578 & ~net_1576 & ((~net_1231 & ~net_981)));
+  assign sig_566_lut_0 = (~i2c_state_0000000010010011 & ~i2c_state_0000000000010011 & ((~i2c_state_0000000001010000 & ~i2c_state_0000000001010100)));
   assign sig_566_lut_1 = 1'b0;
   assign net_1146 = (~net_1423 & sig_566_lut_0) | (net_1423 & sig_566_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 567, MSLICE 0
 
-  assign net_1154 = (net_1577 & ~net_1633 & ((net_1626 | net_1625))) | (net_1577 & net_1633);
-  assign net_1153 = (~net_1461 & ~net_1408 & ((~net_1154 & ~net_1618) | (~net_1154 & net_1618))) | (net_1461 & ~net_1408 & ((~net_1154 & ~net_1618)));
+  assign net_1154 = (i2c_state_000000001100xxxx & ~i2c_state_xxxxxxxxxxxx0100 & ((i2c_state_xxxxxxxxxxxx0000 | i2c_state_xxxxxxxxxxxx0010))) | (i2c_state_000000001100xxxx & i2c_state_xxxxxxxxxxxx0100);
+  assign net_1153 = (~i2c_state_xxxxxxxx1101xxxx & ~i2c_state_0000000011001110 & ((~net_1154 & ~i2c_state_00000000xxxx1100) | (~net_1154 & i2c_state_00000000xxxx1100))) | (i2c_state_xxxxxxxx1101xxxx & ~i2c_state_0000000011001110 & ((~net_1154 & ~i2c_state_00000000xxxx1100)));
 
 //---------------------------------------------------------------------------
 //Block 568, LSLICE 2
 
-  assign net_1156 = (~net_1302 & ((net_1165 & ~net_1625) | (net_1165 & net_1625))) | (net_1302 & ((net_1165 & ~net_1625)));
-  assign net_1157 = ((net_1302 & net_1626));
+  assign net_1156 = (~i2c_state_000000001010xxxx & ((net_1165 & ~i2c_state_xxxxxxxxxxxx0010) | (net_1165 & i2c_state_xxxxxxxxxxxx0010))) | (i2c_state_000000001010xxxx & ((net_1165 & ~i2c_state_xxxxxxxxxxxx0010)));
+  assign net_1157 = ((i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx0000));
 
 //---------------------------------------------------------------------------
 //Block 569, LSLICE 3
 
-  assign net_1160 = ((net_992 & ~net_702));
-  assign net_1159 = (~net_992 & ~net_1302) | (~net_992 & net_1302 & ((~net_1635 & ~net_1633)));
+  assign i2c_cmd6D_e7 = ((i2c_state_0000000010111110 & ~i2c_send_enable));
+  assign net_1159 = (~i2c_state_0000000010111110 & ~i2c_state_000000001010xxxx) | (~i2c_state_0000000010111110 & i2c_state_000000001010xxxx & ((~i2c_state_xxxxxxxxxxxx0101 & ~i2c_state_xxxxxxxxxxxx0100)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1160 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1161 <= 1'b0;
-      end
-      else
-      begin
-        net_1161 <= io_i2c_sda;
+      i_i2c_cmd6D_b7 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6D_e7 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6D_b7 <= io_i2c_sda;
       end
     end
   end
@@ -6700,33 +6697,33 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 570, MSLICE 1
 
-  assign net_1158 = (~net_1302 & ((net_1145 & ~net_1632) | (net_1145 & net_1632))) | (net_1302 & ((net_1145 & ~net_1632)));
-  assign net_1155 = ((net_1474 & net_1632));
+  assign net_1158 = (~i2c_state_000000001010xxxx & ((net_1145 & ~i2c_state_xxxxxxxxxxxx0111) | (net_1145 & i2c_state_xxxxxxxxxxxx0111))) | (i2c_state_000000001010xxxx & ((net_1145 & ~i2c_state_xxxxxxxxxxxx0111)));
+  assign i2c_state_0000000001010111 = ((i2c_state_000000000101xxxx & i2c_state_xxxxxxxxxxxx0111));
 
 //---------------------------------------------------------------------------
 //Block 571, MSLICE 0
 
-  assign sig_571_lut_0 = (~net_1138 & ~net_1634) | (~net_1138 & net_1634) | (net_1138 & ~net_1634 & ((~net_1617 & ~net_1633)));
+  assign sig_571_lut_0 = (~i2c_state_000000001000xxxx & ~i2c_state_xxxxxxxxxxxx0110) | (~i2c_state_000000001000xxxx & i2c_state_xxxxxxxxxxxx0110) | (i2c_state_000000001000xxxx & ~i2c_state_xxxxxxxxxxxx0110 & ((~i2c_state_xxxxxxxxxxxx1000 & ~i2c_state_xxxxxxxxxxxx0100)));
   assign sig_571_lut_1 = 1'b0;
   assign net_1165 = (~net_1157 & sig_571_lut_0) | (net_1157 & sig_571_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 572, LSLICE 2
 
-  assign net_1164 = (net_1634 & ((net_1138 & ~net_702)));
-  assign net_1163 = (~net_1474 & ~net_1472) | (~net_1474 & net_1472 & ((~net_1633 & ~net_1634) | (~net_1633 & net_1634))) | (net_1474 & ~net_1472 & ((~net_1633 & ~net_1634) | (net_1633 & ~net_1634))) | (net_1474 & net_1472 & ((~net_1633 & ~net_1634)));
+  assign i2c_cmd6B_e5 = (i2c_state_xxxxxxxxxxxx0110 & ((i2c_state_000000001000xxxx & ~i2c_send_enable)));
+  assign net_1163 = (~i2c_state_000000000101xxxx & ~i2c_state_000000000110xxxx) | (~i2c_state_000000000101xxxx & i2c_state_000000000110xxxx & ((~i2c_state_xxxxxxxxxxxx0100 & ~i2c_state_xxxxxxxxxxxx0110) | (~i2c_state_xxxxxxxxxxxx0100 & i2c_state_xxxxxxxxxxxx0110))) | (i2c_state_000000000101xxxx & ~i2c_state_000000000110xxxx & ((~i2c_state_xxxxxxxxxxxx0100 & ~i2c_state_xxxxxxxxxxxx0110) | (i2c_state_xxxxxxxxxxxx0100 & ~i2c_state_xxxxxxxxxxxx0110))) | (i2c_state_000000000101xxxx & i2c_state_000000000110xxxx & ((~i2c_state_xxxxxxxxxxxx0100 & ~i2c_state_xxxxxxxxxxxx0110)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1164 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1162 <= 1'b0;
-      end
-      else
-      begin
-        net_1162 <= io_i2c_sda;
+      i_i2c_cmd6B_b5 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6B_e5 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6B_b5 <= io_i2c_sda;
       end
     end
   end
@@ -6734,38 +6731,38 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 573, LSLICE 3
 
-  assign sig_573_lut_0 = (~net_824 & ~i_mcu_dcs & net_1167) | (~net_824 & i_mcu_dcs & ~net_1167 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (~net_824 & i_mcu_dcs & net_1167) | (net_824 & ~i_mcu_dcs & ~net_1167 & ((~net_431 & io_mcu_d_1))) | (net_824 & ~i_mcu_dcs & net_1167 & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_824 & i_mcu_dcs & ~net_1167 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (net_824 & i_mcu_dcs & net_1167);
-  assign net_1166 = (~net_1020 & ~net_1241 & ~net_1167) | (~net_1020 & ~net_1241 & net_1167) | (~net_1020 & net_1241 & ~net_1167) | (net_1020 & ~net_1241 & ~net_1167 & (~(net_1138 & net_1566))) | (net_1020 & ~net_1241 & net_1167 & (~(net_1138 & net_1566))) | (net_1020 & net_1241 & ~net_1167 & (~(net_1138 & net_1566)));
+  assign sig_573_lut_0 = (~cmd6C_write_enable & ~i_mcu_dcs & o_i2c_cmd6C_b1) | (~cmd6C_write_enable & i_mcu_dcs & ~o_i2c_cmd6C_b1 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (~cmd6C_write_enable & i_mcu_dcs & o_i2c_cmd6C_b1) | (cmd6C_write_enable & ~i_mcu_dcs & ~o_i2c_cmd6C_b1 & ((~net_431 & io_mcu_d_1))) | (cmd6C_write_enable & ~i_mcu_dcs & o_i2c_cmd6C_b1 & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (cmd6C_write_enable & i_mcu_dcs & ~o_i2c_cmd6C_b1 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (cmd6C_write_enable & i_mcu_dcs & o_i2c_cmd6C_b1);
+  assign net_1166 = (~o_i2c_cmd6B_b3 & ~net_1241 & ~o_i2c_cmd6C_b1) | (~o_i2c_cmd6B_b3 & ~net_1241 & o_i2c_cmd6C_b1) | (~o_i2c_cmd6B_b3 & net_1241 & ~o_i2c_cmd6C_b1) | (o_i2c_cmd6B_b3 & ~net_1241 & ~o_i2c_cmd6C_b1 & (~(i2c_state_000000001000xxxx & i2c_state_xxxxxxxxxxxx1001))) | (o_i2c_cmd6B_b3 & ~net_1241 & o_i2c_cmd6C_b1 & (~(i2c_state_000000001000xxxx & i2c_state_xxxxxxxxxxxx1001))) | (o_i2c_cmd6B_b3 & net_1241 & ~o_i2c_cmd6C_b1 & (~(i2c_state_000000001000xxxx & i2c_state_xxxxxxxxxxxx1001)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1167 <= sig_573_lut_0;
+    o_i2c_cmd6C_b1 <= sig_573_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 574, MSLICE 1
 
-  assign sig_574_lut_0 = (net_1379 & ~net_1302 & ((net_1625 | net_1626))) | (net_1379 & net_1302 & ((net_1625 | net_1626)));
-  assign sig_574_lut_1 = (~net_1379 & ~net_1626 & ((~net_1625 & net_1302) | (net_1625 & net_1302))) | (~net_1379 & net_1626 & ((~net_1625 & net_1302) | (net_1625 & net_1302))) | (net_1379 & ~net_1626) | (net_1379 & net_1626);
-  assign net_1168 = (~net_1633 & sig_574_lut_0) | (net_1633 & sig_574_lut_1);
+  assign sig_574_lut_0 = (i2c_state_000000001110xxxx & ~i2c_state_000000001010xxxx & ((i2c_state_xxxxxxxxxxxx0010 | i2c_state_xxxxxxxxxxxx0000))) | (i2c_state_000000001110xxxx & i2c_state_000000001010xxxx & ((i2c_state_xxxxxxxxxxxx0010 | i2c_state_xxxxxxxxxxxx0000)));
+  assign sig_574_lut_1 = (~i2c_state_000000001110xxxx & ~i2c_state_xxxxxxxxxxxx0000 & ((~i2c_state_xxxxxxxxxxxx0010 & i2c_state_000000001010xxxx) | (i2c_state_xxxxxxxxxxxx0010 & i2c_state_000000001010xxxx))) | (~i2c_state_000000001110xxxx & i2c_state_xxxxxxxxxxxx0000 & ((~i2c_state_xxxxxxxxxxxx0010 & i2c_state_000000001010xxxx) | (i2c_state_xxxxxxxxxxxx0010 & i2c_state_000000001010xxxx))) | (i2c_state_000000001110xxxx & ~i2c_state_xxxxxxxxxxxx0000) | (i2c_state_000000001110xxxx & i2c_state_xxxxxxxxxxxx0000);
+  assign net_1168 = (~i2c_state_xxxxxxxxxxxx0100 & sig_574_lut_0) | (i2c_state_xxxxxxxxxxxx0100 & sig_574_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 575, MSLICE 0
 
-  assign net_1169 = (net_1379 & ((net_1625 & ~net_702)));
-  assign net_1170 = ((net_1379 & net_1624));
+  assign i2c_cmd6E_e4 = (i2c_state_000000001110xxxx & ((i2c_state_xxxxxxxxxxxx0010 & ~i2c_send_enable)));
+  assign i2c_state_0000000011101111 = ((i2c_state_000000001110xxxx & i2c_state_xxxxxxxxxxxx1111));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1169 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1171 <= 1'b0;
-      end
-      else
-      begin
-        net_1171 <= io_i2c_sda;
+      i_i2c_cmd6E_b4 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6E_e4 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6E_b4 <= io_i2c_sda;
       end
     end
   end
@@ -6773,35 +6770,35 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 576, MSLICE 0
 
-  assign sig_576_lut_0 = (net_824 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4)));
-  assign sig_576_lut_1 = (~net_824 & ~i_mcu_dcs) | (~net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (net_824 & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
-  assign sig_576_ff0_d = (~net_1176 & sig_576_lut_0) | (net_1176 & sig_576_lut_1);
+  assign sig_576_lut_0 = (cmd6C_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4)));
+  assign sig_576_lut_1 = (~cmd6C_write_enable & ~i_mcu_dcs) | (~cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (cmd6C_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
+  assign sig_576_ff0_d = (~o_i2c_cmd6C_b4 & sig_576_lut_0) | (o_i2c_cmd6C_b4 & sig_576_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1176 <= sig_576_ff0_d;
+    o_i2c_cmd6C_b4 <= sig_576_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 577, LSLICE 2
 
-  assign sig_577_lut_0 = (~net_1174 & net_824 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1174 & ~net_824 & ~i_mcu_dcs) | (net_1174 & ~net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1174 & net_824 & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (net_1174 & net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
-  assign net_1172 = (net_1632 & ((net_1302 & net_1174)));
+  assign sig_577_lut_0 = (~o_i2c_cmd6C_b3 & cmd6C_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6C_b3 & ~cmd6C_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6C_b3 & ~cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6C_b3 & cmd6C_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (o_i2c_cmd6C_b3 & cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
+  assign net_1172 = (i2c_state_xxxxxxxxxxxx0111 & ((i2c_state_000000001010xxxx & o_i2c_cmd6C_b3)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1174 <= sig_577_lut_0;
+    o_i2c_cmd6C_b3 <= sig_577_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 578, LSLICE 3
 
-  assign sig_578_lut_0 = (~net_1175 & net_819 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_1175 & ~net_819 & ~i_mcu_dcs) | (net_1175 & ~net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_1175 & net_819 & ~i_mcu_dcs & ((net_431 | io_mcu_d_1))) | (net_1175 & net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1)));
-  assign net_1173 = (net_1566 & ((net_1577 & net_1175)));
+  assign sig_578_lut_0 = (~o_i2c_cmd6D_b1 & cmd6D_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (o_i2c_cmd6D_b1 & ~cmd6D_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6D_b1 & ~cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (o_i2c_cmd6D_b1 & cmd6D_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_1))) | (o_i2c_cmd6D_b1 & cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1)));
+  assign net_1173 = (i2c_state_xxxxxxxxxxxx1001 & ((i2c_state_000000001100xxxx & o_i2c_cmd6D_b1)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1175 <= sig_578_lut_0;
+    o_i2c_cmd6D_b1 <= sig_578_lut_0;
   end
 
 //---------------------------------------------------------------------------
@@ -6819,13 +6816,13 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 580, LSLICE 2
 
-  assign sig_580_lut_0 = (~net_1180 & net_818 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_1180 & ~net_818 & ~i_mcu_dcs) | (net_1180 & ~net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_1180 & net_818 & ~i_mcu_dcs & ((net_431 | io_mcu_d_0))) | (net_1180 & net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0)));
-  assign sig_580_lut_1 = (~net_818 & ~i_mcu_dcs & net_1182) | (~net_818 & i_mcu_dcs & ~net_1182 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (~net_818 & i_mcu_dcs & net_1182) | (net_818 & ~i_mcu_dcs & ~net_1182 & ((~net_431 & io_mcu_d_1))) | (net_818 & ~i_mcu_dcs & net_1182 & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_818 & i_mcu_dcs & ~net_1182 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (net_818 & i_mcu_dcs & net_1182);
+  assign sig_580_lut_0 = (~o_i2c_cmd6B_b0 & cmd6B_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (o_i2c_cmd6B_b0 & ~cmd6B_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6B_b0 & ~cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (o_i2c_cmd6B_b0 & cmd6B_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_0))) | (o_i2c_cmd6B_b0 & cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0)));
+  assign sig_580_lut_1 = (~cmd6B_write_enable & ~i_mcu_dcs & o_i2c_cmd6B_b1) | (~cmd6B_write_enable & i_mcu_dcs & ~o_i2c_cmd6B_b1 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (~cmd6B_write_enable & i_mcu_dcs & o_i2c_cmd6B_b1) | (cmd6B_write_enable & ~i_mcu_dcs & ~o_i2c_cmd6B_b1 & ((~net_431 & io_mcu_d_1))) | (cmd6B_write_enable & ~i_mcu_dcs & o_i2c_cmd6B_b1 & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (cmd6B_write_enable & i_mcu_dcs & ~o_i2c_cmd6B_b1 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (cmd6B_write_enable & i_mcu_dcs & o_i2c_cmd6B_b1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1180 <= sig_580_lut_0;
-    net_1182 <= sig_580_lut_1;
+    o_i2c_cmd6B_b0 <= sig_580_lut_0;
+    o_i2c_cmd6B_b1 <= sig_580_lut_1;
   end
 
 //---------------------------------------------------------------------------
@@ -6851,7 +6848,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg8 <= 1'b0;
       smp_clk_l_cnt_reg18 <= 1'b0;
@@ -6868,7 +6865,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg6 <= 1'b0;
       smp_clk_l_cnt_reg21 <= 1'b0;
@@ -6885,7 +6882,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg9 <= 1'b0;
       smp_clk_l_cnt_reg17 <= 1'b0;
@@ -6902,7 +6899,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg30 <= 1'b0;
       smp_clk_l_cnt_reg22 <= 1'b0;
@@ -6919,7 +6916,7 @@ module FNIRSI_1013D
 
   always @(posedge sample_write_clock)
   begin
-    if(sampling_reset == 1'b1)
+    if(sampling_reset == 1'b1)   //reset
     begin
       smp_clk_l_cnt_reg26 <= 1'b0;
       smp_clk_l_cnt_reg25 <= 1'b0;
@@ -6934,20 +6931,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 588, LSLICE 2
 
-  assign net_1196 = (net_1197 & ~net_936 & ~net_933 & ((~net_934 & ~net_1194)));
-  assign net_1197 = (~net_932 & ~net_949 & ((~net_1195 & ~net_380)));
+  assign calib_1KHz_g = (calib_1KHz_h & ~calib_1KHz_r28 & ~calib_1KHz_r27 & ((~calib_1KHz_r26 & ~calib_1KHz_r25)));
+  assign calib_1KHz_h = (~calib_1KHz_r23 & ~calib_1KHz_r24 & ((~calib_1KHz_r21 & ~calib_1KHz_r22)));
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_1194 <= 1'b0;
-      net_1195 <= 1'b0;
+      calib_1KHz_r25 <= 1'b0;
+      calib_1KHz_r21 <= 1'b0;
     end
     else
     begin
-      net_1194 <= net_937;
-      net_1195 <= net_922;
+      calib_1KHz_r25 <= calib_1KHz_c25;
+      calib_1KHz_r21 <= calib_1KHz_c21;
     end
   end
 
@@ -6959,7 +6956,7 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
+    if(clk_a_reset == 1'b1)   //reset
     begin
       clk_a_div_reg6 <= 1'b0;
       clk_a_div_reg13 <= 1'b0;
@@ -6974,20 +6971,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 590, LSLICE 2
 
-  assign net_1203 = (net_1529 & ((net_1460 & ~net_702)));
-  assign net_1202 = (~i_adc2B_d_1 & ~cmd27_select & (~(net_1204 & cmd6D_select))) | (~i_adc2B_d_1 & cmd27_select & (~(net_1204 & cmd6D_select))) | (i_adc2B_d_1 & ~cmd27_select & (~(net_1204 & cmd6D_select)));
+  assign i2c_cmd6D_e1 = (i2c_state_00000000xxxx1010 & ((i2c_state_xxxxxxxx1100xxxx & ~i2c_send_enable)));
+  assign net_1202 = (~i_adc2B_d_1 & ~cmd27_select & (~(i_i2c_cmd6D_b1 & cmd6D_select))) | (~i_adc2B_d_1 & cmd27_select & (~(i_i2c_cmd6D_b1 & cmd6D_select))) | (i_adc2B_d_1 & ~cmd27_select & (~(i_i2c_cmd6D_b1 & cmd6D_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1203 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1204 <= 1'b0;
-      end
-      else
-      begin
-        net_1204 <= io_i2c_sda;
+      i_i2c_cmd6D_b1 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6D_e1 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6D_b1 <= io_i2c_sda;
       end
     end
   end
@@ -6995,19 +6992,19 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 591, LSLICE 3
 
-  assign net_1205 = ((net_1529 & net_1459));
-  assign net_1206 = ((net_1459 & ~net_1465));
+  assign i2c_state_0000000010001010 = ((i2c_state_00000000xxxx1010 & i2c_state_xxxxxxxx1000xxxx));
+  assign net_1206 = ((i2c_state_xxxxxxxx1000xxxx & ~i2s_state_unknown_a));
 
 //---------------------------------------------------------------------------
 //Block 592, LSLICE 3
 
-  assign net_1210 = (net_1149 & ~net_1168 & ~net_1464) | (net_1149 & ~net_1168 & net_1464 & ((~net_1625 & ~net_1626)));
-  assign net_1207 = (net_1208 & net_1210 & ~net_1470 & ((net_1156 & ~net_1305) | (net_1156 & net_1305))) | (net_1208 & net_1210 & net_1470 & ((net_1156 & net_1305)));
+  assign net_1210 = (net_1149 & ~net_1168 & ~i2c_state_000000000011xxxx) | (net_1149 & ~net_1168 & i2c_state_000000000011xxxx & ((~i2c_state_xxxxxxxxxxxx0010 & ~i2c_state_xxxxxxxxxxxx0000)));
+  assign net_1207 = (net_1208 & net_1210 & ~i2c_state_xxxxxxxx0100xxxx & ((net_1156 & ~net_1305) | (net_1156 & net_1305))) | (net_1208 & net_1210 & i2c_state_xxxxxxxx0100xxxx & ((net_1156 & net_1305)));
 
 //---------------------------------------------------------------------------
 //Block 593, MSLICE 0
 
-  assign sig_593_lut_0 = (net_1151 & ~net_1206 & ((~net_1376 & ~net_1311)));
+  assign sig_593_lut_0 = (net_1151 & ~net_1206 & ((~i2c_state_000000000x1011x0 & ~net_1311)));
   assign sig_593_lut_1 = 1'b0;
   assign net_1208 = (~net_1303 & sig_593_lut_0) | (net_1303 & sig_593_lut_1);
 
@@ -7021,27 +7018,27 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 595, MSLICE 0
 
-  assign sig_595_lut_0 = (~net_1147 & ~net_1483) | (~net_1147 & net_1483 & ((~net_1373 & ~net_1459)));
+  assign sig_595_lut_0 = (~i2c_state_0000000001001111 & ~i2c_state_00000000xxxx1110) | (~i2c_state_0000000001001111 & i2c_state_00000000xxxx1110 & ((~i2c_state_xxxxxxxx1110xxxx & ~i2c_state_xxxxxxxx1000xxxx)));
   assign sig_595_lut_1 = 1'b0;
-  assign net_1214 = (~net_1533 & sig_595_lut_0) | (net_1533 & sig_595_lut_1);
+  assign net_1214 = (~i2c_state_xxxxxxxx00010010 & sig_595_lut_0) | (i2c_state_xxxxxxxx00010010 & sig_595_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 596, LSLICE 2
 
-  assign net_1212 = (net_1366 & ((~net_702 & net_1529)));
-  assign net_1213 = (~net_1366 & ((~net_1241 & ~net_1529) | (~net_1241 & net_1529))) | (net_1366 & ((~net_1241 & ~net_1529)));
+  assign i2c_cmd6C_e2 = (i2c_state_xxxxxxxx1010xxxx & ((~i2c_send_enable & i2c_state_00000000xxxx1010)));
+  assign net_1213 = (~i2c_state_xxxxxxxx1010xxxx & ((~net_1241 & ~i2c_state_00000000xxxx1010) | (~net_1241 & i2c_state_00000000xxxx1010))) | (i2c_state_xxxxxxxx1010xxxx & ((~net_1241 & ~i2c_state_00000000xxxx1010)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1212 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1216 <= 1'b0;
-      end
-      else
-      begin
-        net_1216 <= io_i2c_sda;
+      i_i2c_cmd6C_b2 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6C_e2 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6C_b2 <= io_i2c_sda;
       end
     end
   end
@@ -7049,31 +7046,31 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 597, MSLICE 1
 
-  assign net_1215 = (net_1125 & ~net_1491 & ((net_1211 | net_1170))) | (net_1125 & net_1491);
+  assign net_1215 = (i2c_scl & ~i2c_state_0000000000000000 & ((net_1211 | i2c_state_0000000011101111))) | (i2c_scl & i2c_state_0000000000000000);
   assign net_1211 = ((net_1322 & net_1314));
 
 //---------------------------------------------------------------------------
 //Block 598, LSLICE 3
 
   assign net_1218 = (net_1383 & net_1209 & net_1236 & ((net_1217 & ~net_1211)));
-  assign net_1217 = (net_1238 & net_1398 & ((~net_1466 & net_1230)));
+  assign net_1217 = (net_1238 & net_1398 & ((~i2c_state_0000000000101xxx & net_1230)));
 
 //---------------------------------------------------------------------------
 //Block 599, MSLICE 0
 
   assign net_1220 = (~net_1309 & net_1374 & ((net_993 & ~net_1303)));
-  assign net_1226 = ((~net_1576 & ~net_1466));
+  assign net_1226 = ((~i2c_state_0000000000010011 & ~i2c_state_0000000000101xxx));
 
 //---------------------------------------------------------------------------
 //Block 600, LSLICE 3
 
   assign sig_600_lut_0 = ~adc2_encB;
-  assign net_1227 = ((~net_1301 & net_1523));
+  assign net_1227 = ((~net_1301 & i2c_state_xxxxxxxx0000xxxx));
 
   always @(negedge clock_200MHz)
   begin
-    if(smp_clk_enable == 1'b1)
-    begin
+    if(smp_clk_enable == 1'b1)   //enable
+     begin
       adc2_encB <= sig_600_lut_0;
     end
   end
@@ -7082,25 +7079,25 @@ module FNIRSI_1013D
 //Block 601, LSLICE 2
 
   assign net_1222 = (net_1383 & net_1239 & net_1220 & ((net_1224 & net_1226)));
-  assign net_1224 = (net_1245 & net_1145 & net_1304 & ((~net_1389 & net_1326)));
+  assign net_1224 = (net_1245 & net_1145 & net_1304 & ((~i2c_state_00000000101011xx & net_1326)));
 
 //---------------------------------------------------------------------------
 //Block 602, MSLICE 1
 
-  assign net_1225 = ((~net_702 & net_1143));
-  assign net_1221 = (~net_1138 & ~net_1143 & ((~net_1632 & ~net_1388) | (net_1632 & ~net_1388))) | (net_1138 & ~net_1143 & ((~net_1632 & ~net_1388)));
+  assign i2c_cmd6B_e1 = ((~i2c_send_enable & i2c_state_0000000010001110));
+  assign net_1221 = (~i2c_state_000000001000xxxx & ~i2c_state_0000000010001110 & ((~i2c_state_xxxxxxxxxxxx0111 & ~net_1388) | (i2c_state_xxxxxxxxxxxx0111 & ~net_1388))) | (i2c_state_000000001000xxxx & ~i2c_state_0000000010001110 & ((~i2c_state_xxxxxxxxxxxx0111 & ~net_1388)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1225 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1223 <= 1'b1;
-      end
-      else
-      begin
-        net_1223 <= io_i2c_sda;
+      i_i2c_cmd6B_b1 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6B_e1 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6B_b1 <= io_i2c_sda;
       end
     end
   end
@@ -7108,20 +7105,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 603, MSLICE 0
 
-  assign net_1232 = (~net_702 & ((net_1626 & net_1464)));
-  assign net_1231 = ((net_1474 & net_1626));
+  assign i2c_cmd68_e3 = (~i2c_send_enable & ((i2c_state_xxxxxxxxxxxx0000 & i2c_state_000000000011xxxx)));
+  assign i2c_state_0000000001010000 = ((i2c_state_000000000101xxxx & i2c_state_xxxxxxxxxxxx0000));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1232 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1229 <= 1'b1;
-      end
-      else
-      begin
-        net_1229 <= io_i2c_sda;
+      i_i2c_cmd68_b3 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd68_e3 == 1'b1)   //enable
+       begin
+        i_i2c_cmd68_b3 <= io_i2c_sda;
       end
     end
   end
@@ -7129,98 +7126,98 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 604, LSLICE 2
 
-  assign net_1228 = (~net_1408 & ~net_1624 & ~net_1577 & (~(net_1617 & net_1469))) | (~net_1408 & ~net_1624 & net_1577 & (~(net_1617 & net_1469))) | (~net_1408 & net_1624 & ~net_1577 & (~(net_1617 & net_1469)));
+  assign net_1228 = (~i2c_state_0000000011001110 & ~i2c_state_xxxxxxxxxxxx1111 & ~i2c_state_000000001100xxxx & (~(i2c_state_xxxxxxxxxxxx1000 & i2c_state_000000000100xxxx))) | (~i2c_state_0000000011001110 & ~i2c_state_xxxxxxxxxxxx1111 & i2c_state_000000001100xxxx & (~(i2c_state_xxxxxxxxxxxx1000 & i2c_state_000000000100xxxx))) | (~i2c_state_0000000011001110 & i2c_state_xxxxxxxxxxxx1111 & ~i2c_state_000000001100xxxx & (~(i2c_state_xxxxxxxxxxxx1000 & i2c_state_000000000100xxxx)));
   assign net_1230 = (net_1163 & net_1228 & ((~net_1309 & net_1234)));
 
 //---------------------------------------------------------------------------
 //Block 605, LSLICE 3
 
-  assign net_1234 = (net_1330 & ~net_1233 & ~net_1155 & (~(net_1634 & net_1469)));
-  assign net_1233 = ((net_1633 & net_1471));
+  assign net_1234 = (net_1330 & ~i2c_state_0000000001110100 & ~i2c_state_0000000001010111 & (~(i2c_state_xxxxxxxxxxxx0110 & i2c_state_000000000100xxxx)));
+  assign i2c_state_0000000001110100 = ((i2c_state_xxxxxxxxxxxx0100 & i2c_state_000000000111xxxx));
 
 //---------------------------------------------------------------------------
 //Block 606, LSLICE 2
 
-  assign net_1239 = (~net_1386 & net_1000 & ~net_1577) | (~net_1386 & net_1000 & net_1577 & ((~net_1633 & ~net_1635)));
-  assign net_1237 = (~net_1386 & ~net_1409 & (~(net_1577 & net_1625)));
+  assign net_1239 = (~net_1386 & net_1000 & ~i2c_state_000000001100xxxx) | (~net_1386 & net_1000 & i2c_state_000000001100xxxx & ((~i2c_state_xxxxxxxxxxxx0100 & ~i2c_state_xxxxxxxxxxxx0101)));
+  assign net_1237 = (~net_1386 & ~net_1409 & (~(i2c_state_000000001100xxxx & i2c_state_xxxxxxxxxxxx0010)));
 
 //---------------------------------------------------------------------------
 //Block 607, LSLICE 3
 
-  assign net_1235 = (net_1302 & ((net_1630 & net_827)));
-  assign net_1241 = ((net_1302 & net_1573));
+  assign net_1235 = (i2c_state_000000001010xxxx & ((i2c_state_xxxxxxxxxxxx0011 & o_i2c_cmd6C_b5)));
+  assign net_1241 = ((i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx1011));
 
 //---------------------------------------------------------------------------
 //Block 608, MSLICE 0
 
   assign sig_608_lut_0 = 1'b0;
-  assign sig_608_lut_1 = (net_1159 & ~net_1579 & ((~net_1334 & ~net_1498)));
+  assign sig_608_lut_1 = (net_1159 & ~i2c_state_0000000010110001 & ((~net_1334 & ~i2c_state_0000000010010000)));
   assign net_1238 = (~net_1158 & sig_608_lut_0) | (net_1158 & sig_608_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 609, MSLICE 1
 
-  assign net_1240 = ((net_1566 & net_1531));
+  assign i2c_state_0000000000101001 = ((i2c_state_xxxxxxxxxxxx1001 & i2c_state_000000000010xxxx));
   assign net_1236 = (net_1331 & ((net_1000 & ~net_1316)));
 
 //---------------------------------------------------------------------------
 //Block 610, MSLICE 0
 
-  assign net_1246 = (net_1138 & ((net_1566 | net_1635)));
-  assign net_1244 = (net_1513 & ((net_1138 & net_1635)));
+  assign net_1246 = (i2c_state_000000001000xxxx & ((i2c_state_xxxxxxxxxxxx1001 | i2c_state_xxxxxxxxxxxx0101)));
+  assign net_1244 = (o_i2c_cmd6B_b5 & ((i2c_state_000000001000xxxx & i2c_state_xxxxxxxxxxxx0101)));
 
 //---------------------------------------------------------------------------
 //Block 611, LSLICE 2
 
-  assign net_1243 = (~net_1144 & ~net_1640 & ~net_1516 & (~(net_1595 & net_1240)));
+  assign net_1243 = (~net_1144 & ~i2c_out_cmd68_b2 & ~net_1516 & (~(o_i2c_cmd68_b6 & i2c_state_0000000000101001)));
   assign net_1242 = (net_1243 & net_1340 & net_1599 & ((net_1248 & net_1247)));
 
 //---------------------------------------------------------------------------
 //Block 612, MSLICE 1
 
-  assign sig_612_lut_0 = (net_1336 & ~net_1577) | (net_1336 & net_1577 & ((~net_1566 & ~net_1632)));
+  assign sig_612_lut_0 = (net_1336 & ~i2c_state_000000001100xxxx) | (net_1336 & i2c_state_000000001100xxxx & ((~i2c_state_xxxxxxxxxxxx1001 & ~i2c_state_xxxxxxxxxxxx0111)));
   assign sig_612_lut_1 = 1'b0;
-  assign net_1245 = (~net_1575 & sig_612_lut_0) | (net_1575 & sig_612_lut_1);
+  assign net_1245 = (~i2c_state_195_203 & sig_612_lut_0) | (i2c_state_195_203 & sig_612_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 613, MSLICE 0
 
-  assign sig_613_lut_0 = (net_819 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5)));
-  assign sig_613_lut_1 = (~net_819 & ~io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (~net_819 & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (net_819 & ~io_mcu_d_5 & ((net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (net_819 & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs)));
-  assign sig_613_ff0_d = (~net_1253 & sig_613_lut_0) | (net_1253 & sig_613_lut_1);
+  assign sig_613_lut_0 = (cmd6D_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5)));
+  assign sig_613_lut_1 = (~cmd6D_write_enable & ~io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (~cmd6D_write_enable & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (cmd6D_write_enable & ~io_mcu_d_5 & ((net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (cmd6D_write_enable & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs)));
+  assign sig_613_ff0_d = (~o_i2c_cmd6D_b5 & sig_613_lut_0) | (o_i2c_cmd6D_b5 & sig_613_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1253 <= sig_613_ff0_d;
+    o_i2c_cmd6D_b5 <= sig_613_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 614, LSLICE 3
 
-  assign net_1251 = (net_1335 & ~net_1592 & ~net_1354) | (net_1335 & ~net_1592 & net_1354 & (~(net_1573 & net_1469)));
-  assign net_1248 = (net_829 & ~net_1182 & net_1429 & ((net_1251 & ~net_1422) | (net_1251 & net_1422))) | (net_829 & net_1182 & net_1429 & ((net_1251 & ~net_1422)));
+  assign net_1251 = (net_1335 & ~net_1592 & ~o_i2c_cmd69_b4) | (net_1335 & ~net_1592 & o_i2c_cmd69_b4 & (~(i2c_state_xxxxxxxxxxxx1011 & i2c_state_000000000100xxxx)));
+  assign net_1248 = (net_829 & ~o_i2c_cmd6B_b1 & net_1429 & ((net_1251 & ~net_1422) | (net_1251 & net_1422))) | (net_829 & o_i2c_cmd6B_b1 & net_1429 & ((net_1251 & ~net_1422)));
 
 //---------------------------------------------------------------------------
 //Block 615, LSLICE 2
 
   assign net_1247 = (net_1166 & net_1250 & net_1512 & ((~net_1509 & ~net_823)));
-  assign net_1250 = (~net_1012 & ~net_1566 & ((net_1249 & net_1507))) | (net_1012 & ~net_1566 & ((net_1249 & net_1507))) | (net_1012 & net_1566 & ((net_1249 & net_1507)));
+  assign net_1250 = (~net_1012 & ~i2c_state_xxxxxxxxxxxx1001 & ((net_1249 & net_1507))) | (net_1012 & ~i2c_state_xxxxxxxxxxxx1001 & ((net_1249 & net_1507))) | (net_1012 & i2c_state_xxxxxxxxxxxx1001 & ((net_1249 & net_1507)));
 
 //---------------------------------------------------------------------------
 //Block 616, MSLICE 1
 
-  assign net_1252 = (net_1176 & ((net_1635 & net_1302)));
-  assign net_1249 = (~net_1252 & ~net_1300 & ((~net_1343 & ~net_1577) | (net_1343 & ~net_1577) | (net_1343 & net_1577)));
+  assign net_1252 = (o_i2c_cmd6C_b4 & ((i2c_state_xxxxxxxxxxxx0101 & i2c_state_000000001010xxxx)));
+  assign net_1249 = (~net_1252 & ~i2c_out_cmd6E_b6 & ((~net_1343 & ~i2c_state_000000001100xxxx) | (net_1343 & ~i2c_state_000000001100xxxx) | (net_1343 & i2c_state_000000001100xxxx)));
 
 //---------------------------------------------------------------------------
 //Block 617, LSLICE 2
 
-  assign sig_617_lut_0 = (~net_1256 & net_824 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (net_1256 & ~net_824 & ~i_mcu_dcs) | (net_1256 & ~net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (net_1256 & net_824 & ~i_mcu_dcs & ((net_431 | io_mcu_d_7))) | (net_1256 & net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7)));
-  assign net_1254 = (~net_1244 & ~net_1419 & ~net_1235 & (~(net_1256 & net_1578)));
+  assign sig_617_lut_0 = (~o_i2c_cmd6C_b7 & cmd6C_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (o_i2c_cmd6C_b7 & ~cmd6C_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6C_b7 & ~cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (o_i2c_cmd6C_b7 & cmd6C_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_7))) | (o_i2c_cmd6C_b7 & cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7)));
+  assign net_1254 = (~net_1244 & ~net_1419 & ~net_1235 & (~(o_i2c_cmd6C_b7 & i2c_state_0000000010010011)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1256 <= sig_617_lut_0;
+    o_i2c_cmd6C_b7 <= sig_617_lut_0;
   end
 
 //---------------------------------------------------------------------------
@@ -7233,13 +7230,13 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 619, LSLICE 3
 
-  assign sig_619_lut_0 = (~net_1258 & net_820 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (net_1258 & ~net_820 & ~i_mcu_dcs) | (net_1258 & ~net_820 & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (net_1258 & net_820 & ~i_mcu_dcs & ((net_431 | io_mcu_d_7))) | (net_1258 & net_820 & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7)));
-  assign sig_619_lut_1 = (~net_820 & net_1257 & ~i_mcu_dcs) | (~net_820 & net_1257 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (net_820 & ~net_1257 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (net_820 & net_1257 & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (net_820 & net_1257 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
+  assign sig_619_lut_0 = (~o_i2c_cmd6E_b7 & cmd6E_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (o_i2c_cmd6E_b7 & ~cmd6E_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6E_b7 & ~cmd6E_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (o_i2c_cmd6E_b7 & cmd6E_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_7))) | (o_i2c_cmd6E_b7 & cmd6E_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7)));
+  assign sig_619_lut_1 = (~cmd6E_write_enable & o_i2c_cmd6E_b4 & ~i_mcu_dcs) | (~cmd6E_write_enable & o_i2c_cmd6E_b4 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (cmd6E_write_enable & ~o_i2c_cmd6E_b4 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (cmd6E_write_enable & o_i2c_cmd6E_b4 & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (cmd6E_write_enable & o_i2c_cmd6E_b4 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1258 <= sig_619_lut_0;
-    net_1257 <= sig_619_lut_1;
+    o_i2c_cmd6E_b7 <= sig_619_lut_0;
+    o_i2c_cmd6E_b4 <= sig_619_lut_1;
   end
 
 //---------------------------------------------------------------------------
@@ -7256,15 +7253,15 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 625, LSLICE 2
 
-  always @(posedge clk_100MHz)
+  always @(posedge clk_50MHz)
   begin
-    if(net_1096 == 1'b1)
+    if(calib_1KHz_rst == 1'b1)   //reset
     begin
-      net_1263 <= 1'b0;
+      calib_1KHz_r30 <= 1'b0;
     end
     else
     begin
-      net_1263 <= net_943;
+      calib_1KHz_r30 <= calib_1KHz_c30;
     end
   end
 
@@ -7276,7 +7273,7 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
+    if(clk_a_reset == 1'b1)   //reset
     begin
       clk_a_div_reg14 <= 1'b0;
       clk_a_div_reg5 <= 1'b0;
@@ -7293,7 +7290,7 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
+    if(clk_a_reset == 1'b1)   //reset
     begin
       clk_a_div_reg0 <= 1'b0;
       clk_a_div_reg1 <= 1'b0;
@@ -7310,7 +7307,7 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
+    if(clk_a_reset == 1'b1)   //reset
     begin
       clk_a_div_reg3 <= 1'b0;
       clk_a_div_reg4 <= 1'b0;
@@ -7327,7 +7324,7 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
+    if(clk_a_reset == 1'b1)   //reset
     begin
       clk_a_div_reg10 <= 1'b0;
       clk_a_div_reg7 <= 1'b0;
@@ -7344,7 +7341,7 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
+    if(clk_a_reset == 1'b1)   //reset
     begin
       clk_a_div_reg11 <= 1'b0;
       clk_a_div_reg12 <= 1'b0;
@@ -7361,7 +7358,7 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
+    if(clk_a_reset == 1'b1)   //reset
     begin
       clk_a_div_reg15 <= 1'b0;
       clk_a_div_reg8 <= 1'b0;
@@ -7383,7 +7380,7 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
+    if(clk_a_reset == 1'b1)   //reset
     begin
       clk_a_div_reg9 <= 1'b0;
     end
@@ -7396,19 +7393,19 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 633, LSLICE 3
 
-  assign net_1298 = ((net_1380 & ~net_702));
-  assign net_1297 = (~net_1606 & ~net_467 & (~(i_i2c_cmd6E_b0 & cmd6E_select))) | (~net_1606 & net_467 & (~(i_i2c_cmd6E_b0 & cmd6E_select))) | (net_1606 & ~net_467 & (~(i_i2c_cmd6E_b0 & cmd6E_select)));
+  assign i2c_cmd6E_e0 = ((i2c_state_0000000011101010 & ~i2c_send_enable));
+  assign net_1297 = (~i2c_session_done & ~cmd67_select & (~(i_i2c_cmd6E_b0 & cmd6E_select))) | (~i2c_session_done & cmd67_select & (~(i_i2c_cmd6E_b0 & cmd6E_select))) | (i2c_session_done & ~cmd67_select & (~(i_i2c_cmd6E_b0 & cmd6E_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1298 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        i_i2c_cmd6E_b0 <= 1'b1;
-      end
-      else
-      begin
+      i_i2c_cmd6E_b0 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6E_e0 == 1'b1)   //enable
+       begin
         i_i2c_cmd6E_b0 <= io_i2c_sda;
       end
     end
@@ -7417,20 +7414,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 634, MSLICE 1
 
-  assign net_1296 = (~net_702 & ((net_1529 & net_1530)));
-  assign net_1293 = (~net_1530 & ((~net_1365 & ~net_1529) | (~net_1365 & net_1529))) | (net_1530 & ((~net_1365 & ~net_1529)));
+  assign i2c_cmd68_e6 = (~i2c_send_enable & ((i2c_state_00000000xxxx1010 & i2c_state_xxxxxxxx0010xxxx)));
+  assign net_1293 = (~i2c_state_xxxxxxxx0010xxxx & ((~i2c_state_xxxxxxxx0110xxxx & ~i2c_state_00000000xxxx1010) | (~i2c_state_xxxxxxxx0110xxxx & i2c_state_00000000xxxx1010))) | (i2c_state_xxxxxxxx0010xxxx & ((~i2c_state_xxxxxxxx0110xxxx & ~i2c_state_00000000xxxx1010)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1296 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1292 <= 1'b1;
-      end
-      else
-      begin
-        net_1292 <= io_i2c_sda;
+      i_i2c_cmd68_b6 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd68_e6 == 1'b1)   //enable
+       begin
+        i_i2c_cmd68_b6 <= io_i2c_sda;
       end
     end
   end
@@ -7438,57 +7435,57 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 635, MSLICE 0
 
-  assign net_1299 = (~net_1618 & ((net_1307 & net_1459))) | (net_1618 & ((~net_1307 & net_1459) | (net_1307 & net_1459)));
-  assign net_1300 = (net_1461 & ((net_1118 & net_1307)));
+  assign net_1299 = (~i2c_state_00000000xxxx1100 & ((i2c_state_00000000xxxx1101 & i2c_state_xxxxxxxx1000xxxx))) | (i2c_state_00000000xxxx1100 & ((~i2c_state_00000000xxxx1101 & i2c_state_xxxxxxxx1000xxxx) | (i2c_state_00000000xxxx1101 & i2c_state_xxxxxxxx1000xxxx)));
+  assign i2c_out_cmd6E_b6 = (i2c_state_xxxxxxxx1101xxxx & ((o_i2c_cmd6E_b6 & i2c_state_00000000xxxx1101)));
 
 //---------------------------------------------------------------------------
 //Block 636, LSLICE 2
 
-  assign net_1305 = (~net_1483 & ((~net_1618 & net_1301)));
-  assign net_1301 = ((~net_1529 & ~net_1544));
+  assign net_1305 = (~i2c_state_00000000xxxx1110 & ((~i2c_state_00000000xxxx1100 & net_1301)));
+  assign net_1301 = ((~i2c_state_00000000xxxx1010 & ~i2c_state_00000000xxxx1000));
 
 //---------------------------------------------------------------------------
 //Block 637, LSLICE 3
 
-  assign net_1302 = ((net_1608 & net_1366));
-  assign net_1303 = ((net_1366 & ~net_1465));
+  assign i2c_state_000000001010xxxx = ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxx1010xxxx));
+  assign net_1303 = ((i2c_state_xxxxxxxx1010xxxx & ~i2s_state_unknown_a));
 
 //---------------------------------------------------------------------------
 //Block 638, MSLICE 1
 
-  assign net_1306 = (~net_1002 & ~net_1496 & (~(net_1460 & net_1529)));
-  assign net_1304 = (~net_1465 & ((~net_1460 & ~net_1002))) | (net_1465 & ((~net_1460 & ~net_1002) | (net_1460 & ~net_1002)));
+  assign net_1306 = (~i2c_state_198_200 & ~net_1496 & (~(i2c_state_xxxxxxxx1100xxxx & i2c_state_00000000xxxx1010)));
+  assign net_1304 = (~i2s_state_unknown_a & ((~i2c_state_xxxxxxxx1100xxxx & ~i2c_state_198_200))) | (i2s_state_unknown_a & ((~i2c_state_xxxxxxxx1100xxxx & ~i2c_state_198_200) | (i2c_state_xxxxxxxx1100xxxx & ~i2c_state_198_200)));
 
 //---------------------------------------------------------------------------
 //Block 639, MSLICE 0
 
   assign sig_639_lut_0 = 1'b0;
-  assign sig_639_lut_1 = (net_1368 & net_1401 & ((~net_1301 & ~net_1373) | (net_1301 & ~net_1373) | (net_1301 & net_1373)));
+  assign sig_639_lut_1 = (net_1368 & net_1401 & ((~net_1301 & ~i2c_state_xxxxxxxx1110xxxx) | (net_1301 & ~i2c_state_xxxxxxxx1110xxxx) | (net_1301 & i2c_state_xxxxxxxx1110xxxx)));
   assign net_1308 = (~net_993 & sig_639_lut_0) | (net_993 & sig_639_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 640, LSLICE 2
 
-  assign net_1307 = ((net_1608 & net_1623));
-  assign net_1309 = (~net_1618 & ((net_1307 & net_1461))) | (net_1618 & ((~net_1307 & net_1461) | (net_1307 & net_1461)));
+  assign i2c_state_00000000xxxx1101 = ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxxxxxx1101));
+  assign net_1309 = (~i2c_state_00000000xxxx1100 & ((i2c_state_00000000xxxx1101 & i2c_state_xxxxxxxx1101xxxx))) | (i2c_state_00000000xxxx1100 & ((~i2c_state_00000000xxxx1101 & i2c_state_xxxxxxxx1101xxxx) | (i2c_state_00000000xxxx1101 & i2c_state_xxxxxxxx1101xxxx)));
 
 //---------------------------------------------------------------------------
 //Block 641, LSLICE 3
 
-  assign net_1312 = (net_1634 & ((~net_702 & net_1472)));
-  assign net_1311 = (~net_1301 & ~net_1608 & ((~net_1634 & ~net_1293) | (net_1634 & ~net_1293))) | (~net_1301 & net_1608 & ((~net_1634 & ~net_1293) | (net_1634 & ~net_1293))) | (net_1301 & net_1608 & ((net_1634 & ~net_1293)));
+  assign i2c_cmd6A_e6 = (i2c_state_xxxxxxxxxxxx0110 & ((~i2c_send_enable & i2c_state_000000000110xxxx)));
+  assign net_1311 = (~net_1301 & ~i2c_state_00000000xxxxxxxx & ((~i2c_state_xxxxxxxxxxxx0110 & ~net_1293) | (i2c_state_xxxxxxxxxxxx0110 & ~net_1293))) | (~net_1301 & i2c_state_00000000xxxxxxxx & ((~i2c_state_xxxxxxxxxxxx0110 & ~net_1293) | (i2c_state_xxxxxxxxxxxx0110 & ~net_1293))) | (net_1301 & i2c_state_00000000xxxxxxxx & ((i2c_state_xxxxxxxxxxxx0110 & ~net_1293)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1312 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1310 <= 1'b0;
-      end
-      else
-      begin
-        net_1310 <= io_i2c_sda;
+      i_i2c_cmd6A_b6 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6A_e6 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6A_b6 <= io_i2c_sda;
       end
     end
   end
@@ -7503,25 +7500,25 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 643, MSLICE 0
 
-  assign net_1315 = (~net_1480 & net_1568 & ((~net_1390 & net_1137)));
+  assign net_1315 = (~i2c_state_0000000000110xx1 & net_1568 & ((~net_1390 & net_1137)));
   assign net_1314 = (net_1320 & net_1221 & ((net_1139 & ~net_1485)));
 
 //---------------------------------------------------------------------------
 //Block 644, LSLICE 3
 
-  assign net_1316 = (~net_1301 & net_1460 & ~net_1608) | (~net_1301 & net_1460 & net_1608) | (net_1301 & net_1460 & net_1608 & ((net_1566 | net_1632)));
+  assign net_1316 = (~net_1301 & i2c_state_xxxxxxxx1100xxxx & ~i2c_state_00000000xxxxxxxx) | (~net_1301 & i2c_state_xxxxxxxx1100xxxx & i2c_state_00000000xxxxxxxx) | (net_1301 & i2c_state_xxxxxxxx1100xxxx & i2c_state_00000000xxxxxxxx & ((i2c_state_xxxxxxxxxxxx1001 | i2c_state_xxxxxxxxxxxx0111)));
   assign net_1319 = (net_1381 & net_1391 & ~net_1316 & ((net_1226 & net_1315)));
 
 //---------------------------------------------------------------------------
 //Block 645, LSLICE 2
 
   assign net_1317 = (net_1318 & net_1139 & net_1137 & ((net_1323 & net_1398)));
-  assign net_1318 = (~net_1630 & ~net_1474 & ((~net_1490 & ~net_1496))) | (~net_1630 & net_1474 & ((~net_1490 & ~net_1496))) | (net_1630 & ~net_1474 & ((~net_1490 & ~net_1496)));
+  assign net_1318 = (~i2c_state_xxxxxxxxxxxx0011 & ~i2c_state_000000000101xxxx & ((~i2c_state_13_15 & ~net_1496))) | (~i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000101xxxx & ((~i2c_state_13_15 & ~net_1496))) | (i2c_state_xxxxxxxxxxxx0011 & ~i2c_state_000000000101xxxx & ((~i2c_state_13_15 & ~net_1496)));
 
 //---------------------------------------------------------------------------
 //Block 646, MSLICE 1
 
-  assign sig_646_lut_0 = (net_1564 & ~net_1389 & ((net_1213 & net_1238)));
+  assign sig_646_lut_0 = (net_1564 & ~i2c_state_00000000101011xx & ((net_1213 & net_1238)));
   assign sig_646_lut_1 = 1'b0;
   assign net_1320 = (~net_1299 & sig_646_lut_0) | (net_1299 & sig_646_lut_1);
 
@@ -7535,39 +7532,39 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 648, LSLICE 2
 
-  assign net_1321 = (~net_1299 & ~net_1469 & ~net_1632 & (~(net_1629 & net_1474))) | (~net_1299 & ~net_1469 & net_1632 & (~(net_1629 & net_1474))) | (~net_1299 & net_1469 & ~net_1632 & (~(net_1629 & net_1474)));
+  assign net_1321 = (~net_1299 & ~i2c_state_000000000100xxxx & ~i2c_state_xxxxxxxxxxxx0111 & (~(i2c_state_xxxxxxxxxxxx0001 & i2c_state_000000000101xxxx))) | (~net_1299 & ~i2c_state_000000000100xxxx & i2c_state_xxxxxxxxxxxx0111 & (~(i2c_state_xxxxxxxxxxxx0001 & i2c_state_000000000101xxxx))) | (~net_1299 & i2c_state_000000000100xxxx & ~i2c_state_xxxxxxxxxxxx0111 & (~(i2c_state_xxxxxxxxxxxx0001 & i2c_state_000000000101xxxx)));
   assign net_1323 = (net_1327 & net_1321 & ((net_1151 & net_1404)));
 
 //---------------------------------------------------------------------------
 //Block 649, MSLICE 1
 
-  assign net_1324 = (~net_1625 & ((net_1474 & net_1630))) | (net_1625 & ((net_1474 & ~net_1630) | (net_1474 & net_1630)));
+  assign net_1324 = (~i2c_state_xxxxxxxxxxxx0010 & ((i2c_state_000000000101xxxx & i2c_state_xxxxxxxxxxxx0011))) | (i2c_state_xxxxxxxxxxxx0010 & ((i2c_state_000000000101xxxx & ~i2c_state_xxxxxxxxxxxx0011) | (i2c_state_000000000101xxxx & i2c_state_xxxxxxxxxxxx0011)));
   assign net_1325 = (net_1237 & ~net_1324 & ((net_1213 & ~net_1402)));
 
 //---------------------------------------------------------------------------
 //Block 650, MSLICE 0
 
   assign sig_650_lut_0 = 1'b0;
-  assign sig_650_lut_1 = (~net_1302 & ~net_1408) | (net_1302 & ~net_1408 & ((~net_1633 & ~net_1635)));
+  assign sig_650_lut_1 = (~i2c_state_000000001010xxxx & ~i2c_state_0000000011001110) | (i2c_state_000000001010xxxx & ~i2c_state_0000000011001110 & ((~i2c_state_xxxxxxxxxxxx0100 & ~i2c_state_xxxxxxxxxxxx0101)));
   assign net_1326 = (~net_1399 & sig_650_lut_0) | (net_1399 & sig_650_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 651, LSLICE 2
 
-  assign net_1328 = (net_1469 & ((net_1634 & ~net_702)));
-  assign net_1327 = (net_1416 & ~net_1469) | (net_1416 & net_1469 & ((~net_1634 & ~net_1617)));
+  assign i2c_cmd69_e7 = (i2c_state_000000000100xxxx & ((i2c_state_xxxxxxxxxxxx0110 & ~i2c_send_enable)));
+  assign net_1327 = (net_1416 & ~i2c_state_000000000100xxxx) | (net_1416 & i2c_state_000000000100xxxx & ((~i2c_state_xxxxxxxxxxxx0110 & ~i2c_state_xxxxxxxxxxxx1000)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1328 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1332 <= 1'b0;
-      end
-      else
-      begin
-        net_1332 <= io_i2c_sda;
+      i_i2c_cmd69_b7 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd69_e7 == 1'b1)   //enable
+       begin
+        i_i2c_cmd69_b7 <= io_i2c_sda;
       end
     end
   end
@@ -7575,37 +7572,37 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 652, LSLICE 3
 
-  assign net_1329 = (~net_1497 & ~net_1577 & ~net_1634) | (~net_1497 & ~net_1577 & net_1634) | (~net_1497 & net_1577 & ~net_1634 & ((~net_1635 & ~net_1573)));
-  assign net_1331 = (net_1387 & net_1329 & ~net_1625 & (~(net_1630 & net_1302))) | (net_1387 & net_1329 & net_1625 & ((~net_1630 & ~net_1302) | (net_1630 & ~net_1302)));
+  assign net_1329 = (~i2c_state_0000000010110000 & ~i2c_state_000000001100xxxx & ~i2c_state_xxxxxxxxxxxx0110) | (~i2c_state_0000000010110000 & ~i2c_state_000000001100xxxx & i2c_state_xxxxxxxxxxxx0110) | (~i2c_state_0000000010110000 & i2c_state_000000001100xxxx & ~i2c_state_xxxxxxxxxxxx0110 & ((~i2c_state_xxxxxxxxxxxx0101 & ~i2c_state_xxxxxxxxxxxx1011)));
+  assign net_1331 = (net_1387 & net_1329 & ~i2c_state_xxxxxxxxxxxx0010 & (~(i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000001010xxxx))) | (net_1387 & net_1329 & i2c_state_xxxxxxxxxxxx0010 & ((~i2c_state_xxxxxxxxxxxx0011 & ~i2c_state_000000001010xxxx) | (i2c_state_xxxxxxxxxxxx0011 & ~i2c_state_000000001010xxxx)));
 
 //---------------------------------------------------------------------------
 //Block 653, MSLICE 1
 
   assign sig_653_lut_0 = 1'b0;
-  assign sig_653_lut_1 = (~net_1474 & ~net_1632) | (~net_1474 & net_1632 & ((~net_1629 & ~net_1469) | (net_1629 & ~net_1469))) | (net_1474 & ~net_1632 & ((~net_1629 & ~net_1469) | (~net_1629 & net_1469))) | (net_1474 & net_1632 & ((~net_1629 & ~net_1469)));
+  assign sig_653_lut_1 = (~i2c_state_000000000101xxxx & ~i2c_state_xxxxxxxxxxxx0111) | (~i2c_state_000000000101xxxx & i2c_state_xxxxxxxxxxxx0111 & ((~i2c_state_xxxxxxxxxxxx0001 & ~i2c_state_000000000100xxxx) | (i2c_state_xxxxxxxxxxxx0001 & ~i2c_state_000000000100xxxx))) | (i2c_state_000000000101xxxx & ~i2c_state_xxxxxxxxxxxx0111 & ((~i2c_state_xxxxxxxxxxxx0001 & ~i2c_state_000000000100xxxx) | (~i2c_state_xxxxxxxxxxxx0001 & i2c_state_000000000100xxxx))) | (i2c_state_000000000101xxxx & i2c_state_xxxxxxxxxxxx0111 & ((~i2c_state_xxxxxxxxxxxx0001 & ~i2c_state_000000000100xxxx)));
   assign net_1330 = (~net_1413 & sig_653_lut_0) | (net_1413 & sig_653_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 654, LSLICE 2
 
-  assign net_1333 = (net_1019 & ((net_1632 & net_1138)));
-  assign net_1334 = ((net_1624 & net_1138));
+  assign net_1333 = (o_i2c_cmd6B_b4 & ((i2c_state_xxxxxxxxxxxx0111 & i2c_state_000000001000xxxx)));
+  assign net_1334 = ((i2c_state_xxxxxxxxxxxx1111 & i2c_state_000000001000xxxx));
 
 //---------------------------------------------------------------------------
 //Block 655, LSLICE 3
 
-  assign sig_655_lut_0 = (~net_1337 & net_819 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_1337 & ~net_819 & ~i_mcu_dcs) | (net_1337 & ~net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_1337 & net_819 & ~i_mcu_dcs & ((net_431 | io_mcu_d_0))) | (net_1337 & net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0)));
-  assign net_1335 = (~net_1180 & ~net_1577 & ~net_1334) | (~net_1180 & ~net_1577 & net_1334) | (~net_1180 & net_1577 & ~net_1334 & (~(net_1573 & net_1337))) | (~net_1180 & net_1577 & net_1334 & (~(net_1573 & net_1337))) | (net_1180 & ~net_1577 & ~net_1334) | (net_1180 & net_1577 & ~net_1334 & (~(net_1573 & net_1337)));
+  assign sig_655_lut_0 = (~o_i2c_cmd6D_b0 & cmd6D_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (o_i2c_cmd6D_b0 & ~cmd6D_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6D_b0 & ~cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (o_i2c_cmd6D_b0 & cmd6D_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_0))) | (o_i2c_cmd6D_b0 & cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0)));
+  assign net_1335 = (~o_i2c_cmd6B_b0 & ~i2c_state_000000001100xxxx & ~net_1334) | (~o_i2c_cmd6B_b0 & ~i2c_state_000000001100xxxx & net_1334) | (~o_i2c_cmd6B_b0 & i2c_state_000000001100xxxx & ~net_1334 & (~(i2c_state_xxxxxxxxxxxx1011 & o_i2c_cmd6D_b0))) | (~o_i2c_cmd6B_b0 & i2c_state_000000001100xxxx & net_1334 & (~(i2c_state_xxxxxxxxxxxx1011 & o_i2c_cmd6D_b0))) | (o_i2c_cmd6B_b0 & ~i2c_state_000000001100xxxx & ~net_1334) | (o_i2c_cmd6B_b0 & i2c_state_000000001100xxxx & ~net_1334 & (~(i2c_state_xxxxxxxxxxxx1011 & o_i2c_cmd6D_b0)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1337 <= sig_655_lut_0;
+    o_i2c_cmd6D_b0 <= sig_655_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 656, MSLICE 1
 
-  assign sig_656_lut_0 = (~net_1302 & ~net_1625) | (~net_1302 & net_1625 & ((~net_1630 & ~net_1577) | (net_1630 & ~net_1577))) | (net_1302 & ~net_1625 & ((~net_1630 & ~net_1577) | (~net_1630 & net_1577)));
+  assign sig_656_lut_0 = (~i2c_state_000000001010xxxx & ~i2c_state_xxxxxxxxxxxx0010) | (~i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx0010 & ((~i2c_state_xxxxxxxxxxxx0011 & ~i2c_state_000000001100xxxx) | (i2c_state_xxxxxxxxxxxx0011 & ~i2c_state_000000001100xxxx))) | (i2c_state_000000001010xxxx & ~i2c_state_xxxxxxxxxxxx0010 & ((~i2c_state_xxxxxxxxxxxx0011 & ~i2c_state_000000001100xxxx) | (~i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000001100xxxx)));
   assign sig_656_lut_1 = 1'b0;
   assign net_1336 = (~net_1409 & sig_656_lut_0) | (net_1409 & sig_656_lut_1);
 
@@ -7613,31 +7610,31 @@ module FNIRSI_1013D
 //Block 657, MSLICE 0
 
   assign sig_657_lut_0 = 1'b0;
-  assign sig_657_lut_1 = (~net_1579 & ~net_1578 & (~(net_1624 & net_1577)));
+  assign sig_657_lut_1 = (~i2c_state_0000000010110001 & ~i2c_state_0000000010010011 & (~(i2c_state_xxxxxxxxxxxx1111 & i2c_state_000000001100xxxx)));
   assign net_1338 = (~net_1413 & sig_657_lut_0) | (net_1413 & sig_657_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 658, LSLICE 2
 
-  assign net_1342 = (~net_1173 & ~net_1333 & ~net_1172 & (~(net_1253 & net_1409)));
+  assign net_1342 = (~net_1173 & ~net_1333 & ~net_1172 & (~(o_i2c_cmd6D_b5 & net_1409)));
   assign net_1340 = (net_1342 & net_1254 & ~net_1571 & ((~net_1504 & ~net_1351)));
 
 //---------------------------------------------------------------------------
 //Block 659, LSLICE 3
 
-  assign sig_659_lut_0 = (~net_1344 & net_819 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1344 & ~net_819 & ~i_mcu_dcs) | (net_1344 & ~net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1344 & net_819 & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (net_1344 & net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
-  assign net_1343 = (~net_1344 & ~net_1624) | (~net_1344 & net_1624 & ((~net_1258 & ~net_1635) | (~net_1258 & net_1635))) | (net_1344 & ~net_1624 & ((~net_1258 & ~net_1635) | (net_1258 & ~net_1635))) | (net_1344 & net_1624 & ((~net_1258 & ~net_1635)));
+  assign sig_659_lut_0 = (~o_i2c_cmd6D_b3 & cmd6D_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6D_b3 & ~cmd6D_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6D_b3 & ~cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6D_b3 & cmd6D_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (o_i2c_cmd6D_b3 & cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
+  assign net_1343 = (~o_i2c_cmd6D_b3 & ~i2c_state_xxxxxxxxxxxx1111) | (~o_i2c_cmd6D_b3 & i2c_state_xxxxxxxxxxxx1111 & ((~o_i2c_cmd6E_b7 & ~i2c_state_xxxxxxxxxxxx0101) | (~o_i2c_cmd6E_b7 & i2c_state_xxxxxxxxxxxx0101))) | (o_i2c_cmd6D_b3 & ~i2c_state_xxxxxxxxxxxx1111 & ((~o_i2c_cmd6E_b7 & ~i2c_state_xxxxxxxxxxxx0101) | (o_i2c_cmd6E_b7 & ~i2c_state_xxxxxxxxxxxx0101))) | (o_i2c_cmd6D_b3 & i2c_state_xxxxxxxxxxxx1111 & ((~o_i2c_cmd6E_b7 & ~i2c_state_xxxxxxxxxxxx0101)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1344 <= sig_659_lut_0;
+    o_i2c_cmd6D_b3 <= sig_659_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 660, MSLICE 1
 
-  assign net_1339 = ((cmd68_select & i_mcu_rws));
-  assign net_1341 = ((cmd6A_select & i_mcu_rws));
+  assign cmd68_write_enable = ((cmd68_select & i_mcu_rws));
+  assign cmd6A_write_enable = ((cmd6A_select & i_mcu_rws));
 
 //---------------------------------------------------------------------------
 //MSLICE adder blocks 661, 664, 665
@@ -7647,94 +7644,94 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 662, LSLICE 2
 
-  assign sig_662_lut_0 = (~net_819 & ~i_mcu_dcs & net_1348) | (~net_819 & i_mcu_dcs & ~net_1348 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (~net_819 & i_mcu_dcs & net_1348) | (net_819 & ~i_mcu_dcs & ~net_1348 & ((~net_431 & io_mcu_d_2))) | (net_819 & ~i_mcu_dcs & net_1348 & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_819 & i_mcu_dcs & ~net_1348 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (net_819 & i_mcu_dcs & net_1348);
-  assign net_1345 = (net_1632 & ((net_1348 & net_1577)));
+  assign sig_662_lut_0 = (~cmd6D_write_enable & ~i_mcu_dcs & o_i2c_cmd6D_b2) | (~cmd6D_write_enable & i_mcu_dcs & ~o_i2c_cmd6D_b2 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (~cmd6D_write_enable & i_mcu_dcs & o_i2c_cmd6D_b2) | (cmd6D_write_enable & ~i_mcu_dcs & ~o_i2c_cmd6D_b2 & ((~net_431 & io_mcu_d_2))) | (cmd6D_write_enable & ~i_mcu_dcs & o_i2c_cmd6D_b2 & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (cmd6D_write_enable & i_mcu_dcs & ~o_i2c_cmd6D_b2 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (cmd6D_write_enable & i_mcu_dcs & o_i2c_cmd6D_b2);
+  assign net_1345 = (i2c_state_xxxxxxxxxxxx0111 & ((o_i2c_cmd6D_b2 & i2c_state_000000001100xxxx)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1348 <= sig_662_lut_0;
+    o_i2c_cmd6D_b2 <= sig_662_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 663, LSLICE 3
 
-  assign sig_663_lut_0 = (~net_824 & ~i_mcu_dcs & net_1347) | (~net_824 & i_mcu_dcs & ~net_1347 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (~net_824 & i_mcu_dcs & net_1347) | (net_824 & ~i_mcu_dcs & ~net_1347 & ((~net_431 & io_mcu_d_0))) | (net_824 & ~i_mcu_dcs & net_1347 & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_824 & i_mcu_dcs & ~net_1347 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (net_824 & i_mcu_dcs & net_1347);
-  assign net_1351 = (net_1623 & ((net_1347 & net_1302)));
+  assign sig_663_lut_0 = (~cmd6C_write_enable & ~i_mcu_dcs & o_i2c_cmd6C_b0) | (~cmd6C_write_enable & i_mcu_dcs & ~o_i2c_cmd6C_b0 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (~cmd6C_write_enable & i_mcu_dcs & o_i2c_cmd6C_b0) | (cmd6C_write_enable & ~i_mcu_dcs & ~o_i2c_cmd6C_b0 & ((~net_431 & io_mcu_d_0))) | (cmd6C_write_enable & ~i_mcu_dcs & o_i2c_cmd6C_b0 & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (cmd6C_write_enable & i_mcu_dcs & ~o_i2c_cmd6C_b0 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (cmd6C_write_enable & i_mcu_dcs & o_i2c_cmd6C_b0);
+  assign net_1351 = (i2c_state_xxxxxxxxxxxx1101 & ((o_i2c_cmd6C_b0 & i2c_state_000000001010xxxx)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1347 <= sig_663_lut_0;
+    o_i2c_cmd6C_b0 <= sig_663_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 666, LSLICE 2
 
-  assign sig_666_lut_0 = (~net_831 & ~i_mcu_dcs & net_1353) | (~net_831 & i_mcu_dcs & ~net_1353 & ((~net_431 & ~io_mcu_d_3) | (~net_431 & io_mcu_d_3))) | (~net_831 & i_mcu_dcs & net_1353) | (net_831 & ~i_mcu_dcs & ~net_1353 & ((~net_431 & io_mcu_d_3))) | (net_831 & ~i_mcu_dcs & net_1353 & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_831 & i_mcu_dcs & ~net_1353 & ((~net_431 & ~io_mcu_d_3) | (~net_431 & io_mcu_d_3))) | (net_831 & i_mcu_dcs & net_1353);
-  assign sig_666_lut_1 = (~net_831 & ~net_1354 & i_mcu_dcs & ((~net_431 & ~io_mcu_d_4) | (~net_431 & io_mcu_d_4))) | (~net_831 & net_1354 & ~i_mcu_dcs) | (~net_831 & net_1354 & i_mcu_dcs) | (net_831 & ~net_1354 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4))) | (net_831 & ~net_1354 & i_mcu_dcs & ((~net_431 & ~io_mcu_d_4) | (~net_431 & io_mcu_d_4))) | (net_831 & net_1354 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (net_831 & net_1354 & i_mcu_dcs);
+  assign sig_666_lut_0 = (~cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b3) | (~cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b3 & ((~net_431 & ~io_mcu_d_3) | (~net_431 & io_mcu_d_3))) | (~cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b3) | (cmd69_write_enable & ~i_mcu_dcs & ~o_i2c_cmd69_b3 & ((~net_431 & io_mcu_d_3))) | (cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b3 & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b3 & ((~net_431 & ~io_mcu_d_3) | (~net_431 & io_mcu_d_3))) | (cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b3);
+  assign sig_666_lut_1 = (~cmd69_write_enable & ~o_i2c_cmd69_b4 & i_mcu_dcs & ((~net_431 & ~io_mcu_d_4) | (~net_431 & io_mcu_d_4))) | (~cmd69_write_enable & o_i2c_cmd69_b4 & ~i_mcu_dcs) | (~cmd69_write_enable & o_i2c_cmd69_b4 & i_mcu_dcs) | (cmd69_write_enable & ~o_i2c_cmd69_b4 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4))) | (cmd69_write_enable & ~o_i2c_cmd69_b4 & i_mcu_dcs & ((~net_431 & ~io_mcu_d_4) | (~net_431 & io_mcu_d_4))) | (cmd69_write_enable & o_i2c_cmd69_b4 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (cmd69_write_enable & o_i2c_cmd69_b4 & i_mcu_dcs);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1353 <= sig_666_lut_0;
-    net_1354 <= sig_666_lut_1;
+    o_i2c_cmd69_b3 <= sig_666_lut_0;
+    o_i2c_cmd69_b4 <= sig_666_lut_1;
   end
 
 //---------------------------------------------------------------------------
 //Block 671, LSLICE 2
 
-  assign net_1361 = (net_1363 & ~net_1359 & ~net_1457) | (net_1363 & ~net_1359 & net_1457) | (net_1363 & net_1359 & ~net_1457) | (net_1363 & net_1359 & net_1457 & (~(net_1437 & net_1433)));
-  assign net_1357 = (~net_1362 & ~net_1445) | (~net_1362 & net_1445) | (net_1362 & ~net_1445 & ((~net_1361 & ~net_1444) | (~net_1361 & net_1444) | (net_1361 & net_1444))) | (net_1362 & net_1445);
+  assign net_1361 = (net_1363 & ~i2c_clk_div_reg2 & ~i2c_clk_div_reg5) | (net_1363 & ~i2c_clk_div_reg2 & i2c_clk_div_reg5) | (net_1363 & i2c_clk_div_reg2 & ~i2c_clk_div_reg5) | (net_1363 & i2c_clk_div_reg2 & i2c_clk_div_reg5 & (~(i2c_clk_div_reg4 & i2c_clk_div_reg3)));
+  assign i2c_clk_rst = (~net_1362 & ~i2c_clk_div_reg10) | (~net_1362 & i2c_clk_div_reg10) | (net_1362 & ~i2c_clk_div_reg10 & ((~net_1361 & ~i2c_clk_div_reg11) | (~net_1361 & i2c_clk_div_reg11) | (net_1361 & i2c_clk_div_reg11))) | (net_1362 & i2c_clk_div_reg10);
 
   always @(posedge clock_200MHz)
   begin
-    if(net_1357 == 1'b1)
+    if(i2c_clk_rst == 1'b1)   //reset
     begin
-      net_1359 <= 1'b0;
-      net_1360 <= 1'b0;
+      i2c_clk_div_reg2 <= 1'b0;
+      i2c_clk_div_reg13 <= 1'b0;
     end
     else
     begin
-      net_1359 <= net_1436;
-      net_1360 <= net_1455;
+      i2c_clk_div_reg2 <= i2c_clk_div_out2;
+      i2c_clk_div_reg13 <= i2c_clk_div_out13;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 672, LSLICE 3
 
-  assign net_1363 = (~net_1448 & ~net_1522 & ((~net_1521 & ~net_1356)));
-  assign net_1362 = (~net_1456 & ~net_1358 & ((~net_1446 & ~net_1360)));
+  assign net_1363 = (~i2c_clk_div_reg7 & ~i2c_clk_div_reg9 & ((~i2c_clk_div_reg8 & ~i2c_clk_div_reg6)));
+  assign net_1362 = (~i2c_clk_div_reg15 & ~i2c_clk_div_reg14 & ((~i2c_clk_div_reg12 & ~i2c_clk_div_reg13)));
 
   always @(posedge clock_200MHz)
   begin
-    if(net_1357 == 1'b1)
+    if(i2c_clk_rst == 1'b1)   //reset
     begin
-      net_1356 <= 1'b0;
-      net_1358 <= 1'b0;
+      i2c_clk_div_reg6 <= 1'b0;
+      i2c_clk_div_reg14 <= 1'b0;
     end
     else
     begin
-      net_1356 <= net_1439;
-      net_1358 <= net_1451;
+      i2c_clk_div_reg6 <= i2c_clk_div_out6;
+      i2c_clk_div_reg14 <= i2c_clk_div_out14;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 673, LSLICE 2
 
-  assign net_1367 = (net_1529 & ((~net_702 & net_1365)));
-  assign net_1365 = ((net_1463 & net_1364));
+  assign i2c_cmd6A_e4 = (i2c_state_00000000xxxx1010 & ((~i2c_send_enable & i2c_state_xxxxxxxx0110xxxx)));
+  assign i2c_state_xxxxxxxx0110xxxx = ((i2c_state_xxxxxxxx01xxxxxx & i2c_state_xxxxxxxxxx10xxxx));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1367 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1370 <= 1'b1;
-      end
-      else
-      begin
-        net_1370 <= io_i2c_sda;
+      i_i2c_cmd6A_b4 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6A_e4 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6A_b4 <= io_i2c_sda;
       end
     end
   end
@@ -7742,20 +7739,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 674, LSLICE 3
 
-  assign net_1369 = (net_1530 & ((~net_702 & net_1544)));
-  assign net_1368 = (~net_1530 & ((~net_1544 & ~net_1533) | (net_1544 & ~net_1533))) | (net_1530 & ((~net_1544 & ~net_1533)));
+  assign i2c_cmd68_e7 = (i2c_state_xxxxxxxx0010xxxx & ((~i2c_send_enable & i2c_state_00000000xxxx1000)));
+  assign net_1368 = (~i2c_state_xxxxxxxx0010xxxx & ((~i2c_state_00000000xxxx1000 & ~i2c_state_xxxxxxxx00010010) | (i2c_state_00000000xxxx1000 & ~i2c_state_xxxxxxxx00010010))) | (i2c_state_xxxxxxxx0010xxxx & ((~i2c_state_00000000xxxx1000 & ~i2c_state_xxxxxxxx00010010)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1369 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1371 <= 1'b1;
-      end
-      else
-      begin
-        net_1371 <= io_i2c_sda;
+      i_i2c_cmd68_b7 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd68_e7 == 1'b1)   //enable
+       begin
+        i_i2c_cmd68_b7 <= io_i2c_sda;
       end
     end
   end
@@ -7763,18 +7760,18 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 675, MSLICE 1
 
-  assign net_1366 = (net_1364 & ((net_1551 & ~net_1525)));
-  assign net_1364 = ((net_1473 & ~net_1537));
+  assign i2c_state_xxxxxxxx1010xxxx = (i2c_state_xxxxxxxxxx10xxxx & ((i2c_state_r7 & ~i2c_state_r6)));
+  assign i2c_state_xxxxxxxxxx10xxxx = ((i2c_state_r5 & ~i2c_state_r4));
 
 //---------------------------------------------------------------------------
 //Block 676, MSLICE 0
 
   assign clk_a_div_b = (~clk_a_div_reg5 & ~clk_a_div_reg4 & ((~clk_a_div_reg3 & ~clk_a_div_reg2)));
-  assign net_1377 = ((net_1608 & net_1523));
+  assign i2c_state_000000000000xxxx = ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxx0000xxxx));
 
   always @(posedge clock_200MHz)
   begin
-    if(clk_a_reset == 1'b1)
+    if(clk_a_reset == 1'b1)   //reset
     begin
       clk_a_div_reg2 <= 1'b0;
     end
@@ -7787,55 +7784,55 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 677, LSLICE 2
 
-  assign net_1376 = (net_1364 & ~net_1551 & ((net_1618 | net_1483)));
-  assign net_1373 = (net_1364 & ((net_1551 & net_1525)));
+  assign i2c_state_000000000x1011x0 = (i2c_state_xxxxxxxxxx10xxxx & ~i2c_state_r7 & ((i2c_state_00000000xxxx1100 | i2c_state_00000000xxxx1110)));
+  assign i2c_state_xxxxxxxx1110xxxx = (i2c_state_xxxxxxxxxx10xxxx & ((i2c_state_r7 & i2c_state_r6)));
 
 //---------------------------------------------------------------------------
 //Block 678, MSLICE 1
 
-  assign net_1378 = (~net_1528 & ~net_1544 & (~(net_1373 & net_1618))) | (~net_1528 & net_1544 & (~(net_1373 & net_1618))) | (net_1528 & ~net_1544 & (~(net_1373 & net_1618)));
-  assign net_1374 = (~net_1483 & ((~net_1373 & ~net_1170) | (net_1373 & ~net_1170))) | (net_1483 & ((~net_1373 & ~net_1170)));
+  assign net_1378 = (~i2c_state_xxxxxxxx1111xxxx & ~i2c_state_00000000xxxx1000 & (~(i2c_state_xxxxxxxx1110xxxx & i2c_state_00000000xxxx1100))) | (~i2c_state_xxxxxxxx1111xxxx & i2c_state_00000000xxxx1000 & (~(i2c_state_xxxxxxxx1110xxxx & i2c_state_00000000xxxx1100))) | (i2c_state_xxxxxxxx1111xxxx & ~i2c_state_00000000xxxx1000 & (~(i2c_state_xxxxxxxx1110xxxx & i2c_state_00000000xxxx1100)));
+  assign net_1374 = (~i2c_state_00000000xxxx1110 & ((~i2c_state_xxxxxxxx1110xxxx & ~i2c_state_0000000011101111) | (i2c_state_xxxxxxxx1110xxxx & ~i2c_state_0000000011101111))) | (i2c_state_00000000xxxx1110 & ((~i2c_state_xxxxxxxx1110xxxx & ~i2c_state_0000000011101111)));
 
 //---------------------------------------------------------------------------
 //Block 679, LSLICE 3
 
-  assign net_1379 = ((net_1608 & net_1373));
-  assign net_1380 = ((net_1373 & net_1529));
+  assign i2c_state_000000001110xxxx = ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxx1110xxxx));
+  assign i2c_state_0000000011101010 = ((i2c_state_xxxxxxxx1110xxxx & i2c_state_00000000xxxx1010));
 
 //---------------------------------------------------------------------------
 //Block 680, MSLICE 0
 
-  assign net_1387 = (~net_1460 & ~net_1618 & (~(net_1366 & net_1483))) | (~net_1460 & net_1618 & (~(net_1366 & net_1483))) | (net_1460 & ~net_1618 & (~(net_1366 & net_1483)));
-  assign net_1381 = (~net_1460 & ~net_1618 & ((~net_1406 & ~net_1307) | (~net_1406 & net_1307))) | (~net_1460 & net_1618 & ((~net_1406 & ~net_1307) | (~net_1406 & net_1307))) | (net_1460 & ~net_1618 & ((~net_1406 & ~net_1307)));
+  assign net_1387 = (~i2c_state_xxxxxxxx1100xxxx & ~i2c_state_00000000xxxx1100 & (~(i2c_state_xxxxxxxx1010xxxx & i2c_state_00000000xxxx1110))) | (~i2c_state_xxxxxxxx1100xxxx & i2c_state_00000000xxxx1100 & (~(i2c_state_xxxxxxxx1010xxxx & i2c_state_00000000xxxx1110))) | (i2c_state_xxxxxxxx1100xxxx & ~i2c_state_00000000xxxx1100 & (~(i2c_state_xxxxxxxx1010xxxx & i2c_state_00000000xxxx1110)));
+  assign net_1381 = (~i2c_state_xxxxxxxx1100xxxx & ~i2c_state_00000000xxxx1100 & ((~net_1406 & ~i2c_state_00000000xxxx1101) | (~net_1406 & i2c_state_00000000xxxx1101))) | (~i2c_state_xxxxxxxx1100xxxx & i2c_state_00000000xxxx1100 & ((~net_1406 & ~i2c_state_00000000xxxx1101) | (~net_1406 & i2c_state_00000000xxxx1101))) | (i2c_state_xxxxxxxx1100xxxx & ~i2c_state_00000000xxxx1100 & ((~net_1406 & ~i2c_state_00000000xxxx1101)));
 
 //---------------------------------------------------------------------------
 //Block 681, LSLICE 2
 
-  assign net_1383 = (~net_1619 & net_1384 & ~net_1373) | (~net_1619 & net_1384 & net_1373 & ((net_1301 & ~net_1618)));
-  assign net_1384 = ((~net_1561 & ~net_1480));
+  assign net_1383 = (~net_1619 & net_1384 & ~i2c_state_xxxxxxxx1110xxxx) | (~net_1619 & net_1384 & i2c_state_xxxxxxxx1110xxxx & ((net_1301 & ~i2c_state_00000000xxxx1100)));
+  assign net_1384 = ((~net_1561 & ~i2c_state_0000000000110xx1));
 
 //---------------------------------------------------------------------------
 //Block 682, LSLICE 3
 
-  assign net_1386 = (~net_1630 & net_1373 & ((net_1608 & net_1625))) | (net_1630 & net_1373 & ((net_1608 & ~net_1625) | (net_1608 & net_1625)));
-  assign net_1388 = (~net_1630 & net_1459 & ((net_1608 & net_1625))) | (net_1630 & net_1459 & ((net_1608 & ~net_1625) | (net_1608 & net_1625)));
+  assign net_1386 = (~i2c_state_xxxxxxxxxxxx0011 & i2c_state_xxxxxxxx1110xxxx & ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxxxxxx0010))) | (i2c_state_xxxxxxxxxxxx0011 & i2c_state_xxxxxxxx1110xxxx & ((i2c_state_00000000xxxxxxxx & ~i2c_state_xxxxxxxxxxxx0010) | (i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxxxxxx0010)));
+  assign net_1388 = (~i2c_state_xxxxxxxxxxxx0011 & i2c_state_xxxxxxxx1000xxxx & ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxxxxxx0010))) | (i2c_state_xxxxxxxxxxxx0011 & i2c_state_xxxxxxxx1000xxxx & ((i2c_state_00000000xxxxxxxx & ~i2c_state_xxxxxxxxxxxx0010) | (i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxxxxxx0010)));
 
 //---------------------------------------------------------------------------
 //Block 683, MSLICE 1
 
-  assign net_1385 = (~net_702 & ((net_1483 & net_1366)));
-  assign net_1389 = (~net_1483 & net_1366 & ((net_1623 & net_1608))) | (net_1483 & net_1366);
+  assign i2c_cmd6C_e0 = (~i2c_send_enable & ((i2c_state_00000000xxxx1110 & i2c_state_xxxxxxxx1010xxxx)));
+  assign i2c_state_00000000101011xx = (~i2c_state_00000000xxxx1110 & i2c_state_xxxxxxxx1010xxxx & ((i2c_state_xxxxxxxxxxxx1101 & i2c_state_00000000xxxxxxxx))) | (i2c_state_00000000xxxx1110 & i2c_state_xxxxxxxx1010xxxx);
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1385 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        i_i2c_cmd6C_b0 <= 1'b1;
-      end
-      else
-      begin
+      i_i2c_cmd6C_b0 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6C_e0 == 1'b1)   //enable
+       begin
         i_i2c_cmd6C_b0 <= io_i2c_sda;
       end
     end
@@ -7844,20 +7841,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 684, LSLICE 2
 
-  assign net_1392 = (~net_702 & ((net_1617 & net_1379)));
-  assign net_1391 = (~net_1619 & (~(net_1617 & net_1379)));
+  assign i2c_cmd6E_e1 = (~i2c_send_enable & ((i2c_state_xxxxxxxxxxxx1000 & i2c_state_000000001110xxxx)));
+  assign net_1391 = (~net_1619 & (~(i2c_state_xxxxxxxxxxxx1000 & i2c_state_000000001110xxxx)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1392 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1394 <= 1'b0;
-      end
-      else
-      begin
-        net_1394 <= io_i2c_sda;
+      i_i2c_cmd6E_b1 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6E_e1 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6E_b1 <= io_i2c_sda;
       end
     end
   end
@@ -7866,62 +7863,62 @@ module FNIRSI_1013D
 //Block 685, MSLICE 0
 
   assign sig_685_lut_0 = 1'b0;
-  assign sig_685_lut_1 = (~net_1565 & ~net_1465 & ((~net_1608 & ~net_1537) | (net_1608 & ~net_1537))) | (net_1565 & ~net_1465 & ((~net_1608 & ~net_1537) | (net_1608 & ~net_1537))) | (net_1565 & net_1465 & ((net_1608 & ~net_1537)));
-  assign net_1390 = (~net_1463 & sig_685_lut_0) | (net_1463 & sig_685_lut_1);
+  assign sig_685_lut_1 = (~i2c_state_xxxxxxxxxxxx10x1 & ~i2s_state_unknown_a & ((~i2c_state_00000000xxxxxxxx & ~i2c_state_r4) | (i2c_state_00000000xxxxxxxx & ~i2c_state_r4))) | (i2c_state_xxxxxxxxxxxx10x1 & ~i2s_state_unknown_a & ((~i2c_state_00000000xxxxxxxx & ~i2c_state_r4) | (i2c_state_00000000xxxxxxxx & ~i2c_state_r4))) | (i2c_state_xxxxxxxxxxxx10x1 & i2s_state_unknown_a & ((i2c_state_00000000xxxxxxxx & ~i2c_state_r4)));
+  assign net_1390 = (~i2c_state_xxxxxxxx01xxxxxx & sig_685_lut_0) | (i2c_state_xxxxxxxx01xxxxxx & sig_685_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 686, MSLICE 1
 
-  assign sig_686_lut_0 = (net_1500 & ~net_1484 & ((~net_1533 & ~net_1491)));
+  assign sig_686_lut_0 = (net_1500 & ~i2c_state_0000000011101101 & ((~i2c_state_xxxxxxxx00010010 & ~i2c_state_0000000000000000)));
   assign sig_686_lut_1 = 1'b0;
-  assign net_1393 = (~net_1490 & sig_686_lut_0) | (net_1490 & sig_686_lut_1);
+  assign net_1393 = (~i2c_state_13_15 & sig_686_lut_0) | (i2c_state_13_15 & sig_686_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 687, LSLICE 3
 
   assign net_1395 = (net_1393 & net_1499 & net_1396 & ((net_1481 & net_1230)));
-  assign net_1396 = (~net_1373 & ~net_1618 & ((net_1492 & ~net_981))) | (~net_1373 & net_1618 & ((net_1492 & ~net_981))) | (net_1373 & ~net_1618 & ((net_1492 & ~net_981)));
+  assign net_1396 = (~i2c_state_xxxxxxxx1110xxxx & ~i2c_state_00000000xxxx1100 & ((net_1492 & ~i2c_state_0000000001010100))) | (~i2c_state_xxxxxxxx1110xxxx & i2c_state_00000000xxxx1100 & ((net_1492 & ~i2c_state_0000000001010100))) | (i2c_state_xxxxxxxx1110xxxx & ~i2c_state_00000000xxxx1100 & ((net_1492 & ~i2c_state_0000000001010100)));
 
 //---------------------------------------------------------------------------
 //Block 688, MSLICE 0
 
-  assign net_1402 = (net_1377 & ~net_1632 & ((net_1623 | net_1565))) | (net_1377 & net_1632);
-  assign net_1404 = (~net_1227 & ~net_1562 & (~(net_1377 & net_1565)));
+  assign net_1402 = (i2c_state_000000000000xxxx & ~i2c_state_xxxxxxxxxxxx0111 & ((i2c_state_xxxxxxxxxxxx1101 | i2c_state_xxxxxxxxxxxx10x1))) | (i2c_state_000000000000xxxx & i2c_state_xxxxxxxxxxxx0111);
+  assign net_1404 = (~net_1227 & ~net_1562 & (~(i2c_state_000000000000xxxx & i2c_state_xxxxxxxxxxxx10x1)));
 
 //---------------------------------------------------------------------------
 //Block 689, LSLICE 2
 
-  assign net_1397 = (net_1585 & ~net_1406 & net_1501 & ((net_1165 & ~net_1563)));
+  assign net_1397 = (net_1585 & ~net_1406 & net_1501 & ((net_1165 & ~i2c_state_0000000010010010)));
   assign net_1398 = ((net_1397 & ~net_1390));
 
 //---------------------------------------------------------------------------
 //Block 690, LSLICE 3
 
-  assign net_1400 = (~net_1634 & net_1464 & ~net_1469 & ((net_1633 | net_1617))) | (~net_1634 & net_1464 & net_1469 & ((net_1633 | net_1617))) | (net_1634 & ~net_1464 & net_1469) | (net_1634 & net_1464 & ~net_1469) | (net_1634 & net_1464 & net_1469);
+  assign net_1400 = (~i2c_state_xxxxxxxxxxxx0110 & i2c_state_000000000011xxxx & ~i2c_state_000000000100xxxx & ((i2c_state_xxxxxxxxxxxx0100 | i2c_state_xxxxxxxxxxxx1000))) | (~i2c_state_xxxxxxxxxxxx0110 & i2c_state_000000000011xxxx & i2c_state_000000000100xxxx & ((i2c_state_xxxxxxxxxxxx0100 | i2c_state_xxxxxxxxxxxx1000))) | (i2c_state_xxxxxxxxxxxx0110 & ~i2c_state_000000000011xxxx & i2c_state_000000000100xxxx) | (i2c_state_xxxxxxxxxxxx0110 & i2c_state_000000000011xxxx & ~i2c_state_000000000100xxxx) | (i2c_state_xxxxxxxxxxxx0110 & i2c_state_000000000011xxxx & i2c_state_000000000100xxxx);
   assign net_1401 = (net_1405 & ~net_1400 & ~net_1406 & ((~net_1562 & ~net_1227)));
 
 //---------------------------------------------------------------------------
 //Block 691, MSLICE 1
 
-  assign net_1403 = (net_702 & ~net_1484 & ((~net_1576 & ~net_1491)));
-  assign net_1399 = (~net_1573 & ~net_1484 & (~(net_1302 & net_1632))) | (net_1573 & ~net_1484 & ((~net_1302 & ~net_1632) | (~net_1302 & net_1632)));
+  assign net_1403 = (i2c_send_enable & ~i2c_state_0000000011101101 & ((~i2c_state_0000000000010011 & ~i2c_state_0000000000000000)));
+  assign net_1399 = (~i2c_state_xxxxxxxxxxxx1011 & ~i2c_state_0000000011101101 & (~(i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx0111))) | (i2c_state_xxxxxxxxxxxx1011 & ~i2c_state_0000000011101101 & ((~i2c_state_000000001010xxxx & ~i2c_state_xxxxxxxxxxxx0111) | (~i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx0111)));
 
 //---------------------------------------------------------------------------
 //Block 692, MSLICE 0
 
-  assign net_1410 = (net_1471 & ((~net_702 & net_1625)));
-  assign net_1406 = (~net_1626 & ((net_1625 & net_1471))) | (net_1626 & ((~net_1625 & net_1471) | (net_1625 & net_1471)));
+  assign i2c_cmd6A_e0 = (i2c_state_000000000111xxxx & ((~i2c_send_enable & i2c_state_xxxxxxxxxxxx0010)));
+  assign net_1406 = (~i2c_state_xxxxxxxxxxxx0000 & ((i2c_state_xxxxxxxxxxxx0010 & i2c_state_000000000111xxxx))) | (i2c_state_xxxxxxxxxxxx0000 & ((~i2c_state_xxxxxxxxxxxx0010 & i2c_state_000000000111xxxx) | (i2c_state_xxxxxxxxxxxx0010 & i2c_state_000000000111xxxx)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1410 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        i_i2c_cmd6A_b0 <= 1'b0;
-      end
-      else
-      begin
+      i_i2c_cmd6A_b0 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6A_e0 == 1'b1)   //enable
+       begin
         i_i2c_cmd6A_b0 <= io_i2c_sda;
       end
     end
@@ -7930,26 +7927,26 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 693, LSLICE 2
 
-  assign net_1408 = ((net_1460 & net_1483));
-  assign net_1409 = ((net_1495 & net_1460));
+  assign i2c_state_0000000011001110 = ((i2c_state_xxxxxxxx1100xxxx & i2c_state_00000000xxxx1110));
+  assign net_1409 = ((i2c_state_00000000xxxx0001 & i2c_state_xxxxxxxx1100xxxx));
 
 //---------------------------------------------------------------------------
 //Block 694, MSLICE 1
 
-  assign net_1411 = (~net_702 & ((net_1379 & net_1634)));
-  assign net_1405 = (net_1500 & ~net_1379 & ((~net_1634 & ~net_1563) | (net_1634 & ~net_1563))) | (net_1500 & net_1379 & ((~net_1634 & ~net_1563)));
+  assign i2c_cmd6E_e2 = (~i2c_send_enable & ((i2c_state_000000001110xxxx & i2c_state_xxxxxxxxxxxx0110)));
+  assign net_1405 = (net_1500 & ~i2c_state_000000001110xxxx & ((~i2c_state_xxxxxxxxxxxx0110 & ~i2c_state_0000000010010010) | (i2c_state_xxxxxxxxxxxx0110 & ~i2c_state_0000000010010010))) | (net_1500 & i2c_state_000000001110xxxx & ((~i2c_state_xxxxxxxxxxxx0110 & ~i2c_state_0000000010010010)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1411 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1407 <= 1'b1;
-      end
-      else
-      begin
-        net_1407 <= io_i2c_sda;
+      i_i2c_cmd6E_b2 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6E_e2 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6E_b2 <= io_i2c_sda;
       end
     end
   end
@@ -7957,25 +7954,25 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 695, MSLICE 0
 
-  assign net_1415 = (~net_1632 & ((net_1633 & net_1377))) | (net_1632 & ((~net_1633 & net_1377) | (net_1633 & net_1377)));
-  assign net_1416 = (~net_1415 & ~net_1572 & ((~net_1334 & ~net_1459) | (~net_1334 & net_1459))) | (~net_1415 & net_1572 & ((~net_1334 & ~net_1459)));
+  assign net_1415 = (~i2c_state_xxxxxxxxxxxx0111 & ((i2c_state_xxxxxxxxxxxx0100 & i2c_state_000000000000xxxx))) | (i2c_state_xxxxxxxxxxxx0111 & ((~i2c_state_xxxxxxxxxxxx0100 & i2c_state_000000000000xxxx) | (i2c_state_xxxxxxxxxxxx0100 & i2c_state_000000000000xxxx)));
+  assign net_1416 = (~net_1415 & ~i2c_state_00000000xxxx0011 & ((~net_1334 & ~i2c_state_xxxxxxxx1000xxxx) | (~net_1334 & i2c_state_xxxxxxxx1000xxxx))) | (~net_1415 & i2c_state_00000000xxxx0011 & ((~net_1334 & ~i2c_state_xxxxxxxx1000xxxx)));
 
 //---------------------------------------------------------------------------
 //Block 696, LSLICE 2
 
-  assign net_1414 = (~net_702 & ((net_1634 & net_1464)));
-  assign net_1413 = (~net_1566 & ~net_1635) | (~net_1566 & net_1635 & ((~net_1471 & ~net_1464) | (~net_1471 & net_1464))) | (net_1566 & ~net_1635 & ((~net_1471 & ~net_1464) | (net_1471 & ~net_1464))) | (net_1566 & net_1635 & ((~net_1471 & ~net_1464)));
+  assign i2c_cmd68_e0 = (~i2c_send_enable & ((i2c_state_xxxxxxxxxxxx0110 & i2c_state_000000000011xxxx)));
+  assign net_1413 = (~i2c_state_xxxxxxxxxxxx1001 & ~i2c_state_xxxxxxxxxxxx0101) | (~i2c_state_xxxxxxxxxxxx1001 & i2c_state_xxxxxxxxxxxx0101 & ((~i2c_state_000000000111xxxx & ~i2c_state_000000000011xxxx) | (~i2c_state_000000000111xxxx & i2c_state_000000000011xxxx))) | (i2c_state_xxxxxxxxxxxx1001 & ~i2c_state_xxxxxxxxxxxx0101 & ((~i2c_state_000000000111xxxx & ~i2c_state_000000000011xxxx) | (i2c_state_000000000111xxxx & ~i2c_state_000000000011xxxx))) | (i2c_state_xxxxxxxxxxxx1001 & i2c_state_xxxxxxxxxxxx0101 & ((~i2c_state_000000000111xxxx & ~i2c_state_000000000011xxxx)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1414 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        i_i2c_cmd68_b0 <= 1'b1;
-      end
-      else
-      begin
+      i_i2c_cmd68_b0 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd68_e0 == 1'b1)   //enable
+       begin
         i_i2c_cmd68_b0 <= io_i2c_sda;
       end
     end
@@ -7984,82 +7981,82 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 697, MSLICE 1
 
-  assign sig_697_lut_0 = (~net_1302 & ~net_1624 & (~(net_1623 & net_1577))) | (~net_1302 & net_1624 & (~(net_1623 & net_1577))) | (net_1302 & ~net_1624 & (~(net_1623 & net_1577)));
+  assign sig_697_lut_0 = (~i2c_state_000000001010xxxx & ~i2c_state_xxxxxxxxxxxx1111 & (~(i2c_state_xxxxxxxxxxxx1101 & i2c_state_000000001100xxxx))) | (~i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx1111 & (~(i2c_state_xxxxxxxxxxxx1101 & i2c_state_000000001100xxxx))) | (i2c_state_000000001010xxxx & ~i2c_state_xxxxxxxxxxxx1111 & (~(i2c_state_xxxxxxxxxxxx1101 & i2c_state_000000001100xxxx)));
   assign sig_697_lut_1 = 1'b0;
-  assign net_1417 = (~net_1574 & sig_697_lut_0) | (net_1574 & sig_697_lut_1);
+  assign net_1417 = (~i2c_state_0000000011101011 & sig_697_lut_0) | (i2c_state_0000000011101011 & sig_697_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 698, MSLICE 0
 
-  assign net_1423 = (~net_1623 & ((net_1138 & net_1573))) | (net_1623 & ((net_1138 & ~net_1573) | (net_1138 & net_1573)));
-  assign net_1422 = ((net_1623 & net_1138));
+  assign net_1423 = (~i2c_state_xxxxxxxxxxxx1101 & ((i2c_state_000000001000xxxx & i2c_state_xxxxxxxxxxxx1011))) | (i2c_state_xxxxxxxxxxxx1101 & ((i2c_state_000000001000xxxx & ~i2c_state_xxxxxxxxxxxx1011) | (i2c_state_000000001000xxxx & i2c_state_xxxxxxxxxxxx1011)));
+  assign net_1422 = ((i2c_state_xxxxxxxxxxxx1101 & i2c_state_000000001000xxxx));
 
 //---------------------------------------------------------------------------
 //Block 699, LSLICE 2
 
-  assign sig_699_lut_0 = (~net_820 & ~i_mcu_dcs & net_1421) | (~net_820 & i_mcu_dcs & ~net_1421 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (~net_820 & i_mcu_dcs & net_1421) | (net_820 & ~i_mcu_dcs & ~net_1421 & ((~net_431 & io_mcu_d_0))) | (net_820 & ~i_mcu_dcs & net_1421 & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_820 & i_mcu_dcs & ~net_1421 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (net_820 & i_mcu_dcs & net_1421);
-  assign net_1419 = (net_1566 & ((net_1379 & net_1421)));
+  assign sig_699_lut_0 = (~cmd6E_write_enable & ~i_mcu_dcs & o_i2c_cmd6E_b0) | (~cmd6E_write_enable & i_mcu_dcs & ~o_i2c_cmd6E_b0 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (~cmd6E_write_enable & i_mcu_dcs & o_i2c_cmd6E_b0) | (cmd6E_write_enable & ~i_mcu_dcs & ~o_i2c_cmd6E_b0 & ((~net_431 & io_mcu_d_0))) | (cmd6E_write_enable & ~i_mcu_dcs & o_i2c_cmd6E_b0 & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (cmd6E_write_enable & i_mcu_dcs & ~o_i2c_cmd6E_b0 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (cmd6E_write_enable & i_mcu_dcs & o_i2c_cmd6E_b0);
+  assign net_1419 = (i2c_state_xxxxxxxxxxxx1001 & ((i2c_state_000000001110xxxx & o_i2c_cmd6E_b0)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1421 <= sig_699_lut_0;
+    o_i2c_cmd6E_b0 <= sig_699_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 700, MSLICE 1
 
-  assign sig_700_lut_0 = (~i_mcu_dcs & net_1420) | (i_mcu_dcs & ~net_1420 & ((~net_431 & ~io_mcu_d_7) | (~net_431 & io_mcu_d_7))) | (i_mcu_dcs & net_1420);
-  assign sig_700_lut_1 = (~i_mcu_dcs & ~net_1420 & ((~net_431 & io_mcu_d_7))) | (~i_mcu_dcs & net_1420 & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (i_mcu_dcs & ~net_1420 & ((~net_431 & ~io_mcu_d_7) | (~net_431 & io_mcu_d_7))) | (i_mcu_dcs & net_1420);
-  assign sig_700_ff0_d = (~net_1341 & sig_700_lut_0) | (net_1341 & sig_700_lut_1);
+  assign sig_700_lut_0 = (~i_mcu_dcs & o_i2c_cmd6A_b7) | (i_mcu_dcs & ~o_i2c_cmd6A_b7 & ((~net_431 & ~io_mcu_d_7) | (~net_431 & io_mcu_d_7))) | (i_mcu_dcs & o_i2c_cmd6A_b7);
+  assign sig_700_lut_1 = (~i_mcu_dcs & ~o_i2c_cmd6A_b7 & ((~net_431 & io_mcu_d_7))) | (~i_mcu_dcs & o_i2c_cmd6A_b7 & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (i_mcu_dcs & ~o_i2c_cmd6A_b7 & ((~net_431 & ~io_mcu_d_7) | (~net_431 & io_mcu_d_7))) | (i_mcu_dcs & o_i2c_cmd6A_b7);
+  assign sig_700_ff0_d = (~cmd6A_write_enable & sig_700_lut_0) | (cmd6A_write_enable & sig_700_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1420 <= sig_700_ff0_d;
+    o_i2c_cmd6A_b7 <= sig_700_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 701, LSLICE 3
 
-  assign sig_701_lut_0 = (~net_831 & ~i_mcu_dcs & net_1425) | (~net_831 & i_mcu_dcs & ~net_1425 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (~net_831 & i_mcu_dcs & net_1425) | (net_831 & ~i_mcu_dcs & ~net_1425 & ((~net_431 & io_mcu_d_2))) | (net_831 & ~i_mcu_dcs & net_1425 & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_831 & i_mcu_dcs & ~net_1425 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (net_831 & i_mcu_dcs & net_1425);
-  assign net_1424 = (~net_1425 & ~net_1353) | (~net_1425 & net_1353 & ((~net_1624 & ~net_1623) | (net_1624 & ~net_1623))) | (net_1425 & ~net_1353 & ((~net_1624 & ~net_1623) | (~net_1624 & net_1623))) | (net_1425 & net_1353 & ((~net_1624 & ~net_1623)));
+  assign sig_701_lut_0 = (~cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b2) | (~cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b2 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (~cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b2) | (cmd69_write_enable & ~i_mcu_dcs & ~o_i2c_cmd69_b2 & ((~net_431 & io_mcu_d_2))) | (cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b2 & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b2 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b2);
+  assign net_1424 = (~o_i2c_cmd69_b2 & ~o_i2c_cmd69_b3) | (~o_i2c_cmd69_b2 & o_i2c_cmd69_b3 & ((~i2c_state_xxxxxxxxxxxx1111 & ~i2c_state_xxxxxxxxxxxx1101) | (i2c_state_xxxxxxxxxxxx1111 & ~i2c_state_xxxxxxxxxxxx1101))) | (o_i2c_cmd69_b2 & ~o_i2c_cmd69_b3 & ((~i2c_state_xxxxxxxxxxxx1111 & ~i2c_state_xxxxxxxxxxxx1101) | (~i2c_state_xxxxxxxxxxxx1111 & i2c_state_xxxxxxxxxxxx1101))) | (o_i2c_cmd69_b2 & o_i2c_cmd69_b3 & ((~i2c_state_xxxxxxxxxxxx1111 & ~i2c_state_xxxxxxxxxxxx1101)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1425 <= sig_701_lut_0;
+    o_i2c_cmd69_b2 <= sig_701_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 702, LSLICE 2
 
-  assign sig_702_lut_0 = (~net_831 & ~i_mcu_dcs & net_1428) | (~net_831 & i_mcu_dcs & ~net_1428 & ((~net_431 & ~io_mcu_d_6) | (~net_431 & io_mcu_d_6))) | (~net_831 & i_mcu_dcs & net_1428) | (net_831 & ~i_mcu_dcs & ~net_1428 & ((~net_431 & io_mcu_d_6))) | (net_831 & ~i_mcu_dcs & net_1428 & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_831 & i_mcu_dcs & ~net_1428 & ((~net_431 & ~io_mcu_d_6) | (~net_431 & io_mcu_d_6))) | (net_831 & i_mcu_dcs & net_1428);
-  assign net_1427 = (~net_1424 & net_1469) | (net_1424 & net_1469 & ((net_1428 & net_1632)));
+  assign sig_702_lut_0 = (~cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b6) | (~cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b6 & ((~net_431 & ~io_mcu_d_6) | (~net_431 & io_mcu_d_6))) | (~cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b6) | (cmd69_write_enable & ~i_mcu_dcs & ~o_i2c_cmd69_b6 & ((~net_431 & io_mcu_d_6))) | (cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b6 & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b6 & ((~net_431 & ~io_mcu_d_6) | (~net_431 & io_mcu_d_6))) | (cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b6);
+  assign net_1427 = (~net_1424 & i2c_state_000000000100xxxx) | (net_1424 & i2c_state_000000000100xxxx & ((o_i2c_cmd69_b6 & i2c_state_xxxxxxxxxxxx0111)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1428 <= sig_702_lut_0;
+    o_i2c_cmd69_b6 <= sig_702_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 703, MSLICE 1
 
-  assign sig_703_lut_0 = (net_819 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4)));
-  assign sig_703_lut_1 = (~net_819 & ~i_mcu_dcs) | (~net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (net_819 & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
-  assign sig_703_ff0_d = (~net_1426 & sig_703_lut_0) | (net_1426 & sig_703_lut_1);
+  assign sig_703_lut_0 = (cmd6D_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4)));
+  assign sig_703_lut_1 = (~cmd6D_write_enable & ~i_mcu_dcs) | (~cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (cmd6D_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
+  assign sig_703_ff0_d = (~o_i2c_cmd6D_b4 & sig_703_lut_0) | (o_i2c_cmd6D_b4 & sig_703_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1426 <= sig_703_ff0_d;
+    o_i2c_cmd6D_b4 <= sig_703_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 704, LSLICE 2
 
-  assign sig_704_lut_0 = (~net_1430 & net_1341 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1430 & ~net_1341 & ~i_mcu_dcs) | (net_1430 & ~net_1341 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1430 & net_1341 & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (net_1430 & net_1341 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
-  assign net_1429 = (~net_1014 & ~net_1573) | (~net_1014 & net_1573 & (~(net_1472 & net_1430)));
+  assign sig_704_lut_0 = (~o_i2c_cmd6A_b3 & cmd6A_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6A_b3 & ~cmd6A_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6A_b3 & ~cmd6A_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6A_b3 & cmd6A_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (o_i2c_cmd6A_b3 & cmd6A_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
+  assign net_1429 = (~net_1014 & ~i2c_state_xxxxxxxxxxxx1011) | (~net_1014 & i2c_state_xxxxxxxxxxxx1011 & (~(i2c_state_000000000110xxxx & o_i2c_cmd6A_b3)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1430 <= sig_704_lut_0;
+    o_i2c_cmd6A_b3 <= sig_704_lut_0;
   end
 
 //---------------------------------------------------------------------------
@@ -8067,15 +8064,15 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(net_1357 == 1'b1)
+    if(i2c_clk_rst == 1'b1)   //reset
     begin
-      net_1443 <= 1'b0;
-      net_1434 <= 1'b0;
+      i2c_clk_div_reg0 <= 1'b0;
+      i2c_clk_div_reg1 <= 1'b0;
     end
     else
     begin
-      net_1443 <= net_1442;
-      net_1434 <= net_1438;
+      i2c_clk_div_reg0 <= i2c_clk_div_out0;
+      i2c_clk_div_reg1 <= i2c_clk_div_out1;
     end
   end
 
@@ -8084,15 +8081,15 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(net_1357 == 1'b1)
+    if(i2c_clk_rst == 1'b1)   //reset
     begin
-      net_1433 <= 1'b0;
-      net_1437 <= 1'b0;
+      i2c_clk_div_reg3 <= 1'b0;
+      i2c_clk_div_reg4 <= 1'b0;
     end
     else
     begin
-      net_1433 <= net_1441;
-      net_1437 <= net_1440;
+      i2c_clk_div_reg3 <= i2c_clk_div_out3;
+      i2c_clk_div_reg4 <= i2c_clk_div_out4;
     end
   end
 
@@ -8101,15 +8098,15 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(net_1357 == 1'b1)
+    if(i2c_clk_rst == 1'b1)   //reset
     begin
-      net_1445 <= 1'b0;
-      net_1448 <= 1'b0;
+      i2c_clk_div_reg10 <= 1'b0;
+      i2c_clk_div_reg7 <= 1'b0;
     end
     else
     begin
-      net_1445 <= net_1454;
-      net_1448 <= net_1450;
+      i2c_clk_div_reg10 <= i2c_clk_div_out10;
+      i2c_clk_div_reg7 <= i2c_clk_div_out7;
     end
   end
 
@@ -8118,15 +8115,15 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(net_1357 == 1'b1)
+    if(i2c_clk_rst == 1'b1)   //reset
     begin
-      net_1444 <= 1'b0;
-      net_1446 <= 1'b0;
+      i2c_clk_div_reg11 <= 1'b0;
+      i2c_clk_div_reg12 <= 1'b0;
     end
     else
     begin
-      net_1444 <= net_1453;
-      net_1446 <= net_1449;
+      i2c_clk_div_reg11 <= i2c_clk_div_out11;
+      i2c_clk_div_reg12 <= i2c_clk_div_out12;
     end
   end
 
@@ -8135,65 +8132,65 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(net_1357 == 1'b1)
+    if(i2c_clk_rst == 1'b1)   //reset
     begin
-      net_1456 <= 1'b0;
-      net_1457 <= 1'b0;
+      i2c_clk_div_reg15 <= 1'b0;
+      i2c_clk_div_reg5 <= 1'b0;
     end
     else
     begin
-      net_1456 <= net_1458;
-      net_1457 <= net_1435;
+      i2c_clk_div_reg15 <= i2c_clk_div_out15;
+      i2c_clk_div_reg5 <= i2c_clk_div_out5;
     end
   end
 
 //---------------------------------------------------------------------------
 //LSICE adder blocks 709, 710, 711, 712, 713
 
-  assign { net_1458, net_1451, net_1455, net_1449, net_1453, net_1454, net_1447, net_1452, net_1450, net_1439, net_1435, net_1440, net_1441, net_1436, net_1438, net_1442 } = { net_1456, net_1358, net_1360, net_1446, net_1444, net_1445, net_1522, net_1521, net_1448, net_1356, net_1457, net_1437, net_1433, net_1359, net_1434, net_1443 } + { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1 };
+  assign { i2c_clk_div_out15, i2c_clk_div_out14, i2c_clk_div_out13, i2c_clk_div_out12, i2c_clk_div_out11, i2c_clk_div_out10, i2c_clk_div_out9, i2c_clk_div_out8, i2c_clk_div_out7, i2c_clk_div_out6, i2c_clk_div_out5, i2c_clk_div_out4, i2c_clk_div_out3, i2c_clk_div_out2, i2c_clk_div_out1, i2c_clk_div_out0 } = { i2c_clk_div_reg15, i2c_clk_div_reg14, i2c_clk_div_reg13, i2c_clk_div_reg12, i2c_clk_div_reg11, i2c_clk_div_reg10, i2c_clk_div_reg9, i2c_clk_div_reg8, i2c_clk_div_reg7, i2c_clk_div_reg6, i2c_clk_div_reg5, i2c_clk_div_reg4, i2c_clk_div_reg3, i2c_clk_div_reg2, i2c_clk_div_reg1, i2c_clk_div_reg0 } + { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1 };
 
 //---------------------------------------------------------------------------
 //Block 714, LSLICE 3
 
-  assign net_1459 = (~net_1525 & net_1551 & ((~net_1537 & ~net_1473)));
-  assign net_1462 = (~net_1525 & net_1537 & ((net_1473 & net_1551)));
+  assign i2c_state_xxxxxxxx1000xxxx = (~i2c_state_r6 & i2c_state_r7 & ((~i2c_state_r4 & ~i2c_state_r5)));
+  assign i2c_state_xxxxxxxx1011xxxx = (~i2c_state_r6 & i2c_state_r4 & ((i2c_state_r5 & i2c_state_r7)));
 
 //---------------------------------------------------------------------------
 //Block 715, MSLICE 1
 
-  assign net_1460 = (net_1551 & net_1525 & ((~net_1473 & ~net_1537)));
-  assign net_1461 = (net_1551 & net_1525 & ((net_1537 & ~net_1473)));
+  assign i2c_state_xxxxxxxx1100xxxx = (i2c_state_r7 & i2c_state_r6 & ((~i2c_state_r5 & ~i2c_state_r4)));
+  assign i2c_state_xxxxxxxx1101xxxx = (i2c_state_r7 & i2c_state_r6 & ((i2c_state_r4 & ~i2c_state_r5)));
 
 //---------------------------------------------------------------------------
 //Block 716, MSLICE 0
 
   assign sig_716_lut_0 = 1'b0;
-  assign sig_716_lut_1 = (~net_1525 & ~net_1551 & ((net_1473 & net_1608)));
-  assign net_1464 = (~net_1537 & sig_716_lut_0) | (net_1537 & sig_716_lut_1);
+  assign sig_716_lut_1 = (~i2c_state_r6 & ~i2c_state_r7 & ((i2c_state_r5 & i2c_state_00000000xxxxxxxx)));
+  assign i2c_state_000000000011xxxx = (~i2c_state_r4 & sig_716_lut_0) | (i2c_state_r4 & sig_716_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 717, LSLICE 2
 
-  assign net_1463 = ((~net_1551 & net_1525));
-  assign net_1465 = ((~net_1618 & ~net_1529));
+  assign i2c_state_xxxxxxxx01xxxxxx = ((~i2c_state_r7 & i2c_state_r6));
+  assign i2s_state_unknown_a = ((~i2c_state_00000000xxxx1100 & ~i2c_state_00000000xxxx1010));
 
 //---------------------------------------------------------------------------
 //Block 718, MSLICE 1
 
-  assign net_1468 = (~net_702 & ((net_1618 & net_1530)));
-  assign net_1466 = (net_1534 & ((net_1608 & net_1530)));
+  assign i2c_cmd68_e5 = (~i2c_send_enable & ((i2c_state_00000000xxxx1100 & i2c_state_xxxxxxxx0010xxxx)));
+  assign i2c_state_0000000000101xxx = (i2c_state_r3 & ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxx0010xxxx)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1468 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1467 <= 1'b1;
-      end
-      else
-      begin
-        net_1467 <= io_i2c_sda;
+      i_i2c_cmd68_b5 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd68_e5 == 1'b1)   //enable
+       begin
+        i_i2c_cmd68_b5 <= io_i2c_sda;
       end
     end
   end
@@ -8201,26 +8198,26 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 719, MSLICE 0
 
-  assign net_1469 = (net_1463 & net_1608 & ((~net_1473 & ~net_1537)));
-  assign net_1470 = (net_1463 & ((~net_1473 & ~net_1537)));
+  assign i2c_state_000000000100xxxx = (i2c_state_xxxxxxxx01xxxxxx & i2c_state_00000000xxxxxxxx & ((~i2c_state_r5 & ~i2c_state_r4)));
+  assign i2c_state_xxxxxxxx0100xxxx = (i2c_state_xxxxxxxx01xxxxxx & ((~i2c_state_r5 & ~i2c_state_r4)));
 
 //---------------------------------------------------------------------------
 //Block 720, LSLICE 3
 
-  assign net_1477 = (~net_1488 & net_1306 & ~net_1402 & ((~net_1473 & ~net_1614) | (~net_1473 & net_1614) | (net_1473 & net_1614)));
+  assign net_1477 = (~net_1488 & net_1306 & ~net_1402 & ((~i2c_state_r5 & ~i2c_state_r0) | (~i2c_state_r5 & i2c_state_r0) | (i2c_state_r5 & i2c_state_r0)));
   assign net_1478 = (net_1481 & net_1477 & ((net_1564 & net_1368)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1473 <= 1'b0;
-      end
-      else
-      begin
-        net_1473 <= net_1543;
+      i2c_state_r5 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r5 <= i2c_state_c5;
       end
     end
   end
@@ -8228,26 +8225,26 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 721, LSLICE 2
 
-  assign net_1474 = (net_1537 & net_1608 & ((net_1463 & ~net_1473)));
-  assign net_1471 = (net_1537 & net_1608 & ((net_1463 & net_1473)));
+  assign i2c_state_000000000101xxxx = (i2c_state_r4 & i2c_state_00000000xxxxxxxx & ((i2c_state_xxxxxxxx01xxxxxx & ~i2c_state_r5)));
+  assign i2c_state_000000000111xxxx = (i2c_state_r4 & i2c_state_00000000xxxxxxxx & ((i2c_state_xxxxxxxx01xxxxxx & i2c_state_r5)));
 
 //---------------------------------------------------------------------------
 //Block 722, MSLICE 1
 
-  assign net_1476 = (net_1633 & ((~net_702 & net_1472)));
-  assign net_1472 = (net_1463 & ((net_1608 & net_1364)));
+  assign i2c_cmd6A_e7 = (i2c_state_xxxxxxxxxxxx0100 & ((~i2c_send_enable & i2c_state_000000000110xxxx)));
+  assign i2c_state_000000000110xxxx = (i2c_state_xxxxxxxx01xxxxxx & ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxxxx10xxxx)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1476 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1475 <= 1'b1;
-      end
-      else
-      begin
-        net_1475 <= io_i2c_sda;
+      i_i2c_cmd6A_b7 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6A_e7 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6A_b7 <= io_i2c_sda;
       end
     end
   end
@@ -8255,26 +8252,26 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 723, MSLICE 0
 
-  assign net_1479 = (net_1535 & ((net_1608 & ~net_1614)));
-  assign net_1483 = (net_1534 & ((net_1536 & net_1479)));
+  assign i2c_state_00000000xxxxxx10 = (i2c_state_r1 & ((i2c_state_00000000xxxxxxxx & ~i2c_state_r0)));
+  assign i2c_state_00000000xxxx1110 = (i2c_state_r3 & ((i2c_state_r2 & i2c_state_00000000xxxxxx10)));
 
 //---------------------------------------------------------------------------
 //Block 724, LSLICE 2
 
-  assign net_1482 = (net_1633 & ((~net_702 & net_1464)));
-  assign net_1480 = (~net_1614 & net_1464 & ((~net_1536 & ~net_1534) | (net_1536 & ~net_1534))) | (net_1614 & net_1464 & ((~net_1536 & ~net_1534)));
+  assign i2c_cmd68_e1 = (i2c_state_xxxxxxxxxxxx0100 & ((~i2c_send_enable & i2c_state_000000000011xxxx)));
+  assign i2c_state_0000000000110xx1 = (~i2c_state_r0 & i2c_state_000000000011xxxx & ((~i2c_state_r2 & ~i2c_state_r3) | (i2c_state_r2 & ~i2c_state_r3))) | (i2c_state_r0 & i2c_state_000000000011xxxx & ((~i2c_state_r2 & ~i2c_state_r3)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1482 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1486 <= 1'b1;
-      end
-      else
-      begin
-        net_1486 <= io_i2c_sda;
+      i_i2c_cmd68_b1 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd68_e1 == 1'b1)   //enable
+       begin
+        i_i2c_cmd68_b1 <= io_i2c_sda;
       end
     end
   end
@@ -8282,186 +8279,186 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 725, LSLICE 3
 
-  assign net_1484 = ((net_1379 & net_1623));
-  assign net_1481 = ((~net_1574 & ~net_1380));
+  assign i2c_state_0000000011101101 = ((i2c_state_000000001110xxxx & i2c_state_xxxxxxxxxxxx1101));
+  assign net_1481 = ((~i2c_state_0000000011101011 & ~i2c_state_0000000011101010));
 
 //---------------------------------------------------------------------------
 //Block 726, MSLICE 1
 
-  assign sig_726_lut_0 = (~net_1495 & net_1366 & ((~net_1524 & net_1618) | (net_1524 & net_1618))) | (net_1495 & ~net_1366 & ((net_1524 & ~net_1618) | (net_1524 & net_1618))) | (net_1495 & net_1366);
-  assign sig_726_lut_1 = (~net_1495 & ~net_1366 & ((~net_1618 & net_1524) | (net_1618 & net_1524))) | (~net_1495 & net_1366) | (net_1495 & ~net_1366 & ((~net_1618 & net_1524) | (net_1618 & net_1524))) | (net_1495 & net_1366);
-  assign net_1485 = (~net_1572 & sig_726_lut_0) | (net_1572 & sig_726_lut_1);
+  assign sig_726_lut_0 = (~i2c_state_00000000xxxx0001 & i2c_state_xxxxxxxx1010xxxx & ((~i2c_state_xxxxxxxx1001xxxx & i2c_state_00000000xxxx1100) | (i2c_state_xxxxxxxx1001xxxx & i2c_state_00000000xxxx1100))) | (i2c_state_00000000xxxx0001 & ~i2c_state_xxxxxxxx1010xxxx & ((i2c_state_xxxxxxxx1001xxxx & ~i2c_state_00000000xxxx1100) | (i2c_state_xxxxxxxx1001xxxx & i2c_state_00000000xxxx1100))) | (i2c_state_00000000xxxx0001 & i2c_state_xxxxxxxx1010xxxx);
+  assign sig_726_lut_1 = (~i2c_state_00000000xxxx0001 & ~i2c_state_xxxxxxxx1010xxxx & ((~i2c_state_00000000xxxx1100 & i2c_state_xxxxxxxx1001xxxx) | (i2c_state_00000000xxxx1100 & i2c_state_xxxxxxxx1001xxxx))) | (~i2c_state_00000000xxxx0001 & i2c_state_xxxxxxxx1010xxxx) | (i2c_state_00000000xxxx0001 & ~i2c_state_xxxxxxxx1010xxxx & ((~i2c_state_00000000xxxx1100 & i2c_state_xxxxxxxx1001xxxx) | (i2c_state_00000000xxxx1100 & i2c_state_xxxxxxxx1001xxxx))) | (i2c_state_00000000xxxx0001 & i2c_state_xxxxxxxx1010xxxx);
+  assign net_1485 = (~i2c_state_00000000xxxx0011 & sig_726_lut_0) | (i2c_state_00000000xxxx0011 & sig_726_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 727, LSLICE 2
 
-  assign net_1487 = (net_1493 & ~net_1524 & ~net_1495 & (~(net_1630 & net_1471))) | (net_1493 & ~net_1524 & net_1495 & (~(net_1630 & net_1471))) | (net_1493 & net_1524 & ~net_1495 & (~(net_1630 & net_1471)));
-  assign net_1489 = (net_1487 & net_1417 & ((~net_702 & ~net_1491)));
+  assign net_1487 = (net_1493 & ~i2c_state_xxxxxxxx1001xxxx & ~i2c_state_00000000xxxx0001 & (~(i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000111xxxx))) | (net_1493 & ~i2c_state_xxxxxxxx1001xxxx & i2c_state_00000000xxxx0001 & (~(i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000111xxxx))) | (net_1493 & i2c_state_xxxxxxxx1001xxxx & ~i2c_state_00000000xxxx0001 & (~(i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000111xxxx)));
+  assign net_1489 = (net_1487 & net_1417 & ((~i2c_send_enable & ~i2c_state_0000000000000000)));
 
 //---------------------------------------------------------------------------
 //Block 728, LSLICE 3
 
-  assign net_1490 = (net_1377 & ((net_1623 | net_1624)));
-  assign net_1491 = ((net_1377 & net_1626));
+  assign i2c_state_13_15 = (i2c_state_000000000000xxxx & ((i2c_state_xxxxxxxxxxxx1101 | i2c_state_xxxxxxxxxxxx1111)));
+  assign i2c_state_0000000000000000 = ((i2c_state_000000000000xxxx & i2c_state_xxxxxxxxxxxx0000));
 
 //---------------------------------------------------------------------------
 //Block 729, MSLICE 1
 
-  assign net_1488 = (net_1377 & ~net_1630 & ((net_1635 | net_1629))) | (net_1377 & net_1630);
-  assign net_1492 = ((~net_1496 & ~net_1377));
+  assign net_1488 = (i2c_state_000000000000xxxx & ~i2c_state_xxxxxxxxxxxx0011 & ((i2c_state_xxxxxxxxxxxx0101 | i2c_state_xxxxxxxxxxxx0001))) | (i2c_state_000000000000xxxx & i2c_state_xxxxxxxxxxxx0011);
+  assign net_1492 = ((~net_1496 & ~i2c_state_000000000000xxxx));
 
 //---------------------------------------------------------------------------
 //Block 730, MSLICE 0
 
-  assign net_1495 = ((net_1608 & net_1629));
-  assign net_1496 = (~net_1494 & ((net_1532 & net_1495))) | (net_1494 & ((net_1532 & ~net_1495) | (net_1532 & net_1495)));
+  assign i2c_state_00000000xxxx0001 = ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxxxxxx0001));
+  assign net_1496 = (~i2c_state_00000000xxxx0000 & ((i2c_state_xxxxxxxx0001xxxx & i2c_state_00000000xxxx0001))) | (i2c_state_00000000xxxx0000 & ((i2c_state_xxxxxxxx0001xxxx & ~i2c_state_00000000xxxx0001) | (i2c_state_xxxxxxxx0001xxxx & i2c_state_00000000xxxx0001)));
 
 //---------------------------------------------------------------------------
 //Block 731, LSLICE 2
 
-  assign net_1493 = (~net_1635 & ~net_1474 & (~(net_1632 & net_1464))) | (~net_1635 & net_1474 & (~(net_1632 & net_1464))) | (net_1635 & ~net_1474 & (~(net_1632 & net_1464)));
+  assign net_1493 = (~i2c_state_xxxxxxxxxxxx0101 & ~i2c_state_000000000101xxxx & (~(i2c_state_xxxxxxxxxxxx0111 & i2c_state_000000000011xxxx))) | (~i2c_state_xxxxxxxxxxxx0101 & i2c_state_000000000101xxxx & (~(i2c_state_xxxxxxxxxxxx0111 & i2c_state_000000000011xxxx))) | (i2c_state_xxxxxxxxxxxx0101 & ~i2c_state_000000000101xxxx & (~(i2c_state_xxxxxxxxxxxx0111 & i2c_state_000000000011xxxx)));
   assign net_1499 = ((~net_1324 & net_1493));
 
 //---------------------------------------------------------------------------
 //Block 732, LSLICE 3
 
-  assign net_1494 = ((net_1626 & net_1608));
-  assign net_1498 = ((net_1524 & net_1494));
+  assign i2c_state_00000000xxxx0000 = ((i2c_state_xxxxxxxxxxxx0000 & i2c_state_00000000xxxxxxxx));
+  assign i2c_state_0000000010010000 = ((i2c_state_xxxxxxxx1001xxxx & i2c_state_00000000xxxx0000));
 
 //---------------------------------------------------------------------------
 //Block 733, MSLICE 1
 
-  assign net_1500 = (~net_1377 & ~net_1633 & (~(net_1532 & net_1494))) | (~net_1377 & net_1633 & (~(net_1532 & net_1494))) | (net_1377 & ~net_1633 & (~(net_1532 & net_1494)));
-  assign net_1497 = ((net_1494 & net_1462));
+  assign net_1500 = (~i2c_state_000000000000xxxx & ~i2c_state_xxxxxxxxxxxx0100 & (~(i2c_state_xxxxxxxx0001xxxx & i2c_state_00000000xxxx0000))) | (~i2c_state_000000000000xxxx & i2c_state_xxxxxxxxxxxx0100 & (~(i2c_state_xxxxxxxx0001xxxx & i2c_state_00000000xxxx0000))) | (i2c_state_000000000000xxxx & ~i2c_state_xxxxxxxxxxxx0100 & (~(i2c_state_xxxxxxxx0001xxxx & i2c_state_00000000xxxx0000)));
+  assign i2c_state_0000000010110000 = ((i2c_state_00000000xxxx0000 & i2c_state_xxxxxxxx1011xxxx));
 
 //---------------------------------------------------------------------------
 //Block 734, MSLICE 0
 
-  assign sig_734_lut_0 = (~net_1138 & ~net_1632 & (~(net_1629 & net_1302))) | (~net_1138 & net_1632 & (~(net_1629 & net_1302))) | (net_1138 & ~net_1632 & (~(net_1629 & net_1302)));
+  assign sig_734_lut_0 = (~i2c_state_000000001000xxxx & ~i2c_state_xxxxxxxxxxxx0111 & (~(i2c_state_xxxxxxxxxxxx0001 & i2c_state_000000001010xxxx))) | (~i2c_state_000000001000xxxx & i2c_state_xxxxxxxxxxxx0111 & (~(i2c_state_xxxxxxxxxxxx0001 & i2c_state_000000001010xxxx))) | (i2c_state_000000001000xxxx & ~i2c_state_xxxxxxxxxxxx0111 & (~(i2c_state_xxxxxxxxxxxx0001 & i2c_state_000000001010xxxx)));
   assign sig_734_lut_1 = 1'b0;
   assign net_1501 = (~net_1488 & sig_734_lut_0) | (net_1488 & sig_734_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 735, LSLICE 2
 
-  assign sig_735_lut_0 = (~net_831 & ~i_mcu_dcs & net_1505) | (~net_831 & i_mcu_dcs & ~net_1505 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (~net_831 & i_mcu_dcs & net_1505) | (net_831 & ~i_mcu_dcs & ~net_1505 & ((~net_431 & io_mcu_d_0))) | (net_831 & ~i_mcu_dcs & net_1505 & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_831 & i_mcu_dcs & ~net_1505 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (net_831 & i_mcu_dcs & net_1505);
-  assign net_1503 = (net_1474 & ((net_1505 & net_1630)));
+  assign sig_735_lut_0 = (~cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b0) | (~cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b0 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (~cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b0) | (cmd69_write_enable & ~i_mcu_dcs & ~o_i2c_cmd69_b0 & ((~net_431 & io_mcu_d_0))) | (cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b0 & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b0 & ((~net_431 & ~io_mcu_d_0) | (~net_431 & io_mcu_d_0))) | (cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b0);
+  assign net_1503 = (i2c_state_000000000101xxxx & ((o_i2c_cmd69_b0 & i2c_state_xxxxxxxxxxxx0011)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1505 <= sig_735_lut_0;
+    o_i2c_cmd69_b0 <= sig_735_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 736, LSLICE 3
 
-  assign sig_736_lut_0 = (~net_1502 & net_1339 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_1502 & ~net_1339 & ~i_mcu_dcs) | (net_1502 & ~net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_1502 & net_1339 & ~i_mcu_dcs & ((net_431 | io_mcu_d_0))) | (net_1502 & net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0)));
-  assign net_1504 = (~net_1518 & net_1502 & net_1635 & ((~net_1630 & net_1464) | (net_1630 & net_1464))) | (net_1518 & ~net_1502 & ~net_1635 & ((net_1630 & net_1464))) | (net_1518 & ~net_1502 & net_1635 & ((net_1630 & net_1464))) | (net_1518 & net_1502 & ~net_1635 & ((net_1630 & net_1464))) | (net_1518 & net_1502 & net_1635 & ((~net_1630 & net_1464) | (net_1630 & net_1464)));
+  assign sig_736_lut_0 = (~o_i2c_cmd68_b0 & cmd68_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (o_i2c_cmd68_b0 & ~cmd68_write_enable & ~i_mcu_dcs) | (o_i2c_cmd68_b0 & ~cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (o_i2c_cmd68_b0 & cmd68_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_0))) | (o_i2c_cmd68_b0 & cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0)));
+  assign net_1504 = (~o_i2c_cmd68_b1 & o_i2c_cmd68_b0 & i2c_state_xxxxxxxxxxxx0101 & ((~i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000011xxxx) | (i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000011xxxx))) | (o_i2c_cmd68_b1 & ~o_i2c_cmd68_b0 & ~i2c_state_xxxxxxxxxxxx0101 & ((i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000011xxxx))) | (o_i2c_cmd68_b1 & ~o_i2c_cmd68_b0 & i2c_state_xxxxxxxxxxxx0101 & ((i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000011xxxx))) | (o_i2c_cmd68_b1 & o_i2c_cmd68_b0 & ~i2c_state_xxxxxxxxxxxx0101 & ((i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000011xxxx))) | (o_i2c_cmd68_b1 & o_i2c_cmd68_b0 & i2c_state_xxxxxxxxxxxx0101 & ((~i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000011xxxx) | (i2c_state_xxxxxxxxxxxx0011 & i2c_state_000000000011xxxx)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1502 <= sig_736_lut_0;
+    o_i2c_cmd68_b0 <= sig_736_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 737, MSLICE 1
 
-  assign sig_737_lut_0 = (~net_1379 & ~net_1624) | (~net_1379 & net_1624 & ((~net_1573 & ~net_1377) | (net_1573 & ~net_1377))) | (net_1379 & ~net_1624 & ((~net_1573 & ~net_1377) | (~net_1573 & net_1377)));
+  assign sig_737_lut_0 = (~i2c_state_000000001110xxxx & ~i2c_state_xxxxxxxxxxxx1111) | (~i2c_state_000000001110xxxx & i2c_state_xxxxxxxxxxxx1111 & ((~i2c_state_xxxxxxxxxxxx1011 & ~i2c_state_000000000000xxxx) | (i2c_state_xxxxxxxxxxxx1011 & ~i2c_state_000000000000xxxx))) | (i2c_state_000000001110xxxx & ~i2c_state_xxxxxxxxxxxx1111 & ((~i2c_state_xxxxxxxxxxxx1011 & ~i2c_state_000000000000xxxx) | (~i2c_state_xxxxxxxxxxxx1011 & i2c_state_000000000000xxxx)));
   assign sig_737_lut_1 = 1'b0;
-  assign net_1506 = (~net_702 & sig_737_lut_0) | (net_702 & sig_737_lut_1);
+  assign net_1506 = (~i2c_send_enable & sig_737_lut_0) | (i2c_send_enable & sig_737_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 738, MSLICE 0
 
-  assign sig_738_lut_0 = (~net_1576 & ~net_1379) | (~net_1576 & net_1379 & (~(net_1629 & net_1257))) | (net_1576 & ~net_1379) | (net_1576 & net_1379 & (~(net_1629 & net_1257)));
-  assign sig_738_lut_1 = (~net_1576 & ~net_1379) | (~net_1576 & net_1379 & (~(net_1629 & net_1257)));
-  assign net_1507 = (~net_1591 & sig_738_lut_0) | (net_1591 & sig_738_lut_1);
+  assign sig_738_lut_0 = (~i2c_state_0000000000010011 & ~i2c_state_000000001110xxxx) | (~i2c_state_0000000000010011 & i2c_state_000000001110xxxx & (~(i2c_state_xxxxxxxxxxxx0001 & o_i2c_cmd6E_b4))) | (i2c_state_0000000000010011 & ~i2c_state_000000001110xxxx) | (i2c_state_0000000000010011 & i2c_state_000000001110xxxx & (~(i2c_state_xxxxxxxxxxxx0001 & o_i2c_cmd6E_b4)));
+  assign sig_738_lut_1 = (~i2c_state_0000000000010011 & ~i2c_state_000000001110xxxx) | (~i2c_state_0000000000010011 & i2c_state_000000001110xxxx & (~(i2c_state_xxxxxxxxxxxx0001 & o_i2c_cmd6E_b4)));
+  assign net_1507 = (~o_i2c_cmd68_b7 & sig_738_lut_0) | (o_i2c_cmd68_b7 & sig_738_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 739, LSLICE 2
 
-  assign sig_739_lut_0 = (~net_1510 & net_820 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_1510 & ~net_820 & ~i_mcu_dcs) | (net_1510 & ~net_820 & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_1510 & net_820 & ~i_mcu_dcs & ((net_431 | io_mcu_d_1))) | (net_1510 & net_820 & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1)));
-  assign net_1509 = (net_1510 & ((net_1632 & net_1379)));
+  assign sig_739_lut_0 = (~o_i2c_cmd6E_b1 & cmd6E_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (o_i2c_cmd6E_b1 & ~cmd6E_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6E_b1 & ~cmd6E_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (o_i2c_cmd6E_b1 & cmd6E_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_1))) | (o_i2c_cmd6E_b1 & cmd6E_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1)));
+  assign net_1509 = (o_i2c_cmd6E_b1 & ((i2c_state_xxxxxxxxxxxx0111 & i2c_state_000000001110xxxx)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1510 <= sig_739_lut_0;
+    o_i2c_cmd6E_b1 <= sig_739_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 740, LSLICE 3
 
-  assign sig_740_lut_0 = (~net_1508 & net_819 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (net_1508 & ~net_819 & ~i_mcu_dcs) | (net_1508 & ~net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (net_1508 & net_819 & ~i_mcu_dcs & ((net_431 | io_mcu_d_7))) | (net_1508 & net_819 & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7)));
-  assign net_1512 = (~net_1631 & ~net_1649 & ~net_1345 & (~(net_1508 & net_1579)));
+  assign sig_740_lut_0 = (~o_i2c_cmd6D_b7 & cmd6D_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (o_i2c_cmd6D_b7 & ~cmd6D_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6D_b7 & ~cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (o_i2c_cmd6D_b7 & cmd6D_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_7))) | (o_i2c_cmd6D_b7 & cmd6D_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7)));
+  assign net_1512 = (~net_1631 & ~i2c_out_cmd6E_b2 & ~net_1345 & (~(o_i2c_cmd6D_b7 & i2c_state_0000000010110001)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1508 <= sig_740_lut_0;
+    o_i2c_cmd6D_b7 <= sig_740_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 741, MSLICE 1
 
   assign sig_741_lut_0 = 1'b0;
-  assign sig_741_lut_1 = (~net_1472 & ~net_1515 & ((net_1596 & net_1464))) | (~net_1472 & net_1515 & ((net_1596 & net_1464))) | (net_1472 & ~net_1515 & ((net_1596 & net_1464))) | (net_1472 & net_1515);
-  assign net_1511 = (~net_1566 & sig_741_lut_0) | (net_1566 & sig_741_lut_1);
+  assign sig_741_lut_1 = (~i2c_state_000000000110xxxx & ~o_i2c_cmd6A_b4 & ((o_i2c_cmd69_b7 & i2c_state_000000000011xxxx))) | (~i2c_state_000000000110xxxx & o_i2c_cmd6A_b4 & ((o_i2c_cmd69_b7 & i2c_state_000000000011xxxx))) | (i2c_state_000000000110xxxx & ~o_i2c_cmd6A_b4 & ((o_i2c_cmd69_b7 & i2c_state_000000000011xxxx))) | (i2c_state_000000000110xxxx & o_i2c_cmd6A_b4);
+  assign net_1511 = (~i2c_state_xxxxxxxxxxxx1001 & sig_741_lut_0) | (i2c_state_xxxxxxxxxxxx1001 & sig_741_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 742, MSLICE 0
 
-  assign sig_742_lut_0 = (net_818 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5)));
-  assign sig_742_lut_1 = (~net_818 & ~io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (~net_818 & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (net_818 & ~io_mcu_d_5 & ((net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (net_818 & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs)));
-  assign sig_742_ff0_d = (~net_1513 & sig_742_lut_0) | (net_1513 & sig_742_lut_1);
+  assign sig_742_lut_0 = (cmd6B_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5)));
+  assign sig_742_lut_1 = (~cmd6B_write_enable & ~io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (~cmd6B_write_enable & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (cmd6B_write_enable & ~io_mcu_d_5 & ((net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs))) | (cmd6B_write_enable & io_mcu_d_5 & ((~net_431 & ~i_mcu_dcs) | (net_431 & ~i_mcu_dcs) | (net_431 & i_mcu_dcs)));
+  assign sig_742_ff0_d = (~o_i2c_cmd6B_b5 & sig_742_lut_0) | (o_i2c_cmd6B_b5 & sig_742_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1513 <= sig_742_ff0_d;
+    o_i2c_cmd6B_b5 <= sig_742_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 743, LSLICE 2
 
-  assign sig_743_lut_0 = (~net_1514 & net_1341 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_1514 & ~net_1341 & ~i_mcu_dcs) | (net_1514 & ~net_1341 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_1514 & net_1341 & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (net_1514 & net_1341 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
-  assign net_1516 = (net_1514 & ((net_1472 & net_1635)));
+  assign sig_743_lut_0 = (~o_i2c_cmd6A_b6 & cmd6A_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (o_i2c_cmd6A_b6 & ~cmd6A_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6A_b6 & ~cmd6A_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (o_i2c_cmd6A_b6 & cmd6A_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (o_i2c_cmd6A_b6 & cmd6A_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
+  assign net_1516 = (o_i2c_cmd6A_b6 & ((i2c_state_000000000110xxxx & i2c_state_xxxxxxxxxxxx0101)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1514 <= sig_743_lut_0;
+    o_i2c_cmd6A_b6 <= sig_743_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 744, MSLICE 1
 
-  assign sig_744_lut_0 = (~i_mcu_dcs & net_1515) | (i_mcu_dcs & ~net_1515 & ((~net_431 & ~io_mcu_d_4) | (~net_431 & io_mcu_d_4))) | (i_mcu_dcs & net_1515);
-  assign sig_744_lut_1 = (~i_mcu_dcs & ~net_1515 & ((~net_431 & io_mcu_d_4))) | (~i_mcu_dcs & net_1515 & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (i_mcu_dcs & ~net_1515 & ((~net_431 & ~io_mcu_d_4) | (~net_431 & io_mcu_d_4))) | (i_mcu_dcs & net_1515);
-  assign sig_744_ff0_d = (~net_1341 & sig_744_lut_0) | (net_1341 & sig_744_lut_1);
+  assign sig_744_lut_0 = (~i_mcu_dcs & o_i2c_cmd6A_b4) | (i_mcu_dcs & ~o_i2c_cmd6A_b4 & ((~net_431 & ~io_mcu_d_4) | (~net_431 & io_mcu_d_4))) | (i_mcu_dcs & o_i2c_cmd6A_b4);
+  assign sig_744_lut_1 = (~i_mcu_dcs & ~o_i2c_cmd6A_b4 & ((~net_431 & io_mcu_d_4))) | (~i_mcu_dcs & o_i2c_cmd6A_b4 & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (i_mcu_dcs & ~o_i2c_cmd6A_b4 & ((~net_431 & ~io_mcu_d_4) | (~net_431 & io_mcu_d_4))) | (i_mcu_dcs & o_i2c_cmd6A_b4);
+  assign sig_744_ff0_d = (~cmd6A_write_enable & sig_744_lut_0) | (cmd6A_write_enable & sig_744_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1515 <= sig_744_ff0_d;
+    o_i2c_cmd6A_b4 <= sig_744_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 745, LSLICE 2
 
-  assign sig_745_lut_0 = (~net_1517 & net_1339 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5))) | (net_1517 & ~net_1339 & ~i_mcu_dcs) | (net_1517 & ~net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_5) | (net_431 & io_mcu_d_5))) | (net_1517 & net_1339 & ~i_mcu_dcs & ((net_431 | io_mcu_d_5))) | (net_1517 & net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_5) | (net_431 & io_mcu_d_5)));
-  assign net_1519 = (net_1573 & ((net_1517 & net_1531)));
+  assign sig_745_lut_0 = (~o_i2c_cmd68_b5 & cmd68_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5))) | (o_i2c_cmd68_b5 & ~cmd68_write_enable & ~i_mcu_dcs) | (o_i2c_cmd68_b5 & ~cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_5) | (net_431 & io_mcu_d_5))) | (o_i2c_cmd68_b5 & cmd68_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_5))) | (o_i2c_cmd68_b5 & cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_5) | (net_431 & io_mcu_d_5)));
+  assign net_1519 = (i2c_state_xxxxxxxxxxxx1011 & ((o_i2c_cmd68_b5 & i2c_state_000000000010xxxx)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1517 <= sig_745_lut_0;
+    o_i2c_cmd68_b5 <= sig_745_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 746, LSLICE 3
 
-  assign sig_746_lut_0 = (~net_1518 & net_1339 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_1518 & ~net_1339 & ~i_mcu_dcs) | (net_1518 & ~net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_1518 & net_1339 & ~i_mcu_dcs & ((net_431 | io_mcu_d_1))) | (net_1518 & net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1)));
-  assign sig_746_lut_1 = (~net_1520 & ~i_mcu_dcs & net_1339 & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1520 & ~i_mcu_dcs & ~net_1339) | (net_1520 & ~i_mcu_dcs & net_1339 & ((net_431 | io_mcu_d_3))) | (net_1520 & i_mcu_dcs & ~net_1339 & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1520 & i_mcu_dcs & net_1339 & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
+  assign sig_746_lut_0 = (~o_i2c_cmd68_b1 & cmd68_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (o_i2c_cmd68_b1 & ~cmd68_write_enable & ~i_mcu_dcs) | (o_i2c_cmd68_b1 & ~cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (o_i2c_cmd68_b1 & cmd68_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_1))) | (o_i2c_cmd68_b1 & cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1)));
+  assign sig_746_lut_1 = (~o_i2c_cmd68_b3 & ~i_mcu_dcs & cmd68_write_enable & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd68_b3 & ~i_mcu_dcs & ~cmd68_write_enable) | (o_i2c_cmd68_b3 & ~i_mcu_dcs & cmd68_write_enable & ((net_431 | io_mcu_d_3))) | (o_i2c_cmd68_b3 & i_mcu_dcs & ~cmd68_write_enable & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd68_b3 & i_mcu_dcs & cmd68_write_enable & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1518 <= sig_746_lut_0;
-    net_1520 <= sig_746_lut_1;
+    o_i2c_cmd68_b1 <= sig_746_lut_0;
+    o_i2c_cmd68_b3 <= sig_746_lut_1;
   end
 
 //---------------------------------------------------------------------------
@@ -8469,47 +8466,47 @@ module FNIRSI_1013D
 
   always @(posedge clock_200MHz)
   begin
-    if(net_1357 == 1'b1)
+    if(i2c_clk_rst == 1'b1)   //reset
     begin
-      net_1522 <= 1'b0;
-      net_1521 <= 1'b0;
+      i2c_clk_div_reg9 <= 1'b0;
+      i2c_clk_div_reg8 <= 1'b0;
     end
     else
     begin
-      net_1522 <= net_1447;
-      net_1521 <= net_1452;
+      i2c_clk_div_reg9 <= i2c_clk_div_out9;
+      i2c_clk_div_reg8 <= i2c_clk_div_out8;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 752, LSLICE 3
 
-  assign net_1523 = (~net_1525 & ~net_1473 & ((~net_1551 & ~net_1537)));
-  assign net_1524 = (net_1551 & net_1537 & ((~net_1473 & ~net_1525)));
+  assign i2c_state_xxxxxxxx0000xxxx = (~i2c_state_r6 & ~i2c_state_r5 & ((~i2c_state_r7 & ~i2c_state_r4)));
+  assign i2c_state_xxxxxxxx1001xxxx = (i2c_state_r7 & i2c_state_r4 & ((~i2c_state_r5 & ~i2c_state_r6)));
 
 //---------------------------------------------------------------------------
 //Block 753, MSLICE 0
 
-  assign net_1532 = (net_1537 & ~net_1551 & ((~net_1525 & ~net_1473)));
-  assign net_1528 = (net_1525 & net_1551 & ((net_1473 & net_1537)));
+  assign i2c_state_xxxxxxxx0001xxxx = (i2c_state_r4 & ~i2c_state_r7 & ((~i2c_state_r6 & ~i2c_state_r5)));
+  assign i2c_state_xxxxxxxx1111xxxx = (i2c_state_r6 & i2c_state_r7 & ((i2c_state_r5 & i2c_state_r4)));
 
 //---------------------------------------------------------------------------
 //Block 754, LSLICE 2
 
-  assign net_1531 = (net_1364 & net_1608 & ((~net_1551 & ~net_1525)));
-  assign net_1530 = (~net_1525 & ((net_1364 & ~net_1551)));
+  assign i2c_state_000000000010xxxx = (i2c_state_xxxxxxxxxx10xxxx & i2c_state_00000000xxxxxxxx & ((~i2c_state_r7 & ~i2c_state_r6)));
+  assign i2c_state_xxxxxxxx0010xxxx = (~i2c_state_r6 & ((i2c_state_xxxxxxxxxx10xxxx & ~i2c_state_r7)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1525 <= 1'b0;
-      end
-      else
-      begin
-        net_1525 <= net_1539;
+      i2c_state_r6 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r6 <= i2c_state_c6;
       end
     end
   end
@@ -8517,39 +8514,39 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 755, LSLICE 3
 
-  assign net_1529 = (net_1534 & ((~net_1536 & net_1479)));
-  assign net_1533 = (net_1559 & ((net_1532 & net_1479)));
+  assign i2c_state_00000000xxxx1010 = (i2c_state_r3 & ((~i2c_state_r2 & i2c_state_00000000xxxxxx10)));
+  assign i2c_state_xxxxxxxx00010010 = (i2c_state_xxxxxxxxxxxx00xx & ((i2c_state_xxxxxxxx0001xxxx & i2c_state_00000000xxxxxx10)));
 
 //---------------------------------------------------------------------------
 //Block 756, MSLICE 1
 
-  assign sig_756_lut_0 = ~net_1526;
-  assign net_1527 = (net_1607 & net_1609 & ((net_1550 & ~net_1523)));
+  assign sig_756_lut_0 = ~i2c_clock;
+  assign net_1527 = (i2c_state_r9 & i2c_state_r8 & ((i2c_state_r10 & ~i2c_state_xxxxxxxx0000xxxx)));
 
   always @(posedge clock_200MHz)
   begin
-    if(net_1357 == 1'b1)
-    begin
-      net_1526 <= sig_756_lut_0;
+    if(i2c_clk_rst == 1'b1)   //enable
+     begin
+      i2c_clock <= sig_756_lut_0;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 757, LSLICE 2
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1535 <= 1'b0;
-        net_1536 <= 1'b0;
-      end
-      else
-      begin
-        net_1535 <= net_1540;
-        net_1536 <= net_1538;
+      i2c_state_r1 <= 1'b0;
+      i2c_state_r2 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r1 <= i2c_state_c1;
+        i2c_state_r2 <= i2c_state_c2;
       end
     end
   end
@@ -8557,19 +8554,19 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 758, LSLICE 3
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1534 <= 1'b0;
-        net_1537 <= 1'b0;
-      end
-      else
-      begin
-        net_1534 <= net_1545;
-        net_1537 <= net_1541;
+      i2c_state_r3 <= 1'b0;
+      i2c_state_r4 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r3 <= i2c_state_c3;
+        i2c_state_r4 <= i2c_state_c4;
       end
     end
   end
@@ -8577,19 +8574,19 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 760, LSLICE 2
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1550 <= 1'b0;
-        net_1551 <= 1'b0;
-      end
-      else
-      begin
-        net_1550 <= net_1556;
-        net_1551 <= net_1554;
+      i2c_state_r10 <= 1'b0;
+      i2c_state_r7 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r10 <= i2c_state_c10;
+        i2c_state_r7 <= i2c_state_c7;
       end
     end
   end
@@ -8597,19 +8594,19 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 761, LSLICE 3
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1546 <= 1'b0;
-        net_1549 <= 1'b0;
-      end
-      else
-      begin
-        net_1546 <= net_1555;
-        net_1549 <= net_1553;
+      i2c_state_r11 <= 1'b0;
+      i2c_state_r12 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r11 <= i2c_state_c11;
+        i2c_state_r12 <= i2c_state_c12;
       end
     end
   end
@@ -8617,17 +8614,17 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 763, LSLICE 2
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1558 <= 1'b0;
-      end
-      else
-      begin
-        net_1558 <= net_1560;
+      i2c_state_r15 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r15 <= i2c_state_c15;
       end
     end
   end
@@ -8635,51 +8632,51 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //LSICE adder blocks 757, 758, 760, 761, 763
 
-  assign { net_1560, net_1552, net_1547, net_1553, net_1555, net_1556, net_1548, net_1557, net_1554, net_1539, net_1543, net_1541, net_1545, net_1538, net_1540, net_1542 } = { net_1558, net_1613, net_1603, net_1549, net_1546, net_1550, net_1607, net_1609, net_1551, net_1525, net_1473, net_1537, net_1534, net_1536, net_1535, net_1614 } + { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1 };
+  assign { i2c_state_c15, i2c_state_c14, i2c_state_c13, i2c_state_c12, i2c_state_c11, i2c_state_c10, i2c_state_c9, i2c_state_c8, i2c_state_c7, i2c_state_c6, i2c_state_c5, i2c_state_c4, i2c_state_c3, i2c_state_c2, i2c_state_c1, i2c_state_c0 } = { i2c_state_r15, i2c_state_r14, i2c_state_r13, i2c_state_r12, i2c_state_r11, i2c_state_r10, i2c_state_r9, i2c_state_r8, i2c_state_r7, i2c_state_r6, i2c_state_r5, i2c_state_r4, i2c_state_r3, i2c_state_r2, i2c_state_r1, i2c_state_r0 } + { 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1 };
 
 //---------------------------------------------------------------------------
 //Block 759, MSLICE 1
 
   assign sig_759_lut_0 = 1'b0;
-  assign sig_759_lut_1 = (net_1608 & ~net_1535 & ((~net_1614 & ~net_1536)));
-  assign net_1544 = (~net_1534 & sig_759_lut_0) | (net_1534 & sig_759_lut_1);
+  assign sig_759_lut_1 = (i2c_state_00000000xxxxxxxx & ~i2c_state_r1 & ((~i2c_state_r0 & ~i2c_state_r2)));
+  assign i2c_state_00000000xxxx1000 = (~i2c_state_r3 & sig_759_lut_0) | (i2c_state_r3 & sig_759_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 762, MSLICE 0
 
-  assign net_1559 = ((~net_1536 & ~net_1534));
-  assign net_1562 = (~net_1479 & ((net_1618 & net_1523))) | (net_1479 & ((~net_1618 & net_1523) | (net_1618 & net_1523)));
+  assign i2c_state_xxxxxxxxxxxx00xx = ((~i2c_state_r2 & ~i2c_state_r3));
+  assign net_1562 = (~i2c_state_00000000xxxxxx10 & ((i2c_state_00000000xxxx1100 & i2c_state_xxxxxxxx0000xxxx))) | (i2c_state_00000000xxxxxx10 & ((~i2c_state_00000000xxxx1100 & i2c_state_xxxxxxxx0000xxxx) | (i2c_state_00000000xxxx1100 & i2c_state_xxxxxxxx0000xxxx)));
 
 //---------------------------------------------------------------------------
 //Block 764, LSLICE 3
 
-  assign net_1564 = (~net_1563 & ~net_1497 & (~(net_1624 & net_1302)));
-  assign net_1563 = (net_1559 & ((net_1524 & net_1479)));
+  assign net_1564 = (~i2c_state_0000000010010010 & ~i2c_state_0000000010110000 & (~(i2c_state_xxxxxxxxxxxx1111 & i2c_state_000000001010xxxx)));
+  assign i2c_state_0000000010010010 = (i2c_state_xxxxxxxxxxxx00xx & ((i2c_state_xxxxxxxx1001xxxx & i2c_state_00000000xxxxxx10)));
 
 //---------------------------------------------------------------------------
 //Block 765, MSLICE 1
 
   assign sig_765_lut_0 = 1'b0;
-  assign sig_765_lut_1 = (~net_1534 & ~net_1535 & ((net_1614 & net_1536))) | (~net_1534 & net_1535 & ((~net_1614 & ~net_1536) | (net_1614 & ~net_1536))) | (net_1534 & ~net_1535 & ((~net_1614 & ~net_1536)));
-  assign net_1561 = (~net_1464 & sig_765_lut_0) | (net_1464 & sig_765_lut_1);
+  assign sig_765_lut_1 = (~i2c_state_r3 & ~i2c_state_r1 & ((i2c_state_r0 & i2c_state_r2))) | (~i2c_state_r3 & i2c_state_r1 & ((~i2c_state_r0 & ~i2c_state_r2) | (i2c_state_r0 & ~i2c_state_r2))) | (i2c_state_r3 & ~i2c_state_r1 & ((~i2c_state_r0 & ~i2c_state_r2)));
+  assign net_1561 = (~i2c_state_000000000011xxxx & sig_765_lut_0) | (i2c_state_000000000011xxxx & sig_765_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 766, LSLICE 2
 
-  assign net_1567 = (~net_702 & ((net_1626 & net_1471)));
-  assign net_1568 = (~net_1630 & ~net_1561 & ((~net_1471 & ~net_1577) | (net_1471 & ~net_1577))) | (net_1630 & ~net_1561 & ((~net_1471 & ~net_1577)));
+  assign i2c_cmd6A_e1 = (~i2c_send_enable & ((i2c_state_xxxxxxxxxxxx0000 & i2c_state_000000000111xxxx)));
+  assign net_1568 = (~i2c_state_xxxxxxxxxxxx0011 & ~net_1561 & ((~i2c_state_000000000111xxxx & ~i2c_state_000000001100xxxx) | (i2c_state_000000000111xxxx & ~i2c_state_000000001100xxxx))) | (i2c_state_xxxxxxxxxxxx0011 & ~net_1561 & ((~i2c_state_000000000111xxxx & ~i2c_state_000000001100xxxx)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1567 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1569 <= 1'b0;
-      end
-      else
-      begin
-        net_1569 <= io_i2c_sda;
+      i_i2c_cmd6A_b1 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6A_e1 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6A_b1 <= io_i2c_sda;
       end
     end
   end
@@ -8687,61 +8684,61 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 767, MSLICE 1
 
-  assign net_1565 = (net_1534 & ((net_1614 & ~net_1536)));
-  assign net_1566 = ((~net_1535 & net_1565));
+  assign i2c_state_xxxxxxxxxxxx10x1 = (i2c_state_r3 & ((i2c_state_r0 & ~i2c_state_r2)));
+  assign i2c_state_xxxxxxxxxxxx1001 = ((~i2c_state_r1 & i2c_state_xxxxxxxxxxxx10x1));
 
 //---------------------------------------------------------------------------
 //Block 768, LSLICE 3
 
-  assign sig_768_lut_0 = (~net_1570 & net_820 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1570 & ~net_820 & ~i_mcu_dcs) | (net_1570 & ~net_820 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (net_1570 & net_820 & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (net_1570 & net_820 & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
-  assign net_1571 = (~net_1570 & ~net_1373 & net_1426 & ((net_1572 & net_1460))) | (~net_1570 & net_1373 & net_1426 & ((net_1572 & net_1460))) | (net_1570 & ~net_1373 & net_1426 & ((net_1572 & net_1460))) | (net_1570 & net_1373 & ~net_1426 & ((net_1572 & ~net_1460) | (net_1572 & net_1460))) | (net_1570 & net_1373 & net_1426 & ((net_1572 & ~net_1460) | (net_1572 & net_1460)));
+  assign sig_768_lut_0 = (~o_i2c_cmd6E_b3 & cmd6E_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6E_b3 & ~cmd6E_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6E_b3 & ~cmd6E_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3))) | (o_i2c_cmd6E_b3 & cmd6E_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_3))) | (o_i2c_cmd6E_b3 & cmd6E_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_3) | (net_431 & io_mcu_d_3)));
+  assign net_1571 = (~o_i2c_cmd6E_b3 & ~i2c_state_xxxxxxxx1110xxxx & o_i2c_cmd6D_b4 & ((i2c_state_00000000xxxx0011 & i2c_state_xxxxxxxx1100xxxx))) | (~o_i2c_cmd6E_b3 & i2c_state_xxxxxxxx1110xxxx & o_i2c_cmd6D_b4 & ((i2c_state_00000000xxxx0011 & i2c_state_xxxxxxxx1100xxxx))) | (o_i2c_cmd6E_b3 & ~i2c_state_xxxxxxxx1110xxxx & o_i2c_cmd6D_b4 & ((i2c_state_00000000xxxx0011 & i2c_state_xxxxxxxx1100xxxx))) | (o_i2c_cmd6E_b3 & i2c_state_xxxxxxxx1110xxxx & ~o_i2c_cmd6D_b4 & ((i2c_state_00000000xxxx0011 & ~i2c_state_xxxxxxxx1100xxxx) | (i2c_state_00000000xxxx0011 & i2c_state_xxxxxxxx1100xxxx))) | (o_i2c_cmd6E_b3 & i2c_state_xxxxxxxx1110xxxx & o_i2c_cmd6D_b4 & ((i2c_state_00000000xxxx0011 & ~i2c_state_xxxxxxxx1100xxxx) | (i2c_state_00000000xxxx0011 & i2c_state_xxxxxxxx1100xxxx)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1570 <= sig_768_lut_0;
+    o_i2c_cmd6E_b3 <= sig_768_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 769, MSLICE 0
 
-  assign net_1573 = ((net_1535 & net_1565));
-  assign net_1574 = ((net_1379 & net_1573));
+  assign i2c_state_xxxxxxxxxxxx1011 = ((i2c_state_r1 & i2c_state_xxxxxxxxxxxx10x1));
+  assign i2c_state_0000000011101011 = ((i2c_state_000000001110xxxx & i2c_state_xxxxxxxxxxxx1011));
 
 //---------------------------------------------------------------------------
 //Block 770, LSLICE 2
 
-  assign net_1572 = ((net_1630 & net_1608));
-  assign net_1576 = ((net_1532 & net_1572));
+  assign i2c_state_00000000xxxx0011 = ((i2c_state_xxxxxxxxxxxx0011 & i2c_state_00000000xxxxxxxx));
+  assign i2c_state_0000000000010011 = ((i2c_state_xxxxxxxx0001xxxx & i2c_state_00000000xxxx0011));
 
 //---------------------------------------------------------------------------
 //Block 771, LSLICE 3
 
-  assign net_1578 = ((net_1524 & net_1572));
-  assign net_1579 = ((net_1462 & net_1495));
+  assign i2c_state_0000000010010011 = ((i2c_state_xxxxxxxx1001xxxx & i2c_state_00000000xxxx0011));
+  assign i2c_state_0000000010110001 = ((i2c_state_xxxxxxxx1011xxxx & i2c_state_00000000xxxx0001));
 
 //---------------------------------------------------------------------------
 //Block 772, MSLICE 1
 
-  assign net_1575 = (net_1460 & net_1608 & ((net_1573 | net_1630)));
-  assign net_1577 = ((net_1608 & net_1460));
+  assign i2c_state_195_203 = (i2c_state_xxxxxxxx1100xxxx & i2c_state_00000000xxxxxxxx & ((i2c_state_xxxxxxxxxxxx1011 | i2c_state_xxxxxxxxxxxx0011)));
+  assign i2c_state_000000001100xxxx = ((i2c_state_00000000xxxxxxxx & i2c_state_xxxxxxxx1100xxxx));
 
 //---------------------------------------------------------------------------
 //Block 773, MSLICE 0
 
-  assign net_1583 = (~net_702 & ((net_1138 & net_1617)));
-  assign net_1585 = (~net_1642 & ~net_1472) | (~net_1642 & net_1472 & ((~net_1617 & ~net_1536)));
+  assign i2c_cmd6B_e4 = (~i2c_send_enable & ((i2c_state_000000001000xxxx & i2c_state_xxxxxxxxxxxx1000)));
+  assign net_1585 = (~i2c_state_0000000001110001 & ~i2c_state_000000000110xxxx) | (~i2c_state_0000000001110001 & i2c_state_000000000110xxxx & ((~i2c_state_xxxxxxxxxxxx1000 & ~i2c_state_r2)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1583 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1587 <= 1'b0;
-      end
-      else
-      begin
-        net_1587 <= io_i2c_sda;
+      i_i2c_cmd6B_b4 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6B_e4 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6B_b4 <= io_i2c_sda;
       end
     end
   end
@@ -8749,31 +8746,31 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 774, LSLICE 2
 
-  assign sig_774_lut_0 = (~net_831 & ~i_mcu_dcs & net_1582) | (~net_831 & i_mcu_dcs & ~net_1582 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (~net_831 & i_mcu_dcs & net_1582) | (net_831 & ~i_mcu_dcs & ~net_1582 & ((~net_431 & io_mcu_d_1))) | (net_831 & ~i_mcu_dcs & net_1582 & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_831 & i_mcu_dcs & ~net_1582 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (net_831 & i_mcu_dcs & net_1582);
-  assign net_1581 = (net_1474 & ((net_1629 & net_1582)));
+  assign sig_774_lut_0 = (~cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b1) | (~cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b1 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (~cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b1) | (cmd69_write_enable & ~i_mcu_dcs & ~o_i2c_cmd69_b1 & ((~net_431 & io_mcu_d_1))) | (cmd69_write_enable & ~i_mcu_dcs & o_i2c_cmd69_b1 & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (cmd69_write_enable & i_mcu_dcs & ~o_i2c_cmd69_b1 & ((~net_431 & ~io_mcu_d_1) | (~net_431 & io_mcu_d_1))) | (cmd69_write_enable & i_mcu_dcs & o_i2c_cmd69_b1);
+  assign net_1581 = (i2c_state_000000000101xxxx & ((i2c_state_xxxxxxxxxxxx0001 & o_i2c_cmd69_b1)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1582 <= sig_774_lut_0;
+    o_i2c_cmd69_b1 <= sig_774_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 775, MSLICE 1
 
-  assign net_1584 = ((~net_702 & net_1157));
-  assign net_1586 = (~net_1580 & ~i_adc2B_d_7) | (~net_1580 & i_adc2B_d_7 & ((~cmd27_select & ~cmd6C_select) | (~cmd27_select & cmd6C_select))) | (net_1580 & ~i_adc2B_d_7 & ((~cmd27_select & ~cmd6C_select) | (cmd27_select & ~cmd6C_select))) | (net_1580 & i_adc2B_d_7 & ((~cmd27_select & ~cmd6C_select)));
+  assign i2c_cmd6C_e7 = ((~i2c_send_enable & net_1157));
+  assign net_1586 = (~i_i2c_cmd6C_b7 & ~i_adc2B_d_7) | (~i_i2c_cmd6C_b7 & i_adc2B_d_7 & ((~cmd27_select & ~cmd6C_select) | (~cmd27_select & cmd6C_select))) | (i_i2c_cmd6C_b7 & ~i_adc2B_d_7 & ((~cmd27_select & ~cmd6C_select) | (cmd27_select & ~cmd6C_select))) | (i_i2c_cmd6C_b7 & i_adc2B_d_7 & ((~cmd27_select & ~cmd6C_select)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1584 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1580 <= 1'b0;
-      end
-      else
-      begin
-        net_1580 <= io_i2c_sda;
+      i_i2c_cmd6C_b7 <= 1'b0;
+    end
+    else
+    begin
+      if(i2c_cmd6C_e7 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6C_b7 <= io_i2c_sda;
       end
     end
   end
@@ -8781,106 +8778,106 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 776, LSLICE 3
 
-  assign sig_776_lut_0 = (~net_1589 & net_818 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (net_1589 & ~net_818 & ~i_mcu_dcs) | (net_1589 & ~net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (net_1589 & net_818 & ~i_mcu_dcs & ((net_431 | io_mcu_d_7))) | (net_1589 & net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7)));
-  assign net_1588 = (net_1471 & ((net_1635 & net_1589)));
+  assign sig_776_lut_0 = (~o_i2c_cmd6B_b7 & cmd6B_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (o_i2c_cmd6B_b7 & ~cmd6B_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6B_b7 & ~cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7))) | (o_i2c_cmd6B_b7 & cmd6B_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_7))) | (o_i2c_cmd6B_b7 & cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_7) | (net_431 & io_mcu_d_7)));
+  assign net_1588 = (i2c_state_000000000111xxxx & ((i2c_state_xxxxxxxxxxxx0101 & o_i2c_cmd6B_b7)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1589 <= sig_776_lut_0;
+    o_i2c_cmd6B_b7 <= sig_776_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 777, LSLICE 2
 
-  assign sig_777_lut_0 = (~net_1593 & net_824 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_1593 & ~net_824 & ~i_mcu_dcs) | (net_1593 & ~net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_1593 & net_824 & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (net_1593 & net_824 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
-  assign net_1592 = (net_1629 & ((net_1302 & net_1593)));
+  assign sig_777_lut_0 = (~o_i2c_cmd6C_b6 & cmd6C_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (o_i2c_cmd6C_b6 & ~cmd6C_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6C_b6 & ~cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (o_i2c_cmd6C_b6 & cmd6C_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (o_i2c_cmd6C_b6 & cmd6C_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
+  assign net_1592 = (i2c_state_xxxxxxxxxxxx0001 & ((i2c_state_000000001010xxxx & o_i2c_cmd6C_b6)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1593 <= sig_777_lut_0;
+    o_i2c_cmd6C_b6 <= sig_777_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 778, LSLICE 3
 
-  assign sig_778_lut_0 = (~net_1341 & ~i_mcu_dcs & net_1594) | (~net_1341 & i_mcu_dcs & ~net_1594 & ((~net_431 & ~io_mcu_d_5) | (~net_431 & io_mcu_d_5))) | (~net_1341 & i_mcu_dcs & net_1594) | (net_1341 & ~i_mcu_dcs & ~net_1594 & ((~net_431 & io_mcu_d_5))) | (net_1341 & ~i_mcu_dcs & net_1594 & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5))) | (net_1341 & i_mcu_dcs & ~net_1594 & ((~net_431 & ~io_mcu_d_5) | (~net_431 & io_mcu_d_5))) | (net_1341 & i_mcu_dcs & net_1594);
-  assign net_1590 = (net_1632 & ((net_1472 & net_1594)));
+  assign sig_778_lut_0 = (~cmd6A_write_enable & ~i_mcu_dcs & o_i2c_cmd6A_b5) | (~cmd6A_write_enable & i_mcu_dcs & ~o_i2c_cmd6A_b5 & ((~net_431 & ~io_mcu_d_5) | (~net_431 & io_mcu_d_5))) | (~cmd6A_write_enable & i_mcu_dcs & o_i2c_cmd6A_b5) | (cmd6A_write_enable & ~i_mcu_dcs & ~o_i2c_cmd6A_b5 & ((~net_431 & io_mcu_d_5))) | (cmd6A_write_enable & ~i_mcu_dcs & o_i2c_cmd6A_b5 & ((~net_431 & io_mcu_d_5) | (net_431 & io_mcu_d_5))) | (cmd6A_write_enable & i_mcu_dcs & ~o_i2c_cmd6A_b5 & ((~net_431 & ~io_mcu_d_5) | (~net_431 & io_mcu_d_5))) | (cmd6A_write_enable & i_mcu_dcs & o_i2c_cmd6A_b5);
+  assign net_1590 = (i2c_state_xxxxxxxxxxxx0111 & ((i2c_state_000000000110xxxx & o_i2c_cmd6A_b5)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1594 <= sig_778_lut_0;
+    o_i2c_cmd6A_b5 <= sig_778_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 779, MSLICE 1
 
-  assign sig_779_lut_0 = (net_1339 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7)));
-  assign sig_779_lut_1 = (~io_mcu_d_7 & ~i_mcu_dcs & ((~net_431 & ~net_1339) | (net_431 & ~net_1339) | (net_431 & net_1339))) | (~io_mcu_d_7 & i_mcu_dcs & ((net_431 & ~net_1339) | (net_431 & net_1339))) | (io_mcu_d_7 & ~i_mcu_dcs) | (io_mcu_d_7 & i_mcu_dcs & ((net_431 & ~net_1339) | (net_431 & net_1339)));
-  assign sig_779_ff0_d = (~net_1591 & sig_779_lut_0) | (net_1591 & sig_779_lut_1);
+  assign sig_779_lut_0 = (cmd68_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_7) | (net_431 & io_mcu_d_7)));
+  assign sig_779_lut_1 = (~io_mcu_d_7 & ~i_mcu_dcs & ((~net_431 & ~cmd68_write_enable) | (net_431 & ~cmd68_write_enable) | (net_431 & cmd68_write_enable))) | (~io_mcu_d_7 & i_mcu_dcs & ((net_431 & ~cmd68_write_enable) | (net_431 & cmd68_write_enable))) | (io_mcu_d_7 & ~i_mcu_dcs) | (io_mcu_d_7 & i_mcu_dcs & ((net_431 & ~cmd68_write_enable) | (net_431 & cmd68_write_enable)));
+  assign sig_779_ff0_d = (~o_i2c_cmd68_b7 & sig_779_lut_0) | (o_i2c_cmd68_b7 & sig_779_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1591 <= sig_779_ff0_d;
+    o_i2c_cmd68_b7 <= sig_779_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 780, MSLICE 0
 
-  assign sig_780_lut_0 = (~i_mcu_dcs & net_1596) | (i_mcu_dcs & ~net_1596 & ((~net_431 & ~io_mcu_d_7) | (~net_431 & io_mcu_d_7))) | (i_mcu_dcs & net_1596);
-  assign sig_780_lut_1 = (~i_mcu_dcs & io_mcu_d_7 & ((~net_431 & ~net_1596) | (~net_431 & net_1596) | (net_431 & net_1596))) | (i_mcu_dcs & ~io_mcu_d_7 & ((~net_431 & ~net_1596) | (~net_431 & net_1596) | (net_431 & net_1596))) | (i_mcu_dcs & io_mcu_d_7 & ((~net_431 & ~net_1596) | (~net_431 & net_1596) | (net_431 & net_1596)));
-  assign sig_780_ff0_d = (~net_831 & sig_780_lut_0) | (net_831 & sig_780_lut_1);
+  assign sig_780_lut_0 = (~i_mcu_dcs & o_i2c_cmd69_b7) | (i_mcu_dcs & ~o_i2c_cmd69_b7 & ((~net_431 & ~io_mcu_d_7) | (~net_431 & io_mcu_d_7))) | (i_mcu_dcs & o_i2c_cmd69_b7);
+  assign sig_780_lut_1 = (~i_mcu_dcs & io_mcu_d_7 & ((~net_431 & ~o_i2c_cmd69_b7) | (~net_431 & o_i2c_cmd69_b7) | (net_431 & o_i2c_cmd69_b7))) | (i_mcu_dcs & ~io_mcu_d_7 & ((~net_431 & ~o_i2c_cmd69_b7) | (~net_431 & o_i2c_cmd69_b7) | (net_431 & o_i2c_cmd69_b7))) | (i_mcu_dcs & io_mcu_d_7 & ((~net_431 & ~o_i2c_cmd69_b7) | (~net_431 & o_i2c_cmd69_b7) | (net_431 & o_i2c_cmd69_b7)));
+  assign sig_780_ff0_d = (~cmd69_write_enable & sig_780_lut_0) | (cmd69_write_enable & sig_780_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1596 <= sig_780_ff0_d;
+    o_i2c_cmd69_b7 <= sig_780_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 781, MSLICE 1
 
-  assign sig_781_lut_0 = (net_1339 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6)));
-  assign sig_781_lut_1 = (~io_mcu_d_6 & ~i_mcu_dcs & ((~net_431 & ~net_1339) | (net_431 & ~net_1339) | (net_431 & net_1339))) | (~io_mcu_d_6 & i_mcu_dcs & ((net_431 & ~net_1339) | (net_431 & net_1339))) | (io_mcu_d_6 & ~i_mcu_dcs) | (io_mcu_d_6 & i_mcu_dcs & ((net_431 & ~net_1339) | (net_431 & net_1339)));
-  assign sig_781_ff0_d = (~net_1595 & sig_781_lut_0) | (net_1595 & sig_781_lut_1);
+  assign sig_781_lut_0 = (cmd68_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6)));
+  assign sig_781_lut_1 = (~io_mcu_d_6 & ~i_mcu_dcs & ((~net_431 & ~cmd68_write_enable) | (net_431 & ~cmd68_write_enable) | (net_431 & cmd68_write_enable))) | (~io_mcu_d_6 & i_mcu_dcs & ((net_431 & ~cmd68_write_enable) | (net_431 & cmd68_write_enable))) | (io_mcu_d_6 & ~i_mcu_dcs) | (io_mcu_d_6 & i_mcu_dcs & ((net_431 & ~cmd68_write_enable) | (net_431 & cmd68_write_enable)));
+  assign sig_781_ff0_d = (~o_i2c_cmd68_b6 & sig_781_lut_0) | (o_i2c_cmd68_b6 & sig_781_lut_1);
 
   always @(posedge i_mcu_clk)
   begin
-    net_1595 <= sig_781_ff0_d;
+    o_i2c_cmd68_b6 <= sig_781_ff0_d;
   end
 
 //---------------------------------------------------------------------------
 //Block 782, LSLICE 3
 
-  assign sig_782_lut_0 = (~net_1597 & net_1339 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (net_1597 & ~net_1339 & ~i_mcu_dcs) | (net_1597 & ~net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (net_1597 & net_1339 & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (net_1597 & net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
-  assign net_1598 = (~net_1519 & ~net_1531 & ~net_1623) | (~net_1519 & ~net_1531 & net_1623) | (~net_1519 & net_1531 & ~net_1623 & ((~net_1597 & ~net_1600) | (net_1597 & ~net_1600))) | (~net_1519 & net_1531 & net_1623 & ((~net_1597 & ~net_1600)));
+  assign sig_782_lut_0 = (~o_i2c_cmd68_b4 & cmd68_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (o_i2c_cmd68_b4 & ~cmd68_write_enable & ~i_mcu_dcs) | (o_i2c_cmd68_b4 & ~cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4))) | (o_i2c_cmd68_b4 & cmd68_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_4))) | (o_i2c_cmd68_b4 & cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_4) | (net_431 & io_mcu_d_4)));
+  assign net_1598 = (~net_1519 & ~i2c_state_000000000010xxxx & ~i2c_state_xxxxxxxxxxxx1101) | (~net_1519 & ~i2c_state_000000000010xxxx & i2c_state_xxxxxxxxxxxx1101) | (~net_1519 & i2c_state_000000000010xxxx & ~i2c_state_xxxxxxxxxxxx1101 & ((~o_i2c_cmd68_b4 & ~net_1600) | (o_i2c_cmd68_b4 & ~net_1600))) | (~net_1519 & i2c_state_000000000010xxxx & i2c_state_xxxxxxxxxxxx1101 & ((~o_i2c_cmd68_b4 & ~net_1600)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1597 <= sig_782_lut_0;
+    o_i2c_cmd68_b4 <= sig_782_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 783, LSLICE 2
 
-  assign net_1600 = ((net_1520 & net_1624));
+  assign net_1600 = ((o_i2c_cmd68_b3 & i2c_state_xxxxxxxxxxxx1111));
   assign net_1599 = (~net_1427 & net_1644 & ((net_1641 & net_1598)));
 
 //---------------------------------------------------------------------------
 //Block 814, LSLICE 3
 
-  assign net_1604 = (~net_1527 & ~net_1546 & ((net_1603 & net_1549))) | (~net_1527 & net_1546 & ((net_1603 & ~net_1549) | (net_1603 & net_1549))) | (net_1527 & ~net_1546 & ((net_1603 & ~net_1549) | (net_1603 & net_1549))) | (net_1527 & net_1546 & ((net_1603 & ~net_1549) | (net_1603 & net_1549)));
-  assign net_1605 = ((~net_702 & net_1618));
+  assign net_1604 = (~net_1527 & ~i2c_state_r11 & ((i2c_state_r13 & i2c_state_r12))) | (~net_1527 & i2c_state_r11 & ((i2c_state_r13 & ~i2c_state_r12) | (i2c_state_r13 & i2c_state_r12))) | (net_1527 & ~i2c_state_r11 & ((i2c_state_r13 & ~i2c_state_r12) | (i2c_state_r13 & i2c_state_r12))) | (net_1527 & i2c_state_r11 & ((i2c_state_r13 & ~i2c_state_r12) | (i2c_state_r13 & i2c_state_r12)));
+  assign net_1605 = ((~i2c_send_enable & i2c_state_00000000xxxx1100));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1603 <= 1'b0;
-      end
-      else
-      begin
-        net_1603 <= net_1547;
+      i2c_state_r13 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r13 <= i2c_state_c13;
       end
     end
   end
@@ -8888,39 +8885,39 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 815, MSLICE 1
 
-  assign sig_815_lut_0 = (~net_1612 & ~net_1609) | (~net_1612 & net_1609) | (net_1612 & ~net_1609) | (net_1612 & net_1609);
-  assign sig_815_lut_1 = (~net_1612 & net_1609 & (~(net_702 & net_1523))) | (net_1612 & ~net_1609) | (net_1612 & net_1609);
-  assign sig_815_ff0_d = (~net_1610 & sig_815_lut_0) | (net_1610 & sig_815_lut_1);
+  assign sig_815_lut_0 = (~net_1612 & ~i2c_state_r8) | (~net_1612 & i2c_state_r8) | (net_1612 & ~i2c_state_r8) | (net_1612 & i2c_state_r8);
+  assign sig_815_lut_1 = (~net_1612 & i2c_state_r8 & (~(i2c_send_enable & i2c_state_xxxxxxxx0000xxxx))) | (net_1612 & ~i2c_state_r8) | (net_1612 & i2c_state_r8);
+  assign sig_815_ff0_d = (~i2c_session_enable & sig_815_lut_0) | (i2c_session_enable & sig_815_lut_1);
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_705 == 1'b0)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      net_1606 <= 1'b0;
+      i2c_session_done <= 1'b0;
     end
     else
     begin
-      net_1606 <= sig_815_ff0_d;
+      i2c_session_done <= sig_815_ff0_d;
     end
   end
 
 //---------------------------------------------------------------------------
 //Block 816, LSLICE 2
 
-  assign net_1610 = (net_1616 & ~net_1606 & ~net_1607 & ((~net_1546 & ~net_1550)));
-  assign net_1608 = (net_1616 & ~net_1607 & ~net_1609 & ((~net_1546 & ~net_1550)));
+  assign i2c_session_enable = (i2c_state_0000xxxxxxxxxxxx & ~i2c_session_done & ~i2c_state_r9 & ((~i2c_state_r11 & ~i2c_state_r10)));
+  assign i2c_state_00000000xxxxxxxx = (i2c_state_0000xxxxxxxxxxxx & ~i2c_state_r9 & ~i2c_state_r8 & ((~i2c_state_r11 & ~i2c_state_r10)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1607 <= 1'b0;
-      end
-      else
-      begin
-        net_1607 <= net_1548;
+      i2c_state_r9 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r9 <= i2c_state_c9;
       end
     end
   end
@@ -8928,20 +8925,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 817, LSLICE 3
 
-  assign net_1612 = (net_1534 & ~net_1609 & net_1611) | (net_1534 & net_1609 & ~net_1611 & ((net_1536 | net_1535))) | (net_1534 & net_1609 & net_1611);
-  assign net_1611 = (net_1528 & ~net_702 & ~net_1536 & ((net_1614 & net_1535))) | (net_1528 & ~net_702 & net_1536);
+  assign net_1612 = (i2c_state_r3 & ~i2c_state_r8 & net_1611) | (i2c_state_r3 & i2c_state_r8 & ~net_1611 & ((i2c_state_r2 | i2c_state_r1))) | (i2c_state_r3 & i2c_state_r8 & net_1611);
+  assign net_1611 = (i2c_state_xxxxxxxx1111xxxx & ~i2c_send_enable & ~i2c_state_r2 & ((i2c_state_r0 & i2c_state_r1))) | (i2c_state_xxxxxxxx1111xxxx & ~i2c_send_enable & i2c_state_r2);
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b0)
-      begin
-        net_1609 <= 1'b0;
-      end
-      else
-      begin
-        net_1609 <= net_1557;
+      i2c_state_r8 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r8 <= i2c_state_c8;
       end
     end
   end
@@ -8949,22 +8946,22 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 818, MSLICE 0
 
-  assign net_1615 = (~net_1613 & ((~net_1558 & ~net_1604)));
-  assign net_1616 = (~net_1558 & ~net_1613 & ((~net_1603 & ~net_1549)));
+  assign net_1615 = (~i2c_state_r14 & ((~i2c_state_r15 & ~net_1604)));
+  assign i2c_state_0000xxxxxxxxxxxx = (~i2c_state_r15 & ~i2c_state_r14 & ((~i2c_state_r13 & ~i2c_state_r12)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1615 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1614 <= 1'b0;
-        net_1613 <= 1'b0;
-      end
-      else
-      begin
-        net_1614 <= net_1542;
-        net_1613 <= net_1552;
+      i2c_state_r0 <= 1'b0;
+      i2c_state_r14 <= 1'b0;
+    end
+    else
+    begin
+      if(net_1615 == 1'b1)   //enable
+       begin
+        i2c_state_r0 <= i2c_state_c0;
+        i2c_state_r14 <= i2c_state_c14;
       end
     end
   end
@@ -8972,20 +8969,20 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 819, LSLICE 2
 
-  assign net_1620 = (net_1472 & ((~net_702 & net_1617)));
-  assign net_1617 = (~net_1614 & net_1534 & ((~net_1536 & ~net_1535)));
+  assign i2c_cmd6A_e5 = (i2c_state_000000000110xxxx & ((~i2c_send_enable & i2c_state_xxxxxxxxxxxx1000)));
+  assign i2c_state_xxxxxxxxxxxx1000 = (~i2c_state_r0 & i2c_state_r3 & ((~i2c_state_r2 & ~i2c_state_r1)));
 
-  always @(posedge gclk_5)
+  always @(posedge i2c_clock)
   begin
-    if(net_1620 == 1'b1)
+    if(i2c_rcv_rst == 1'b0)   //reset
     begin
-      if(net_705 == 1'b1)
-      begin
-        net_1622 <= 1'b1;
-      end
-      else
-      begin
-        net_1622 <= io_i2c_sda;
+      i_i2c_cmd6A_b5 <= 1'b1;
+    end
+    else
+    begin
+      if(i2c_cmd6A_e5 == 1'b1)   //enable
+       begin
+        i_i2c_cmd6A_b5 <= io_i2c_sda;
       end
     end
   end
@@ -8993,394 +8990,123 @@ module FNIRSI_1013D
 //---------------------------------------------------------------------------
 //Block 820, LSLICE 3
 
-  assign net_1619 = (~net_1535 & ~net_1536 & ((net_1379 & ~net_1534) | (net_1379 & net_1534))) | (~net_1535 & net_1536 & ((net_1379 & ~net_1534))) | (net_1535 & net_1536 & ((net_1379 & ~net_1534)));
-  assign net_1621 = ((~net_1534 & net_1536));
+  assign net_1619 = (~i2c_state_r1 & ~i2c_state_r2 & ((i2c_state_000000001110xxxx & ~i2c_state_r3) | (i2c_state_000000001110xxxx & i2c_state_r3))) | (~i2c_state_r1 & i2c_state_r2 & ((i2c_state_000000001110xxxx & ~i2c_state_r3))) | (i2c_state_r1 & i2c_state_r2 & ((i2c_state_000000001110xxxx & ~i2c_state_r3)));
+  assign i2c_state_xxxxxxxxxxxx01xx = ((~i2c_state_r3 & i2c_state_r2));
 
 //---------------------------------------------------------------------------
 //Block 821, MSLICE 1
 
   assign sig_821_lut_0 = 1'b0;
-  assign sig_821_lut_1 = (net_1536 & ~net_1535 & ((~net_1614 & net_1608)));
-  assign net_1618 = (~net_1534 & sig_821_lut_0) | (net_1534 & sig_821_lut_1);
+  assign sig_821_lut_1 = (i2c_state_r2 & ~i2c_state_r1 & ((~i2c_state_r0 & i2c_state_00000000xxxxxxxx)));
+  assign i2c_state_00000000xxxx1100 = (~i2c_state_r3 & sig_821_lut_0) | (i2c_state_r3 & sig_821_lut_1);
 
 //---------------------------------------------------------------------------
 //Block 822, MSLICE 0
 
-  assign net_1624 = (net_1534 & net_1536 & ((net_1535 & net_1614)));
-  assign net_1623 = (~net_1535 & net_1536 & ((net_1534 & net_1614)));
+  assign i2c_state_xxxxxxxxxxxx1111 = (i2c_state_r3 & i2c_state_r2 & ((i2c_state_r1 & i2c_state_r0)));
+  assign i2c_state_xxxxxxxxxxxx1101 = (~i2c_state_r1 & i2c_state_r2 & ((i2c_state_r3 & i2c_state_r0)));
 
 //---------------------------------------------------------------------------
 //Block 823, LSLICE 2
 
-  assign net_1625 = (net_1535 & ((~net_1614 & net_1559)));
-  assign net_1626 = (net_1559 & ((~net_1614 & ~net_1535)));
+  assign i2c_state_xxxxxxxxxxxx0010 = (i2c_state_r1 & ((~i2c_state_r0 & i2c_state_xxxxxxxxxxxx00xx)));
+  assign i2c_state_xxxxxxxxxxxx0000 = (i2c_state_xxxxxxxxxxxx00xx & ((~i2c_state_r0 & ~i2c_state_r1)));
 
 //---------------------------------------------------------------------------
 //Block 824, LSLICE 3
 
-  assign net_1627 = (net_1460 & net_1608 & ((net_1630 | net_1633)));
-  assign net_1628 = (~net_1627 & ~net_1618 & (~(net_1302 & net_1623))) | (~net_1627 & net_1618 & ((~net_1302 & ~net_1623) | (~net_1302 & net_1623)));
+  assign i2c_state_195_196 = (i2c_state_xxxxxxxx1100xxxx & i2c_state_00000000xxxxxxxx & ((i2c_state_xxxxxxxxxxxx0011 | i2c_state_xxxxxxxxxxxx0100)));
+  assign net_1628 = (~i2c_state_195_196 & ~i2c_state_00000000xxxx1100 & (~(i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx1101))) | (~i2c_state_195_196 & i2c_state_00000000xxxx1100 & ((~i2c_state_000000001010xxxx & ~i2c_state_xxxxxxxxxxxx1101) | (~i2c_state_000000001010xxxx & i2c_state_xxxxxxxxxxxx1101)));
 
 //---------------------------------------------------------------------------
 //Block 825, MSLICE 0
 
-  assign net_1630 = (net_1559 & ((net_1535 & net_1614)));
-  assign net_1629 = (~net_1535 & ((net_1614 & net_1559)));
+  assign i2c_state_xxxxxxxxxxxx0011 = (i2c_state_xxxxxxxxxxxx00xx & ((i2c_state_r1 & i2c_state_r0)));
+  assign i2c_state_xxxxxxxxxxxx0001 = (~i2c_state_r1 & ((i2c_state_r0 & i2c_state_xxxxxxxxxxxx00xx)));
 
 //---------------------------------------------------------------------------
 //Block 826, LSLICE 3
 
-  assign sig_826_lut_0 = (~net_1636 & net_818 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_1636 & ~net_818 & ~i_mcu_dcs) | (net_1636 & ~net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (net_1636 & net_818 & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (net_1636 & net_818 & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
-  assign net_1631 = (net_1572 & ((net_1459 & net_1636)));
+  assign sig_826_lut_0 = (~o_i2c_cmd6B_b6 & cmd6B_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (o_i2c_cmd6B_b6 & ~cmd6B_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6B_b6 & ~cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6))) | (o_i2c_cmd6B_b6 & cmd6B_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_6))) | (o_i2c_cmd6B_b6 & cmd6B_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_6) | (net_431 & io_mcu_d_6)));
+  assign net_1631 = (i2c_state_00000000xxxx0011 & ((i2c_state_xxxxxxxx1000xxxx & o_i2c_cmd6B_b6)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1636 <= sig_826_lut_0;
+    o_i2c_cmd6B_b6 <= sig_826_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 827, LSLICE 2
 
-  assign net_1632 = (net_1621 & ((net_1614 & net_1535)));
-  assign net_1635 = (net_1621 & ((~net_1535 & net_1614)));
+  assign i2c_state_xxxxxxxxxxxx0111 = (i2c_state_xxxxxxxxxxxx01xx & ((i2c_state_r0 & i2c_state_r1)));
+  assign i2c_state_xxxxxxxxxxxx0101 = (i2c_state_xxxxxxxxxxxx01xx & ((~i2c_state_r1 & i2c_state_r0)));
 
 //---------------------------------------------------------------------------
 //Block 828, MSLICE 1
 
-  assign net_1633 = (~net_1614 & ((net_1621 & ~net_1535)));
-  assign net_1634 = (~net_1614 & ((net_1535 & net_1621)));
+  assign i2c_state_xxxxxxxxxxxx0100 = (~i2c_state_r0 & ((i2c_state_xxxxxxxxxxxx01xx & ~i2c_state_r1)));
+  assign i2c_state_xxxxxxxxxxxx0110 = (~i2c_state_r0 & ((i2c_state_r1 & i2c_state_xxxxxxxxxxxx01xx)));
 
 //---------------------------------------------------------------------------
 //Block 829, LSLICE 2
 
-  assign sig_829_lut_0 = (~net_1637 & net_1339 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_1637 & ~net_1339 & ~i_mcu_dcs) | (net_1637 & ~net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_1637 & net_1339 & ~i_mcu_dcs & ((net_431 | io_mcu_d_2))) | (net_1637 & net_1339 & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2)));
-  assign net_1640 = (net_1464 & ((net_1629 & net_1637)));
+  assign sig_829_lut_0 = (~o_i2c_cmd68_b2 & cmd68_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (o_i2c_cmd68_b2 & ~cmd68_write_enable & ~i_mcu_dcs) | (o_i2c_cmd68_b2 & ~cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (o_i2c_cmd68_b2 & cmd68_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_2))) | (o_i2c_cmd68_b2 & cmd68_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_2) | (net_431 & io_mcu_d_2)));
+  assign i2c_out_cmd68_b2 = (i2c_state_000000000011xxxx & ((i2c_state_xxxxxxxxxxxx0001 & o_i2c_cmd68_b2)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1637 <= sig_829_lut_0;
+    o_i2c_cmd68_b2 <= sig_829_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 830, LSLICE 3
 
-  assign sig_830_lut_0 = (~net_1341 & ~i_mcu_dcs & net_1639) | (~net_1341 & i_mcu_dcs & ~net_1639 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (~net_1341 & i_mcu_dcs & net_1639) | (net_1341 & ~i_mcu_dcs & ~net_1639 & ((~net_431 & io_mcu_d_2))) | (net_1341 & ~i_mcu_dcs & net_1639 & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_1341 & i_mcu_dcs & ~net_1639 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (net_1341 & i_mcu_dcs & net_1639);
-  assign net_1638 = (net_1623 & ((net_1472 & net_1639)));
+  assign sig_830_lut_0 = (~cmd6A_write_enable & ~i_mcu_dcs & o_i2c_cmd6A_b2) | (~cmd6A_write_enable & i_mcu_dcs & ~o_i2c_cmd6A_b2 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (~cmd6A_write_enable & i_mcu_dcs & o_i2c_cmd6A_b2) | (cmd6A_write_enable & ~i_mcu_dcs & ~o_i2c_cmd6A_b2 & ((~net_431 & io_mcu_d_2))) | (cmd6A_write_enable & ~i_mcu_dcs & o_i2c_cmd6A_b2 & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (cmd6A_write_enable & i_mcu_dcs & ~o_i2c_cmd6A_b2 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (cmd6A_write_enable & i_mcu_dcs & o_i2c_cmd6A_b2);
+  assign i2c_out_cmd6A_b2 = (i2c_state_xxxxxxxxxxxx1101 & ((i2c_state_000000000110xxxx & o_i2c_cmd6A_b2)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1639 <= sig_830_lut_0;
+    o_i2c_cmd6A_b2 <= sig_830_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 831, MSLICE 0
 
-  assign net_1642 = ((net_1471 & net_1629));
-  assign net_1641 = (~net_1511 & ~net_1588 & ((~net_1581 & ~net_1638)));
+  assign i2c_state_0000000001110001 = ((i2c_state_000000000111xxxx & i2c_state_xxxxxxxxxxxx0001));
+  assign net_1641 = (~net_1511 & ~net_1588 & ((~net_1581 & ~i2c_out_cmd6A_b2)));
 
 //---------------------------------------------------------------------------
 //Block 832, LSLICE 3
 
-  assign sig_832_lut_0 = (~net_1643 & net_1341 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_1643 & ~net_1341 & ~i_mcu_dcs) | (net_1643 & ~net_1341 & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (net_1643 & net_1341 & ~i_mcu_dcs & ((net_431 | io_mcu_d_0))) | (net_1643 & net_1341 & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0)));
-  assign net_1644 = (~net_1503 & ~net_1645 & ~net_1590 & (~(net_1643 & net_1642)));
+  assign sig_832_lut_0 = (~o_i2c_cmd6A_b0 & cmd6A_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (o_i2c_cmd6A_b0 & ~cmd6A_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6A_b0 & ~cmd6A_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0))) | (o_i2c_cmd6A_b0 & cmd6A_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_0))) | (o_i2c_cmd6A_b0 & cmd6A_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_0) | (net_431 & io_mcu_d_0)));
+  assign net_1644 = (~net_1503 & ~i2c_out_cmd6A_b1 & ~net_1590 & (~(o_i2c_cmd6A_b0 & i2c_state_0000000001110001)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1643 <= sig_832_lut_0;
+    o_i2c_cmd6A_b0 <= sig_832_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 833, LSLICE 3
 
-  assign sig_833_lut_0 = (~net_1646 & net_1341 & ~i_mcu_dcs & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_1646 & ~net_1341 & ~i_mcu_dcs) | (net_1646 & ~net_1341 & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (net_1646 & net_1341 & ~i_mcu_dcs & ((net_431 | io_mcu_d_1))) | (net_1646 & net_1341 & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1)));
-  assign net_1645 = (net_1624 & ((net_1472 & net_1646)));
+  assign sig_833_lut_0 = (~o_i2c_cmd6A_b1 & cmd6A_write_enable & ~i_mcu_dcs & ((~net_431 & io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (o_i2c_cmd6A_b1 & ~cmd6A_write_enable & ~i_mcu_dcs) | (o_i2c_cmd6A_b1 & ~cmd6A_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1))) | (o_i2c_cmd6A_b1 & cmd6A_write_enable & ~i_mcu_dcs & ((net_431 | io_mcu_d_1))) | (o_i2c_cmd6A_b1 & cmd6A_write_enable & i_mcu_dcs & ((net_431 & ~io_mcu_d_1) | (net_431 & io_mcu_d_1)));
+  assign i2c_out_cmd6A_b1 = (i2c_state_xxxxxxxxxxxx1111 & ((i2c_state_000000000110xxxx & o_i2c_cmd6A_b1)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1646 <= sig_833_lut_0;
+    o_i2c_cmd6A_b1 <= sig_833_lut_0;
   end
 
 //---------------------------------------------------------------------------
 //Block 834, LSLICE 2
 
-  assign sig_834_lut_0 = (~net_820 & ~i_mcu_dcs & net_1650) | (~net_820 & i_mcu_dcs & ~net_1650 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (~net_820 & i_mcu_dcs & net_1650) | (net_820 & ~i_mcu_dcs & ~net_1650 & ((~net_431 & io_mcu_d_2))) | (net_820 & ~i_mcu_dcs & net_1650 & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (net_820 & i_mcu_dcs & ~net_1650 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (net_820 & i_mcu_dcs & net_1650);
-  assign net_1649 = (net_1379 & net_1621 & net_1650 & ((~net_1535 & net_1614)));
+  assign sig_834_lut_0 = (~cmd6E_write_enable & ~i_mcu_dcs & o_i2c_cmd6E_b2) | (~cmd6E_write_enable & i_mcu_dcs & ~o_i2c_cmd6E_b2 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (~cmd6E_write_enable & i_mcu_dcs & o_i2c_cmd6E_b2) | (cmd6E_write_enable & ~i_mcu_dcs & ~o_i2c_cmd6E_b2 & ((~net_431 & io_mcu_d_2))) | (cmd6E_write_enable & ~i_mcu_dcs & o_i2c_cmd6E_b2 & ((~net_431 & io_mcu_d_2) | (net_431 & io_mcu_d_2))) | (cmd6E_write_enable & i_mcu_dcs & ~o_i2c_cmd6E_b2 & ((~net_431 & ~io_mcu_d_2) | (~net_431 & io_mcu_d_2))) | (cmd6E_write_enable & i_mcu_dcs & o_i2c_cmd6E_b2);
+  assign i2c_out_cmd6E_b2 = (i2c_state_000000001110xxxx & i2c_state_xxxxxxxxxxxx01xx & o_i2c_cmd6E_b2 & ((~i2c_state_r1 & i2c_state_r0)));
 
   always @(posedge i_mcu_clk)
   begin
-    net_1650 <= sig_834_lut_0;
+    o_i2c_cmd6E_b2 <= sig_834_lut_0;
   end
-
-//---------------------------------------------------------------------------
-//Block 82, EMB 1
-
-  assign sig_82_cea = sample_write_enable & ~sample_addr_11 & ~sample_addr_10;
-  assign sig_82_ceb = ~read_addr_11 & ~read_addr_10;
-
-  sample_memory_9 samples_block_82
-  (
-    .dia({i_adc2A_d_1,i_adc2A_d_0,i_adc1B_d_7,i_adc1B_d_6,i_adc1B_d_5,i_adc1B_d_4,i_adc1B_d_3,i_adc1B_d_2,i_adc1B_d_1}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_82_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc2A_d0_1,o_adc2A_d0_0,o_adc1B_d0_7,o_adc1B_d0_6,o_adc1B_d0_5,o_adc1B_d0_4,o_adc1B_d0_3,o_adc1B_d0_2,o_adc1B_d0_1}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_82_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 83, EMB 2
-
-  assign sig_83_cea = sample_write_enable & ~sample_addr_11 & sample_addr_10;
-  assign sig_83_ceb = ~read_addr_11 & read_addr_10;
-
-  sample_memory_9 samples_block_83
-  (
-    .dia({i_adc2A_d_1,i_adc2A_d_0,i_adc1B_d_7,i_adc1B_d_6,i_adc1B_d_5,i_adc1B_d_4,i_adc1B_d_3,i_adc1B_d_2,i_adc1B_d_1}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_83_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc2A_d1_1,o_adc2A_d1_0,o_adc1B_d1_7,o_adc1B_d1_6,o_adc1B_d1_5,o_adc1B_d1_4,o_adc1B_d1_3,o_adc1B_d1_2,o_adc1B_d1_1}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_83_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 84, EMB 3
-
-  assign sig_84_cea = sample_write_enable & sample_addr_11 & sample_addr_10;
-  assign sig_84_ceb = read_addr_11 & read_addr_10;
-
-  sample_memory_9 samples_block_84
-  (
-    .dia({i_adc2A_d_1,i_adc2A_d_0,i_adc1B_d_7,i_adc1B_d_6,i_adc1B_d_5,i_adc1B_d_4,i_adc1B_d_3,i_adc1B_d_2,i_adc1B_d_1}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_84_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc2A_d3_1,o_adc2A_d3_0,o_adc1B_d3_7,o_adc1B_d3_6,o_adc1B_d3_5,o_adc1B_d3_4,o_adc1B_d3_3,o_adc1B_d3_2,o_adc1B_d3_1}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_84_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 94, EMB 0
-
-  assign sig_94_cea = sample_write_enable & sample_addr_11 & ~sample_addr_10;
-  assign sig_94_ceb = read_addr_11 & ~read_addr_10;
-
-  sample_memory_9 samples_block_94
-  (
-    .dia({i_adc2A_d_1,i_adc2A_d_0,i_adc1B_d_7,i_adc1B_d_6,i_adc1B_d_5,i_adc1B_d_4,i_adc1B_d_3,i_adc1B_d_2,i_adc1B_d_1}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_94_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc2A_d2_1,o_adc2A_d2_0,o_adc1B_d2_7,o_adc1B_d2_6,o_adc1B_d2_5,o_adc1B_d2_4,o_adc1B_d2_3,o_adc1B_d2_2,o_adc1B_d2_1}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_94_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 95, EMB 1
-
-  assign sig_95_cea = sample_write_enable & sample_addr_11 & ~sample_addr_10;
-  assign sig_95_ceb = read_addr_11 & ~read_addr_10;
-
-  sample_memory_9 samples_block_95
-  (
-    .dia({i_adc2B_d_2,i_adc2B_d_1,i_adc2B_d_0,i_adc2A_d_7,i_adc2A_d_6,i_adc2A_d_5,i_adc2A_d_4,i_adc2A_d_3,i_adc2A_d_2}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_95_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc2B_d2_2,o_adc2B_d2_1,o_adc2B_d2_0,o_adc2A_d2_7,o_adc2A_d2_6,o_adc2A_d2_5,o_adc2A_d2_4,o_adc2A_d2_3,o_adc2A_d2_2}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_95_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 96, EMB 2
-
-  assign sig_96_cea = sample_write_enable & sample_addr_11 & sample_addr_10;
-  assign sig_96_ceb = read_addr_11 & read_addr_10;
-
-  sample_memory_9 samples_block_96
-  (
-    .dia({i_adc2B_d_2,i_adc2B_d_1,i_adc2B_d_0,i_adc2A_d_7,i_adc2A_d_6,i_adc2A_d_5,i_adc2A_d_4,i_adc2A_d_3,i_adc2A_d_2}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_96_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc2B_d3_2,o_adc2B_d3_1,o_adc2B_d3_0,o_adc2A_d3_7,o_adc2A_d3_6,o_adc2A_d3_5,o_adc2A_d3_4,o_adc2A_d3_3,o_adc2A_d3_2}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_96_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 97, EMB 3
-
-  assign sig_97_cea = sample_write_enable & ~sample_addr_11 & sample_addr_10;
-  assign sig_97_ceb = ~read_addr_11 & read_addr_10;
-
-  sample_memory_9 samples_block_97
-  (
-    .dia({i_adc2B_d_2,i_adc2B_d_1,i_adc2B_d_0,i_adc2A_d_7,i_adc2A_d_6,i_adc2A_d_5,i_adc2A_d_4,i_adc2A_d_3,i_adc2A_d_2}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_97_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc2B_d1_2,o_adc2B_d1_1,o_adc2B_d1_0,o_adc2A_d1_7,o_adc2A_d1_6,o_adc2A_d1_5,o_adc2A_d1_4,o_adc2A_d1_3,o_adc2A_d1_2}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_97_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 114, EMB 0
-
-  assign sig_114_cea = sample_write_enable & ~sample_addr_11 & ~sample_addr_10;
-  assign sig_114_ceb = ~read_addr_11 & ~read_addr_10;
-
-  sample_memory_9 samples_block_114
-  (
-    .dia({i_adc2B_d_2,i_adc2B_d_1,i_adc2B_d_0,i_adc2A_d_7,i_adc2A_d_6,i_adc2A_d_5,i_adc2A_d_4,i_adc2A_d_3,i_adc2A_d_2}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_114_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc2B_d0_2,o_adc2B_d0_1,o_adc2B_d0_0,o_adc2A_d0_7,o_adc2A_d0_6,o_adc2A_d0_5,o_adc2A_d0_4,o_adc2A_d0_3,o_adc2A_d0_2}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_114_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 450, EMB 3
-
-  assign sig_450_cea = sample_write_enable & ~sample_addr_11 & ~sample_addr_10;
-  assign sig_450_ceb = ~read_addr_11 & ~read_addr_10;
-
-  sample_memory_9 samples_block_450
-  (
-    .dia({i_adc1B_d_0,i_adc1A_d_7,i_adc1A_d_6,i_adc1A_d_5,i_adc1A_d_4,i_adc1A_d_3,i_adc1A_d_2,i_adc1A_d_1,i_adc1A_d_0}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_450_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc1B_d0_0,o_adc1A_d0_7,o_adc1A_d0_6,o_adc1A_d0_5,o_adc1A_d0_4,o_adc1A_d0_3,o_adc1A_d0_2,o_adc1A_d0_1,o_adc1A_d0_0}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_450_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 455, EMB 0
-
-  assign sig_455_cea = sample_write_enable & ~sample_addr_11 & sample_addr_10;
-  assign sig_455_ceb = ~read_addr_11 & read_addr_10;
-
-  sample_memory_9 samples_block_455
-  (
-    .dia({i_adc1B_d_0,i_adc1A_d_7,i_adc1A_d_6,i_adc1A_d_5,i_adc1A_d_4,i_adc1A_d_3,i_adc1A_d_2,i_adc1A_d_1,i_adc1A_d_0}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_455_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc1B_d1_0,o_adc1A_d1_7,o_adc1A_d1_6,o_adc1A_d1_5,o_adc1A_d1_4,o_adc1A_d1_3,o_adc1A_d1_2,o_adc1A_d1_1,o_adc1A_d1_0}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_455_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 456, EMB 1
-
-  assign sig_456_cea = sample_write_enable & sample_addr_11 & sample_addr_10;
-  assign sig_456_ceb = read_addr_11 & read_addr_10;
-
-  sample_memory_9 samples_block_456
-  (
-    .dia({i_adc1B_d_0,i_adc1A_d_7,i_adc1A_d_6,i_adc1A_d_5,i_adc1A_d_4,i_adc1A_d_3,i_adc1A_d_2,i_adc1A_d_1,i_adc1A_d_0}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_456_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc1B_d3_0,o_adc1A_d3_7,o_adc1A_d3_6,o_adc1A_d3_5,o_adc1A_d3_4,o_adc1A_d3_3,o_adc1A_d3_2,o_adc1A_d3_1,o_adc1A_d3_0}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_456_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 457, EMB 2
-
-  assign sig_457_cea = sample_write_enable & sample_addr_11 & ~sample_addr_10;
-  assign sig_457_ceb = read_addr_11 & ~read_addr_10;
-
-  sample_memory_9 samples_block_457
-  (
-    .dia({i_adc1B_d_0,i_adc1A_d_7,i_adc1A_d_6,i_adc1A_d_5,i_adc1A_d_4,i_adc1A_d_3,i_adc1A_d_2,i_adc1A_d_1,i_adc1A_d_0}),
-    .addra({sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sig_457_cea),
-    .clka(sample_write_clock),
-    .dob({o_adc1B_d2_0,o_adc1A_d2_7,o_adc1A_d2_6,o_adc1A_d2_5,o_adc1A_d2_4,o_adc1A_d2_3,o_adc1A_d2_2,o_adc1A_d2_1,o_adc1A_d2_0}),
-    .addrb({read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(sig_457_ceb),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 458, EMB 3
-
-  sample_memory_2 samples_block_458
-  (
-    .dia({ i_adc2B_d_4, i_adc2B_d_3 }),
-    .addra({sample_addr_11,sample_addr_10,sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sample_write_enable),
-    .clka(sample_write_clock),
-    .dob({o_adc2B_d_4,o_adc2B_d_3}),
-    .addrb({read_addr_11,read_addr_10,read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(1'b1),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 463, EMB 0
-
-  sample_memory_2 samples_block_463
-  (
-    .dia({ i_adc2B_d_6, i_adc2B_d_5 }),
-    .addra({sample_addr_11,sample_addr_10,sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sample_write_enable),
-    .clka(sample_write_clock),
-    .dob({o_adc2B_d_6,o_adc2B_d_5}),
-    .addrb({read_addr_11,read_addr_10,read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(1'b1),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Block 464, EMB 1
-
-  sample_memory_2 samples_block_464
-  (
-    .dia({ i_adc2B_d_7 }),
-    .addra({sample_addr_11,sample_addr_10,sample_addr_9,sample_addr_8,sample_addr_7,sample_addr_6,sample_addr_5,sample_addr_4,sample_addr_3,sample_addr_2,sample_addr_1,sample_addr_0}),
-    .cea(sample_write_enable),
-    .clka(sample_write_clock),
-    .dob({open_n64,o_adc2B_d_7}),
-    .addrb({read_addr_11,read_addr_10,read_addr_9,read_addr_8,read_addr_7,read_addr_6,read_addr_5,read_addr_4,read_addr_3,read_addr_2,read_addr_1,read_addr_0}),
-    .ceb(1'b1),
-    .clkb(sample_read_clock)
-  );
-
-//---------------------------------------------------------------------------
-//Clock part
-
-  pll master_clock
-  (
-    .refclk   (i_xtal),
-    .reset    (1'b0),
-    .clk0_out (clock_200MHz)
-  );
 
 endmodule
 
