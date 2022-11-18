@@ -6527,9 +6527,9 @@ char *verilogequationlookup[16] =
   "(%s & %s)",                                //(AND)
   "~(%s ^ %s)",                               //(NOT_XOR)
   "(~%s & %s) | (%s & %s)",
-  "(~%s & ~%s) | (~%s & %s) | (%s & %s)",
+  "(~%s & ~%s) | (~%s & %s) | (%s & %s)",     //"~(%s & ~%s)" ,                             //"(~%s & ~%s) | (~%s & %s) | (%s & %s)",
   "(%s & ~%s) | (%s & %s)",
-  "(~%s & ~%s) | (%s & ~%s) | (%s & %s)",
+  "(~%s & ~%s) | (%s & ~%s) | (%s & %s)",     //"~(~%s & %s)",                              //"(~%s & ~%s) | (%s & ~%s) | (%s & %s)",
   "(%s | %s)",                                //(OR)
   0
 };
@@ -7407,6 +7407,9 @@ void processlslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
   //In the 1013D bit stream it seems to be that both are always set when used as adder. Also the FX0MUXLUT4G and FX1MUXLUT4G bits seems to be set in this case
   if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
   {
+    //Have to look into carry input at the start of the chain!!!!!!!
+    //Most likely the first a input left open instead of grounded
+    
     //Create the lslice macro for this given block without carry input and follow the chain
     outputlsliceverilogadderchain(block, 0);
     
@@ -7747,6 +7750,9 @@ void processmslicetoverilog(pBLOCKINFOITEM block, int *opennetid)
   //In the 1013D bit stream it seems to be that both are always set when used as adder. Also the FX0MUXLUT4G and FX1MUXLUT4G bits seems to be set in this case
   if(block->logicsettings & (LOGIC_RIPMODE0 | LOGIC_RIPMODE1))
   {
+    //Have to look into carry input at the start of the chain!!!!!!!
+    //Most likely the first a input left open instead of grounded
+    
     //Create the always statements for the separate flip flops and gather the needed information about this carry chain
     outputmsliceverilogadderchain(block, 0);
 
@@ -8549,7 +8555,8 @@ void processembtoverilog(pBLOCKINFOITEM block, int *opennetid)
   //Bit of a pickle here is the address and chip select lines
   //The 2 bit modules don't have the chip select extentions and use 12 bits address from top down, so need to improve on the bus connections
   //The 9 bit modules do have the chip selects
-  
+
+#if OUTPUT_FOR_SIM == 0  
   //!!!! This is specific for the 1013D !!!!
   //Need to make up the chip selects for the memory blocks
   if(datawidth == 9)
@@ -8654,6 +8661,19 @@ void processembtoverilog(pBLOCKINFOITEM block, int *opennetid)
 
   //Finish of the module
   codeptr += snprintf(codeptr, codeend - codeptr, "\n  );\n\n");
+#else
+  //Need to output wires to make the connection with a memory bit
+  
+  //Need to output register arrays here
+  
+  //Need to setup the needed logic to read the memory
+  
+  //Simple for the two bit variant which is full address per bit
+  
+  //But also have to enable writing of the bits
+  
+  
+#endif
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -8847,124 +8867,122 @@ void createverilog()
 #if OUTPUT_FOR_SIM
     fprintf(fverilog, "\n//---------------------------------------------------------------------------\n");
     fprintf(fverilog, "//Memory simulation bit\n\n");
-    fprintf(fverilog, "  reg o_adc2B_d_7 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc2B_d_6 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d_5 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d_4 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc2B_d_3 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc2B_d0_2 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d0_1 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d0_0 = 1'b0;\n\n");
-    fprintf(fverilog, "  reg o_adc2B_d1_2 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d1_1 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d1_0 = 1'b0;\n\n");
-    fprintf(fverilog, "  reg o_adc2B_d2_2 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d2_1 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d2_0 = 1'b0;\n\n");
-    fprintf(fverilog, "  reg o_adc2B_d3_2 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d3_1 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2B_d3_0 = 1'b0;\n\n");
-    fprintf(fverilog, "  reg o_adc2A_d0_7 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d0_6 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d0_5 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d0_4 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d0_3 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d0_2 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d0_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc2A_d0_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc2A_d1_7 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d1_6 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d1_5 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d1_4 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d1_3 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d1_2 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d1_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc2A_d1_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc2A_d2_7 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d2_6 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d2_5 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d2_4 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d2_3 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d2_2 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d2_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc2A_d2_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc2A_d3_7 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d3_6 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d3_5 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d3_4 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d3_3 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d3_2 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc2A_d3_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc2A_d3_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc1B_d0_7 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d0_6 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d0_5 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d0_4 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d0_3 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d0_2 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d0_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d0_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc1B_d1_7 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d1_6 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d1_5 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d1_4 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d1_3 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d1_2 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d1_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d1_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc1B_d2_7 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d2_6 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d2_5 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d2_4 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d2_3 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d2_2 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d2_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d2_0 = 1'b0;\n\n");
-    fprintf(fverilog, "  reg o_adc1B_d3_7 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d3_6 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d3_5 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d3_4 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d3_3 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d3_2 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d3_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1B_d3_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc1A_d0_7 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d0_6 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d0_5 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d0_4 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d0_3 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d0_2 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d0_1 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d0_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc1A_d1_7 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d1_6 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d1_5 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d1_4 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d1_3 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d1_2 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d1_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d1_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc1A_d2_7 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d2_6 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d2_5 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d2_4 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d2_3 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d2_2 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d2_1 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d2_0 = 1'b1;\n\n");
-    fprintf(fverilog, "  reg o_adc1A_d3_7 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d3_6 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d3_5 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d3_4 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d3_3 = 1'b0;\n");
-    fprintf(fverilog, "  reg o_adc1A_d3_2 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d3_1 = 1'b1;\n");
-    fprintf(fverilog, "  reg o_adc1A_d3_0 = 1'b0;\n\n");
-
+    fprintf(fverilog, "  wire o_adc2B_d_7;\n");
+    fprintf(fverilog, "  wire o_adc2B_d_6;\n");
+    fprintf(fverilog, "  wire o_adc2B_d_5;\n");
+    fprintf(fverilog, "  wire o_adc2B_d_4;\n");
+    fprintf(fverilog, "  wire o_adc2B_d_3;\n\n");
+    fprintf(fverilog, "  wire o_adc2B_d0_2;\n");
+    fprintf(fverilog, "  wire o_adc2B_d0_1;\n");
+    fprintf(fverilog, "  wire o_adc2B_d0_0;\n\n");
+    fprintf(fverilog, "  wire o_adc2B_d1_2;\n");
+    fprintf(fverilog, "  wire o_adc2B_d1_1;\n");
+    fprintf(fverilog, "  wire o_adc2B_d1_0;\n\n");
+    fprintf(fverilog, "  wire o_adc2B_d2_2;\n");
+    fprintf(fverilog, "  wire o_adc2B_d2_1;\n");
+    fprintf(fverilog, "  wire o_adc2B_d2_0;\n\n");
+    fprintf(fverilog, "  wire o_adc2B_d3_2;\n");
+    fprintf(fverilog, "  wire o_adc2B_d3_1;\n");
+    fprintf(fverilog, "  wire o_adc2B_d3_0;\n\n");
+    fprintf(fverilog, "  wire o_adc2A_d0_7;\n");
+    fprintf(fverilog, "  wire o_adc2A_d0_6;\n");
+    fprintf(fverilog, "  wire o_adc2A_d0_5;\n");
+    fprintf(fverilog, "  wire o_adc2A_d0_4;\n");
+    fprintf(fverilog, "  wire o_adc2A_d0_3;\n");
+    fprintf(fverilog, "  wire o_adc2A_d0_2;\n");
+    fprintf(fverilog, "  wire o_adc2A_d0_1;\n");
+    fprintf(fverilog, "  wire o_adc2A_d0_0;\n\n");
+    fprintf(fverilog, "  wire o_adc2A_d1_7;\n");
+    fprintf(fverilog, "  wire o_adc2A_d1_6;\n");
+    fprintf(fverilog, "  wire o_adc2A_d1_5;\n");
+    fprintf(fverilog, "  wire o_adc2A_d1_4;\n");
+    fprintf(fverilog, "  wire o_adc2A_d1_3;\n");
+    fprintf(fverilog, "  wire o_adc2A_d1_2;\n");
+    fprintf(fverilog, "  wire o_adc2A_d1_1;\n");
+    fprintf(fverilog, "  wire o_adc2A_d1_0;\n\n");
+    fprintf(fverilog, "  wire o_adc2A_d2_7;\n");
+    fprintf(fverilog, "  wire o_adc2A_d2_6;\n");
+    fprintf(fverilog, "  wire o_adc2A_d2_5;\n");
+    fprintf(fverilog, "  wire o_adc2A_d2_4;\n");
+    fprintf(fverilog, "  wire o_adc2A_d2_3;\n");
+    fprintf(fverilog, "  wire o_adc2A_d2_2;\n");
+    fprintf(fverilog, "  wire o_adc2A_d2_1;\n");
+    fprintf(fverilog, "  wire o_adc2A_d2_0;\n\n");
+    fprintf(fverilog, "  wire o_adc2A_d3_7;\n");
+    fprintf(fverilog, "  wire o_adc2A_d3_6;\n");
+    fprintf(fverilog, "  wire o_adc2A_d3_5;\n");
+    fprintf(fverilog, "  wire o_adc2A_d3_4;\n");
+    fprintf(fverilog, "  wire o_adc2A_d3_3;\n");
+    fprintf(fverilog, "  wire o_adc2A_d3_2;\n");
+    fprintf(fverilog, "  wire o_adc2A_d3_1;\n");
+    fprintf(fverilog, "  wire o_adc2A_d3_0;\n\n");
+    fprintf(fverilog, "  wire o_adc1B_d0_7;\n");
+    fprintf(fverilog, "  wire o_adc1B_d0_6;\n");
+    fprintf(fverilog, "  wire o_adc1B_d0_5;\n");
+    fprintf(fverilog, "  wire o_adc1B_d0_4;\n");
+    fprintf(fverilog, "  wire o_adc1B_d0_3;\n");
+    fprintf(fverilog, "  wire o_adc1B_d0_2;\n");
+    fprintf(fverilog, "  wire o_adc1B_d0_1;\n");
+    fprintf(fverilog, "  wire o_adc1B_d0_0;\n\n");
+    fprintf(fverilog, "  wire o_adc1B_d1_7;\n");
+    fprintf(fverilog, "  wire o_adc1B_d1_6;\n");
+    fprintf(fverilog, "  wire o_adc1B_d1_5;\n");
+    fprintf(fverilog, "  wire o_adc1B_d1_4;\n");
+    fprintf(fverilog, "  wire o_adc1B_d1_3;\n");
+    fprintf(fverilog, "  wire o_adc1B_d1_2;\n");
+    fprintf(fverilog, "  wire o_adc1B_d1_1;\n");
+    fprintf(fverilog, "  wire o_adc1B_d1_0;\n\n");
+    fprintf(fverilog, "  wire o_adc1B_d2_7;\n");
+    fprintf(fverilog, "  wire o_adc1B_d2_6;\n");
+    fprintf(fverilog, "  wire o_adc1B_d2_5;\n");
+    fprintf(fverilog, "  wire o_adc1B_d2_4;\n");
+    fprintf(fverilog, "  wire o_adc1B_d2_3;\n");
+    fprintf(fverilog, "  wire o_adc1B_d2_2;\n");
+    fprintf(fverilog, "  wire o_adc1B_d2_1;\n");
+    fprintf(fverilog, "  wire o_adc1B_d2_0;\n\n");
+    fprintf(fverilog, "  wire o_adc1B_d3_7;\n");
+    fprintf(fverilog, "  wire o_adc1B_d3_6;\n");
+    fprintf(fverilog, "  wire o_adc1B_d3_5;\n");
+    fprintf(fverilog, "  wire o_adc1B_d3_4;\n");
+    fprintf(fverilog, "  wire o_adc1B_d3_3;\n");
+    fprintf(fverilog, "  wire o_adc1B_d3_2;\n");
+    fprintf(fverilog, "  wire o_adc1B_d3_1;\n");
+    fprintf(fverilog, "  wire o_adc1B_d3_0;\n\n");
+    fprintf(fverilog, "  wire o_adc1A_d0_7;\n");
+    fprintf(fverilog, "  wire o_adc1A_d0_6;\n");
+    fprintf(fverilog, "  wire o_adc1A_d0_5;\n");
+    fprintf(fverilog, "  wire o_adc1A_d0_4;\n");
+    fprintf(fverilog, "  wire o_adc1A_d0_3;\n");
+    fprintf(fverilog, "  wire o_adc1A_d0_2;\n");
+    fprintf(fverilog, "  wire o_adc1A_d0_1;\n");
+    fprintf(fverilog, "  wire o_adc1A_d0_0;\n\n");
+    fprintf(fverilog, "  wire o_adc1A_d1_7;\n");
+    fprintf(fverilog, "  wire o_adc1A_d1_6;\n");
+    fprintf(fverilog, "  wire o_adc1A_d1_5;\n");
+    fprintf(fverilog, "  wire o_adc1A_d1_4;\n");
+    fprintf(fverilog, "  wire o_adc1A_d1_3;\n");
+    fprintf(fverilog, "  wire o_adc1A_d1_2;\n");
+    fprintf(fverilog, "  wire o_adc1A_d1_1;\n");
+    fprintf(fverilog, "  wire o_adc1A_d1_0;\n\n");
+    fprintf(fverilog, "  wire o_adc1A_d2_7;\n");
+    fprintf(fverilog, "  wire o_adc1A_d2_6;\n");
+    fprintf(fverilog, "  wire o_adc1A_d2_5;\n");
+    fprintf(fverilog, "  wire o_adc1A_d2_4;\n");
+    fprintf(fverilog, "  wire o_adc1A_d2_3;\n");
+    fprintf(fverilog, "  wire o_adc1A_d2_2;\n");
+    fprintf(fverilog, "  wire o_adc1A_d2_1;\n");
+    fprintf(fverilog, "  wire o_adc1A_d2_0;\n\n");
+    fprintf(fverilog, "  wire o_adc1A_d3_7;\n");
+    fprintf(fverilog, "  wire o_adc1A_d3_6;\n");
+    fprintf(fverilog, "  wire o_adc1A_d3_5;\n");
+    fprintf(fverilog, "  wire o_adc1A_d3_4;\n");
+    fprintf(fverilog, "  wire o_adc1A_d3_3;\n");
+    fprintf(fverilog, "  wire o_adc1A_d3_2;\n");
+    fprintf(fverilog, "  wire o_adc1A_d3_1;\n");
+    fprintf(fverilog, "  wire o_adc1A_d3_0;\n\n");
 #endif
     
     fwrite(code, 1, codeptr - code, fverilog);
-
     
 #if OUTPUT_FOR_SIM == 0
     //For the PLL the IP file generated with the IDE needs to be used
