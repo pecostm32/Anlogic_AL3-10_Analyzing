@@ -19,9 +19,9 @@ At first it was needed to convert the Anlogic database file for the AL3-10 to js
 
 mmicko updated prjtang recently and the database decode tool now uses frame and bit instead of the y and x. My code has not been modified for this!!!!!
 
-Based on this data I created a convertion table to map the configuration bits to their actual meaning. This is done in the Anlogic_bits_in_tile_lister.
+Based on this data I created a conversion table to map the configuration bits to their actual meaning. This is done in the Anlogic_bits_in_tile_lister.
 
-Some other support porjects were made to allow analyzing of the database date. These are also included. Also added is my python work project with which I decoded the Tang Dynasty IDE work files. I'm new to python at this point so the code is not great, but it served it's purpose.
+Some other support porjects were made to allow analyzing of the database data. These are also included. Also added is my python work project with which I decoded the Tang Dynasty IDE work files. I'm new to python at this point so the code is not great, but it served it's purpose.
 
 Maybe in time, when more knowledge is gathered, a return is made to the project.
 
@@ -104,8 +104,8 @@ Working on renaming all the nets to get a clear insight in what things do. For t
 10-11-2022
 
 Finaly succeded in reverse engineering the bit stream into working verilog. I missed two setting bits to set the reset level for
-mslice0 and lslice2, which caused some parts of the verilog to not work. Investigation of the I2C part that is in the verilog
-I discovered this problem. Simulation of the verilog helps a lot in getting an understanding of it.
+mslice0 and lslice2, which caused some parts of the verilog to not work. Investigation of the I2C part that is in the verilog,
+ made that I discovered this problem. Simulation of the verilog also helps a lot in getting an understanding of it.
 
 -------------------------------------------------------------------------------------------------------------------------------
 19-11-2022
