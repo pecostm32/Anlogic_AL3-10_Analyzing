@@ -1,0 +1,19 @@
+/home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_1013d.v {1 {vlog -work work -stats=none /home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_1013d.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module pll
+-- Compiling module sample_memory
+-- Compiling module clockdivider
+-- Compiling module pwmcounter
+-- Compiling module fnirsi_1013D
+
+Top level modules:
+	fnirsi_1013D
+
+} {} {}} /home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_103D_tb.v {1 {vlog -work work -stats=none /home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_103D_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fnirsi_1013D_tb
+
+Top level modules:
+	fnirsi_1013D_tb
+
+} {} {}}

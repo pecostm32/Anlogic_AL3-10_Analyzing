@@ -1,0 +1,197 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/peter/Data/FPGA_Simulation/clock_division
+vclock_div_tb
+!s110 1668170807
+!i10b 1
+!s100 YcM0FRcP;^Z>E=e^55>Ef0
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IlHciWhQ2YFBD>DJ?fdUL_2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d/home/peter/Data/FPGA_Simulation/finrsi_1013D
+w1668170806
+Z3 8/home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_103D_tb.v
+Z4 F/home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_103D_tb.v
+!i122 5
+L0 3 20
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1668170807.000000
+Z6 !s107 /home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_103D_tb.v|
+Z7 !s90 -reportprogress|300|-work|work|-stats=none|/home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_103D_tb.v|
+!i113 1
+Z8 o-work work
+Z9 tCvgOpt 0
+vclockdivider
+Z10 !s110 1668850487
+!i10b 1
+!s100 fkM47WI@CCD321mQDfNnU1
+R0
+IcE^@Si7EazTV==2WDDUP]3
+R1
+R2
+Z11 w1668850361
+Z12 8/home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_1013d.v
+Z13 F/home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_1013d.v
+!i122 215
+L0 57 25
+R5
+r1
+!s85 0
+31
+Z14 !s108 1668850487.000000
+Z15 !s107 /home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_1013d.v|
+Z16 !s90 -reportprogress|300|-work|work|-stats=none|/home/peter/Data/FPGA_Simulation/finrsi_1013D/fnirsi_1013d.v|
+!i113 1
+R8
+R9
+vcounter
+!s110 1668350666
+!i10b 1
+!s100 IFAnfhLdRZQzgo<k88]FF2
+R0
+IQ;l83[?V7W4c?KRgakcCL0
+R1
+R2
+w1668350459
+R12
+R13
+!i122 36
+L0 19 21
+R5
+r1
+!s85 0
+31
+!s108 1668350666.000000
+R15
+R16
+!i113 1
+R8
+R9
+vfnirsi_1013D
+R10
+!i10b 1
+!s100 F69m<@UHW>Te]587A@_zS2
+R0
+IEkkICC;AMXmRFTdzmQH9a3
+R1
+R2
+R11
+R12
+R13
+!i122 215
+L0 115 722
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R8
+R9
+nfnirsi_1013@d
+vfnirsi_1013D_tb
+R10
+!i10b 1
+!s100 ]0zhIeJE5CPl:h3;LEANb2
+R0
+Ij__kG:m6`zi<L13ePH1gz1
+R1
+R2
+w1668849354
+R3
+R4
+!i122 214
+L0 3 237
+R5
+r1
+!s85 0
+31
+R14
+R6
+R7
+!i113 1
+R8
+R9
+nfnirsi_1013@d_tb
+vpll
+R10
+!i10b 1
+!s100 GdoNiPf]^LSPGIRn^QDR=3
+R0
+IQJS8ehLNdDYf[?XhJdi3D0
+R1
+R2
+R11
+R12
+R13
+!i122 215
+L0 5 10
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R8
+R9
+vpwmcounter
+R10
+!i10b 1
+!s100 4loZ=6BB][PG[mH=V0<[z1
+R0
+IZnWf2`NGNH[^V@a?I:_fh3
+R1
+R2
+R11
+R12
+R13
+!i122 215
+L0 86 25
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R8
+R9
+vsample_memory
+R10
+!i10b 1
+!s100 [=^BI_k^G2?kb:lmW]hj_1
+R0
+I?PZH5[^SdkAFz7:D2U[dZ2
+R1
+R2
+R11
+R12
+R13
+!i122 215
+L0 19 34
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R8
+R9
