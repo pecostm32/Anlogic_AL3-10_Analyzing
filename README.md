@@ -106,3 +106,18 @@ Working on renaming all the nets to get a clear insight in what things do. For t
 Finaly succeded in reverse engineering the bit stream into working verilog. I missed two setting bits to set the reset level for
 mslice0 and lslice2, which caused some parts of the verilog to not work. Investigation of the I2C part that is in the verilog
 I discovered this problem. Simulation of the verilog helps a lot in getting an understanding of it.
+
+-------------------------------------------------------------------------------------------------------------------------------
+19-11-2022
+
+Made a more readable version of the design, but it does not work on the scope. There are problems with the 200MHz clock timing.
+Oddly enough the crude design generated with the reverse engineering tool does not have these problems and works on the scope
+to some extend. There are some problems with glitches in the samples.
+
+But the journey has come to its end. It proved to be possible to reverse engineer the design of a FPGA from it's bit stream.
+Granted it is not perfect, and there are still issues when compiling it back into a bit stream due to compiler version,
+timing constraints, differences in place and route.
+
+Conclusion is that it requires a lot of patience, skill and persistence to get a thing like this done.
+
+It was fun and I learned a lot from it about the working of FPGA's and simulation.
